@@ -17,7 +17,6 @@ theme:
   favicon: assets/favicon.ico
   features:
     - navigation.sections
-    - navigation.prune
     - navigation.top
     - navigation.indexes
     - search.suggest

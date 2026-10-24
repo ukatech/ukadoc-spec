@@ -392,8 +392,6 @@ def main(argv):
     files = {}
     for u in ALL_UNITS:
         files[u.path] = render_unit(u)
-        if u.kind == 'index':
-            files[u.dirname + '/.nav.yml'] = nav_yml(u)
     if 'index' in stems and 'sidemenu' not in stems:
         groups = parse_sidemenu()
         files['INDEX.md'] = files['INDEX.md'].rstrip(NL) + NL2 + index_toc(groups)
