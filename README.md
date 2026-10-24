@@ -6,5 +6,5 @@
 
 - 目次: [INDEX.md](INDEX.md)
 - AI Agent 向けの案内: [llms.txt](llms.txt)、編集規約は [CLAUDE.md](CLAUDE.md)
-- 旧 HTML 版: [ukatech/ukadoc](https://github.com/ukatech/ukadoc) の `manual/`
+- 旧 HTML 版: [ukatech/ukadoc](https://github.com/ukatech/ukadoc) の `manual/`（このリポジトリが正本。並存期間中の旧 HTML 側の変更は、手で写す）
 - 旧 HTML の URL・id から現在のパスを引く表: [migration/id-map.json](migration/id-map.json)（[説明](migration/README.md)）

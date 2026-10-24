@@ -1,6 +1,6 @@
 このリポジトリは伺か関連の仕様書「UKADOC」（SSP 公式仕様書）の Markdown 版です。1 項目 1 ファイルで書いてあり、人間にも AI Agent にも読み書きしやすい形にしてあります。
 
-旧 HTML 版は `ukatech/ukadoc` の `manual/*.html` です（このリポジトリは、そのコミット 9eb14c5 時点を変換したもの）。旧 HTML の URL・id から現在のパスを引く表は `migration/id-map.json` です。
+**このリポジトリが UKADOC の正本です。** 旧 HTML 版は `ukatech/ukadoc` の `manual/*.html` で、このリポジトリはそのコミット 9eb14c5 時点を変換したものです。しばらくは並存しますが、仕様の追加・修正はこのリポジトリに書きます。並存期間中に旧 HTML 側へ入った変更は、手で Markdown に写してください（`migration/tools/` で再生成すると、このリポジトリでの修正が上書きされるので、使わないこと）。旧 HTML の URL・id から現在のパスを引く表は `migration/id-map.json` です。
 
 ## 構成
 
