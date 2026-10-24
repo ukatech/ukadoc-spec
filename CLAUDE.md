@@ -70,6 +70,8 @@ zensical build --strict          # リンク切れ・アンカー切れがある
 zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレビュー
 ```
 
+`zensical build --strict` が見るのはサイトの中のリンクだけ。外部リンクは、ときどき `python scripts/check_links.py` で、エラーになるものと別の URL へ転送されるものを洗い出す（`--titles` で、転送されずに 200 を返すものもタイトル付きで並ぶ）。切れているかどうかはスクリプトでは判断しないので、開いて確かめる。切れていたら、元のリンクの後ろに Internet Archive の保存版を「（[アーカイブ](https://web.archive.org/web/時刻/元のURL)）」と添える（添えたリンクは以後の検査から外れる）。
+
 ## GitHub Pages
 
 `main` に push すると GitHub Actions（`.github/workflows/pages.yml`）が Zensical でビルドし、https://ukatech.github.io/ukadoc-spec/ に公開する。
