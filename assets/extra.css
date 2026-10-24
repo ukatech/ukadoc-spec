@@ -1,3 +1,13 @@
+/* ヘッダの色。旧 HTML 版のヘッダ（iframes.css の #94de84）と同じ薄緑にする。
+   mkdocs.yml の theme.palette の primary: custom と対 */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #94de84;
+  --md-primary-fg-color--light: #b4eaa7;
+  --md-primary-fg-color--dark: #72c761;
+  --md-primary-bg-color: #14230f;
+  --md-primary-bg-color--light: rgba(20, 35, 15, .7);
+}
+
 /* 目次ページなどの一覧を詰めて表示する */
 .md-typeset ul li > ul {
   margin-top: 0.2em;

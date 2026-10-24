@@ -1,4 +1,4 @@
-site_name: UKADOC
+site_name: UKADOC project
 site_description: 伺か関連コンテンツ作者向けリファレンス（SSP 公式仕様書）
 site_url: https://ukatech.github.io/ukadoc-spec/
 repo_url: https://github.com/ukatech/ukadoc-spec
@@ -25,14 +25,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: ダークモードに切り替え
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-4
