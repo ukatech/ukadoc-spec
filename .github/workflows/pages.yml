@@ -25,6 +25,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python scripts/prepare_site.py
       - run: zensical build --strict
+      - run: cp -r _raw/. _site/
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site

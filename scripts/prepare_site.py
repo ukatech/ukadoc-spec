@@ -6,6 +6,7 @@
 - まとめた項目へのリンク（相対パス・#見出し）は、まとめたページの見出しへのリンクに書き換える
 - 各 index.md の「## 一覧」が、ディレクトリの項目（.md とサブディレクトリ）と過不足なく一致しているかを検査する
 - INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。llms.txt をサイトのルートに置く
+- 生の Markdown 原稿を _raw/ に写す（ビルド後に _site へ重ねる。llms.txt から INDEX.md などを辿れるようにする）
 原稿そのものは書き換えない。
 """
 import os
@@ -234,6 +235,29 @@ def page_dirs():
     return out
 
 
+RAW = os.path.join(ROOT, '_raw')
+RAW_SKIP_DIRS = {'scripts', 'overrides', 'assets', 'node_modules'}
+RAW_SKIP_FILES = {'README.md', 'CLAUDE.md'}
+RAW_EXTRA = ['migration/id-map.json']   # .md 以外で、原稿から参照されていて一緒に置くファイル
+
+
+def build_raw():
+    """生の Markdown 原稿を、リポジトリと同じ相対パスで _raw/ に写す。
+    zensical は docs_dir の .md をページにしてしまうので _site_src/ には置けない。ビルド後に _site へ重ねる"""
+    if os.path.exists(RAW):
+        shutil.rmtree(RAW)
+    rels = list(RAW_EXTRA)
+    for base, dirs, names in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if not d.startswith(('.', '_')) and d not in RAW_SKIP_DIRS]
+        for name in names:
+            if name.endswith('.md') and not (base == ROOT and name in RAW_SKIP_FILES):
+                rels.append(os.path.relpath(os.path.join(base, name), ROOT))
+    for rel in rels:
+        dst = os.path.join(RAW, rel)
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        shutil.copy(os.path.join(ROOT, rel), dst)
+
+
 def main():
     for d in DIRS:
         for dirpath, _, files in os.walk(os.path.join(ROOT, d)):
@@ -276,6 +300,7 @@ def main():
     write('.nav.yml', nav)
     shutil.copy(os.path.join(ROOT, 'llms.txt'), os.path.join(OUT, 'llms.txt'))
     shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(OUT, 'assets'))
+    build_raw()
     if ERRORS:
         sys.exit(1)
 

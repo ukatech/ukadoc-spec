@@ -87,4 +87,5 @@ zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレ�
   - `**カテゴリ:**` の行は、親の見出しが示すのでサイトでは省く
 - `manual/` `dev/` `memo/` と、ディレクトリを持たない `spec/*.md` は、1 ファイル 1 ページのまま
 - 設定は `mkdocs.yml`。左メニューの章立ては、ルートの `.nav.yml`（mkdocs-awesome-nav）だけで決める（ディレクトリごとの `.nav.yml` は置かない）
-- `llms.txt` はサイトのルートにも置かれる
+- `llms.txt`（AI エージェント向けの探し方の案内。`INDEX.md` と各ディレクトリの入口だけを書く）はサイトのルートに置かれる。ページごとの一覧は載せないので、ページを足しても直さなくてよい。ディレクトリを足したときは「構成」に 1 行足す
+- 生の Markdown 原稿（`README.md` と `CLAUDE.md` 以外の `.md`）は、リポジトリと同じパスでサイトにも置かれる。`scripts/prepare_site.py` が `_raw/` に写し、workflow がビルド後に `_site` へ重ねる（zensical は `.md` をページにしてしまうので、`_site_src/` には置けない）。`llms.txt` や `INDEX.md` の相対リンクは、このおかげでサイト上でも辿れる

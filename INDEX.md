@@ -10,6 +10,8 @@
 
 ゴースト制作のためのサイト内の文章の引用・転載はご自由に。
 
+> AI エージェント向けに、探し方の案内 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt) を用意しています。各ページの Markdown 原稿は、リポジトリと同じパスの `.md`（例: `https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）で取得できます。
+
 ## 対象version
 
 - [SSP](http://ssp.shillest.net/) 最新版(公式仕様書)
