@@ -1,6 +1,6 @@
 # アプリ「きのこ」
 
-- 公開元：[http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/)
+- 公開元：[http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/)（[アーカイブ](https://web.archive.org/web/20241217204841/http://koumei.la.coocan.jp/cbs/software/kinoko/)）
 
 **対応:** Materia / SSP / CROW
 

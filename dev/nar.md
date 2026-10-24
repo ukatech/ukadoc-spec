@@ -118,7 +118,7 @@ SSPによるアーカイブや`updates2.dau`の作成時に、一番上の階層
 
 また詳しい導入・設定の解説は以下のサイトを参考にしてください（「1」の内容は不要）。
 
-[ゴースト配布系自動化システム(GDM)のつかいかた](http://navy.nm.land.to/post/jidouhaihu.html)
+[ゴースト配布系自動化システム(GDM)のつかいかた](http://navy.nm.land.to/post/jidouhaihu.html)（[アーカイブ](https://web.archive.org/web/20260205013109/http://navy.nm.land.to/post/jidouhaihu.html)）
 
 名前にこそ「ゴースト」とありますが、実際にはシェルやバルーンその他あらゆるもののアーカイブ・ネットワーク更新用ファイルのアップロードに使えます。
 

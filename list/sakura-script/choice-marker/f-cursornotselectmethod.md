@@ -5,7 +5,7 @@
 非選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br />
 Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />
 defaultでバルーン設定の標準に戻る。<br />
-参考：[SetROP2関数(外部サイト)](http://msdn.microsoft.com/ja-jp/library/cc428718.aspx)<br />
+参考：[SetROP2関数(外部サイト)](https://learn.microsoft.com/ja-jp/windows/win32/api/wingdi/nf-wingdi-setrop2)<br />
 ※指定は「R2\_」を含まず小文字のモード名。
 
 **対応:** SSP

@@ -1,6 +1,6 @@
 # ゴースト「カレー家族／沙紀と右近」
 
-- 公開元：[http://curryfamily.me.land.to/ghost_saki.html](http://curryfamily.me.land.to/ghost_saki.html)
+- 公開元：[http://curryfamily.me.land.to/ghost_saki.html](http://curryfamily.me.land.to/ghost_saki.html)（[アーカイブ](https://web.archive.org/web/20260330033424/http://curryfamily.me.land.to/ghost_saki.html)）
 
 **対応:** SSP
 
