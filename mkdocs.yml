@@ -14,7 +14,8 @@ theme:
   # Zensical の既定は modern（新デザイン）。従来の見た目は classic
   variant: classic
   language: ja
-  favicon: assets/favicon.ico
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.sections
     - navigation.top
