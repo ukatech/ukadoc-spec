@@ -10,5 +10,5 @@ SSPヘルプを開く。<br />
 ## 記述例
 
 ```sakurascript
-\![open,help,talk]ブラウザで、http://ssp.shillest.net/ukadoc/ssphelp/の喋り/バルーンのページを開く。
+\![open,help,talk]ブラウザで、https://ukatech.shillest.net/ukadoc-ssp/の喋り/バルーンのページを開く。
 ```
