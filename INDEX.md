@@ -20,7 +20,7 @@
 ## 外部リンク
 
 - [伺か開発情報検索](http://ukadev.shillest.net/)
-- [SSP起動オプション(SSPヘルプ)](https://ssp.shillest.net/ukadoc/ssphelp/option.html)
+- [SSP起動オプション(SSPヘルプ)](https://ukatech.shillest.net/ukadoc-ssp/functions/option/)
 - [伺か公式仕様書](http://usada.sakura.vg/contents/specification.html)
 - [CROW・SSP仕様書](http://crow.aqrs.jp/reference/all/)
 - [大八州.NET　非公式仕様書](http://www.ooyashima.net/db/)
