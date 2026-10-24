@@ -2,7 +2,7 @@
 
 ## ukadocについて
 
-伺か関連の仕様文書集約プロジェクトである[UKADOC project](https://github.com/ponapalt/ukadoc/wiki)の編集するドキュメント集です。
+伺か関連の仕様文書集約プロジェクトである[UKADOC project](https://github.com/ukatech/ukadoc-spec)の編集するドキュメント集です。
 
 *[SSP](http://ssp.shillest.net/)についてはここのドキュメントが公式文書*として扱われます。
 
