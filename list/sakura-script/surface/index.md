@@ -2,7 +2,7 @@
 
 ## 一覧
 
-- [`\s`ID番号](sID.md)
+- [`\sID番号`](sID.md)
 - [`\s[ID番号]`](s-ID.md)
 - [`\i[ID番号]`](i-ID.md)
 - [`\i[ID,wait]`](i-ID-wait.md)

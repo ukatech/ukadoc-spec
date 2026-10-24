@@ -7,8 +7,8 @@
 ※SSPのみ可、ファイル名等のパスには環境変数も使える。
 
 - **base64を使用する場合**: 例:"data:image/png;base64,iV～II"
-- **exe/dllのリソースを使用する場合**: 例:D:`\h`ogehoge.exe,20
-- **exe/dllのリソースを使用する場合(リソースID指定)**: 例:D:`\h`ogehoge.exe,-10
+- **exe/dllのリソースを使用する場合**: 例:D:\\hogehoge.exe,20
+- **exe/dllのリソースを使用する場合(リソースID指定)**: 例:D:\\hogehoge.exe,-10
 
 ## `\_b[ファイルパス,...]`のオプション
 

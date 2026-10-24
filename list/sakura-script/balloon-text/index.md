@@ -2,7 +2,7 @@
 
 ## 一覧
 
-- [`\b`ID番号](bID.md)
+- [`\bID番号`](bID.md)
 - [`\b[ID番号]`](b-ID.md)
 - [`\_b[ファイルパス,x,y]`](_b-x-y.md)
 - [`\_b[ファイルパス,x,y,opaque]`](_b-x-y-opaque.md)
@@ -40,7 +40,7 @@
 - [`\![lock,balloonmove]`](bang-lock-balloonmove.md)
 - [`\![unlock,balloonmove]`](bang-unlock-balloonmove.md)
 - [`\_!`](_-bang.md)
-- [`\_`?](_-q.md)
+- [`\_?`](_-q.md)
 - [`\__v[オプション]`](__v.md)
 - [`\![execute,resetballoonpos]`](bang-execute-resetballoonpos.md)
 - [補足](note-1.md)

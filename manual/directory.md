@@ -87,7 +87,7 @@
 
 - **(myghost)\\ghost\\**: ゴーストの内部動作用ファイルのフォルダ。
 
-- **(myghost)`\g`host\\master\\**: ゴーストのデフォルトで使用されるフォルダ。
+- **(myghost)\\ghost\\master\\**: ゴーストのデフォルトで使用されるフォルダ。
 
   現在はmasterしか使用されない（過去の設計の名残）。
 
@@ -97,9 +97,9 @@ makoto.dllについては「[トランスレータ](translator.md)」のペー�
 
 - **(myghost)\\shell\\**: ゴーストのシェル（グラフィック表示用ファイル群）のフォルダを格納するフォルダ。
 
-- **(myghost)`\s`hell\\master\\**: デフォルトシェルのフォルダ。必須。
+- **(myghost)\\shell\\master\\**: デフォルトシェルのフォルダ。必須。
 
-- **(myghost)`\s`hell\\(additional_shell)\\**: 追加シェルのフォルダ。任意名（英数字推奨）。ファイル構成はmasterと同じ。
+- **(myghost)\\shell\\(additional_shell)\\**: 追加シェルのフォルダ。任意名（英数字推奨）。ファイル構成はmasterと同じ。
 
   いくつでも存在できる。存在するとオーナードローメニューなどから切替選択できる。
 
