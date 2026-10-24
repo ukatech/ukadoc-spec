@@ -13,3 +13,5 @@ descript.txtでの設定を標準設定とし、こちらに同じ項目を設�
 複数行入力ボックス用のballoonc5.png(SSP 2.9.10)では、balloonc5s.txtのcommunicatebox.x/y/width/heightが入力欄とその下端のボタン行を合わせた範囲になる。<br />
 この範囲はdescript.txt側の値(1行の入力ボックス向け)を引き継がない。balloonc5s.txtで指定しなかった場合は、画像の四辺から8ピクセル内側の範囲になる。<br />
 文字の大きさはballoonc5s.txtのfont.height(省略時はdescript.txtのfont.height)、書体と色はcommunicatebox.font.name/font.color/background.colorに従う。
+
+**対応:** Materia / SSP / CROW

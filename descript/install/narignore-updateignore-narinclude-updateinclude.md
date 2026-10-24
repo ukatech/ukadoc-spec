@@ -18,9 +18,13 @@ include:に指定する相対パスは、ゴーストのルートディレクト
 
 例えばゴーストのルートディレクトリ直下の.narincludeにinclude:sub/extra.txtと書くと、sub/extra.txtを読み込む。そのextra.txt内でさらにinclude:foo.txtと書いた場合は、ゴーストのルートディレクトリではなく、extra.txtが置かれているsub/ディレクトリを基準に、sub/foo.txtを読み込む。
 
+**対応:** SSP
+
 ## .narinclude / .updateinclude
 
 .narignore/.updateignoreのホワイトリスト版。ここに書いたものだけが更新ファイル/NARに格納される。<br />
 サブディレクトリの扱いがgitignoreと異なり、たとえばshell/masterとだけ書いてshell/は書かなくても、親ディレクトリをきちんと含んで処理する。
 
 また.narignore/.updateignoreと同様、.gitignoreと異なりサブディレクトリに置いても機能しない。ゴーストのルートディレクトリ直下に置いた場合のみ有効である。
+
+**対応:** SSP

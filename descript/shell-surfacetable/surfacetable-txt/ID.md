@@ -9,3 +9,5 @@
 名前を省略した場合、名前が未定義であることを明示できる。SSPのサーフィステストでは[特定サーフェス](../../shell-surfaces/surface-brace/caption_standarddef.md)のみ未指定でも初期値が与えられるため、そういったサーフェスについて指定を解除したい場合に利用する。
 
 **既定値:** 挙動なし/SSPのサーフィステストでは、特定のサーフェスのみ[標準的なサーフェス定義](../../shell-surfaces/surface-brace/caption_standarddef.md)。
+
+**対応:** SSP
