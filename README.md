@@ -2,7 +2,7 @@
 
 伺か関連の仕様書「UKADOC」（SSP 公式仕様書）の Markdown 版です。1 項目 1 ファイルで、さくらスクリプト、SHIORI イベント / リソース、設定ファイル、各種規格などを収めています。
 
-**仕様書はこちら: https://ukatech.github.io/ukadoc-spec/**
+**仕様書はこちら: https://ukatech.shillest.net/ukadoc-spec/**
 
 - 目次: [INDEX.md](INDEX.md)
 - AI Agent 向けの案内: [llms.txt](llms.txt)、編集規約は [CLAUDE.md](CLAUDE.md)
