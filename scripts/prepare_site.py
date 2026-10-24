@@ -254,7 +254,12 @@ def main():
         for rel, depth, is_index, text in units:
             bundled.add(rel)
             parts.append(rewrite_links(shift_headings(text, rel, depth), rel, dst).strip('\n'))
-        write(dst, '\n\n'.join(parts) + '\n')
+        # 項目の切れ目がわかるよう、つないだ項目の間に水平線を入れる（見出しだけの項目の後ろには入れない）
+        text = parts[0]
+        for prev, part in zip(parts, parts[1:]):
+            heading_only = '\n' not in prev.strip() and prev.lstrip().startswith('#')
+            text += ('\n\n' if heading_only else '\n\n---\n\n') + part
+        write(dst, text + '\n')
 
     for d in DIRS:
         for dirpath, _, files in os.walk(os.path.join(ROOT, d)):
