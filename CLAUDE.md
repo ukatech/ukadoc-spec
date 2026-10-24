@@ -72,7 +72,7 @@ zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレ�
 
 ## GitHub Pages
 
-`main` に push すると GitHub Actions（`.github/workflows/pages.yml`）が Zensical でビルドし、https://ukatech.github.io/ukadoc-spec/ に公開する。
+`main` に push すると GitHub Actions（`.github/workflows/pages.yml`）が Zensical でビルドし、https://ukatech.shillest.net/ukadoc-spec/ に公開する。
 
 - 原稿はリポジトリ直下にあるため、`scripts/prepare_site.py` が `_site_src/` に写してからビルドする（`INDEX.md` は `index.md`（トップページ）になる）
 - 旧 HTML 版で 1 ページだったもの（`descript/<名前>/`、`list/<名前>/`、`spec/<名前>/` の各ディレクトリ）は、サイトでは 1 ページ（`<ディレクトリ>/index.html`）にまとめて出す。原稿は 1 項目 1 ファイルのまま書き、リンクも `../scope/s-ID.md` や `file.md#見出し` と従来どおり書く。`prepare_site.py` が次のことをする
