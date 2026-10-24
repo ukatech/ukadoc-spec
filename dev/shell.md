@@ -77,9 +77,9 @@ pngを使用していれば大きさ、色数に制限はありませんが、�
 
 !!! tip "ヒント"
 
-    Photoshopをして作成する場合、[ClearBrain Systems](http://homepage3.nifty.com/khsoft/cbs/)の[シェル＆縮小サーフェス制作補助プラグインセット for Photoshop](http://homepage3.nifty.com/khsoft/cbs/software/)を使うと効率よく作業ができると思います。
+    Photoshopをして作成する場合、[ClearBrain Systems](http://homepage3.nifty.com/khsoft/cbs/)（[アーカイブ](https://web.archive.org/web/20100714191818/http://homepage3.nifty.com/khsoft/cbs/)）の[シェル＆縮小サーフェス制作補助プラグインセット for Photoshop](http://homepage3.nifty.com/khsoft/cbs/software/)（[アーカイブ](https://web.archive.org/web/20070103182224/http://homepage3.nifty.com/khsoft/cbs/software/)）を使うと効率よく作業ができると思います。
 
-    また輪郭を識別して「ふち」をつけてくれる「[ふちどり](http://ukiya.sakura.ne.jp/index.php?%E8%87%AA%E4%BD%9C%E3%82%BD%E3%83%95%E3%83%88%E4%B8%80%E8%A6%A7%2F%E3%81%B5%E3%81%A1%E3%81%A9%E3%82%8A%E3%80%82)」というツールが公開されています。
+    また輪郭を識別して「ふち」をつけてくれる「[ふちどり](http://ukiya.sakura.ne.jp/index.php?%E8%87%AA%E4%BD%9C%E3%82%BD%E3%83%95%E3%83%88%E4%B8%80%E8%A6%A7%2F%E3%81%B5%E3%81%A1%E3%81%A9%E3%82%8A%E3%80%82)（[アーカイブ](https://web.archive.org/web/20251119211223/http://ukiya.sakura.ne.jp/index.php?%E8%87%AA%E4%BD%9C%E3%82%BD%E3%83%95%E3%83%88%E4%B8%80%E8%A6%A7%2F%E3%81%B5%E3%81%A1%E3%81%A9%E3%82%8A%E3%80%82)）」というツールが公開されています。
 
 ## descript.txtを書く
 
@@ -155,7 +155,7 @@ version,1
 
     既に旧定義で書かれているsurfaces.txtは、以下のツールを用いて旧定義から新定義に変換する事が可能です。
 
-    - [サクラエディタ用マクロ「SERIKO1to2.js」](http://gallnuts.webcrow.jp/etc/etc.shtml)
+    - [サクラエディタ用マクロ「SERIKO1to2.js」](http://gallnuts.webcrow.jp/etc/etc.shtml)（[アーカイブ](https://web.archive.org/web/20160621201301/http://gallnuts.webcrow.jp/etc/etc.shtml)）
 
       使用方法：[サクラエディタ](http://sakura-editor.sourceforge.net/)を導入し、マクロとして使用します。詳細は付属のreadme.txt。
 
@@ -407,7 +407,7 @@ x方向は右が正、y方向は下が正です。
 
     従って、そうしたサービスの利用を視野に入れる場合には、surface0と10は実体のpngとして用意した方がよいかもしれません。
 
-    なお、こうしたプレビュー表示を行っているサービスとして、更新フィード「[SiReFaSo](https://sirefaso.appspot.com/)」があげられます。
+    なお、こうしたプレビュー表示を行っているサービスとして、更新フィード「[SiReFaSo](https://sirefaso.appspot.com/)（[アーカイブ](https://web.archive.org/web/20170423052451/https://sirefaso.appspot.com/)）」があげられます。
 
 ## readme.txtを書く
 
