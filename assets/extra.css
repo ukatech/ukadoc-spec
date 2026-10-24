@@ -1,11 +1,11 @@
-/* ヘッダの色。旧 HTML 版のヘッダ（iframes.css の #94de84）と同じ薄緑にする。
+/* ヘッダの色。旧 HTML 版のヘッダ（iframes.css の #94de84）と同系統の緑で、明度を下げて白文字にする。
    mkdocs.yml の theme.palette の primary: custom と対 */
 [data-md-color-primary="custom"] {
-  --md-primary-fg-color: #94de84;
-  --md-primary-fg-color--light: #b4eaa7;
-  --md-primary-fg-color--dark: #72c761;
-  --md-primary-bg-color: #14230f;
-  --md-primary-bg-color--light: rgba(20, 35, 15, .7);
+  --md-primary-fg-color: #2e8233;
+  --md-primary-fg-color--light: #4fa053;
+  --md-primary-fg-color--dark: #226426;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, .7);
 }
 
 /* 目次ページなどの一覧を詰めて表示する */
