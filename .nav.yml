@@ -1,0 +1,56 @@
+nav:
+  - index.md
+  - "ファイル構成":
+    - "全体の構成": manual/directory.md
+    - "ゴースト": manual/ghost.md
+    - "シェル": manual/shell.md
+    - "オーナードローメニュー": manual/owner-draw-menu.md
+    - "インストール": manual/install.md
+    - "ネットワーク更新": manual/update.md
+    - "トランスレータ": manual/translator.md
+    - "バルーン": manual/balloon.md
+  - "設定ファイル":
+    - "Ghost":
+      - "descript.txt": descript/ghost
+    - "Shell":
+      - "descript.txt": descript/shell
+      - "surfaces.txt": descript/shell-surfaces
+      - "surfacetable.txt": descript/shell-surfacetable
+    - "Balloon":
+      - "descript.txt": descript/balloon
+    - "Plugin":
+      - "descript.txt": descript/plugin
+    - "Headline":
+      - "descript.txt": descript/headline
+    - "Install/Update":
+      - "install.txt": descript/install
+      - "updates2.dau/updates.txt": spec/update-file
+  - "さくらスクリプト":
+    - "SAKURA Script": list/sakura-script
+    - "Property System": list/propertysystem
+  - "イベント":
+    - "SHIORI":
+      - "SHIORI Event": list/shiori-event
+      - "SHIORI Event（外部）": list/shiori-event-ex
+      - "SHIORI Resource": list/shiori-resource
+    - "PLUGIN":
+      - "PLUGIN Event": list/plugin-event
+  - "規格":
+    - "SHIORI/3.0": spec/shiori3
+    - "SSTP/1.x": spec/sstp
+    - "SAORI over DirectSSTP": spec/saori-ex
+    - "PLUGIN/2.0": spec/plugin.md
+    - "HEADLINE/2.0": spec/headline.md
+    - "DLL": spec/dll.md
+    - "FMO/Mutex": spec/fmo-mutex
+    - "Web関連": spec/web
+  - "HowTo":
+    - "配布用ファイルの作成": dev/nar.md
+    - "ネットワーク更新への対応": dev/update.md
+    - "シェルの作成": dev/shell.md
+    - "着せ替えの設定": dev/bind.md
+    - "オーナードローメニューの設定": dev/ownerdraw.md
+    - "エラーメッセージの解消": dev/shell-error.md
+  - "その他":
+    - "補足: SHIORI Eventとは": memo/shiori-event.md
+    - "メモ": memo/memo.md

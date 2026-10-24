@@ -1,0 +1,18 @@
+title: "さくらスクリプトリスト"
+nav:
+  - index.md
+  - notes_escape.md
+  - notes_lifespan.md
+  - scope
+  - surface
+  - balloon-text
+  - font
+  - wait
+  - choice
+  - choice-marker
+  - event
+  - sound
+  - open
+  - property-system-operation
+  - misc
+  - environment-variable

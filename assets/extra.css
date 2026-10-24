@@ -1,0 +1,10 @@
+/* 目次ページなどの一覧を詰めて表示する */
+.md-typeset ul li > ul {
+  margin-top: 0.2em;
+}
+
+/* 記述例（さくらスクリプト）のコードブロックは折り返して表示する */
+.md-typeset pre > code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}

@@ -1,0 +1,4 @@
+zensical==0.0.67
+mkdocs-awesome-nav==3.3.0
+pymdown-extensions==12.1
+mdx_truly_sane_lists==1.3

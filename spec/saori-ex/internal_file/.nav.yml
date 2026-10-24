@@ -1,0 +1,4 @@
+title: "internal_file"
+nav:
+  - index.md
+  - internal_file_impl.md

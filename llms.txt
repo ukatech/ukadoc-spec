@@ -1,0 +1,24 @@
+# UKADOC
+
+> 伺か（Ukagaka）関連コンテンツ作者向けのリファレンス。SSP 公式仕様書。さくらスクリプト、SHIORI イベント / リソース、設定ファイル（descript.txt / surfaces.txt など）、SHIORI/3.0・SSTP・SAORI・PLUGIN などの規格を、1 項目 1 ファイルの Markdown で収めている。
+
+## 探し方
+
+- 項目名（`OnBoot`、`\![execute,filewatch]` など）で探すときは、ファイル名ではなく本文の H1 を検索する。さくらスクリプトのファイル名は機械的に作った ASCII のスラッグ（例: `\![execute,filewatch]` → `bang-execute-filewatch.md`）で、タグそのものは各ファイルの H1 にコードスパンで書いてある。
+- 各ディレクトリの `index.md` は、その中の項目の一覧（`## 一覧`）で、並びは元の仕様書の並びと同じ。
+- 旧 HTML 版（`manual/*.html`）の URL と id から、このリポジトリのパスを引く表が `migration/id-map.json` にある（キーは `ページ名#id`、例: `list_shiori_event#OnBoot`）。
+
+## 構成
+
+- [INDEX.md](INDEX.md): 全体の目次
+- `manual/`: ファイル構成の解説（ゴースト・シェル・バルーンなど）
+- `descript/`: 設定ファイル（descript.txt、surfaces.txt、install.txt など）の各項目
+- `list/`: さくらスクリプト、プロパティシステム、SHIORI Event / Resource、PLUGIN Event の各項目
+- `spec/`: 規格（SHIORI/3.0、SSTP、SAORI over DirectSSTP、PLUGIN/2.0、HEADLINE/2.0 など）
+- `dev/`: HowTo（配布用ファイルの作成、シェルの作成、着せ替えなど）
+- `memo/`: 補足とメモ
+
+## 書式
+
+- 項目のページは、H1（項目名）、`**カテゴリ:**` 行、説明、`**対応:**` 行（対応ベースウェアと版）、`## 記述例` の順で書く。
+- 編集の規約は [CLAUDE.md](CLAUDE.md) を参照。
