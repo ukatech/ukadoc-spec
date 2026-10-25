@@ -11,6 +11,7 @@
   補足の項目（note-<数>.md）の頭の見出しには bundle-supplement も付ける（見た目は assets/extra.css）
 - まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付け、
   対応のベースウェアの名前を札（bundle-baseware）で包む（見た目は assets/extra.css）
+- manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す（見た目は assets/extra.css）
 原稿そのものは書き換えない。
 """
 import os
@@ -41,6 +42,7 @@ BASEWARE = ['Materia', 'SSP', 'CROW', 'Ninix']   # 札にする名前。足す�
 BASEWARE_PART = re.compile(rf'^({"|".join(BASEWARE)})(?=\s|$)(.*)$')
 NEGATION = re.compile(r'非対応|未対応|廃止')
 NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイル名
+MANUAL_ITEM = re.compile(r'^(- \*\*(?:\\.|[^\\*])+\*\*)(: |:$|$)')   # 一番外の箇条書きの頭の太字の名前（\* と \\ は名前の字）
 
 ERRORS = []
 UNIT = {}      # 元ページ（ROOT からの相対パス）→ (まとめたページ, ページ内の id, {元の見出しの id: まとめたページでの id})
@@ -278,6 +280,20 @@ def add_markers(rel, text):
     return text
 
 
+def mark_manual(text):
+    """manual/ の頁のファイルの箇条書きの頭の名前に {: .manual-item } を足し、名前の後ろの「: 」を外す"""
+    lines = text.split('\n')
+    in_fence = False
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        m = None if in_fence else MANUAL_ITEM.match(line)
+        if m:
+            lines[i] = m.group(1) + '{: .manual-item }' + (' ' if m.group(2) == ': ' else '') + line[m.end():]
+    return '\n'.join(lines)
+
+
 # ---------------------------------------------------------------- 本体
 
 def page_dirs():
@@ -344,7 +360,8 @@ def main():
             for name in sorted(files):
                 rel = os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, '/')
                 if name.endswith('.md') and rel not in bundled:
-                    write(rel, rewrite_links(read(rel), rel, rel))
+                    text = rewrite_links(read(rel), rel, rel)
+                    write(rel, mark_manual(text) if d == 'manual' else text)
     write('index.md', rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md'))
 
     # 左メニュー: まとめたディレクトリは、そのページ（index.md）を指す
