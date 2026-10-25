@@ -27,7 +27,7 @@
 }
 
 /* site-look-list-items: 項目名の帯 */
-.md-typeset .bundle-item {
+.md-typeset :is(.bundle-item, .manual-item) {
   padding: .3em .6em;
   border-left: .3rem solid var(--md-primary-fg-color);
   border-bottom: .05rem solid var(--md-default-fg-color--lighter);
@@ -38,7 +38,7 @@
   background: transparent;
 }
 @media screen {
-  [data-md-color-scheme="slate"] .md-typeset .bundle-item a:not(.headerlink) {
+  [data-md-color-scheme="slate"] .md-typeset :is(.bundle-item, .manual-item) a:not(.headerlink) {
     color: #ffffff;
     text-decoration: underline;
   }
@@ -203,4 +203,28 @@
   background: url("logo.png") center / contain no-repeat;
   -webkit-mask-image: none;
   mask-image: none;
+}
+
+/* site-look-manual-files: ファイル名の帯と説明の字下げ */
+.md-typeset > ul:has(> li > .manual-item, > li > p:first-child > .manual-item) {
+  margin-left: 0;
+}
+.md-typeset > ul > li:has(> .manual-item, > p:first-child > .manual-item) {
+  margin-left: 1.2rem;
+  list-style: none;
+}
+.md-typeset li > p:first-child:has(> .manual-item) {
+  margin-top: 0;
+}
+.md-typeset .manual-item {
+  display: block;
+  margin: .5em 0 .3em -1.2rem;
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* site-look-manual-files: 木のファイル名 */
+.md-typeset .filetree-file {
+  color: var(--md-typeset-a-color);
 }
