@@ -66,3 +66,51 @@
 .md-typeset .bundle-category code {
   color: inherit;
 }
+
+/* site-look-list-items: 記述例の箱 */
+.md-typeset h4:has(+ .highlight) {
+  margin: 1.4em 0 0;
+  padding: .3em .8em;
+  border-radius: .2rem .2rem 0 0;
+  background: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+  font-size: .75rem;
+}
+.md-typeset :is(h4, h4 + .highlight, h4 + .highlight + .highlight, h4 + .highlight + .highlight + .highlight) + .highlight {
+  margin: 0 0 1em;
+  border-left: .35rem solid var(--md-primary-fg-color--dark);
+  background: #eef2f8;
+}
+.md-typeset :is(h4, h4 + .highlight, h4 + .highlight + .highlight, h4 + .highlight + .highlight + .highlight) + .highlight :is(pre, code) {
+  margin: 0;
+  background: transparent;
+}
+.md-typeset :is(h4 + .highlight, h4 + .highlight + .highlight, h4 + .highlight + .highlight + .highlight) + .highlight {
+  border-top: .05rem dashed var(--md-primary-fg-color--dark);
+}
+.md-typeset :is(h4, h4 + .highlight, h4 + .highlight + .highlight) + .highlight:has(+ .highlight) {
+  margin-bottom: 0;
+}
+@media screen {
+  [data-md-color-scheme="slate"] .md-typeset h4:has(+ .highlight) {
+    background: var(--md-primary-fg-color);
+  }
+  [data-md-color-scheme="slate"] .md-typeset :is(h4, h4 + .highlight, h4 + .highlight + .highlight, h4 + .highlight + .highlight + .highlight) + .highlight {
+    border-left-color: #7fa6dc;
+    background: #1d2433;
+  }
+}
+
+/* site-look-list-items: 濃い帯の中の ¶ と検索の強調 */
+.md-typeset :is(.bundle-category, h4:has(+ .highlight)) .headerlink {
+  color: var(--md-primary-bg-color--light);
+}
+.md-typeset :is(.bundle-category, h4:has(+ .highlight)) mark {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+}
+
+/* site-look-list-items: コピーのボタンの手前で折り返す */
+.md-typeset pre > code {
+  padding-right: 2.8em;
+}
