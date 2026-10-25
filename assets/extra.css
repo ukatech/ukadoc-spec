@@ -8,6 +8,13 @@
   --md-primary-bg-color--light: rgba(255, 255, 255, .7);
 }
 
+/* site-look-dark-link-color: 暗い表示のリンクを紺 #1f4e8c と対の明るい紺に（暗い地に 7.56:1） */
+@media screen {
+  [data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+    --md-typeset-a-color: #8fb4e8;
+  }
+}
+
 /* 目次ページなどの一覧を詰めて表示する */
 .md-typeset ul li > ul {
   margin-top: 0.2em;
