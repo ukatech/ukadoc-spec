@@ -8,6 +8,8 @@
 - INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。llms.txt をサイトのルートに置く
 - 生の Markdown 原稿を _raw/ に写す（ビルド後に _site へ重ねる。llms.txt から INDEX.md などを辿れるようにする）
 - まとめた頁の分類と項目の頭の見出しに、役の class（bundle-category・bundle-item）を付ける（見た目は assets/extra.css）
+- まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付け、
+  対応のベースウェアの名前を札（bundle-baseware）で包む（見た目は assets/extra.css）
 原稿そのものは書き換えない。
 """
 import os
@@ -32,6 +34,11 @@ LIST_LINK = re.compile(r'^- \[.*\]\(([^)]+)\)\s*$')
 INDEX_SECTION = '\n## 一覧\n'
 LINK = re.compile(r'\]\(([^)#\s]*)(#[^)\s]*)?\)')
 CATEGORY_LINE = re.compile(r'^\*\*カテゴリ:\*\*.*\n\n?', re.M)
+SUPPORT_LINE = re.compile(r'^\*\*対応:\*\* ?(.*)$')
+DEFAULT_LINE = re.compile(r'^\*\*既定値:\*\*')
+BASEWARE = ['Materia', 'SSP', 'CROW', 'Ninix']   # 札にする名前。足すときは assets/extra.css に明・暗の札の色も足す
+BASEWARE_PART = re.compile(rf'^({"|".join(BASEWARE)})(?=\s|$)(.*)$')
+NEGATION = re.compile(r'非対応|未対応|廃止')
 
 ERRORS = []
 UNIT = {}      # 元ページ（ROOT からの相対パス）→ (まとめたページ, ページ内の id, {元の見出しの id: まとめたページでの id})
@@ -229,6 +236,44 @@ def rewrite_links(text, src, dst):
     return '\n'.join(out)
 
 
+# ---------------------------------------------------------------- 目印
+
+def baseware(part):
+    """対応の部分が名前で始まり、名前の後ろが終わりか空白なら、名前を札で包む（後ろの字はそのまま）"""
+    m = BASEWARE_PART.match(part)
+    if not m or NEGATION.search(m.group(2)):
+        return part
+    return f'<span class="bundle-baseware bundle-baseware-{m.group(1).lower()}">{m.group(1)}</span>{m.group(2)}'
+
+
+def add_markers(rel, text):
+    """対応・既定値の段落の末尾に {: .bundle-support }・{: .bundle-default } を足し、対応の名前を札で包む。
+    注意書き（notes_）の単位は div.bundle-notes で包む"""
+    lines = text.split('\n')
+    in_fence = False
+    mark = None
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        m = SUPPORT_LINE.match(line)
+        if m:
+            lines[i] = line[:m.start(1)] + ' / '.join(baseware(p) for p in m.group(1).split(' / '))
+            mark = 'bundle-support'
+        elif DEFAULT_LINE.match(line):
+            mark = 'bundle-default'
+        # 1 行目の直後に足すと <br /> で続く段落で字が漏れるので、段落の末尾に足す
+        if mark and (i + 1 == len(lines) or lines[i + 1].strip() == ''):
+            lines[i] += f'\n{{: .{mark} }}'
+            mark = None
+    text = '\n'.join(lines)
+    if posixpath.basename(rel).startswith('notes_'):
+        text = f'<div class="bundle-notes" markdown="1">\n\n{text}\n\n</div>'
+    return text
+
+
 # ---------------------------------------------------------------- 本体
 
 def page_dirs():
@@ -282,7 +327,7 @@ def main():
         parts = []
         for rel, depth, is_index, text in units:
             bundled.add(rel)
-            parts.append(rewrite_links(shift_headings(text, rel, depth, is_index), rel, dst).strip('\n'))
+            parts.append(add_markers(rel, rewrite_links(shift_headings(text, rel, depth, is_index), rel, dst).strip('\n')))
         # 項目の切れ目がわかるよう、つないだ項目の間に水平線を入れる（見出しだけの項目の後ろには入れない）
         text = parts[0]
         for prev, part in zip(parts, parts[1:]):
