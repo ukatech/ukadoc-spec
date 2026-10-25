@@ -114,3 +114,59 @@
 .md-typeset pre > code {
   padding-right: 2.8em;
 }
+
+/* site-look-list-markers: 注意書きの節の箱 */
+.md-typeset .bundle-notes {
+  margin: 1em 0;
+  padding: 0 .8rem .4rem;
+  border: .1rem dashed var(--md-default-fg-color--light);
+  border-radius: .2rem;
+  background: var(--md-code-bg-color);
+}
+.md-typeset .bundle-notes > :first-child {
+  margin: 0 -.8rem .6em;
+  padding: .3em .8rem;
+  border-bottom: .05rem dashed var(--md-default-fg-color--light);
+  text-align: center;
+}
+@media screen {
+  [data-md-color-scheme="slate"] .md-typeset .bundle-notes {
+    background: transparent;
+  }
+}
+
+/* site-look-list-markers: 対応のベースウェアの札 */
+.md-typeset .bundle-baseware {
+  display: inline-block;
+  padding: 0 .5em;
+  border: .05rem solid currentColor;
+  border-radius: .2em;
+  font-size: .85em;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.md-typeset .bundle-baseware-materia { color: #6b4500; }
+.md-typeset .bundle-baseware-ssp { color: #185a1c; }
+.md-typeset .bundle-baseware-crow { color: #5a1a85; }
+.md-typeset .bundle-baseware-ninix { color: #0d47a1; }
+@media screen {
+  [data-md-color-scheme="slate"] .md-typeset .bundle-baseware-materia { color: #ffc260; }
+  [data-md-color-scheme="slate"] .md-typeset .bundle-baseware-ssp { color: #81c784; }
+  [data-md-color-scheme="slate"] .md-typeset .bundle-baseware-crow { color: #ce93d8; }
+  [data-md-color-scheme="slate"] .md-typeset .bundle-baseware-ninix { color: #90caf9; }
+}
+
+/* site-look-list-markers: 既定値の札と字下げ */
+.md-typeset p.bundle-default {
+  margin-left: 1.2em;
+}
+.md-typeset p.bundle-default > strong:first-child {
+  display: inline-block;
+  margin-right: .5em;
+  padding: 0 .5em;
+  border: .05rem solid currentColor;
+  border-radius: .2em;
+  color: var(--md-default-fg-color--light);
+  font-size: .75em;
+  line-height: 1.5;
+}
