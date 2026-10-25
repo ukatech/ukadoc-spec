@@ -7,6 +7,7 @@
 - 各 index.md の「## 一覧」が、ディレクトリの項目（.md とサブディレクトリ）と過不足なく一致しているかを検査する
 - INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。llms.txt をサイトのルートに置く
 - 生の Markdown 原稿を _raw/ に写す（ビルド後に _site へ重ねる。llms.txt から INDEX.md などを辿れるようにする）
+- まとめた頁の分類と項目の頭の見出しに、役の class（bundle-category・bundle-item）を付ける（見た目は assets/extra.css）
 原稿そのものは書き換えない。
 """
 import os
@@ -172,17 +173,21 @@ def register_bundle(page_dir):
     return dst, units
 
 
-def shift_headings(text, rel, depth):
+def shift_headings(text, rel, depth, is_index):
     dst, key, olds = UNIT[rel]
+    # 頁の頭（depth 1）と注意書き（notes_）を除き、単位の頭の見出しに役の class を付ける
+    role = ''
+    if depth > 1 and not posixpath.basename(rel).startswith('notes_'):
+        role = ' .bundle-category' if is_index else ' .bundle-item'
     lines = text.split('\n')
     heads = list(fence_free_headings(text))
     ids = list(olds.values())
-    for (i, level, title), new in zip(heads, ids):
+    for n, ((i, level, title), new) in enumerate(zip(heads, ids)):
         new_level = level + depth - 1
         if new_level > 6:
             error(f'{rel}: 見出しが H6 を超える')
             new_level = 6
-        lines[i] = f'{"#" * new_level} {title} {{#{new}}}'
+        lines[i] = f'{"#" * new_level} {title} {{#{new}{role if n == 0 else ""}}}'
     return '\n'.join(lines)
 
 
@@ -277,7 +282,7 @@ def main():
         parts = []
         for rel, depth, is_index, text in units:
             bundled.add(rel)
-            parts.append(rewrite_links(shift_headings(text, rel, depth), rel, dst).strip('\n'))
+            parts.append(rewrite_links(shift_headings(text, rel, depth, is_index), rel, dst).strip('\n'))
         # 項目の切れ目がわかるよう、つないだ項目の間に水平線を入れる（見出しだけの項目の後ろには入れない）
         text = parts[0]
         for prev, part in zip(parts, parts[1:]):
