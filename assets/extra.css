@@ -170,3 +170,18 @@
   font-size: .75em;
   line-height: 1.5;
 }
+
+/* site-look-sakura-script-highlight: 記述例のタグと環境変数 */
+.md-typeset :is(.sakurascript-tag, .sakurascript-env) {
+  border-radius: .15em;
+  background: color-mix(in srgb, currentColor 9%, transparent);
+  font-weight: 700;
+}
+.md-typeset .sakurascript-tag { color: #8a0d4f; }
+.md-typeset .sakurascript-env { color: #7a2e0a; }
+.md-typeset .sakurascript-error { text-decoration: underline wavy #c62828; text-decoration-skip-ink: none; }
+@media screen {
+  [data-md-color-scheme="slate"] .md-typeset .sakurascript-tag { color: #f48fb1; }
+  [data-md-color-scheme="slate"] .md-typeset .sakurascript-env { color: #f6ad7b; }
+  [data-md-color-scheme="slate"] .md-typeset .sakurascript-error { text-decoration-color: #ff8a80; }
+}
