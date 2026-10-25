@@ -63,7 +63,8 @@ Commandヘッダに指定できる文字列と、responseの「追加データ�
   パラメータ2以降：オプション(省略可)<br />
   オプションは以下の通り。<br />
   --event=イベント識別子……イベント識別子を指定すると、レスポンス後に解凍を続け、終わり次第イベントが起きる。識別子がOnではじまる場合はその識別子のイベントが発生し、それ以外の場合はOnExtractArchiveCompleteまたはOnExtractArchiveFailureが発生する。省略時は処理が完了するまでレスポンスが返らない。<br />
-  --password=パスワード……指定したパスワードを使用してパスワード問い合わせなしで展開する。<br />
+  --password=パスワード……指定したパスワードを使用して展開する。\[SSP 2.9.26\] パスワード入力ダイアログは出さない。パスワードが要るのに指定が無い、または違うときは、ダイアログを出さずに失敗する（レスポンスは500、イベントを指定していれば識別子＋Failure、または[OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md)）。\[SSP 2.9.25\]以前は、このオプションが無視されてダイアログが出ていた。<br />
+  \[SSP 2.9.26\] 展開先に`..`を含む絶対パスを指定しても、解決した結果でSSP管理下のフォルダの外なら拒否される（以前は、管理下の外にも展開できた）。<br />
   動作後のイベントに関する仕様は[OnExtractArchiveComplete](../../list/shiori-event/other/OnExtractArchiveComplete.md)・[OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md)を参照。<br />
   \[SSP 2.9.25\] SAORI over DirectSSTPからは、[internal_fileのExtractArchive](../saori-ex/internal_file/internal_file.ExtractArchive.md)でも呼べる（相対パス指定や`/`区切りも書ける）。<br />
   セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br />
