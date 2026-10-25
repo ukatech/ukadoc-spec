@@ -185,3 +185,22 @@
   [data-md-color-scheme="slate"] .md-typeset .sakurascript-env { color: #f6ad7b; }
   [data-md-color-scheme="slate"] .md-typeset .sakurascript-error { text-decoration-color: #ff8a80; }
 }
+
+/* site-look-note-icon: 注釈の見出しの絵 */
+.md-typeset .bundle-notes > :first-child::before,
+.md-typeset .bundle-supplement::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: .35em;
+  vertical-align: -.35em;
+  background: url("logo.png") center / contain no-repeat;
+}
+
+/* site-look-note-icon: 注の題の絵 */
+.md-typeset .note > :is(.admonition-title, summary)::before {
+  background: url("logo.png") center / contain no-repeat;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
