@@ -25,3 +25,44 @@
   white-space: pre-wrap;
   word-break: break-all;
 }
+
+/* site-look-list-items: 項目名の帯 */
+.md-typeset .bundle-item {
+  padding: .3em .6em;
+  border-left: .3rem solid var(--md-primary-fg-color);
+  border-bottom: .05rem solid var(--md-default-fg-color--lighter);
+  background: var(--md-default-fg-color--lightest);
+}
+.md-typeset :is(.bundle-item, .bundle-category) code {
+  padding: 0;
+  background: transparent;
+}
+@media screen {
+  [data-md-color-scheme="slate"] .md-typeset .bundle-item a:not(.headerlink) {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+/* site-look-list-items: 項目の間の詰め */
+.md-typeset:has(.bundle-item) hr {
+  margin: .5em 0;
+}
+.md-typeset:has(.bundle-item) p {
+  margin: .4em 0;
+}
+.md-typeset .bundle-item {
+  margin: .5em 0 .3em;
+}
+
+/* site-look-list-items: 分類の見出しの帯 */
+.md-typeset .bundle-category {
+  padding: .3em .6em;
+  border-radius: .1rem;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 700;
+}
+.md-typeset .bundle-category code {
+  color: inherit;
+}
