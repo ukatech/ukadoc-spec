@@ -5,7 +5,6 @@
 設定ダイアログのヘルプボタンで項目をクリックした際に発生。
 
 - **Reference0**: ダイアログID。種類とページとの対応は以下。
-
   - setup …… 一般
   - ghost …… ゴースト(1)
   - ghost2 …… ゴースト(2)
@@ -21,11 +20,8 @@
   - ipmessenger …… IPMessenger
   - international …… 国際化
   - developer …… 開発/その他
-
 - **Reference1**: ダイアログタイトル。
-
 - **Reference2**: 項目タイプ:項目名。
-
 - **Reference3**: 項目内容テキスト。
 
 **対応:** SSP
