@@ -5,7 +5,6 @@
 Sends information about the hour-by-hour forecast for a day to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
 
 - **Reference0～23**: A comma separated array containing forecast information. The number of the reference corresponds to the number of the hour the data is for, in 24 hour time (e.g.: reference0 is for 00:00/12AM, reference14 is for 14:00/2PM).
-
   - \[0\] - Date and time the information is for.
   - \[1\] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.
   - \[2\] - Temperature in Fahrenheit.
@@ -37,5 +36,4 @@ Sends information about the hour-by-hour forecast for a day to all open ghosts. 
   - \[28\] - Pressure in inches.
   - \[29\] - Pressure in millibars.
   - \[30\] - UV index.
-
 - **Reference24**: The day the preceding information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.
