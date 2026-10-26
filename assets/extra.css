@@ -238,7 +238,9 @@
   overflow-wrap: anywhere;
 }
 @media screen and (min-width: 45em) {
-  .md-typeset .definition-table td:first-child {
-    white-space: nowrap;
+  .md-typeset .definition-table td:first-child > strong:only-child {
+    display: inline-block;
+    width: max-content;
+    max-width: 24em;
   }
 }
