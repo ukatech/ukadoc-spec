@@ -171,19 +171,23 @@
   line-height: 1.5;
 }
 
-/* site-look-sakura-script-highlight: 記述例のタグと環境変数 */
-.md-typeset :is(.sakurascript-tag, .sakurascript-env) {
+/* site-look-sakura-script-highlight: 記述例のタグと環境変数（色付けは site_ext の Pygments レキサー。.nt はタグ、.vg は環境変数、.err は誤り） */
+.md-typeset .language-sakurascript :is(.nt, .vg) {
   border-radius: .15em;
   background: color-mix(in srgb, currentColor 9%, transparent);
   font-weight: 700;
 }
-.md-typeset .sakurascript-tag { color: #8a0d4f; }
-.md-typeset .sakurascript-env { color: #7a2e0a; }
-.md-typeset .sakurascript-error { text-decoration: underline wavy #c62828; text-decoration-skip-ink: none; }
+.md-typeset .language-sakurascript .nt { color: #8a0d4f; }
+.md-typeset .language-sakurascript .vg { color: #7a2e0a; }
+.md-typeset .language-sakurascript .err {
+  color: inherit;
+  text-decoration: underline wavy #c62828;
+  text-decoration-skip-ink: none;
+}
 @media screen {
-  [data-md-color-scheme="slate"] .md-typeset .sakurascript-tag { color: #f48fb1; }
-  [data-md-color-scheme="slate"] .md-typeset .sakurascript-env { color: #f6ad7b; }
-  [data-md-color-scheme="slate"] .md-typeset .sakurascript-error { text-decoration-color: #ff8a80; }
+  [data-md-color-scheme="slate"] .md-typeset .language-sakurascript .nt { color: #f48fb1; }
+  [data-md-color-scheme="slate"] .md-typeset .language-sakurascript .vg { color: #f6ad7b; }
+  [data-md-color-scheme="slate"] .md-typeset .language-sakurascript .err { text-decoration-color: #ff8a80; }
 }
 
 /* site-look-note-icon: 注釈の見出しの絵 */
@@ -224,8 +228,8 @@
   line-height: 1.5;
 }
 
-/* site-look-manual-files: 木のファイル名 */
-.md-typeset .filetree-file {
+/* site-look-manual-files: 木のファイル名（site_ext の Pygments レキサーが .nx で包む） */
+.md-typeset .language-filetree .nx {
   color: var(--md-typeset-a-color);
 }
 

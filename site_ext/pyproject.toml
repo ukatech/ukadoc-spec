@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ukadoc-site"
+version = "0.1.0"
+description = "UKADOC のサイトのための Pygments レキサーと Python-Markdown 拡張"
+requires-python = ">=3.9"
+dependencies = ["pygments", "markdown"]
+
+[tool.setuptools]
+packages = ["ukadoc_site"]
+
+[project.entry-points."pygments.lexers"]
+sakurascript = "ukadoc_site.lexers:SakuraScriptLexer"
+filetree = "ukadoc_site.lexers:FileTreeLexer"

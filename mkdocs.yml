@@ -11,7 +11,8 @@ site_dir: _site
 
 theme:
   name: material
-  # Zensical の既定は modern（新デザイン）。従来の見た目は classic
+  # Zensical の既定は modern（新デザイン）。従来の見た目は classic。
+  # assets/extra.css は classic の class 名・変数（.md-typeset、--md-primary-fg-color など）を前提にしている
   variant: classic
   language: ja
   logo: assets/logo.png
@@ -41,10 +42,6 @@ theme:
 extra_css:
   - assets/extra.css
 
-extra_javascript:
-  - assets/sakurascript.js
-  - assets/filetree.js
-
 plugins:
   - search:
       lang: ja
@@ -56,9 +53,9 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - mdx_truly_sane_lists
-  # コードブロックに言語の印（language-sakurascript など）を残す。色は付けない
+  # コードブロックの class に言語の名前（language-sakurascript など）を付ける。色は site_ext の Pygments レキサーが付ける
   - pymdownx.highlight:
-      use_pygments: false
+      pygments_lang_class: true
   - pymdownx.superfences
   - toc:
       permalink: true

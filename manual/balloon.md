@@ -2,7 +2,7 @@
 
 バルーンフォルダのファイルは以下の通り。
 
-```
+```filetree
 +-(myballoon)
 　　+-descript.txt
 　　+-readme.txt

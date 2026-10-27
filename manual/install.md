@@ -24,7 +24,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
 - **標準的なゴーストの場合**:
 
-  ```
+  ```filetree
   +-(myghost)
   　　+-ghost
   　　+-shell
@@ -42,7 +42,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
       例えばdic_supplement.txtというファイルをghost/master/に追加したいなら
 
-      ```
+      ```filetree
       +-(mysupplement)
       　　+-install.txt
       　　+-developer_options.txt (SSPのみ)
@@ -55,7 +55,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
 - **標準的な追加シェルの場合**:
 
-  ```
+  ```filetree
   +-(additional_shell)
   　　+-install.txt
   　　+-developer_options.txt (SSPのみ)
@@ -70,7 +70,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
 - **標準的なバルーンの場合**:
 
-  ```
+  ```filetree
   +-(myballoon)
   　　+-install.txt
   　　+-developer_options.txt (SSPのみ)
@@ -84,7 +84,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
 - **ゴーストにバルーンなどを同梱する場合**:
 
-  ```
+  ```filetree
   +-(myghost)
   　　+-install.txt
   　　+-developer_options.txt (SSPのみ)
@@ -103,7 +103,7 @@ SSPでは、その制御のために`developer_options.txt`が用意されてい
 
 - **(SSP専用)複数インストール用パッケージ**:
 
-  ```
+  ```filetree
   +-(mypackage)
   　　+-install.txt (package用)
   　　+-(myghost1)

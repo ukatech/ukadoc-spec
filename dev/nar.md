@@ -168,7 +168,7 @@ install.txtへの記述とファイルの構成によって、ゴーストにバ
 
 ファイル構成はこのようになります。
 
-```
+```filetree
 +-(myghost)
 　　+-install.txt
 　　+-developer_options.txt (SSPのみ)
@@ -230,7 +230,7 @@ balloon.refreshundeletemask,hoge.png:huga.txt:...
 
 例えばghost/masterに「dic_supplement.txt」というファイルを追加したいなら、以下のようになります。
 
-```
+```filetree
 +-(mysupplement)
 　　+-install.txt
 　　+-developer_options.txt (SSPのみ)
@@ -254,7 +254,7 @@ accept,対象ゴーストの本体側名
 
 以下のようなファイル構成でアーカイブを作ると、複数の内容を同時にインストールするためのパッケージを作る事ができます。
 
-```
+```filetree
 +-(mypackage)
 　　+-install.txt (package用)
 　　+-(myghost1)

@@ -2,7 +2,7 @@
 
 masterゴーストフォルダのファイルは以下の通り。
 
-```
+```filetree
 +-(myghost)
 　　+-ghost
 　　　　+-master

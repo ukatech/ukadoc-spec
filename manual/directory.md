@@ -10,7 +10,7 @@
 
 従って両者のファイル構成は、下記のようにシェルがゴーストに含まれる形になる。
 
-```
+```filetree
 +-(myghost)
 　　+-ghost
 　　　　+-master
@@ -56,7 +56,7 @@
 
 各バルーン構成ファイルはベースウェアのバルーン格納フォルダ以下に、下記のような形で配置される。
 
-```
+```filetree
 +-(myballoon)
 　　+-descript.txt
 　　+-balloons*s.txt

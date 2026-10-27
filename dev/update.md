@@ -51,7 +51,7 @@ homeurl,http://xxx.yyy/myghost/
 
 従ってどのようなurlになるかはサーバによるのですが、仮にそのサーバのルートディレクトリがhttp://xxx.yyy/であったとして、ネットワーク更新に対応したいゴーストのフォルダ（myghost）が、
 
-```
+```filetree
 +-root
 　　+-ukagaka
 　　　　+-myghost1

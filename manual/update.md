@@ -6,7 +6,7 @@
 
 - **ゴーストの場合**:
 
-  ```
+  ```filetree
   +-(myghost)
   　　+-ghost
   　　+-shell
@@ -21,7 +21,7 @@
 
 - **(SSPのみ)追加シェルをネットワーク更新に対応させる場合**:
 
-  ```
+  ```filetree
   +-(myshell)
   　　+-ghost
   　　+-shell
@@ -36,7 +36,7 @@
 
 - **(SSPのみ)バルーンをネットワーク更新に対応させる場合**:
 
-  ```
+  ```filetree
   +-(myballoon)
   　　+-updates2.dau
   　　+-updates.txt

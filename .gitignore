@@ -3,3 +3,4 @@ _site/
 __pycache__/
 .cache/
 _raw/
+*.egg-info/

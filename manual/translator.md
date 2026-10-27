@@ -6,7 +6,7 @@
 
 ゴースト側で使用する場合はmaster直下に`makoto.dll`がある必要がある。
 
-```
+```filetree
 +-(myghost)
 　　+-ghost
 　　　　+-master
@@ -19,7 +19,7 @@
 
 シェル側で使用する場合は各シェルのフォルダ直下にmakoto.dllがある必要がある。
 
-```
+```filetree
 +-(myghost)
 　　+-shell
 　　　　+-master(またはadditional_shell)

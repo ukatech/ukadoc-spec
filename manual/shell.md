@@ -2,7 +2,7 @@
 
 シェルフォルダのファイルは以下の通り。
 
-```
+```filetree
 +-(myghost)
 　　+-shell
 　　　　+-master
