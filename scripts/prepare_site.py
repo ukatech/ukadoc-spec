@@ -12,6 +12,7 @@
 - まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付ける
   （見た目は assets/extra.css）
 - manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す（見た目は assets/extra.css）
+- トップページの節と目次の分類の見出しに目印（top-section・top-category）を、頭が太字の箇条書きの名前に目印（top-item）を付ける
 原稿そのものは書き換えない。
 
 ここでするのは、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして原稿の写しに付けるところまで。
@@ -43,6 +44,7 @@ CATEGORY_LINE = re.compile(r'^\*\*カテゴリ:\*\*.*\n\n?', re.M)
 SUPPORT_LINE = re.compile(r'^\*\*対応:\*\*')
 DEFAULT_LINE = re.compile(r'^\*\*既定値:\*\*')
 NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイル名
+TOP_HEADING = {2: 'top-section', 3: 'top-category'}   # トップの見出しの段 → 目印
 MANUAL_ITEM = re.compile(r'^(- \*\*(?:\\.|[^\\*])+\*\*)(: |:$|$)')   # 一番外の箇条書きの頭の太字の名前（\* と \\ は名前の字）
 
 ERRORS = []
@@ -271,8 +273,8 @@ def add_markers(rel, text):
     return text
 
 
-def mark_manual(text):
-    """manual/ の頁のファイルの箇条書きの頭の名前に {: .manual-item } を足し、名前の後ろの「: 」を外す"""
+def mark_manual(text, cls='manual-item'):
+    """一番外の箇条書きの頭の太字の名前に {: .<cls> } を足し、名前の後ろの「: 」を外す"""
     lines = text.split('\n')
     in_fence = False
     for i, line in enumerate(lines):
@@ -281,8 +283,17 @@ def mark_manual(text):
             continue
         m = None if in_fence else MANUAL_ITEM.match(line)
         if m:
-            lines[i] = m.group(1) + '{: .manual-item }' + (' ' if m.group(2) == ': ' else '') + line[m.end():]
+            lines[i] = m.group(1) + f'{{: .{cls} }}' + (' ' if m.group(2) == ': ' else '') + line[m.end():]
     return '\n'.join(lines)
+
+
+def mark_top(text):
+    """トップの節（##）と目次の分類（###）の見出しに目印を足し、頭が太字の箇条書きの名前に top-item を付ける"""
+    lines = text.split('\n')
+    for i, level, title in fence_free_headings(text):
+        if level in TOP_HEADING:
+            lines[i] = f'{"#" * level} {title} {{: .{TOP_HEADING[level]} }}'
+    return mark_manual('\n'.join(lines), 'top-item')
 
 
 # ---------------------------------------------------------------- 本体
@@ -353,7 +364,7 @@ def main():
                 if name.endswith('.md') and rel not in bundled:
                     text = rewrite_links(read(rel), rel, rel)
                     write(rel, mark_manual(text) if d == 'manual' else text)
-    write('index.md', rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md'))
+    write('index.md', mark_top(rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md')))
 
     # 左メニュー: まとめたディレクトリは、そのページ（index.md）を指す
     nav = read('.nav.yml')
