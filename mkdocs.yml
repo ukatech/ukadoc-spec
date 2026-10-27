@@ -57,6 +57,8 @@ markdown_extensions:
   - pymdownx.highlight:
       pygments_lang_class: true
   - pymdownx.superfences
+  # 対応のベースウェアの札と、名前と説明の表（site_ext/ukadoc_site/structure.py。prepare_site.py が付けた class を見る）
+  - ukadoc_site.structure
   - toc:
       permalink: true
       toc_depth: 3

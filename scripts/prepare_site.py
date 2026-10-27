@@ -9,12 +9,14 @@
 - 生の Markdown 原稿を _raw/ に写す（ビルド後に _site へ重ねる。llms.txt から INDEX.md などを辿れるようにする）
 - まとめた頁の分類と項目の頭の見出しに、役の class（bundle-category・bundle-item）を付ける。
   補足の項目（note-<数>.md）の頭の見出しには bundle-supplement も付ける（見た目は assets/extra.css）
-- まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付け、
-  対応のベースウェアの名前を札（bundle-baseware）で包む（見た目は assets/extra.css）
+- まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付ける
+  （見た目は assets/extra.css）
 - manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す（見た目は assets/extra.css）
-- 「- **名前**: 説明」だけが 2 つ以上並ぶ箇条書きと、list/ の頁の Reference の箇条書きを、
-  「名前」「説明」の 2 列の表（definition-table）にする（見た目は assets/extra.css）
 原稿そのものは書き換えない。
+
+ここでするのは、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして原稿の写しに付けるところまで。
+class や木の形を見て構造を作る処理（対応のベースウェアの札、名前と説明の表）は、Python-Markdown の拡張
+site_ext/ukadoc_site/structure.py が、コードブロックの色付けは同じ site_ext の Pygments レキサーがする。
 """
 import os
 import posixpath
@@ -38,15 +40,9 @@ LIST_LINK = re.compile(r'^- \[.*\]\(([^)]+)\)\s*$')
 INDEX_SECTION = '\n## 一覧\n'
 LINK = re.compile(r'\]\(([^)#\s]*)(#[^)\s]*)?\)')
 CATEGORY_LINE = re.compile(r'^\*\*カテゴリ:\*\*.*\n\n?', re.M)
-SUPPORT_LINE = re.compile(r'^\*\*対応:\*\* ?(.*)$')
+SUPPORT_LINE = re.compile(r'^\*\*対応:\*\*')
 DEFAULT_LINE = re.compile(r'^\*\*既定値:\*\*')
-BASEWARE = ['Materia', 'SSP', 'CROW', 'Ninix']   # 札にする名前。足すときは assets/extra.css に明・暗の札の色も足す
-BASEWARE_PART = re.compile(rf'^({"|".join(BASEWARE)})(?=\s|$)(.*)$')
-NEGATION = re.compile(r'非対応|未対応|廃止')
 NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイル名
-DEF_ITEM = re.compile(r'^( *)- (\*\*(?:\\.|[^\\*])+\*\*)(?:: |:$)(.*)$')   # 頭が太字の名前で、後ろが「: 」の項目
-REFERENCE = re.compile(r'\*\*Reference(?:\d+|\\\*)(?:～\d*)?\*\*')   # list/ の頁の Reference の名前
-LIST_ITEM = re.compile(r'^ *(?:[-*+]|\d+\.) ')
 MANUAL_ITEM = re.compile(r'^(- \*\*(?:\\.|[^\\*])+\*\*)(: |:$|$)')   # 一番外の箇条書きの頭の太字の名前（\* と \\ は名前の字）
 
 ERRORS = []
@@ -249,16 +245,8 @@ def rewrite_links(text, src, dst):
 
 # ---------------------------------------------------------------- 目印
 
-def baseware(part):
-    """対応の部分が名前で始まり、名前の後ろが終わりか空白なら、名前を札で包む（後ろの字はそのまま）"""
-    m = BASEWARE_PART.match(part)
-    if not m or NEGATION.search(m.group(2)):
-        return part
-    return f'<span class="bundle-baseware bundle-baseware-{m.group(1).lower()}">{m.group(1)}</span>{m.group(2)}'
-
-
 def add_markers(rel, text):
-    """対応・既定値の段落の末尾に {: .bundle-support }・{: .bundle-default } を足し、対応の名前を札で包む。
+    """対応・既定値の段落の末尾に {: .bundle-support }・{: .bundle-default } を足す（札などの構造は ukadoc_site.structure）。
     注意書き（notes_）の単位は div.bundle-notes で包む"""
     lines = text.split('\n')
     in_fence = False
@@ -269,9 +257,7 @@ def add_markers(rel, text):
             continue
         if in_fence:
             continue
-        m = SUPPORT_LINE.match(line)
-        if m:
-            lines[i] = line[:m.start(1)] + ' / '.join(baseware(p) for p in m.group(1).split(' / '))
+        if SUPPORT_LINE.match(line):
             mark = 'bundle-support'
         elif DEFAULT_LINE.match(line):
             mark = 'bundle-default'
@@ -297,88 +283,6 @@ def mark_manual(text):
         if m:
             lines[i] = m.group(1) + '{: .manual-item }' + (' ' if m.group(2) == ': ' else '') + line[m.end():]
     return '\n'.join(lines)
-
-
-def indent(line):
-    return len(line) - len(line.lstrip(' '))
-
-
-def list_end(lines, s, ind):
-    """s 行目から始まる箇条書きの終わり（その次の行の番号）。空行の後ろが ind より深い行なら、項目の続き"""
-    j = s + 1
-    while j < len(lines):
-        if lines[j].strip():
-            if indent(lines[j]) > ind or (indent(lines[j]) == ind and LIST_ITEM.match(lines[j])):
-                j += 1
-                continue
-            return j
-        k = j
-        while k < len(lines) and not lines[k].strip():
-            k += 1
-        if k < len(lines) and indent(lines[k]) > ind:
-            j = k
-            continue
-        return j
-    return j
-
-
-def definition_rows(lines, s, e, ind, references):
-    """箇条書き lines[s:e] を表の行 [(名前, 説明の行, 説明が 1 段落を超えるか)] にする。表にしないなら None"""
-    starts = [i for i in range(s, e) if indent(lines[i]) == ind and LIST_ITEM.match(lines[i])]
-    rows = []
-    for a, b in zip(starts, starts[1:] + [e]):
-        m = DEF_ITEM.match(lines[a])
-        if not m or any(indent(x) <= ind for x in lines[a + 1:b] if x.strip()):
-            return None
-        rest = lines[a + 1:b]
-        block = any(not x.strip() or LIST_ITEM.match(x) or FENCE.match(x) for x in rest)
-        rows.append((m.group(2), [m.group(3)] + rest, block))
-    is_ref = references and all(REFERENCE.fullmatch(r[0]) for r in rows)
-    if any(r[2] for r in rows) and not (is_ref and ind == 0):
-        return None
-    return rows if len(rows) >= 2 or is_ref else None
-
-
-def tabulate(text, references):
-    """「- **名前**: 説明」だけが 2 つ以上並ぶ箇条書き（references なら Reference の箇条書きも）を、名前と説明の表にする"""
-    lines = text.split('\n')
-    out = []
-    in_fence = False
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        if FENCE.match(line):
-            in_fence = not in_fence
-        rows = None
-        if not in_fence and DEF_ITEM.match(line) and (i == 0 or not lines[i - 1].strip()):
-            ind = indent(line)
-            e = list_end(lines, i, ind)
-            rows = definition_rows(lines, i, e, ind, references)
-        if not rows:
-            out.append(line)
-            i += 1
-            continue
-        pad = ' ' * ind
-        # 4 字以上の字下げ（注記の箱の中）では HTML が段落の中の字として読まれるので、印を付けない
-        md = ' markdown="1"' if ind < 4 else ''
-        out += [f'{pad}<div class="definition-table"{md}>', f'{pad}<table{md}>',
-                f'{pad}<thead><tr><th>名前</th><th>説明</th></tr></thead>', f'{pad}<tbody{md}>']
-        for name, desc, block in rows:
-            head = f'{pad}<tr{md}><td{md}>{name}</td>'
-            if not block:
-                out.append(f'{head}<td{md}>{desc[0]}')
-                out += desc[1:]
-                out[-1] += '</td></tr>'
-                continue
-            # 1 段落を超える説明: 字下げを外し、最初の段落の後ろに空行を置き、中の箇条書きも表にする
-            body = [desc[0]] + [x[ind + 2:] for x in desc[1:]]
-            n = next(k for k, x in enumerate(body) if k and (not x.strip() or LIST_ITEM.match(x) or FENCE.match(x)))
-            if body[n].strip():
-                body.insert(n, '')
-            out += [f'{head}<td markdown="block">'] + tabulate('\n'.join(body), references).split('\n') + ['</td></tr>']
-        out += [f'{pad}</tbody>', f'{pad}</table>', f'{pad}</div>']
-        i = e
-    return '\n'.join(out)
 
 
 # ---------------------------------------------------------------- 本体
@@ -440,7 +344,7 @@ def main():
         for prev, part in zip(parts, parts[1:]):
             heading_only = '\n' not in prev.strip() and prev.lstrip().startswith('#')
             text += ('\n\n' if heading_only else '\n\n---\n\n') + part
-        write(dst, tabulate(text, page_dir.startswith('list/')) + '\n')
+        write(dst, text + '\n')
 
     for d in DIRS:
         for dirpath, _, files in os.walk(os.path.join(ROOT, d)):
@@ -448,8 +352,8 @@ def main():
                 rel = os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, '/')
                 if name.endswith('.md') and rel not in bundled:
                     text = rewrite_links(read(rel), rel, rel)
-                    write(rel, tabulate(mark_manual(text) if d == 'manual' else text, False))
-    write('index.md', tabulate(rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md'), False))
+                    write(rel, mark_manual(text) if d == 'manual' else text)
+    write('index.md', rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md'))
 
     # 左メニュー: まとめたディレクトリは、そのページ（index.md）を指す
     nav = read('.nav.yml')
