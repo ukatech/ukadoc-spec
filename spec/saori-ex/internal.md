@@ -12,7 +12,7 @@ SSPが内蔵している、名前が`internal_`で始まるモジュールの共
 - オプションは位置引数より後ろにだけ書けます。省略できる位置引数を飛ばしてオプションを書くときは、空の引数を置いてください。
 - オプションの名前は大文字小文字を区別しません。同じ名前を2回書くと後のものが有効です。
 - 位置引数より後ろにある`--`で始まらない値、関数が受け付けないオプションは400（`invalid parameter`）です。
-- \[SSP 2.9.25\] 位置引数の数が決まっていない関数（[internal_fileのMediaInfo](internal_file/internal_file.MediaInfo.md)）は、2番目以降の位置で最初に`--`で始まる値から後ろをオプションとして読みます。
+- \[SSP 2.9.25\] 位置引数の数が決まっていない関数（[internal_fileのMediaInfo](internal_file/internal_file.MediaInfo.md)と、\[SSP 2.9.27\] [ImageInfo](internal_file/internal_file.ImageInfo.md)）は、2番目以降の位置で最初に`--`で始まる値から後ろをオプションとして読みます。
 - どの関数も[`--async=識別子`](async.md)を受け付けます。
 
 ```

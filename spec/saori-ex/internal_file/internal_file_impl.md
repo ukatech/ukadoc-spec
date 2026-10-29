@@ -9,7 +9,13 @@ MediaInfoは、他のOSのベースウェアでも既存の部品（ffprobe / li
 
 ffprobe / libavformatで実装するときの目安：
 
-- `duration`は`format.duration`。`width` / `height`は、動画は映像ストリーム、画像は画像自体の値。
+- `duration`は`format.duration`。`width` / `height`は、動画は映像ストリームの値。
 - OggやOpusのタグは`format.tags`ではなく`streams[].tags`にある。
 - MP3やM4Aの埋め込みジャケット画像は、`attached_pic`つきの映像ストリームとして報告される。これを映像と数えないと、音声が`video`になってしまう。
 - `track`（`3/12`の形）と`date`（`2024-05-06`の形）は、仕様の`track`（曲番号だけ）と`year`（先頭の4桁）の形に整える必要がある。
+
+## ImageInfo / IsMediaLoadable / IsImageLoadable を実装するとき
+
+- **ImageInfo**は、MediaInfoと同じ守り方（キー・単位・取れなかった値は空文字・パスの扱い）。画像自体の画素数が取れたときだけ`Result`を`image`にし、音声・動画のファイルでは`Value`をすべて空にする。
+- **IsMediaLoadable / IsImageLoadable**の4段階（`none` / `read` / `embed` / `write`）は、そのベースウェア自身の能力を答えるもの。`embed`は「ゴーストの素材（サーフェス・バルーンの画像、`\![sound]`の音声など）として自分が読み込めること」、`write`は「自分がその形式で書き出せること」。何を`read`と`embed`に分けるかは実装によって違ってよい。後のレベルは前のレベルを含む。
+- 判定の根拠（ヘッダか拡張子か）は決めない。ファイルが無い、フォルダのときは400（`file not found`）で、それ以外はエラーにせず、読めないときは`none`を返す。
