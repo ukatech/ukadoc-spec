@@ -1,6 +1,6 @@
 # 送信側の手順
 
-SHIORIなどの送信側は、次の手順でSAORI over DirectSSTPを使います。
+SHIORIなどの送信側は次の手順でSAORI over DirectSSTPを使います。
 
 1. [FMO](../fmo-mutex/index.md)などから、自分のゴーストの窓（`hwnd`）を得る。
 2. 返事を受ける窓を用意する。
@@ -8,7 +8,7 @@ SHIORIなどの送信側は、次の手順でSAORI over DirectSSTPを使いま�
 4. ゴーストの窓へ`WM_COPYDATA`（`dwData = 9801`）をSendMessage系の関数で送る。
 5. 返事を受ける窓に`WM_COPYDATA`（`dwData = 9801`）で届いた、`SAORI/`で始まるデータを応答として読む。
 
-使えるかどうかは、最初に[GET Version](directsstp.md)で確かめてください。
+使えるかどうかは最初に[GET Version](directsstp.md)で確かめてください。
 
 ## 記述例
 

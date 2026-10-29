@@ -1,6 +1,6 @@
 # 互換モジュール
 
-SSPは、よく使われていた次のSAORI DLLの互換の機能を内蔵しています。ゴーストがこれらのDLLをloadすると、SSPはDLLを読まずに内蔵の機能に差し替えます（ファイル名で判定します）。<br />
+SSPはよく使われていた次のSAORI DLLの互換の機能を内蔵しています。ゴーストがこれらのDLLをloadすると、SSPはDLLを読まずに内蔵の機能に差し替えます（ファイル名で判定します）。<br />
 \[SSP 2.9.13\] これらはDirect SSTPからも、DLL名から`.dll`を除いた名前（`Module: string`など）で呼べます。引数と戻り値は原作のSAORIのままです。
 
 `houchi` `clipcopy` `textcopy` `saori_ip` `saori_cpuid` `mciaudio` `cpuusage` `httpc` `string` `hanayu`

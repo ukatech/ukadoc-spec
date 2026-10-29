@@ -1,6 +1,6 @@
 # internal_file
 
-ファイルそのものを対象にする処理。（ファイルの中身をバイト列として読むだけの処理は、`internal_crypto`の`Digest` / `HMAC`の`--data-in=file`のように、それぞれの関数が受け付けます。）
+ファイルそのものを対象にする処理。（ファイルの中身をバイト列として読むだけの処理は、`internal_crypto`の`Digest` / `HMAC`の`--data-in=file`のように、それぞれの関数が受け付ける。）
 
 ## 一覧
 
