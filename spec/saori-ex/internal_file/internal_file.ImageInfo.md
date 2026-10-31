@@ -10,7 +10,7 @@
 音声・動画のタグや長さは[MediaInfo](internal_file.MediaInfo.md)で読む。
 
 - **Argument1**: ファイルのパス。相対パスはゴーストのフォルダ（ghost/master）が基準。区切りは`/`も`\`も書ける。ゴーストなしの呼び出しで相対パスを渡すと400（`ghost required`）。ファイルが無い（フォルダを含む）ときは400（`file not found`）。URLは受け付けない。
-- **Argument2以降**: 欲しい値のキー。1個以上必須（1個もなければ400 `invalid parameter`）で、11個まで。キーは大文字小文字を区別しない。
+- **Argument2以降**: 欲しい値のキー。1個以上必須（1個もなければ400 `invalid parameter`）で、11個まで（12個以上は400 `invalid parameter`）。キーは大文字小文字を区別しない。
 
 キーは次のとおり。値は10進の整数の文字列。
 

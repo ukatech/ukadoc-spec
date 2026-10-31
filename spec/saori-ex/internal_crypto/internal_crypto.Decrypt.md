@@ -3,7 +3,7 @@
 **カテゴリ:** internal_crypto
 
 [Encrypt](internal_crypto.Encrypt.md)の暗号文を復号する。<br />
-復号できなければ500（`authentication failed`）。認証付き暗号では暗号文・認証タグ・`--aad=`のどれかが違えばこれになる。CBCではパディングが合わないときにこれになる。CTRは間違った鍵でも何かしらの値を返す。
+復号できなければ500（`authentication failed`）。認証付き暗号では暗号文・認証タグ・`--aad=`のどれかが違えばこれになる。CBCではパディングが合わないときにこれになる。暗号文が、先頭のnonce / IV（認証付き暗号では、それに加えて末尾の認証タグ）より短いときも、これになる。認証の付かないCTRと`chacha20`は、間違った鍵でも何かしらの値を返す。
 
 - **Argument1**: アルゴリズム名
 - **Argument2**: key（既定の形式は`text`）
