@@ -51,7 +51,7 @@ SAORIの要求はSSTPログに記録されません。
 モジュールが使えるかどうかは、`GET Version SAORI/1.0`に`Module`を付けて送って確かめます。使えれば`SAORI/1.0 200 OK`（SSPでは`Result: SSP Internal`）が返ります。<br />
 この拡張に対応していないSSP（2.9.12以前）はSAORI/1.0の要求をSSTPの要求として読み、SSTPのエラー（`GET Version`には`SSTP/1.0 501 Not Implemented`、`EXECUTE`には`SSTP/1.0 400 Bad Request`）を返します。<br />
 送信側は「`SAORI/1.0 200`で始まる返事でなければ使えない」「返事が来なければ使えない」と判定してください。<br />
-SSPの内蔵モジュールとその関数の一覧は、[internal_system](internal_system/index.md)で取れます。
+SSPの内蔵モジュールとその関数の一覧は、[internal_system](internal_system/index.md)で取れます。関数が受け付けるオプションやアルゴリズム名（新しいSSPで増えたものを含む）は、[Describe](internal_system/internal_system.Describe.md)で調べられます。
 
 ## ErrorDescription
 

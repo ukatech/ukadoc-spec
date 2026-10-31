@@ -13,7 +13,7 @@ SSPが内蔵している、名前が`internal_`で始まるモジュールの共
 - オプションの名前は大文字小文字を区別しません。同じ名前を2回書くと後のものが有効です。
 - `=`の無い`--名前`は、値が空の`--名前=`と同じです。値が空のオプションも書けます（`--aad=`は「空の追加認証データ」になります）が、空では意味をなさないもの（`--async=`、`--iv=`など）は、その関数の失敗（多くは400 `invalid parameter`）になります。
 - 数値を受け取る引数とオプションは10進の整数で、符号（`+` `-`）を付けられます。空白・16進・小数は書けません。数値として読めなければ400（`invalid parameter`）、64ビットの符号付き整数に収まらなければ400（`out of range`）です。値の範囲は関数ごとに決まっています。
-- 位置引数より後ろにある`--`で始まらない値、関数が受け付けないオプションは400（`invalid parameter`）です。
+- 位置引数より後ろにある`--`で始まらない値、関数が受け付けないオプションは400（`invalid parameter`）です。新しいSSPで増えたオプションを古いSSPに渡すとこうなるので、使えるかどうかは[internal_systemのDescribe](internal_system/internal_system.Describe.md)で調べられます。
 - \[SSP 2.9.25\] 位置引数の数が決まっていない関数（[internal_fileのMediaInfo](internal_file/internal_file.MediaInfo.md)と、\[SSP 2.9.27\] [ImageInfo](internal_file/internal_file.ImageInfo.md)）は、2番目以降の位置で最初に`--`で始まる値から後ろをオプションとして読みます。
 - どの関数も[`--async=識別子`](async.md)を受け付けます。
 

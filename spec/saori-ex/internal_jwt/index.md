@@ -4,7 +4,7 @@ JWT（RFC 7519）の作成と検証。形式はJWSのコンパクト形式（`�
 algは次のとおり（引数・`--alg=`では大文字小文字を区別しない）。`none`を含め、これ以外は400（`unsupported algorithm`）。
 
 - **HS256 / HS384 / HS512**: HMAC（共通鍵）。鍵は`--key-in=`の形式（既定は`text`。文字列はUTF-8）で渡す。鍵はハッシュの長さ以上（HS256は32バイト、HS384は48バイト、HS512は64バイト）でなければ400（`invalid key`。RFC 7518の要求）。
-- **RS256 / PS256 / ES256 / EdDSA**: 公開鍵暗号。鍵の渡し方と方式の詳細は[internal_cryptoの公開鍵暗号](../internal_crypto/internal_crypto_pkey.md)と同じ（`EdDSA`はEd25519だけ）。`--key-in=`は使えない（400 `invalid parameter`）。
+- **RS256 / RS384 / RS512 / PS256 / PS384 / PS512 / ES256 / ES384 / ES512 / EdDSA**: 公開鍵暗号。鍵の渡し方と方式の詳細は[internal_cryptoの公開鍵暗号](../internal_crypto/internal_crypto_pkey.md)と同じ（`EdDSA`はEd25519だけ。`ES256` / `ES384` / `ES512`の曲線は、それぞれP-256 / P-384 / P-521）。`--key-in=`は使えない（400 `invalid parameter`）。\[SSP 2.9.27\] `RS384` `RS512` `PS384` `PS512` `ES384` `ES512`が加わった。
 
 ## 一覧
 
