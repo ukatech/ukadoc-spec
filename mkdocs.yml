@@ -42,6 +42,10 @@ theme:
 extra_css:
   - assets/extra.css
 
+# 翻訳ボタン（ブラウザ組み込みの Translator API。無いブラウザではボタンを出さない）
+extra_javascript:
+  - assets/translate.js
+
 plugins:
   - search:
       lang: ja

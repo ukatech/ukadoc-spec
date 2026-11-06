@@ -91,11 +91,16 @@ zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレ�
   - 「## 一覧」の順に、ディレクトリ内の全 `.md` をつなぐ。見出しは入れ子の深さの分だけずらし（ページ H1 → カテゴリ H2 → 項目 H3 → 項目内の節 H4。H6 を超えるとエラー）、`{#id}` で一意な id を振る。項目の id は、ファイル名（重なるときはディレクトリからのパス）で、項目内の節は `項目の id-元の見出しの id` になる（例: `#OnBoot`、`#bang-lock-repaint-記述例`）
   - まとめた項目へのリンクを、まとめたページの見出しへのリンクに書き換える（飛び先の見出しが無いとエラー）
   - `**カテゴリ:**` の行は、親の見出しが示すのでサイトでは省く
-- 見た目のための構造は、Zensical のカスタマイズの方法（`extra_css`、Markdown 拡張、Pygments）に載せている。JavaScript は使わない
+- 見た目のための構造は、Zensical のカスタマイズの方法（`extra_css`、Markdown 拡張、Pygments）に載せている。JavaScript は使わない（例外は、ヘッダの翻訳ボタン `assets/translate.js` だけ。下記）
   - `prepare_site.py` は、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして `_site_src/` の写しに付けるところまで（`bundle-item` `bundle-support` `manual-item` など）
   - class と木の形を見て作る構造は、`site_ext/ukadoc_site/structure.py`（Python-Markdown の Treeprocessor。`mkdocs.yml` の `markdown_extensions` に `ukadoc_site.structure`）がする。対応のベースウェアの札（`Materia` `SSP` `CROW` `Ninix`。足すときは `assets/extra.css` の札の色も足す）と、名前と説明の表
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）
   - 見た目は `assets/extra.css`（`mkdocs.yml` の `extra_css`）。`theme.variant: classic` の class 名と変数を前提にしている
+  - 翻訳ボタンは `assets/translate.js`（`mkdocs.yml` の `extra_javascript`。見た目は `assets/extra.css` の `.ukadoc-translate`）。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文と左メニューを日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない
+    - 訳すのは日本語を含むテキストノードだけ（`code` `pre` `kbd` と `translate="no"` の中は訳さない）。画面に近づいた所から順に訳す。選んだ言語は localStorage に覚え、モデルが取得済みなら次の頁でも自動で訳す
+    - 読める程度の品質でよいとしている。原稿のほうで、訳したくない語を `<span translate="no">…</span>` で囲むこともできる
+    - 言語を足すときは `translate.js` の `LANGS` に足す
+    - 動作の確認は、Translator API のあるブラウザで `zensical serve` を開いて行う（Node では API が無いので、偽の `Translator` で試す）
 - `manual/` `dev/` `memo/` と、ディレクトリを持たない `spec/*.md` は、1 ファイル 1 ページのまま
 - 設定は `mkdocs.yml`。左メニューの章立ては、ルートの `.nav.yml`（mkdocs-awesome-nav）だけで決める（ディレクトリごとの `.nav.yml` は置かない）
 - `llms.txt`（AI エージェント向けの探し方の案内。`INDEX.md` と各ディレクトリの入口だけを書く）はサイトのルートに置かれる。ページごとの一覧は載せないので、ページを足しても直さなくてよい。ディレクトリを足したときは「構成」に 1 行足す
