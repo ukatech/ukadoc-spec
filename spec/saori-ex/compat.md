@@ -14,7 +14,7 @@ SSPはよく使われていた次のSAORI DLLの互換の機能を内蔵して�
 
 ukiya氏の`Osuwari.dll`の互換。ゴーストのウインドウを、前面のウインドウ・指定したウインドウ・画面の矩形に追尾させる（`\![set,alignmenttodesktop,osuwari,…]`と同じ処理で、オプションの意味もそちらに書いてあります）。引数は原作と同じ位置引数です。
 
-- `START`: `Argument1`から順に、制御対象のHWND / 追尾対象（`ACTIVE` `FIX` `@タイトル` `#ハンドル`） / 原点（`TL` `TR` `BL` `BR`） / xのずれ / yのずれ / 更新間隔（ミリ秒。0は100） / (省略可)オプション（`XMOVE` `YMOVE` `NOCLIP`をスペース区切り） / (省略可)座れないときの指定（`DESKTOP` `WORKAREA`と、`CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`をスペース区切り） / (省略可)見切れマージン（`左_上_右_下`）。
+- `START`: `Argument1`から順に、制御対象のHWND / 追尾対象（`ACTIVE` `FIX` `@タイトル` `#ハンドル`） / 原点（`TL` `TR` `BL` `BR`） / xのずれ / yのずれ / 更新間隔（ミリ秒。0は100） / (省略可)オプション（`XMOVE` `YMOVE` `NOCLIP` `BACK`をスペース区切り。`BACK`は対象のウインドウのすぐ奥に座る。原作にはない） / (省略可)座れないときの指定（`DESKTOP` `WORKAREA`と、`CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`をスペース区切り） / (省略可)見切れマージン（`左_上_右_下`）。
   - 7つめの引数以降を省略すると、前回の`START`の値を引き継ぎます。
   - 制御対象のHWNDは、`OnHWND`イベント（`hwnd`）で通知される、**そのゴーストのキャラクターのウインドウ**だけを指定できます。他のウインドウは動かしません（見つからなければ500）。
 - `STOP`: SAORIが設定したお座りを止め、アラインをゴースト・シェルの既定（`descript.txt`）へ戻します。`descript.txt`の既定がosuwariなら、osuwariに座り直します。`\![set,alignmenttodesktop,osuwari,…]`で設定したものは止めません。SAORIのアンロード（SHIORIの再読み込みを含む）でも止まります。
