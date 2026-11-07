@@ -17,7 +17,7 @@ ukiya氏の`Osuwari.dll`の互換。ゴーストのウインドウを、前面�
 - `START`: `Argument1`から順に、制御対象のHWND / 追尾対象（`ACTIVE` `FIX` `@タイトル` `#ハンドル`） / 原点（`TL` `TR` `BL` `BR`） / xのずれ / yのずれ / 更新間隔（ミリ秒。0は100） / (省略可)オプション（`XMOVE` `YMOVE` `NOCLIP`をスペース区切り） / (省略可)座れないときの指定（`DESKTOP` `WORKAREA`と、`CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`をスペース区切り） / (省略可)見切れマージン（`左_上_右_下`）。
   - 7つめの引数以降を省略すると、前回の`START`の値を引き継ぎます。
   - 制御対象のHWNDは、`OnHWND`イベント（`hwnd`）で通知される、**そのゴーストのキャラクターのウインドウ**だけを指定できます。他のウインドウは動かしません（見つからなければ500）。
-- `STOP`: SAORIが設定したお座りを止め、アラインをシェルの既定へ戻します。`\![set,alignmenttodesktop,osuwari,…]`で設定したものは止めません。SAORIのアンロード（SHIORIの再読み込みを含む）でも止まります。
+- `STOP`: SAORIが設定したお座りを止め、アラインをゴースト・シェルの既定（`descript.txt`）へ戻します。`descript.txt`の既定がosuwariなら、osuwariに座り直します。`\![set,alignmenttodesktop,osuwari,…]`で設定したものは止めません。SAORIのアンロード（SHIORIの再読み込みを含む）でも止まります。
 - 成功は204、引数が足りない・解釈できないときは400、制御対象のHWNDが見つからないときは500（`source window is not exist`）です。
 - 原作との違い: 矩形は見た目の枠で測る / 画面は対象のウインドウのいるモニタ（見切れは全モニタ合成） / `DESKTOP`を指定したときに`side`が常に`TOP`になる原作の不具合は無い / 最小化・非表示のウインドウには座らない / シェルの`descript.txt`に`seriko.alignmenttodesktop,free`は要らない。
 - 名前を変えたDLL（`osuwari0.dll`など）は互換の対象になりません。本物のDLLが読まれます。
