@@ -249,6 +249,82 @@
   }
 }
 
+/* site-look-paper: 紙面。地を薄い藍にして、本文を白い紙のパネルに載せる（旧 HTML 版の「書類」の輪郭） */
+:root {
+  --ukadoc-ground: #e9edf5;
+  --ukadoc-paper: #ffffff;
+  --ukadoc-rule: #b8c4da;
+}
+[data-md-color-scheme="slate"] {
+  --ukadoc-ground: #151a26;
+  --ukadoc-paper: #1c2231;
+  --ukadoc-rule: #36405a;
+}
+@media screen {
+  .md-main {
+    background: var(--ukadoc-ground);
+  }
+  .md-content__inner {
+    margin: 1rem .4rem 1.5rem;
+    padding: .2rem 1.6rem 1.4rem;
+    border: .05rem solid var(--ukadoc-rule);
+    border-radius: .2rem;
+    background: var(--ukadoc-paper);
+  }
+  .md-content__inner::before {
+    display: none;
+  }
+}
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 76rem;
+  }
+}
+
+/* site-look-title: ページ題を一番強くする（既定は細い灰色で、本文より弱く見える） */
+.md-typeset h1 {
+  margin: .8em 0 .9em;
+  padding-bottom: .25em;
+  border-bottom: .2rem solid var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--md-typeset-a-color);
+  border-bottom-color: var(--md-primary-fg-color--light);
+}
+
+/* site-look-nav: 左の目次は長いタグ名も省略せず折り返す。項目名はコードの灰色の地を付けない */
+.md-nav__link {
+  overflow-wrap: anywhere;
+}
+.md-nav__link .md-ellipsis,
+.md-nav__link > * {
+  white-space: normal;
+  text-overflow: clip;
+}
+.md-sidebar code {
+  margin: 0 .1em;
+  padding: 0;
+  background: transparent;
+  font-size: .95em;
+}
+/* 紙面の地の色に合わせて、固定の見出しのぼかしの白を消す */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar .md-nav__title,
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    background: var(--ukadoc-ground);
+    box-shadow: 0 0 .4rem .4rem var(--ukadoc-ground);
+  }
+}
+
+/* site-look-items: 項目と項目の間をはっきり空ける */
+.md-typeset .bundle-item {
+  margin: 2.2em 0 .6em;
+}
+
 /* ヘッダの翻訳ボタン（assets/translate.js）。Translator API が無いブラウザでは、ボタン自体を出さない */
 .ukadoc-translate {
   position: relative;
