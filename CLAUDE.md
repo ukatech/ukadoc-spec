@@ -97,7 +97,7 @@ zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレ�
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）
   - 見た目は `assets/extra.css`（`mkdocs.yml` の `extra_css`）。`theme.variant: classic` の class 名と変数を前提にしている
   - 翻訳ボタンは `assets/translate.js`（`mkdocs.yml` の `extra_javascript`。見た目は `assets/extra.css` の `.ukadoc-translate`）。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文と左メニューを日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない
-    - 訳すのは日本語を含むテキストノードだけ（`code` `pre` `kbd` と `translate="no"` の中は訳さない）。画面に近づいた所から順に訳す。選んだ言語は localStorage に覚え、モデルが取得済みなら次の頁でも自動で訳す
+    - 訳すのは日本語を含む文だけ（`code` `pre` `kbd` と `translate="no"` の中は訳さない）。文はブロック（`p` `li` `td` など）の中の連なりを単位にまとめて訳し、リンク・太字・コードスパンは印（`<x1/>` `<a2>…</a2>`）に置き換えて訳してから元の要素へ戻す（印が崩れた文は断片ごとの訳に切り替える）。画面に近づいた所から順に訳す。選んだ言語は localStorage に覚え、モデルが取得済みなら次の頁でも自動で訳す
     - 読める程度の品質でよいとしている。原稿のほうで、訳したくない語を `<span translate="no">…</span>` で囲むこともできる
     - 言語を足すときは `translate.js` の `LANGS` に足す
     - 動作の確認は、Translator API のあるブラウザで `zensical serve` を開いて行う（Node では API が無いので、偽の `Translator` で試す）
