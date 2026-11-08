@@ -7,7 +7,7 @@
 
 ## 結果を届けるイベント
 
-- **イベント名**: 識別子が`On`で始まれば（大文字小文字を区別する）、成功時はその名前、失敗時は「識別子＋`Failure`」。既存のイベントの名前（`OnBoot`など）を識別子にすると、そのイベントとして届いてしまうので避ける。<br />
+- **イベント名**: 識別子が`On`で始まれば（大文字小文字を区別する）、成功時はその名前、失敗時は「識別子＋`Failure`」。既存のイベントの名前（`OnBoot`など）を識別子にすると、そのイベントとして届いてしまうので避けてください。<br />
   そうでなければ、成功時は[OnInternalSaoriComplete](../../list/shiori-event/other/OnInternalSaoriComplete.md)、失敗時は[OnInternalSaoriFailure](../../list/shiori-event/other/OnInternalSaoriFailure.md)。
 - **成功時のReference**: Reference0＝識別子、Reference1＝結果（同期の呼び出しの`Result`）、Reference2＝モジュール名、Reference3＝関数名、Reference4以降＝`Value0`以降。
 - **失敗時のReference**: Reference0＝識別子、Reference1＝失敗理由（同期の呼び出しの`ErrorDescription`と同じ文字列）、Reference2＝モジュール名、Reference3＝関数名。
