@@ -9,6 +9,7 @@ ZIPファイルの圧縮をする。指定はフルパスで行うことを推�
 - --password=パスワード……指定したパスワードを使用してAES暗号化ZIPを有効にする。
 
 動作後のイベントに関する仕様は[OnCompressArchiveComplete](../../shiori-event/other/OnCompressArchiveComplete.md)・[OnCompressArchiveFailure](../../shiori-event/other/OnCompressArchiveFailure.md)を参照。<br />
+ディレクトリ名にはフォルダを指定する。\[SSP 2.9.33\] フォルダでない（ファイルのパスなど）ときは、圧縮せずに失敗する（`--event=`を付けていれば、失敗のイベント（OnCompressArchiveFailure、または識別子に`Failure`を付けたもの）の`Reference1`が`invalid parameter`になる）。<br />
 セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br />
 また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 

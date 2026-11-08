@@ -54,6 +54,7 @@ Commandヘッダに指定できる文字列と、responseの「追加データ�
   --password=パスワード……指定したパスワードを使用してAES暗号化ZIPを有効にする。<br />
   動作後のイベントに関する仕様は[OnCompressArchiveComplete](../../list/shiori-event/other/OnCompressArchiveComplete.md)・[OnCompressArchiveFailure](../../list/shiori-event/other/OnCompressArchiveFailure.md)を参照。<br />
   \[SSP 2.9.25\] SAORI over DirectSSTPからは、[internal_fileのCompressArchive](../saori-ex/internal_file/internal_file.CompressArchive.md)でも呼べる（相対パス指定や`/`区切りも書ける）。<br />
+  \[SSP 2.9.33\] パラメータ1がフォルダでない（ファイルのパスなど）ときは、圧縮せずに400で失敗する（`--event=`を付けていれば、失敗のイベント（OnCompressArchiveFailure、または識別子に`Failure`を付けたもの）が`invalid parameter`で起きる）。それ以前は、ファイルのパスを渡すと圧縮に失敗した（`file not found`）。<br />
   セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br />
   また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。<br />
   追加データなし(ステータスコード200番台で成功)

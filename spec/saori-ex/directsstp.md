@@ -17,13 +17,13 @@ Argument1: sha256
 Argument2: abc
 ```
 
-- **Module**: 【必須】呼び出すモジュールの名前。DLL名から`.dll`を除いた形で書く（例：`internal_crypto`、`string`）。大文字小文字は区別しない。<br />
+- **Module**: 【必須】呼び出すモジュールの名前。DLL名から`.dll`を除いた形で書きます（例：`internal_crypto`、`string`）。大文字小文字は区別しません。<br />
   無ければ400（`ErrorDescription: invalid parameter`）、知らないモジュールなら400（`ErrorDescription: unknown module`）。
 - **HWnd**: 返事を受ける窓。省略時は`WM_COPYDATA`の`wParam`の窓（Direct SSTPのSSTPと同じ規則）。
-- **Charset**: 要求の文字コード。応答も同じ文字コードで返る。
-- **SecurityLevel**: Direct SSTPでは常に`Local`として扱う（ヘッダの値は見ない）。
-- **Sender**: 呼び出し元の名前。ベースウェアは使わない。
-- **Argument\[n\]**: 引数。SAORI/1.0と同じ。
+- **Charset**: 要求の文字コード。応答も同じ文字コードで返ります。
+- **SecurityLevel**: Direct SSTPでは常に`Local`として扱います（ヘッダの値は見ません）。
+- **Sender**: 呼び出し元の名前。ベースウェアは使いません。
+- **Argument\[n\]**: 引数。SAORI/1.0と同じです。
 
 ## 応答の受け取り
 
@@ -58,10 +58,10 @@ SSPの内蔵モジュールとその関数の一覧は、[internal_system](inter
 失敗したときは、応答に`ErrorDescription`ヘッダで失敗理由（固定の英語の文字列）が付きます。SAORI/1.0の原典には無いヘッダで、SHIORI/3.0の同名のヘッダにならっています。<br />
 どのモジュールでも使うものは次のとおりです。ほかは各モジュールの説明を参照してください。
 
-- **direct sstp only**: 400。Direct SSTP以外の経路で送った。
-- **unknown module**: 400。`Module`のモジュールが無い。
-- **unknown function**: 400。関数名（`Argument0`）がモジュールに無い。
-- **ghost required**: 400。呼び出し元のゴーストが分からないのに、ゴーストに依存する処理を求めた。
+- **direct sstp only**: 400。Direct SSTP以外の経路で送ったとき。
+- **unknown module**: 400。`Module`のモジュールが無いとき。
+- **unknown function**: 400。関数名（`Argument0`）がモジュールに無いとき。
+- **ghost required**: 400。呼び出し元のゴーストが分からないのに、ゴーストに依存する処理を求めたとき。
 - **invalid parameter**: 400。`Module`の欠け・引数の欠けや誤り。
 
 互換モジュール（DLLのSAORIの互換）は、原作どおり`ErrorDescription`の付かない400を返すことがあります。

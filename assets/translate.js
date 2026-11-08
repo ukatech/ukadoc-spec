@@ -1,7 +1,10 @@
 /* 翻訳ボタン。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、
    表示中のページの本文を日本語から英語・中国語（繁体・簡体）へ訳す。
    - API が無いブラウザではボタンを出さない
-   - 訳すのは日本語を含むテキストノードだけ。コード（code / pre / kbd）と translate="no" の中は訳さない
+   - 訳すのは日本語を含む文だけ。コード（code / pre / kbd）と translate="no" の中は訳さない
+   - 文はブロック（p / li / td など）の中の連なりを単位に、まとめて訳す。リンク・太字・コードスパンが文の途中にあっても、
+     文が断片に切れない。コードスパンなど訳さないものは <x1/> のような印に、リンク・太字は <a2>…</a2> のような印の対に置き換えて訳し、
+     訳したあとで元の要素に戻す。印が訳文で崩れたときは、その文だけテキストごとの訳（断片訳）に切り替える
    - 画面に近づいた所から順に訳す（まとめ頁は長いため）。訳した文は覚えておき、同じ文は再訳しない
    - 選んだ言語は localStorage に覚え、次の頁を開いたとき、モデルが取得済みなら自動で訳す
    機械翻訳なので、読める程度の品質。仕様の判断には原文を見ること */
@@ -20,9 +23,19 @@
   var SKIP = 'pre, code, kbd, script, style, svg, [translate="no"], .headerlink, .ukadoc-translate';
   var JAPANESE = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
 
-  var state = { lang: null, gen: 0, translator: null, observer: null };
-  var originals = new WeakMap();   // テキストノード -> 原文
-  var pending = new Map();         // 親の要素 -> その中の未訳のテキストノード
+  // 文の途中に置ける要素。これ以外（p / li / td / br など）は文の切れ目になる
+  var INLINE_TAGS = {
+    A: 1, ABBR: 1, B: 1, BDI: 1, BDO: 1, CITE: 1, CODE: 1, DATA: 1, DEL: 1, DFN: 1, EM: 1, I: 1, IMG: 1, INS: 1, KBD: 1,
+    MARK: 1, Q: 1, S: 1, SAMP: 1, SMALL: 1, SPAN: 1, STRONG: 1, SUB: 1, SUP: 1, TIME: 1, U: 1, VAR: 1, WBR: 1
+  };
+  // 中にこれがある要素は、文の途中に置けない（文の切れ目を含むため）
+  var BREAKERS = 'address, article, aside, blockquote, br, details, dialog, div, dl, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hr, li, main, nav, ol, p, pre, section, table, ul, summary';
+  // 印が訳文で崩れる状況が続いたら（成功が一度もなく、これだけ失敗したら）、以後は断片訳だけにする
+  var MARKER_GIVE_UP = 6;
+
+  var state = { lang: null, gen: 0, translator: null, observer: null, markerOk: 0, markerBad: 0 };
+  var records = [];                // 訳した場所の控え。原文へ戻すのに使う
+  var pending = new Set();         // 未訳のブロック要素
   var cache = {};                  // 言語コード -> { 原文: 訳文 }
   var els = {};
 
@@ -40,23 +53,141 @@
     });
   }
 
-  function collect(root) {
-    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (n) {
-        if (!JAPANESE.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
-        var p = n.parentElement;
-        return p && !p.closest(SKIP) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+  function toArray(list) { return Array.prototype.slice.call(list); }
+
+  /* ---- 文の単位を切り出す ---- */
+
+  // 文の途中に置けるノードか（テキスト、または切れ目を含まない inline 要素）
+  function isInlineNode(n) {
+    if (n.nodeType === 3) return true;
+    if (n.nodeType !== 1) return false;
+    return !!INLINE_TAGS[n.tagName] && !n.querySelector(BREAKERS);
+  }
+
+  // 訳さずにそのまま残す要素か（コードなど、または日本語を含まない）
+  function isOpaque(el) {
+    return el.matches(SKIP) || !JAPANESE.test(el.textContent);
+  }
+
+  // 子の並びを、文の切れ目（p / li / br など）で区切った連なりにする
+  function buildRuns(el) {
+    var runs = [];
+    var cur = [];
+    toArray(el.childNodes).forEach(function (n) {
+      if (isInlineNode(n)) {
+        cur.push(n);
+      } else {
+        if (cur.length) runs.push(cur);
+        cur = [];
       }
     });
-    var n;
-    while ((n = walker.nextNode())) {
-      if (originals.has(n)) continue;
-      var p = n.parentElement;
-      if (!pending.has(p)) pending.set(p, []);
-      pending.get(p).push(n);
-      state.observer.observe(p);
-    }
+    if (cur.length) runs.push(cur);
+    return runs;
   }
+
+  // 連なりの両端の、空白だけのテキストと、訳さない要素（見出しの ¶ リンクなど）を外す
+  function trimRun(run) {
+    function skippable(n) { return n.nodeType === 3 ? !/\S/.test(n.nodeValue) : isOpaque(n); }
+    var a = 0;
+    var b = run.length;
+    while (a < b && skippable(run[a])) a++;
+    while (b > a && skippable(run[b - 1])) b--;
+    return run.slice(a, b);
+  }
+
+  // そのブロックの直下に、訳すものがあるか
+  function hasOwnRun(el) {
+    var found = false;
+    toArray(el.childNodes).forEach(function (n) {
+      if (found || !isInlineNode(n)) return;
+      if (n.nodeType === 3 ? JAPANESE.test(n.nodeValue) : !isOpaque(n)) found = true;
+    });
+    return found;
+  }
+
+  function collect(root) {
+    var all = [root].concat(toArray(root.querySelectorAll('*')));
+    all.forEach(function (el) {
+      if (isInlineNode(el) || el.closest(SKIP) || !hasOwnRun(el)) return;
+      pending.add(el);
+      state.observer.observe(el);
+    });
+  }
+
+  /* ---- 印への置き換えと、元の要素への復元 ---- */
+
+  // ノードの並びを、印つきの文字列にする。訳さない要素は <xN/>、訳す要素は <aN>…</aN>。
+  // ctx.map は 印の番号 -> 元の要素、ctx.hasMark は印を使ったか
+  function serialize(nodes, ctx) {
+    var s = '';
+    nodes.forEach(function (n) {
+      if (n.nodeType === 3) { s += n.nodeValue; return; }
+      if (n.nodeType !== 1) return;
+      var id = ++ctx.n;
+      ctx.map[id] = n;
+      ctx.hasMark = true;
+      if (isOpaque(n)) {
+        s += '<x' + id + '/>';
+      } else {
+        s += '<a' + id + '>' + serialize(toArray(n.childNodes), ctx) + '</a' + id + '>';
+      }
+    });
+    return s;
+  }
+
+  // 訳文の印を元の要素に戻して、ノードの並びにする。印が欠けた・重なった・入れ子が崩れたときは null
+  function rebuild(out, ctx) {
+    var re = /<\s*(\/?)\s*([xXaA])\s*(\d+)\s*(\/?)\s*>/g;
+    var root = document.createDocumentFragment();
+    var stack = [root];
+    var ids = [0];
+    var seenX = {};
+    var seenOpen = {};
+    var seenClose = {};
+    var last = 0;
+    var m;
+
+    function top() { return stack[stack.length - 1]; }
+    function pushText(t) { if (t) top().appendChild(document.createTextNode(t)); }
+
+    while ((m = re.exec(out))) {
+      pushText(out.slice(last, m.index));
+      last = re.lastIndex;
+      var closing = m[1] === '/';
+      var kind = m[2].toLowerCase();
+      var id = parseInt(m[3], 10);
+      var src = ctx.map[id];
+      if (!src) return null;
+      if (kind === 'x') {
+        if (closing || seenX[id] || !isOpaque(src)) return null;
+        seenX[id] = true;
+        top().appendChild(src.cloneNode(true));
+      } else if (!closing) {
+        if (m[4] === '/' || seenOpen[id] || isOpaque(src)) return null;
+        seenOpen[id] = true;
+        var c = src.cloneNode(false);
+        top().appendChild(c);
+        stack.push(c);
+        ids.push(id);
+      } else {
+        if (stack.length < 2 || ids[ids.length - 1] !== id) return null;
+        seenClose[id] = true;
+        stack.pop();
+        ids.pop();
+      }
+    }
+    pushText(out.slice(last));
+    if (stack.length !== 1 || !root.firstChild) return null;
+
+    for (var key in ctx.map) {
+      if (!Object.prototype.hasOwnProperty.call(ctx.map, key)) continue;
+      if (isOpaque(ctx.map[key])) { if (!seenX[key]) return null; }
+      else if (!seenOpen[key] || !seenClose[key]) return null;
+    }
+    return toArray(root.childNodes);
+  }
+
+  /* ---- 訳す ---- */
 
   async function translateText(translator, lang, text) {
     var c = cache[lang] || (cache[lang] = {});
@@ -67,24 +198,105 @@
     return lead + c[key] + trail;
   }
 
-  async function translateElement(el, gen) {
-    var nodes = pending.get(el);
-    if (!nodes) return;
-    pending.delete(el);
-    for (var i = 0; i < nodes.length; i++) {
+  function textNodesOf(nodes) {
+    var out = [];
+    function walk(n) {
+      if (n.nodeType === 3) {
+        if (JAPANESE.test(n.nodeValue)) out.push(n);
+      } else if (n.nodeType === 1 && !n.matches(SKIP)) {
+        toArray(n.childNodes).forEach(walk);
+      }
+    }
+    nodes.forEach(walk);
+    return out;
+  }
+
+  // 断片訳。テキストノードごとに別々に訳す（印が使えないときの代わり）
+  async function translateFragments(nodes, gen) {
+    var texts = textNodesOf(nodes);
+    for (var i = 0; i < texts.length; i++) {
       if (gen !== state.gen) return;
-      var node = nodes[i];
-      if (!node.isConnected || originals.has(node)) continue;
+      var node = texts[i];
+      if (!node.isConnected) continue;
       var original = node.nodeValue;
       try {
         var out = await translateText(state.translator, state.lang, original);
         if (gen !== state.gen) return;
-        originals.set(node, original);
+        records.push({ kind: 't', node: node, original: original });
         node.nodeValue = out;
       } catch (e) {
         /* 1 か所の失敗で全体を止めない */
       }
     }
+  }
+
+  // 連なり 1 つを訳す
+  async function translateRun(run, gen) {
+    var nodes = trimRun(run);
+    if (!nodes.length) return;
+
+    // 外側が 1 つの要素だけのとき（li の中のリンク、リンクの中の span など）は、印にせず中へ入る
+    if (nodes.length === 1 && nodes[0].nodeType === 1) {
+      await translateBlock(nodes[0], gen);
+      return;
+    }
+
+    var ctx = { map: {}, n: 0, hasMark: false };
+    var src = serialize(nodes, ctx);
+    if (!JAPANESE.test(src)) return;
+    if (nodes.some(function (n) { return !n.isConnected; })) return;
+
+    // 印が無い（テキストだけの）連なりは、1 つの文としてそのまま訳せる
+    if (!ctx.hasMark) {
+      var texts = nodes.filter(function (n) { return n.nodeType === 3; });
+      try {
+        var out = await translateText(state.translator, state.lang, src);
+        if (gen !== state.gen) return;
+        texts.forEach(function (n, i) {
+          records.push({ kind: 't', node: n, original: n.nodeValue });
+          n.nodeValue = i === 0 ? out : '';
+        });
+      } catch (e) { /* 1 か所の失敗で全体を止めない */ }
+      return;
+    }
+
+    if (state.markerOk > 0 || state.markerBad < MARKER_GIVE_UP) {
+      try {
+        var translated = await translateText(state.translator, state.lang, src);
+        if (gen !== state.gen) return;
+        var built = rebuild(translated, ctx);
+        if (built) {
+          state.markerOk++;
+          var first = nodes[0];
+          var parent = first.parentNode;
+          if (!parent || nodes.some(function (n) { return n.parentNode !== parent; })) return;
+          built.forEach(function (n) { parent.insertBefore(n, first); });
+          nodes.forEach(function (n) { parent.removeChild(n); });
+          records.push({ kind: 'r', originals: nodes, inserted: built });
+          return;
+        }
+        state.markerBad++;
+      } catch (e) {
+        /* 訳せなかったときは、断片訳へ */
+      }
+    }
+    await translateFragments(nodes, gen);
+  }
+
+  // ブロック 1 つの直下の文を、順に訳す
+  async function translateBlock(el, gen) {
+    var runs = buildRuns(el);
+    for (var i = 0; i < runs.length; i++) {
+      if (gen !== state.gen) return;
+      await translateRun(runs[i], gen);
+    }
+  }
+
+  async function translateElement(el, gen) {
+    if (!pending.has(el)) return;
+    pending.delete(el);
+    if (!el.isConnected) return;
+    await translateBlock(el, gen);
   }
 
   var queue = Promise.resolve();
@@ -96,13 +308,23 @@
     state.gen++;
     if (state.observer) { state.observer.disconnect(); state.observer = null; }
     pending.clear();
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    var n;
-    while ((n = walker.nextNode())) {
-      if (originals.has(n)) { n.nodeValue = originals.get(n); originals.delete(n); }
+    for (var i = records.length - 1; i >= 0; i--) {
+      var r = records[i];
+      if (r.kind === 't') {
+        r.node.nodeValue = r.original;
+      } else {
+        var first = r.inserted[0];
+        var parent = first && first.parentNode;
+        if (!parent) continue;
+        r.originals.forEach(function (o) { parent.insertBefore(o, first); });
+        r.inserted.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      }
     }
+    records = [];
     state.lang = null;
     state.translator = null;
+    state.markerOk = 0;
+    state.markerBad = 0;
     document.documentElement.lang = state.htmlLang;
     document.documentElement.removeAttribute('data-translated');
   }
