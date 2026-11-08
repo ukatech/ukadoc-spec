@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="320 40 960 900" width="640" height="600" font-family="Meiryo, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="24">
+  <title>--origin=tr --x=-20 --y=-300 で座ったときの、ゴーストのウインドウと対象の位置関係</title>
+  <rect x="320" y="40" width="960" height="900" rx="12" fill="#ffffff" stroke="#c8c8c8" stroke-width="2"/>
+
+  <!-- 対象のウインドウ -->
+  <rect x="400" y="400" width="600" height="500" fill="#dbe7f7" stroke="#3a5f9a" stroke-width="3"/>
+  <text x="700" y="660" text-anchor="middle" fill="#1f3a66">対象のウインドウ</text>
+  <text x="412" y="436" fill="#1f3a66" font-size="20">(400,400)</text>
+  <text x="988" y="886" text-anchor="end" fill="#1f3a66" font-size="20">(1000,900)</text>
+
+  <!-- ゴーストのウインドウ -->
+  <rect x="780" y="100" width="200" height="300" fill="#f9d2d2" stroke="#b03a3a" stroke-width="3"/>
+  <text x="880" y="235" text-anchor="middle" fill="#7a1f1f">ゴーストの</text>
+  <text x="880" y="265" text-anchor="middle" fill="#7a1f1f">ウインドウ</text>
+  <text x="880" y="300" text-anchor="middle" fill="#7a1f1f" font-size="20">200×300</text>
+  <text x="792" y="132" fill="#7a1f1f" font-size="20">(780,100)</text>
+
+  <!-- 下端と上端が重なる -->
+  <text x="770" y="388" text-anchor="end" fill="#444" font-size="20">ゴーストの下端 = 対象の上端 (y=400)</text>
+
+  <!-- 原点の2点とずれ -->
+  <line x1="1000" y1="400" x2="980" y2="100" stroke="#444" stroke-width="3" stroke-dasharray="10 7"/>
+  <circle cx="1000" cy="400" r="8" fill="#3a5f9a"/>
+  <circle cx="980" cy="100" r="8" fill="#b03a3a"/>
+
+  <text x="1022" y="412" fill="#1f3a66" font-size="22">対象の右上</text>
+  <text x="1022" y="440" fill="#1f3a66" font-size="22">(1000,400)</text>
+
+  <text x="1002" y="112" fill="#7a1f1f" font-size="22">ゴーストの右上</text>
+  <text x="1002" y="140" fill="#7a1f1f" font-size="22">(980,100)</text>
+
+  <text x="1022" y="250" fill="#222" font-size="22">ずれ</text>
+  <text x="1022" y="280" fill="#222" font-size="22">--x=-20 --y=-300</text>
+  <text x="1022" y="308" fill="#222" font-size="20">（左へ20・上へ300）</text>
+</svg>

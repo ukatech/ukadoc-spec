@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" width="640" height="430" font-family="Meiryo, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="16">
+  <title>--side= が作る仮想のウインドウと、基準の矩形の位置関係</title>
+  <rect x="1" y="1" width="638" height="428" rx="10" fill="#ffffff" stroke="#c8c8c8" stroke-width="2"/>
+
+  <text x="320" y="32" text-anchor="middle" fill="#222" font-size="17">仮想のウインドウは、基準の辺と同じ長さ・厚さ100ピクセル</text>
+
+  <!-- 基準の矩形 -->
+  <rect x="140" y="100" width="360" height="200" fill="#dbe7f7" stroke="#3a5f9a" stroke-width="2"/>
+  <text x="320" y="136" text-anchor="middle" fill="#1f3a66">side=center</text>
+  <text x="320" y="162" text-anchor="middle" fill="#1f3a66">基準の矩形そのもの</text>
+  <text x="320" y="184" text-anchor="middle" fill="#1f3a66" font-size="14">（--area= で選んだ、モニタ全体またはワークエリア）</text>
+
+  <!-- 仮想のウインドウ -->
+  <rect x="140" y="60" width="360" height="40" fill="#eef1f5" stroke="#6b7a8f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="320" y="86" text-anchor="middle" fill="#333">side=top</text>
+
+  <rect x="140" y="300" width="360" height="40" fill="#eef1f5" stroke="#6b7a8f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="250" y="326" text-anchor="middle" fill="#333">side=bottom</text>
+
+  <rect x="100" y="100" width="40" height="200" fill="#eef1f5" stroke="#6b7a8f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text transform="translate(125 200) rotate(-90)" text-anchor="middle" fill="#333">side=left</text>
+
+  <rect x="500" y="100" width="40" height="200" fill="#eef1f5" stroke="#6b7a8f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text transform="translate(525 200) rotate(90)" text-anchor="middle" fill="#333">side=right</text>
+
+  <!-- side=bottom に立つゴースト -->
+  <rect x="430" y="210" width="60" height="90" fill="#f9d2d2" stroke="#b03a3a" stroke-width="2"/>
+  <text x="460" y="260" text-anchor="middle" fill="#7a1f1f" font-size="14">ゴースト</text>
+
+  <text x="320" y="372" text-anchor="middle" fill="#222" font-size="15">side=bottom に --origin=tr と --y=-（ゴーストの高さ）を組み合わせると、</text>
+  <text x="320" y="394" text-anchor="middle" fill="#222" font-size="15">ゴーストが基準の下端に立つ（ワークエリアなら、タスクバーの上）</text>
+</svg>

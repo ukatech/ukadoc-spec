@@ -34,6 +34,8 @@
 - [point.kinoko.centery,座標](point.kinoko.centery.md)
 - [point.basepos.x,座標](point.basepos.x.md)
 - [point.basepos.y,座標](point.basepos.y.md)
+- [point.osuwaripos.x,座標](point.osuwaripos.x.md)
+- [point.osuwaripos.y,座標](point.osuwaripos.y.md)
 - [icon.rect,始点X,始点Y,終点X,終点Y](icon.rect.md)
 - [name,定義名](name.md)
 - [アニメーションインターバル](h-animationinterval/index.md)
