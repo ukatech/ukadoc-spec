@@ -84,6 +84,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666 } /* Literal.Number.Integer.Long */
+/* さくらスクリプトの記述例: タグと環境変数を、色だけでなく背景でも目立たせる
+   （.highlight pre は font-synthesis-weight: none なので、日本語を含むタグは太字に頼れない） */
+.highlight.language-ss .nt, .highlight.language-sakurascript .nt {
+  color: #0a3d91; background-color: #dbe8fb; border-radius: 3px; padding: 0 2px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.highlight.language-ss .vg, .highlight.language-sakurascript .vg {
+  color: #8a1c7c; background-color: #f6e1f3; border-radius: 3px; padding: 0 2px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
 /* 対応のベースウェア: アイコンの後ろの版 */
 .supported-baseware .baseware-version { font-size: 80%; color: #666; margin-left: 2px; }
 .supported-baseware .baseware-note { font-size: 90%; color: #666; margin-left: 8px; }
