@@ -23,6 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - run: python scripts/check_source.py
       - run: python oldstyle/build.py
       - run: python oldstyle/check.py
       - uses: actions/upload-pages-artifact@v5
