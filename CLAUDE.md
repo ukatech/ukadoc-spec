@@ -69,22 +69,22 @@
 
 ## 確認
 
-`_site_src/` と `_site/` は `.gitignore` 済み。
+`_site_src/` と `_site_old/` は `.gitignore` 済み。
+
+**現在の `main` は、旧版 UKADOC（`ukatech/ukadoc` の `manual/*.html`）の見た目を模した自前ビルド（`oldstyle/`。詳細は `oldstyle/README.md`）で公開している。** Zensical 版は `old-zensical` ブランチに残してある（下の「GitHub Pages」の Zensical・`mkdocs.yml`・`assets/extra.css` などの説明は、そのブランチの話。`main` には試験のため、まだファイルが残っている）。
 
 ```sh
 pip install -r requirements.txt   # site_ext/（サイトの部品）も入る（-e なので、直したらそのまま効く）
-python scripts/prepare_site.py   # 各 index.md の「## 一覧」と中身の食い違いを検査し、_site_src/ に写す
-zensical build --strict          # リンク切れ・アンカー切れがあると失敗する
-zensical serve                   # http://127.0.0.1:8000/ukadoc-spec/ でプレビュー
+python oldstyle/build.py         # prepare_site.py（各 index.md の「## 一覧」の検査と _site_src/ への写し）を走らせ、_site_old/ に出力する
+python oldstyle/check.py         # 内部リンク・アンカー・画像の切れを調べる
+python -m http.server -d _site_old   # http://127.0.0.1:8000/ でプレビュー
 ```
 
-`site_ext/` や `assets/` を直したあとは、`.cache/` を消してからビルドする（拡張やレキサーを直しただけでは、原稿の変わっていない頁が作り直されないことがある）。
-
-`zensical build --strict` が見るのはサイトの中のリンクだけ。外部リンクは、ときどき `python scripts/check_links.py` で、エラーになるものと別の URL へ転送されるものを洗い出す（`--titles` で、転送されずに 200 を返すものもタイトル付きで並ぶ）。切れているかどうかはスクリプトでは判断しないので、開いて確かめる。切れていたら、元のリンクの後ろに Internet Archive の保存版を「（[アーカイブ](https://web.archive.org/web/時刻/元のURL)）」と添える（添えたリンクは以後の検査から外れる）。
+`oldstyle/check.py` が見るのはサイトの中のリンクだけ。外部リンクは、ときどき `python scripts/check_links.py` で、エラーになるものと別の URL へ転送されるものを洗い出す（`--titles` で、転送されずに 200 を返すものもタイトル付きで並ぶ）。切れているかどうかはスクリプトでは判断しないので、開いて確かめる。切れていたら、元のリンクの後ろに Internet Archive の保存版を「（[アーカイブ](https://web.archive.org/web/時刻/元のURL)）」と添える（添えたリンクは以後の検査から外れる）。
 
 ## GitHub Pages
 
-`main` に push すると GitHub Actions（`.github/workflows/pages.yml`）が Zensical でビルドし、https://ukatech.shillest.net/ukadoc-spec/ に公開する。
+`main` に push すると GitHub Actions（`.github/workflows/pages.yml`）が `oldstyle/build.py` でビルドし（以下の箇条書きのうち、Zensical に関するものは `old-zensical` ブランチの話）、https://ukatech.shillest.net/ukadoc-spec/ に公開する。
 
 - 原稿はリポジトリ直下にあるため、`scripts/prepare_site.py` が `_site_src/` に写してからビルドする（`INDEX.md` は `index.md`（トップページ）になる）
 - 旧 HTML 版で 1 ページだったもの（`descript/<名前>/`、`list/<名前>/`、`spec/<名前>/` の各ディレクトリ）は、サイトでは 1 ページ（`<ディレクトリ>/index.html`）にまとめて出す。原稿は 1 項目 1 ファイルのまま書き、リンクも `../scope/s-ID.md` や `file.md#見出し` と従来どおり書く。`prepare_site.py` が次のことをする

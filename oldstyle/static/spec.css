@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li, dl, dt, dd, span, a, img, sup, sub, hr, strong,
+nav, section {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+hr, nav, section {
+	display: block;
+}
+li {
+	list-style-type: none;
+}
+img {
+	vertical-align: bottom;
+}
+body {
+	background-color: #eee;
+}
+em {
+	font-style: normal;
+	font-weight:bold;
+}
+a:link {
+  color : #0000FF;
+}
+a:visited {
+  color : #4040FF;
+}
+a:active {
+  color : #FF0000;
+}
+a:hover {
+  color : #FF0000;
+}
+#page-title {
+	margin: 10px 20px;
+	font-size: x-large;
+}
+.menu-header {
+	margin: 0 20px;
+	width: 91.5%;
+	text-align: center;
+	font-size: 95%;
+}
+.menu-header:after {
+	content: "\0020";
+	display: block;
+	height: 0px;
+	visibility: hidden;
+	clear: both;
+}
+.menu-header table {
+	border-collapse: separate;
+	border-spacing: 0 1px;
+	width: 100%;
+}
+.menu-header table tr {
+	background-color: #eef;
+}
+.menu-header table tr > * {
+	padding: 2px;
+	border-top: 1px solid #669;
+	border-bottom: 1px solid #669;
+	border-right: 1px solid #669;
+}
+.menu-header table tr th {
+	width: 7%;
+}
+.menu-header table tr:first-child th:first-child {
+	background-color: #669;
+	color: #eef;
+	width: 15%;
+}
+.menu-header table ul li {
+	float: left;
+	margin-left: 10px;
+}
+.menu-header table ul li a:before {
+	content: url("./image/icon_doc-b.png");
+}
+.menu-header table ul li .not-created:before {
+	content: "×";
+}
+
+.navigation-bar {
+	border: 1px solid #669;
+	margin: 10px 0 0 20px;
+	float: left;
+	width: 25%;
+	background-color: #eef;
+	overflow: auto;
+}
+.navigation-bar h1 {
+	font-size: larger;
+	color: #fff;
+	background-color: #669;
+	padding: 3px 5px;
+	text-align: center;
+}
+.navigation-category h1 {
+	font-size: medium;
+	color: #fff;
+	background-color: #99c;
+	text-align: left;
+}
+.navigation-category h2 {
+	font-size: medium;
+	border-top:1px solid #99c;
+	border-bottom:1px solid #99c;
+	padding: 3px 5px;
+	text-align: left;
+}
+.navigation-bar ul {
+	padding: 0 0 20px 20px;
+}
+.navigation-bar li {
+	list-style-type: disc;
+	margin-top: 3px;
+	font-size: small;
+}
+.text {
+	float: left;
+	margin: 10px 0 60px 0;
+	padding-left: 20px;
+	width: 65%;
+}
+.text section {
+	padding-bottom: 20px;
+	background-color: #ffe;
+	clear: left;
+	border: 1px solid #669;
+}
+.text section h1 {
+	font-size: x-large;
+	padding: 5px;
+	margin-bottom: 5px;
+	color: #fff;
+	background-color: #669;
+}
+.text section h1+.section {
+	margin: 10px 1em;
+}
+.text section code {
+	display:block;
+	background-color: #ded;
+	border: 2px solid #aba;
+	padding: 5px;
+	margin: 10px;
+}
+.text section ul {
+	margin: 10px;
+}
+.text section ul li {
+	list-style-type: disc;
+	margin-left: 15px;
+}
+.text section dl {
+	margin:10px;
+}
+.text section dt {
+	font-weight:bold;
+}
+.text section dd {
+	margin:5px 5px 5px 40px;
+}
+.text section section {
+	border: none;
+	padding-bottom: 0;
+}
+.text section section h1 {
+	color: #000;
+	font-size: large;
+	font-weight: bold;
+	border-left: 7px solid #94A5F7;
+	border-bottom: 1px solid #94A5F7;
+	margin: 5px 3px 5px 3px;
+	padding: 2px 2px 2px 5px;
+	clear: left;
+	background-color: #eef;
+}
+.text p {
+	margin: 10px;
+	margin-top: 1em;
+}
+
+
+.text .caption {
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed #669;
+	background-color: #fef;
+}
+.text .caption h1 {
+	font-size: medium;
+	padding: 5px;
+	color: #000;
+	background-color: #fef;
+}
+.text .caption dt {
+	font-weight: bold;
+}
+.text .caption dd {
+	margin-bottom: 0.5em;
+}
+.text .caption p {
+	margin: 0.5em auto;
+}
