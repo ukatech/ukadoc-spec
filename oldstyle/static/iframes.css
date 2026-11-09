@@ -145,11 +145,22 @@ html#navigation > body {
 	text-align: right;
 	padding-right: 3px;
 }
-#navigation_body form.internal-search input[type="text"] {
+#navigation_body form.internal-search .search-field {
+	position: relative;
+	display: inline-block;
 	margin-left: 20px;
-	width: 200px;
 }
-#navigation_body form.internal-search input[type="submit"] {
-	margin-right: 0px;
+#navigation_body form.internal-search input[type="text"] {
+	box-sizing: border-box;
+	width: 220px;
+	padding-right: 24px;
+}
+#navigation_body form.internal-search .search-icon {
+	position: absolute;
+	top: 50%;
+	right: 6px;
+	transform: translateY(-50%);
+	opacity: 0.35;
+	pointer-events: none;
 }
 /* NAVIGATION */

@@ -271,6 +271,11 @@
     input.setAttribute('aria-controls', 'ukadoc-search-dropdown');
     input.setAttribute('autocomplete', 'off');
     wrap.appendChild(input);
+    var icon = document.createElement('span');
+    icon.className = 'ukadoc-search__icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = '🔍';
+    wrap.appendChild(icon);
     var dd = new Dropdown(function (el) { wrap.appendChild(el); }, function () {});
     dd.onchange = function (open) { input.setAttribute('aria-expanded', String(open)); };
     bindInput(input, function (type, d) { handle(dd, type, d || {}); });
