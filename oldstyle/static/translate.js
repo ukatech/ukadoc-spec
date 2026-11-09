@@ -21,7 +21,7 @@
   var STORE_KEY = 'ukadoc-translate-lang';
   var ROOTS = 'body';
   var IN_FRAME = window !== window.top;   // sidemenu.html などの iframe の中か（ボタンは出さず、親の選択に従う）
-  var SKIP = 'pre, code, kbd, script, style, svg, [translate="no"], .headerlink, .ukadoc-translate';
+  var SKIP = 'pre, code, kbd, script, style, svg, [translate="no"], .headerlink, .ukadoc-translate, .ukadoc-search, .ukadoc-search__dropdown';
   var JAPANESE = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
 
   // 文の途中に置ける要素。これ以外（p / li / td / br など）は文の切れ目になる

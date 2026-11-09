@@ -133,6 +133,23 @@ main table td { text-align: left; }
 .ukadoc-translate__status { margin: 3px 0 0; padding: 4px 10px 0; border-top: 1px solid #ccc; color: #666; }
 .ukadoc-translate__status:empty { display: none; }
 
+/* サイト内検索の入力欄とドロップダウン（search.js）。仕様書側は右上、翻訳ボタンの左横に固定。枠の頁は上の帯の入力欄の下に、親の頁が出す */
+.ukadoc-search { position: fixed; top: 6px; right: 42px; z-index: 20; font-size: 12px; }
+.ukadoc-search__input { box-sizing: border-box; width: 190px; height: 28px; padding: 2px 6px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #333; font: inherit; }
+.ukadoc-search__input:focus { outline: 2px solid #94de84; outline-offset: 0; }
+.ukadoc-search__dropdown { position: absolute; top: 100%; right: 0; z-index: 30; box-sizing: border-box; width: 460px; max-width: calc(100vw - 50px); max-height: 70vh; overflow-y: auto; margin-top: 2px; border: 1px solid #7bb56b; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); color: #333; font-size: 12px; line-height: 1.5; text-align: left; }
+.ukadoc-search__dropdown--page { max-width: none; margin-top: 0; }
+.ukadoc-search__dropdown[hidden] { display: none; }
+.ukadoc-search__dropdown a, .ukadoc-search__dropdown a:link, .ukadoc-search__dropdown a:visited { color: inherit; text-decoration: none; }
+.ukadoc-search__item { display: block; padding: 5px 8px; border-bottom: 1px dotted #ccc; }
+.ukadoc-search__all { display: block; padding: 6px 8px; background: #f6fff2; color: #006600 !important; text-align: center; }
+.ukadoc-search__item.is-active, .ukadoc-search__all.is-active { background: #dff3d8; }
+.ukadoc-search__title { color: #006600; font-weight: bold; }
+.ukadoc-search__page { color: #666; font-size: 90%; }
+.ukadoc-search__snippet { display: block; color: #555; word-break: break-all; }
+.ukadoc-search__empty { margin: 0; padding: 8px; color: #666; }
+.ukadoc-search__dropdown mark { background-color: #ffee88; }
+
 /* サイト内検索（search.html） */
 .search-hits { margin: 0.5em 0; }
 .search-hits li { list-style-type: none; margin: 0 0 0.8em 0; }

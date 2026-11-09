@@ -29,5 +29,6 @@ python oldstyle/check.py       # _site_old/ の内部リンク（ファイル・
 旧版からの差:
 
 - 左メニュー・上の帯は旧版と同じく iframe。サイト内検索（`search.html`）は、旧版の Google の site 検索の代わりに、ビルド時に作る `search-index.js` を使う
+- 検索の入力欄はドロップダウン式（`search.js`）。枠の頁は上の帯の iframe の入力欄に打ち込み、親の頁がドロップダウンを出す。仕様書側（list / spec の頁）は、右上の翻訳ボタンの左横に入力欄を固定で置く
 - 翻訳ボタンは右上に固定（`translate.js`。Translator API が無いブラウザでは出ない）。`sidemenu.html` の iframe は、親の頁で選んだ言語に従う
 - 旧版にあった `?event_name=` からのリダイレクト（`index.html`）と、起動中ゴーストの対応状況を色分けする `ghost_status.js` は、移していない

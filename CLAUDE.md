@@ -102,6 +102,8 @@ python -m http.server -d _site_old   # http://127.0.0.1:8000/ でプレビュー
     - 言語を足すときは `translate.js` の `LANGS` に足す
     - 動作の確認は、Translator API のあるブラウザで `python -m http.server -d _site_old` の頁を開いて行う（Node では API が無いので、偽の `Translator` で試す）
   - サイト内検索（`search.html`）は、ビルド時に `build.py` が作る `search-index.js`（項目・節ごと）を、`search.js` が空白区切りの語の AND で部分一致検索する。旧版の Google の site 検索の代わり
+    - 入力欄は、打ち込みが止まってから 250ms 後に検索し、ドロップダウン（上位 8 件と「すべての結果を見る」）を出す。↑↓で選び、Enter で開く（選んでいなければ `search.html?q=` へ）。Esc で閉じる。`search-index.js`（約 1.5MB）は、最初に打ち込んだときに読み込む
+    - 枠の頁（`iframe#navigation` のある頁）は、上の帯（`navigation.html` の iframe）の入力欄に打ち込む。iframe の外へはみ出せないので、ドロップダウンは親の頁が出し、iframe とは postMessage でつなぐ。仕様書側（`descript_*` `list_*` `spec_*`）は、右上（翻訳ボタンの左横）に固定の入力欄を `search.js` が置く
 - `manual/` `dev/` `memo/` と、ディレクトリを持たない `spec/*.md` は、1 ファイル 1 ページのまま
 - 章立て（左メニュー `oldstyle/templates/sidemenu.html`、上の帯 `navigation.html`、頁の上の目次の表 `menu-header.html`）は、旧版の HTML の写しを直接書く。ページを足したときは、これらに足す
 - `llms.txt`（AI エージェント向けの探し方の案内。`INDEX.md` と各ディレクトリの入口だけを書く）はサイトのルートに置かれる。ページごとの一覧は載せないので、ページを足しても直さなくてよい。ディレクトリを足したときは「構成」に 1 行足す

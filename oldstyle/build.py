@@ -967,6 +967,7 @@ def head(title, css, extra_head='', description=None):
 <link rel="stylesheet" href="oldstyle.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <script src="translate.js" defer></script>
+<script src="search.js" defer></script>
 {extra_head}</head>
 '''
 
@@ -1072,8 +1073,7 @@ def build_search_index():
 
 
 def build_search_page():
-    scripts = '<script src="search-index.js" defer></script>\n<script src="search.js" defer></script>\n'
-    out = head('ukadoc内検索', 'base.css', scripts)
+    out = head('ukadoc内検索', 'base.css')
     out += read_template('frame-open.html') + read_template('search-main.html') + '\n' + read_template('frame-close.html')
     write_out('search.html', out)
 
