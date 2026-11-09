@@ -41,3 +41,4 @@
 - [`\![reset,sticky-window]`](bang-reset-sticky-window.md)
 - [`\![execute,resetwindowpos]`](bang-execute-resetwindowpos.md)
 - [`\![move]`、`\![moveasync]`について](notes_move.md)
+- [`\![set,alignmenttodesktop,osuwari]`について](notes_osuwari.md)
