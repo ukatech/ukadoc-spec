@@ -7,9 +7,7 @@
      訳したあとで元の要素に戻す。印が訳文で崩れたときは、その文だけテキストごとの訳（断片訳）に切り替える
    - 画面に近づいた所から順に訳す（まとめ頁は長いため）。訳した文は覚えておき、同じ文は再訳しない
    - 選んだ言語は localStorage に覚え、次の頁を開いたとき、モデルが取得済みなら自動で訳す
-   - ボタンの置き場は 2 通り
-     float: 仕様書側（list / spec の頁）。右上に固定（検索窓 search.js の右横）
-     inline: 枠の頁（上の帯に form.internal-search のある頁）。上の帯の検索欄の右横。左のメニューも同じ文書の中なので、一緒に訳す
+   - ボタンは全頁で右上に固定（検索窓 search.js の右横）。枠の頁の左のメニューも同じ文書の中なので、一緒に訳す
    機械翻訳なので、読める程度の品質。仕様の判断には原文を見ること */
 (function () {
   'use strict';
@@ -23,7 +21,6 @@
   ];
   var STORE_KEY = 'ukadoc-translate-lang';
   var ROOTS = 'body';
-  var NAV_FORM = document.querySelector('form.internal-search');   // 枠の頁の上の帯の検索欄（ボタンを置く場所）
   var SKIP = 'pre, code, kbd, script, style, svg, [translate="no"], .headerlink, .ukadoc-translate, .ukadoc-search, .ukadoc-search__dropdown';
   var JAPANESE = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
 
@@ -401,7 +398,7 @@
   function build() {
     state.htmlLang = document.documentElement.lang;
     var wrap = document.createElement('div');
-    wrap.className = 'ukadoc-translate' + (NAV_FORM ? ' ukadoc-translate--inline' : '');
+    wrap.className = 'ukadoc-translate';
     wrap.setAttribute('translate', 'no');
 
     var button = buildButton();
@@ -451,8 +448,7 @@
       if (b.dataset.lang) start(b.dataset.lang, true); else showOriginal();
     });
 
-    if (NAV_FORM) NAV_FORM.appendChild(wrap);
-    else document.body.appendChild(wrap);
+    document.body.appendChild(wrap);
     return true;
   }
 

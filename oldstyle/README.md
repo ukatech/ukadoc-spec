@@ -30,9 +30,12 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
 
 旧版からの差:
 
+- 仕様書側（list / spec の頁）は、旧版の幅（25% + 65%）のままだと右に余白が残るので、`oldstyle.css` で画面の幅いっぱい（左右 20px の余白）に広げている
+- 左のメニュー（枠の頁の `nav.sidebar`、list / spec の `.navigation-bar`）は、画面に付いてくる sticky のフローティング。画面より長いときは、メニューの中だけを縦にスクロールする。list / spec は本文もメニューもフロートで `body` の高さに入らないので、`oldstyle.css` で `body:after` のクリアを足している。枠の頁は 720px 以下で static に戻る
+- 枠の頁の上の帯のタイトル画像（`title2.gif`）は、真ん中（375px）で割って、左半分を左端、右半分を右端に置く（`base.css` の `#navigation_top` の疑似要素）
 - 枠の頁の左メニュー・上の帯は、旧版の iframe をやめて頁に直接埋め込む。文字の大きさは仕様書側（list / spec）と同じ（本文 16px）。枠は画面の幅いっぱいに広がり（左右に 14px のすきまを残し、枠の `box-shadow` を見せる）、左のメニューは 280px 固定、残りが本文。狭い画面（720px 以下）ではメニューが本文の上に積まれる。サイト内検索（`search.html`）は、旧版の Google の site 検索の代わりに、ビルド時に作る `search-index.js` を使う
-- 検索の入力欄はドロップダウン式（`search.js`）。枠の頁は上の帯の入力欄に打ち込み、その真下にドロップダウンを出す。仕様書側（list / spec の頁）は、右上の翻訳ボタンの左横に入力欄を固定で置く
-- 翻訳ボタンは `translate.js`。枠の頁では上の帯の検索欄の右横にある。仕様書側（list / spec の頁）は右上に固定（検索欄の右横）。Translator API が無いブラウザでは出ない。左メニューも同じ文書なので、本文と一緒に訳される
+- 検索の入力欄はドロップダウン式（`search.js`）。全頁（枠の頁も list / spec の頁も）、右上の翻訳ボタンの左横に入力欄を固定で置く
+- 翻訳ボタンは `translate.js`。全頁で右上に固定（検索欄の右横）。Translator API が無いブラウザでは出ない。左メニューも同じ文書なので、本文と一緒に訳される
 - 旧版にあった `?event_name=` からのリダイレクト（`index.html`）と、起動中ゴーストの対応状況を色分けする `ghost_status.js` は、移していない
 
 ## 公開とビルドの詳細（GitHub Pages）
@@ -49,14 +52,14 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
   - `build.py` は、`_site_src/` の Markdown を HTML にし、class と木の形を見て旧版の HTML の構造に組み替える。出力のファイル名は旧版と同じ（`descript_ghost.html` など）。頁の種類は 3 つ（上の「作り」）。対応のベースウェアはアイコン画像（`image/icon_m.png` `icon_s.png` `icon_c.png` `icon_n.png`）で出す。ベースウェアを足すときは `build.py` の `BASEWARE` と画像を足す
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）。色は `oldstyle/static/oldstyle.css`
   - 見た目は `oldstyle/static/` の旧版の CSS（`base.css` `list.css` `spec.css`。`list.css` `spec.css` は旧版のまま。`base.css` は、枠の頁の iframe をやめたとき、上の帯・左メニューの CSS（旧 `iframes.css`）を取り込んで直した）と、新しい原稿のための補い `oldstyle.css`。旧版のままの CSS は、旧版の見た目を変えるとき以外は直さず、足りない分は `oldstyle.css` に書く
-  - 翻訳ボタンは `oldstyle/static/translate.js`。置き場所は 2 通り（先頭のコメントにも書いてある）: 仕様書側（`float`）は右上に固定、枠の頁（`inline`）は上の帯の検索欄の右横。見た目は `oldstyle.css` の `.ukadoc-translate`、枠の頁のボタンの寸法は `base.css`。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文を日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない。左メニューは同じ文書にあるので、本文と一緒に訳される
+  - 翻訳ボタンは `oldstyle/static/translate.js`。全頁で右上に固定。見た目は `oldstyle.css` の `.ukadoc-translate`。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文を日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない。左メニューは同じ文書にあるので、本文と一緒に訳される
     - 訳すのは日本語を含む文だけ（`code` `pre` `kbd` と `translate="no"` の中は訳さない）。文はブロック（`p` `li` `td` など）の中の連なりを単位にまとめて訳し、リンク・太字・コードスパンは印（`<x1/>` `<a2>…</a2>`）に置き換えて訳してから元の要素へ戻す（印が崩れた文は断片ごとの訳に切り替える）。画面に近づいた所から順に訳す。選んだ言語は localStorage に覚え、モデルが取得済みなら次の頁でも自動で訳す
     - 読める程度の品質でよいとしている。原稿のほうで、訳したくない語を `<span translate="no">…</span>` で囲むこともできる
     - 言語を足すときは `translate.js` の `LANGS` に足す
     - 動作の確認は、Translator API のあるブラウザで `python -m http.server -d _site_old` の頁を開いて行う（Node では API が無いので、偽の `Translator` で試す）
   - サイト内検索（`search.html`）は、ビルド時に `build.py` が作る `search-index.js`（項目・節ごと）を、`search.js` が空白区切りの語の AND で部分一致検索する。旧版の Google の site 検索の代わり
     - 入力欄は、打ち込みが止まってから 250ms 後に検索し、ドロップダウン（上位 8 件と「すべての結果を見る」）を出す。↑↓で選び、Enter で開く（選んでいなければ `search.html?q=` へ）。Esc で閉じる。`search-index.js`（約 1.5MB）は、最初に打ち込んだときに読み込む
-    - 枠の頁（上の帯に `form.internal-search` のある頁）は、上の帯の入力欄に打ち込む。ドロップダウンは入力欄（`.search-field`）の下に出す。仕様書側（`descript_*` `list_*` `spec_*`）は、右上（翻訳ボタンの左横）に固定の入力欄を `search.js` が置く
+    - 全頁（枠の頁も `descript_*` `list_*` `spec_*` も）で、右上（翻訳ボタンの左横）に固定の入力欄を `search.js` が置き、その下にドロップダウンを出す
 - `manual/` `dev/` `memo/` と、ディレクトリを持たない `spec/*.md` は、1 ファイル 1 ページのまま
 - 章立て（左メニュー `oldstyle/templates/sidemenu.html`、上の帯 `navigation.html`、頁の上の目次の表 `menu-header.html`）は、旧版の HTML の写しを直接書く。ページを足したときは、これらに足す
 - `llms.txt`（AI エージェント向けの探し方の案内。`INDEX.md` と各ディレクトリの入口だけを書く）はサイトのルートに置かれる。ページごとの一覧は載せないので、ページを足しても直さなくてよい。ディレクトリを足したときは「構成」に 1 行足す

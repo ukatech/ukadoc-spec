@@ -94,6 +94,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   color: #8a1c7c; background-color: #f6e1f3; border-radius: 3px; padding: 0 2px;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
+/* list / spec の頁を、画面の幅いっぱいに広げる（旧版は 25% + 65% + 余白で、右に 8% ほど余っていた）。
+   左端の余白 20px に合わせて、右端も 20px 残す。左のナビゲーション 25% の残りを本文にする */
+.menu-header { width: auto; }
+.categories, .text { width: calc(75% - 64px); }
+/* 左のナビゲーションは、画面に付いてくるフローティング（長いときはその中だけを縦にスクロール）。
+   本文もナビゲーションもフロートで body の高さに入らないので、body の末尾でクリアして、sticky の動ける範囲を本文の終わりまでにする */
+body:after { content: ""; display: block; clear: both; }
+.navigation-bar { position: sticky; top: 10px; max-height: calc(100vh - 22px); overflow-y: auto; }
+
 /* 対応のベースウェア: アイコンの後ろの版 */
 .supported-baseware .baseware-version { font-size: 80%; color: #666; margin-left: 2px; }
 .supported-baseware .baseware-note { font-size: 90%; color: #666; margin-left: 8px; }
@@ -130,9 +139,8 @@ main table td { text-align: left; }
 .text .highlight pre { padding: 0; }
 .text section .highlight code { display: inline; background: none; border: none; padding: 0; margin: 0; }
 
-/* 翻訳ボタン（translate.js）。仕様書側は右上に固定、枠の頁は上の帯の検索欄の右横（inline） */
+/* 翻訳ボタン（translate.js）。全頁で右上に固定 */
 .ukadoc-translate { position: fixed; top: 6px; right: 8px; z-index: 20; font-size: 12px; }
-.ukadoc-translate--inline { position: relative; top: auto; right: auto; display: inline-block; vertical-align: middle; }
 .ukadoc-translate__button { width: 28px; height: 28px; padding: 3px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #336633; cursor: pointer; }
 .ukadoc-translate__button svg { width: 100%; height: 100%; fill: currentColor; }
 .ukadoc-translate__button--on { background: #94de84; }
@@ -146,7 +154,7 @@ main table td { text-align: left; }
 .ukadoc-translate__status { margin: 3px 0 0; padding: 4px 10px 0; border-top: 1px solid #ccc; color: #666; }
 .ukadoc-translate__status:empty { display: none; }
 
-/* サイト内検索の入力欄とドロップダウン（search.js）。仕様書側は右上、翻訳ボタンの左横に固定。枠の頁は上の帯の入力欄（.search-field）の下に出す */
+/* サイト内検索の入力欄とドロップダウン（search.js）。全頁で右上、翻訳ボタンの左横に固定 */
 .ukadoc-search { position: fixed; top: 6px; right: 42px; z-index: 20; font-size: 12px; }
 .ukadoc-search__icon { position: absolute; top: 0; right: 6px; line-height: 28px; opacity: 0.35; pointer-events: none; }
 .ukadoc-search__input { box-sizing: border-box; width: 190px; height: 28px; padding: 2px 24px 2px 6px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #333; font: inherit; }

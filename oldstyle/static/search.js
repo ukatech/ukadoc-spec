@@ -1,9 +1,8 @@
 /* サイト内検索。search-index.js（ビルド時に作る。大きいので、使うときに読み込む）の UKADOC_INDEX を、
    空白で区切った語の AND で部分一致検索する。旧版にあった外部の Google 検索の代わり。
-   使われ方は 3 つ（全部この 1 ファイル）
+   使われ方は 2 つ（全部この 1 ファイル）
    - 検索頁（search.html）: 入力欄の下に、ヒットした全項目を並べる
-   - 枠の頁（上の帯 header#navigation に form.internal-search のある頁）: 上の帯の入力欄（.search-field）の下にドロップダウンを出す
-   - 仕様書側（list / spec の頁）: 右上（翻訳ボタンの左横）に入力欄を固定で置き、その下にドロップダウンを出す
+   - 全頁（枠の頁も list / spec の頁も同じ）: 右上（翻訳ボタンの左横）に入力欄を固定で置き、その下にドロップダウンを出す
    打ち込みが止まってから DEBOUNCE ミリ秒たつと検索する。↑↓で選び、Enter で開く（選んでいなければ検索頁へ）。Esc で閉じる */
 (function () {
   'use strict';
@@ -213,23 +212,7 @@
     else if (type === 'close') dd.hide();
   }
 
-  // 枠の頁: 上の帯の入力欄（.search-field）の真下にドロップダウンを出す
-  function inlineMode(input) {
-    var field = input.parentNode;
-    var form = input.form;
-    input.setAttribute('role', 'combobox');
-    input.setAttribute('aria-autocomplete', 'list');
-    input.setAttribute('aria-expanded', 'false');
-    input.setAttribute('aria-controls', 'ukadoc-search-dropdown');
-    input.setAttribute('autocomplete', 'off');
-    var dd = new Dropdown(function (el) { field.appendChild(el); }, function () {});
-    dd.onchange = function (open) { input.setAttribute('aria-expanded', String(open)); };
-    bindInput(input, function (type, d) { handle(dd, type, d || {}); });
-    form.addEventListener('submit', function (e) { e.preventDefault(); dd.enter(input.value); });
-    document.addEventListener('mousedown', function (e) { if (!field.contains(e.target)) dd.hide(); });
-  }
-
-  // 仕様書側: 右上（翻訳ボタンの左横）に入力欄を固定で置く
+  // 全頁: 右上（翻訳ボタンの左横）に入力欄を固定で置く
   function floatMode() {
     var wrap = document.createElement('div');
     wrap.className = 'ukadoc-search';
@@ -260,8 +243,6 @@
 
   /* ---------------------------------------------------------------- 起動 */
 
-  var navInput = document.querySelector('form.internal-search input[name="q"]');
   resultsPage();
-  if (navInput) inlineMode(navInput);
-  else floatMode();
+  floatMode();
 })();
