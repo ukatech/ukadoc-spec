@@ -395,9 +395,13 @@ a:hover {
 	border: none;
 	font-weight: bold;
 	padding: 5px;
-	text-align: right;
+	text-align: left;
 	min-width: 7em;
 	overflow-wrap: anywhere;
+}
+/* 左セルどうしの間を、右セルの明るいほうの色（dd の #efe）の 1px の線で区切る */
+.category dd.entry dl.reference > dt:not(:first-of-type) , .category dd.entry > dl.property > dt:not(:first-of-type) {
+	border-top: 1px solid #efe;
 }
 .category dd.entry dl.reference > dt:after {
 	content: ":";
