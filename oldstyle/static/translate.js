@@ -7,10 +7,18 @@
      訳したあとで元の要素に戻す。印が訳文で崩れたときは、その文だけテキストごとの訳（断片訳）に切り替える
    - 画面に近づいた所から順に訳す（まとめ頁は長いため）。訳した文は覚えておき、同じ文は再訳しない
    - 選んだ言語は localStorage に覚え、次の頁を開いたとき、モデルが取得済みなら自動で訳す
+   - ボタンの置き場は 4 通り
+     float: 仕様書側（list / spec の頁）。右上に固定（検索窓 search.js の右横）
+     host: 枠の頁（iframe#navigation のある頁）の親。ボタンは上の帯（navigation.html の iframe）の検索欄の右横にあり、
+           iframe の外へはみ出せないので、メニューは親が出す（search.js のドロップダウンと同じ分担。postMessage でつなぐ）
+     proxy: navigation.html の中。ボタンだけを置き、押されたことと位置を親へ伝える。親が選んだ言語は state で届く
+     follow: sidemenu.html などの iframe。ボタンは出さず、親の選択（localStorage の storage イベント）に従う
    機械翻訳なので、読める程度の品質。仕様の判断には原文を見ること */
 (function () {
   'use strict';
-  if (typeof Translator === 'undefined') return;
+  var MODE_PROXY = window !== window.top && !!document.querySelector('form.internal-search');
+  // navigation.html の中は、親の頁が Translator を持つときだけボタンを出す（親から state が届くまで隠す）。iframe 側の API の有無は問わない
+  if (typeof Translator === 'undefined' && !MODE_PROXY) return;
 
   var SOURCE = 'ja';
   var LANGS = [
@@ -20,7 +28,12 @@
   ];
   var STORE_KEY = 'ukadoc-translate-lang';
   var ROOTS = 'body';
-  var IN_FRAME = window !== window.top;   // sidemenu.html などの iframe の中か（ボタンは出さず、親の選択に従う）
+  var IN_FRAME = window !== window.top;   // iframe の中か
+  var MSG = 'ukadoc-translate';
+  var NAV_FORM = document.querySelector('form.internal-search');   // navigation.html の検索欄（ボタンを置く場所）
+  var navFrame = document.getElementById('navigation');
+  var HOST_FRAME = !IN_FRAME && navFrame && navFrame.tagName === 'IFRAME' ? navFrame : null;
+  var MODE = IN_FRAME ? (NAV_FORM ? 'proxy' : 'follow') : (HOST_FRAME ? 'host' : 'float');
   var SKIP = 'pre, code, kbd, script, style, svg, [translate="no"], .headerlink, .ukadoc-translate, .ukadoc-search, .ukadoc-search__dropdown';
   var JAPANESE = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
 
@@ -47,8 +60,13 @@
 
   function setStatus(text) { els.status.textContent = text || ''; }
 
+  function pushState(code) {
+    if (HOST_FRAME && HOST_FRAME.contentWindow) HOST_FRAME.contentWindow.postMessage({ t: MSG, type: 'state', lang: code || null }, '*');
+  }
+
   function setActive(code) {
-    els.button.classList.toggle('ukadoc-translate__button--on', !!code);
+    if (els.button) els.button.classList.toggle('ukadoc-translate__button--on', !!code);
+    pushState(code);
     Array.prototype.forEach.call(els.menu.querySelectorAll('button[data-lang]'), function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.lang === (code || '')));
     });
@@ -383,13 +401,7 @@
     setStatus('');
   }
 
-  function build() {
-    state.htmlLang = document.documentElement.lang;
-
-    var wrap = document.createElement('div');
-    wrap.className = 'ukadoc-translate';
-    wrap.setAttribute('translate', 'no');
-
+  function buildButton() {
     var button = document.createElement('button');
     button.type = 'button';
     button.className = 'ukadoc-translate__button';
@@ -398,6 +410,41 @@
     button.setAttribute('aria-haspopup', 'true');
     button.setAttribute('aria-expanded', 'false');
     button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>';
+    return button;
+  }
+
+  // navigation.html の中: 検索欄の右横にボタンだけを置く。メニューは親の頁が出す
+  function buildProxy() {
+    var button = buildButton();
+    button.hidden = true;
+    NAV_FORM.appendChild(button);
+    function post(type) {
+      var d = { t: MSG, type: type };
+      var r = button.getBoundingClientRect();
+      d.rect = { left: r.left, right: r.right, top: r.top, bottom: r.bottom };
+      window.parent.postMessage(d, '*');
+    }
+    button.addEventListener('click', function () { post('toggle'); });
+    document.addEventListener('click', function (e) { if (!button.contains(e.target)) post('close'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') post('close'); });
+    window.addEventListener('message', function (e) {
+      var d = e.data;
+      if (!d || d.t !== MSG || e.source !== window.parent || d.type !== 'state') return;
+      button.hidden = false;
+      button.classList.toggle('ukadoc-translate__button--on', !!d.lang);
+    });
+    post('hello');
+  }
+
+  function build() {
+    state.htmlLang = document.documentElement.lang;
+    if (MODE === 'proxy') { buildProxy(); return false; }
+
+    var wrap = document.createElement('div');
+    wrap.className = 'ukadoc-translate' + (MODE === 'host' ? ' ukadoc-translate--host' : '');
+    wrap.setAttribute('translate', 'no');
+
+    var button = MODE === 'host' ? null : buildButton();
 
     var menu = document.createElement('div');
     menu.className = 'ukadoc-translate__menu';
@@ -427,15 +474,15 @@
     menu.appendChild(list);
     menu.appendChild(status);
 
-    wrap.appendChild(button);
+    if (button) wrap.appendChild(button);
     wrap.appendChild(menu);
     els = { wrap: wrap, button: button, menu: menu, status: status };
 
     function toggle(open) {
       menu.hidden = !open;
-      button.setAttribute('aria-expanded', String(open));
+      if (button) button.setAttribute('aria-expanded', String(open));
     }
-    button.addEventListener('click', function () { toggle(menu.hidden); });
+    if (button) button.addEventListener('click', function () { toggle(menu.hidden); });
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) toggle(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
     menu.addEventListener('click', function (e) {
@@ -444,13 +491,32 @@
       if (b.dataset.lang) start(b.dataset.lang, true); else showOriginal();
     });
 
-    if (IN_FRAME) {
+    if (MODE === 'follow') {
       // iframe の中ではボタンを置かず、親の頁で選ばれた言語に従う（localStorage の変更が storage イベントで届く）
       window.addEventListener('storage', function (e) {
         if (e.key !== STORE_KEY) return;
         if (e.newValue) start(e.newValue, false); else if (state.lang) restore();
       });
       return true;
+    }
+    if (MODE === 'host') {
+      // 上の帯の iframe にあるボタンの真下（右端をそろえる）にメニューを出す
+      window.addEventListener('message', function (e) {
+        var d = e.data;
+        if (!d || d.t !== MSG || e.source !== HOST_FRAME.contentWindow) return;
+        if (d.type === 'toggle' && d.rect) {
+          var f = HOST_FRAME.getBoundingClientRect();
+          wrap.style.left = f.left + d.rect.right + window.pageXOffset + 'px';
+          wrap.style.top = f.top + d.rect.bottom + window.pageYOffset + 2 + 'px';
+          toggle(menu.hidden);
+        } else if (d.type === 'close') {
+          toggle(false);
+        } else if (d.type === 'hello') {
+          pushState(state.lang);
+        }
+      });
+      HOST_FRAME.addEventListener('load', function () { pushState(state.lang); });
+      pushState(state.lang);   // iframe がもう読み込まれていて、hello を取りこぼしたときの分
     }
     document.body.appendChild(wrap);
     return true;

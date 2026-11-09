@@ -32,7 +32,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
 
 - 左メニュー・上の帯は旧版と同じく iframe。サイト内検索（`search.html`）は、旧版の Google の site 検索の代わりに、ビルド時に作る `search-index.js` を使う
 - 検索の入力欄はドロップダウン式（`search.js`）。枠の頁は上の帯の iframe の入力欄に打ち込み、親の頁がドロップダウンを出す。仕様書側（list / spec の頁）は、右上の翻訳ボタンの左横に入力欄を固定で置く
-- 翻訳ボタンは右上に固定（`translate.js`。Translator API が無いブラウザでは出ない）。`sidemenu.html` の iframe は、親の頁で選んだ言語に従う
+- 翻訳ボタンは `translate.js`。枠の頁では上の帯（`navigation.html` の iframe）の検索欄の右横にあり、メニューは親の頁が出す。仕様書側（list / spec の頁）は右上に固定（検索欄の右横）。Translator API が無いブラウザでは出ない。`sidemenu.html` の iframe は、親の頁で選んだ言語に従う
 - 旧版にあった `?event_name=` からのリダイレクト（`index.html`）と、起動中ゴーストの対応状況を色分けする `ghost_status.js` は、移していない
 
 ## 公開とビルドの詳細（GitHub Pages）
@@ -49,7 +49,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
   - `build.py` は、`_site_src/` の Markdown を HTML にし、class と木の形を見て旧版の HTML の構造に組み替える。出力のファイル名は旧版と同じ（`descript_ghost.html` など）。頁の種類は 3 つ（上の「作り」）。対応のベースウェアはアイコン画像（`image/icon_m.png` `icon_s.png` `icon_c.png` `icon_n.png`）で出す。ベースウェアを足すときは `build.py` の `BASEWARE` と画像を足す
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）。色は `oldstyle/static/oldstyle.css`
   - 見た目は `oldstyle/static/` の旧版の CSS（`base.css` `list.css` `spec.css` `iframes.css`。旧版のまま）と、新しい原稿のための補い `oldstyle.css`。旧版の CSS は、旧版の見た目を変えるとき以外は直さず、足りない分は `oldstyle.css` に書く
-  - 翻訳ボタンは `oldstyle/static/translate.js`（右上に固定。見た目は `oldstyle.css` の `.ukadoc-translate`）。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文を日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない。左メニュー（`sidemenu.html` の iframe）は、親の頁で選んだ言語に従う
+  - 翻訳ボタンは `oldstyle/static/translate.js`。置き場所は 4 通り（先頭のコメントにも書いてある）: 仕様書側（`float`）は右上に固定、枠の頁の親（`host`）は上の帯の iframe にあるボタンの真下にメニューだけを出し、`navigation.html` の中（`proxy`）はボタンだけを検索欄の右横に置いて押されたことを postMessage で親へ伝え、`sidemenu.html` など（`follow`）はボタンなしで親に従う。見た目は、メニュー・仕様書側が `oldstyle.css` の `.ukadoc-translate`、`navigation.html` の中のボタンが `iframes.css`。ブラウザ組み込みの Translator API（Chrome 138 以降のデスクトップ版など）で、本文を日本語から英語・中国語（繁体 `zh-Hant`・簡体 `zh`）へ機械翻訳する。API が無いブラウザではボタンを出さない。左メニュー（`sidemenu.html` の iframe）は、親の頁で選んだ言語に従う
     - 訳すのは日本語を含む文だけ（`code` `pre` `kbd` と `translate="no"` の中は訳さない）。文はブロック（`p` `li` `td` など）の中の連なりを単位にまとめて訳し、リンク・太字・コードスパンは印（`<x1/>` `<a2>…</a2>`）に置き換えて訳してから元の要素へ戻す（印が崩れた文は断片ごとの訳に切り替える）。画面に近づいた所から順に訳す。選んだ言語は localStorage に覚え、モデルが取得済みなら次の頁でも自動で訳す
     - 読める程度の品質でよいとしている。原稿のほうで、訳したくない語を `<span translate="no">…</span>` で囲むこともできる
     - 言語を足すときは `translate.js` の `LANGS` に足す

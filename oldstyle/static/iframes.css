@@ -163,4 +163,21 @@ html#navigation > body {
 	opacity: 0.35;
 	pointer-events: none;
 }
+/* 翻訳ボタン（translate.js が検索欄の右横に置く。メニューは親の頁が出す） */
+#navigation_body form.internal-search .ukadoc-translate__button {
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	margin-left: 6px;
+	padding: 2px;
+	vertical-align: middle;
+	border: 1px solid #7bb56b;
+	border-radius: 3px;
+	background: #fff;
+	color: #336633;
+	cursor: pointer;
+}
+#navigation_body form.internal-search .ukadoc-translate__button[hidden] { display: none; }
+#navigation_body form.internal-search .ukadoc-translate__button svg { display: block; width: 100%; height: 100%; fill: currentColor; }
+#navigation_body form.internal-search .ukadoc-translate__button--on { background: #94de84; }
 /* NAVIGATION */

@@ -122,6 +122,8 @@ main table td { text-align: left; }
 
 /* 翻訳ボタン（translate.js）。右上に固定 */
 .ukadoc-translate { position: fixed; top: 6px; right: 8px; z-index: 20; font-size: 12px; }
+.ukadoc-translate--host { position: absolute; top: 0; left: 0; right: auto; width: 0; height: 0; }
+.ukadoc-translate--host .ukadoc-translate__menu { top: 0; margin-top: 0; }
 .ukadoc-translate__button { width: 28px; height: 28px; padding: 3px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #336633; cursor: pointer; }
 .ukadoc-translate__button svg { width: 100%; height: 100%; fill: currentColor; }
 .ukadoc-translate__button--on { background: #94de84; }
