@@ -17,26 +17,9 @@ html {
 	background-color: #ffffff;
 }
 body {
-	background-image: url(image/shade_v.png);
-	background-repeat: repeat-y;
-	background-position: center top;
-	width: 800px;
-	margin: 0 auto;
+	margin: 0;
 	color: #333333;
-	font-size: 12px;
 	counter-reset: note;
-}
-iframe#sidemenu {
-	border: 0;
-	min-height: inherit;
-	overflow: hidden;
-	width: 240px;
-}
-iframe#navigation {
-	border: 0;
-	overflow: hidden;
-	width: 750px;
-	height: 160px;
 }
 h1 + .passage {
 	margin-top: 0;
@@ -49,7 +32,6 @@ table {
 	margin:2px 0;
 	border: 1px solid #333333;
 	border-collapse: collapse;
-	font-size: 14px;
 }
 th {
 	padding: 3px;
@@ -75,7 +57,6 @@ table.exmp-surfacenum {
 	margin: 1em 0;
 	border: none;
 	border-collapse: collapse;
-	font-size: 12px;
 	border-collapse: separate;
 	border-spacing: 2px 0;
 }
@@ -200,42 +181,43 @@ a.note:after {
 }
 
 
+/* 枠: 画面の幅いっぱい（左右に 14px のすきまを残し、そこに枠の影を見せる）。左のサイドバーと本文が並ぶ（iframe は使わない） */
 section.baseframe {
 	border: 0;
-	width: 750px;
-	min-height: 1600px;
-	margin: 0 auto;
-}
-section.baseframe > header:first-child {
-	height: 174px;
-	background-image: url(image/shade_h.png);
-	background-repeat: repeat-x;
-	background-position: left bottom;
+	margin: 0 14px;
+	background-color: #ffffff;
+	box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.4);
 }
 section.body {
-	position: relative;
-	width: 750px;
-	min-height: inherit;
-	margin-top: 0.5em;
+	display: flex;
+	align-items: flex-start;
+	padding-top: 20px;
+	background-image: url(image/shade_h.png);
+	background-repeat: repeat-x;
+	background-position: left top;
 }
 nav.sidebar {
-	float: left;
-	min-height: inherit;
-	width: 200px;
-	overflow :hidden;
+	box-sizing: border-box;
+	flex: 0 0 280px;
+	width: 280px;
+	padding: 0 10px 1em 0;
 }
 main {
-	float: right;
-	width: 540px;
-	padding-right: 10px;
-	padding-bottom: 1em;
+	box-sizing: border-box;
+	flex: 1 1 0;
+	min-width: 0;
+	padding: 0 16px 1em 8px;
 	counter-reset: chapter-h chapter-ex-h figure-pict;
+}
+main pre {
+	overflow-x: auto;
 }
 main figure {
 	margin: 0.5em auto;
 	text-align: center;
 }
 main figure img {
+	max-width: 100%;
 	border: 1px dotted #7bb56b;
 }
 main figure.ordered.pict > figcaption:before {
@@ -422,4 +404,142 @@ footer .banner {
 }
 .directory {
 	color: #808080;
+}
+
+
+/* 上の帯（旧 navigation.html。iframe をやめて頁に埋め込んだもの） */
+#navigation {
+	background-color: #94de84;
+}
+#navigation_top {
+	background-image: url(image/title2.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 130px;
+}
+#navigation_body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1px 3px;
+	white-space: nowrap;
+}
+#navigation_body .menu {
+	margin-top: 1px;
+	list-style-type: none;
+}
+#navigation_body form.internal-search {
+	text-align: right;
+	padding-right: 3px;
+}
+#navigation_body form.internal-search .search-field {
+	position: relative;
+	display: inline-block;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+#navigation_body form.internal-search input[type="text"] {
+	box-sizing: border-box;
+	width: 220px;
+	padding-right: 24px;
+}
+#navigation_body form.internal-search .search-icon {
+	position: absolute;
+	top: 50%;
+	right: 6px;
+	transform: translateY(-50%);
+	opacity: 0.35;
+	pointer-events: none;
+}
+/* 翻訳ボタン（translate.js が検索欄の右横に置く） */
+#navigation_body form.internal-search .ukadoc-translate__button {
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	padding: 2px;
+	vertical-align: middle;
+	border: 1px solid #7bb56b;
+	border-radius: 3px;
+	background: #fff;
+	color: #336633;
+	cursor: pointer;
+}
+#navigation_body form.internal-search .ukadoc-translate--inline { margin-left: 6px; }
+#navigation_body form.internal-search .ukadoc-translate__button[hidden] { display: none; }
+#navigation_body form.internal-search .ukadoc-translate__button svg { display: block; width: 100%; height: 100%; fill: currentColor; }
+#navigation_body form.internal-search .ukadoc-translate__button--on { background: #94de84; }
+
+
+/* 左のメニュー（旧 sidemenu.html。iframe をやめて頁に埋め込んだもの。本文と同じ文字の大きさ） */
+nav.sidebar h2 {
+	margin: 0 5px 0.5em;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #7bb56b;
+	color: #646464;
+	font-weight: bold;
+}
+nav.sidebar h2:before {
+	content: url("image/icon_point.gif");
+}
+nav.sidebar p {
+	margin: 0;
+	line-height: normal;
+}
+nav.sidebar ul {
+	margin-left: 2.2em;
+	margin-bottom: 1.5em;
+	list-style-type: none;
+	list-style-image: url(image/icon_doc.png);
+}
+nav.sidebar ul ul {
+	margin-left: 0;
+	margin-bottom: 1em;
+	list-style-image: none;
+	list-style-type: disc;
+}
+nav.sidebar li {
+	margin: 1px 0;
+	overflow-wrap: anywhere;
+}
+nav.sidebar ul ul li {
+	margin: 0.2em 0.5em 0 0;
+	color: #94de84;
+}
+nav.sidebar ul.doctype-dev {
+	list-style-image: url(image/icon_doc-r.png);
+}
+nav.sidebar ul.doctype-dev ul li {
+	color: #de8494;
+}
+nav.sidebar ul.doctype-list {
+	list-style-image: url(image/icon_doc-b.png);
+}
+nav.sidebar ul.doctype-list ul li {
+	color: #9484de;
+}
+nav.sidebar ul.doctype-others {
+	list-style-image: url(image/icon_doc-y.png);
+}
+nav.sidebar ul.doctype-others ul li {
+	color: #dede84;
+}
+/* a の色は、リンクの文字（li の色はマーカーの色）。サイドバーの中ではマウスを載せても動かさない */
+nav.sidebar a:active,
+nav.sidebar a:hover {
+	top: 0;
+	left: 0;
+}
+
+/* 狭い画面では、サイドバーを本文の上に積む */
+@media (max-width: 720px) {
+	section.body {
+		flex-direction: column;
+	}
+	nav.sidebar {
+		flex-basis: auto;
+		width: 100%;
+	}
+	#navigation_body {
+		flex-wrap: wrap;
+	}
 }

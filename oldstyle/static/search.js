@@ -1,17 +1,13 @@
 /* サイト内検索。search-index.js（ビルド時に作る。大きいので、使うときに読み込む）の UKADOC_INDEX を、
    空白で区切った語の AND で部分一致検索する。旧版にあった外部の Google 検索の代わり。
-   使われ方は 4 つ（全部この 1 ファイル）
+   使われ方は 3 つ（全部この 1 ファイル）
    - 検索頁（search.html）: 入力欄の下に、ヒットした全項目を並べる
-   - 枠の頁（iframe#navigation のある頁）: 上の帯（navigation.html の iframe）の入力欄に打ち込むと、
-     親の頁がドロップダウンを出す。iframe の中では下にはみ出せないため、入力は iframe、表示は親が受け持つ（postMessage でつなぐ）
+   - 枠の頁（上の帯 header#navigation に form.internal-search のある頁）: 上の帯の入力欄（.search-field）の下にドロップダウンを出す
    - 仕様書側（list / spec の頁）: 右上（翻訳ボタンの左横）に入力欄を固定で置き、その下にドロップダウンを出す
-   - navigation.html の中: 入力を親へ伝えるだけ
    打ち込みが止まってから DEBOUNCE ミリ秒たつと検索する。↑↓で選び、Enter で開く（選んでいなければ検索頁へ）。Esc で閉じる */
 (function () {
   'use strict';
 
-  var IN_FRAME = window !== window.top;
-  var MSG = 'ukadoc-search';
   var DEBOUNCE = 250;      // 打ち込みが止まってから検索するまでの待ち（ミリ秒）
   var MAX_ITEMS = 8;       // ドロップダウンに並べる件数
   var MAX_PAGE = 100;      // 検索頁に並べる件数
@@ -90,7 +86,7 @@
         var shown = r.hits.slice(0, MAX_PAGE);
         var html = '<p>' + r.hits.length + ' 件' + (r.hits.length > shown.length ? '（上位 ' + shown.length + ' 件を表示）' : '') + '</p><ul class="search-hits">';
         shown.forEach(function (h) {
-          html += '<li><a href="' + esc(h.d.url) + '" target="_top">' + esc(h.d.title) + '</a> <span class="search-page">' + esc(h.d.page) + '</span><br>' + snippet(h.d, r.terms, 140) + '</li>';
+          html += '<li><a href="' + esc(h.d.url) + '">' + esc(h.d.title) + '</a> <span class="search-page">' + esc(h.d.page) + '</span><br>' + snippet(h.d, r.terms, 140) + '</li>';
         });
         out.innerHTML = html + '</ul>';
       });
@@ -105,7 +101,7 @@
     });
   }
 
-  /* ---------------------------------------------------------------- ドロップダウン（親の頁・仕様書側で使う） */
+  /* ---------------------------------------------------------------- ドロップダウン（枠の頁・仕様書側で使う） */
 
   function Dropdown(mount, place) {
     var self = this;
@@ -217,41 +213,20 @@
     else if (type === 'close') dd.hide();
   }
 
-  // 枠の頁: 上の帯の iframe の入力欄の真下に、親の頁でドロップダウンを出す
-  function hostMode(frame) {
-    var inputRect = null;
-    var dd = new Dropdown(function (el) { el.classList.add('ukadoc-search__dropdown--page'); document.body.appendChild(el); }, function (el) {
-      if (!inputRect) return;
-      var f = frame.getBoundingClientRect();
-      var width = Math.min(460, window.innerWidth - 8);
-      var left = f.left + inputRect.right - width;
-      left = Math.max(4, Math.min(left, window.innerWidth - width - 4));
-      el.style.width = width + 'px';
-      el.style.left = left + window.pageXOffset + 'px';
-      el.style.top = f.top + inputRect.bottom + window.pageYOffset + 2 + 'px';
-    });
-    window.addEventListener('message', function (e) {
-      var d = e.data;
-      if (!d || d.t !== MSG || e.source !== frame.contentWindow) return;
-      if (d.rect) inputRect = d.rect;
-      handle(dd, d.type, d);
-    });
-    document.addEventListener('mousedown', function (e) { if (!dd.el.contains(e.target)) dd.hide(); });
-  }
-
-  // navigation.html の中: 入力を親の頁へ伝える。Enter も親が決める（選んでいる項目へ行くか、検索頁へ行くか）
-  function proxyMode(input) {
+  // 枠の頁: 上の帯の入力欄（.search-field）の真下にドロップダウンを出す
+  function inlineMode(input) {
+    var field = input.parentNode;
     var form = input.form;
+    input.setAttribute('role', 'combobox');
+    input.setAttribute('aria-autocomplete', 'list');
+    input.setAttribute('aria-expanded', 'false');
+    input.setAttribute('aria-controls', 'ukadoc-search-dropdown');
     input.setAttribute('autocomplete', 'off');
-    function send(type, extra) {
-      var d = { t: MSG, type: type, rect: null };
-      var r = input.getBoundingClientRect();
-      d.rect = { left: r.left, right: r.right, top: r.top, bottom: r.bottom };
-      for (var k in extra) d[k] = extra[k];
-      window.parent.postMessage(d, '*');
-    }
-    bindInput(input, send);
-    form.addEventListener('submit', function (e) { e.preventDefault(); send('enter', { q: input.value }); });
+    var dd = new Dropdown(function (el) { field.appendChild(el); }, function () {});
+    dd.onchange = function (open) { input.setAttribute('aria-expanded', String(open)); };
+    bindInput(input, function (type, d) { handle(dd, type, d || {}); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); dd.enter(input.value); });
+    document.addEventListener('mousedown', function (e) { if (!field.contains(e.target)) dd.hide(); });
   }
 
   // 仕様書側: 右上（翻訳ボタンの左横）に入力欄を固定で置く
@@ -285,13 +260,8 @@
 
   /* ---------------------------------------------------------------- 起動 */
 
-  var frame = document.getElementById('navigation');
   var navInput = document.querySelector('form.internal-search input[name="q"]');
-  if (IN_FRAME) {
-    if (navInput) proxyMode(navInput);
-  } else {
-    resultsPage();
-    if (frame && frame.tagName === 'IFRAME') hostMode(frame);
-    else if (!navInput) floatMode();
-  }
+  resultsPage();
+  if (navInput) inlineMode(navInput);
+  else floatMode();
 })();

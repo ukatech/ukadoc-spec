@@ -130,14 +130,13 @@ main table td { text-align: left; }
 .text .highlight pre { padding: 0; }
 .text section .highlight code { display: inline; background: none; border: none; padding: 0; margin: 0; }
 
-/* 翻訳ボタン（translate.js）。右上に固定 */
+/* 翻訳ボタン（translate.js）。仕様書側は右上に固定、枠の頁は上の帯の検索欄の右横（inline） */
 .ukadoc-translate { position: fixed; top: 6px; right: 8px; z-index: 20; font-size: 12px; }
-.ukadoc-translate--host { position: absolute; top: 0; left: 0; right: auto; width: 0; height: 0; }
-.ukadoc-translate--host .ukadoc-translate__menu { top: 0; margin-top: 0; }
+.ukadoc-translate--inline { position: relative; top: auto; right: auto; display: inline-block; vertical-align: middle; }
 .ukadoc-translate__button { width: 28px; height: 28px; padding: 3px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #336633; cursor: pointer; }
 .ukadoc-translate__button svg { width: 100%; height: 100%; fill: currentColor; }
 .ukadoc-translate__button--on { background: #94de84; }
-.ukadoc-translate__menu { position: absolute; top: 100%; right: 0; min-width: 13em; margin-top: 2px; padding: 3px 0; border: 1px solid #7bb56b; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+.ukadoc-translate__menu { position: absolute; top: 100%; right: 0; min-width: 13em; margin-top: 2px; padding: 3px 0; border: 1px solid #7bb56b; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); white-space: normal; text-align: left; }
 .ukadoc-translate__menu[hidden] { display: none; }
 .ukadoc-translate__menu ul { margin: 0; padding: 0; }
 .ukadoc-translate__menu li { list-style: none; margin: 0; }
@@ -147,13 +146,12 @@ main table td { text-align: left; }
 .ukadoc-translate__status { margin: 3px 0 0; padding: 4px 10px 0; border-top: 1px solid #ccc; color: #666; }
 .ukadoc-translate__status:empty { display: none; }
 
-/* サイト内検索の入力欄とドロップダウン（search.js）。仕様書側は右上、翻訳ボタンの左横に固定。枠の頁は上の帯の入力欄の下に、親の頁が出す */
+/* サイト内検索の入力欄とドロップダウン（search.js）。仕様書側は右上、翻訳ボタンの左横に固定。枠の頁は上の帯の入力欄（.search-field）の下に出す */
 .ukadoc-search { position: fixed; top: 6px; right: 42px; z-index: 20; font-size: 12px; }
 .ukadoc-search__icon { position: absolute; top: 0; right: 6px; line-height: 28px; opacity: 0.35; pointer-events: none; }
 .ukadoc-search__input { box-sizing: border-box; width: 190px; height: 28px; padding: 2px 24px 2px 6px; border: 1px solid #7bb56b; border-radius: 3px; background: #fff; color: #333; font: inherit; }
 .ukadoc-search__input:focus { outline: 2px solid #94de84; outline-offset: 0; }
-.ukadoc-search__dropdown { position: absolute; top: 100%; right: 0; z-index: 30; box-sizing: border-box; width: 460px; max-width: calc(100vw - 50px); max-height: 70vh; overflow-y: auto; margin-top: 2px; border: 1px solid #7bb56b; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); color: #333; font-size: 12px; line-height: 1.5; text-align: left; }
-.ukadoc-search__dropdown--page { max-width: none; margin-top: 0; }
+.ukadoc-search__dropdown { position: absolute; top: 100%; right: 0; z-index: 30; box-sizing: border-box; width: 460px; max-width: calc(100vw - 50px); max-height: 70vh; overflow-y: auto; margin-top: 2px; border: 1px solid #7bb56b; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); color: #333; font-size: 12px; line-height: 1.5; text-align: left; white-space: normal; }
 .ukadoc-search__dropdown[hidden] { display: none; }
 .ukadoc-search__dropdown a, .ukadoc-search__dropdown a:link, .ukadoc-search__dropdown a:visited { color: inherit; text-decoration: none; }
 .ukadoc-search__item { display: block; padding: 5px 8px; border-bottom: 1px dotted #ccc; }

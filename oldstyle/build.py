@@ -4,7 +4,8 @@ Zensical には頼らず、次の流れで作る。
 
 1. scripts/prepare_site.py が作る _site_src/（「1 ディレクトリ 1 ページ」にまとめた Markdown）を読む
 2. Python-Markdown で HTML にし、旧版の HTML の構造（list.css / spec.css / base.css が前提にしている class と入れ子）に組み替える
-3. 旧版のファイル名（descript_ghost.html など）・旧版の CSS・画像・iframe の枠（navigation.html / sidemenu.html）で出す
+3. 旧版のファイル名（descript_ghost.html など）・旧版の CSS・画像で出す。枠の頁（manual_* など）の上の帯と左のメニューは、
+   iframe にせず、templates/navigation.html と sidemenu.html の断片を頁に埋め込む
 
 使い方: python oldstyle/build.py [--no-prepare]
 """
@@ -982,6 +983,13 @@ def read_template(name):
         return f.read()
 
 
+def frame_open():
+    """枠の頁の頭。上の帯（navigation.html）と左のメニュー（sidemenu.html）の断片を、頁に埋め込む（iframe は使わない）"""
+    return (read_template('frame-open.html')
+            .replace('<!--NAVIGATION-->\n', read_template('navigation.html'))
+            .replace('<!--SIDEMENU-->\n', read_template('sidemenu.html')))
+
+
 def write_out(name, text):
     path = os.path.join(OUT, name)
     with open(path, 'w', encoding='utf-8', newline='\n') as f:
@@ -1027,7 +1035,7 @@ def render_page(md_rel, text, known):
         h1, main = build_frame_page(md_rel, root)
         title = text_of(h1)
         out = head(title, 'base.css')
-        out += read_template('frame-open.html')
+        out += frame_open()
         out += serialize(main) + '\n'
         out += read_template('frame-close.html')
     write_out(name, out)
@@ -1041,15 +1049,20 @@ def normalize_space(text):
 def build_search_index():
     """出力した頁から、サイト内検索用の索引（search-index.js）を作る。項目（dl#id）・節（section#id）ごとに 1 件"""
     entries = []
-    skip = {'navigation.html', 'sidemenu.html', 'search.html'}
+    skip = {'search.html'}
     for name in sorted(os.listdir(OUT)):
         if not name.endswith('.html') or name in skip:
             continue
         with open(os.path.join(OUT, name), encoding='utf-8') as f:
             doc = lxml.html.fromstring(f.read())
-        h1 = doc.find('.//h1')
+        # 枠の頁は、左のメニューと上の帯を含まない本文（main）だけを見る
+        body = doc.find('.//main')
+        if body is None:
+            body = doc.find('body')
+        h1 = body.find('.//h1')
+        if h1 is None:
+            h1 = doc.find('.//h1')
         page = normalize_space(h1.text_content()) if h1 is not None else name
-        body = doc.find('body')
         entries.append([page, page, name, normalize_space(body.text_content())[:300]])
         for el in doc.iter('dl', 'section', 'div'):
             ident = el.get('id')
@@ -1075,7 +1088,7 @@ def build_search_index():
 
 def build_search_page():
     out = head('ukadoc内検索', 'base.css')
-    out += read_template('frame-open.html') + read_template('search-main.html') + '\n' + read_template('frame-close.html')
+    out += frame_open() + read_template('search-main.html') + '\n' + read_template('frame-close.html')
     write_out('search.html', out)
 
 
@@ -1128,8 +1141,6 @@ def main():
     build_search_page()
     count = build_search_index()
     print(f'索引 {count} 件')
-    for tpl in ('navigation.html', 'sidemenu.html'):
-        shutil.copy(os.path.join(TEMPLATES, tpl), os.path.join(OUT, tpl))
     # llms.txt をサイトのルートに置き、生の Markdown 原稿（_raw/）を重ねる（llms.txt や INDEX.md の相対リンクを辿れるように）
     shutil.copy(os.path.join(ROOT, 'llms.txt'), os.path.join(OUT, 'llms.txt'))
     raw = os.path.join(ROOT, '_raw')

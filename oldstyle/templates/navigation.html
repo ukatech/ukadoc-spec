@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja" id="navigation">
-<head>
-<meta charset="utf-8" />
-<meta name="author" content="UKADOC Project">
-<title>UKADOC Project Navigation</title>
-<link rel="stylesheet" href="iframes.css">
-<base target="_top">
-<script src="search.js" defer></script>
-<script src="translate.js" defer></script>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<body>
-
-
-
-<section id="navigationframe">
-	<header id="navigation_top">
-		<div class="navigation_ad">
-			<br>
-		</div>
-	</header>
+<header id="navigation">
+	<div id="navigation_top" role="img" aria-label="UKADOC Project"></div>
 	<nav id="navigation_body">
 		<div class="menu"><!--
 			--><a href="index.html"><img src="image/button_toppage.png" height="21" width="98" alt="トップページ"></a><!--
@@ -26,13 +7,8 @@
 			--><a href="https://github.com/ukatech/ukadoc-spec/commits/main"><img src="image/button_history.png" height="21" width="98" alt="更新履歴"></a><!--
 			--><a href="http://ssp.shillest.net/"><img src="image/button_bugtraq.png" height="21" width="98" alt="SSP開発"></a><!--
 		--></div>
-		<form action="search.html" method="get" class="internal-search" target="_top">
+		<form action="search.html" method="get" class="internal-search">
 		    <span class="search-field"><input type="text" name="q" value="" autocomplete="off" placeholder="ukadoc内検索" aria-label="ukadoc内検索"><span class="search-icon" aria-hidden="true">🔍</span></span>
 		</form>
 	</nav>
-</section>
-
-
-
-</body>
-</html>
+</header>
