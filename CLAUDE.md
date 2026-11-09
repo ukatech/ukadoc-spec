@@ -107,4 +107,5 @@ python -m http.server -d _site_old   # http://127.0.0.1:8000/ でプレビュー
 - `manual/` `dev/` `memo/` と、ディレクトリを持たない `spec/*.md` は、1 ファイル 1 ページのまま
 - 章立て（左メニュー `oldstyle/templates/sidemenu.html`、上の帯 `navigation.html`、頁の上の目次の表 `menu-header.html`）は、旧版の HTML の写しを直接書く。ページを足したときは、これらに足す
 - `llms.txt`（AI エージェント向けの探し方の案内。`INDEX.md` と各ディレクトリの入口だけを書く）はサイトのルートに置かれる。ページごとの一覧は載せないので、ページを足しても直さなくてよい。ディレクトリを足したときは「構成」に 1 行足す
+- オフライン用のアーカイブ `ukadoc-spec-offline.zip` を、`oldstyle/build.py` が出力（`_site_old/`）のルートに作る（`build_offline_zip()`）。サイト一式（HTML・CSS・JS・画像・`llms.txt`・生の Markdown 原稿）を、`ukadoc-spec/` の下にまとめたもの。zip 自身は含めない。`INDEX.md` の冒頭から、`llms.txt` の案内の上でリンクしている（`llms.txt` と同じく絶対 URL）
 - 生の Markdown 原稿（`README.md` と `CLAUDE.md` 以外の `.md`）は、リポジトリと同じパスでサイトにも置かれる。`scripts/prepare_site.py` が `_raw/` に写し、`oldstyle/build.py` が出力（`_site_old/`）に重ねる。`llms.txt` や `INDEX.md` の相対リンクは、このおかげでサイト上でも辿れる

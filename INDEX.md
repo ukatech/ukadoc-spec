@@ -10,6 +10,8 @@
 
 このサイトの文章は、[クリエイティブ・コモンズ 表示 4.0 国際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)のもとで利用できます。ゴースト制作に限らず、引用・転載・改変はご自由にどうぞ。その際は「原著作者のクレジット」として、当プロジェクト（UKADOC project）の名前、またはこのサイトへのリンクを示してください。
 
+> オフラインで読むためのアーカイブとして、このサイトの HTML・CSS・JS・画像一式を固めた [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip) を用意しています。展開した `ukadoc-spec/index.html` から読めます。
+>
 > AI エージェント向けに、探し方の案内 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt) を用意しています。各ページの Markdown 原稿は、リポジトリと同じパスの `.md`（例: `https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）で取得できます。
 
 ## 対象version

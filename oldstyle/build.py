@@ -16,6 +16,7 @@ import re
 import shutil
 import subprocess
 import sys
+import zipfile
 from urllib.parse import unquote
 
 import lxml.html
@@ -1078,6 +1079,27 @@ def build_search_page():
     write_out('search.html', out)
 
 
+OFFLINE_ZIP = 'ukadoc-spec-offline.zip'
+
+
+def build_offline_zip():
+    """出力したサイト一式（HTML・CSS・JS・画像・llms.txt・生の Markdown 原稿）を、オフラインで読める zip にする。
+    展開すると `ukadoc-spec/` の下に出る。zip 自身は含めない。サイトのルートに置かれ、公開される"""
+    zip_path = os.path.join(OUT, OFFLINE_ZIP)
+    files = []
+    for dirpath, dirs, names in os.walk(OUT):
+        dirs.sort()
+        for name in sorted(names):
+            path = os.path.join(dirpath, name)
+            if path != zip_path:
+                files.append(path)
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for path in files:
+            rel = os.path.relpath(path, OUT).replace(os.sep, '/')
+            z.write(path, 'ukadoc-spec/' + rel)
+    return len(files), os.path.getsize(zip_path)
+
+
 def main():
     if '--no-prepare' not in sys.argv:
         subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'prepare_site.py')], check=True)
@@ -1115,6 +1137,8 @@ def main():
         shutil.copytree(raw, OUT, dirs_exist_ok=True)
     if ERRORS:
         sys.exit(1)
+    n, size = build_offline_zip()
+    print(f'{OFFLINE_ZIP}: {n} ファイル、{size / 1024 / 1024:.1f} MB')
     print(f'{len(pages)} 頁を {OUT} に出力した')
 
 
