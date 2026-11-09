@@ -3,7 +3,9 @@
 
 /* コードブロック（Pygments） */
 .highlight { margin: 2px 0; background: transparent; }
-.highlight pre { margin: 0; background: transparent; line-height: 1.2em; white-space: pre; overflow-x: auto; }
+.highlight pre { margin: 0; background: transparent; line-height: 1.2em; white-space: pre-wrap; overflow-wrap: anywhere; overflow-x: auto; }
+/* Pygments の太字（さくらスクリプトのタグなど）の中の日本語は、フォント（BIZ UDGothic など）に太字の面が無いと、ブラウザが字を重ね描きして潰れる（擬似太字）。太字の面があるもの（Consolas の英数字）だけ太字にする */
+.highlight pre { font-synthesis-weight: none; }
 .highlight pre code { white-space: inherit; }
 code, kbd, samp, .highlight pre, .highlight pre code, pre code { font-family: Consolas, "Courier New", "BIZ UDGothic", monospace; font-size: 13px; }
 main .highlight pre, .category .highlight pre, .caption .highlight pre, .text .highlight pre { padding: 5px; }
