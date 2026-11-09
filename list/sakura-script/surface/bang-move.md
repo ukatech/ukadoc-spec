@@ -2,7 +2,7 @@
 
 **カテゴリ:** サーフェスコマンド
 
-指定座標まで移動。[※下記参照](note-1.md#movemoveasyncについて)
+指定座標まで移動。[※下記参照](bang-moveasync.note.md)
 
 **対応:** SSP / CROW
 

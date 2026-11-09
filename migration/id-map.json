@@ -4840,8 +4840,8 @@
   "path": "list/sakura-script/notes_lifespan.md"
  },
  "list_sakura_script#notes_move": {
-  "anchor": "movemoveasyncについて",
-  "path": "list/sakura-script/surface/note-1.md"
+  "anchor": null,
+  "path": "list/sakura-script/surface/bang-moveasync.note.md"
  },
  "list_sakura_script#notes_passivemode": {
   "anchor": null,

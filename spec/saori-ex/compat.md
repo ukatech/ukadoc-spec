@@ -12,7 +12,7 @@ SSPはよく使われていた次のSAORI DLLの互換の機能を内蔵して�
 
 ## osuwari \[SSP 2.9.33\]
 
-ukiya氏の`Osuwari.dll`の互換です。ゴーストのウインドウを、前面のウインドウ・指定したウインドウ・画面の矩形に追尾させます（[`\![set,alignmenttodesktop,osuwari,…]`](../../list/sakura-script/surface/note-1.md#setalignmenttodesktoposuwariについて)と同じ処理で、オプションの意味もそちらに書いてあります）。引数は原作と同じ位置引数です。
+ukiya氏の`Osuwari.dll`の互換です。ゴーストのウインドウを、前面のウインドウ・指定したウインドウ・画面の矩形に追尾させます（[`\![set,alignmenttodesktop,osuwari,…]`](../../list/sakura-script/surface/bang-set-alignmenttodesktop.note.md)と同じ処理で、オプションの意味もそちらに書いてあります）。引数は原作と同じ位置引数です。
 
 - `START`: `Argument1`から順に、制御対象のHWND / 追尾対象（`ACTIVE` `FIX` `@タイトル` `#ハンドル`） / 原点（`TL` `TR` `BL` `BR`） / xのずれ / yのずれ / 更新間隔（ミリ秒。0は100） / (省略可)オプション（`XMOVE` `YMOVE` `NOCLIP` `BACK`をスペース区切り。`BACK`は対象のウインドウのすぐ奥に座ります。原作にはありません） / (省略可)座れないときの指定（`DESKTOP` `WORKAREA`と、`CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`をスペース区切り） / (省略可)見切れマージン（`左_上_右_下`）。
   - 7つめの引数以降を省略すると、前回の`START`の値を引き継ぎます。原作と同じ動作です。`\![set,alignmenttodesktop,osuwari,…]`のほうは、省略したオプションを毎回既定値にします（引き継ぎません）。

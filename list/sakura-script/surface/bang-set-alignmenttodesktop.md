@@ -9,7 +9,7 @@
 - **left**: 左部に吸着。
 - **right**: 右部に吸着。
 - **free**: 吸着なし。
-- **osuwari,オプション,…**: \[SSP 2.9.33\] 他のウインドウ（前面のウインドウ・指定したウインドウ）や画面の矩形に追尾する（お座り）。オプションは`--名前=値`の形で、`--target=` `--origin=` `--target-origin=` `--x=` `--y=` `--interval=` `--xmove` `--ymove` `--noclip` `--area=` `--side=` `--margin=` `--zorder=`がある。すべて省略できる。詳しくは[`\![set,alignmenttodesktop,osuwari]`について](note-1.md#setalignmenttodesktoposuwariについて)。
+- **osuwari,オプション,…**: \[SSP 2.9.33\] 他のウインドウ（前面のウインドウ・指定したウインドウ）や画面の矩形に追尾する（お座り）。オプションは`--名前=値`の形で、`--target=` `--origin=` `--target-origin=` `--x=` `--y=` `--interval=` `--xmove` `--ymove` `--noclip` `--area=` `--side=` `--margin=` `--zorder=`がある。すべて省略できる。詳しくは[`\![set,alignmenttodesktop,osuwari]`について](bang-set-alignmenttodesktop.note.md)。
 - **default**: ゴーストのデフォルト設定に戻す。
 
 上または下に吸着した場合、上下方向へのドラッグ移動ができなくなる。<br />

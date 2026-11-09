@@ -77,7 +77,7 @@ Commandヘッダに指定できる文字列と、responseの「追加データ�
   DumpSurface\[...\]の形式ではパラメータ中にカンマを書けないため、カンマを含むサーフェスリストはReference0以降で指定すること。<br />
   処理が終わるまでレスポンスが返らないので注意。<br />
   追加データなし(ステータスコード200番台で成功)
-- **MoveAsync \[SSP\] \[リモート不可\]**: [`\![moveasync]`](../../list/sakura-script/surface/note-1.md#movemoveasyncについて)と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。<br />
+- **MoveAsync \[SSP\] \[リモート不可\]**: [`\![moveasync]`](../../list/sakura-script/surface/bang-moveasync.note.md)と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。<br />
   SSTPのタイムアウトまでにresponseを返せないのとデッドロックの原因になるため、asyncなしのmoveは実行できない。<br />
   追加データなし(ステータスコード200番台で成功)
 - **SetTrayIcon \[SSP\] \[リモート不可\]**: [`\![set,tasktrayicon]`](../../list/sakura-script/event/bang-set-tasktrayicon-.ico-duration-eq-runcount-eq.md)と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。<br />
