@@ -1,7 +1,7 @@
 """サイトのコードブロックの Pygments レキサー。
 
 - SakuraScriptLexer: さくらスクリプトの記述例のタグ（Name.Tag）と環境変数（Name.Variable.Global）を取り出し、
-  誤り（閉じない [ や囲み、名前の無い \\）は Error にする。見た目は assets/extra.css
+  誤り（閉じない [ や囲み、名前の無い \\）は Error にする。見た目は oldstyle/static/oldstyle.css
 - FileTreeLexer: ファイル構成の木（+- の行のあるブロック）のファイル名（Name.Other）を取り出す
 
 どちらも字は変えない（字の並びを Token に区切るだけ）。誤りは、ビルドの標準エラー出力に警告を出す（ビルドは止めない）。

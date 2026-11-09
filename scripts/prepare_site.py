@@ -1,23 +1,21 @@
-"""GitHub Pages 用に原稿を _site_src/ へ写す。
+"""サイトのビルド（oldstyle/build.py）の前処理。原稿を _site_src/ へ写す。
 
 - 旧 HTML 版で 1 ページだったもの（descript/<名前>/、list/<名前>/、spec/<名前>/ の各ディレクトリ）を、
   サイトでは 1 ページ（<ディレクトリ>/index.md）にまとめる。並びは各 index.md の「## 一覧」の順。
   ディレクトリ内の見出しは入れ子の深さの分だけずらし、一意な id（`{#id}`）を振る
 - まとめた項目へのリンク（相対パス・#見出し）は、まとめたページの見出しへのリンクに書き換える
 - 各 index.md の「## 一覧」が、ディレクトリの項目（.md とサブディレクトリ）と過不足なく一致しているかを検査する
-- INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。llms.txt をサイトのルートに置く
-- 生の Markdown 原稿を _raw/ に写す（ビルド後に _site へ重ねる。llms.txt から INDEX.md などを辿れるようにする）
+- INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。（llms.txt はサイトのルートに oldstyle/build.py が置く）
+- 生の Markdown 原稿を _raw/ に写す（oldstyle/build.py が出力に重ねる。llms.txt から INDEX.md などを辿れるようにする）
 - まとめた頁の分類と項目の頭の見出しに、役の class（bundle-category・bundle-item）を付ける。
-  補足の項目（note-<数>.md）の頭の見出しには bundle-supplement も付ける（見た目は assets/extra.css）
+  補足の項目（note-<数>.md）の頭の見出しには bundle-supplement も付ける
 - まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付ける
-  （見た目は assets/extra.css）
-- manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す（見た目は assets/extra.css）
+- manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す
 - トップページの節と目次の分類の見出しに目印（top-section・top-category）を、頭が太字の箇条書きの名前に目印（top-item）を付ける
 原稿そのものは書き換えない。
 
 ここでするのは、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして原稿の写しに付けるところまで。
-class や木の形を見て構造を作る処理（対応のベースウェアの札、名前と説明の表）は、Python-Markdown の拡張
-site_ext/ukadoc_site/structure.py が、コードブロックの色付けは同じ site_ext の Pygments レキサーがする。
+class や木の形を見て旧版の HTML の構造を作る処理は oldstyle/build.py が、コードブロックの色付けは site_ext の Pygments レキサーがする。
 """
 import os
 import posixpath
@@ -308,14 +306,14 @@ def page_dirs():
 
 
 RAW = os.path.join(ROOT, '_raw')
-RAW_SKIP_DIRS = {'scripts', 'overrides', 'assets', 'node_modules'}
+RAW_SKIP_DIRS = {'scripts', 'overrides', 'assets', 'node_modules', 'oldstyle'}
 RAW_SKIP_FILES = {'README.md', 'CLAUDE.md'}
 RAW_EXTRA = ['migration/id-map.json']   # .md 以外で、原稿から参照されていて一緒に置くファイル
 
 
 def build_raw():
     """生の Markdown 原稿を、リポジトリと同じ相対パスで _raw/ に写す。
-    zensical は docs_dir の .md をページにしてしまうので _site_src/ には置けない。ビルド後に _site へ重ねる"""
+    _site_src/ には置かず（頁として組まれてしまう）、ビルドの出力に重ねる"""
     if os.path.exists(RAW):
         shutil.rmtree(RAW)
     rels = list(RAW_EXTRA)
@@ -366,13 +364,6 @@ def main():
                     write(rel, mark_manual(text) if d == 'manual' else text)
     write('index.md', mark_top(rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md')))
 
-    # 左メニュー: まとめたディレクトリは、そのページ（index.md）を指す
-    nav = read('.nav.yml')
-    nav = re.sub(r'(: )((?:descript|list|spec)/[^/\s]+)$',
-                 lambda m: m.group(1) + (m.group(2) + '/index.md' if m.group(2) in bundles else m.group(2)), nav, flags=re.M)
-    write('.nav.yml', nav)
-    shutil.copy(os.path.join(ROOT, 'llms.txt'), os.path.join(OUT, 'llms.txt'))
-    shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(OUT, 'assets'))
     build_raw()
     if ERRORS:
         sys.exit(1)
