@@ -2,7 +2,7 @@
 
 **カテゴリ:** サーフェスコマンド
 
-指定座標まで非同期移動。[※下記参照](notes_move.md)
+指定座標まで非同期移動。[※下記参照](note-1.md#movemoveasyncについて)
 
 `\![moveasync]`は、動作途中に`\![moveasync,cancel]`で停止することができる。
 
