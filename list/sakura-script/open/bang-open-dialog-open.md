@@ -5,7 +5,7 @@
 ファイルを開くのダイアログを開く。このダイアログでファイルを選択しても、実際にファイルが開かれるわけではない。<br />
 決定時、SHIORIイベント[OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md)が発生し、reference0に「open」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br />
 閉じるとSHIORIイベント[OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md)が発生する。<br />
-[パラメータ指定は後述](notes_selectfile.md)をカンマ区切りで複数指定。
+[パラメータ指定は後述](bang-open-dialog-color.note.md)をカンマ区切りで複数指定。
 
 **対応:** SSP
 

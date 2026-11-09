@@ -9,10 +9,10 @@ OnUserInputCancelに応答がない場合、かつ表示時間からタイムア
 なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
 
 <br />
-IDは決定時に発生するOnUserInputに格納されるが、IDが「On」で始まる場合、ID名のイベントが発生する。[※ID](notes_inputbox-id.md)参照。<br />
+IDは決定時に発生するOnUserInputに格納されるが、IDが「On」で始まる場合、ID名のイベントが発生する。[※ID](bang-close-textareabox-ID.note-2.md)参照。<br />
 表示時間はミリ秒で指定。省略するか、0以下の数を指定すると、表示時間無制限。<br />
 テキストはbox展開直後にあらかじめ表示するテキスト(CROW不可)、省略可。<br />
-SSPのみ、--option=○○の形で[※オプション](notes_inputbox-option.md)指定可能。省略可。
+SSPのみ、--option=○○の形で[※オプション](bang-close-textareabox-ID.note.md)指定可能。省略可。
 
 **対応:** Materia / SSP / CROW / Ninix
 

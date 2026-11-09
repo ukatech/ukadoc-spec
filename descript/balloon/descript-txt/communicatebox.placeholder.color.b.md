@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-入力ボックスが空のときに薄く表示する案内文([--placeholder=](../../../list/sakura-script/open/notes_inputbox-option.md))の文字色青(0～255)
+入力ボックスが空のときに薄く表示する案内文([--placeholder=](../../../list/sakura-script/open/bang-close-textareabox-ID.note.md))の文字色青(0～255)
 
 **既定値:** 文字色を背景色へ寄せ、さらに彩度を落とした色
 

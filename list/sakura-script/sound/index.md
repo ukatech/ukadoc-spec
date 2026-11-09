@@ -14,5 +14,3 @@
 - [`\![sound,resume,ファイル名]`](bang-sound-resume.md)
 - [`\![sound,stop,ファイル名]`](bang-sound-stop.md)
 - [`\![sound,option,ファイル名,オプション...]`](bang-sound-option.md)
-- [sound play/load/option のオプション](notes_sound.md)
-- [sound の --spectrum= で通知される帯域とレベル \[2.9.18\]](notes_sound_spectrum.md)

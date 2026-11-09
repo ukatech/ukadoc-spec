@@ -4,7 +4,7 @@
 
 スライダー調節型のInputBoxを開く。<br />
 入力決定時にSHIORIイベント[OnUserInput](../../shiori-event/inputbox/OnUserInput.md)が発生し、Reference1に入力値が入る。<br />
---option=○○の形で[※オプション](notes_inputbox-option.md)指定可能。<br />
+--option=○○の形で[※オプション](bang-close-textareabox-ID.note.md)指定可能。<br />
 その他の動作は[inputbox](bang-open-inputbox-ID.md)と同じ。<br />
 許容最小値は-2147483648、最大値は2147483647です。
 

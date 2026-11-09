@@ -5,7 +5,7 @@
 [`\![execute,ical-get/ical-post]`](../../sakura-script/misc/bang-execute-ical-get-URL.md)で正常に取得・解析完了した際に発生。
 
 Reference0がカレンダー全体の情報、Reference1以降が予定1件ずつ。各Referenceの中はバイト値1（以下\[`\1`\]）で区切られている。<br />
-どの予定がいくつ並ぶかは[iCal絞り込みオプション](../../sakura-script/misc/notes_executeical.md)で決まる。
+どの予定がいくつ並ぶかは[iCal絞り込みオプション](../../sakura-script/misc/bang-execute-ical-post-URL.note.md)で決まる。
 
 - **Reference0**: カレンダー名(X-WR-CALNAME) \[`\1`\] タイムゾーン(X-WR-TIMEZONE) \[`\1`\] 暦法(CALSCALE。通常はGREGORIAN) \[`\1`\] このイベントで返した予定の件数 \[`\1`\] ファイル中の予定の総数 \[`\1`\] 絞り込み期間の開始日 \[`\1`\] 絞り込み期間の終了日<br />
   期間の開始日・終了日は「年,月,日,,,」形式。--from・--to・--expand・--limitをいずれも指定しなかった場合は空。

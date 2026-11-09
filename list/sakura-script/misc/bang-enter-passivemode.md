@@ -2,7 +2,7 @@
 
 **カテゴリ:** 未分類コマンド
 
-[※PassiveMode](notes_passivemode.md)を開始する。
+[※PassiveMode](bang-leave-passivemode.note.md)を開始する。
 
 ゴースト終了まで有効。
 

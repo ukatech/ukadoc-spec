@@ -5,7 +5,7 @@
 時間入力InputBoxを開く。<br />
 時,分,秒は初期値。24時間表記。<br />
 入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br />
---option=○○の形で[※オプション](notes_inputbox-option.md)指定可能。
+--option=○○の形で[※オプション](bang-close-textareabox-ID.note.md)指定可能。
 
 <br />
 その他の動作は[inputbox](bang-open-inputbox-ID.md)と同じ。

@@ -4,7 +4,7 @@
 
 InputBoxに入力され決定された際に発生。
 
-[InputBoxのID](../../sakura-script/open/notes_inputbox-id.md)も参照のこと。
+[InputBoxのID](../../sakura-script/open/bang-close-textareabox-ID.note-2.md)も参照のこと。
 
 - **Reference0**: InputBoxのID。
 - **Reference1**: 入力された内容。

@@ -8,8 +8,8 @@
 
 <br />
 入力内容の改行は、バイト値1の文字(`\1`)で区切って渡される。テキスト(初期表示する内容)も同じく`\1`で改行を表す。<br />
-IDの扱い(「On」で始まる場合はID名のイベントが発生する)は[InputBoxのID](notes_inputbox-id.md)と同じ。<br />
-表示時間・テキストの指定と[※オプション](notes_inputbox-option.md)は[inputbox](bang-open-inputbox-ID.md)と同じ。ただし次の点が異なる。<br />
+IDの扱い(「On」で始まる場合はID名のイベントが発生する)は[InputBoxのID](bang-close-textareabox-ID.note-2.md)と同じ。<br />
+表示時間・テキストの指定と[※オプション](bang-close-textareabox-ID.note.md)は[inputbox](bang-open-inputbox-ID.md)と同じ。ただし次の点が異なる。<br />
 ・--limit=は改行を1文字として数える。<br />
 ・--placeholder=(空欄のときに薄く表示する案内文)も`\1`で改行を表す。<br />
 ・入力補完([inputbox.autocomplete](../../shiori-event/inputbox/inputbox.autocomplete.md))は使えない。<br />

@@ -2,12 +2,12 @@
 
 **カテゴリ:** 未分類コマンド
 
-[※オプション](notes_executehttp.md)付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />
+[※オプション](bang-execute-http-options-URL.note.md)付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />
 パラメータ群の指定はhttp-postと同じ。
 
 取得した項目は[OnExecuteRSSComplete](../../shiori-event/other-communication/OnExecuteRSSComplete.md)、失敗時は[OnExecuteRSSFailure](../../shiori-event/other-communication/OnExecuteRSSFailure.md)で通知される。
 
-\[2.8.92\] どの項目をいくつ返すかは[RSS絞り込みオプション](notes_executerss.md)（--from・--to・--limit）で指定できる。無指定の場合は全項目を返す。
+\[2.8.92\] どの項目をいくつ返すかは[RSS絞り込みオプション](bang-execute-rss-post-URL.note.md)（--from・--to・--limit）で指定できる。無指定の場合は全項目を返す。
 
 **対応:** SSP 絞り込み 2.8.92～
 

@@ -67,8 +67,3 @@
 - [`\_m[0x00]`](_m-0x00.md)
 - [`\&[ID]`](amp-ID.md)
 - [`\m[umsg,wparam,lparam]`](m-umsg-wparam-lparam.md)
-- [PassiveMode](notes_passivemode.md)
-- [InductionMode](notes_inductionmode.md)
-- [http/rss/ical/websocket オプション](notes_executehttp.md)
-- [iCal絞り込みオプション \[2.8.90\]](notes_executeical.md)
-- [RSS絞り込みオプション \[2.8.92\]](notes_executerss.md)

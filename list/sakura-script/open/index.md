@@ -54,6 +54,3 @@
 - [`\![open,pictureviewer,(ファイル名)]`](bang-open-pictureviewer.md)
 - [`\![open,archiveviewer,(ファイル名)]`](bang-open-archiveviewer.md)
 - [`\![open,backlogviewer]`](bang-open-backlogviewer.md)
-- [InputBoxオプション](notes_inputbox-option.md)
-- [InputBoxのID](notes_inputbox-id.md)
-- [ファイルを開く / ファイルを保存 / フォルダ選択 / カラーパレット選択 パラメータ](notes_selectfile.md)

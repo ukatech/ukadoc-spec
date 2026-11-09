@@ -1,7 +1,7 @@
 # RSS絞り込みオプション \[2.8.92\]
 
 [`\![execute,rss-get/rss-post]`](bang-execute-rss-get-URL.md)で、取得したフィードからどの項目を返すかを指定するオプション。<br />
-書式は[iCal絞り込みオプション](notes_executeical.md)と同じだが、省略時の扱いが違う。--expandは無視される。
+書式は[iCal絞り込みオプション](bang-execute-ical-post-URL.note.md)と同じだが、省略時の扱いが違う。--expandは無視される。
 
 どれも書かなかった場合は全項目を返す。
 

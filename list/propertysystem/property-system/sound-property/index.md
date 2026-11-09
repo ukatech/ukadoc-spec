@@ -20,5 +20,3 @@
 - [meta.year](sound.meta.year.md)
 - [meta.track](sound.meta.track.md)
 - [meta.artwork](sound.meta.artwork.md)
-- [サウンドプロパティのメタデータ（meta.～）について \[2.8.73\]](notes_sound_meta.md)
-- [サウンドプロパティの書き込みについて \[2.8.72\]](notes_sound_propertyset.md)

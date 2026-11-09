@@ -1,8 +1,8 @@
-# `\!`\[sound,play,ファイル名,[オプション](notes_sound.md)...\]
+# `\!`\[sound,play,ファイル名,[オプション](bang-sound-option.note.md)...\]
 
 **カテゴリ:** サウンドコマンド
 
-`\_v`と同じ機能。ただし[オプション](notes_sound.md)を指定可能。
+`\_v`と同じ機能。ただし[オプション](bang-sound-option.note.md)を指定可能。
 
 **対応:** SSP (オプションは2.4～) / Ninix
 

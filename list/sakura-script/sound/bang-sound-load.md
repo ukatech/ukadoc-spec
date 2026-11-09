@@ -1,4 +1,4 @@
-# `\!`\[sound,load,ファイル名,[オプション](notes_sound.md)...\]
+# `\!`\[sound,load,ファイル名,[オプション](bang-sound-option.note.md)...\]
 
 **カテゴリ:** サウンドコマンド
 

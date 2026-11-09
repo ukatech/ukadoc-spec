@@ -3033,11 +3033,11 @@
  },
  "list_propertysystem#notes_sound_meta": {
   "anchor": null,
-  "path": "list/propertysystem/property-system/sound-property/notes_sound_meta.md"
+  "path": "list/propertysystem/property-system/sound-property/sound.meta.artwork.note.md"
  },
  "list_propertysystem#notes_sound_propertyset": {
   "anchor": null,
-  "path": "list/propertysystem/property-system/sound-property/notes_sound_propertyset.md"
+  "path": "list/propertysystem/property-system/sound-property/sound.pause.note.md"
  },
  "list_propertysystem#path": {
   "anchor": null,
@@ -4809,15 +4809,15 @@
  },
  "list_sakura_script#notes_executehttp": {
   "anchor": null,
-  "path": "list/sakura-script/misc/notes_executehttp.md"
+  "path": "list/sakura-script/misc/bang-execute-http-options-URL.note.md"
  },
  "list_sakura_script#notes_executeical": {
   "anchor": null,
-  "path": "list/sakura-script/misc/notes_executeical.md"
+  "path": "list/sakura-script/misc/bang-execute-ical-post-URL.note.md"
  },
  "list_sakura_script#notes_executerss": {
   "anchor": null,
-  "path": "list/sakura-script/misc/notes_executerss.md"
+  "path": "list/sakura-script/misc/bang-execute-rss-post-URL.note.md"
  },
  "list_sakura_script#notes_imageresource": {
   "anchor": "補足",
@@ -4825,15 +4825,15 @@
  },
  "list_sakura_script#notes_inductionmode": {
   "anchor": null,
-  "path": "list/sakura-script/misc/notes_inductionmode.md"
+  "path": "list/sakura-script/misc/bang-leave-inductionmode.note.md"
  },
  "list_sakura_script#notes_inputbox-id": {
   "anchor": null,
-  "path": "list/sakura-script/open/notes_inputbox-id.md"
+  "path": "list/sakura-script/open/bang-close-textareabox-ID.note-2.md"
  },
  "list_sakura_script#notes_inputbox-option": {
   "anchor": null,
-  "path": "list/sakura-script/open/notes_inputbox-option.md"
+  "path": "list/sakura-script/open/bang-close-textareabox-ID.note.md"
  },
  "list_sakura_script#notes_lifespan": {
   "anchor": null,
@@ -4845,19 +4845,19 @@
  },
  "list_sakura_script#notes_passivemode": {
   "anchor": null,
-  "path": "list/sakura-script/misc/notes_passivemode.md"
+  "path": "list/sakura-script/misc/bang-leave-passivemode.note.md"
  },
  "list_sakura_script#notes_selectfile": {
   "anchor": null,
-  "path": "list/sakura-script/open/notes_selectfile.md"
+  "path": "list/sakura-script/open/bang-open-dialog-color.note.md"
  },
  "list_sakura_script#notes_sound": {
   "anchor": null,
-  "path": "list/sakura-script/sound/notes_sound.md"
+  "path": "list/sakura-script/sound/bang-sound-option.note.md"
  },
  "list_sakura_script#notes_sound_spectrum": {
   "anchor": null,
-  "path": "list/sakura-script/sound/notes_sound_spectrum.md"
+  "path": "list/sakura-script/sound/bang-sound-option.note-2.md"
  },
  "list_sakura_script#notes_style": {
   "anchor": "補足",

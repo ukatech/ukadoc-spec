@@ -7,7 +7,7 @@
 年,月,日は初期値。<br />
 入力決定時にSHIORIイベント[OnUserInput](../../shiori-event/inputbox/OnUserInput.md)が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br />
 表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、[OnUserInputCancel](../../shiori-event/inputbox/OnUserInputCancel.md)が発生する。<br />
---option=○○の形で[※オプション](notes_inputbox-option.md)指定可能。<br />
+--option=○○の形で[※オプション](bang-close-textareabox-ID.note.md)指定可能。<br />
 その他の動作は[inputbox](bang-open-inputbox-ID.md)と同じ。
 
 **対応:** SSP

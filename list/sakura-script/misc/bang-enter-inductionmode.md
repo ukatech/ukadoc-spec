@@ -2,7 +2,7 @@
 
 **カテゴリ:** 未分類コマンド
 
-[※InductionMode](notes_inductionmode.md)を開始する。
+[※InductionMode](bang-leave-inductionmode.note.md)を開始する。
 
 ゴースト終了まで有効。
 

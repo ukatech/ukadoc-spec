@@ -4,6 +4,6 @@
 
 対象のメディアのアルバムアートワークの画像ファイルパス。<br />
 \[2.9.32\] ID3の画像、FLACのPICTUREブロック、Ogg（Vorbis / Opus）のMETADATA_BLOCK_PICTUREは、SSPが自分で取り出す。複数あれば表紙（フロントカバー）を優先し、表紙が無ければ最初の1枚を使う。それ以外の形式（MP4など）はOSから取得する。<br />
-タグが無い場合や取得できない場合の挙動は[こちら](notes_sound_meta.md)。
+タグが無い場合や取得できない場合の挙動は[こちら](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

@@ -2,7 +2,7 @@
 
 **カテゴリ:** 未分類コマンド
 
-[※オプション](notes_executehttp.md)付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br />
+[※オプション](bang-execute-http-options-URL.note.md)付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br />
 ファイルは\[実行したゴーストのフォルダ\]/ghost/master/varフォルダに格納される。
 
 **対応:** SSP / Ninix

@@ -4,7 +4,7 @@
 
 IPアドレス入力InputBoxを開く。<br />
 Windows上では入力ボックスの制限のため、IPv4アドレスのみ受け入れ可能。<br />
---option=○○の形で[※オプション](notes_inputbox-option.md)指定可能。
+--option=○○の形で[※オプション](bang-close-textareabox-ID.note.md)指定可能。
 
 <br />
 その他の動作は[inputbox](bang-open-inputbox-ID.md)と同じ。

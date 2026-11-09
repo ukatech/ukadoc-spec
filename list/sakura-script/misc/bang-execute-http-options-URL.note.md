@@ -18,16 +18,16 @@
   何も指定しなければapplication/x-www-form-urlencoded。<br />
   指定形式によってはparamの書き方に制約があるので注意。<br />
   \[2.6.37\] より、Content-Typeリクエストヘッダに直接この情報を反映するようになった。
-- **--expand または --expand=日数 \[2.8.90\]**: ical-get/ical-post限定。[※iCal絞り込みオプション](notes_executeical.md)を参照。<br />
+- **--expand または --expand=日数 \[2.8.90\]**: ical-get/ical-post限定。[※iCal絞り込みオプション](bang-execute-ical-post-URL.note.md)を参照。<br />
   RRULEによる繰り返しを展開し、「発生」1回ごとに1件返す。日数を書いた場合は--to省略時の期間長（既定30日）になる。
 - **--file=ファイル名**: 取得するデータの保存名を指定。\[実行したゴーストのフォルダ\]/ghost/master/var/ファイル名に保存される。
-- **--from=yyyymmdd \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](notes_executeical.md)・[※RSS絞り込みオプション](notes_executerss.md)を参照。<br />
+- **--from=yyyymmdd \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](bang-execute-ical-post-URL.note.md)・[※RSS絞り込みオプション](bang-execute-rss-post-URL.note.md)を参照。<br />
   返すイベントの期間の開始日。省略時は当日。<br />
   \[2.8.92\] rss-get/rss-postでは返す項目の更新日時の下限（その日の0時から）。省略時は下限なし。
 - **--header=SomeHeader: リクエストヘッダの中身 \[2.6.40\]**: 任意の名前のリクエストヘッダを設定する。名前と中身を区切るコロンは必須。<br />
   SSPが用意したヘッダ情報を上書きするため、指定に矛盾がないよう利用時に注意すること。
 - **--insecure \[2.7.34\]**: TLS証明書の検証をスキップする。
-- **--limit=件数 \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](notes_executeical.md)・[※RSS絞り込みオプション](notes_executerss.md)を参照。<br />
+- **--limit=件数 \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](bang-execute-ical-post-URL.note.md)・[※RSS絞り込みオプション](bang-execute-rss-post-URL.note.md)を参照。<br />
   返すイベントの最大件数。省略時は200件、0を指定すると無制限。<br />
   --limitだけを書いた場合は、開始日を当日とする期間モードになる。--from・--to・--expand・--limitをどれも書かなかった場合は件数の上限も無い（全件返す）。<br />
   \[2.8.92\] rss-get/rss-postでは、書いた場合だけ新しい順にその件数で打ち切る。省略時・0は無制限で、--limitだけを書いても期間は絞り込まれない。
@@ -66,7 +66,7 @@
 - **--sync=識別ID \[2.6.44\]**: SakuraScriptの実行を一旦止めて処理待ちする点を除き、--async指定と同じ挙動となる。
 - **--timeout=秒数**: レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br />
   指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。
-- **--to=yyyymmdd \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](notes_executeical.md)・[※RSS絞り込みオプション](notes_executerss.md)を参照。<br />
+- **--to=yyyymmdd \[2.8.90\]**: ical-get/ical-post・rss-get/rss-post \[2.8.92\] 限定。[※iCal絞り込みオプション](bang-execute-ical-post-URL.note.md)・[※RSS絞り込みオプション](bang-execute-rss-post-URL.note.md)を参照。<br />
   返すイベントの期間の終了日（この日を含む）。<br />
   \[2.8.92\] rss-get/rss-postでは返す項目の更新日時の上限（その日の終わりまで）。省略時は上限なし。
 - **--m_websocketProtocol=Sec-Websocket-Protocol \[2.8.08\]**: WebSocket接続の際に使用する、Sec-Websocket-Protocolヘッダを指定する。指定しなければこのヘッダ自体が送られれない。

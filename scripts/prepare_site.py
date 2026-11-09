@@ -8,7 +8,8 @@
 - INDEX.md を index.md（トップページ）にし、INDEX.md へのリンクも書き換える。（llms.txt はサイトのルートに oldstyle/build.py が置く）
 - 生の Markdown 原稿を _raw/ に写す（oldstyle/build.py が出力に重ねる。llms.txt から INDEX.md などを辿れるようにする）
 - まとめた頁の分類と項目の頭の見出しに、役の class（bundle-category・bundle-item）を付ける。
-  補足の項目（note-<数>.md）の頭の見出しには bundle-supplement も付ける
+  補足の項目（note-<数>.md、<対象>.note.md）の頭の見出しには bundle-supplement も付ける
+- <対象>.note.md は「## 一覧」に書かず、同じディレクトリの <対象>.md の直後に差し込む（list_children）
 - まとめた頁の対応・既定値の段落と注意書きの節に目印（bundle-support・bundle-default・bundle-notes）を付ける
 - manual/ の頁のファイルの箇条書きの頭の名前に目印（manual-item）を付け、名前の後ろの「: 」を外す
 - トップページの節と目次の分類の見出しに目印（top-section・top-category）を、頭が太字の箇条書きの名前に目印（top-item）を付ける
@@ -41,7 +42,8 @@ LINK = re.compile(r'\]\(([^)#\s]*)(#[^)\s]*)?\)')
 CATEGORY_LINE = re.compile(r'^\*\*カテゴリ:\*\*.*\n\n?', re.M)
 SUPPORT_LINE = re.compile(r'^\*\*対応:\*\*')
 DEFAULT_LINE = re.compile(r'^\*\*既定値:\*\*')
-NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイル名
+NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイル名（index.md の「## 一覧」に書く）
+NOTE_AFTER = re.compile(r'(.+)\.note(?:-(\d+))?\.md')   # 補足の項目の原稿のファイル名（<対象>.note.md。一覧に書かず、<対象>.md の直後に自動で入る。同じ対象に複数あれば .note-2.md …）
 TOP_HEADING = {2: 'top-section', 3: 'top-category'}   # トップの見出しの段 → 目印
 MANUAL_ITEM = re.compile(r'^(- \*\*(?:\\.|[^\\*])+\*\*)(: |:$|$)')   # 一番外の箇条書きの頭の太字の名前（\* と \\ は名前の字）
 
@@ -68,18 +70,40 @@ def write(rel, text):
 
 # ---------------------------------------------------------------- 一覧
 
+def note_sort_key(name):
+    """<対象>.note.md を 1 番、<対象>.note-2.md を 2 番…とする並べ替えの鍵"""
+    m = NOTE_AFTER.fullmatch(name)
+    return int(m.group(2) or 1)
+
+
 def list_children(index_rel):
-    """index.md の「## 一覧」のリンク先（ROOT からの相対パス）を、書かれた順に返す"""
+    """index.md の「## 一覧」のリンク先（ROOT からの相対パス）を、書かれた順に返す。
+    <対象>.note.md（NOTE_AFTER）は一覧に書かず、同じディレクトリの <対象>.md の直後に自動で差し込む"""
     text = read(index_rel)
     if INDEX_SECTION not in text:
         return []
     section = text.split(INDEX_SECTION, 1)[1].split('\n## ', 1)[0]
+    here = posixpath.dirname(index_rel)
     out = []
     for line in section.split('\n'):
         m = LIST_LINK.match(line)
         if m:
-            out.append(posixpath.normpath(posixpath.join(posixpath.dirname(index_rel), unquote(m.group(1)))))
-    return out
+            out.append(posixpath.normpath(posixpath.join(here, unquote(m.group(1)))))
+    notes = {}   # 対象のパス → 直後に差し込む補足のパス（番号順）
+    for name in sorted(os.listdir(os.path.join(ROOT, here))):
+        m = NOTE_AFTER.fullmatch(name)
+        if not m:
+            continue
+        target = posixpath.join(here, m.group(1) + '.md')
+        if target not in out:
+            error(f'{posixpath.join(here, name)}: 直前に置く対象 {m.group(1)}.md が「## 一覧」に無い')
+            continue
+        notes.setdefault(target, []).append(posixpath.join(here, name))
+    result = []
+    for path in out:
+        result.append(path)
+        result.extend(sorted(notes.get(path, []), key=lambda p: note_sort_key(posixpath.basename(p))))
+    return result
 
 
 def check_index(index_rel):
@@ -191,7 +215,7 @@ def shift_headings(text, rel, depth, is_index):
     role = ''
     if depth > 1 and not posixpath.basename(rel).startswith('notes_'):
         role = ' .bundle-category' if is_index else ' .bundle-item'
-        if NOTE_FILE.fullmatch(posixpath.basename(rel)):
+        if NOTE_FILE.fullmatch(posixpath.basename(rel)) or NOTE_AFTER.fullmatch(posixpath.basename(rel)):
             role += ' .bundle-supplement'
     lines = text.split('\n')
     heads = list(fence_free_headings(text))
