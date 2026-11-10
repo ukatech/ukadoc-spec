@@ -1,6 +1,6 @@
 """_site_old/ の内部リンクを調べる（リンク先のファイルと #アンカーの有無、画像の有無）。
 
-使い方: python oldstyle/check.py
+使い方: python oldstyle/check.py [--lang=<コード>]    （--lang を付けると _site_old/<コード>/ の翻訳版を調べる）
 """
 import os
 import re
@@ -10,7 +10,8 @@ from urllib.parse import unquote
 import lxml.html
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-OUT = os.path.join(ROOT, '_site_old')
+LANG = next((a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--lang=')), None)
+OUT = os.path.join(ROOT, '_site_old', *([LANG] if LANG else []))
 SCHEME = re.compile(r'^[a-z][a-z0-9+.-]*:', re.I)
 
 

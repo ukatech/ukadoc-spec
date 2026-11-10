@@ -26,6 +26,12 @@ jobs:
       - run: python scripts/check_source.py
       - run: python oldstyle/build.py
       - run: python oldstyle/check.py
+      - name: 翻訳版（i18n/ のある言語）のリンク検査
+        run: |
+          for d in i18n/*/; do
+            lang=$(basename "$d")
+            python oldstyle/check.py --lang="$lang"
+          done
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site_old

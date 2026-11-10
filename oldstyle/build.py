@@ -27,11 +27,42 @@ from pymdownx.slugs import slugify
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..'))
-SRC = os.path.join(ROOT, '_site_src')
-OUT = os.path.join(ROOT, '_site_old')
+
+
+def _lang_arg():
+    """--lang=<コード>（例: en）。指定すると、i18n/<コード>/ の翻訳を重ねた版を _site_old/<コード>/ に出す。無ければ日本語版"""
+    for a in sys.argv[1:]:
+        if a.startswith('--lang='):
+            return a.split('=', 1)[1]
+    return None
+
+
+LANG = _lang_arg()
+# 翻訳版の言語（i18n/<コード>/ があるものだけ、日本語版のビルドの最後に続けてビルドする）。label は言語メニューの表示
+LANGS = [('en', 'English'), ('zh-Hant', '繁體中文'), ('zh', '简体中文')]
+SRC = os.path.join(ROOT, '_site_src' + (f'_{LANG}' if LANG else ''))
+OUT = os.path.join(ROOT, '_site_old', *([LANG] if LANG else []))
 STATIC = os.path.join(HERE, 'static')
 TEMPLATES = os.path.join(HERE, 'templates')
+I18N_TEMPLATES = os.path.join(ROOT, 'i18n', LANG, 'templates') if LANG else None
 SITE_URL = 'https://ukatech.shillest.net/ukadoc-spec/'
+
+# 構造の判定に使う日本語の語は、訳文でも原文のまま残す（翻訳のときに検査する）。表示のときだけ、ここで言語ごとの語に置き換える
+LABELS = {
+    'en': {'記述例': 'Example', '概要': 'Overview', '補足': 'Notes', '目次': 'Contents'},
+    'zh-Hant': {'記述例': '記述範例', '概要': '概要', '補足': '補充', '目次': '目錄'},
+    'zh': {'記述例': '编写示例', '概要': '概要', '補足': '补充', '目次': '目录'},
+}
+
+
+def available_langs():
+    """言語メニューに出す言語のコード。日本語 + i18n/<コード>/ があるもの（LANGS の順）"""
+    return ['ja'] + [code for code, _ in LANGS if os.path.isdir(os.path.join(ROOT, 'i18n', code))]
+
+
+def label(ja):
+    """構造の判定に使う日本語の語の、表示用の語（日本語版はそのまま）"""
+    return LABELS.get(LANG, {}).get(ja, ja)
 
 EXTENSIONS = ['tables', 'admonition', 'attr_list', 'md_in_html', 'mdx_truly_sane_lists',
               'pymdownx.superfences', 'pymdownx.highlight', 'toc']
@@ -42,7 +73,7 @@ EXT_CONFIG = {
 
 BASEWARE = {'Materia': 'm', 'SSP': 's', 'CROW': 'c', 'Ninix': 'n'}
 BASEWARE_PART = re.compile(r'^(Materia|SSP|CROW|Ninix)(?:\s+(.*))?$')
-NEGATION = re.compile(r'非対応|未対応|廃止')
+NEGATION = re.compile(r'非対応|未対応|廃止|not supported|unsupported|deprecated|discontinued|obsolete|不支援|不支持|廢止|废止', re.I)   # 後半は翻訳版（英語・中国語）の言い換え
 REFERENCE = re.compile(r'^Reference(?:\d+|\*)(?:～\d*)?$')
 
 # 旧版のファイル名と食い違うもの（新しい原稿のパス → 旧版のファイル名）
@@ -101,8 +132,19 @@ def inner_html(el):
 
 
 def title_html(el):
-    """見出しの中身。コードスパンは旧版どおり素の字にする（等幅だとバックスラッシュが円記号に見えるため）"""
-    return re.sub(r'</?code[^>]*>', '', inner_html(el))
+    """見出しの中身。コードスパンは旧版どおり素の字にする（等幅だとバックスラッシュが円記号に見えるため）。
+    翻訳版では、構造の判定のために訳文に日本語のまま残した語（記述例・概要・補足）を、その言語の語にする"""
+    return localize_heading(re.sub(r'</?code[^>]*>', '', inner_html(el)), text_of(el))
+
+
+def localize_heading(html, text):
+    """翻訳版で、構造の判定のために訳文に日本語のまま残した見出しの語（記述例・概要・補足）を、その言語の語にする。
+    text は見出しの字（html の元）"""
+    if LANG:
+        for ja, local in LABELS.get(LANG, {}).items():
+            if (text == ja) or (ja == '記述例' and text.startswith(ja)):
+                html = html.replace(ja, local, 1)
+    return html
 
 
 def set_inner(el, html_text):
@@ -417,7 +459,7 @@ def entry_content(unit, dd):
             if head.get('id'):
                 sec.set('id', head.get('id'))
             h = new('h1')
-            set_inner(h, title_html(head))
+            set_inner(h, title_html(head).replace('記述例', label('記述例'), 1))
             sec.append(h)
             for el in body:
                 place_entry_block(el, sec)
@@ -498,7 +540,7 @@ def caption_content(unit, section):
         if is_heading(el):
             sec = new('section')
             h = new('h1')
-            set_inner(h, inner_html(el))
+            set_inner(h, localize_heading(inner_html(el), text_of(el)))
             if el.get('id'):
                 sec.set('id', el.get('id'))
             sec.append(h)
@@ -612,7 +654,7 @@ def build_list_page(md_rel, root, title):
     if notes:
         notes_nav = new('section', 'navigation-category')
         nn = new('h1')
-        nn.text = '概要'
+        nn.text = label('概要')
         notes_nav.append(nn)
         notes_ul = new('ul')
         notes_nav.append(notes_ul)
@@ -893,7 +935,7 @@ def build_dev_toc(main, groups):
         groups = [len(items)]
     nav = new('nav')
     nh = new('h1')
-    nh.text = '目次'
+    nh.text = label('目次')
     nav.append(nh)
     ex_map = {}
     pos = 0
@@ -958,17 +1000,18 @@ def post_process_content(root):
 
 def head(title, css, extra_head='', description=None):
     return f'''<!DOCTYPE html>
-<html lang="ja">
+<html lang="{LANG or "ja"}">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
+<meta name="ukadoc-langs" content="{",".join(available_langs())}">
 <title>UKADOC Project {htmllib.escape(title, quote=False)}</title>
 <link rel="stylesheet" href="{css}">
 <link rel="stylesheet" href="oldstyle.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<script src="translate.js" defer></script>
+<script src="lang.js" defer></script>
 <script src="search.js" defer></script>
 {extra_head}</head>
 '''
@@ -979,7 +1022,11 @@ def serialize(el):
 
 
 def read_template(name):
-    with open(os.path.join(TEMPLATES, name), encoding='utf-8') as f:
+    """枠の断片。翻訳版では i18n/<言語>/templates/<name> があればそちら（メニューなどの訳）、無ければ日本語の写し"""
+    path = os.path.join(TEMPLATES, name)
+    if I18N_TEMPLATES and os.path.isfile(os.path.join(I18N_TEMPLATES, name)):
+        path = os.path.join(I18N_TEMPLATES, name)
+    with open(path, encoding='utf-8') as f:
         return f.read()
 
 
@@ -1033,6 +1080,9 @@ def render_page(md_rel, text, known):
         out += '</body>\n</html>\n'
     else:
         h1, main = build_frame_page(md_rel, root)
+        if LANG:     # 枠の頁の見出しに日本語のまま残った構造の語（目次など）を、その言語の語にする
+            for h in main.iter('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
+                set_inner(h, localize_heading(inner_html(h), text_of(h)))
         title = text_of(h1)
         out = head(title, 'base.css')
         out += frame_open()
@@ -1115,7 +1165,7 @@ def build_offline_zip():
 
 def main():
     if '--no-prepare' not in sys.argv:
-        subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'prepare_site.py')], check=True)
+        subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'prepare_site.py')] + ([f'--lang={LANG}'] if LANG else []), check=True)
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
     shutil.copytree(STATIC, OUT)
@@ -1141,16 +1191,24 @@ def main():
     build_search_page()
     count = build_search_index()
     print(f'索引 {count} 件')
-    # llms.txt をサイトのルートに置き、生の Markdown 原稿（_raw/）を重ねる（llms.txt や INDEX.md の相対リンクを辿れるように）
-    shutil.copy(os.path.join(ROOT, 'llms.txt'), os.path.join(OUT, 'llms.txt'))
-    raw = os.path.join(ROOT, '_raw')
-    if os.path.isdir(raw):
-        shutil.copytree(raw, OUT, dirs_exist_ok=True)
     if ERRORS:
         sys.exit(1)
-    n, size = build_offline_zip()
-    print(f'{OFFLINE_ZIP}: {n} ファイル、{size / 1024 / 1024:.1f} MB')
+    if not LANG:
+        # llms.txt をサイトのルートに置き、生の Markdown 原稿（_raw/）を重ねる（llms.txt や INDEX.md の相対リンクを辿れるように）。
+        # 翻訳版には置かない（日本語版のものを共有する）
+        shutil.copy(os.path.join(ROOT, 'llms.txt'), os.path.join(OUT, 'llms.txt'))
+        raw = os.path.join(ROOT, '_raw')
+        if os.path.isdir(raw):
+            shutil.copytree(raw, OUT, dirs_exist_ok=True)
     print(f'{len(pages)} 頁を {OUT} に出力した')
+    if not LANG:
+        if '--no-langs' not in sys.argv:
+            # 日本語版の後ろに、翻訳のある言語（i18n/<コード>/ があるもの）を _site_old/<コード>/ へ続けてビルドする
+            for code in available_langs()[1:]:
+                subprocess.run([sys.executable, os.path.abspath(__file__), f'--lang={code}'], check=True)
+        # オフライン zip は、翻訳版も含めて最後に作る（言語メニューのリンク先が zip の中にもあるように）
+        n, size = build_offline_zip()
+        print(f'{OFFLINE_ZIP}: {n} ファイル、{size / 1024 / 1024:.1f} MB')
 
 
 if __name__ == '__main__':

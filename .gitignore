@@ -3,3 +3,6 @@ __pycache__/
 _raw/
 *.egg-info/
 _site_old/
+_site_src_*/
+_site_old_*/
+.env

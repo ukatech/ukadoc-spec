@@ -18,7 +18,7 @@ import prepare_site as ps   # old_ids（見出しの id の数え方）・fence_
 
 ROOT = ps.ROOT
 SKIP_FILES = {'CLAUDE.md'}
-SKIP_DIRS = {'node_modules', 'site_ext'}
+SKIP_DIRS = {'node_modules', 'site_ext', 'i18n'}   # i18n（翻訳）のリンクは元の原稿の位置が基準。translate.py の検査と、翻訳版サイトの oldstyle/check.py --lang で調べる
 SCHEME = re.compile(r'^([a-z][a-z0-9+.-]*:|//)', re.I)
 MD_LINK = re.compile(r'!?\[(?:[^\]\\]|\\.)*\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)')
 HTML_ATTR = re.compile(r'\b(?:href|src)="([^"]+)"')

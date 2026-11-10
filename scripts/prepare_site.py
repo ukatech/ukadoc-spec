@@ -29,7 +29,19 @@ import markdown
 from pymdownx.slugs import slugify
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
-OUT = os.path.join(ROOT, '_site_src')
+
+
+def _lang_arg():
+    """--lang=<コード>（例: en）。指定すると、日本語の原稿に i18n/<コード>/ の翻訳を重ねる。無ければ日本語版"""
+    for a in sys.argv[1:]:
+        if a.startswith('--lang='):
+            return a.split('=', 1)[1]
+    return None
+
+
+LANG = _lang_arg()
+OUT = os.path.join(ROOT, '_site_src' + (f'_{LANG}' if LANG else ''))
+I18N = os.path.join(ROOT, 'i18n', LANG) if LANG else None
 DIRS = ['manual', 'descript', 'list', 'spec', 'dev', 'memo']
 BUNDLE_DIRS = ['descript', 'list', 'spec']   # <これ>/<名前>/index.md があれば、そのディレクトリを 1 ページにまとめる
 
@@ -56,9 +68,20 @@ def error(msg):
     print(f'エラー: {msg}', file=sys.stderr)
 
 
-def read(rel):
+def read_ja(rel):
+    """日本語の原稿（構造の判定と、見出しの id の計算に使う。翻訳版でもここは日本語を見る）"""
     with open(os.path.join(ROOT, rel), encoding='utf-8') as f:
         return f.read()
+
+
+def read(rel):
+    """本文に使う原稿。翻訳版（LANG 指定）では i18n/<LANG>/<rel> があればそちら、無ければ日本語"""
+    if I18N:
+        path = os.path.join(I18N, rel)
+        if os.path.isfile(path):
+            with open(path, encoding='utf-8') as f:
+                return f.read()
+    return read_ja(rel)
 
 
 def write(rel, text):
@@ -79,7 +102,7 @@ def note_sort_key(name):
 def list_children(index_rel):
     """index.md の「## 一覧」のリンク先（ROOT からの相対パス）を、書かれた順に返す。
     <対象>.note.md（NOTE_AFTER）は一覧に書かず、同じディレクトリの <対象>.md の直後に自動で差し込む"""
-    text = read(index_rel)
+    text = read_ja(index_rel)
     if INDEX_SECTION not in text:
         return []
     section = text.split(INDEX_SECTION, 1)[1].split('\n## ', 1)[0]
@@ -110,7 +133,7 @@ def check_index(index_rel):
     """「## 一覧」と、ディレクトリの中身を突き合わせる"""
     directory = os.path.join(ROOT, posixpath.dirname(index_rel))
     listed = [posixpath.relpath(c, posixpath.dirname(index_rel)).split('/')[0] for c in list_children(index_rel)]
-    if INDEX_SECTION not in read(index_rel):
+    if INDEX_SECTION not in read_ja(index_rel):
         return
     actual = []
     for name in os.listdir(directory):
@@ -151,7 +174,20 @@ def fence_free_headings(text):
                 yield i, len(m.group(1)), m.group(2)
 
 
-def old_ids(text, rel):
+def indented_headings(text):
+    """コードブロックの外の見出し行を、字下げ（!!! の囲みの中など）も含めて (行番号, 字下げ, 深さ, 見出し) で返す。
+    toc 拡張が拾う見出しは、この字下げ付きのものまで含む"""
+    in_fence = False
+    for i, line in enumerate(text.split('\n')):
+        if FENCE.match(line):
+            in_fence = not in_fence
+        elif not in_fence:
+            m = re.match(r'^(\s*)(#{1,6}) +(.+?) *$', line)
+            if m:
+                yield i, m.group(1), len(m.group(2)), m.group(3)
+
+
+def toc_ids(text):
     """サイトの toc 拡張が原稿の見出しに付ける id を、文書順に返す"""
     md = markdown.Markdown(extensions=EXTENSIONS + ['toc'],
                            extension_configs={'toc': {'slugify': slugify(case='lower'), 'toc_depth': '1-6'}})
@@ -163,14 +199,40 @@ def old_ids(text, rel):
             ids.append(t['id'])
             walk(t['children'])
     walk(md.toc_tokens)
+    return ids
+
+
+def old_ids(text, rel):
+    """サイトの toc 拡張が原稿の見出しに付ける id を、文書順に返す（行頭の見出しと数が合うか検査する）"""
+    ids = toc_ids(text)
     heads = list(fence_free_headings(text))
     if len(ids) != len(heads):
         error(f'{rel}: 見出しの数が合わない（toc {len(ids)}、行 {len(heads)}）')
     return ids
 
 
-def unit_body(rel, is_index):
-    text = read(rel)
+def pin_ids(text, rel):
+    """翻訳版の（まとめない）頁の見出しに、日本語の原稿から作った id を `{#id}` で固定する。
+    訳した見出しの slug が変わっても、他の頁からの `file.md#見出し` のリンクが切れないようにする"""
+    if not I18N:
+        return text
+    ja = read_ja(rel)
+    if text == ja:
+        return text
+    ids = toc_ids(ja)
+    heads = list(indented_headings(text))     # !!! の囲みの中の字下げした見出しも、toc は拾う
+    if len(heads) != len(ids):
+        error(f'{rel}: 訳文の見出しの数が原文と合わない（原文の toc {len(ids)}、訳文 {len(heads)}）')
+        return text
+    lines = text.split('\n')
+    for (i, indent, level, title), ident in zip(heads, ids):
+        if not re.search(r'\{[^}]*#', title):
+            lines[i] = f'{indent}{"#" * level} {title} {{#{ident}}}'
+    return '\n'.join(lines)
+
+
+def unit_body(rel, is_index, ja=False):
+    text = read_ja(rel) if ja else read(rel)
     if is_index and INDEX_SECTION in text:
         text = text.split(INDEX_SECTION, 1)[0].rstrip('\n') + '\n'
     return CATEGORY_LINE.sub('', text, count=1)
@@ -199,7 +261,8 @@ def register_bundle(page_dir):
     for rel, depth, is_index, text in units:
         key = keys[rel]
         olds = {}
-        for n, old in enumerate(old_ids(text, rel)):
+        # 見出しの id は日本語の原稿から作る（訳した見出しでも、リンクの #見出し と id が変わらないように）
+        for n, old in enumerate(old_ids(unit_body(rel, is_index, ja=True) if I18N else text, rel)):
             new = key if n == 0 else f'{key}-{old}'
             if n and new in used:
                 error(f'{rel}: まとめたページ内の id {new} が重なる')
@@ -314,7 +377,12 @@ def mark_top(text):
     lines = text.split('\n')
     for i, level, title in fence_free_headings(text):
         if level in TOP_HEADING:
-            lines[i] = f'{"#" * level} {title} {{: .{TOP_HEADING[level]} }}'
+            cls = TOP_HEADING[level]
+            m = re.search(r'\s*\{#([^}\s]+)\}\s*$', title)     # 翻訳版では見出しに id を固定済み（pin_ids）。属性ブロックは 1 つにまとめる
+            if m:
+                lines[i] = f'{"#" * level} {title[:m.start()]} {{#{m.group(1)} .{cls}}}'
+            else:
+                lines[i] = f'{"#" * level} {title} {{: .{cls} }}'
     return mark_manual('\n'.join(lines), 'top-item')
 
 
@@ -330,7 +398,7 @@ def page_dirs():
 
 
 RAW = os.path.join(ROOT, '_raw')
-RAW_SKIP_DIRS = {'scripts', 'overrides', 'assets', 'node_modules', 'oldstyle'}
+RAW_SKIP_DIRS = {'scripts', 'overrides', 'assets', 'node_modules', 'oldstyle', 'i18n'}   # i18n（翻訳）は日本語版の生の原稿に混ぜない
 RAW_SKIP_FILES = {'README.md', 'CLAUDE.md'}
 RAW_EXTRA = ['migration/id-map.json']   # .md 以外で、原稿から参照されていて一緒に置くファイル
 
@@ -384,11 +452,12 @@ def main():
             for name in sorted(files):
                 rel = os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, '/')
                 if name.endswith('.md') and rel not in bundled:
-                    text = rewrite_links(read(rel), rel, rel)
+                    text = rewrite_links(pin_ids(read(rel), rel), rel, rel)
                     write(rel, mark_manual(text) if d == 'manual' else text)
-    write('index.md', mark_top(rewrite_links(read('INDEX.md'), 'INDEX.md', 'index.md')))
+    write('index.md', mark_top(rewrite_links(pin_ids(read('INDEX.md'), 'INDEX.md'), 'INDEX.md', 'index.md')))
 
-    build_raw()
+    if not LANG:
+        build_raw()
     if ERRORS:
         sys.exit(1)
 

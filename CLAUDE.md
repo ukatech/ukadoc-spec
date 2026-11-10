@@ -17,6 +17,7 @@
 | `oldstyle/` | サイトのビルド（旧版 UKADOC の見た目を模した静的サイトを作る。`build.py` `check.py`、旧版の CSS・画像・枠の HTML の写し）。原稿ではなく、ビルドの部品 |
 | `site_ext/` | サイトのための Pygments レキサー（さくらスクリプトの色付け・ファイル構成の木）。原稿ではなく、ビルドの部品 |
 | `migration/id-map.json` | 旧 HTML の `ページ名#id` → 現在のパス・見出しの対応 |
+| `i18n/<言語>/` | 翻訳版（`en` `zh-Hant` `zh`）。LLM が `scripts/translate.py` で作る機械翻訳で、原稿と同じ相対パス（枠のテンプレートは `templates/`）。**原稿の正本は日本語**で、ここは手で書かない（「翻訳」を参照）。`i18n/glossary.tsv` は訳語の用語集 |
 
 `descript/` `list/` `spec/` の各ページはディレクトリで、その下にカテゴリのディレクトリ、さらにその下に項目の `.md` が並ぶ。どのディレクトリにも `index.md` があり、`## 一覧` に中身を元の仕様書の順に並べている（この順がサイトの並びにもなる）。
 
@@ -68,6 +69,7 @@
 3. 新しいカテゴリのディレクトリを作ったら、`index.md`（H1 とカテゴリの説明、`## 一覧`）を置き、親の `index.md` の `## 一覧` にも加える。新しいページ（`descript/` `list/` `spec/` の直下のディレクトリ）を作ったときは、左メニュー `oldstyle/templates/sidemenu.html` と、頁の上の目次の表 `oldstyle/templates/menu-header.html` にも加える（出力のファイル名は `oldstyle/build.py` の `out_name()` が決める。旧版のファイル名と食い違うものは `NAME_EXCEPTIONS` に書く）
 4. `INDEX.md` の「目次」にページを加える（ページを新設したときだけ）
 5. 確認する（下記）
+6. 翻訳を回し直す（`python scripts/translate.py`。上の「翻訳」を参照）。新しい項目は、回し直すまで翻訳版では日本語のまま出る
 
 ## 確認
 
@@ -84,6 +86,17 @@ python -m http.server -d _site_old   # http://127.0.0.1:8000/ でプレビュー
 ```
 
 `scripts/check_source.py` と `oldstyle/check.py` が見るのは内部リンクだけ（前者は原稿の位置が出るので、直すときはこちらを使う）。外部リンクは、ときどき `python scripts/check_links.py` で、エラーになるものと別の URL へ転送されるものを洗い出す（`--titles` で、転送されずに 200 を返すものもタイトル付きで並ぶ）。切れているかどうかはスクリプトでは判断しないので、開いて確かめる。切れていたら、元のリンクの後ろに Internet Archive の保存版を「（[アーカイブ](https://web.archive.org/web/時刻/元のURL)）」と添える（添えたリンクは以後の検査から外れる）。
+
+## 翻訳
+
+英語・繁体字中国語・簡体字中国語の版は、日本語の原稿を `scripts/translate.py` で LLM に訳させて `i18n/<言語>/` に置いたもの。サイトでは日本語版の下（`/en/` `/zh-Hant/` `/zh/`）に出る。原稿を書く側が知っておくこと:
+
+- **日本語の原稿を直したら、翻訳を回し直す**: `python scripts/translate.py`。原稿のハッシュ（`i18n/<言語>/.manifest.json`）が変わったファイルだけを、ファイルごと丸ごと訳し直す。結果を `i18n/` ごとコミットする。API の設定はリポジトリ直下の `.env`（`TRANSLATE_API_KEY` `TRANSLATE_BASE_URL`。`.gitignore` 済み）。費用は全言語・全ファイルで 1 ドル弱。まず `--dry-run` で量を見られる
+- 訳文は構造を自動で検査する（見出しの数とレベル、リンク先、コードブロック、表、箇条書き、**構造の判定に使う日本語の語**）。通らないファイルは置かず、そのページは日本語のまま出る。**訳文に残す日本語の語**: `**カテゴリ:**` `**対応:**` `**既定値:**`、`## 記述例`（で始まる見出し）`## 目次` `## 一覧`、`!!! warning "非推奨"`。表示のときだけ `oldstyle/build.py` の `LABELS` で言語ごとの語に置き換わる。コードブロックの中は訳さない
+- 見出しの id は日本語の原稿から作るので、訳した見出しでもリンクの `#見出し` は切れない。リンク先の見出しを日本語側で改名したら、翻訳も回し直す
+- 訳語がぶれる語は `i18n/glossary.tsv`（`ja` `en` `zh-Hant` `zh` の列。タブ区切り）に足し、`python scripts/translate.py --force` で訳し直す。検査器を直したときは `--recheck` で、書き出し済みの訳文に今の検査を当て直せる
+- `i18n/` の訳文を手で直してもよいが、日本語の原稿が変わると次の翻訳で上書きされる。恒久的に直したいことは、用語集か `translate.py` のプロンプトに書く
+- 翻訳版のサイトの検査: `python oldstyle/check.py --lang=en`（`scripts/check_source.py` は `i18n/` を調べない）。英語で書かれていた原稿（`list/shiori-event-ex/` の一部）は、日本語に直してある
 
 ## GitHub Pages
 
