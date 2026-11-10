@@ -2,21 +2,21 @@
 
 **カテゴリ:** Music player通知イベント
 
-Notifies information about the music player's internal state to all open ghosts. *\[NOTIFY\]*<br />
-Because the implementation is added and updated on the ghost side, some ghosts may use an older version with fewer references.
+音楽プレーヤーの内部状態に関する情報を、起動中のすべてのゴーストに通知する。*\[NOTIFY\]*<br />
+実装はゴースト側で追加・更新されるため、古いバージョンを使っていて、Referenceが少ないゴーストもある。
 
-- **Reference0**: The sakura name of the ghost that sent the event.
-- **Reference1**: The file path of the currently loaded song. Empty if no song is loaded.
-- **Reference2**: The playlist index number of the currently loaded song. -1 if no song is loaded, and in certain circumstances when a song has been removed from the playlist but is still playing.
-- **Reference3**: The playback state. 0 if stopped, 1 if playing music, and 2 if playback is paused.
-- **Reference4**: The current volume, from 0-100.
-- **Reference5**: The current playback speed, usually from 0-400. Some implementations may allow speeds higher than 400.
-- **Reference6**: The current left/right balance. -100 is all the way to the left, 0 is centered, and 100 is all the way to the right.
-- **Reference7**: The play mode. Numbers correspond to the following modes.
-  - 0 - Loop Playlist
-  - 1 - Shuffle and Loop
-  - 2 - Loop One Song
-  - 3 - Play One Song
-  - 4 - Random
-- **Reference8**: A special flag for stopping playback. "stop after playback" means playback will stop when the current song ends. "stop after playlist" means playback will stop when the current playlist ends (applicable in both "Loop Playlist" and "Shuffle and Loop" modes). Empty if neither flag is set.
-- **Reference9**: The number of songs in the current playlist.
+- **Reference0**: イベントを送ったゴーストのsakura名。
+- **Reference1**: 現在読み込まれている曲のファイルパス。曲が読み込まれていなければ空。
+- **Reference2**: 現在読み込まれている曲のプレイリスト内の番号。曲が読み込まれていない場合は-1。曲がプレイリストから削除されたあとも再生が続いているなど、一部の状況でも-1になる。
+- **Reference3**: 再生状態。停止中は0、再生中は1、一時停止中は2。
+- **Reference4**: 現在の音量。0〜100。
+- **Reference5**: 現在の再生速度。通常は0〜400。実装によっては400を超える速度を使えるものもある。
+- **Reference6**: 現在の左右バランス。-100が完全に左、0が中央、100が完全に右。
+- **Reference7**: 再生モード。数値は次のモードに対応する。
+  - 0 - プレイリストをループ
+  - 1 - シャッフルしてループ
+  - 2 - 1曲をループ
+  - 3 - 1曲だけ再生
+  - 4 - ランダム
+- **Reference8**: 再生を止めるための特別なフラグ。"stop after playback"は現在の曲が終わったときに、"stop after playlist"は現在のプレイリストが終わったときに再生を止めることを表す（「プレイリストをループ」と「シャッフルしてループ」のどちらのモードでも該当する）。どちらのフラグも設定されていなければ空。
+- **Reference9**: 現在のプレイリストの曲数。

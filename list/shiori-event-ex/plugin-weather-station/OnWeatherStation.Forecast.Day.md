@@ -2,23 +2,23 @@
 
 **カテゴリ:** プラグイン「Weather Station」
 
-Sends information about the overall forecast for a day to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
+1日全体の予報に関する情報を、起動中のすべてのゴーストに送る。`\![raiseplugin]`で呼び出す必要がある。追加の引数で、どの日のデータを送るかを指定できる。0は今日、1は明日、2は明後日。引数がなければ今日になる。
 
-- **Reference0**: The day the following information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.
-- **Reference1**: Maximum temperature for the day, in Fahrenheit.
-- **Reference2**: Maximum temperature for the day, in Celsius.
-- **Reference3**: Minimum temperature for the day, in Fahrenheit.
-- **Reference4**: Minimum temperature for the day, in Celsius.
-- **Reference5**: Average temperature for the day, in Fahrenheit.
-- **Reference6**: Average temperature for the day, in Celsius.
-- **Reference7**: Average humidity for the day, as a percentage.
-- **Reference8**: Maximum windspeed for the day, in mph.
-- **Reference9**: Maximum windspeed for the day, in kph.
-- **Reference10**: Total precipitation for the day, in inches.
-- **Reference11**: Total precipitation for the day, in millimeters.
-- **Reference12**: "Will it rain this day", 1 if yes, 0 if no.
-- **Reference13**: Chance that it will rain this day, as a percentage.
-- **Reference14**: "Will it snow this day", 1 if yes, 0 if no.
-- **Reference15**: Chance that it will snow this day, as a percentage.
-- **Reference16**: Average visiblity for the day, in miles.
-- **Reference17**: Average visiblity for the day, in kilometers.
+- **Reference0**: 以下の情報が対象とする日。0は今日、1は明日、2は明後日。
+- **Reference1**: その日の最高気温（華氏）。
+- **Reference2**: その日の最高気温（摂氏）。
+- **Reference3**: その日の最低気温（華氏）。
+- **Reference4**: その日の最低気温（摂氏）。
+- **Reference5**: その日の平均気温（華氏）。
+- **Reference6**: その日の平均気温（摂氏）。
+- **Reference7**: その日の平均湿度（パーセント）。
+- **Reference8**: その日の最大風速（mph）。
+- **Reference9**: その日の最大風速（kph）。
+- **Reference10**: その日の総降水量（インチ）。
+- **Reference11**: その日の総降水量（ミリメートル）。
+- **Reference12**: 「この日は雨が降るか」。降るなら1、降らないなら0。
+- **Reference13**: この日に雨が降る確率（パーセント）。
+- **Reference14**: 「この日は雪が降るか」。降るなら1、降らないなら0。
+- **Reference15**: この日に雪が降る確率（パーセント）。
+- **Reference16**: その日の平均視程（マイル）。
+- **Reference17**: その日の平均視程（キロメートル）。

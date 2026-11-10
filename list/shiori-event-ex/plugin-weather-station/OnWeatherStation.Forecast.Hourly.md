@@ -2,38 +2,38 @@
 
 **カテゴリ:** プラグイン「Weather Station」
 
-Sends information about the hour-by-hour forecast for a day to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
+1日の1時間ごとの予報に関する情報を、起動中のすべてのゴーストに送る。`\![raiseplugin]`で呼び出す必要がある。追加の引数で、どの日のデータを送るかを指定できる。0は今日、1は明日、2は明後日。引数がなければ今日になる。
 
-- **Reference0～23**: A comma separated array containing forecast information. The number of the reference corresponds to the number of the hour the data is for, in 24 hour time (e.g.: reference0 is for 00:00/12AM, reference14 is for 14:00/2PM).
-  - \[0\] - Date and time the information is for.
-  - \[1\] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.
-  - \[2\] - Temperature in Fahrenheit.
-  - \[3\] - Temperature in Celsius.
-  - \[4\] - "Feels like" temperature in Fahrenheit.
-  - \[5\] - "Feels like" temperature in Celsius.
-  - \[6\] - Humidity as a percentage.
-  - \[7\] - Wind speed in miles per hour.
-  - \[8\] - Wind speed in kilometers per hour.
-  - \[9\] - Wind direction as a 16 point compass (e.g.: NNW for north/northwest).
-  - \[10\] - Wind direction in degrees.
-  - \[11\] - Wind gusts in miles per hour.
-  - \[12\] - Wind gusts in kilometers per hour.
-  - \[13\] - Precipitation in inches.
-  - \[14\] - Precipitation in millimeters.
-  - \[15\] - Cloud cover as a percentage.
-  - \[16\] - "Will it rain", 1 if yes, 0 if no.
-  - \[17\] - Chance of rain as a percentage.
-  - \[18\] - "Will it snow", 1 if yes, 0 if no.
-  - \[19\] - Chance of snow as a percentage.
-  - \[20\] - Visibility in miles.
-  - \[21\] - Visibility in kilometers.
-  - \[22\] - Wind chill in Fahrenheit.
-  - \[23\] - Wind chill in Celsius.
-  - \[24\] - Heat index in Fahrenheit.
-  - \[25\] - Heat index in Celsius.
-  - \[26\] - Dew point in Fahrenheit.
-  - \[27\] - Dew point in Celsius.
-  - \[28\] - Pressure in inches.
-  - \[29\] - Pressure in millibars.
-  - \[30\] - UV index.
-- **Reference24**: The day the preceding information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.
+- **Reference0～23**: 予報情報を含む、カンマ区切りの配列。Referenceの番号は、データが対応する時刻（24時間表記）の数字に対応する（例: reference0は00:00/午前12時、reference14は14:00/午後2時）。
+  - \[0\] - 情報が対象とする日時。
+  - \[1\] - 「昼間かどうか」。太陽が出ていれば1、沈んでいれば0。
+  - \[2\] - 気温（華氏）。
+  - \[3\] - 気温（摂氏）。
+  - \[4\] - 「体感」温度（華氏）。
+  - \[5\] - 「体感」温度（摂氏）。
+  - \[6\] - 湿度（パーセント）。
+  - \[7\] - 風速（マイル毎時）。
+  - \[8\] - 風速（キロメートル毎時）。
+  - \[9\] - 風向（16方位。例: NNWは北北西）。
+  - \[10\] - 風向（度）。
+  - \[11\] - 突風の風速（マイル毎時）。
+  - \[12\] - 突風の風速（キロメートル毎時）。
+  - \[13\] - 降水量（インチ）。
+  - \[14\] - 降水量（ミリメートル）。
+  - \[15\] - 雲量（パーセント）。
+  - \[16\] - 「雨が降るか」。降るなら1、降らないなら0。
+  - \[17\] - 雨が降る確率（パーセント）。
+  - \[18\] - 「雪が降るか」。降るなら1、降らないなら0。
+  - \[19\] - 雪が降る確率（パーセント）。
+  - \[20\] - 視程（マイル）。
+  - \[21\] - 視程（キロメートル）。
+  - \[22\] - ウインドチル（華氏）。
+  - \[23\] - ウインドチル（摂氏）。
+  - \[24\] - 熱指数（華氏）。
+  - \[25\] - 熱指数（摂氏）。
+  - \[26\] - 露点（華氏）。
+  - \[27\] - 露点（摂氏）。
+  - \[28\] - 気圧（インチ）。
+  - \[29\] - 気圧（ミリバール）。
+  - \[30\] - UV指数。
+- **Reference24**: 前記の情報が対象とする日。0は今日、1は明日、2は明後日。

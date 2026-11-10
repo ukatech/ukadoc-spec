@@ -2,11 +2,11 @@
 
 **カテゴリ:** プラグイン「Weather Station」
 
-Sends error information to all open ghosts. This event is sent in place of the previous events if there is an error of any kind.
+エラー情報を、起動中のすべてのゴーストに送る。何らかのエラーがある場合に、前述のイベントの代わりにこのイベントが送られる。
 
-- **Reference0**: The error message. [※See below](note-1.md#uk-defra-index-reference) for possible error messages.
-- **Reference1**: A more descriptive error message, provided by weatherapi.com. *These error messages do not match the online documentation for weatherapi and should not be used for identifying errors.*
-- **Reference2**: The error code, as listed on weatherapi.com's documentation.
-- **Reference3**: The time the plugin last attempted to update the weather data, in seconds since EPOCH (1970/1/1 00:00:00).
-- **Reference4**: The current version number of the plugin.
-- **Reference5**: 1 if there is a plugin update available, 0 otherwise. If the user is offline, this will always be 0.
+- **Reference0**: エラーメッセージ。考えられるエラーメッセージは[※下記](note-1.md#エラーの理由)を参照。
+- **Reference1**: weatherapi.comが提供する、より詳細なエラーメッセージ。*このエラーメッセージはweatherapiのオンラインドキュメントと一致しないため、エラーの識別に使ってはならない。*
+- **Reference2**: weatherapi.comのドキュメントに記載されたエラーコード。
+- **Reference3**: プラグインが最後に天気データの更新を試みた時刻。EPOCH（1970/1/1 00:00:00）からの秒数。
+- **Reference4**: プラグインの現在のバージョン番号。
+- **Reference5**: プラグインの更新があれば1、なければ0。ユーザーがオフラインの場合は常に0。

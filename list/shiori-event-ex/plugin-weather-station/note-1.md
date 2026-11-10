@@ -1,10 +1,10 @@
 # 補足
 
-## Weather Condition & Code List
+## 天気の状況と状況コードの一覧
 
-A list of conditions can be downloaded from [weatherapi's documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but information from the plugin will always be sent in english.
+状況の一覧は[weatherapiのドキュメントページ](https://www.weatherapi.com/docs/)からダウンロードできる。この一覧は他の言語でも提供されているが、プラグインが送る情報は常に英語である。
 
-- **1000**: Sunny (If the sun is down, it will be "Clear" instead.)
+- **1000**: Sunny（日没後は代わりに"Clear"になる）
 - **1003**: Partly cloudy
 - **1006**: Cloudy
 - **1009**: Overcast
@@ -53,19 +53,19 @@ A list of conditions can be downloaded from [weatherapi's documentation page](ht
 - **1279**: Patchy light snow with thunder
 - **1282**: Moderate or heavy snow with thunder
 
-## UK Defra Index reference
+## UK Defra指数の早見表
 
-| Index | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| 指数 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Band | Low | Low | Low | Moderate | Moderate | Moderate | High | High | High | Very High |
-| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71 or more |
+| 区分 | 低 | 低 | 低 | 中 | 中 | 中 | 高 | 高 | 高 | 非常に高い |
+| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71以上 |
 
-## Reason for Error
+## エラーの理由
 
-- **no_location**: The user has not added their location, or has removed it.
-- **location_invalid**: The user's location is invalid and data cannot be gathered.
-- **api_quota_exceeded**: The 1 million free API calls per month has been exceeded.
-- **api_key_disabled**: The API key has been disabled by the plugin developer. Please check if a plugin update is available to provide a new key.
-- **api_internal_error**: The API responded with an internal error.
-- **no_api_response**: The API did not respond, the SAORI used by the plugin failed to work, or the user is offline.
-- **other**: Any other error sent by the API. reference1 will have the error message provided by the API.
+- **no_location**: ユーザーが位置情報を追加していない、または削除した。
+- **location_invalid**: ユーザーの位置情報が無効で、データを取得できない。
+- **api_quota_exceeded**: 月100万回の無料API呼び出しの上限を超えた。
+- **api_key_disabled**: プラグインの開発者がAPIキーを無効にした。新しいキーが提供されるプラグインの更新がないか確認すること。
+- **api_internal_error**: APIが内部エラーを返した。
+- **no_api_response**: APIが応答しなかった、プラグインが使うSAORIが動作に失敗した、またはユーザーがオフラインである。
+- **other**: APIが返したその他のエラー。reference1にはAPIが返したエラーメッセージが入る。

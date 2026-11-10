@@ -2,16 +2,16 @@
 
 **カテゴリ:** ゴースト「Hydrate」
 
-Notifies information about Hydrate's current state and the user's hydration stats.
+Hydrateの現在の状態と、ユーザーの水分補給の統計を通知する。
 
-- **Reference0**: The name of the shell Hydrate is currently using.
-- **Reference1**: A list of the current dressups. This is a 2-dimensional array, where each dressup is delimited by 0xFDEF, and the category and part name of each dressup is delimited by 0x01. (Example: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea")
-- **Reference2**: The current X scaling of the shell (as a percentage).
-- **Reference3**: The current Y scaling of the shell (as a percentage).
-- **Reference4**: The number of drinks today.
-- **Reference5**: The number of drinks in total.
-- **Reference6**: The current drink streak (number of drinks in a row).
-- **Reference7**: The highest ever drink streak (number of drinks in a row).
-- **Reference8**: The number of extra sips taken today.
-- **Reference9**: The number of extra sips in total.
-- **Reference10**: Whether Hydrate is minimized or not. 1 if true, 0 otherwise.
+- **Reference0**: Hydrateが現在使っているシェルの名前。
+- **Reference1**: 現在のドレスアップの一覧。2次元配列で、ドレスアップ同士は0xFDEFで、各ドレスアップのカテゴリ名とパーツ名は0x01で区切る。（例: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea"）
+- **Reference2**: シェルの現在のX方向の拡大率（パーセント）。
+- **Reference3**: シェルの現在のY方向の拡大率（パーセント）。
+- **Reference4**: 今日飲んだ回数。
+- **Reference5**: 飲んだ回数の合計。
+- **Reference6**: 現在の連続記録（連続して飲んだ回数）。
+- **Reference7**: これまでの最高の連続記録（連続して飲んだ回数）。
+- **Reference8**: 今日取った追加の一口の回数。
+- **Reference9**: 追加の一口の合計回数。
+- **Reference10**: Hydrateが最小化されているかどうか。最小化されていれば1、そうでなければ0。

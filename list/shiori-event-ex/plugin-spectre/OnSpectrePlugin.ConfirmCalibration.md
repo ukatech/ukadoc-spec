@@ -2,14 +2,14 @@
 
 **カテゴリ:** プラグイン「Spectre」
 
-Occurs upon opening the plugin menu if this ghost is not yet "calibrated". Also occurs any time the user chooses to "racalibrate" this ghost.<br />
-Returning a specific response completes a handshake that allows the ghost to complete the "calibration" step automatically.<br />
-The required response is the following tag: `\![raiseplugin,Spectre,OnCustomCalibrationConfirm]`<br />
-Within this tag, references should be sent containing expression data. The references should be written the same as the ones received in the OnSpectrePlugin.Surface event, and may be written in any order.<br />
-*By default, only expressions that the ghost does not provide should be sent.* The plugin assumes that any expressions not listed are present.<br />
-For ghosts with few compatible expressions, an option may be used to invert this behavior, and make the plugin use only expressions that are listed.<br />
-For ghosts with no compatible expressions, a special reference is provided.<br />
-*Expressions which the ghost's shell cannot produce accurately should be listed as references in this tag* (or should be omitted, if using the inverted behavior), as the plugin will use this information for its own purposes.
+このゴーストがまだ「キャリブレーション」されていない場合に、プラグインのメニューを開いたときに発生する。ユーザーがこのゴーストの「再キャリブレーション」を選んだときにも発生する。<br />
+特定の応答を返すと、ゴーストが「キャリブレーション」の手順を自動で完了できるハンドシェイクが成立する。<br />
+必要な応答は次のタグ：`\![raiseplugin,Spectre,OnCustomCalibrationConfirm]`<br />
+このタグには表情データを含むReferenceを付けて送る。Referenceの書き方はOnSpectrePlugin.Surfaceイベントで受け取るものと同じで、順序は問わない。<br />
+*既定では、ゴーストが提供しない表情だけを送る。* 一覧にない表情は、プラグインがすべて存在するものとみなす。<br />
+対応する表情が少ないゴーストでは、オプションでこの動作を反転させ、一覧にある表情だけをプラグインに使わせられる。<br />
+対応する表情をまったく持たないゴースト向けには、専用のReferenceがある。<br />
+*ゴーストのシェルで正確に表現できない表情は、このタグのReferenceとして列挙すること*（反転動作を使う場合は省くこと）。プラグインがこの情報を独自の目的に使うため。
 
-- **--option=include**: Only surfaces that are listed will be used. (Inverted behavior.)
-- **\_\_NO_EXPRESSIONS\_\_**: No expressions will be used. Must be sent as reference0.
+- **--option=include**: 一覧にあるサーフェスだけを使う（反転動作）。
+- **\_\_NO_EXPRESSIONS\_\_**: 表情を一切使わない。reference0として送る必要がある。

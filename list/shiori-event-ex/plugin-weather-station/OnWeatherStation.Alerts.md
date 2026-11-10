@@ -2,20 +2,20 @@
 
 **カテゴリ:** プラグイン「Weather Station」
 
-Sends information about weather alerts to all open ghosts. Must be called with `\![raiseplugin]`. Will return nothing if there are no alerts.
+天気警報の情報を、起動中のすべてのゴーストに送る。`\![raiseplugin]`で呼び出す必要がある。警報がなければ何も返さない。
 
-- **Reference\***: An array containing information for a weather alert. Some elements may not be filled. Elements are separated by a 1 byte value.
+- **Reference\***: 天気警報1件の情報を含む配列。埋まっていない要素がある場合もある。要素は1バイトの値で区切られる。
 
-  - \[0\] - Headline
-  - \[1\] - Type of alert
-  - \[2\] - Severity
-  - \[3\] - Urgency
-  - \[4\] - Areas covered
-  - \[5\] - Category
-  - \[6\] - Certainty
-  - \[7\] - Event
-  - \[8\] - Note
-  - \[9\] - Effective time
-  - \[10\] - Expires time
-  - \[11\] - Description
-  - \[12\] - Instructions
+  - \[0\] - 見出し
+  - \[1\] - 警報の種類
+  - \[2\] - 重大度
+  - \[3\] - 緊急度
+  - \[4\] - 対象地域
+  - \[5\] - カテゴリ
+  - \[6\] - 確実性
+  - \[7\] - イベント
+  - \[8\] - 備考
+  - \[9\] - 発効時刻
+  - \[10\] - 失効時刻
+  - \[11\] - 説明
+  - \[12\] - 指示事項
