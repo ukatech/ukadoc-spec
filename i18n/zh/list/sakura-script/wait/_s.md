@@ -1,0 +1,14 @@
+# `\_s`
+
+**カテゴリ:** Wait commands
+
+Synchronize section.<br />
+Display messages in both balloons until the next `\_s` or `\e`.
+
+**対応:** Materia / SSP / CROW / Ninix
+
+## 記述例
+
+```sakurascript
+\_s本体側と相方側が同時に喋る。\_s
+```

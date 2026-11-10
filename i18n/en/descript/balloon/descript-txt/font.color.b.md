@@ -1,0 +1,9 @@
+# font.color.b,numeric value
+
+**カテゴリ:** descript.txt
+
+Font color blue (0–255)
+
+**既定値:** 0
+
+**対応:** Materia / SSP / CROW

@@ -1,0 +1,15 @@
+# OnMouseClickEx
+
+**カテゴリ:** 滑鼠事件
+
+使用滑鼠左鍵、右鍵以外的按鈕點擊時（按下並放開滑鼠按鈕的瞬間），若未觸發 OnMouseUpEx，便會發生。
+
+- **Reference0**: 滑鼠游標的 x 座標（區域座標）
+- **Reference1**: 滑鼠游標的 y 座標（區域座標）
+- **Reference2**: 一律為 0。
+- **Reference3**: 本體為 0，搭檔為 1。SSP/CROW 中也可能有 2 以上的值。
+- **Reference4**: 命中測試識別碼。
+- **Reference5**: 滾輪點擊（或三鍵滑鼠的中鍵）為 middle，擴充按鈕 1（通常指定為「上一頁」）為 xbutton1，擴充按鈕 2（通常指定為「下一頁」）為 xbutton2。
+- **Reference6**: 從支援多點觸控環境的觸控面板（※不包括觸控板）輸入時為 touch，從繪圖板輸入時為 pen，從繪圖板的橡皮擦端輸入時為 eraser，從滑鼠等裝置輸入時為 mouse
+
+**対応:** SSP / Ninix

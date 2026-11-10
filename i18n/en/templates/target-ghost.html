@@ -1,0 +1,15 @@
+		<section class="navigation-category" id="TargetGhost">
+			<h1>Target Ghost</h1>
+			<!-- 実行対象のゴーストを選択するリスト -->
+			<div id="ghost_select">
+				<p>Click the "Load" button to get a list of running ghosts. Select the ghost on which to run the example:</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- 読み込みボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">Load</button>
+			</div>
+			<div>
+				<p>Some tags are dangerous, so they will not be executed unless the target ghost supports the following event:</p>
+				<a href="list_shiori_event_ex.html#OnUkadocScriptExample">OnUkadocScriptExample</a>
+				<p>When executing the event, take care to escape dangerous tags.</p>
+			</div>
+		</section>

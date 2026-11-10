@@ -1,0 +1,9 @@
+# OnUpdateCheckResult
+
+**カテゴリ:** 网络更新事件
+
+勾选“仅检查更新”选项时，最后触发。是 OnUpdateResult 的资源管理器版。
+
+- **Reference\***: 与 OnUpdateResult 相同
+
+**対応:** SSP

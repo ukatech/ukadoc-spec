@@ -1,0 +1,11 @@
+# OnExecuteRSS_SSLInfo
+
+**カテゴリ:** Other communication events
+
+This event is sent even if retrieval fails (the HTTP response is not 200), because the connection succeeded at the SSL/TLS level.
+
+Even if an ID beginning with On is specified with --async or --sync, the event name is not replaced; this event is always sent.
+
+- **Reference0～**: [The same as for OnExecuteHTTPSSLInfo](OnExecuteHTTPSSLInfo.md)
+
+**対応:** SSP

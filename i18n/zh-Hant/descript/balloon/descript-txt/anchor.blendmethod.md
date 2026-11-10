@@ -1,0 +1,14 @@
+# anchor.blendmethod,指令
+
+**カテゴリ:** descript.txt
+
+錨點的光柵運算指令。<br />
+none 表示無。<br />
+notmaskpen 表示 r2_notmaskpen。<br />
+mergepennot 表示 r2_mergepennot。<br />
+只有 SSP 可指定 Win32API 的 SetROP2 函數所支援的所有運算子（參考：[SetROP2 函數（外部網站）](https://learn.microsoft.com/ja-jp/windows/win32/api/wingdi/nf-wingdi-setrop2)）<br />
+此時同樣不包含「R2\_」，並以小寫模式名稱指定。
+
+**既定値:** none
+
+**対応:** SSP

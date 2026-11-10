@@ -1,0 +1,15 @@
+		<section class="navigation-category" id="TargetGhost">
+			<h1>Target Ghost</h1>
+			<!-- 実行対象のゴーストを選択するリスト -->
+			<div id="ghost_select">
+				<p>点击“读取”按钮可获取正在运行的 ghost 列表。请选择要执行示例的目标 ghost：</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- 読み込みボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">读取</button>
+			</div>
+			<div>
+				<p>由于某些标签存在危险性，除非目标 ghost 支持以下事件，否则不会执行这些标签：</p>
+				<a href="list_shiori_event_ex.html#OnUkadocScriptExample">OnUkadocScriptExample</a>
+				<p>执行事件时，请务必小心，确保对危险标签进行转义。</p>
+			</div>
+		</section>

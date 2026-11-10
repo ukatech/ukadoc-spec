@@ -1,0 +1,27 @@
+# OnSoundSpectrum
+
+**カテゴリ:** Other events
+
+Occurs at regular intervals during playback of a sound specified with [--spectrum=](../../sakura-script/sound/bang-sound-option.note.md). Notifies the spectrum of the sound being played (the overall volume level for each channel, the volume levels of each frequency band from bass to treble, and the peak-hold values for each). Used for displays such as spectrum analyzers.<br />
+The analysis uses the waveform being played, after [--volume=](../../sakura-script/sound/bang-sound-option.note.md) has been applied (so the values match the audible volume). Lowering the volume lowers the values, and setting it to 0 makes all levels 0. --balance= is not applied. \[2.9.29\] In 2.9.28 and earlier, the waveform was analyzed before --volume was applied, so lowering the volume did not lower the values.<br />
+\[2.9.29\] If an equalizer is specified with [--eq=](../../sakura-script/sound/bang-sound-option.note.md), the waveform is analyzed after the equalizer has been applied (raising or lowering a band changes that band's value accordingly). The same applies to --eq-preamp=.<br />
+Does not occur while paused. When playback is stopped or ends, or when notifications are stopped with --spectrum=0, one notification with all levels set to 0 is generated (when stopped or ended, [OnSoundStop](OnSoundStop.md) occurs afterward).<br />
+\[2.9.33\] For sounds specified with [--spectrum-skipbusy=true](../../sakura-script/sound/bang-sound-option.note.md), notifications do not occur while a ghost script is playing or waiting to play (they are skipped. The notification with all levels set to 0 described above is not skipped).<br />
+Does not occur for sounds whose waveform cannot be retrieved during playback, such as MIDI, CD tracks, and xWMA wav files (playback itself proceeds normally). However, when [--spectrum-bands=0](../../sakura-script/sound/bang-sound-option.note.md) is set, notifications occur even if the waveform cannot be retrieved (Reference2 and Reference3 are 0).<br />
+For ADPCM (MS-ADPCM and IMA-ADPCM) wav files, a separate waveform is expanded for analysis when notifications begin. Notifications do not occur for long files whose expanded size exceeds 64MB (about 6 minutes or longer for 44.1kHz stereo), except when --spectrum-bands=0.<br />
+\[2.9.19\] Specifying --spectrum-bands=0 skips analysis by frequency band and notifies only the overall volume level and playback position (Reference6). This can be used as an elapsed-time notification with volume levels.
+
+- **Reference0**: Playback file name.
+- **Reference1**: Number of bands. The number specified with --spectrum-bands= (one of 0, 5, 10, 15, or 31; the default is 10). 0 means no bands, and Reference4 and Reference5 are empty. The frequency range of each band is determined by the [fixed table for each number of bands](../../sakura-script/sound/bang-sound-option.note-2.md), and is the same regardless of file format.
+- **Reference2**: \[2.9.20\] Overall volume level (0–100), listed for each channel and separated by byte value 1 (`\1`). There is one value for mono and two for stereo (left and right); sounds with more channels have one value per channel, in channel order (up to 8 values; channels 9 and above are not included). The number of values is the number of channels in the sound. Channel order follows the standard WAVE format order (front left, front right, center, low frequency, back left, back right, side left, side right).<br />
+  Therefore, for sounds with two or more channels, the first two values (the first and second) correspond to the left and right volume levels, so even with 5.1ch they can be handled almost like stereo by using just those values (mono has only one value, which is the shared volume level for left and right).<br />
+  Example: When Reference2 is split on `\1`, it contains two values for stereo, \[left, right\] (e.g. \[60, 55\]), and six for 5.1ch, \[front left, front right, center, low frequency, back left, back right\] (e.g. \[60, 55, 70, 30, 20, 25\]). In both cases, the first two values are left and right.<br />
+  When notifying without being able to retrieve the waveform (when --spectrum-bands=0), the result is the number of channels if known, or one 0 if unknown.<br />
+  Through 2.9.19, this was a single value combining all channels.
+- **Reference3**: \[2.9.20\] Peak-hold values (0–100) for the overall volume levels in Reference2. Has the same order and number of values as Reference2. The hold time is specified with --spectrum-hold= (the default is 500 milliseconds).
+- **Reference4**: Volume levels (0–100) for each band. Listed from the bass band to the treble band, separated by byte value 1 (`\1`). The number of values is the same as Reference1 (empty if 0). Bands are measured from the sound averaged across all channels (band levels for individual channels are not notified).
+- **Reference5**: Peak-hold values (0–100) for each band. Has the same order and number of values as Reference4. The hold time is the same as Reference3.
+- **Reference6**: \[2.9.19\] Playback position (milliseconds). This is the position in the media at the time the volume level was measured, using the same scale as --seektime=. For video, this is the video playback position; during looped playback, it returns to 0 on each repeat ([OnSoundLoop](OnSoundLoop.md)).<br />
+  For the notification with all levels set to 0 when playback starts or stops, this is the position from the last notification.
+
+**対応:** SSP 2.9.18

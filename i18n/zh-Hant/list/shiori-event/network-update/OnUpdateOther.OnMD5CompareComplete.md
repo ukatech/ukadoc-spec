@@ -1,0 +1,12 @@
+# OnUpdateOther.OnMD5CompareComplete
+
+**カテゴリ:** 網路更新事件
+
+ghost 以外檔案的 MD5 相符時觸發。
+
+- **Reference1**: 正確的 MD5 值。
+- **Reference2**: 下載檔案的 MD5 值。
+- **Reference3**: [※更新目標類型](caption_updatetype.md)
+- **Reference4**: SSP 2.3：[※更新執行原因](caption_updatereason.md)。
+
+**対応:** SSP

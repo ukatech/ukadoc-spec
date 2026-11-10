@@ -1,0 +1,13 @@
+# `\__w[animation,ID]`
+
+**カテゴリ:** Surface command
+
+Wait until the animation with the specified ID finishes.
+
+**対応:** SSP
+
+## 記述例
+
+```sakurascript
+\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。
+```

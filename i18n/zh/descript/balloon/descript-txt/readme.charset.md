@@ -1,0 +1,9 @@
+# readme.charset,character encoding
+
+**カテゴリ:** descript.txt
+
+Character encoding of the description text file.
+
+**既定値:** (OS default or SSP-\>Internationalization-\>Character encoding when omitted-\>readme)
+
+**対応:** SSP 2.5.10
