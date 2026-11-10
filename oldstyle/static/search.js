@@ -13,6 +13,39 @@
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function norm(s) { return s.toLowerCase(); }
+  // 表示の文言。頁の <html lang> の言語（日本語・en・zh-Hant・zh）で切り替える。無い言語は日本語
+  var MESSAGES = {
+    ja: {
+      label: 'ukadoc内検索',
+      none: '見つからなかった。',
+      all: function (n) { return 'すべての結果を見る（' + n + ' 件）'; },
+      goSearch: '検索頁で探す',
+      count: function (n, top) { return n + ' 件' + (top ? '（上位 ' + top + ' 件を表示）' : ''); }
+    },
+    en: {
+      label: 'Search UKADOC',
+      none: 'No results found.',
+      all: function (n) { return 'See all results (' + n + ')'; },
+      goSearch: 'Search on the search page',
+      count: function (n, top) { return n + (n === 1 ? ' result' : ' results') + (top ? ' (top ' + top + ' shown)' : ''); }
+    },
+    'zh-Hant': {
+      label: '搜尋 UKADOC',
+      none: '找不到結果。',
+      all: function (n) { return '查看所有結果（' + n + ' 筆）'; },
+      goSearch: '前往搜尋頁',
+      count: function (n, top) { return n + ' 筆' + (top ? '（顯示前 ' + top + ' 筆）' : ''); }
+    },
+    zh: {
+      label: '搜索 UKADOC',
+      none: '未找到结果。',
+      all: function (n) { return '查看所有结果（' + n + ' 条）'; },
+      goSearch: '前往搜索页',
+      count: function (n, top) { return n + ' 条' + (top ? '（显示前 ' + top + ' 条）' : ''); }
+    }
+  };
+  var T = MESSAGES[document.documentElement.lang] || MESSAGES.ja;
+
   function searchUrl(q) { return 'search.html' + (q ? '?q=' + encodeURIComponent(q) : ''); }
 
   /* ---------------------------------------------------------------- 索引と検索 */
@@ -83,7 +116,7 @@
         var r = find(q);
         if (!r.terms.length) { out.innerHTML = ''; return; }
         var shown = r.hits.slice(0, MAX_PAGE);
-        var html = '<p>' + r.hits.length + ' 件' + (r.hits.length > shown.length ? '（上位 ' + shown.length + ' 件を表示）' : '') + '</p><ul class="search-hits">';
+        var html = '<p>' + T.count(r.hits.length, r.hits.length > shown.length ? shown.length : 0) + '</p><ul class="search-hits">';
         shown.forEach(function (h) {
           html += '<li><a href="' + esc(h.d.url) + '">' + esc(h.d.title) + '</a> <span class="search-page">' + esc(h.d.page) + '</span><br>' + snippet(h.d, r.terms, 140) + '</li>';
         });
@@ -152,9 +185,9 @@
         html += '<a class="ukadoc-search__item" role="option" data-i="' + i + '" href="' + esc(h.d.url) + '"><span class="ukadoc-search__title">' + esc(h.d.title) +
           '</span> <span class="ukadoc-search__page">' + esc(h.d.page) + '</span><span class="ukadoc-search__snippet">' + snippet(h.d, r.terms, 90) + '</span></a>';
       });
-      if (!shown.length) html += '<p class="ukadoc-search__empty">見つからなかった。</p>';
+      if (!shown.length) html += '<p class="ukadoc-search__empty">' + esc(T.none) + '</p>';
       html += '<a class="ukadoc-search__all" role="option" data-i="' + shown.length + '" href="' + esc(searchUrl(self.q)) + '">' +
-        (shown.length ? 'すべての結果を見る（' + r.hits.length + ' 件）' : '検索頁で探す') + '</a>';
+        esc(shown.length ? T.all(r.hits.length) : T.goSearch) + '</a>';
       el.innerHTML = html;
       self.count = shown.length + 1;
       self.active = -1;
@@ -220,9 +253,9 @@
     var input = document.createElement('input');
     input.type = 'text';
     input.className = 'ukadoc-search__input';
-    input.placeholder = 'ukadoc内検索';
-    input.title = 'ukadoc内検索';
-    input.setAttribute('aria-label', 'ukadoc内検索');
+    input.placeholder = T.label;
+    input.title = T.label;
+    input.setAttribute('aria-label', T.label);
     input.setAttribute('role', 'combobox');
     input.setAttribute('aria-autocomplete', 'list');
     input.setAttribute('aria-expanded', 'false');

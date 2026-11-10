@@ -1136,8 +1136,11 @@ def build_search_index():
     return len(entries)
 
 
+SEARCH_TITLES = {'en': 'Search UKADOC', 'zh-Hant': '搜尋 UKADOC', 'zh': '搜索 UKADOC'}
+
+
 def build_search_page():
-    out = head('ukadoc内検索', 'base.css')
+    out = head(SEARCH_TITLES.get(LANG, 'ukadoc内検索'), 'base.css')
     out += frame_open() + read_template('search-main.html') + '\n' + read_template('frame-close.html')
     write_out('search.html', out)
 
