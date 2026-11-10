@@ -1003,6 +1003,7 @@ def head(title, css, extra_head='', description=None):
 <html lang="{LANG or "ja"}">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
@@ -1011,6 +1012,7 @@ def head(title, css, extra_head='', description=None):
 <link rel="stylesheet" href="{css}">
 <link rel="stylesheet" href="oldstyle.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="menu.js"></script>
 <script src="lang.js" defer></script>
 <script src="search.js" defer></script>
 {extra_head}</head>
@@ -1050,6 +1052,12 @@ def page_script_tags(md_rel):
     return extra
 
 
+def drawer(inner):
+    """list / spec の頁の、目次の表（menu-header.html）と左のナビゲーションを包む。
+    広い画面では display: contents で包みが無いのと同じ。狭い画面では、menu.js のボタンで開閉する引き出しになる"""
+    return f'<div id="ukadoc-drawer" class="ukadoc-drawer ukadoc-drawer--wrap">\n{inner}\n</div>'
+
+
 def page_anchor(h1):
     """頁の頭への内部リンク（まとめる前の頁の H1 の id）の受け皿"""
     return f'<a id="{htmllib.escape(h1.get("id"), quote=True)}"></a>' if h1.get('id') else ''
@@ -1068,15 +1076,15 @@ def render_page(md_rel, text, known):
         h1, nav_bar, cats = build_list_page(md_rel, root, None)
         title = text_of(h1)
         out = head(title, 'list.css', page_script_tags(md_rel))
-        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n{menu}\n'
-        out += serialize(nav_bar) + '\n' + serialize(cats) + '\n'
+        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n'
+        out += drawer(menu + '\n' + serialize(nav_bar)) + '\n' + serialize(cats) + '\n'
         out += '</body>\n</html>\n'
     elif kind == 'spec':
         h1, nav_bar, text_div = build_spec_page(md_rel, root)
         title = text_of(h1)
         out = head(title, 'spec.css')
-        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n{menu}\n'
-        out += serialize(nav_bar) + '\n' + serialize(text_div) + '\n'
+        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n'
+        out += drawer(menu + '\n' + serialize(nav_bar)) + '\n' + serialize(text_div) + '\n'
         out += '</body>\n</html>\n'
     else:
         h1, main = build_frame_page(md_rel, root)

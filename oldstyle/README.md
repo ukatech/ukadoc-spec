@@ -31,10 +31,14 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
 旧版からの差:
 
 - 仕様書側（list / spec の頁）は、旧版の幅（25% + 65%）のままだと右に余白が残るので、`oldstyle.css` で画面の幅いっぱい（左右 20px の余白）に広げている
-- 左のメニュー（枠の頁の `nav.sidebar`、list / spec の `.navigation-bar`）は、画面に付いてくる sticky のフローティング。画面より長いときは、メニューの中だけを縦にスクロールする。list / spec は本文もメニューもフロートで `body` の高さに入らないので、`oldstyle.css` で `body:after` のクリアを足している。枠の頁は 720px 以下で static に戻る
+- 左のメニュー（枠の頁の `nav.sidebar`、list / spec の `.navigation-bar`）は、画面に付いてくる sticky のフローティング。画面より長いときは、メニューの中だけを縦にスクロールする。list / spec は本文もメニューもフロートで `body` の高さに入らないので、`oldstyle.css` で `body:after` のクリアを足している。狭い画面（720px 以下）では、引き出しになる（下の「狭い画面」）
 - 枠の頁の上の帯のタイトル画像（`title2.gif`）は、真ん中（375px）で割って、左半分を左端、右半分を右端に置く（`base.css` の `#navigation_top` の疑似要素）
-- 枠の頁の左メニュー・上の帯は、旧版の iframe をやめて頁に直接埋め込む。文字の大きさは仕様書側（list / spec）と同じ（本文 16px）。枠は画面の幅いっぱいに広がり（左右に 14px のすきまを残し、枠の `box-shadow` を見せる）、左のメニューは 280px 固定、残りが本文。狭い画面（720px 以下）ではメニューが本文の上に積まれる。サイト内検索（`search.html`）は、旧版の Google の site 検索の代わりに、ビルド時に作る `search-index.js` を使う
+- 枠の頁の左メニュー・上の帯は、旧版の iframe をやめて頁に直接埋め込む。文字の大きさは仕様書側（list / spec）と同じ（本文 16px）。枠は画面の幅いっぱいに広がり（左右に 14px のすきまを残し、枠の `box-shadow` を見せる）、左のメニューは 280px 固定、残りが本文。狭い画面（720px 以下）ではメニューを畳む（下の「狭い画面」）。サイト内検索（`search.html`）は、旧版の Google の site 検索の代わりに、ビルド時に作る `search-index.js` を使う
 - 検索の入力欄はドロップダウン式（`search.js`）。全頁（枠の頁も list / spec の頁も）、右上の翻訳ボタンの左横に入力欄を固定で置く
+- 狭い画面（720px 以下）: 1 段組みにし、左のメニューを、左上のボタン（ハンバーガー。`menu.js`）で開く引き出し（ドロワー）にする。暗幕・Esc・メニューの中のリンクで閉じる
+  - 引き出しになるのは `#ukadoc-drawer`。枠の頁は `nav.sidebar`（`templates/frame-open.html`）。list / spec の頁は、頁の上の目次の表（`menu-header.html`）と左のナビゲーション（`.navigation-bar`）を、`build.py` の `drawer()` が `div.ukadoc-drawer--wrap` で包んだもの。この包みは、広い画面では `display: contents` で、無いのと同じ
+  - `menu.js` は head で同期に読み込み、`<html>` に `js-drawer` を付ける。CSS（`oldstyle.css` の末尾）はこのときだけメニューを畳むので、JavaScript が動かなければ、メニューは本文の上に出る
+  - 右上の検索欄・言語ボタンと左上のメニューのボタンは固定なので、`body` の上に 40px 空ける。枠の頁の上の帯のタイトル画像は、右半分の下（ロゴ）だけを出す。幅の広い表は表の中だけを横にスクロールし、画像は幅に収める
 - 言語切替は `lang.js`。全頁で右上に固定（検索欄の右横）。翻訳版の頁では、頭に機械翻訳の注記の帯（日本語の原文へのリンクつき）を出す
 - 旧版にあった `?event_name=` からのリダイレクト（`index.html`）と、起動中ゴーストの対応状況を色分けする `ghost_status.js` は、移していない
 
@@ -47,7 +51,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
   - 「## 一覧」の順に、ディレクトリ内の全 `.md` をつなぐ。見出しは入れ子の深さの分だけずらし（ページ H1 → カテゴリ H2 → 項目 H3 → 項目内の節 H4。H6 を超えるとエラー）、`{#id}` で一意な id を振る。項目の id は、ファイル名（重なるときはディレクトリからのパス）で、項目内の節は `項目の id-元の見出しの id` になる（例: `#OnBoot`、`#bang-lock-repaint-記述例`）
   - まとめた項目へのリンクを、まとめたページの見出しへのリンクに書き換える（飛び先の見出しが無いとエラー）
   - `**カテゴリ:**` の行は、親の見出しが示すのでサイトでは省く
-- 見た目の構造は `oldstyle/build.py` が作る。JavaScript は、旧版から引き継いだ `sakura_player.js`（さくらスクリプトの記述例の実行ボタン）と、`search.js`（サイト内検索）、`lang.js`（言語切替）だけ
+- 見た目の構造は `oldstyle/build.py` が作る。JavaScript は、旧版から引き継いだ `sakura_player.js`（さくらスクリプトの記述例の実行ボタン）と、`search.js`（サイト内検索）、`lang.js`（言語切替）、`menu.js`（狭い画面のメニューの開閉）だけ
   - `prepare_site.py` は、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして `_site_src/` の写しに付けるところまでを受け持つ（`bundle-item` `bundle-support` `manual-item` など）
   - `build.py` は、`_site_src/` の Markdown を HTML にし、class と木の形を見て旧版の HTML の構造に組み替える。出力のファイル名は旧版と同じ（`descript_ghost.html` など）。頁の種類は 3 つ（上の「作り」）。対応のベースウェアはアイコン画像（`image/icon_m.png` `icon_s.png` `icon_c.png` `icon_n.png`）で出す。ベースウェアを足すときは `build.py` の `BASEWARE` と画像を足す
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）。色は `oldstyle/static/oldstyle.css`
