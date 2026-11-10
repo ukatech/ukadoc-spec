@@ -1,9 +1,9 @@
 # menu
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** プロパティシステム \> 通用屬性名稱
 
-(Only valid for currentghost.shelllist) The hidden state of the item in the shell-change menu for the target shell.<br />
-hidden when set to hidden, or empty otherwise<br />
-*\[SET enabled\]* The initial value is "menu" in the shell's descript.txt.
+（僅對currentghost.shelllist有效）目標 shell 在 shell 變更選單中的項目隱藏狀態。<br />
+設為隱藏時為hidden，否則為空<br />
+*\[SET 啟用\]*初始值為 shell 端 descript.txt 的「menu」
 
 **対応:** SSP

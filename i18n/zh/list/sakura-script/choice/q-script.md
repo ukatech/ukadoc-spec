@@ -1,9 +1,9 @@
 # `\q[タイトル,script:実行内容]`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选择项命令
 
-Displays a choice.<br />
-After selection, the content following script: is executed as Sakura Script.
+显示选择项。<br />
+选择后，将 script: 后的内容作为 Sakura Script 执行。
 
 **対応:** SSP
 

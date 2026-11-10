@@ -1,10 +1,10 @@
 # `\s[ID番号]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Change the surface of the current scope to the surface with the specified ID number.<br />
-`\s[-1]` displays the hidden surface.<br />
-Strings defined by surface.alias or name in surfaces.txt can be used instead of an ID.
+將目前 scope 一側的 surface 變更為指定 ID 編號的 surface。<br />
+以 `\s[-1]` 設定為隱藏 surface。<br />
+可使用 surfaces.txt 中以 surface.alias 或 name 定義的字串取代 ID。
 
 **対応:** Materia / SSP / CROW / Ninix
 

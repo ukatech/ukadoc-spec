@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventWish
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the wish input dialog is displayed.
+顯示願望輸入對話框時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

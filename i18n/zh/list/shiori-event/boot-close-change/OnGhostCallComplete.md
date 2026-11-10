@@ -1,12 +1,12 @@
 # OnGhostCallComplete
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs after another ghost is called and that ghost completes its startup script.
+呼叫其他 ghost，且该 ghost 完成启动脚本后触发。
 
-- **Reference0**: Name of the called ghost on the baseware side.
-- **Reference1**: Startup script of the called ghost.
-- **Reference2**: Name of the called ghost.
-- **Reference7**: Shell name of the called ghost.
+- **Reference0**: 被呼叫 ghost 的主角色名称。
+- **Reference1**: 被呼叫 ghost 的启动脚本。
+- **Reference2**: 被呼叫 ghost 的名称。
+- **Reference7**: 被呼叫 ghost 的 shell 名称。
 
 **対応:** SSP

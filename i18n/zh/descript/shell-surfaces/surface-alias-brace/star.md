@@ -1,12 +1,12 @@
 # \*,\[\*\]
 
-**カテゴリ:** surface.alias braces
+**カテゴリ:** surface.alias块
 
-Set an arbitrary alias ID for a surface ID.<br />
-For example, if you specify 驚き,\[2\], `\s[驚き]` has the same meaning as `\s[2]`.<br />
-You can also specify multiple surfaces separated by commas, such as 1,\[1,11,21\].<br />
-In this case, `\s[1]` randomly selects one of 1, 11, and 21.
+为surface ID设置任意别名ID。<br />
+例如，设置为惊讶,\[2\]后，`\s[惊讶]`与`\s[2]`含义相同。<br />
+也可以用逗号分隔指定多个surface，例如1,\[1,11,21\]，<br />
+此时`\s[1]`会从1、11、21中随机选择一个。
 
-**既定値:** No effect
+**既定値:** 无效果
 
 **対応:** Materia / SSP / CROW

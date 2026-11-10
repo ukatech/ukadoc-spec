@@ -1,7 +1,7 @@
 # messengerbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of SSP Messenger.
+SSP Messenger 的名称。
 
 **対応:** SSP

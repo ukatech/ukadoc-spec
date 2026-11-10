@@ -1,16 +1,16 @@
 # OnJitenBattle
 
-**カテゴリ:** Ghost "Ghost Dictionary"
+**カテゴリ:** ghost「ghost辞典」
 
-Occurs each turn of the mock battle performed by a ghost.
+ghost 进行的模拟战每回合发生。
 
-- **Reference0**: `\0` name of the sending ghost.
-- **Reference1**: Attacking character's name.
-- **Reference2**: Defending character's name.
-- **Reference3**: Battle result.<br />
-  At start: Mock battle started<br />
-  During action: (Physical attack success|Physical attack failure|Physical attack evaded|Physical attack miss|Mental attack success|Mental attack failure|Mental attack evaded|Mental attack miss)
-- **Reference4**: Damage.
-- **Reference5**: Attacking character's LIFE.
-- **Reference6**: Defending character's LIFE.
+- **Reference0**: 发送方 ghost 的`\0`名称。
+- **Reference1**: 攻击方角色名称。
+- **Reference2**: 防御方角色名称。
+- **Reference3**: 战斗结果。<br />
+  开始时：模拟战斗开始<br />
+  行动时：(物理攻击成功|物理攻击失败|物理攻击回避|物理攻击失误|精神攻击成功|精神攻击失败|精神攻击回避|精神攻击失误)
+- **Reference4**: 伤害。
+- **Reference5**: 攻击方角色 LIFE。
+- **Reference6**: 防御方角色 LIFE。
 - **Reference7**: Normal

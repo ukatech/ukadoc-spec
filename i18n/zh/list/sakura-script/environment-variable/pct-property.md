@@ -1,8 +1,8 @@
-# %property\[プロパティ名\]
+# %property\[属性名\]
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-The value of the specified property system.<br />
-※See the [property system](../../propertysystem/index.md) page for details.
+指定的属性系统的值。<br />
+※属性系统的详细信息请参阅[属性系统](../../propertysystem/index.md)页面。
 
 **対応:** SSP / CROW

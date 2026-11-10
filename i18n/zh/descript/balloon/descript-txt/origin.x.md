@@ -1,11 +1,11 @@
-# origin.x,coordinate [\*1](../index.md#balloon設定)
+# origin.x,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-X coordinate of the text start position.<br />
-In vertical writing ([vertical](vertical.md) is 1), this indicates the *right edge* of the first column.<br />
-This is usually left unspecified, with the position determined by the validrect definition.
+文本起始位置的 X 坐标。<br />
+竖排（[vertical](vertical.md)为1）时指第一列的*右端*。<br />
+通常不指定，而是交由 validrect 的定义处理。
 
-**既定値:** Horizontal writing=validrect.left Vertical writing=validrect.right
+**既定値:** 横排=validrect.left 竖排=validrect.right
 
 **対応:** Materia / SSP / CROW

@@ -1,18 +1,18 @@
 # `\![change,ghost,ゴースト名(,--option=raise-event)]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Switches to the specified ghost.<br />
-Setting the ghost name to random performs a random change (equivalent to `\+`).<br />
-Setting it to sequential performs a sequential change (equivalent to `\_+`).<br />
-If the specified ghost does not exist when the command is executed, it is ignored.
+切换到指定的 ghost。<br />
+将 ghost 名称设为 random 时，会随机切换（与 `\+` 相同）。<br />
+设为 sequential 时，会按顺序切换（与 `\_+` 相同）。<br />
+执行后，如果没有对应的 ghost，则忽略此命令。
 
-Setting the ghost name to lastinstalled switches to the last ghost installed. However, this is unavailable after SSP has been exited once.<br />
-Setting the ghost name to random switches to a randomly selected ghost.
+将 ghost 名称设为 lastinstalled 时，会切换到最后安装的 ghost。但如果 SSP 曾经退出，则此功能无效。<br />
+将 ghost 名称设为 random 时，会随机切换。
 
-In SSP 2.4.74 and later, appending --option=raise-event to the ghost name causes [OnGhostChanging](../../shiori-event/boot-close-change/OnGhostChanging.md) to be notified, just as when switching ghosts from the menu.<br />
-Note that in this case, the change can also be canceled by a balloon break (usually a double-click).<br />
-If this option is not specified, the event is not notified.
+在 SSP 2.4.74 及更高版本中，在 ghost 名称后添加 --option=raise-event 后，会像通过菜单进行切换操作时一样通知[OnGhostChanging](../../shiori-event/boot-close-change/OnGhostChanging.md)。<br />
+请注意，在这种情况下，也可以通过 balloon break（通常为双击）取消操作。<br />
+未指定此选项时不会发出通知。
 
 **対応:** Materia / SSP / CROW / Ninix
 

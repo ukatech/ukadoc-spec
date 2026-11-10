@@ -1,7 +1,7 @@
 # OnVanishSelecting
 
-**カテゴリ:** Vanish events
+**カテゴリ:** 消失事件
 
-Occurs when a vanish is requested.
+收到消失指令时触发。
 
 **対応:** Materia / SSP / CROW / Ninix

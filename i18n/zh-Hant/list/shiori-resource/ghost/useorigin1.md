@@ -1,8 +1,8 @@
 # useorigin1
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The starting number for the file count during a network update.<br />
-1 starts the file count at 1; 0 starts it at 0, as in MATERIA.
+network update 時檔案數的起始值。<br />
+1 表示從檔案數 1 開始，0 表示與 MATERIA 相同，從 0 開始。
 
 **対応:** SSP / CROW

@@ -1,10 +1,10 @@
-# balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt (individual setting)
+# balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt（单独指定）
 
 ## 一覧
 
 - [balloons\*s.txt/balloonk\*s.txt](balloons-s-txt-balloonk-s-txt.md)
-- [arrow.filename,Filename](arrow.filename.md)
-- [sstpmarker.filename,Filename](sstpmarker.filename.md)
-- [marker.filename,Filename](marker.filename.md)
-- [onlinemarker.filename,Filename](onlinemarker.filename.md)
-- [clickwaitmarker.filename,Filename](clickwaitmarker.filename.md)
+- [arrow.filename,文件名](arrow.filename.md)
+- [sstpmarker.filename,文件名](sstpmarker.filename.md)
+- [marker.filename,文件名](marker.filename.md)
+- [onlinemarker.filename,文件名](onlinemarker.filename.md)
+- [clickwaitmarker.filename,文件名](clickwaitmarker.filename.md)

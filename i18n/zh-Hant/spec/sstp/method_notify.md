@@ -1,10 +1,10 @@
-# Method: NOTIFY
+# 方法：NOTIFY
 
-This method notifies a ghost of an event.<br />
-SEND and NOTIFY are handled as the same process and have no functional differences. For details on their shared headers and specifications such as the IfGhost routing rules, see [Method: SEND](method_send.md).<br />
-The Event header corresponds to the SHIORI/3.0 ID, and Reference\* is passed through as is.
+這是用來向 ghost 通知事件的方法。<br />
+SEND和NOTIFY會以相同的方式處理，功能上沒有差異。共通標頭的詳細資訊、IfGhost的分派規則等規格，請參閱[方法：SEND](method_send.md)。<br />
+Event標頭對應SHIORI/3.0 ID，Reference\*則會原樣傳遞。
 
-## Event notification only sample (NOTIFY/1.0)
+## 僅通知事件的範例（NOTIFY/1.0）
 
 ```
 NOTIFY SSTP/1.0
@@ -15,10 +15,10 @@ Reference0: 自由の翼
 Reference1: Linked Horizon
 ```
 
-If the ghost does not respond to the specified event ID, you can specify a fallback script to play instead.<br />
-In that case, specifying an IfGhost header means the Script header immediately following it is treated as a script specifically for the specified ghost.
+若 ghost 端未對指定的事件 ID 做出反應，可以指定並播放「備用」指令碼。<br />
+此時，若指定IfGhost標頭，緊接在後的Script標頭會被視為僅供指定 ghost 使用的指令碼。
 
-## Sample with fallback response (NOTIFY/1.1)
+## 附帶備用反應的範例（NOTIFY/1.1）
 
 ```
 NOTIFY SSTP/1.1
@@ -33,14 +33,14 @@ IfGhost: ラーシェ,ティセ
 Script: \0\s[3]巨人っていっても、身長は列車数両分しかないよね。\1\s[14]それが縦に立ち上がるとさすがに大きいと思うけどね。
 ```
 
-## Request-specific headers
+## request 專用標頭
 
-For details on shared headers such as Event, Reference\*, Script, IfGhost, and Ghost, see [Method: SEND](method_send.md).
+共通標頭Event、Reference\*、Script、IfGhost、Ghost等的詳細資訊，請參閱[方法：SEND](method_send.md)。
 
-- **Option**: Specifies options for how Sakura Script executed by SSTP or the specified event is handled.<br />
-  Multiple options can be specified as comma-separated values. Of the strings you can specify, the NOTIFY-specific option is as follows.<br />
-  notify : Forces the event to be sent as NOTIFY. The fallback script is also forcibly handled in the same way as when returned in the [ValueNotify header](../shiori3/request.md). \[SSP 2.6.76\]
+- **Option**：指定SSTP執行的Sakura Script或指定事件的處理方式。<br />
+  可用逗號分隔指定多個選項。指定字串中，NOTIFY 專用的部分如下。<br />
+  notify：強制以NOTIFY傳送事件。此外，備用指令碼也會以與[ValueNotify標頭傳回時](../shiori3/request.md)相同的方式強制處理。\[SSP 2.6.76\]
 
-## Response-specific headers
+## response 專用標頭
 
-- **Script**: The script played as a result of the event notification. Currently supported only by SSP.
+- **Script**：事件通知後播放的指令碼。目前僅支援SSP。

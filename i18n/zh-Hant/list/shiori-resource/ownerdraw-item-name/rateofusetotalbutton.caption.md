@@ -1,7 +1,7 @@
 # rateofusetotalbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Ghost - total.
+ghost－合計使用率的名稱。
 
 **対応:** Materia

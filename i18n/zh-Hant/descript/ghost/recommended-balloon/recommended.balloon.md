@@ -1,9 +1,9 @@
-# recommended.balloon,balloon name
+# recommended.balloon,balloon 名稱
 
 **カテゴリ:** descript.txt - 推薦 balloon
 
-Name of the recommended balloon. A strong warning appears when trying to switch to a different one.
+推薦使用的 balloon 名稱。若嘗試切換成其他 balloon，會顯示措辭強烈的警告。
 
-**既定値:** Not specified
+**既定値:** 未指定
 
 **対応:** SSP 2.4

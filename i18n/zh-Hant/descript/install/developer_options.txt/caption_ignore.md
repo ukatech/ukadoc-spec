@@ -1,8 +1,8 @@
-# Automatically excluded items
+# 自動排除的項目
 
-When SSP creates nar/updates2.dau(updates.txt), the following files and folders are automatically excluded, even if they are not specified in developer_options.txt.
+SSP 建立 nar/updates2.dau(updates.txt) 時，即使沒有在 developer_options.txt 中指定，下列檔案和資料夾也會自動排除。
 
-Files
+檔案
 
 - desktop.ini
 - thumbs.db
@@ -11,7 +11,7 @@ Files
 - .DS_Store
 - \_CATALOG.VIX
 
-Folders
+資料夾
 
 - profile/
 - var/

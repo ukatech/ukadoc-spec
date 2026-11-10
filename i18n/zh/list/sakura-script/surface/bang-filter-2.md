@@ -1,7 +1,7 @@
 # `\![filter]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Cancel the above.
+解除上述效果。
 
 **対応:** CROW

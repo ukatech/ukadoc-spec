@@ -1,9 +1,9 @@
 # `\![open,messenger]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the instant messenger.<br />
-You can run it from the owner draw menu via “Functions(F) -\> SSP Messenger(M)”.
+開啟即時通訊軟體。<br />
+可從 owner draw 選單的「功能(F) -\> SSP Messenger(M)」執行。
 
 **対応:** SSP
 

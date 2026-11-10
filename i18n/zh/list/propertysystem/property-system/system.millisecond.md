@@ -1,7 +1,7 @@
 # system.millisecond
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Current milliseconds.
+当前毫秒数。
 
 **対応:** SSP

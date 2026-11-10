@@ -1,13 +1,13 @@
 # `\![set,balloonnum,ファイル名,現在の数,最大数]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Displays the data format shown when receiving a file.<br />
-The display destination is the balloon belonging to the current scope.<br />
-Each argument is optional. To clear it, omit all arguments or leave them blank.<br />
-As of 2.6.67, this can also be displayed in the `\1`-side balloon and subsequent balloons.
+顯示接收檔案時顯示的資料格式。<br />
+顯示位置為目前 scope 所屬的 balloon。<br />
+各引數皆可省略。要清除時，請省略所有引數或留空。<br />
+從 2.6.67 起，也能顯示在 `\1` 側 balloon 及其後的 balloon。
 
-It remains in effect until the ghost ends or a feature that normally uses this part, such as network update, is activated.
+持續有效直到 ghost 結束，或網路更新等原本會使用此區域的功能啟動。
 
 **対応:** SSP
 

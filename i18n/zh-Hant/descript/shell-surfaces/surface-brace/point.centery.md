@@ -1,10 +1,10 @@
-# point.centery,coordinates
+# point.centery,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface 區塊
 
-The center Y coordinate of the surface.<br />
-It is not normally used, but can be retrieved externally, for example via the Sakura API.
+surface 中心的 Y 座標。<br />
+通常不會使用，但可從 Sakura API 等外部取得。
 
-**既定値:** Center of the surface (height ÷ 2)
+**既定値:** surface 中心（高度÷2）
 
 **対応:** Materia / SSP / CROW

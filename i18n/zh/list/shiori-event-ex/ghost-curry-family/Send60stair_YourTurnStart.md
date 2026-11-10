@@ -1,8 +1,8 @@
 # Send60stair_YourTurnStart
 
-**カテゴリ:** Ghost "Curry Family/Saki and Ukon"
+**カテゴリ:** ghost「咖喱家族／沙纪与右近」
 
-Occurs when it becomes the current ghost's turn during a game played by Curry Family/Saki and Ukon.
+咖喱家族／沙纪与右近进行的游戏中，轮到自身 ghost 时发生。
 
-- **Reference0**: Current position.
-- **Reference1**: Marked position.
+- **Reference0**: 当前位置。
+- **Reference1**: 标记位置。

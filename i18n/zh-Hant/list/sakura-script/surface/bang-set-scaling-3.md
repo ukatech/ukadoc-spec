@@ -1,12 +1,12 @@
 # `\![set,scaling,横倍率,縦倍率,オプション]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Precisely change the surface's scaling factor. The unit is %.<br />
-Options can specify the animation duration and whether to wait for it to finish.
+精確調整 surface 的倍率。倍率單位為%。<br />
+可透過選項指定動畫時間，或等待動畫完成。
 
-- --time=milliseconds……Animation duration in milliseconds. If omitted or negative, the value is 0 (applied immediately). Can also be specified as a positional parameter (for backward compatibility).
-- --wait……Wait for the animation to finish before continuing script execution. If omitted, execution is asynchronous (the next operation begins immediately). SSP 2.7.52 and later.
+- --time=毫秒……動畫時間（毫秒）。省略或指定負值時為0（立即套用）。也可作為位置參數指定（為了向後相容）。
+- --wait……等待指令執行，直到動畫完成。省略時為非同步（立即進入下一個處理）。適用於 SSP 2.7.52 以後。
 
 **対応:** CROW / SSP 2.7.31
 

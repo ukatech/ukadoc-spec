@@ -1,40 +1,40 @@
-# Bands and levels reported by sound's --spectrum= \[2.9.18\]
+# sound 的 --spectrum= 所通知的頻帶與音量 \[2.9.18\]
 
-- **How bands are divided**: Uses the standard division by center frequencies from the ISO preferred number series, commonly used in graphic equalizers and spectrum analyzers for audio equipment. The human ear perceives pitch in terms of “how many times higher” a frequency is, rather than “how many Hz higher,” so the bands are also arranged at equal ratios (logarithmically).<br />
-  10 bands are spaced one octave (2x) apart (32,64,125,…,16kHz; the same as the equalizer display on a typical music player), 15 bands are spaced 2/3 octave apart, 31 bands are spaced 1/3 octave apart (20Hz–20kHz), and 5 bands are spaced 2 octaves (4x) apart.<br />
-  The boundary between bands is the geometric mean of the adjacent center frequencies (multiply them and take the square root), and the lowest and highest bands are extended outward by the same ratio. Therefore, the ranges covered by each band are as shown in the table below, with no gaps or overlaps between bands.
+- **頻帶的劃分方式**: 使用音響設備的圖形等化器或頻譜分析儀常見的 ISO 標準中心頻率劃分方式。人耳感知音高時，依據的是頻率「增加了幾倍」，而非「增加了幾 Hz」，因此頻帶也以等倍率（對數）排列。<br />
+  10 個頻帶以每個八度（2 倍）劃分（32、64、125、…、16kHz，與一般音樂播放器的等化器顯示相同），15 個頻帶以每 2/3 個八度劃分，31 個頻帶以每 1/3 個八度劃分（20Hz～20kHz），5 個頻帶則以每 2 個八度（4 倍）劃分。<br />
+  頻帶的邊界取相鄰中心頻率的幾何平均數（相乘後開平方根），最底端與最頂端的頻帶則以相同倍率向外延伸。因此，每個頻帶涵蓋的範圍如下表所示，頻帶之間沒有間隙或重疊。
 
-- **Frequencies are fixed regardless of output format**: This table is the same regardless of the sound file format (sample rate, bit depth, number of channels, or type such as mp3, wav, or flac). Internal analysis uses a window of about 85 milliseconds (4096 samples at 44.1kHz and 48kHz), adjusted for the sample rate, giving a frequency resolution of about 11Hz.<br />
-  However, there is no sound above half the sample rate (the Nyquist frequency), so any band whose range extends more than halfway above that frequency will always be 0 (for example, in a file with a sample rate of 22.05kHz, bands above about 11kHz will be 0).
+- **頻率固定，不受輸出格式影響**: 無論音訊檔案的格式（取樣率、位元深度、聲道數，以及 mp3、wav、flac 等類型）為何，此表的數值皆相同。內部分析會依取樣率使用約 85 毫秒長的取樣窗（44.1kHz、48kHz 時為 4096 點），頻率解析度約為 11Hz。<br />
+  但是，取樣率的一半（奈奎斯特頻率）以上不存在音訊，因此涵蓋範圍有一半以上超過該頻率的頻帶，數值一律為 0（例如：取樣率為 22.05kHz 的檔案中，約 11kHz 以上的頻帶皆為 0）。
 
-- **Level value (0–100)**: The sound energy within a band is summed, converted to the amplitude of a sine wave with an amplitude of 1.0 as the maximum, and expressed in dB, with -60dB mapped to 0 and 0dB (a full-scale sine wave) mapped to 100. The same-amplitude sine wave has the same value in every band, regardless of band width (for example, a sine wave with an amplitude of 0.5 = -6dB is about 90). Multiple channels such as stereo are analyzed as a single averaged sound.<br />
-  Values are reflected immediately when they rise, and fall from 100 to 0 over 500 milliseconds when they decrease. The overall level (Reference2) uses the same scale and is the level of the entire sound before it is divided into bands (it has the same value even when --spectrum-bands=0).<br />
-  Since the band width at the low-frequency end (roughly below 100Hz) is close to the frequency resolution (about 11Hz), sound in an adjacent band can affect it. Even when a sine wave is played, its value may be slightly lower than expected, or some of it may spill over into an adjacent band.
+- **音量值（0～100）**: 將頻帶內的音訊能量加總，換算成振幅 1.0 為滿刻度的正弦波振幅，並以 dB 表示；-60dB 為 0，0dB（滿刻度正弦波）為 100。無論頻帶寬度為何，相同振幅的正弦波在任何頻帶都會得到相同數值（例如：振幅 0.5＝-6dB 的正弦波約為 90）。立體聲等多聲道音訊會合併為單聲道後進行分析。<br />
+  數值上升時會立即反映；下降時則會以 500 毫秒從 100 降至 0。整體音量（Reference2）也使用相同刻度，代表音訊尚未分成頻帶前的整體音量（--spectrum-bands=0 時也會得到相同數值）。<br />
+  低音頻帶（約 100Hz 以下）的頻帶寬度接近頻率解析度（約 11Hz），因此會受到緊鄰頻帶音訊的影響。即使輸入正弦波，數值也可能略低於原本應有的值，或延伸至相鄰頻帶。
 
-- **5 bands (center frequencies and ranges: Hz)**:
+- **5 個頻帶（中心頻率與範圍：Hz）**:
 
-  | Number | 0 | 1 | 2 | 3 | 4 |
+  | 編號 | 0 | 1 | 2 | 3 | 4 |
   | --- | --- | --- | --- | --- | --- |
-  | Center | 63 | 250 | 1000 | 4000 | 16000 |
-  | Range | 32～125 | 125～500 | 500～2000 | 2000～8000 | 8000～32000 |
+  | 中心頻率 | 63 | 250 | 1000 | 4000 | 16000 |
+  | 範圍 | 32～125 | 125～500 | 500～2000 | 2000～8000 | 8000～32000 |
 
-- **10 bands (default)**:
+- **10 個頻帶（預設）**:
 
-  | Number | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+  | 編號 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-  | Center | 32 | 64 | 125 | 250 | 500 | 1000 | 2000 | 4000 | 8000 | 16000 |
-  | Range | 23～45 | 45～89 | 89～177 | 177～354 | 354～707 | 707～1414 | 1414～2828 | 2828～5657 | 5657～11314 | 11314～22627 |
+  | 中心頻率 | 32 | 64 | 125 | 250 | 500 | 1000 | 2000 | 4000 | 8000 | 16000 |
+  | 範圍 | 23～45 | 45～89 | 89～177 | 177～354 | 354～707 | 707～1414 | 1414～2828 | 2828～5657 | 5657～11314 | 11314～22627 |
 
-- **15 bands**:
+- **15 個頻帶**:
 
-  | Number | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+  | 編號 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-  | Center | 25 | 40 | 63 | 100 | 160 | 250 | 400 | 630 | 1000 | 1600 | 2500 | 4000 | 6300 | 10000 | 16000 |
-  | Range | 20～32 | 32～50 | 50～79 | 79～126 | 126～200 | 200～316 | 316～502 | 502～794 | 794～1265 | 1265～2000 | 2000～3162 | 3162～5020 | 5020～7937 | 7937～12649 | 12649～20239 |
+  | 中心頻率 | 25 | 40 | 63 | 100 | 160 | 250 | 400 | 630 | 1000 | 1600 | 2500 | 4000 | 6300 | 10000 | 16000 |
+  | 範圍 | 20～32 | 32～50 | 50～79 | 79～126 | 126～200 | 200～316 | 316～502 | 502～794 | 794～1265 | 1265～2000 | 2000～3162 | 3162～5020 | 5020～7937 | 7937～12649 | 12649～20239 |
 
-- **31 bands**:
+- **31 個頻帶**:
 
-  | Number | Center | Range | Number | Center | Range | Number | Center | Range |
+  | 編號 | 中心頻率 | 範圍 | 編號 | 中心頻率 | 範圍 | 編號 | 中心頻率 | 範圍 |
   | --- | --- | --- | --- | --- | --- | --- | --- | --- |
   | 0 | 20 | 18～22 | 11 | 250 | 224～281 | 22 | 3150 | 2806～3550 |
   | 1 | 25 | 22～28 | 12 | 315 | 281～355 | 23 | 4000 | 3550～4472 |

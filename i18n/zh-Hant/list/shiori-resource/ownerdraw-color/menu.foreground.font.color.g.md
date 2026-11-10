@@ -1,7 +1,7 @@
 # menu.foreground.font.color.g
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字色彩
 
-Foreground text color, green (0–255)
+前景文字綠色（0～255）
 
 **対応:** Materia / SSP / CROW / Ninix

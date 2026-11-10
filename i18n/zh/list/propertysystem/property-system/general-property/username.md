@@ -1,7 +1,7 @@
 # username
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** 属性系统 \> 通用属性名
 
-The target's username (the name used to address them). This can only be retrieved when the target is running simultaneously and supports retrieving username. SSP 2.3.51 and later.
+目标的username（称呼）。仅当同时运行的对象支持获取username时，才能获取。SSP 2.3.51及以后版本。
 
 **対応:** SSP

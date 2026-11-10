@@ -1,10 +1,10 @@
 # OnBalloonTimeout
 
-**カテゴリ:** Balloon event
+**カテゴリ:** balloon事件
 
-Occurs when a balloon times out for a reason other than a choice.
+非选择项导致balloon超时时触发。
 
-- **Reference0**: Script displayed when it timed out.
-- **Reference1**: Time remaining.
+- **Reference0**: 超时时显示的脚本。
+- **Reference1**: 剩余时间。
 
 **対応:** SSP / Ninix

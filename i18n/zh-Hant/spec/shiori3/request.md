@@ -1,6 +1,6 @@
 # request
 
-## Sample
+## 範例
 
 ```
 GET SHIORI/3.0
@@ -14,76 +14,76 @@ BaseID: OnBoot
 Reference0: 1
 ```
 
-※The line ending is CR+LF.<br />
-※The final line is a blank line (equivalent to (CR+LF)x2 including the preceding line ending).
+※換行碼為CR+LF。<br />
+※最後以空行（加上前一行的結尾，為(CR+LF)x2）結束。
 
-- **Method**:
+- **方法**:
 
-  - **GET**: A method intended to return some value in a response Value header.
-  - **NOTIFY**: A method intended to return no value. The response Value header is ignored.<br />
-    Mainly used when the ghost cannot "speak" due to a mode restriction, or for status notification events immediately after startup.<br />
-    Note that both GET and NOTIFY may be used with the same ID (event name).
+  - **GET**: 預期會在回應的Value標頭中傳回某些內容的方法。
+  - **NOTIFY**: 預期不會傳回任何值的方法。回應的Value標頭會被忽略。<br />
+    主要用於因某些模式限制而處於「無法說話」的狀態時，或用於啟動後立即傳送狀態通知的事件。<br />
+    請注意，同一個ID（事件名稱）可能同時使用GET和NOTIFY。
 
-- **Charset**: Character encoding. It is preferable to place this on the first line, or at least before any line containing characters outside the ASCII range.
+- **Charset**: 字元編碼。最好放在第一行，或至少放在含有非ASCII範圍字元的行之前。
 
-- **Sender**: Event sender.
+- **Sender**: 事件的傳送來源。
 
-- **SenderType \[SSP 2.5.05～拡張\]**: Attributes of the event sender, as listed below. If there are multiple attributes, they are comma-separated.<br />
-  For ID: OnTranslate, the attributes of the source event are inherited.
+- **SenderType \[SSP 2.5.05～擴充\]**: 事件傳送來源的屬性。如下所示。若有多個屬性，以逗號連接。<br />
+  ID: OnTranslate的情況會沿用被轉譯事件的屬性。
 
-  - **internal**: An event from inside the application.
-  - **external**: An event from outside the application.
-  - **sakuraapi**: An event triggered by the Sakura API.
-  - **embed**: An event triggered by the `\![embed]` tag.
-  - **raise**: An event triggered by the `\![raise]` tag.
-  - **property**: An event triggered by the result of a property system query.
-  - **plugin**: An event triggered by a plugin.
-  - **sstp**: An event triggered by SSTP.
-  - **communicate**: An event triggered by the communicate specification.
+  - **internal**: 從應用程式內部發出的事件。
+  - **external**: 從應用程式外部發出的事件。
+  - **sakuraapi**: 由Sakura API觸發的事件。
+  - **embed**: 由 `\![embed]` 標籤觸發的事件。
+  - **raise**: 由 `\![raise]` 標籤觸發的事件。
+  - **property**: 因屬性系統的參照命令而觸發的事件。
+  - **plugin**: 由plugin觸發的事件。
+  - **sstp**: 由SSTP觸發的事件。
+  - **communicate**: 由communicate規格觸發的事件。
 
-- **SecurityLevel**: The security level when executing a script. One of the following.<br />
-  For ID: OnTranslate, the attributes of the source event are inherited.<br />
-  This is notified as early as possible in the request, and appears at least before the ID header.
+- **SecurityLevel**: 執行腳本時的安全性等級。以下擇一。<br />
+  ID: OnTranslate的情況會沿用被轉譯事件的屬性。<br />
+  會盡可能在較前面的行通知。至少會出現在ID標頭之前。
 
-  - **local**: A notification from within the machine running the application.
-  - **external**: A notification from outside the machine running the application.
+  - **local**: 從執行中的裝置內部發出的通知。
+  - **external**: 從執行中的裝置外部發出的通知。
 
-  An external notification originates outside the machine running the application, so it requires careful security handling.<br />
-  This is a separate concept from SenderType internal/external. An event originating outside the application may still be considered safe and classified as local, so SecurityLevel may be local even when SenderType is external.
+  external表示通知來自執行中機器的外部，因此在安全性方面需要謹慎處理。<br />
+  這與SenderType的internal/external是不同的概念；即使事件是從應用程式外部發出的，若可視為安全，仍會判定為local，因此SenderType為external時，SecurityLevel也可能是local。
 
-- **SecurityOrigin \[SSP拡張\]**: A URL-like string indicating the source server. It has one of the following formats. The concept is the same as that of the [Origin HTTP header](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin).<br />
+- **SecurityOrigin \[SSP擴充\]**: 表示傳送來源伺服器的URL風格字串。格式如下。其概念與[HTTP標頭的Origin](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin)相同。<br />
   SecurityOrigin: null<br />
   SecurityOrigin: &lt;scheme\>://&lt;hostname\><br />
   SecurityOrigin: &lt;scheme\>://&lt;hostname\>:&lt;port\><br />
-  scheme is usually one of http, https, or sstp. hostname is the source server name or IP address. port is a port that can accept replies.<br />
-  This is null when information is unavailable, such as when no header is specified in SSTP or when there is no concept of a sender in the first place.<br />
-  Also refer to SecurityOrigin in the SSTP specification.
+  scheme通常為http、https或sstp其中之一。hostname為傳送來源伺服器名稱或IP。port為可接收回覆的連接埠。<br />
+  例如SSTP未指定標頭，或根本沒有傳送來源的概念等，在沒有資訊時會設為null。<br />
+  也請參閱SSTP規格中的SecurityOrigin。
 
-- **Status \[SSP拡張\]**: The ghost's execution status. The following values are used. If there are multiple values, they are comma-separated.
+- **Status \[SSP擴充\]**: ghost的執行狀態。如下所示。若有多個狀態，以逗號連接。
 
-  - **talking**: In the middle of speaking
-  - **choosing**: Displaying choices
-  - **minimizing**: Minimized
-  - **induction**: In `\![enter,inductionmode]`
-  - **passive**: In `\![enter,passivemode]`
-  - **timecritical**: In a time-critical section (`\t`)
-  - **nouserbreak**: In `\![enter,nouserbreak]`
-  - **online**: Network communication in progress
-  - **opening(種類)**: An input box or similar is open.<br />
-    If multiple types are open, they are listed separated by /. <br />
-    "dialog" refers to file selection, a color picker, and similar dialogs.<br />
-    Example: opening(communicate/input/teach/dialog)
-  - **balloon(ID群)**: A balloon is displayed.<br />
-    Listed in the format character ID=balloon ID.<br />
-    If multiple balloons are open, they are listed separated by /. <br />
-    For example, balloon(0=2/1=0) means that `\0` is displaying the larger balloon and `\1` is displaying the normal balloon.
+  - **talking**: 正在說話
+  - **choosing**: 正在顯示選項
+  - **minimizing**: 正在最小化
+  - **induction**: 正處於 `\![enter,inductionmode]` 狀態
+  - **passive**: 正處於 `\![enter,passivemode]` 狀態
+  - **timecritical**: 正處於時間關鍵區段（`\t`）中
+  - **nouserbreak**: 正處於 `\![enter,nouserbreak]` 狀態
+  - **online**: 正在進行網路通訊
+  - **opening(種類)**: 輸入方塊等正在開啟。<br />
+    若同時開啟多種類型，會以/分隔列出。<br />
+    "dialog"代表檔案選擇器、色彩選擇器等。<br />
+    例如：opening(communicate/input/teach/dialog)
+  - **balloon(ID群組)**: balloon處於顯示狀態。<br />
+    以角色ID=balloon ID的格式列出。<br />
+    若同時開啟多個，會以/分隔列出。<br />
+    例如：balloon(0=2/1=0)表示正在顯示`\0`的大型balloon，以及`\1`的一般balloon。
 
-- **ID**: An event name or a text resource identifier.
+- **ID**: 事件名稱或文字資源的識別碼。
 
-- **BaseID \[SSP拡張\]**: The compatible base event name.<br />
-  Example: OnFirstBoot is compatible with OnBoot and is a variant of OnBoot, so its BaseID is OnBoot.
+- **BaseID \[SSP擴充\]**: 可相容的基本事件名稱。<br />
+  例如：OnFirstBoot與OnBoot相容，而且OnFirstBoot是OnBoot的變體，因此OnFirstBoot的BaseID會設為OnBoot。
 
-- **Reference\***: Additional information associated with the event. A number follows Reference. There is no limit to the number of lines (as long as memory allows).
+- **Reference\***: 隨事件附帶的其他資訊群組。Reference後方會加上數字。行數不限（只要記憶體允許）。
 
-- **X-SSTP-PassThru-(任意の文字列) \[SSP 2.5.05～拡張\]**: Only when an event notification arrives via SSTP, any SSTP request header beginning with "X-SSTP-PassThru-" is forwarded as-is.<br />
-  It is not added for non-SSTP events.
+- **X-SSTP-PassThru-(任意字串) \[SSP 2.5.05～擴充\]**: 僅當事件通知來自SSTP時，SSTP請求標頭中以"X-SSTP-PassThru-"開頭的標頭才會原樣傳送通知。<br />
+  其他來源不會附加此標頭。

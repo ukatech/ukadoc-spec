@@ -1,7 +1,7 @@
 # system.monitor.index(ID).work
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Work area of the monitor with ID (left, top, right, bottom). This is the area where windows can be placed, excluding system-reserved areas such as the taskbar.
+ID对应显示器的工作区域（左、上、右、下）。这是可放置窗口的区域，不包括任务栏等系统保留区域。
 
 **対応:** SSP 2.8.16

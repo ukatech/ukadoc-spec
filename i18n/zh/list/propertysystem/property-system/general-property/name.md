@@ -1,7 +1,7 @@
 # name
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-Name of the target.
+目标名称。
 
 **対応:** SSP / CROW

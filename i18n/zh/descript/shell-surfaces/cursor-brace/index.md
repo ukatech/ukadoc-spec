@@ -1,11 +1,11 @@
-# Cursor braces
+# cursor块
 
 ## 一覧
 
-- [Cursor brace examples](introduction_cursorbrace.md)
-- [mouseup\*,Collision ID,File name](mouseup-star.md)
-- [mousedown\*,Collision ID,File name](mousedown-star.md)
-- [mouserightdown\*,Collision ID,File name](mouserightdown-star.md)
-- [mousewheel\*,Collision ID,File name](mousewheel-star.md)
-- [mousehover\*,Collision ID,File name](mousehover-star.md)
-- [System cursor](system-cursor/index.md)
+- [cursor块示例](introduction_cursorbrace.md)
+- [mouseup\*,命中判定ID,文件名](mouseup-star.md)
+- [mousedown\*,命中判定ID,文件名](mousedown-star.md)
+- [mouserightdown\*,命中判定ID,文件名](mouserightdown-star.md)
+- [mousewheel\*,命中判定ID,文件名](mousewheel-star.md)
+- [mousehover\*,命中判定ID,文件名](mousehover-star.md)
+- [系统光标](system-cursor/index.md)

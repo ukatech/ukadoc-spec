@@ -1,9 +1,9 @@
 # `\![set,serikotalk,true/false]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Temporarily disables or enables SERIKO lip-sync animation (talk setting).
+暂时禁用或启用 SERIKO 的口型动画（talk 指定）。
 
-It resets to true after the script finishes executing.
+脚本执行结束后会重置为 true。
 
 **対応:** SSP 2.6.87

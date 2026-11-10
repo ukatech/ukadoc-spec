@@ -1,13 +1,13 @@
 # `\_b[ファイルパス,x,y]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Paste an image at the balloon's XY coordinates. The image is displayed behind the text.<br />
-The color of the upper-left pixel is used as the transparent color.<br />
-\[folder of the running ghost\]/ghost/master is the base folder.<br />
-※Only SSP lets you specify a base64-encoded image or an image resource from an exe/dll instead of a file name. [※See below](note-1.md#補足).<br />
-※Only SSP lets you specify an image URL.<br />
-※Only SSP searches for files in the plugin folder as well.
+將圖片貼至氣球的 XY 座標。圖片會顯示在文字下方。<br />
+左上角像素的顏色會設為透明色。<br />
+\[執行中的 ghost 資料夾\]/ghost/master 為基準資料夾。<br />
+※僅 SSP 可不使用檔名，而改以 base64 編碼或 exe/dll 資源指定圖片，[※請參閱下方](note-1.md#補足)。<br />
+※僅 SSP 可指定圖片 URL。<br />
+※僅 SSP 會搜尋 plugin 資料夾內的檔案。
 
 **対応:** Materia / SSP / CROW / Ninix
 

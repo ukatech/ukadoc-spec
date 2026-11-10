@@ -1,14 +1,14 @@
 # `\__v[オプション]`
 
-**カテゴリ:** Balloon, text commands
+**カテゴリ:** 气球、文本命令
 
-Adjusts how text between this tag and the next `\__v` is spoken by the speech synthesis function.<br />
-`\__v[disable]`: Disables speech synthesis<br />
-`\__v[alternate,文字列]`: Specifies the correct spoken text for words with different pronunciations. Hiragana is preferred to avoid misrecognition.
+调整从此处到下一个`\__v`之间的字符串在语音合成功能中的发音内容。<br />
+`\__v[disable]`：禁用语音合成<br />
+`\__v[alternate,文字列]`：为读音不同的单词指定正确的发音字符串。为避免误识别，字符串最好使用平假名。
 
-\[SSP only\] This effect also applies to entries in the backlog (utterance history).<br />
-Text within a `\__v[disable]` section is neither spoken by speech synthesis nor recorded in the backlog.<br />
-Text within a `\__v[alternate,文字列]` section is recorded in the backlog using the specified text instead of the regular text, regardless of whether speech synthesis is enabled.
+\[仅限 SSP\]此效果也会影响对回溯（发言历史）的记录。<br />
+`\__v[disable]`区间内的内容不仅不会进行语音合成，也不会记录到回溯中。<br />
+`\__v[alternate,文字列]`区间内的内容，无论是否启用语音合成，都会在回溯中记录指定字符串，而非普通文本。
 
 **対応:** SSP 2.4
 

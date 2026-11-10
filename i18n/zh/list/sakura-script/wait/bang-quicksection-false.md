@@ -1,9 +1,9 @@
 # `\![quicksection,false]`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-End the quick section. `\![quicksection,0]` can also be used.<br />
-This is almost equivalent to `\_q`, but differs in that it explicitly ends the section instead of using a switch.
+结束快速区段。也可以使用 `\![quicksection,0]`。<br />
+与 `\_q` 基本兼容，区别在于它指定结束，而不是使用开关方式。
 
 **対応:** SSP / Ninix
 

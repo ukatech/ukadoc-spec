@@ -1,10 +1,10 @@
 # interpolate
 
-**カテゴリ:** surface brace \> drawing methods
+**カテゴリ:** surface花括号 \> 绘制方法
 
-Overlay the *new layer* according to the transparency of the *base layer*.<br />
-In semi-transparent areas of the *base layer*, the *new layer* is composited more strongly where transparency is higher; it is composited fully where the base is fully transparent, and not at all where the base is opaque.<br />
-This method is the counterpart to the [overlayfast](overlayfast.md) method.<br />
-Can also be used with dressup and element.
+根据*基础图层*的透明度叠加*新建图层*。<br />
+对于*基础图层*的半透明部分，透明度越高的区域，合成的*新建图层*越浓；如果完全透明，则完全合成；如果不透明，则完全不合成。<br />
+这是与[overlayfast](overlayfast.md)方法相对应的方法。<br />
+也可用于 dressup 和 element。
 
 **対応:** SSP

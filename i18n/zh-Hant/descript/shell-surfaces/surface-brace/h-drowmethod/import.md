@@ -1,10 +1,10 @@
-# import,filename,weight msec,X,Y
+# import,檔案名稱,權重msec,X,Y
 
-**カテゴリ:** surface brace \> drawing method
+**カテゴリ:** surface區塊 \> 繪製方法
 
-Import the specified APNG/GIF animation/WebP animation so it can be played with an initial wait time of weight msec at display position (X,Y).<br />
-The imported animation is composited using the overlay method.<br />
-This animation runs in parallel with existing animation definitions and can coexist with them.<br />
-Only frames and wait times are imported; the "repeat count" defined in the original file is ignored.
+匯入指定的APNG/GIF動畫/WebP動畫，使其能以開頭等待時間=權重msec、顯示位置=(X,Y)播放。<br />
+匯入的動畫會以overlay方法混合。<br />
+此動畫會與既有的動畫定義並行運作，兩者可以共存。<br />
+另外，只會匯入影格與等待時間，原始檔案中定義的「重複次數」會被忽略。
 
 **対応:** SSP

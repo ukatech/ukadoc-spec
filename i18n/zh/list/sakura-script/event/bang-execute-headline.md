@@ -1,10 +1,10 @@
 # `\![execute,headline,ヘッドライン名]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Starts a headline sensor event.<br />
-Setting the headline name to random selects one at random.<br />
-Setting it to lastinstalled starts the last headline installed.
+开始 headline sensor 事件。<br />
+将 headline 名称设为 random 时，会随机选择。<br />
+设为 lastinstalled 时，会启动最后安装的 headline sensor。
 
 **対応:** SSP
 

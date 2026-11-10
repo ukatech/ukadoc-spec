@@ -1,7 +1,7 @@
-# ghostlist.current.general property name
+# ghostlist.current.通用屬性名稱
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-Retrieve information from the ghost at the current position in the list.
+從清單中目前所在位置的 ghost 取得資訊。
 
 **対応:** SSP

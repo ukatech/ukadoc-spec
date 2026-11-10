@@ -1,13 +1,13 @@
 # `\![set,balloontimeout,時間]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Specifies the timeout duration for balloon display. The unit is milliseconds.<br />
-The timeout countdown starts after the script finishes displaying. A value of 0 or less disables the timeout.<br />
-This setting is in effect only during the current script.
+指定 balloon 顯示逾時的時間，單位為毫秒。<br />
+逾時計時會在腳本顯示結束後開始。指定 0 或負數表示不逾時。<br />
+只在該腳本中有效。
 
-Omitting the duration: restores the default value<br />
-Duration set to 0 or -1: no timeout
+省略時間指定：恢復為預設值<br />
+時間指定為 0 或 -1：不逾時
 
 **対応:** SSP
 

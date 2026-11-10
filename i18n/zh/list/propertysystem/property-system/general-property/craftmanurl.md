@@ -1,7 +1,7 @@
 # craftmanurl
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-URL of the target distribution site.
+目标的发布地址 URL。
 
 **対応:** SSP

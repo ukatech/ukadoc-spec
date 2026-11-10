@@ -1,10 +1,10 @@
 # `\_a[OnID,r0,r1...]`
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-The range up to `\_a` becomes an anchor. Choices do not time out, but the balloon times out as with normal talk.<br />
-As above, if the ID begins with "On", clicking the anchor starts the SHIORI event OnID (the event as written).<br />
-Arguments following the ID are stored in Reference0 and later, in order.
+將直到`\_a`為止的範圍設為錨點。選項不會逾時，但與一般對話相同，氣球會逾時。<br />
+如上所述，ID 以「On」開頭時，點擊後會觸發 SHIORI 事件 OnID（即所寫的事件）。<br />
+ID 後續的引數會依序存入 Reference0 以後。
 
 **対応:** SSP / Ninix
 

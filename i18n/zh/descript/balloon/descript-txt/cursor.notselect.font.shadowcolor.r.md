@@ -1,8 +1,8 @@
-# cursor.notselect.font.shadowcolor.r,numeric value
+# cursor.notselect.font.shadowcolor.r,数値
 
 **カテゴリ:** descript.txt
 
-Shadow color red for unselected options (0–255)
+未选中选项的阴影颜色红色(0～255)
 
 **既定値:** font.shadowcolor
 

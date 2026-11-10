@@ -1,7 +1,7 @@
-# Application "Elin"
+# 应用「Elin」
 
-- Reference: [Steam: elin](https://store.steampowered.com/app/2135150/Elin/)
-- Reference: [Ukagaka for Elin](https://steamcommunity.com/sharedfiles/filedetails/?id=3371271468)
+- 参考：[Steam: elin](https://store.steampowered.com/app/2135150/Elin/)
+- 参考：[Ukagaka for Elin](https://steamcommunity.com/sharedfiles/filedetails/?id=3371271468)
 
 **対応:** Materia / SSP / CROW
 
@@ -16,4 +16,4 @@
 - [OnElinPCCondition](OnElinPCCondition.md)
 - [OnElinPCDead](OnElinPCDead.md)
 - [OnElinTarget](OnElinTarget.md)
-- [Supplement](note-1.md)
+- [补充](note-1.md)

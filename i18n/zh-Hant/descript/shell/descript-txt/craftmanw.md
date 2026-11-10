@@ -1,9 +1,9 @@
-# craftmanw,author name
+# craftmanw,作者名稱
 
 **カテゴリ:** descript.txt
 
-The shell author's name.
+該 shell 的作者名稱。
 
-**既定値:** no value
+**既定値:** 無值
 
 **対応:** Materia / SSP / CROW

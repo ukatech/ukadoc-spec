@@ -1,8 +1,8 @@
-# Notes
+# 补充说明
 
-※Information about tea party version support
+※茶会版本的兼容信息
 
-- **Supported**: The ghost's version is the same as or higher than the version of “奏でる日常の音色”, so it fully supports the tea party events provided by “奏でる日常の音色”.
-- **Not supported**: The ghost's version is lower than the version of “奏でる日常の音色”, so it cannot process tea party events from versions higher than the ghost's version.
-- **Automatic support**: The ghost's version is lower than the version of “奏でる日常の音色”, but it can automatically support tea party events from higher versions by changing the content of its talk, such as substituting words.
-- **Fixed support**: Support does not vary according to the content of the tea party provided by “奏でる日常の音色”. Reference0 of the response event is the tea party version verified by the ghost creator. Ghosts that return this support information do not take the tea party content selection into account.
+- **対応**: ghost 版本高于或等于「奏响日常的音色」的版本，因此完全兼容「奏响日常的音色」提供的茶会事件。
+- **非対応**: ghost 版本低于「奏响日常的音色」的版本，因此无法处理版本高于该 ghost 版本的茶会事件。
+- **自動対応**: 虽然 ghost 版本低于「奏响日常的音色」的版本，但能够通过替换词语等方式改变对话内容，自动兼容版本高于该 ghost 版本的茶会事件。
+- **固定対応**: 对「奏响日常的音色」提供的茶会内容如何变化都不影响兼容性。回复事件的 Reference0 是 ghost 制作者确认过的茶会版本。对于发送此兼容信息的 ghost，不考虑茶会内容选择。

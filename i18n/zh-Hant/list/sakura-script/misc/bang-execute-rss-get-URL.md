@@ -1,15 +1,15 @@
 # `\![execute,rss-get,URL,オプション,オプション,オプション...]`
 
-**カテゴリ:** Uncategorized commands
+**カテゴリ:** 未分類コマンド
 
-Send an HTTP GET request with [options](bang-execute-http-options-URL.note.md), parse the response as an RSS/Atom feed, and notify the parsed results as an event.<br />
-Specify the parameter group in the same way as for http-post.
+使用[※選項](bang-execute-http-options-URL.note.md)執行 http get 請求，並將回應解析為 RSS/Atom feed，再將解析結果作為事件通知。<br />
+參數群的指定方式與 http-post 相同。
 
-The retrieved items are reported through [OnExecuteRSSComplete](../../shiori-event/other-communication/OnExecuteRSSComplete.md), or [OnExecuteRSSFailure](../../shiori-event/other-communication/OnExecuteRSSFailure.md) on failure.
+取得的項目會透過[OnExecuteRSSComplete](../../shiori-event/other-communication/OnExecuteRSSComplete.md)通知，失敗時則透過[OnExecuteRSSFailure](../../shiori-event/other-communication/OnExecuteRSSFailure.md)通知。
 
-\[2.8.92\] Specify which items to return and how many with the [RSS filtering options](bang-execute-rss-post-URL.note.md) (--from, --to, and --limit). If unspecified, all items are returned.
+\[2.8.92\] 要回傳哪些項目以及回傳幾個項目，可使用[RSS 篩選選項](bang-execute-rss-post-URL.note.md)（--from・--to・--limit）指定。若未指定，則回傳所有項目。
 
-**対応:** SSP filtering 2.8.92～
+**対応:** SSP 篩選 2.8.92～
 
 ## 記述例
 

@@ -1,18 +1,18 @@
-# Zone (--tz=)
+# 時區（--tz=）
 
-- **local**: (default) The OS time zone. Daylight saving time for the specified date and time is applied.
-- **UTC / Z**: UTC.
-- **+09:00 / +0900 / +09**: Offset from UTC (up to ±18:00).
-- **Named zones**: An IANA time zone name (such as `Asia/Tokyo` or `America/New_York`) or a Windows time zone name (such as `Tokyo Standard Time`). Case is ignored. Daylight saving time for the specified date and time is applied.<br />
-  Zone rules use the OS (Windows) time zone information. IANA names are mapped to Windows names using the Unicode CLDR mapping table. A name not available in the OS results in 400 (`invalid parameter`). It is not treated as UTC.
+- **local**: （預設）OS 的時區。會反映該日期時間的日光節約時間。
+- **UTC / Z**: UTC。
+- **+09:00 / +0900 / +09**: 與 UTC 的時差（最多 ±18:00）。
+- **具名時區**: IANA 時區名稱（例如`Asia/Tokyo`、`America/New_York`）或 Windows 時區名稱（例如`Tokyo Standard Time`）。不區分大小寫。會反映該日期時間的日光節約時間。<br />
+  時區規則使用 OS（Windows）的時區資訊。IANA 名稱會透過 Unicode CLDR 的對照表轉換為 Windows 名稱。OS 中不存在的名稱會回傳 400（`invalid parameter`），不會視為 UTC。
 
-The rules for named zones are limited to the OS time zone information. For older rules not included in the OS information (often from before the 2000s), the rules for the earliest year available in the OS are used instead.
+具名時區的規則僅適用於 OS 時區資訊涵蓋的範圍。OS 資訊中沒有的較早期規則（多數早於 2000 年代），會以 OS 所持有的最早年份規則代替。
 
-## Around daylight saving time transitions
+## 日光節約時間切換前後
 
-When converting a zoned date and time (wall-clock time) to UTC (when reading an ISO 8601 date and time without a zone, or when calculating the result of adding `day` or more in [Add](internal_time.Add.md)), there are ambiguous times around daylight saving time transitions. For both `local` and named zones, the following rules apply regardless of whether the zone is west (negative offset) or east (positive offset). \[SSP 2.9.27\]
+將時區中的日期時間（壁鐘時間）轉換為 UTC 時（讀取不含時區的 ISO 8601 日期時間，或求出以[Add](internal_time.Add.md)的`day`以上單位加算的結果時），在日光節約時間切換前後會有模糊的時間。對`local`和具名時區，無論時區位於西側（時差為負）或東側（時差為正），皆依下列方式決定。\[SSP 2.9.27\]
 
-- **A time that occurs twice** (the day clocks go back at the end of daylight saving time): Use the earlier occurrence, that is, the time still on daylight saving time. For example, `2026-11-01T01:30` in `America/New_York` is `2026-11-01T01:30:00-04:00`.
-- **A nonexistent time** (the day clocks go forward at the start of daylight saving time): Interpret it using the offset before the transition, so the result is the time after the clocks have advanced. For example, `2026-03-08T02:30` in `America/New_York` is `2026-03-08T03:30:00-04:00`, and `2026-03-29T02:30` in `Europe/Berlin` is `2026-03-29T03:30:00+02:00`.
+- **出現兩次的時間**（日光節約時間結束、時鐘往回調整的日期）: 採用較早的時間，也就是仍處於日光節約時間的時間。例如，`America/New_York`的`2026-11-01T01:30`會是`2026-11-01T01:30:00-04:00`。
+- **不存在的時間**（日光節約時間開始、時鐘往前調整的日期）: 以切換前的時差讀取，因此結果會是往前調整後的時間。例如，`America/New_York`的`2026-03-08T02:30`會是`2026-03-08T03:30:00-04:00`，而`Europe/Berlin`的`2026-03-29T02:30`會是`2026-03-29T03:30:00+02:00`。
 
-Before \[SSP 2.9.26\], in zones with negative offsets, nonexistent times were shifted back by one hour (`02:30` in `America/New_York` became `01:30-05:00`). The choice of occurrence for times that occurred twice was also reversed between zones east and west of UTC.
+在\[SSP 2.9.26\]以前，時差為負的時區中，不存在的時間會往回調整一小時（`America/New_York`的`02:30`會變成`01:30-05:00`）。對於出現兩次的時間，選擇方式也會依時區位於東側或西側而相反。

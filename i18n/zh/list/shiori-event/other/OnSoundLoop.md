@@ -1,9 +1,9 @@
 # OnSoundLoop
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when sound playback reaches the end of a loop and is about to start the next loop.
+声音循环播放时，当前播放到末尾并即将开始下一轮循环时会触发此事件。
 
-- **Reference0**: Name of the file being played.
+- **Reference0**: 播放文件名。
 
 **対応:** SSP 2.7.93

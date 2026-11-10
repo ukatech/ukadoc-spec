@@ -1,10 +1,10 @@
-# import,filename,weight msec,X,Y
+# import,文件名,等待时间msec,X,Y
 
-**カテゴリ:** surface brace \> drawing methods
+**カテゴリ:** surface花括号 \> 绘制方法
 
-Imports the specified APNG/GIF animation/WebP animation so it can be played with an initial delay of weight msec at display position (X,Y).<br />
-The imported animation is composited using the overlay method.<br />
-This animation runs alongside existing animation definitions and can coexist with them.<br />
-Only frames and delays are imported; the “number of repetitions” defined in the original file is ignored.
+导入指定的 APNG/GIF 动画/WebP 动画，使其能够以开头等待时间=等待时间msec、显示位置=(X,Y)进行播放。<br />
+导入的动画会通过 overlay 方法进行合成。<br />
+此动画可与现有动画定义并行运行。<br />
+导入的只有帧和等待时间，原文件中定义的“重复次数”会被忽略。
 
 **対応:** SSP

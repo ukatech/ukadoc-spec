@@ -1,11 +1,11 @@
 # OnElonaOmakeMMAEventCooking
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when the PC cooks an item.
+PC烹調物品時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Cooked item's name.
-- **Reference82**: Cooked item's identifier.
-- **Reference83**: Food type (1: meat, 2: vegetable, 3: fruit, 4: sweets, 5: noodles, 6: fish, 7: bread, 8: egg).
-- **Reference84**: Cooking rank (1–9).
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 料理物品名稱。
+- **Reference82**: 料理物品識別碼。
+- **Reference83**: 食物類型(1:肉、2:蔬菜、3:水果、4:甜點、5:麵、6:魚、7:麵包、8:蛋)。
+- **Reference84**: 料理等級(1～9)。

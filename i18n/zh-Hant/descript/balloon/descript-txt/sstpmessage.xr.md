@@ -1,10 +1,10 @@
-# sstpmessage.xr,coordinate [\*1](../index.md#balloon設定)
+# sstpmessage.xr,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The X coordinate where the SSTP message display ends. Measured from the left. (If a negative value is specified, measured from the right.)<br />
-Used only for horizontal writing ([vertical](vertical.md) is 0). For vertical writing, use [sstpmessage.yb](sstpmessage.yb.md).
+SSTP 訊息的顯示結束位置 X 座標。以左側為基準。（※指定負值時以右側為基準）<br />
+僅用於橫書（[vertical](vertical.md)為0）時。直書時請使用[sstpmessage.yb](sstpmessage.yb.md)。
 
-**既定値:** unknown
+**既定値:** 不明
 
 **対応:** SSP

@@ -1,4 +1,4 @@
-# balloon, text commands
+# 气球、文本命令
 
 ## 一覧
 
@@ -43,4 +43,4 @@
 - [`\_?`](_-q.md)
 - [`\__v[オプション]`](__v.md)
 - [`\![execute,resetballoonpos]`](bang-execute-resetballoonpos.md)
-- [Notes](note-1.md)
+- [补充](note-1.md)

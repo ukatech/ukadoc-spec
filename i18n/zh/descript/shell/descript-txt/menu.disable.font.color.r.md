@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-Disabled text color red (0–255)
+不可选文字红色(0～255)
 
-**既定値:** (background image color at 0,0 + menu.background.font.color \* 2 ) / 3
+**既定値:** (background图像的0,0颜色 + menu.background.font.color \* 2 ) / 3
 
 **対応:** Materia / SSP / CROW

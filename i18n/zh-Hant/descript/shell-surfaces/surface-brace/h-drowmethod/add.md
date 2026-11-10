@@ -1,9 +1,9 @@
 # add
 
-**カテゴリ:** surface brace \> drawing method
+**カテゴリ:** surface brace \> 繪製方法
 
-Overlays the *new layer* on the *base layer* as a dressup part.<br />
-Its processing is equivalent to [overlay](overlay.md).<br />
-Use in animations or elements that are not dressups is undefined.
+將*新圖層*以 dressup 元件的方式疊加至*底圖圖層*。<br />
+處理內容與[overlay](overlay.md)相同。<br />
+未定義在非 dressup 的動畫或 element 中使用時的行為。
 
 **対応:** Materia / SSP

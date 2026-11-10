@@ -1,10 +1,10 @@
-# Translator
+# 轉換器
 
-In ghosts, a translator is called MAKOTO.
+ghost 將轉換器稱為MAKOTO。
 
-It can be placed on both the ghost side and shell side (CROW supports the ghost side only).
+可以放置在ghost端或shell端（CROW僅限ghost端）。
 
-To use it on the ghost side, `makoto.dll` must be located directly under master.
+在ghost端使用時，master目錄下必須有`makoto.dll`。
 
 ```filetree
 +-(myghost)
@@ -17,7 +17,7 @@ To use it on the ghost side, `makoto.dll` must be located directly under master.
 　　　　　　:
 ```
 
-To use it on the shell side, makoto.dll must be located directly under each shell's folder.
+在shell端使用時，各shell資料夾下必須有makoto.dll。
 
 ```filetree
 +-(myghost)
@@ -32,18 +32,18 @@ To use it on the shell side, makoto.dll must be located directly under each shel
 　　　　　　:
 ```
 
-This mechanism works as a filter on scripts created by SHIORI, replacing strings.
+這是一種機制，會對SHIORI建立的腳本發揮篩選器的作用，並替換字串。
 
-If both the ghost side and shell side have a translator, the ghost-side translator runs first, followed by the shell-side translator.
+如果ghost端和shell端都有轉換器，會先執行ghost端的轉換，再接著執行shell端的轉換。
 
-Translation occurs just before the text is displayed in the balloon.
+轉換會在即將顯示於balloon之前進行。
 
-As with SHIORI, there are many files that can be used as MAKOTO, and you need to refer to the documentation for each one for detailed usage.
+與SHIORI相同，可作為MAKOTO使用的檔案有許多種，詳細用法請參閱各自的文件。
 
-In the past, before SHIORI existed, it was used to change dialogue, but SHIORI now mainly fulfills that role.
+過去在尚未有SHIORI的時代，轉換器曾用來改變對話內容；現在這類工作主要由SHIORI負責。
 
-Today, it is sometimes used for features such as changing a character's speech style depending on the shell.
+目前有時會利用轉換器，實現依shell改變說話方式等效果。
 
-Translation is also possible with SHIORI Event OnTranslate (that is, SHIORI also serves as the ghost-side MAKOTO).
+也可以透過SHIORI Event的OnTranslate進行轉換（＝SHIORI兼任ghost端的MAKOTO）。
 
-If both MAKOTO and SHIORI perform translation, the processing order is SHIORI→MAKOTO.
+若同時使用MAKOTO和SHIORI進行轉換，處理順序為SHIORI→MAKOTO。

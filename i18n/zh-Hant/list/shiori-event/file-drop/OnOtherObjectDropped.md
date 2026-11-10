@@ -1,8 +1,8 @@
 # OnOtherObjectDropped
 
-**カテゴリ:** File drop events
+**カテゴリ:** 檔案拖放事件
 
-Occurs when an item that cannot be handled as a "file" is dropped onto a ghost. Example: "My Computer" in Windows.<br />
-References are exactly the same as for OnOtherObjectDropping.
+將無法視為「檔案」的項目拖放到 ghost 上時觸發。範例：Windows 的「我的電腦」等。<br />
+Reference 與 OnOtherObjectDropping 完全相同。
 
 **対応:** SSP 2.6.41

@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventConqueredLesimas
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when Lesimas is conquered.
+征服雷西瑪斯時觸發。
 
-- **Reference81**: Comment.
-- **Reference82**: Score.
+- **Reference81**: 評語。
+- **Reference82**: 分數。

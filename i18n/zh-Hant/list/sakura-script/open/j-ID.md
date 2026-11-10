@@ -1,11 +1,11 @@
 # `\j[ID]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Jump to an ID.<br />
-Jump to a URL with http://～.<br />
-With file:///～, execute a file using an extension associated with the OS. In addition to absolute paths, file names can use paths relative to \[the folder of the running ghost\]/ghost/master.<br />
-※SSP only: mailto:～ creates a new email addressed to the specified recipient.
+跳轉至 ID。<br />
+若為 http://～，則會跳轉至 URL。<br />
+若為 file:///～，則會以 OS 關聯的副檔名執行檔案。檔案名稱除了可使用絕對路徑，也可使用相對於\[執行中的 ghost 資料夾\]/ghost/master 的路徑。<br />
+※僅 SSP 支援 mailto:～，可建立寄給該收件者的新郵件。
 
 **対応:** Materia / SSP / CROW / Ninix
 

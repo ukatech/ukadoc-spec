@@ -1,7 +1,7 @@
 # `\![reload,balloon]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads the balloon.
+重新載入 balloon。
 
 **対応:** SSP

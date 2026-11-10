@@ -1,7 +1,7 @@
 # menu.disable.font.color.g
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字色彩
 
-Disabled item text color, green (0–255)
+不可選取文字綠色（0～255）
 
 **対応:** Materia / SSP / CROW

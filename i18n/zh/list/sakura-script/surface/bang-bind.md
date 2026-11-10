@@ -1,12 +1,12 @@
 # `\![bind,カテゴリ名,パーツ名,数値]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Put on or remove dressup parts.<br />
-The numeric value is 1 to put on and 0 to remove.<br />
-Leaving the part name blank performs the operation for the entire category.<br />
-Leaving the numeric field blank or omitting it toggles ON/OFF, as with menu operations.<br />
-After the script runs, the SHIORI event OnDressupChanged is notified, followed by the SHIORI event OnNotifyDressupInfo.
+穿上或脱下dressup部件。<br />
+数值部分为1时穿上，为0时脱下。<br />
+部件名留空时，按类别执行操作。<br />
+数值栏留空或省略时，会像操作菜单一样切换ON/OFF。<br />
+脚本执行后，会通知SHIORI事件OnDressupChanged，随后通知SHIORI事件OnNotifyDressupInfo。
 
 **対応:** SSP / Ninix
 

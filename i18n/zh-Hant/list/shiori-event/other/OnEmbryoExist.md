@@ -1,7 +1,7 @@
 # OnEmbryoExist
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when SSP starts if materia.exe was already running.
+SSP 啟動時，若 materia.exe 已先行啟動，便會發生。
 
 **対応:** SSP

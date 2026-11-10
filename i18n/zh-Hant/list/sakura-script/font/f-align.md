@@ -1,13 +1,13 @@
 # `\f[align,寄せる側]`
 
-**カテゴリ:** Text change command
+**カテゴリ:** 文字變更指令
 
-Sets text alignment to right (`\f[align,right]`), center (`\f[align,center]`), or left (`\f[align,left]`).<br />
-This setting remains in effect until an "intentional line break" such as `\n` or `\_l` is encountered.<br />
-If this command is run while text or other content is being added, it also moves text already added on the same line.<br />
-When the `\_l` tag is encountered, alignment returns to left.<br />
-If center alignment is set with the `\f[align]` tag after moving with the `\_l` tag, the text is centered as though it were indented by the X coordinate of the `\_l` tag.<br />
-In vertical writing mode, left means top-aligned, right means bottom-aligned, and center means vertically centered.
+設定文字靠右對齊（`\f[align,right]`）、置中（`\f[align,center]`）或靠左對齊（`\f[align,left]`）。<br />
+此設定會持續生效，直到遇到下一個 `\n` 或 `\_l` 等「刻意換行」為止。<br />
+此外，若在追加文字等內容的過程中執行此指令，已追加且屬於同一行的文字也會移動。<br />
+遇到 `\_l` 標籤時會恢復靠左對齊。<br />
+此外，若在 `\_l` 標籤移動後，透過 `\f[align]` 標籤設定置中對齊，會假設已按照 `\_l` 標籤的 X 座標進行縮排，再執行置中對齊。<br />
+在直書模式中，left＝靠上對齊、right＝靠下對齊、center＝垂直置中。
 
 **対応:** SSP 2.5.31
 

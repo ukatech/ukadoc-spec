@@ -1,13 +1,13 @@
-# descript.txt (for balloons)
+# descript.txt（Balloon的）
 
-## Overview
+## 概述
 
-Basic settings file for a balloon.<br />
-In addition to the balloon name and author information, it configures settings such as the display positions of parts and text display.
+balloon的基本设置文件。<br />
+除balloon名称和作者信息外，还可设置部件的显示位置、文字显示方式等。
 
-descript.txt provides the standard settings for the entire balloon. Individual settings for each balloon surface are then adjusted in its own settings file, [balloon(s/k)\*s.txt](../balloonsoption/index.md).
+descript.txt是balloon整体的标准设置；在此基础上，还可以通过[balloon(s/k)\*s.txt](../balloonsoption/index.md)这一各个balloon surface的单独设置文件，分别调整各个surface。
 
-## 記述例 and basic usage
+## 記述例与基本写法
 
 ```
 charset,Shift_JIS
@@ -73,8 +73,8 @@ communicatebox.width,385
 communicatebox.height,20
 ```
 
-Compared with descript.txt for ghosts and shells, this file has a notably large number of settings that are required by specification or in practice.
+与ghost或shell的descript.txt相比，这类文件有一个特点：从规格和实际情况来看，必需设置的项目非常多。
 
-In SSP, setting homeurl for a balloon also enables network updates from Explorer and similar tools.
+在SSP中，为balloon设置homeurl后，也可以从资源管理器等位置执行网络更新。
 
-Strings that begin with \\ or % are treated as Sakura Script or environment variable tags and discarded for security reasons. To include them as ordinary characters, escape them as \\\\ or \\%.
+另外，以\\或%开头的字符串会被视为Sakura Script或环境变量标签，出于安全风险考虑会被丢弃。如果想将它们作为普通字符包含在字符串中，则需要使用\\\\或\\%等形式进行转义。

@@ -1,12 +1,12 @@
 # OnOtherGhostClosed
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when another ghost is closed while multiple ghosts are running.
+多个 ghost 同时运行时，其他 ghost 关闭时触发。
 
-- **Reference0**: Name of the closed ghost on the baseware side.
-- **Reference1**: Last script of the closed ghost.
-- **Reference2**: Name of the closed ghost.
-- **Reference7**: Shell name of the closed ghost.
+- **Reference0**: 已关闭 ghost 的主角色名称。
+- **Reference1**: 已关闭 ghost 的最后一段脚本。
+- **Reference2**: 已关闭 ghost 的名称。
+- **Reference7**: 已关闭 ghost 的 shell 名称。
 
 **対応:** SSP / Ninix

@@ -1,7 +1,7 @@
 # switchremotesstpbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the remote SSTP option.
+遠端 SSTP 的名稱。
 
 **対応:** Materia

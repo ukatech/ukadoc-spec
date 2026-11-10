@@ -1,7 +1,7 @@
-# Plugin "CrystalDiskInfo Event PLUGIN"
+# plugin「CrystalDiskInfo Event PLUGIN」
 
-- Publisher: [http://ssp.shillest.net/](http://ssp.shillest.net/)
-- Related: [https://crystalmark.info/ja/software/crystaldiskinfo/](https://crystalmark.info/ja/software/crystaldiskinfo/)
+- 發布來源：[http://ssp.shillest.net/](http://ssp.shillest.net/)
+- 相關連結：[https://crystalmark.info/ja/software/crystaldiskinfo/](https://crystalmark.info/ja/software/crystaldiskinfo/)
 
 **対応:** SSP
 

@@ -1,9 +1,9 @@
 # OnExecuteICalFailure
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs when retrieval by `\![execute,ical-get/ical-post]` fails.
+`\![execute,ical-get/ical-post]`發生取得錯誤時觸發。
 
-- **Reference0～**: For a parsing failure, Reference4=parse. If retrieval of the same URL is already in progress, Reference4=downloading. Otherwise, the references are [the same as for OnExecuteHTTPFailure](OnExecuteHTTPFailure.md) (note that the order differs from Complete).
+- **Reference0～**: 解析失敗時為Reference4=parse。同一個URL的取得已在進行中時，則為Reference4=downloading。其他情況與[OnExecuteHTTPFailure相同](OnExecuteHTTPFailure.md)（請注意，順序與Complete不同）。
 
 **対応:** SSP 2.8.90

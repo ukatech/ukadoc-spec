@@ -1,10 +1,10 @@
 # OnElinMapCharaGenerate
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 应用程序“Elin”
 
-Occurs when an NPC is generated. One of Reference0–3 has a value.
+NPC 生成时触发。Reference0-3 中的某一项会有值。
 
-- **Reference0**: Information about enemy NPCs
-- **Reference1**: Information about neutral NPCs
-- **Reference2**: Information about friendly NPCs
-- **Reference3**: Information about allied NPCs
+- **Reference0**: 敌对 NPC 的信息
+- **Reference1**: 中立 NPC 的信息
+- **Reference2**: 友好 NPC 的信息
+- **Reference3**: 友方 NPC 的信息

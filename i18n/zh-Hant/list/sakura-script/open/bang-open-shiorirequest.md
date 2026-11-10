@@ -1,7 +1,7 @@
 # `\![open,shiorirequest]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the SHIORI Request sending palette. Nothing happens when developer mode is OFF.
+開啟 SHIORI Request 傳送面板。若開發者模式為 OFF，則不會有任何動作。
 
 **対応:** SSP 2.5.78

@@ -1,5 +1,5 @@
 # OnStampInfoCall
 
-**カテゴリ:** Plugin "Stamp Book"
+**カテゴリ:** plugin「印章簿」
 
-An event sent to the Stamp Book using raiseplugin when the ghost wants to trigger OnStampInfo at any time.
+若要由 ghost 端在任意時間點觸發 OnStampInfo，則透過 raiseplugin 傳送至印章簿的事件。

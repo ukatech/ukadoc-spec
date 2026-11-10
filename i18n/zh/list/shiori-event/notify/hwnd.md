@@ -1,10 +1,10 @@
 # hwnd
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies hwnd.*\[NOTIFY\]*
+通知hwnd。*\[NOTIFY\]*
 
-- **Reference0**: The ghost's hwnd. Each scope is separated by one byte value.
-- **Reference1**: The balloon's hwnd. Each scope is separated by one byte value.
+- **Reference0**: ghost的hwnd。各scope之间以一个字节的值分隔。
+- **Reference1**: balloon的hwnd。各scope之间以一个字节的值分隔。
 
 **対応:** Materia / SSP

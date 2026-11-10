@@ -1,14 +1,14 @@
 # `\![execute,nslookup,パラメータ1,パラメータ2,...]`
 
-**カテゴリ:** Unclassified command
+**カテゴリ:** 未分类命令
 
-Specify a hostname to look up its IP, or an IP to look up its hostname. Supports IPv6.<br />
-The parameters are as follows.
+指定主机名时查询 IP，指定 IP 时查询主机名。支持 IPv6。<br />
+参数如下。
 
-- --host=hostname or IP
-- --event=event or identifier……If a string starting with On is specified, that event occurs instead of the event described below
+- --host=主机名或 IP
+- --event=事件或标识符……指定以 On 开头的字符串时，将触发该事件（代替下文所述事件）
 
-See [OnNSLookupComplete](../../shiori-event/other-communication/OnNSLookupComplete.md) and [OnNSLookupFailure](../../shiori-event/other-communication/OnNSLookupFailure.md) for the specifications of events during and after execution.
+有关运行期间及运行结束后的事件规格，请参阅[OnNSLookupComplete](../../shiori-event/other-communication/OnNSLookupComplete.md)・[OnNSLookupFailure](../../shiori-event/other-communication/OnNSLookupFailure.md)。
 
 **対応:** SSP
 

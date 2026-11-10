@@ -1,11 +1,11 @@
 # `\![open,readme]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open readme.txt.<br />
-If nothing is specified, the file specified as readme in the running ghost's \[folder of the ghost that ran the command\]/ghost/master/descript.txt is opened.<br />
-Specify `\![open,readme,type(ghost/shell/balloon/headline/plugin/calendar.skin/calendar.plugin),name]` to open the specified readme. Example: `\![open,readme,ghost,Emily/Phase4]`<br />
-calendar.skin is the calendar shell, and calendar.plugin is the calendar plugin (schedule sensor). The space-separated forms “calendar skin” and “calendar plugin” are also accepted.
+開啟 readme.txt。<br />
+若未指定任何內容，會開啟目前執行中的 ghost 在\[執行中的 ghost 資料夾\]/ghost/master/descript.txt 的 readme 欄位中指定的檔案。<br />
+指定為 `\![open,readme,種類(ghost/shell/balloon/headline/plugin/calendar.skin/calendar.plugin),名稱]` 時，會開啟指定的 readme。範例：`\![open,readme,ghost,Emily/Phase4]`<br />
+calendar.skin 是行事曆 shell，calendar.plugin 是行事曆 plugin（排程感測器）。也接受以空格分隔的「calendar skin」和「calendar plugin」寫法。
 
 **対応:** SSP / Ninix
 

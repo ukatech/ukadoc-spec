@@ -2,40 +2,40 @@
 
 **カテゴリ:** internal_file
 
-Extracts archives (including ZIP, 7z, tar, and others; see “Supported formats” below). This makes the same processing as `ExtractArchive` in [SSTP EXECUTE](../../sstp/method_execute.md) callable via SAORI over DirectSSTP.<br />
-Archive processing may take several seconds, so [`--async`](../async.md) is strongly recommended. If called synchronously, the ghost will stop during processing.
+解压缩档案（除 ZIP 外，也包括 7z、tar 等。请参阅下方的“支持的格式”）。此功能可通过 SAORI over DirectSSTP 调用，与[SSTP 的 EXECUTE](../../sstp/method_execute.md)中的`ExtractArchive`执行相同的处理。<br />
+档案处理可能需要数秒，因此强烈建议使用[`--async`](../async.md)。同步调用时，ghost 会在处理期间停止。
 
-- **Argument1**: Path to the archive to extract. Relative paths are based on the ghost's folder (ghost/master). Both `/` and `\` can be used as separators. Passing a relative path when calling without a ghost returns 400 (`ghost required`). If the file does not exist (including when the path refers to a folder), returns 400 (`file not found`).
-- **Argument2**: Path to the destination folder. The format is the same as for Argument1. If the folder does not exist, it is created (if creation fails, returns 500 `create directory failed`).
+- **Argument1**: 要解压缩的档案路径。相对路径以 ghost 文件夹（ghost/master）为基准。路径分隔符可使用`/`或`\`。在没有 ghost 的情况下调用并传入相对路径时，会返回 400（`ghost required`）。文件不存在（包括文件夹）时，会返回 400（`file not found`）。
+- **Argument2**: 解压缩目标文件夹的路径。写法与 Argument1 相同。文件夹不存在时会创建（无法创建时返回 500 `create directory failed`）。
 
-The options are as follows.
+选项如下。
 
-- --password=password \[SSP 2.9.26\]……Extracts a password-protected ZIP using the specified password. If a password is required but none is specified, or if the password is incorrect, extraction fails with 500 (`password mismatch`) without showing a password prompt (in \[SSP 2.9.25\], a password could not be specified, and a password prompt appeared, stopping the ghost).
+- --password=密码 \[SSP 2.9.26\]……使用指定的密码解压缩带密码保护的 ZIP。如果需要密码但未指定密码，或指定的密码不正确，则不会显示密码输入对话框，而会返回 500（`password mismatch`）并失败（在\[SSP 2.9.25\]中无法指定密码，会显示密码输入对话框，并导致 ghost 停止）。
 - [`--async`](../async.md)
 
-On success, returns 200, with the number of files extracted in `Result`, the number of bytes after compression in `Value0`, and the number of bytes after extraction in `Value1` (decimal integers). These are the same values as `Reference1`–`Reference3` of [OnExtractArchiveComplete](../../../list/shiori-event/other/OnExtractArchiveComplete.md) for SSTP EXECUTE; with [`--async`](../async.md), they are returned in `Reference1` (`Result`) and `Reference4` and `Reference5` (`Value0` and `Value1`).<br />
-For archives such as 7z that do not store the compressed size for each entry, `Value0` may be 0.<br />
-\[SSP 2.9.26\] The total for archives containing multiple files is returned correctly for ZIP as well (in \[SSP 2.9.25\], the byte count was for the last file only).
+成功时返回 200，`Result`中包含解压缩的文件数，`Value0`中包含压缩后的字节数，`Value1`中包含解压缩后的字节数（十进制整数）。这些值与 SSTP 的 EXECUTE 的[OnExtractArchiveComplete](../../../list/shiori-event/other/OnExtractArchiveComplete.md)的`Reference1`～`Reference3`相同；使用[`--async`](../async.md)时，则分别存入`Reference1`（`Result`）和`Reference4`、`Reference5`（`Value0`、`Value1`）。<br />
+对于 7z 等没有各个条目压缩后大小信息的档案，`Value0`可能为 0。<br />
+\[SSP 2.9.26\] ZIP 档案也能正确返回包含多个文件的档案总大小（在\[SSP 2.9.25\]中，返回的字节数会是最后一个文件的大小）。
 
-Failures are as follows. 400 is returned for `file not found` (archive to extract does not exist) / `invalid parameter` (missing argument, empty path) / `ghost required` / `path not allowed` (destination is outside folders managed by SSP). 500 indicates `create directory failed` or the reason extraction failed, such as `open failed`, `crc`, or `password mismatch`.
+失败时的返回值如下。400 表示`file not found`（要解压缩的档案不存在）/ `invalid parameter`（缺少参数或路径为空）/ `ghost required` / `path not allowed`（解压缩目标位于 SSP 管理文件夹之外）。500 表示`create directory failed`，或解压缩失败的原因（例如`open failed`、`crc`、`password mismatch`）。
 
-For security reasons, the destination is restricted to locations under folders managed by SSP (such as the ghost and balloon folders, and locations specified in the “Folders” settings). Paths are checked after resolving `..` and similar components. This restriction may be strengthened as appropriate, so it is safest to limit the destination to a location under the folder containing the ghost's own data.
+出于安全考虑，解压目标路径仅限于 SSP 管理的文件夹（例如 ghost 文件夹、balloon 文件夹等通过「文件夹」设置指定的位置）下。检查路径时，会先解析 `..` 等路径部分。由于此限制今后可能会适时收紧，最好将目标路径限制在存放 ghost 自身数据的文件夹下。
 
-## Supported formats
+## 支持的格式
 
-The archive format is determined by the file name extension (for self-extracting `exe` files, the contents are checked and the ZIP or 7z archive inside is extracted). Unrecognized formats fail with 500.
+根据文件名扩展名判断压缩包格式（对于自解压的 `exe`，会检查其内容并解压其中的 ZIP 或 7z）。无法识别的格式会以 500 错误失败。
 
 - **ZIP**: `.zip` `.zipx` `.nar`
 - **LZH**: `.lzh` `.lha`
 - **CAB**: `.cab`
 - **7z**: `.7z`
-- **tar family**: `.tar` `.tar.gz`（`.tgz`） `.tar.xz`（`.txz`） `.tar.bz2`（`.tbz2` `.tbz`） `.tar.lzma`（`.tlz`） `.tar.zst`（`.tzst`） `.tar.br`（`.tbr`） `.tar.Z`（`.taz`） `.cpio` `.deb` `.udeb` `.rpm`
-- **Single-file compression**: `.gz` `.bz2` `.xz` `.lzma` `.zst` `.zstd` `.br` `.Z` (extracted as an archive containing a single file)
-- **Disk images**: `.iso` `.img`
-- **Email**: `.eml`
-- **Self-extracting**: `.exe`
+- **tar 系**: `.tar` `.tar.gz`（`.tgz`） `.tar.xz`（`.txz`） `.tar.bz2`（`.tbz2` `.tbz`） `.tar.lzma`（`.tlz`） `.tar.zst`（`.tzst`） `.tar.br`（`.tbr`） `.tar.Z`（`.taz`） `.cpio` `.deb` `.udeb` `.rpm`
+- **单文件压缩格式**: `.gz` `.bz2` `.xz` `.lzma` `.zst` `.zstd` `.br` `.Z`（作为仅包含一个文件的压缩包解压）
+- **磁盘映像**: `.iso` `.img`
+- **邮件**: `.eml`
+- **自解压格式**: `.exe`
 
-`--password=` applies only to ZIP and 7z; it is ignored for other formats.
+`--password=` 仅对 ZIP 和 7z 有效，在其他格式中会被忽略。
 
 ## 記述例
 

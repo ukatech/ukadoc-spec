@@ -1,9 +1,9 @@
 # installedballoonname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed balloons.*\[NOTIFY\]*
+通知已安装的balloon。*\[NOTIFY\]*
 
-- **Reference\***: Installed balloon name.
+- **Reference\***: 已安装的balloon名称。
 
 **対応:** SSP / CROW / Ninix

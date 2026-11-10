@@ -1,71 +1,71 @@
-# Notes
+# 补充
 
-## List of weather conditions and condition codes
+## 天气状况与状况代码一览
 
-The list of conditions can be downloaded from the [weatherapi documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but the information sent by the plugin is always in English.
+状况列表可从[weatherapi文档页面](https://www.weatherapi.com/docs/)下载。该列表也提供其他语言版本，但plugin发送的信息始终为英文。
 
-- **1000**: Sunny (after sunset, this changes to "Clear")
-- **1003**: Partly cloudy
-- **1006**: Cloudy
-- **1009**: Overcast
-- **1030**: Mist
-- **1063**: Patchy rain possible
-- **1066**: Patchy snow possible
-- **1069**: Patchy sleet possible
-- **1072**: Patchy freezing drizzle possible
-- **1087**: Thundery outbreaks possible
-- **1114**: Blowing snow
-- **1117**: Blizzard
-- **1135**: Fog
-- **1147**: Freezing fog
-- **1150**: Patchy light drizzle
-- **1153**: Light drizzle
-- **1168**: Freezing drizzle
-- **1171**: Heavy freezing drizzle
-- **1180**: Patchy light rain
-- **1183**: Light rain
-- **1186**: Moderate rain at times
-- **1189**: Moderate rain
-- **1192**: Heavy rain at times
-- **1195**: Heavy rain
-- **1198**: Light freezing rain
-- **1201**: Moderate or heavy freezing rain
-- **1204**: Light sleet
-- **1207**: Moderate or heavy sleet
-- **1210**: Patchy light snow
-- **1213**: Light snow
-- **1216**: Patchy moderate snow
-- **1219**: Moderate snow
-- **1222**: Patchy heavy snow
-- **1225**: Heavy snow
-- **1237**: Ice pellets
-- **1240**: Light rain shower
-- **1243**: Moderate or heavy rain shower
-- **1246**: Torrential rain shower
-- **1249**: Light sleet showers
-- **1252**: Moderate or heavy sleet showers
-- **1255**: Light snow showers
-- **1258**: Moderate or heavy snow showers
-- **1261**: Light showers of ice pellets
-- **1264**: Moderate or heavy showers of ice pellets
-- **1273**: Patchy light rain with thunder
-- **1276**: Moderate or heavy rain with thunder
-- **1279**: Patchy light snow with thunder
-- **1282**: Moderate or heavy snow with thunder
+- **1000**: 晴朗（太阳落山后会改为“Clear”）
+- **1003**: 局部多云
+- **1006**: 多云
+- **1009**: 阴天
+- **1030**: 薄雾
+- **1063**: 可能有零星降雨
+- **1066**: 可能有零星降雪
+- **1069**: 可能有零星雨夹雪
+- **1072**: 可能有零星冻毛毛雨
+- **1087**: 可能有雷暴
+- **1114**: 吹雪
+- **1117**: 暴风雪
+- **1135**: 雾
+- **1147**: 冻雾
+- **1150**: 可能有零星小毛毛雨
+- **1153**: 小毛毛雨
+- **1168**: 冻毛毛雨
+- **1171**: 强冻毛毛雨
+- **1180**: 可能有零星小雨
+- **1183**: 小雨
+- **1186**: 间歇性中雨
+- **1189**: 中雨
+- **1192**: 间歇性大雨
+- **1195**: 大雨
+- **1198**: 小冻雨
+- **1201**: 中到大冻雨
+- **1204**: 小雨夹雪
+- **1207**: 中到大雨夹雪
+- **1210**: 可能有零星小雪
+- **1213**: 小雪
+- **1216**: 可能有零星中雪
+- **1219**: 中雪
+- **1222**: 可能有零星大雪
+- **1225**: 大雪
+- **1237**: 冰粒
+- **1240**: 小阵雨
+- **1243**: 中到大阵雨
+- **1246**: 强阵雨
+- **1249**: 小阵雨夹雪
+- **1252**: 中到大阵雨夹雪
+- **1255**: 小阵雪
+- **1258**: 中到大阵雪
+- **1261**: 小阵冰粒
+- **1264**: 中到大阵冰粒
+- **1273**: 可能有伴随雷暴的零星小雨
+- **1276**: 中到大雷雨
+- **1279**: 可能有伴随雷暴的零星小雪
+- **1282**: 中到大雷雪
 
-## Quick reference table for the UK Defra index
+## UK Defra指数速查表
 
-| Index | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| 指数 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Category | Low | Low | Low | Medium | Medium | Medium | High | High | High | Very high |
-| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71 or more |
+| 区间 | 低 | 低 | 低 | 中 | 中 | 中 | 高 | 高 | 高 | 非常高 |
+| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71以上 |
 
-## Error reasons
+## 错误原因
 
-- **no_location**: The user has not added location information, or has removed it.
-- **location_invalid**: The user's location information is invalid, so data cannot be retrieved.
-- **api_quota_exceeded**: The free API call limit of 1 million per month has been exceeded.
-- **api_key_disabled**: The plugin developer has disabled the API key. Check whether a plugin update providing a new key is available.
-- **api_internal_error**: The API returned an internal error.
-- **no_api_response**: The API did not respond, the SAORI used by the plugin failed to run, or the user is offline.
-- **other**: Another error returned by the API. reference1 contains the error message returned by the API.
+- **no_location**: 用户未添加或已删除位置信息。
+- **location_invalid**: 用户的位置信息无效，无法获取数据。
+- **api_quota_exceeded**: 超出每月100万次免费API调用的上限。
+- **api_key_disabled**: plugin开发者已禁用API密钥。请确认plugin是否有提供新密钥的更新。
+- **api_internal_error**: API返回内部错误。
+- **no_api_response**: API没有响应、plugin使用的SAORI运行失败，或用户处于离线状态。
+- **other**: API返回的其他错误。reference1中包含API返回的错误消息。

@@ -1,8 +1,8 @@
 # meta.album
 
-**カテゴリ:** プロパティシステム \> サウンドプロパティ名
+**カテゴリ:** 屬性系統 \> 音效屬性名稱
 
-Album name recorded in the tags of the target media.<br />
-For behavior when there are no tags or they cannot be retrieved, see [here](sound.meta.artwork.note.md).
+目標媒體標籤中記錄的專輯名稱。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

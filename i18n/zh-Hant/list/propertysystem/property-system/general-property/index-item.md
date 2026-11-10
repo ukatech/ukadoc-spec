@@ -1,7 +1,7 @@
 # index
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** 屬性系統 \> 一般屬性名稱
 
-The position in the target list.
+目標清單中的位置。
 
 **対応:** SSP / CROW

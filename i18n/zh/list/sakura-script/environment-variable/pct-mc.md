@@ -1,7 +1,7 @@
 # %mc
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—company name.
+单词-公司名称。
 
 **対応:** Materia / SSP / CROW / Ninix

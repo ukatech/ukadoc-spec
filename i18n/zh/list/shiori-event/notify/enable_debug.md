@@ -1,9 +1,9 @@
 # enable_debug
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-ON/OFF status of “Enable SHIORI debug mode” in the development palette.*\[NOTIFY\]*
+开发用面板中“启用SHIORI调试模式”的开/关状态。*\[NOTIFY\]*
 
-- **Reference0**: 1 if ON, 0 if OFF
+- **Reference0**: 开启时为1，关闭时为0
 
 **対応:** SSP

@@ -1,14 +1,14 @@
 # sakura.defaultx
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost信息
 
-The default X coordinate for the main character (`\0`). The surface's reference point (usually the bottom center of the surface) is placed at this position.<br />
-The default position is used when no display position has been saved (such as on first launch or after resetting the display position). If none of these are specified, the character is placed at the bottom right of the primary monitor's work area.<br />
-The value is in pixels, in screen coordinates with the top left of the primary monitor as the origin (for multiple monitors, the position is in the virtual desktop as a whole).<br />
-A negative value is the distance from the right edge of the primary monitor's work area. -0 is the right edge itself.\[2.9.13\]<br />
-To specify a negative coordinate itself, such as one pointing to a monitor to the left of the primary monitor, prefix it with another -, as in --100 (this example is X coordinate -100).\[2.9.13\]<br />
-If [sakura.defaultleft](sakura.defaultleft.md) is also specified on the same axis, this setting (defaultx) takes precedence.<br />
-The same item can also be written in the descript.txt of the [ghost](../../../descript/ghost/descript-txt/sakura.defaultx.md) or [shell](../../../descript/shell/descript-txt/sakura.defaultx.md)\[2.9.13\]. The SHIORI Resource takes precedence.<br />
-When configured to display along the left or right edge of the desktop, this setting is invalid because the X coordinate is determined by that configuration.
+本体侧(`\0`)默认位置的X坐标。将surface的基准点（通常为surface底部中央）放在此位置。<br />
+没有保存显示位置时（例如首次启动或重置显示位置后）会使用默认位置。如果均未指定，则放在主显示器工作区的右下角。<br />
+值的单位为像素，使用屏幕坐标，原点为主显示器左上角（多显示器环境中，坐标相对于整个虚拟桌面）。<br />
+负值表示距主显示器工作区右端的距离。-0表示右端本身。\[2.9.13\]<br />
+若要指定负坐标本身（例如指向主显示器左侧的显示器），请连续写两个-，如--100（此例表示X坐标-100）。\[2.9.13\]<br />
+同一轴上也指定了[sakura.defaultleft](sakura.defaultleft.md)时，优先使用此项(defaultx)。<br />
+也可以在[ghost](../../../descript/ghost/descript-txt/sakura.defaultx.md)和[shell](../../../descript/shell/descript-txt/sakura.defaultx.md)的descript.txt中写入相同项目\[2.9.13\]。SHIORI资源优先。<br />
+设置为沿桌面左端/右端显示时，X坐标由该设置决定，因此此项无效。
 
 **対応:** SSP

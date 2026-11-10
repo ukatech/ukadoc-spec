@@ -1,7 +1,7 @@
 # updateplatformbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the baseware network update option.
+本體網路更新的名稱。
 
 **対応:** SSP / CROW

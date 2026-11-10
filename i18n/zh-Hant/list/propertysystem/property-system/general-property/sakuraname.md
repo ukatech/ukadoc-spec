@@ -1,7 +1,7 @@
 # sakuraname
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** プロパティシステム \> 通用屬性名稱
 
-The name of the target ghost's main character.
+目標 ghost 的 sakura 端名稱。
 
 **対応:** SSP / CROW

@@ -1,8 +1,8 @@
 # `\![open,shellexplorer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 打开命令
 
-Open the shell explorer. Only the shell of the currently running ghost is displayed.
+打开 shell 浏览器。显示的只有当前正在运行的 ghost 的 shell。
 
 **対応:** Materia / SSP / CROW
 

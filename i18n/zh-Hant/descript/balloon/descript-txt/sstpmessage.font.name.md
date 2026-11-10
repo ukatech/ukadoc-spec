@@ -1,10 +1,10 @@
-# sstpmessage.font.name,font name
+# sstpmessage.font.name,字型名稱
 
 **カテゴリ:** descript.txt
 
-Font used for SSTP messages. The default is ＭＳ ゴシック.<br />
-You can also specify font files placed in the balloon folder as the font name (SSP only).<br />
-Multiple font names can be specified, separated by commas. They are selected from among the automatically installed fonts in the order listed, from highest to lowest priority (SSP only).
+SSTP 訊息使用的字型。預設為ＭＳ ゴシック。<br />
+字型名稱也可以指定放在 balloon 資料夾中的字型檔案（僅限 SSP）。<br />
+可用逗號分隔指定多個字型名稱，並依書寫順序（優先度順序）從已安裝的字型中自動選擇（僅限 SSP）。
 
 **既定値:** ＭＳ ゴシック
 

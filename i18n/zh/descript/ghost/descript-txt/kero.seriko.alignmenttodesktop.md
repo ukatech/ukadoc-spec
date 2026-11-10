@@ -1,11 +1,11 @@
-# kero.seriko.alignmenttodesktop,Position information
+# kero.seriko.alignmenttodesktop,位置信息
 
 **カテゴリ:** descript.txt
 
-Default [※display position information](note-1.md#補足) for the companion side.<br />
-Takes precedence over the ghost-wide setting ([seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)), but has lower precedence than the [shell-side setting](../../shell/descript-txt/seriko.alignmenttodesktop.md).<br />
-※Ghost-wide setting < this < shell-wide setting < shell-side per-scope setting
+搭档一侧的默认[※显示位置信息](note-1.md#補足)。<br />
+优先级高于ghost整体设置（[seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)），低于[shell侧设置](../../shell/descript-txt/seriko.alignmenttodesktop.md)。<br />
+※ghost侧整体设置＜此设置＜shell侧整体设置＜shell侧各scope单独设置
 
-**既定値:** No value
+**既定値:** 无值
 
 **対応:** SSP

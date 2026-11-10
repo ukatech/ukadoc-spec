@@ -1,5 +1,5 @@
 # OnSatolistDictionaryFolderChanged
 
-**カテゴリ:** Application "Satorist"
+**カテゴリ:** 应用“Satorist”
 
-Occurs when the dictionary folder used in "Dictionary" is changed.
+更改“辞典”中使用的辞典文件夹时触发。

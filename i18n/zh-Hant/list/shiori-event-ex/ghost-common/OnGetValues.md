@@ -1,10 +1,10 @@
 # OnGetValues
 
-**カテゴリ:** Generic inter-ghost event
+**カテゴリ:** ghost 間通用事件
 
-Event to return in response to OnRequestValues.
+收到 OnRequestValues 時應回傳的事件。
 
-- **Reference0**: Name of the sending ghost.
-- **Reference1**: key=value (key is the variable name received in OnRequestValues, and value is its value). Reference2 and subsequent references follow the same format for as many requested variables as exist. Do not return variables that do not exist. The order in which they were sent in OnRequestValues does not matter.
+- **Reference0**: 傳送端 ghost 名稱。
+- **Reference1**: key=value（key 是 OnRequestValues 收到的變數名稱，value 是該變數的值）。Reference2 以後也依此類推，直到列出所有要求的變數。不存在的變數不回傳。順序不受 OnRequestValues 傳送順序影響。
 
 **対応:** SSP

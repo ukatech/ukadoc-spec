@@ -1,8 +1,8 @@
-# anchor.visited.pen.color.g,numeric
+# anchor.visited.pen.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green color for the rectangular border and underline of visited anchor choice markers (0–255)
+已访问锚点的选项标记矩形边框及下划线的颜色绿色(0～255)
 
 **既定値:** anchor.visited.font.color.g
 

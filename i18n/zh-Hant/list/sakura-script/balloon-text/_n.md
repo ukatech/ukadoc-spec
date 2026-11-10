@@ -1,8 +1,8 @@
 # `\_n`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Automatic line wrapping is disabled until the next `\_n`.
+直到下一個 `\_n` 為止，不會自動換行。
 
 **対応:** Materia / SSP
 

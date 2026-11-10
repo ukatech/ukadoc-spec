@@ -1,10 +1,10 @@
-# Variable-Name Reply Event
+# 可變名稱的回覆事件
 
-**カテゴリ:** Ghost “奏でる日常の音色”
+**カテゴリ:** ghost「演奏日常的音色」
 
-A ghost that receives OnKanadeTeaPartyInfomationRequest raises this event to *奏でる日常の音色* using raiseother to *notify* it.<br />
-The event name is specified in reference2 of OnKanadeTeaPartyInfomationRequest.
+接收 OnKanadeTeaPartyInfomationRequest 的 ghost，透過 raiseother 向*演奏日常的音色*進行*通知*的事件。<br />
+事件名稱會透過 OnKanadeTeaPartyInfomationRequest 的 reference2 通知。
 
-- **Reference0**: The ghost's supported tea party version number
-- **Reference1**: The ghost's baseware-side name
-- **Reference2**: [※Information about tea party version compatibility](note-1.md#補足)
+- **Reference0**: ghost 對應的茶會版本號
+- **Reference1**: ghost 本體側名稱
+- **Reference2**: [※茶會版本的支援資訊](note-1.md#補足)

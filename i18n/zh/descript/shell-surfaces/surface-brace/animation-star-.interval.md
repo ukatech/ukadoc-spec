@@ -1,14 +1,14 @@
-# animation\*.interval, interval
+# animation\*.interval,间隔
 
-**カテゴリ:** surface brace
+**カテゴリ:** surface块
 
-Defines when an animation starts (its cycle).<br />
-See [animation intervals](h-animationinterval/index.md) below for intervals. SSP alone allows combinations to be specified by listing them separated by +.<br />
-The \* (animationID) can be any number. Across all surfaces in that scope (`\0`, `\1`, ...), animations with the same ID should have the same meaning (for example, “blinking,” “lip-sync,” or “changing into the same outfit”).<br />
-The interval definition indicates the starting point of all animation definitions for that ID, and must always be written first in the sequence of animation definitions.<br />
-See [animation-sort](../descript-brace/animation-sort.md) for the relationship between animation overlap and ID order.<br />
-[Legacy definition](caption_seriko-redefine.md): \*interval, interval
+定义动画开始的时机（周期）。<br />
+间隔请参见下文的[动画间隔](h-animationinterval/index.md)。仅SSP支持用+分隔并列，从而组合指定。<br />
+\*部分（animationID）为任意数字。在该scope（`\0`、`\1`、...）的所有surface中，相同ID的动画应具有相同含义（例如“眨眼”“口型同步”“同一服装的dressup”）。<br />
+interval定义表示该ID动画定义整体的起点，必须始终写在这一系列animation定义的开头。<br />
+动画的叠加方式与ID顺序之间的关系请参见[animation-sort](../descript-brace/animation-sort.md)。<br />
+[旧定义](caption_seriko-redefine.md)：\*interval,间隔
 
-**既定値:** No effect
+**既定値:** 无效果
 
 **対応:** Materia / SSP / CROW

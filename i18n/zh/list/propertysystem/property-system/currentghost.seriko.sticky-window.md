@@ -1,15 +1,15 @@
 # currentghost.seriko.sticky-window
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The current setting state of [`\![set,sticky-window,～]`](../../sakura-script/surface/bang-set-sticky-window-ID-ID.md).<br />
-Scope IDs within a group are comma-separated, and groups are separated by semicolons.<br />
-For example, if scopes 0 and 1 are attached to each other, and scopes 2 and 3 are attached to each other, the value is `0,1;2,3`.<br />
-If there are no settings, the value is empty.<br />
-*\[SET enabled\]*
+当前[`\![set,sticky-window,～]`](../../sakura-script/surface/bang-set-sticky-window-ID-ID.md)的设置状态。<br />
+组内的 scope ID 以逗号分隔，不同组之间以分号分隔。<br />
+例如，将 scope 0 和 1、scope 2 和 3 分别组合在一起时，值为 `0,1;2,3`。<br />
+没有任何设置时，值为空。<br />
+*\[SET有效\]*
 
-When writing, the current settings are **completely replaced** using the same format. Note that this differs from Sakura Script tags, which add groups.<br />
-Writing an empty string clears all attachment settings.<br />
-Groups with fewer than two elements, and groups containing a scope ID already used in another group, are ignored.
+写入时，使用相同格式**完全替换当前设置**。请注意，这与 Sakura Script 标签逐步添加组的行为不同。<br />
+写入空字符串会解除所有组合设置。<br />
+元素少于2个的组，以及包含已在其他组中使用的 scope ID 的组，都会被忽略。
 
 **対応:** SSP 2.8.78

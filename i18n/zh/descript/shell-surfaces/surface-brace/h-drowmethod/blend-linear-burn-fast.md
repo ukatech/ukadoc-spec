@@ -1,11 +1,11 @@
 # blend-linear-burn-fast
 
-**カテゴリ:** surface brace \> Drawing method
+**カテゴリ:** surface混合 \> 绘制方法
 
-*New layer* is composited over the image using linear burn, according to the opacity of the *base layer*.<br />
-Its behavior is the same as overlay-fast and its outline does not change, but linear burn blending is applied to the current surface instead of overwriting it.<br />
-This can also be used with dressup and element.<br />
-The word "fast" in the name is due to historical circumstances; processing is not faster.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+根据*基底图层*的不透明度，将*新图层*以线性加深混合模式叠加。<br />
+其行为与overlay-fast相同，外形不会改变，但不是覆盖，而是对当前surface执行线性加深混合处理。<br />
+也可用于dressup和element。<br />
+名称中的「fast」源于历史原因，并不表示处理速度快。<br />
+建议在shell的descript.txt中设置[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.40

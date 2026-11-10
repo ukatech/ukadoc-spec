@@ -1,9 +1,9 @@
 # OnExecuteRSSFailure
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs when retrieval by `\![execute,rss-get/post]` fails.
+`\![execute,rss-get/post]` 發生取得錯誤時觸發。
 
-- **Reference0～**: For a parsing failure, Reference4=parse. If retrieval of the same URL is already in progress, Reference4=downloading \[2.8.90\]. Otherwise, the references are [the same as for OnExecuteHTTPFailure](OnExecuteHTTPFailure.md)
+- **Reference0～**: 解析失敗時為 Reference4=parse。同一 URL 的取得已在進行中時為 Reference4=downloading \[2.8.90\]。其他情況與[OnExecuteHTTPFailure 相同](OnExecuteHTTPFailure.md)
 
 **対応:** SSP

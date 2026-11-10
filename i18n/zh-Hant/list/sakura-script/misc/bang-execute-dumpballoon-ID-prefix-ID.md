@@ -1,27 +1,27 @@
 # `\![execute,dumpballoon,ディレクトリ,スコープID,prefix,イベントID]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Export the current rendered contents of the balloon for the specified scope as an image to the specified directory.<br />
-Unlike a surface, it cannot be redrawn by specifying a state; the contents drawn in the balloon at that time are exported as-is. The image is exported at its original size, before scaling or applying transparency (including fading).<br />
-The contents are exported even if the balloon is hidden, as long as they remain rendered.<br />
-The output filename is prefix+scope ID+.png (example: balloon0.png).<br />
-Scope ID: Specify the same ID used for the `\s` tag.<br />
-prefix: (Optional) The string to prepend to the output filename. If omitted, balloon is used.<br />
-Event ID: (Optional) Trigger the specified event as soon as the export finishes. The number of files successfully exported (0 or 1) is set in Reference0.<br />
-The output destination restrictions are the same as for `\![execute,dumpsurface]`. If the destination is outside the allowed range, nothing is exported and an error is recorded in the log.
+將指定 scope 的 balloon 目前的繪製內容，以圖片形式輸出至指定目錄。<br />
+與 surface 不同，無法指定狀態重新繪製，而是直接輸出當下繪製在 balloon 上的內容。輸出的圖片不會套用放大縮小或半透明（包含淡出），且維持原始尺寸。<br />
+即使 balloon 隱藏，只要仍有繪製內容就會輸出。<br />
+輸出檔名為 prefix+scope ID+.png（例：balloon0.png）。<br />
+scope ID：指定與`\s`標籤相同的 ID。<br />
+prefix：（可省略）加在輸出檔名前方的字串。省略時為 balloon。<br />
+事件 ID：（可省略）輸出完成後，觸發指定事件。Reference0 會帶有成功輸出的檔案數（0 或 1）。<br />
+輸出目的地的限制與`\![execute,dumpsurface]`相同。若超出限制範圍，則不會輸出任何內容，並記錄至錯誤日誌。
 
-\[2.9.08\] The following format can also be used. Arguments beginning with -- can be specified in any order and can be mixed with the arguments above (arguments not beginning with -- are treated, in order of appearance, as directory, scope ID, prefix, and event ID).<br />
-Anything other than the directory can be omitted; if the scope ID is omitted, it defaults to 0.
+\[2.9.08\] 也可以使用以下格式指定。以 -- 開頭的引數順序不限，也可以與上述各引數指定方式混用（不以 -- 開頭的引數會依出現順序視為目錄、scope ID、prefix、事件 ID）。<br />
+除目錄外的引數皆可省略，省略 scope ID 時會使用 0。
 
-- **--dir=ディレクトリ**: The output directory.
-- **--scope=スコープID**: The scope ID.
-- **--prefix=prefix**: The string to prepend to the output filename.
-- **--event=イベントID**: The event ID. The same applies to --async=.
-- **--hide=項目**: Export a redraw that omits the specified items. This does not affect the visible balloon. To specify multiple items, separate them with commas, as in "--hide=balloonmarker,balloonnum", and enclose the entire argument in double quotes.<br />
-  balloonmarker: The SSTP marker (the display of `\![set,balloonmarker]` and the display of the sender of scripts received via SSTP)<br />
-  balloonnum: The display of `\![set,balloonnum]`<br />
-  When this option is specified, the exported image is redrawn from the state at that time, rather than using the contents currently rendered (it is redrawn even during `\![lock,balloonrepaint]`).
+- **--dir=ディレクトリ**：輸出目的地的目錄。
+- **--scope=スコープID**：scope ID。
+- **--prefix=prefix**：加在輸出檔名前方的字串。
+- **--event=イベントID**：事件 ID。--async= 也相同。
+- **--hide=項目**：不繪製指定項目，重新繪製後輸出。這不會影響顯示中的 balloon。指定多個項目時，以逗號分隔，例如 "--hide=balloonmarker,balloonnum"，並以雙引號括住整個引數。<br />
+  balloonmarker：SSTP 標記（顯示`\![set,balloonmarker]`，或顯示由 SSTP 接收的 script 來源）<br />
+  balloonnum：顯示`\![set,balloonnum]`<br />
+  使用此指定時，輸出內容不是當下的繪製內容，而是依當下狀態重新繪製的內容（即使在`\![lock,balloonrepaint]`期間也會重新繪製）。
 
 **対応:** SSP 2.9.02
 

@@ -1,7 +1,7 @@
 # history.ghost.count
 
-**カテゴリ:** Property system
+**カテゴリ:** プロパティシステム
 
-Number of recently used ghosts.
+最近使用過的 ghost 數量。
 
 **対応:** SSP

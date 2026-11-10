@@ -1,9 +1,9 @@
-# menu.foreground.bitmap.filename,File name
+# menu.foreground.bitmap.filename,文件名
 
 **カテゴリ:** descript.txt
 
-Foreground display image file name.
+前景显示图像文件名。
 
-**既定値:** Baseware default image
+**既定値:** baseware的标准图像
 
 **対応:** Materia / SSP / CROW

@@ -1,26 +1,26 @@
 # rateofusegraph
 
-**カテゴリ:** Notify event
+**カテゴリ:** 通知事件
 
-Notifies usage graph information. *\[NOTIFY\]*
+通知使用中圖表的資訊。*\[NOTIFY\]*
 
-- **Reference\***: The following information, separated by byte value 1.
-  - **1st**: Ghost name.
-  - **2nd**: sakura name.
-  - **3rd**: kero name.
-  - **4th**: Number of launches.
-  - **5th**: Running time. (minutes)
-  - **6th**: Running time percentage. (%)
-  - **7th**: Status.<br />
-    boot (running)<br />
-    install (installed)<br />
-    vanish (uninstalled information remains)<br />
-    One of the above.
-  - **8th**: Number of launches. (weekly report, total from today back to 7 days ago) \[SSP 2.8.54 and later\]
-  - **9th**: Running time. (weekly report, minutes)
-  - **10th**: Running time percentage. (weekly report, %)
-  - **11th**: Number of launches. (monthly report, total from today back to 30 days ago)
-  - **12th**: Running time. (monthly report, minutes)
-  - **13th**: Running time percentage. (monthly report, %)
+- **Reference\***: 以下資訊以位元組值1分隔。
+  - **1番目**: ghost 名稱。
+  - **2番目**: sakura 名稱。
+  - **3番目**: kero 名稱。
+  - **4番目**: 啟動次數。
+  - **5番目**: 啟動時間。（分鐘）
+  - **6番目**: 啟動時間比例。（％）
+  - **7番目**: 狀態。<br />
+    boot（啟動中）<br />
+    install（已安裝）<br />
+    vanish（已解除安裝，仍保留相關資訊）<br />
+    三者之一。
+  - **8番目**: 啟動次數。（週報，統計今天起7天前的資料）\[以下SSP 2.8.54～\]
+  - **9番目**: 啟動時間。（週報，分鐘）
+  - **10番目**: 啟動時間比例。（週報，％）
+  - **11番目**: 啟動次數。（月報，統計今天起30天前的資料）
+  - **12番目**: 啟動時間。（月報，分鐘）
+  - **13番目**: 啟動時間比例。（月報，％）
 
 **対応:** SSP

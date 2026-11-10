@@ -1,8 +1,8 @@
-# number.font.color.g,value
+# number.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green component of the counter number's font color (0–255)
+计数器数值的字体绿色分量（0～255）
 
 **既定値:** 0
 

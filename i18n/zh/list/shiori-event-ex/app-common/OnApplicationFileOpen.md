@@ -1,10 +1,10 @@
 # OnApplicationFileOpen
 
-**カテゴリ:** Generic external application events
+**カテゴリ:** 外部应用通用事件
 
-Triggered when an external application opens a document file.
+外部应用程序打开文档文件时触发。
 
-- **Reference0**: Application name.
-- **Reference1**: Full file path.
+- **Reference0**: 应用程序名称。
+- **Reference1**: 文件的完整路径。
 
 **対応:** Materia / SSP / CROW

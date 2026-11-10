@@ -1,10 +1,10 @@
 # `\![enter,onlinemode]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Force the online marker to display. The main balloon is displayed even if there is content on the partner side and none on the main side.
+強制顯示線上標記。即使對方側有顯示內容，而本體側 balloon 沒有顯示內容，也會顯示本體側 balloon。
 
-This remains in effect until the ghost exits.
+持續有效直到 ghost 結束。
 
 **対応:** SSP
 

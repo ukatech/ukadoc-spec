@@ -1,11 +1,11 @@
 # OnNSLookupFailure
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs on failure with `\![execute,nslookup]`.
+透過 `\![execute,nslookup]` 失敗時觸發。
 
-- **Reference0**: The exact string specified with --event
-- **Reference1**: The exact string specified with --host
-- **Reference2**: lookup for a forward lookup, reverse for a reverse lookup
+- **Reference0**: --event 所指定的字串原文
+- **Reference1**: --host 所指定的字串原文
+- **Reference2**: 正向查詢時為 lookup，反向查詢時為 reverse
 
 **対応:** SSP

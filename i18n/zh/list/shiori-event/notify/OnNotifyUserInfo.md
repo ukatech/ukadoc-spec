@@ -1,12 +1,12 @@
 # OnNotifyUserInfo
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the user's input information. Notified at startup and whenever the information is updated.*\[NOTIFY\]*
+通知用户输入的信息。启动时以及信息更新时通知。*\[NOTIFY\]*
 
-- **Reference0**: Preferred name.
-- **Reference1**: Full name.
-- **Reference2**: Birthday. (Comma-separated, such as 2003,5,5)
-- **Reference3**: Gender. One of male (male), female (female), or undef (undefined).
+- **Reference0**: 称呼。
+- **Reference1**: 全名。
+- **Reference2**: 生日。（以2003,5,5这样的逗号分隔格式表示）
+- **Reference3**: 性别。以下值之一：male（男）、female（女）、undef（未定义）。
 
 **対応:** SSP

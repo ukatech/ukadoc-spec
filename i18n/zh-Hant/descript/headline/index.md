@@ -1,6 +1,6 @@
-# Headline settings
+# Headline 設定
 
-See [HEADLINE/2.0](../../spec/headline.md) for the overall headline specification.
+整體 headline 規格請參閱[HEADLINE/2.0](../../spec/headline.md)。
 
 ## 一覧
 

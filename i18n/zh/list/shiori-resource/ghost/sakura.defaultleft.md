@@ -1,11 +1,11 @@
 # sakura.defaultleft
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost信息
 
-The default X coordinate for the main character (`\0`). The character window's left edge is placed at this position.<br />
-The situations in which the default position is used, the units and coordinate system of the value, and the conditions under which it is invalid are the same as for [sakura.defaultx](sakura.defaultx.md). If [sakura.defaultx](sakura.defaultx.md) is also specified, it takes precedence.<br />
-A negative value is the distance from the right edge of the primary monitor's work area to the character's right edge. -0 places it exactly at the right edge. This lets you specify the margin from the right edge of the screen without considering the surface width.\[2.9.13\]<br />
-Prefixing a negative value with another - specifies the negative coordinate itself (--100 is X coordinate -100).\[2.9.13\]<br />
-The same item can also be written in the descript.txt of the [ghost](../../../descript/ghost/descript-txt/sakura.defaultleft.md) or [shell](../../../descript/shell/descript-txt/sakura.defaultleft.md). The SHIORI Resource takes precedence.
+本体侧(`\0`)默认位置的X坐标。将角色窗口的左端放在此位置。<br />
+默认位置的使用场景、值的单位和坐标系，以及使其无效的条件与[sakura.defaultx](sakura.defaultx.md)相同。如果也指定了[sakura.defaultx](sakura.defaultx.md)，则优先使用该项。<br />
+负值表示从主显示器工作区右端到角色右端的距离。-0表示紧贴右端。无需考虑surface宽度，可将其指定为距屏幕右端的边距。\[2.9.13\]<br />
+连续写两个-表示负坐标本身（--100表示X坐标-100）。\[2.9.13\]<br />
+也可以在[ghost](../../../descript/ghost/descript-txt/sakura.defaultleft.md)和[shell](../../../descript/shell/descript-txt/sakura.defaultleft.md)的descript.txt中写入相同项目。SHIORI资源优先。
 
 **対応:** Materia / SSP / CROW

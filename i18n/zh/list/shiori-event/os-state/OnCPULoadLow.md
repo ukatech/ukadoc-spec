@@ -1,9 +1,9 @@
 # OnCPULoadLow
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Triggered when CPU load returns to a low level after being high. (Currently, it is triggered when the load falls below 60% after High has fired.)
+CPU 负载从较高状态恢复到较低状态时触发。（目前在 High 触发后，负载降至 60％ 以下时触发）
 
-- **Reference0**: Current load percentage
+- **Reference0**: 当前负载率％
 
 **対応:** SSP 2.5.56

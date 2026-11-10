@@ -1,8 +1,8 @@
 # `\![execute,ical-post,URL,オプション,オプション,オプション...]`
 
-**カテゴリ:** Unclassified command
+**カテゴリ:** 未分类命令
 
-Send an http post request with [※options](bang-execute-http-options-URL.note.md), parse the response as an iCalendar (RFC 5545) calendar, and then notify the parsed results as events.<br />
-The parsing and notification behavior is the same as [ical-get](bang-execute-ical-get-URL.md). The parameter group is specified in the same way as for http-post.
+使用[※选项](bang-execute-http-options-URL.note.md)发送 http post 请求，并将响应解析为 iCalendar（RFC 5545）日历，然后将解析结果作为事件通知。<br />
+解析和通知的规格与[ical-get](bang-execute-ical-get-URL.md)相同。参数组的指定方式与 http-post 相同。
 
 **対応:** SSP 2.8.90

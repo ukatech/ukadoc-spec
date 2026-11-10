@@ -1,9 +1,9 @@
-# number.yb,coordinate [\*1](../index.md#balloon設定)
+# number.yb,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-Y coordinate of the counter number, measured from the bottom. Same as [number.y](number.y.md); this alias makes it explicit that the bottom edge is the reference point in vertical writing.
+计数器数值的 Y 坐标。从下侧起点。与[number.y](number.y.md)相同，是为了明确表示竖排时以数值下端为基准而提供的别名。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** SSP 2.8.83

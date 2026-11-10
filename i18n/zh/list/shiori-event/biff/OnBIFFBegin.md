@@ -1,9 +1,9 @@
 # OnBIFFBegin
 
-**カテゴリ:** Mail-check event
+**カテゴリ:** 邮件检查事件
 
-Occurs when a mail check is requested to begin.
+收到开始邮件检查的指示时触发。
 
-- **Reference2**: Name of the mail server to check; in SSP and CROW, the account name.
+- **Reference2**: 要检查的邮件服务器名称；对于SSP和CROW，则为账户名。
 
 **対応:** Materia / SSP / CROW

@@ -1,7 +1,7 @@
 # OnVanishCancel
 
-**カテゴリ:** Vanish events
+**カテゴリ:** 消失事件
 
-Occurs when NO is selected in the confirmation dialog.
+在确认对话框中选择NO时触发。
 
 **対応:** Materia / SSP / CROW / Ninix

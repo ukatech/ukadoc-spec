@@ -1,7 +1,7 @@
 # alwaystrayiconvisiblebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name for always showing the tray icon.
+永遠顯示系統匣圖示的項目名稱。
 
 **対応:** Materia / CROW

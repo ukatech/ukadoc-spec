@@ -1,14 +1,14 @@
-# Overall structure
+# 整体结构
 
-## Ghosts and shells
+## ghost 与 shell
 
-Ghost configuration files are placed in the ghost storage folder of the baseware (SSP, materia, etc.).
+ghost 的构成文件放置在 baseware（SSP、materia 等）的 ghost 存放文件夹中。
 
-Every ghost must have exactly one master ghost and one master shell.
+所有 ghost 都必须有一个 master ghost 和 master shell。
 
-From the shell’s perspective, every shell must belong to exactly one ghost.
+从 shell 的角度来看，所有 shell 都必须属于某一个 ghost。
 
-Therefore, the file structure of both is arranged so that the shell is contained within the ghost, as shown below.
+因此，两者的文件结构如下所示，shell 包含在 ghost 中。
 
 ```filetree
 +-(myghost)
@@ -50,11 +50,11 @@ Therefore, the file structure of both is arranged so that the shell is contained
 　　+-thumbnail.png
 ```
 
-## Balloons
+## balloon
 
-Balloons are managed centrally by each baseware, rather than separately for each ghost, and are shared by all ghosts.
+balloon 不是按 ghost 分别管理，而是由一个 baseware 统一管理，并由所有 ghost 共享。
 
-Each balloon’s configuration files are placed under the baseware’s balloon storage folder as shown below.
+各 balloon 的构成文件放置在 baseware 的 balloon 存放文件夹下，结构如下所示。
 
 ```filetree
 +-(myballoon)
@@ -81,79 +81,79 @@ Each balloon’s configuration files are placed under the baseware’s balloon s
 　　+-delete1.txt (delete[数字].txtも追加で認識できる)
 ```
 
-- **(myghost)\\**: The home directory (root folder) of each ghost.
+- **(myghost)\\**：各 ghost 主目录（根文件夹）。
 
-  Alphanumeric folder names are recommended.
+  文件夹名称建议使用英数字。
 
-- **(myghost)\\ghost\\**: The folder for files used internally by the ghost.
+- **(myghost)\\ghost\\**：用于 ghost 内部运行的文件夹。
 
-- **(myghost)\\ghost\\master\\**: The folder used by default for the ghost.
+- **(myghost)\\ghost\\master\\**：ghost 默认使用的文件夹。
 
-  Currently, only master is used (a remnant of the original design).
+  目前只使用 master（这是过去设计遗留下来的）。
 
-For details about the file structure within the ghost folder, see the “[Ghost](ghost.md)” page.
+ghost 文件夹内文件结构的详细信息，请参阅「[ghost](ghost.md)」页面。
 
-For details about makoto.dll, see the “[Translator](translator.md)” page.
+有关 makoto.dll，请参阅「[转换器](translator.md)」页面。
 
-- **(myghost)\\shell\\**: The folder that contains the ghost’s shell folders (groups of files for displaying graphics).
+- **(myghost)\\shell\\**：用于存放 ghost 的 shell（用于显示图形的一组文件）的文件夹。
 
-- **(myghost)\\shell\\master\\**: The folder for the default shell. Required.
+- **(myghost)\\shell\\master\\**：默认 shell 的文件夹。必需。
 
-- **(myghost)\\shell\\(additional_shell)\\**: The folder for an additional shell. The name is arbitrary (alphanumeric names are recommended). Its file structure is the same as master.
+- **(myghost)\\shell\\(additional_shell)\\**：附加 shell 的文件夹。名称任意（建议使用英数字）。文件结构与 master 相同。
 
-  Any number of these folders can exist. If present, they can be selected from owner-draw menus and other places.
+  可以存在任意多个。存在时，可以通过 owner draw 菜单等进行切换选择。
 
-For details about the file structure within the shell folder, see the “[Shell](shell.md)” page.
+shell 文件夹内文件结构的详细信息，请参阅「[shell](shell.md)」页面。
 
-For details about menu_background.png, menu_foreground.png, and menu_sidebar.png, see the “[Owner-draw menu](owner-draw-menu.md)” page.
+有关 menu_background.png、menu_foreground.png、menu_sidebar.png，请参阅「[owner draw 菜单](owner-draw-menu.md)」页面。
 
-For details about makoto.dll, see the “[Translator](translator.md)” page.
+有关 makoto.dll，请参阅「[转换器](translator.md)」页面。
 
-- **(myghost)\\[delete.txt](../descript/install/delete.txt/index.md)**: File deletion settings file.
+- **(myghost)\\[delete.txt](../descript/install/delete.txt/index.md)**：文件删除设置文件。
 
-  See the [linked page](../descript/install/delete.txt/index.md) for details.
+  详情请参阅[链接目标](../descript/install/delete.txt/index.md)。
 
-  Optional.
+  可省略。
 
-- **(myghost)\\[developer_options.txt](../descript/install/developer_options.txt/index.md)**: SSP-only settings file for NAR and update file creation features.
+- **(myghost)\\[developer_options.txt](../descript/install/developer_options.txt/index.md)**：仅限 SSP 使用。用于设置 NAR 和更新文件创建功能的文件。
 
-  See the [linked page](../descript/install/developer_options.txt/index.md) for details.
+  详情请参阅[链接目标](../descript/install/developer_options.txt/index.md)。
 
-  Optional.
+  可省略。
 
-- **(myghost)\\readme.txt or readme.md**: The readme for the entire ghost.
+- **(myghost)\\readme.txt または readme.md**：整个 ghost 的 readme。
 
-  It is common to specify details such as the distributor and distribution source.
+  通常会注明发布者、发布来源等信息。
 
-  You can use a character encoding other than Shift JIS by writing charset,UTF-8 on the first line or including a BOM.
+  在第 1 行写入 charset,UTF-8，或包含 BOM，即可使用 Shift JIS 以外的编码。
 
-  It is opened during installation and can also be opened from owner-draw menus and other places.
+  安装时会打开，也可以通过 owner draw 菜单等打开。
 
-  Optional, but recommended.
+  可以省略，但建议提供。
 
-  Instead of readme.txt, you can use readme.md. In that case, Markdown formatting is interpreted, and the file is displayed with formatting such as text sizes and tables.<br />
-  Embedded images using `\![画像説明]`(画像パス) are also interpreted, but can only be used when the image path is relative, the file actually exists inside the ghost, and the image is in PNG or JPEG format.
+  可以使用 readme.md 代替 readme.txt，此时会解析 Markdown 格式，并以带有文字大小、表格等装饰的形式显示。<br />
+  也可以解析图像嵌入 `\![画像説明]`(画像パス)，但只有在图像路径为相对路径、文件实际存在于 ghost 中，并且图像为 PNG 或 JPEG 时才能使用。
 
-- **(myghost)\\terms.txt or terms.md**: Displays the terms of use. A dialog displaying this content appears before a NAR/ZIP file is installed.
+- **(myghost)\\terms.txt または terms.md**：显示使用条款。安装 NAR/ZIP 文件前，会弹出显示其内容的对话框。
 
-  Since installation is interrupted while the dialog is displayed, include this file only when absolutely necessary.
+  由于会中断安装并显示对话框，因此只在确实需要时才添加。
 
-  As with the readme, you can use a character encoding other than Shift JIS by writing charset,UTF-8 on the first line or including a BOM.
+  与 readme 一样，在第 1 行写入 charset,UTF-8，或包含 BOM，即可使用 Shift JIS 以外的编码。
 
-  Optional, and *should be omitted if not needed*.
+  可以省略，而且*如果不需要，建议省略*。
 
-  terms.md can be used under the same conditions as readme.md.
+  terms.md 也可以在与 readme.md 相同的条件下使用。
 
-- **(myghost)\\thumbnail.png**: The thumbnail displayed when selecting a ghost in the menu tree.
+- **(myghost)\\thumbnail.png**：在菜单树中选择 ghost 时显示的缩略图。
 
-  Supported image formats are PNG and JPG.
+  可使用的图像格式为 PNG 或 JPG。
 
-  Renaming a PNG to PNR makes the pixel at the top-left of the image (coordinates 0,0) transparent, along with all pixels of the same color.
+  将 PNG 重命名为 PNR 后，图像左上角 1 个点（坐标 0,0）的同色区域会变为透明。
 
-  Optional.
+  可以省略。
 
-- **(myballoon)\\**: The home directory (root folder) of each balloon.
+- **(myballoon)\\**：各 balloon 主目录（根文件夹）。
 
-  Alphanumeric folder names are recommended.
+  文件夹名称建议使用英数字。
 
-For details about the file structure within the balloon folder, see the “[Balloon](balloon.md)” page.
+balloon 文件夹内文件结构的详细信息，请参阅「[balloon](balloon.md)」页面。

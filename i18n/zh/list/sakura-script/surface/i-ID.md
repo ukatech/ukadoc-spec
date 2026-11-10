@@ -1,9 +1,9 @@
 # `\i[ID番号]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Display the surface animation with the specified ID on the current scope.<br />
-A string defined by surfaces.txt's animation\*.name can be used instead of the ID.
+在当前 scope 一侧显示指定 ID 的 surface 动画。<br />
+可以使用 surfaces.txt 中由 animation\*.name 定义的字符串代替 ID。
 
 **対応:** Materia / SSP / CROW / Ninix
 

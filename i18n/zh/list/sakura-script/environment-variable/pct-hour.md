@@ -1,7 +1,7 @@
 # %hour
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Current hour.
+当前小时。
 
 **対応:** Materia / SSP / CROW / Ninix

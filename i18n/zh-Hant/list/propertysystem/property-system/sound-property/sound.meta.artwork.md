@@ -1,9 +1,9 @@
 # meta.artwork
 
-**カテゴリ:** Property System \> Sound Property Names
+**カテゴリ:** 屬性系統 \> 音效屬性名稱
 
-Image file path of the target media's album artwork.<br />
-\[2.9.32\] SSP retrieves ID3 images, FLAC PICTURE blocks, and Ogg (Vorbis / Opus) METADATA_BLOCK_PICTURE itself. If there are multiple images, it prioritizes the cover (front cover); if there is no cover, it uses the first image. Other formats (such as MP4) are retrieved from the OS.<br />
-See [here](sound.meta.artwork.note.md) for behavior when there are no tags or retrieval fails.
+目標媒體的專輯封面圖片檔案路徑。<br />
+\[2.9.32\] SSP 會自行讀取 ID3 圖片、FLAC 的 PICTURE 區塊、Ogg（Vorbis / Opus）的 METADATA_BLOCK_PICTURE。若有多張圖片，會優先使用封面（正面封面）；若沒有封面，則使用第一張圖片。其他格式（例如 MP4）則從 OS 取得。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

@@ -1,6 +1,6 @@
-# App "Kinoko"
+# 應用程式「蘑菇」
 
-- Published by: [http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/) ([archive](https://web.archive.org/web/20241217204841/http://koumei.la.coocan.jp/cbs/software/kinoko/))
+- 發布者：[http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/)（[封存](https://web.archive.org/web/20241217204841/http://koumei.la.coocan.jp/cbs/software/kinoko/)）
 
 **対応:** Materia / SSP / CROW
 

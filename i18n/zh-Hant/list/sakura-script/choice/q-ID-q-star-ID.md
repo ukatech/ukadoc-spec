@@ -1,9 +1,9 @@
-# `\q[ID][タイトル]`または`\q*[ID][タイトル]`
+# `\q[ID][タイトル]`或`\q*[ID][タイトル]`
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-\[Legacy specification\] Displays choices. \* is a sequential number.<br />
-After selection, the SHIORI event with the ID number starts.<br />
-Unlike the above syntax, each choice appears on a new line.
+\[舊規格\]顯示選項。\*為連續編號<br />
+選擇後，會觸發 ID 編號的 SHIORI 事件。<br />
+與上述指令不同，選項會換行。
 
 **対応:** Materia / SSP

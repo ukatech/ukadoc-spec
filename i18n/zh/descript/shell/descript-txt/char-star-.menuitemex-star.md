@@ -1,10 +1,10 @@
-# char\*.menuitemex\*,menu name,ID
+# char\*.menuitemex\*、菜单名、ID
 
 **カテゴリ:** descript.txt
 
-Display the dressup with the specified animation ID at position \* in the dressup menu, under the hierarchy named "menu name". \* is a sequential number starting from 0. (For the third and later characters)<br />
-Specify "-" instead of an ID to display a separator line at that position.
+在dressup菜单中\*所对应的位置，将该动画ID的dressup显示在名为“菜单名”的层级下。\*是从0开始的连续编号。（第三个及之后的角色）<br />
+指定“-”代替ID时，会在该位置显示分隔线。
 
-**既定値:** no action
+**既定値:** 不执行任何操作
 
 **対応:** SSP

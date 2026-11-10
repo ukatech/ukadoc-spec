@@ -1,12 +1,12 @@
 # OnScheduleRead
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 日历事件
 
-Occurs when the mouse rests over a calendar icon and its schedule is read.
+鼠标停留在日历图标上、读取该日程时触发。
 
-- **Reference0**: Event [type](caption_scheduletype.md).
-- **Reference1**: Event content (caption)
-- **Reference2**: Additional data (subtitle)
-- **Reference3**: Script (script)
+- **Reference0**: 事件的[类型](caption_scheduletype.md)。
+- **Reference1**: 事件内容(caption)
+- **Reference2**: 附加数据(subtitle)
+- **Reference3**: 脚本(script)
 
 **対応:** SSP

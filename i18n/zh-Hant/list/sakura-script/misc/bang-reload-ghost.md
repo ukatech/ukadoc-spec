@@ -1,8 +1,8 @@
 # `\![reload,ghost]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads the entire ghost.
+重新載入整個ghost。
 
 **対応:** SSP
 

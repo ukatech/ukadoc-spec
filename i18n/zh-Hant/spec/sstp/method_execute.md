@@ -1,9 +1,9 @@
-# Method: EXECUTE
+# 方法：EXECUTE
 
-The EXECUTE method can be used to retrieve various kinds of ghost information and execute various commands that do not use Sakura Script.<br />
-Executing this method does not make the ghost speak, but may change its internal state.
+透過 EXECUTE 方法，可以取得 ghost 的各種資訊，或執行不透過 Sakura Script 的各種命令。<br />
+執行此方法時，ghost 不會說話，但內部狀態可能會被改寫。
 
-## EXECUTE example
+## EXECUTE 範例
 
 ```
 EXECUTE SSTP/1.1
@@ -12,90 +12,90 @@ Sender: SSTPクライアント
 Command: GetName
 ```
 
-## Request-specific headers
+## request 專用標頭
 
-- **Command or Command\[param1,param2...\]**: The command to execute. The operation performed and the returned information are described below.<br />
-  Parameters to pass to the command are specified after the square brackets.
-- **Reference\* \[SSP\]**: Parameters can also be specified using the Reference0 and subsequent headers instead of using square brackets.
+- **Command 或 Command\[param1,param2...\]**: 要執行的命令。執行內容與傳回的資訊如下所述。<br />
+  方括號之後可指定要傳遞給命令的參數。
+- **Reference\* \[SSP\]**: 也可以使用 Reference0～標頭指定參數，取代方括號指定方式。
 
-See below for the strings that can be specified in the Command header and the results returned as "additional data" in the response.
+可指定於 Command 標頭的字串，以及 response 的「附加資料」所傳回的結果，請參閱下文。
 
-## Commands that can be specified in the Command header and the additional data returned
+## 可指定於 Command 標頭的命令與傳回的附加資料
 
-- **GetName**: The names of the running ghost (`\0` name), (`\1` name), comma-separated
-- **GetNames \[SSP\]**: A list of the currently installed `\0` names, separated by line breaks and terminated by a blank line.
-- **GetFMO \[SSP 2.5.57\] \[リモート制限あり\]**: Retrieves information equivalent to the contents of [FMO](../fmo-mutex/index.md).<br />
-  However, it is limited to data managed internally by applications communicating over SSTP, and differs from the original FMO, which is shared by the concurrently running applications.<br />
-  This is mainly used by console applications that have no window and cannot send Direct SSTP, to implement functionality equivalent to Direct SSTP using only Socket SSTP and the ReceiverGhostHWnd header.<br />
-  Results are separated by line breaks and terminated by a blank line.<br />
-  For remote requests, path information is omitted, and the headers and hwnd are replaced with dummy values.
-- **GetGhostName \[SSP\]**: The name of the running ghost itself (the name in descript.txt)
-- **GetShellName \[SSP\]**: The name of the shell currently used by the running ghost
-- **GetBalloonName \[SSP\]**: The name of the balloon currently used by the running ghost
-- **GetVersion**: The version of the baseware (the running software)
-- **GetGhostNameList \[SSP 2.6.53\]**: A line-break-separated list of the names (the names in descript.txt) of all ghosts recognized by SSP
-- **GetShellNameList \[SSP 2.6.53\]**: A line-break-separated list of the names (the names in descript.txt) of all shells recognized by the running ghost
-- **GetBalloonNameList \[SSP 2.6.53\]**: A line-break-separated list of the names (the names in descript.txt) of all balloons recognized by SSP
-- **GetHeadlineNameList \[SSP 2.6.53\]**: A line-break-separated list of the names (the names in descript.txt) of all headline sensors recognized by SSP
-- **GetPluginNameList \[SSP 2.6.53\]**: A line-break-separated list of the names (the names in descript.txt) of all plugins recognized by SSP
-- **GetShortVersion \[SSP 2.6.53\]**: The version of the baseware (the running software), containing only the period-separated version number<br />
-  A simple comparison with values such as ssp.full.version in [version.json](https://ssp.shillest.net/archive/version.json) can be used to check whether this is the latest version.
-- **GetStatus \[SSP 2.8.94\]**: The current execution state of the running ghost. This is the same as the Status header in a SHIORI/3.0 request or [currentghost.status](../../list/propertysystem/property-system/currentghost.status.md) in the property system.<br />
-  If multiple states apply, they are comma-separated. See [※SHIORI Status header](../../list/propertysystem/property-system/currentghost.status.md) for the meaning of each value.<br />
-  If no state applies, there is no additional data (status code 200).
-- **Quiet \[リモート不可\]**: Remains silent until Restore is executed or 16 seconds have elapsed. No additional data (success with a status code in the 200 range)
-- **Restore**: Cancels Quiet. No additional data (success with a status code in the 200 range)
-- **CompressArchive \[SSP 2.7.23\] \[リモート不可\]**: Compresses the files in the specified folder into a ZIP file. If the destination file has a `.7z` extension, it is saved in 7z format; otherwise, it is saved in ZIP format (even if `.lzh` or `.cab` is specified, the contents are ZIP). Hidden files and folders are not included.<br />
-  Parameter 0: Compressed file name (specify the full path; relative paths cannot be specified)<br />
-  Parameter 1: Full path of the folder to compress<br />
-  Parameter 2 and subsequent parameters: Options (optional)<br />
-  The available options are as follows.<br />
-  --event=event identifier……Specifying an event identifier continues compression after the response, and the event occurs when it finishes. If the identifier begins with On, the event with that identifier occurs; otherwise, OnCompressArchiveComplete or OnCompressArchiveFailure occurs. If omitted, the response is not returned until processing is complete.<br />
-  --password=password……Enables AES-encrypted ZIP using the specified password.<br />
-  See [OnCompressArchiveComplete](../../list/shiori-event/other/OnCompressArchiveComplete.md) and [OnCompressArchiveFailure](../../list/shiori-event/other/OnCompressArchiveFailure.md) for the specifications of events after the operation.<br />
-  \[SSP 2.9.25\] This can also be called from SAORI over DirectSSTP using [internal_file's CompressArchive](../saori-ex/internal_file/internal_file.CompressArchive.md) (relative paths and `/` separators can also be used).<br />
-  \[SSP 2.9.33\] If Parameter 1 is not a folder (for example, if it is a file path), compression fails with 400 without attempting to compress (if `--event=` is specified, the failure event—OnCompressArchiveFailure, or the identifier with `Failure` appended—occurs with `invalid parameter`). Before this version, passing a file path caused compression to fail with `file not found`.<br />
-  For security reasons, the destination is restricted to locations under folders managed by SSP (locations specified in the "Folder" settings, such as the ghost and balloon folders).<br />
-  This restriction may be tightened as appropriate, so it is safest to limit the destination to a location under the folder containing the ghost's own data.<br />
-  No additional data (success with a status code in the 200 range)
-- **ExtractArchive \[SSP 2.7.23\] \[リモート不可\]**: Extracts the specified archive. In addition to ZIP, formats such as 7z and tar can also be extracted (see [formats supported by internal_file's ExtractArchive](../saori-ex/internal_file/internal_file.ExtractArchive.md#対応する形式)).<br />
-  Parameter 0: Compressed file name (specify the full path; relative paths cannot be specified)<br />
-  Parameter 1: Full path of the destination folder<br />
-  Parameter 2 and subsequent parameters: Options (optional)<br />
-  The available options are as follows.<br />
-  --event=event identifier……Specifying an event identifier continues extraction after the response, and the event occurs when it finishes. If the identifier begins with On, the event with that identifier occurs; otherwise, OnExtractArchiveComplete or OnExtractArchiveFailure occurs. If omitted, the response is not returned until processing is complete.<br />
-  --password=password……Extracts using the specified password. \[SSP 2.9.26\] The password prompt is not displayed. If a password is required but not specified, or if it is incorrect, extraction fails without displaying a dialog (the response is 500; if an event is specified, the identifier plus Failure, or [OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md), occurs). Before \[SSP 2.9.25\], this option was ignored and a dialog was displayed.<br />
-  \[SSP 2.9.26\] Even if the destination is specified as an absolute path containing `..`, it is rejected if the resolved path is outside a folder managed by SSP (previously, extraction outside managed folders was allowed).<br />
-  See [OnExtractArchiveComplete](../../list/shiori-event/other/OnExtractArchiveComplete.md) and [OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md) for the specifications of events after the operation.<br />
-  \[SSP 2.9.25\] This can also be called from SAORI over DirectSSTP using [internal_file's ExtractArchive](../saori-ex/internal_file/internal_file.ExtractArchive.md) (relative paths and `/` separators can also be used).<br />
-  For security reasons, extraction is restricted to locations under folders managed by SSP (locations specified in the "Folder" settings, such as the ghost and balloon folders).<br />
-  This restriction may be tightened as appropriate, so it is safest to limit the destination to a location under the folder containing the ghost's own data.<br />
-  No additional data (success with a status code in the 200 range)
-- **DumpSurface \[SSP 2.5.98\] \[リモート不可\]**: Outputs the composited surface image to the specified directory. The parameters are the same as for [`\![execute,dumpsurface]`](../../list/sakura-script/misc/bang-execute-dumpsurface-ID-prefix-ID-ID.md).<br />
-  However, an event ID cannot be specified; specify the directory, scope ID, surface list, prefix, zero-position cropping, and animation ID \[SSP 2.9.05\] in that order.<br />
-  \[SSP 2.9.08\] As with the SakuraScript version, parameters can also be specified in any order using the --dir= / --scope= / --surface= / --prefix= / --fromzero= / --animation= formats, and may be mixed with the positional format described above (parameters that do not begin with -- are assigned in the order they appear, following the order above). All parameters except the directory can be omitted; if the scope ID is omitted, it defaults to 0. --event= is ignored.<br />
-  Since commas cannot be written in the parameters of the DumpSurface\[...\] format, specify surface lists containing commas using Reference0 or a subsequent Reference header.<br />
-  Note that the response is not returned until processing is complete.<br />
-  No additional data (success with a status code in the 200 range)
-- **MoveAsync \[SSP\] \[リモート不可\]**: Executes the same operation as [`\![moveasync]`](../../list/sakura-script/surface/bang-moveasync.note.md) without going through Sakura Script. Parameters are specified in the same way as in the Sakura Script version.<br />
-  A move without async cannot be executed because the response cannot be returned before the SSTP timeout and this can cause a deadlock.<br />
-  No additional data (success with a status code in the 200 range)
-- **SetTrayIcon \[SSP\] \[リモート不可\]**: Executes the same operation as [`\![set,tasktrayicon]`](../../list/sakura-script/event/bang-set-tasktrayicon-.ico-duration-eq-runcount-eq.md) without going through Sakura Script. Parameters are specified in the same way as in the Sakura Script version.<br />
-  No additional data (success with a status code in the 200 range)
-- **SetTrayBalloon \[SSP\] \[リモート不可\]**: Executes the same operation as [`\![set,trayballoon]`](../../list/sakura-script/event/bang-set-trayballoon.md) without going through Sakura Script. Parameters are specified in the same way as in the Sakura Script version.<br />
-  No additional data (success with a status code in the 200 range)
-- **SetProperty \[SSP\] \[リモート不可\]**: Writes a value to the [property system](../../list/propertysystem/index.md).<br />
-  Parameter 0: Property name<br />
-  Parameter 1: Value to set<br />
-  No additional data (success with a status code in the 200 range)
-- **GetProperty \[SSP\]**: Reads a value from the [property system](../../list/propertysystem/index.md).<br />
-  Parameter 0: Property name<br />
-  The additional data is the retrieved property value.
-- **SetCookie**: Writes to a general-purpose data storage area saved separately for each client name specified by Sender.<br />
-  This is intended to be used in the same way as browser "cookies".<br />
-  Parameter 0: Cookie name<br />
-  Parameter 1: Value to set<br />
-  No additional data (success with a status code in the 200 range)
-- **GetCookie**: Reads from the general-purpose data storage area saved separately for each client name specified by Sender.<br />
-  Parameter 0: Cookie name<br />
-  The additional data is the retrieved cookie value.
+- **GetName**: 目前執行中的 ghost 的 (`\0`名稱),(`\1`名稱)，以逗號分隔
+- **GetNames \[SSP\]**: 目前已安裝的`\0`名稱清單，以換行分隔。以空行結尾。
+- **GetFMO \[SSP 2.5.57\] \[遠端使用受限\]**: 取得與 [FMO](../fmo-mutex/index.md) 內容相同的資訊。<br />
+  但僅限於透過 SSTP 通訊的應用程式內部所管理的部分，與原本由同時執行中的應用程式群組共用的 FMO 不同。<br />
+  主要用於沒有視窗、無法傳送 Direct SSTP 的主控台應用程式等，讓它們只透過 Socket SSTP 使用 ReceiverGhostHWnd 標頭，實現相當於 Direct SSTP 的功能。<br />
+  以換行分隔，並以空行結尾。<br />
+  若要求來自遠端，各路徑資訊會省略，標頭與 hwnd 則會替換為虛設值。
+- **GetGhostName \[SSP\]**: 目前執行中的 ghost 本體名稱（descript.txt 的 name）
+- **GetShellName \[SSP\]**: 目前執行中的 ghost 所使用的 shell 名稱
+- **GetBalloonName \[SSP\]**: 目前執行中的 ghost 所使用的 balloon 名稱
+- **GetVersion**: baseware（執行中的軟體）版本
+- **GetGhostNameList \[SSP 2.6.53\]**: SSP 所識別的所有 ghost 名稱（descript.txt 的 name）清單，以換行分隔
+- **GetShellNameList \[SSP 2.6.53\]**: 目前執行中的 ghost 所識別的所有 shell 名稱（descript.txt 的 name）清單，以換行分隔
+- **GetBalloonNameList \[SSP 2.6.53\]**: SSP 所識別的所有 balloon 名稱（descript.txt 的 name）清單，以換行分隔
+- **GetHeadlineNameList \[SSP 2.6.53\]**: SSP 所識別的所有 headline sensor 名稱（descript.txt 的 name）清單，以換行分隔
+- **GetPluginNameList \[SSP 2.6.53\]**: SSP 所識別的所有 plugin 名稱（descript.txt 的 name）清單，以換行分隔
+- **GetShortVersion \[SSP 2.6.53\]**: baseware（執行中的軟體）版本（僅包含以句點分隔的版本號）<br />
+  與 [version.json](https://ssp.shillest.net/archive/version.json) 的 ssp.full.version 等項目進行簡單比較，即可檢查是否為最新版
+- **GetStatus \[SSP 2.8.94\]**: 目前執行中的 ghost 狀態。內容與 SHIORI/3.0 request 的 Status 標頭，以及屬性系統的 [currentghost.status](../../list/propertysystem/property-system/currentghost.status.md) 相同。<br />
+  符合多種狀態時，以逗號分隔。各值的意義請參閱[※SHIORI Status 標頭](../../list/propertysystem/property-system/currentghost.status.md)。<br />
+  若不符合任何狀態，則沒有附加資料（狀態碼 200）
+- **Quiet \[不可遠端使用\]**: 保持安靜，直到執行 Restore 或經過 16 秒為止。沒有附加資料（狀態碼為 200 番台即表示成功）
+- **Restore**: 解除 Quiet。沒有附加資料（狀態碼為 200 番台即表示成功）
+- **CompressArchive \[SSP 2.7.23\] \[不可遠端使用\]**: 將指定資料夾中的檔案壓縮成 ZIP 檔案。若壓縮目的地的副檔名是`.7z`，則使用 7z 格式；其他情況則使用 ZIP 格式（即使指定`.lzh`或`.cab`，內容仍是 ZIP）。不會包含隱藏檔案與隱藏資料夾。<br />
+  參數0：壓縮檔名稱（以完整路徑指定，不可指定相對路徑）<br />
+  參數1：要壓縮之資料夾的完整路徑<br />
+  參數2 之後：選項（可省略）<br />
+  選項如下。<br />
+  --event=事件識別碼……指定事件識別碼時，會在 response 後繼續壓縮，完成後觸發事件。若識別碼以 On 開頭，則觸發該識別碼的事件；否則觸發 OnCompressArchiveComplete 或 OnCompressArchiveFailure。省略時，會等到處理完成才傳回 response。<br />
+  --password=密碼……使用指定的密碼啟用 AES 加密 ZIP。<br />
+  執行後的事件規格，請參閱 [OnCompressArchiveComplete](../../list/shiori-event/other/OnCompressArchiveComplete.md)・[OnCompressArchiveFailure](../../list/shiori-event/other/OnCompressArchiveFailure.md)。<br />
+  \[SSP 2.9.25\] 從 SAORI over DirectSSTP 呼叫時，也可使用 [internal_file 的 CompressArchive](../saori-ex/internal_file/internal_file.CompressArchive.md)（也可以指定相對路徑或使用`/`分隔）。<br />
+  \[SSP 2.9.33\] 參數1不是資料夾（例如檔案路徑）時，不會進行壓縮，並以 400 失敗（若有指定`--event=`，則會以 `invalid parameter` 觸發失敗事件（OnCompressArchiveFailure，或在識別碼後加上`Failure`）。在此之前，傳入檔案路徑時會因壓縮失敗而回報 `file not found`。<br />
+  基於安全性考量，壓縮目的地僅限於 SSP 管理的資料夾（ghost 資料夾、balloon 資料夾等由「資料夾」設定指定的位置）及其子資料夾。<br />
+  此外，此限制可能會視需要加強，因此最好將目的地限制在存放 ghost 自身資料的資料夾及其子資料夾。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **ExtractArchive \[SSP 2.7.23\] \[不可遠端使用\]**: 解壓縮指定的封存檔。除了 ZIP，也可以解壓縮 7z、tar 等格式（支援的格式請參閱 [internal_file 的 ExtractArchive](../saori-ex/internal_file/internal_file.ExtractArchive.md#対応する形式)）。<br />
+  參數0：壓縮檔名稱（以完整路徑指定，不可指定相對路徑）<br />
+  參數1：解壓縮目的地資料夾的完整路徑<br />
+  參數2 之後：選項（可省略）<br />
+  選項如下。<br />
+  --event=事件識別碼……指定事件識別碼時，會在 response 後繼續解壓縮，完成後觸發事件。若識別碼以 On 開頭，則觸發該識別碼的事件；否則觸發 OnExtractArchiveComplete 或 OnExtractArchiveFailure。省略時，會等到處理完成才傳回 response。<br />
+  --password=密碼……使用指定的密碼解壓縮。\[SSP 2.9.26\] 不會顯示密碼輸入對話方塊。需要密碼但未指定密碼，或密碼錯誤時，不會顯示對話方塊並會失敗（response 為 500；若有指定事件，則會觸發識別碼＋Failure，或 [OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md)）。\[SSP 2.9.25\]以前會忽略此選項，並顯示對話方塊。<br />
+  \[SSP 2.9.26\] 即使將包含`..`的絕對路徑指定為解壓縮目的地，若解析後的位置在 SSP 管理資料夾之外，仍會遭到拒絕（以前可以解壓縮至管理範圍之外）。<br />
+  執行後的事件規格，請參閱 [OnExtractArchiveComplete](../../list/shiori-event/other/OnExtractArchiveComplete.md)・[OnExtractArchiveFailure](../../list/shiori-event/other/OnExtractArchiveFailure.md)。<br />
+  \[SSP 2.9.25\] 從 SAORI over DirectSSTP 呼叫時，也可使用 [internal_file 的 ExtractArchive](../saori-ex/internal_file/internal_file.ExtractArchive.md)（也可以指定相對路徑或使用`/`分隔）。<br />
+  基於安全性考量，解壓縮目的地僅限於 SSP 管理的資料夾（ghost 資料夾、balloon 資料夾等由「資料夾」設定指定的位置）及其子資料夾。<br />
+  此外，此限制可能會視需要加強，因此最好將目的地限制在存放 ghost 自身資料的資料夾及其子資料夾。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **DumpSurface \[SSP 2.5.98\] \[不可遠端使用\]**: 將合成後的 surface 圖片輸出至指定目錄。參數與[`\![execute,dumpsurface]`](../../list/sakura-script/misc/bang-execute-dumpsurface-ID-prefix-ID-ID.md)相同。<br />
+  但不可指定事件 ID，並依序指定目錄、scope ID、surface 清單、prefix、從零位置裁切、動畫 ID \[SSP 2.9.05\]。<br />
+  \[SSP 2.9.08\] 與 Sakura Script 版本相同，也可以使用 --dir= / --scope= / --surface= / --prefix= / --fromzero= / --animation= 的格式，以任意順序指定；也可與上述順序指定方式混用（不以 -- 開頭的參數會依出現順序，按照上述順序分配）。除了目錄之外皆可省略；省略 scope ID 時會使用 0。--event= 會被忽略。<br />
+  DumpSurface\[...\] 格式無法在參數中輸入逗號，因此含有逗號的 surface 清單請使用 Reference0 之後指定。<br />
+  請注意，必須等到處理完成才會傳回 response。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **MoveAsync \[SSP\] \[不可遠端使用\]**: 不透過 Sakura Script，執行與 [`\![moveasync]`](../../list/sakura-script/surface/bang-moveasync.note.md)相同的操作。參數指定方式與 Sakura Script 版本相同。<br />
+  由於無法在 SSTP 逾時前傳回 response，且可能造成死結，因此無法執行不含 async 的 move。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **SetTrayIcon \[SSP\] \[不可遠端使用\]**: 不透過 Sakura Script，執行與 [`\![set,tasktrayicon]`](../../list/sakura-script/event/bang-set-tasktrayicon-.ico-duration-eq-runcount-eq.md)相同的操作。參數指定方式與 Sakura Script 版本相同。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **SetTrayBalloon \[SSP\] \[不可遠端使用\]**: 不透過 Sakura Script，執行與 [`\![set,trayballoon]`](../../list/sakura-script/event/bang-set-trayballoon.md)相同的操作。參數指定方式與 Sakura Script 版本相同。<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **SetProperty \[SSP\] \[不可遠端使用\]**: 將值寫入[屬性系統](../../list/propertysystem/index.md)。<br />
+  參數0：屬性名稱<br />
+  參數1：要設定的值<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **GetProperty \[SSP\]**: 從[屬性系統](../../list/propertysystem/index.md)讀取值。<br />
+  參數0：屬性名稱<br />
+  附加資料為取得的屬性值。
+- **SetCookie**: 寫入依 Sender 指定的用戶端名稱分別儲存的通用資料區域。<br />
+  預期用途與瀏覽器的「Cookie」相同。<br />
+  參數0：Cookie 名稱<br />
+  參數1：要設定的值<br />
+  沒有附加資料（狀態碼為 200 番台即表示成功）
+- **GetCookie**: 從依 Sender 指定的用戶端名稱分別儲存的通用資料區域讀取資料。<br />
+  參數0：Cookie 名稱<br />
+  附加資料為取得的 Cookie 值。

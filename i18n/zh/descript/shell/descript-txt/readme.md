@@ -1,8 +1,8 @@
-# readme,File name
+# readme,文件名
 
 **カテゴリ:** descript.txt
 
-File name of the shell description text file opened during installation or from the menu.
+安装时或从菜单打开的 shell 说明文本文件名。
 
 **既定値:** readme.txt
 

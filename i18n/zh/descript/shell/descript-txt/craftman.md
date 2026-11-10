@@ -1,9 +1,9 @@
-# craftman,author name
+# craftman、作者名
 
 **カテゴリ:** descript.txt
 
-The shell author’s name. Half-width alphanumeric characters only.
+该shell的作者名。仅限半角英数字。
 
-**既定値:** no value
+**既定値:** 无值
 
 **対応:** Materia / SSP / CROW

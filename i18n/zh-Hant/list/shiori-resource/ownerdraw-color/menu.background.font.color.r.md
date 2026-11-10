@@ -1,7 +1,7 @@
 # menu.background.font.color.r
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字色彩
 
-Background text color, red (0–255)
+背景文字紅色（0～255）
 
 **対応:** Materia / SSP / CROW / Ninix

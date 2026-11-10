@@ -1,11 +1,11 @@
 # animation\*.option,background
 
-**カテゴリ:** surface brace
+**カテゴリ:** surface块
 
-Animation option for execution in the background.<br />
-Animations with the background option run behind the base surface (farther from the viewer).<br />
-The \* following animation is the animationID (the same as the \* in animation\*.interval).
+动画的背景运行选项。<br />
+指定background选项的动画将在基础surface后方（屏幕深处）运行。<br />
+animation后面的\*部分为animationID（与animation\*.interval中的\*相同）。
 
-**既定値:** No effect
+**既定値:** 无效果
 
 **対応:** SSP

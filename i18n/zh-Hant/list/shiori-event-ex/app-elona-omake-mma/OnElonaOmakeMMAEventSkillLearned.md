@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventSkillLearned
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the PC learns a skill from a trainer.
+從訓練師習得技能時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Skill name.
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 技能名稱。

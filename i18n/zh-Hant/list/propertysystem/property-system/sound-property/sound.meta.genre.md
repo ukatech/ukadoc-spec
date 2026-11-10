@@ -1,9 +1,9 @@
 # meta.genre
 
-**カテゴリ:** プロパティシステム \> サウンドプロパティ名
+**カテゴリ:** 屬性系統 \> 音效屬性名稱
 
-The genre recorded in the tags of the target media.<br />
-If multiple genres are recorded, they are joined with "; " (a semicolon followed by a half-width space).<br />
-See [here](sound.meta.artwork.note.md) for behavior when there are no tags or they cannot be retrieved.
+目標媒體標籤中記錄的類型。<br />
+若記錄了多個類型，會以「; 」分隔並串接（分號和半形空格）。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

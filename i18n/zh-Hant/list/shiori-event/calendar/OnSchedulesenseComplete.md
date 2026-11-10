@@ -1,14 +1,14 @@
 # OnSchedulesenseComplete
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 行事曆事件
 
-Occurs when the schedule sensor finishes processing.<br />
-This is sent to all running ghosts, not to a specific ghost.
+行程感測器完成處理時觸發。<br />
+此通知會傳送給所有正在執行的 ghost，而非特定 ghost。
 
-**Occurs only during a manual update.** It does not occur during periodic checks, as [described below](caption_schedulesensetiming.md).<br />
-This event also occurs as a success when data is retrieved but there are no updates (for example, 304 Not Modified or identical content).
+**只有手動更新時才會觸發。**定期檢查時則如[下文](caption_schedulesensetiming.md)所述，不會觸發。<br />
+即使成功取得資料但沒有更新（例如 304 Not Modified 或內容相同），仍會視為成功並觸發此事件。
 
-- **Reference0**: Schedule sensor name
-- **Reference1**: Number of schedule items returned by the schedule sensor
+- **Reference0**: 行程感測器名稱
+- **Reference1**: 行程感測器傳回的行程資料筆數
 
 **対応:** SSP

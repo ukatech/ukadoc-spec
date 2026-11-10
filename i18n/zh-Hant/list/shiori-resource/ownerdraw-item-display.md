@@ -1,6 +1,6 @@
-# Owner Draw Menu Item Display
+# owner draw 選單項目顯示
 
-For each of the following item names, an event exists to control the item's display by replacing "caption" with "visible".<br />
-A return value of 1 displays the item; 0 hides it (making it unclickable).
+將下列項目名稱中的「caption」替換成「visible」後，會各自成為控制該項目顯示狀態的事件。<br />
+回傳值為 1 時顯示，為 0 時隱藏（無法點擊）。
 
 **対応:** Materia / SSP / CROW

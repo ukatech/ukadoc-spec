@@ -1,8 +1,8 @@
-# Axis Name List
+# 軸名稱一覽
 
-- **LeftStickX**: Left stick horizontal (right is positive, left is negative). Normalized value range: -1.0～1.0.
-- **LeftStickY**: Left stick vertical (up is positive, down is negative). Normalized value range: -1.0～1.0.
-- **RightStickX**: Right stick horizontal (right is positive, left is negative). Normalized value range: -1.0～1.0.
-- **RightStickY**: Right stick vertical (up is positive, down is negative). Normalized value range: -1.0～1.0.
-- **LeftTrigger**: Left trigger (the farther it is pulled, the larger the value). Normalized value range: 0.0～1.0.
-- **RightTrigger**: Right trigger (the farther it is pulled, the larger the value). Normalized value range: 0.0～1.0.
+- **LeftStickX**: 左搖桿水平軸（右為正，左為負）。正規化值範圍為 -1.0～1.0。
+- **LeftStickY**: 左搖桿垂直軸（上為正，下為負）。正規化值範圍為 -1.0～1.0。
+- **RightStickX**: 右搖桿水平軸（右為正，左為負）。正規化值範圍為 -1.0～1.0。
+- **RightStickY**: 右搖桿垂直軸（上為正，下為負）。正規化值範圍為 -1.0～1.0。
+- **LeftTrigger**: 左扳機（越用力扣下，值越大）。正規化值範圍為 0.0～1.0。
+- **RightTrigger**: 右扳機（越用力扣下，值越大）。正規化值範圍為 0.0～1.0。

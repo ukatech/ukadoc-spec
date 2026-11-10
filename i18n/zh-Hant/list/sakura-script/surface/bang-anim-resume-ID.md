@@ -1,8 +1,8 @@
 # `\![anim,resume,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Resume playback after pausing as described above.
+解除上述的暫停狀態。
 
 **対応:** SSP
 

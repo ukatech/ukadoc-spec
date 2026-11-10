@@ -1,7 +1,7 @@
 # preload
 
-**カテゴリ:** Property system \> Sound property name
+**カテゴリ:** 屬性系統 \> 聲音屬性名稱
 
-Returns 1 if the target media was opened with `\![sound,preload]`, otherwise 0.
+目標媒體是以 `\![sound,preload]` 開啟時為 1，否則為 0。
 
 **対応:** SSP 2.8.72

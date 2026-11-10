@@ -1,8 +1,8 @@
 # `\![leave,onlinemode]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Force the online marker to be hidden.
+強制隱藏線上標記。
 
 **対応:** SSP
 

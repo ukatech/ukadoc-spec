@@ -1,6 +1,6 @@
-# Plugin "Spectre"
+# plugin「Spectre」
 
-- Publisher: [https://ukagaka.zichqec.com/plugin/spectre](https://ukagaka.zichqec.com/plugin/spectre)
+- 發布來源：[https://ukagaka.zichqec.com/plugin/spectre](https://ukagaka.zichqec.com/plugin/spectre)
 
 **対応:** SSP
 

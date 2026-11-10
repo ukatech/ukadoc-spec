@@ -1,9 +1,9 @@
 # `\![quicksection,true]`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Start the quick section. `\![quicksection,1]` can also be used.<br />
-This is almost equivalent to `\_q`, but differs in that it explicitly starts the section instead of using a switch.
+开始快速区段。也可以使用 `\![quicksection,1]`。<br />
+与 `\_q` 基本兼容，区别在于它指定开始，而不是使用开关方式。
 
 **対応:** SSP / Ninix
 

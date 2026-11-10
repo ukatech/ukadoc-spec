@@ -1,7 +1,7 @@
 # texttospeechbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for text-to-speech.
+语音合成的名称。
 
 **対応:** SSP

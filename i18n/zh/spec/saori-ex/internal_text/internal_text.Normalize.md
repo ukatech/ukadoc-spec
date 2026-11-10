@@ -2,11 +2,11 @@
 
 **カテゴリ:** internal_text
 
-Normalizes a string to a Unicode normalization form. Use this to make strings with different encodings but identical appearance consistent before comparing them, such as half-width and full-width katakana, or precomposed characters and sequences of combining characters.<br />
-Uses OS functionality (`NormalizeString` on Windows Vista and later; on XP, uses `normaliz.dll` from the IDN add-on package if available). Returns 500 (`internal error`) on OSes where this functionality is unavailable. Results may vary depending on the OS Unicode version. An empty string returns an empty string (204). A string containing an unpaired surrogate results in 400 (`invalid encoding`).
+将字符串统一为 Unicode 规范化形式。用于在比较外观相同但编码不同的字符串前，将半角片假名和全角片假名、预组字符和组合字符序列等统一起来。<br />
+使用操作系统的功能（Windows Vista 及之后版本的 `NormalizeString`。在 XP 上，如果有 IDN 附加包中的 `normaliz.dll`，则使用该库）。在不支持该功能的操作系统上返回 500（`internal error`）。结果可能因操作系统的 Unicode 版本而异。空字符串返回空字符串（204）。包含未配对代理项的字符串返回 400（`invalid encoding`）。
 
-- **Argument1**: Form: `NFC` / `NFD` / `NFKC` / `NFKD` (case-insensitive; any other value results in 400 `unsupported algorithm`)
-- **Argument2**: String
+- **Argument1**: 形式：`NFC` / `NFD` / `NFKC` / `NFKD`（不区分大小写；其他值返回 400 `unsupported algorithm`）
+- **Argument2**: 字符串
 
 ## 記述例
 

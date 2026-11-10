@@ -1,23 +1,23 @@
 # `\![set,alignmenttodesktop,方向]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Snap the current scope's surface to the specified direction of the desktop. The direction can be specified in the following ways.
+将当前 scope 一侧的 surface 吸附到桌面的指定方向。方向可按以下方式指定。
 
-- **top**: Snap to the top.
-- **bottom**: Snap to the bottom.
-- **left**: Snap to the left.
-- **right**: Snap to the right.
-- **free**: Do not snap.
-- **osuwari,オプション,…**: \[SSP 2.9.33\] Follow another window (the foreground window or a specified window) or the screen rectangle (osuwari). Options use the format `--名前=値`, and include `--target=` `--origin=` `--target-origin=` `--x=` `--y=` `--interval=` `--xmove` `--ymove` `--noclip` `--area=` `--side=` `--margin=` `--zorder=`. All options are optional. For details, see [About `\![set,alignmenttodesktop,osuwari]`](bang-set-alignmenttodesktop.note.md).
-- **default**: Restore the ghost's default setting.
+- **top**: 吸附到顶部。
+- **bottom**: 吸附到底部。
+- **left**: 吸附到左侧。
+- **right**: 吸附到右侧。
+- **free**: 不吸附。
+- **osuwari,オプション,…**: \[SSP 2.9.33\] 跟随其他窗口（前景窗口或指定窗口）或屏幕矩形（坐靠）。选项采用`--名称=值`的形式，可用选项有`--target=` `--origin=` `--target-origin=` `--x=` `--y=` `--interval=` `--xmove` `--ymove` `--noclip` `--area=` `--side=` `--margin=` `--zorder=`。所有选项都可以省略。详情请参阅[关于`\![set,alignmenttodesktop,osuwari]`](bang-set-alignmenttodesktop.note.md)。
+- **default**: 恢复 ghost 的默认设置。
 
-When snapped to the top or bottom, dragging in the vertical direction is disabled.<br />
-When snapped to the left or right, dragging in the horizontal direction is disabled.
+吸附到顶部或底部时，无法向上下方向拖动。<br />
+吸附到左侧或右侧时，无法向左右方向拖动。
 
-Effective until the ghost ends.
+在 ghost 结束前有效。
 
-※The above also works when written as alignment*on*desktop.
+※也可以写作alignment*on*desktop，效果相同。
 
 **対応:** SSP / Ninix
 

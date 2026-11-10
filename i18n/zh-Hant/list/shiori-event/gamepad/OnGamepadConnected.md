@@ -1,10 +1,10 @@
 # OnGamepadConnected
 
-**カテゴリ:** Gamepad event
+**カテゴリ:** 遊戲手把事件
 
-Occurs when a gamepad is connected. This also occurs if a gamepad was already connected when SSP starts.<br />
-The event is broadcast simultaneously to all running ghosts.
+遊戲手把連線時觸發。即使在 SSP 啟動時已連線，也會觸發。<br />
+此事件會同時廣播給所有正在執行的 ghost。
 
-- **Reference0**: [Pad index](caption_gamepad_padindex.md)。
+- **Reference0**: [手把索引](caption_gamepad_padindex.md)。
 
 **対応:** SSP 2.7.54

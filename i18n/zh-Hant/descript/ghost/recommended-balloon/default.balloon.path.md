@@ -1,9 +1,9 @@
-# default.balloon.path,path
+# default.balloon.path,路徑
 
 **カテゴリ:** descript.txt - 推薦 balloon
 
-Relative path of the balloon to use by default.
+預設使用之 balloon 的相對路徑。
 
-**既定値:** Unknown | SSP balloon or the user's configured default balloon (on SSP)
+**既定値:** 不明 | SSP balloon，或使用者設定的預設 balloon ( on SSP)
 
 **対応:** SSP

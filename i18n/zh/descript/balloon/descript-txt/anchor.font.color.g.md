@@ -1,8 +1,8 @@
-# anchor.font.color.g,Number
+# anchor.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green value (0–255) of the anchor font color
+锚点字体的绿色值（0～255）
 
 **既定値:** 0
 

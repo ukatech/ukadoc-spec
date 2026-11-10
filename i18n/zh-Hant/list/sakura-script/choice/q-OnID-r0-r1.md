@@ -1,10 +1,10 @@
 # `\q[タイトル,OnID,r0,r1,...]`
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-Displays choices.<br />
-As above, if the ID begins with "On", selecting it starts the SHIORI event OnID (the event as written).<br />
-Those parameters are stored in Reference0 and later, in the order r0, r1, ....
+顯示選項。<br />
+如上所述，ID 以「On」開頭時，選擇後會觸發 SHIORI 事件 OnID（即所寫的事件）。<br />
+參數會依照 r0、r1、... 的順序存入 Reference0 以後。
 
 **対応:** Materia / SSP / CROW / Ninix
 

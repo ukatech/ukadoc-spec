@@ -1,11 +1,11 @@
 # OnAnchorSelectEx
 
-**カテゴリ:** Choice event
+**カテゴリ:** 選項事件
 
-Occurs when a `\_a` anchor is clicked. OnAnchorSelect occurs immediately afterward only if SHIORI returned nothing for this event.
+點擊 `\_a` 跳轉連結的瞬間觸發。只有在 SHIORI 未對此事件回傳任何內容時，才會接著觸發 OnAnchorSelect。
 
-- **Reference0**: Text of the selected anchor.
-- **Reference1**: ID of the selected anchor.
-- **Reference\***: Extended information (second and subsequent arguments in the `\_a` tag).
+- **Reference0**: 已選取的跳轉連結文字。
+- **Reference1**: 已選取的跳轉連結 ID。
+- **Reference\***: 擴充資訊（`\_a` 標籤內的第 2 個及之後的引數）。
 
 **対応:** SSP

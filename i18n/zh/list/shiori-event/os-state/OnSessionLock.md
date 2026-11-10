@@ -1,8 +1,8 @@
 # OnSessionLock
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Occurs when returning to the lock screen while still logged in. In Windows, it also occurs when using Fast User Switching.<br />
-This event is not a NOTIFY, but note that the user cannot see anything the ghost does.
+保持登录状态返回锁屏界面时发生。在Windows上，快速用户切换时也会发生。<br />
+此事件不是NOTIFY，但无论执行什么操作，用户都看不到，请注意。
 
 **対応:** SSP 2.5.50

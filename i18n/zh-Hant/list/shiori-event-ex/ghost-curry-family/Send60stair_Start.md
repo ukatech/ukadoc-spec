@@ -1,7 +1,7 @@
 # Send60stair_Start
 
-**カテゴリ:** Ghost “Curry Family / Saki and Ukon”
+**カテゴリ:** ghost「咖哩家族／沙紀與右近」
 
-Occurs when Curry Family / Saki and Ukon start a game.
+咖哩家族／沙紀與右近開始遊戲時發生。
 
 **対応:** SSP

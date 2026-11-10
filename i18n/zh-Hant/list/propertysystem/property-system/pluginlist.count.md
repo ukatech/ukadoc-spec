@@ -1,7 +1,7 @@
 # pluginlist.count
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Number of installed plugins.
+已安裝的 plugin 數量。
 
 **対応:** SSP

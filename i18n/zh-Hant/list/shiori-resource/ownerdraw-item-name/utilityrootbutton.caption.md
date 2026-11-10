@@ -1,7 +1,7 @@
 # utilityrootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the functions.
+功能的名稱。
 
 **対応:** SSP

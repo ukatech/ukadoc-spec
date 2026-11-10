@@ -1,7 +1,7 @@
-# headlinelist.index(ID).generic property name
+# headlinelist.index(ID).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** プロパティシステム
 
-Get information from the headline at the ID position in the list.
+從清單中位於 ID 位置的 headline 取得資訊。
 
 **対応:** SSP

@@ -1,8 +1,8 @@
 # `\![set,autoscroll,enable]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Disable the above setting.
+解除上述設定。
 
 **対応:** Materia / SSP / Ninix
 

@@ -1,8 +1,8 @@
 # InductionMode
 
-A mode that removes the following restrictions from passive mode.
+从被动模式中解除以下限制的模式。
 
-- Timeouts occur.
-- Can be minimized.
-- Can be closed.
-- (Materia only:) The communicate box can be used.
+- 发生超时。
+- 可以最小化。
+- 可以退出。
+- （仅限 Materia：）可以使用 Communicate 框。

@@ -1,14 +1,14 @@
 # `\![open,dateinput,ID,表示時間,年,月,日,オプション]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open a year-month-day input InputBox.<br />
-Specify the display time in milliseconds.<br />
-Year, month, and day are the initial values.<br />
-When input is confirmed, the SHIORI event [OnUserInput](../../shiori-event/inputbox/OnUserInput.md) is triggered, and Reference1 contains the comma-separated values "year,month,day".<br />
-If the display time elapses (timeout) or the close button is pressed, [OnUserInputCancel](../../shiori-event/inputbox/OnUserInputCancel.md) is triggered.<br />
-Options can be specified in the form --option=○○; see [※options](bang-close-textareabox-ID.note.md).<br />
-Other behavior is the same as for [inputbox](bang-open-inputbox-ID.md).
+開啟年月日輸入 InputBox。<br />
+顯示時間以毫秒指定。<br />
+年、月、日為初始值。<br />
+輸入確定時會觸發 SHIORI 事件 [OnUserInput](../../shiori-event/inputbox/OnUserInput.md)，並在 Reference1 中以逗號分隔的「年,月,日」格式放入內容。<br />
+超過顯示時間（逾時）或按下關閉按鈕關閉時，會觸發 [OnUserInputCancel](../../shiori-event/inputbox/OnUserInputCancel.md)。<br />
+可使用 --option=○○ 的形式指定[※選項](bang-close-textareabox-ID.note.md)。<br />
+其他行為與 [inputbox](bang-open-inputbox-ID.md) 相同。
 
 **対応:** SSP
 

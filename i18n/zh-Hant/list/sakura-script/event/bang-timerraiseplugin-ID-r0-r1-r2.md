@@ -1,11 +1,11 @@
 # `\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Send the specified event to a plugin after the specified wait time (in milliseconds).<br />
-For 「繰り返すか否か」, specify 0 to trigger the event repeatedly at the specified interval, or 1 or greater to trigger it only once.<br />
-Events with different names can each be executed, but repeated execution of an event with the same name overwrites the previous one.<br />
-To cancel, execute Sakura Script with the same event name and a time of 0.
+指定等待時間（毫秒）後，將指定事件傳送給 plugin。<br />
+「是否重複」指定為 0 時，事件會依指定時間重複發生；指定為 1 以上時，事件只會發生一次。<br />
+不同名稱的事件可以分別執行，但若對同名事件重複執行，先前的設定會被覆寫。<br />
+執行事件名稱相同、時間為 0 的 Sakura Script，即可取消計時器。
 
 **対応:** SSP
 

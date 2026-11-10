@@ -1,7 +1,7 @@
 # OnNekodorifExist
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when SSP starts if Nekodorif was already running.
+SSP 啟動時，若猫どりふ已先行啟動，便會發生。
 
 **対応:** SSP

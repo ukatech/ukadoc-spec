@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventMapChanged
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when moving to another map.
+移動至其他地圖時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

@@ -1,7 +1,7 @@
-# ghostlist(ghost name/main-character name/path).icon
+# ghostlist(ghost 名稱/sakura 端名稱/路徑).icon
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-The path to that ghost's icon.
+該 ghost 的圖示路徑。
 
 **対応:** SSP

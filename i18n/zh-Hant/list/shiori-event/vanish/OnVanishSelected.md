@@ -1,7 +1,7 @@
 # OnVanishSelected
 
-**カテゴリ:** Vanish event
+**カテゴリ:** 消失事件
 
-Occurs when YES is selected in the confirmation dialog.
+在確認對話框中選擇YES時發生。
 
 **対応:** Materia / SSP / CROW / Ninix

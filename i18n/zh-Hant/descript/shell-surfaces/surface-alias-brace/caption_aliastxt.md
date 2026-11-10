@@ -1,5 +1,5 @@
 # alias.txt
 
-Until MATERIA period453, alias braces were specified in a dedicated file named alias.txt instead of surfaces.txt.
+在 MATERIA period453 以前，alias brace 的規格是記述於專用檔案 alias.txt，而非 surfaces.txt。
 
-Although the definitions have since been integrated into surfaces.txt, compatibility is maintained by both CROW and SSP, so alias.txt can still be provided separately.
+目前已整合至 surfaces.txt 中，但 CROW 和 SSP 都保有相容性，因此也可以另外準備 alias.txt。

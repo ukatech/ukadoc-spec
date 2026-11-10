@@ -1,8 +1,8 @@
-# Drawing methods
+# 繪製方法
 
 ## 一覧
 
-- [Drawing methods](introduction_drawmethod.md)
+- [繪製方法](introduction_drawmethod.md)
 - [base](base.md)
 - [overlay](overlay.md)
 - [overlay-fast](overlay-fast.md)
@@ -73,7 +73,7 @@
 - [bind](bind.md)
 - [add](add.md)
 - [reduce](reduce.md)
-- [import,filename,weight msec,X,Y](import.md)
+- [import,檔案名稱,權重msec,X,Y](import.md)
 - [insert,ID](insert.md)
 - [start,ID](start.md)
 - [stop,ID](stop.md)

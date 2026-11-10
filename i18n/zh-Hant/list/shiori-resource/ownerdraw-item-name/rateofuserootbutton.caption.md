@@ -1,7 +1,7 @@
 # rateofuserootbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the usage rate graph item.
+使用率圖表的名稱。
 
 **対応:** Materia

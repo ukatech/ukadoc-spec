@@ -1,8 +1,8 @@
 # name
 
-**カテゴリ:** SHIORI information
+**カテゴリ:** SHIORI 信息
 
-Occurs immediately after SHIORI is loaded.<br />
-In response to this event, SHIORI returns its name (*not the ghost name*). Only 7-bit characters can be used.
+在 SHIORI 加载后立即发生。<br />
+SHIORI 对此事件返回 SHIORI 名称（*不是 ghost 名称*）。只能使用 7 位字符。
 
 **対応:** Materia / SSP / CROW

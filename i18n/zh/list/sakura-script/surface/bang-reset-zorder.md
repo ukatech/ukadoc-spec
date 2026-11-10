@@ -1,8 +1,8 @@
 # `\![reset,zorder]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Cancel the above setting and restore the value previously specified in descript.
+解除上述设置，并重置为descript中预先指定的值。
 
 **対応:** SSP 2.3.77
 

@@ -1,12 +1,12 @@
 # OnBoot
 
-**カテゴリ:** Startup, shutdown, and switching event
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs at startup.<br />
-In SSP, if no script is returned (204) for [OnGhostChanged](OnGhostChanged.md), [OnGhostCalled](OnGhostCalled.md), [OnFirstBoot](OnFirstBoot.md), or [OnVanished](../vanish/OnVanished.md), this event occurs next.
+启动时触发。<br />
+在 SSP 中，如果对 [OnGhostChanged](OnGhostChanged.md)、[OnGhostCalled](OnGhostCalled.md)、[OnFirstBoot](OnFirstBoot.md)、[OnVanished](../vanish/OnVanished.md) 没有返回脚本（204），则接着触发此事件。
 
-- **Reference0**: Shell name at startup.
-- **Reference6**: ※MATERIA and SSP only: halt if the previous process crashed.
-- **Reference7**: ※MATERIA and SSP only: name of the ghost that crashed during the previous process.
+- **Reference0**: 启动时的 shell 名称。
+- **Reference6**: ※仅限 MATERIA、SSP　上次处理中崩溃时为 halt。
+- **Reference7**: ※仅限 MATERIA、SSP　上次处理中崩溃的 ghost 名称。
 
 **対応:** Materia / SSP / CROW / Ninix

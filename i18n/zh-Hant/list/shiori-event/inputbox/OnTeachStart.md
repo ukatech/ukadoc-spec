@@ -1,7 +1,7 @@
 # OnTeachStart
 
-**カテゴリ:** Input box events
+**カテゴリ:** 輸入框事件
 
-Triggered when TeachBox is opened.
+TeachBox 開啟時觸發。
 
 **対応:** Materia / SSP / Ninix

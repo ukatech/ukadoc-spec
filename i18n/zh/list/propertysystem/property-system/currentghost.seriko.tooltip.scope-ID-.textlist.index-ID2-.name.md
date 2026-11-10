@@ -1,7 +1,7 @@
 # currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).name
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The hit-test name at the specified position in the tooltip definition list.
+工具提示定义列表中指定位置的命中区域名称。
 
 **対応:** SSP (2.3.83)

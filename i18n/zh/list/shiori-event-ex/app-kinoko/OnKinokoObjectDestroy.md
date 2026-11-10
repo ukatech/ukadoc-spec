@@ -1,9 +1,9 @@
 # OnKinokoObjectDestroy
 
-**カテゴリ:** App "Kinoko"
+**カテゴリ:** 应用“Kinoko”
 
-Occurs when a Kinoko skin disappears from the head.
+Kinoko 外观从头上消失时触发。
 
-- **Reference0**: The name of that Kinoko skin.
-- **Reference1**: The name of the ghost that Kinoko skin primarily targets. Comma-separated if there are multiple.
-- **Reference2**: The category of that Kinoko skin. Comma-separated if there are multiple.
+- **Reference0**: 该 Kinoko 外观的名称。
+- **Reference1**: 该 Kinoko 外观主要面向的 ghost 名称。存在多个时以逗号分隔。
+- **Reference2**: 该 Kinoko 外观的类别。存在多个时以逗号分隔。

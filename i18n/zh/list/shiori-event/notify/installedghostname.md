@@ -1,9 +1,9 @@
 # installedghostname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed ghosts.*\[NOTIFY\]*
+通知已安装的ghost。*\[NOTIFY\]*
 
-- **Reference\***: Installed ghost name.
+- **Reference\***: 已安装的ghost名称。
 
 **対応:** Materia / SSP / CROW / Ninix

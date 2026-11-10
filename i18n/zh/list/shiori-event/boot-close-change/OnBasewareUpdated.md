@@ -1,10 +1,10 @@
 # OnBasewareUpdated
 
-**カテゴリ:** Startup, shutdown, and switching event
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when the ghost starts after the baseware update completes. If there is no response to this event, OnBoot occurs.
+本体更新结束后，ghost 启动时触发。如果没有对此事件作出响应，则触发 OnBoot。
 
-- **Reference0**: Version number after the update; example: 2.3.59
-- **Reference1**: Version number after the update, matching the version shown in Windows Explorer properties; example: 2.3.59.3000
+- **Reference0**: 更新后的版本号　例：2.3.59
+- **Reference1**: 与更新后在 Windows 资源管理器中查看到的属性相同的版本号　例：2.3.59.3000
 
 **対応:** SSP

@@ -1,6 +1,6 @@
-# Notes
+# 補充
 
-Events marked *\[NOTIFY\]* are always notified using the NOTIFY command.<br />
-Any script returned in response to an event notified using the NOTIFY command is ignored entirely.
+標示為*\[NOTIFY\]*的事件，一律會透過 NOTIFY 命令通知。<br />
+即使對透過 NOTIFY 命令通知的事件回傳 script，也一概會被忽略。
 
-Events without a specific indication may be notified using either NOTIFY or GET, depending on the situation.
+未特別標示的事件，視情況可能透過 NOTIFY 或 GET 通知。

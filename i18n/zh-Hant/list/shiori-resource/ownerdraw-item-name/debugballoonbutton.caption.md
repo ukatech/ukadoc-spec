@@ -1,7 +1,7 @@
 # debugballoonbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name for displaying all balloon markers.
+顯示所有 balloon 標記的名稱。
 
 **対応:** Materia

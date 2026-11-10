@@ -1,6 +1,6 @@
-# Notes
+# 补充
 
-Events marked *\[NOTIFY\]* are always notified using the NOTIFY command.<br />
-Any script returned in response to an event notified using the NOTIFY command is ignored.
+带有*\[NOTIFY\]*标记的事件必定通过NOTIFY命令通知。<br />
+即使对通过NOTIFY命令通知的事件返回脚本，也会被完全忽略。
 
-Events without a marker may be notified using either NOTIFY or GET, depending on the circumstances.
+没有特别标记的事件可能会根据情况通过NOTIFY或GET通知。

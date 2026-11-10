@@ -1,7 +1,7 @@
 # balloonhistorybutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项目名称
 
-Name for “Balloon (recently used).”
+“气球（最近使用）”的名称。
 
 **対応:** SSP

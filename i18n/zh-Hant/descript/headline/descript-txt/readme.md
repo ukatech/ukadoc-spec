@@ -1,8 +1,8 @@
-# readme,file name
+# readme,檔案名稱
 
 **カテゴリ:** descript.txt
 
-File name of the headline description text file opened during installation.
+安裝時開啟的 headline 說明文字檔名稱。
 
 **既定値:** readme.txt
 

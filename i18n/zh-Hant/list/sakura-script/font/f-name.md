@@ -1,12 +1,12 @@
 # `\f[name,フォント名]`
 
-**カテゴリ:** Text change command
+**カテゴリ:** 文字變更指令
 
-Changes the text font to the specified font name.<br />
-If default is specified, or none of the specified font candidates are available, the font reverts to the balloon's default (or to the SSP setting if balloon font override is enabled).<br />
-If disable is specified, the font is set to the same font used for disabled text display.<br />
-Font files placed under \[the folder of the running ghost\]/ghost/master or in the current balloon's folder can also be specified as font names.<br />
-Multiple font names can be specified, separated by commas. They are tried in the order written, selecting the first installed font (SSP only).<br />
+將文字字型變更為指定的字型名稱。<br />
+指定 default，或指定的所有字型候選都不存在時，會恢復 balloon 設定的預設值（若 SSP 設定覆寫了 balloon 字型，則恢復為該設定）。<br />
+指定 disable 時，會使用與無效文字顯示相同的字型。<br />
+字型名稱也可以指定放置於\[執行中的 ghost 資料夾\]/ghost/master 底下或目前 balloon 資料夾中的字型檔案。<br />
+可用逗號分隔指定多個字型名稱，並依照書寫順序作為優先順序，從已安裝的字型中自動選擇（僅限 SSP）。<br />
 
 **対応:** SSP
 

@@ -2,20 +2,20 @@
 
 **カテゴリ:** internal_file
 
-Checks whether SSP can handle an audio or video file. It determines this from the extension without loading the file.<br />
-The check uses the same component as the check for whether an audio or video file can be opened in the built-in media player when dragged and dropped onto SSP (the set of extensions that OS DirectShow / Media Foundation may be able to play). Since the file contents are not examined, a `read` result does not guarantee that the file can actually be played.<br />
-**Images are `none` in every format**. Images that can be read by SSP's built-in loader (including cases where they are identified as images from the file's leading header rather than just the extension), and images with extensions readable by OS WIC (such as HEIC), return `none` here even if their extensions are listed in OS DirectShow's extension table. In other words, images for which [IsImageLoadable](internal_file.IsImageLoadable.md) returns `embed` / `write`, and images that return `read` based on their extension, return `none` with this function. Use `IsImageLoadable` to check whether an image can be read.
+檢查 SSP 是否能處理音訊或影片檔案。不載入檔案，根據副檔名進行判定。<br />
+判定時使用的元件，與將音訊或影片檔案拖放至 SSP 時，判斷是否可用內建媒體播放器開啟的元件相同（OS 的 DirectShow / Media Foundation 可能播放的副檔名集合）。不檢查檔案內容，因此即使是`read`，也不保證實際上可以播放。<br />
+**任何格式的圖片都是`none`**。SSP 內建載入器可讀取的圖片（包含不只根據副檔名，也能從檔案開頭的標頭判定為圖片的情況），以及 OS 的 WIC（例如 HEIC）可讀取副檔名所對應的圖片，即使列在 OS 的 DirectShow 副檔名表中，在此仍會是`none`。也就是說，[IsImageLoadable](internal_file.IsImageLoadable.md)回傳`embed` / `write`的圖片，以及根據副檔名判定為`read`的圖片，在此函式中都是`none`。請使用`IsImageLoadable`檢查圖片是否可讀取。
 
-- **Argument1**: File path. Relative paths are based on the ghost's folder (ghost/master). Both `/` and `\` can be used as separators. Passing a relative path when calling without a ghost returns 400 (`ghost required`). If the file does not exist (including folders), it returns 400 (`file not found`). URLs are not accepted.
+- **Argument1**: 檔案路徑。相對路徑以 ghost 資料夾（ghost/master）為基準。分隔符可使用`/`或`\`。若在未指定 ghost 的呼叫中傳入相對路徑，會回傳 400（`ghost required`）。檔案不存在（包含資料夾）時，會回傳 400（`file not found`）。不接受 URL。
 
-The response `Result` is the handling level, one of the following.
+回應的`Result`表示處理等級，為下列其中一種。
 
-- **none**: Cannot be read. The file is not audio or video (images always fall into this category), or is in an unsupported format.
-- **read**: Read-only. A format that is likely to be playable.
-- **embed**: Can be incorporated into a ghost and processed. **Not currently returned.**
-- **write**: Can also be written. **Not currently returned.**
+- **none**: 無法讀取。不是音訊或影片（圖片必定屬於此類），或是未支援的格式。
+- **read**: 僅供讀取。預期可以播放的格式。
+- **embed**: 可載入 ghost 中處理。**目前不會回傳。**
+- **write**: 也可寫入。**目前不會回傳。**
 
-The same four-level terms as [IsImageLoadable](internal_file.IsImageLoadable.md) are used. Each higher level includes the previous level. Since `embed` and `write` may be returned in the future, it is safer to check whether the result is not `none` rather than whether it equals `read`.
+使用與[IsImageLoadable](internal_file.IsImageLoadable.md)相同的四種等級名稱。較後面的等級包含前面的等級。由於日後可能會開始回傳`embed`和`write`，建議判斷是否為`none`，而不要判斷是否等於`read`。
 
 ## 記述例
 

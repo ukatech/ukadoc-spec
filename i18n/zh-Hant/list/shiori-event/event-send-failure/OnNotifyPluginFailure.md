@@ -1,14 +1,14 @@
 # OnNotifyPluginFailure
 
-**カテゴリ:** Event send failure events
+**カテゴリ:** 事件傳送失敗事件
 
-Occurs when `\![notifyplugin]` fails.
+`\![notifyplugin]`失敗時觸發。
 
-- **Reference0**: If not found, notfound.<br />
-  If disabled in the settings, disabled.<br />
-  Otherwise, the execution result, such as 204.
-- **Reference1**: Plugin name or ID.
-- **Reference2**: Event ID that was to be executed.
-- **Reference3～**: References of the event that was to be executed.
+- **Reference0**: 找不到時為 notfound。<br />
+  設定為無效時為 disabled。<br />
+  其他情況則為 204 等執行結果。
+- **Reference1**: plugin 名稱或 ID。
+- **Reference2**: 嘗試執行的事件 ID。
+- **Reference3～**: 嘗試執行的事件之 Reference。
 
 **対応:** SSP

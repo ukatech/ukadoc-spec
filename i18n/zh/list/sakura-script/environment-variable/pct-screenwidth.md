@@ -1,7 +1,7 @@
 # %screenwidth
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-The width of the display screen.
+显示屏的宽度。
 
 **対応:** Materia / SSP / CROW / Ninix

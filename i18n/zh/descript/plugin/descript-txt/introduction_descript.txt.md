@@ -1,10 +1,10 @@
-# descript.txt (for plugins)
+# descript.txt（Plugin的）
 
-## Overview
+## 概要
 
-The basic settings file for a plugin.
+plugin的基本设置文件。
 
-## 記述例 and basic writing
+## 記述例与基本写法
 
 ```
 charset,Shift_JIS
@@ -13,6 +13,6 @@ id,21AC84B0-6B1F-11E4-9803-0800200C9A66
 filename,rei.dll
 ```
 
-name, id, and filename are required.
+name、id、filename为必填项。
 
-Strings beginning with \\ or % are treated as Sakura Script or environment-variable tags and discarded due to security risks. To include them as ordinary characters, they must be escaped, for example as \\\\ or \\%.
+另外，以\\或%开头的字符串会被视为Sakura Script或环境变量标签，出于安全风险考虑会被丢弃。若要将它们作为普通字符使用，则需要用\\\\或\\%等形式进行转义。

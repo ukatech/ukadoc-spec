@@ -1,9 +1,9 @@
 # OnSysResume
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、结束与切换事件
 
-Occurs when resuming from suspend (both sleep and hibernation).
+从挂起状态（包括睡眠和休眠状态）恢复时触发。
 
-- **Reference0**: Reason for resuming. Normally normal; auto when resumed automatically by a system schedule; critical when emergency shutdown occurs due to battery depletion (deprecated since Windows Vista)
+- **Reference0**: 恢复原因。通常为normal；系统按计划自动恢复时为auto；因电池耗尽而紧急停止时为critical（Windows Vista及更高版本中已废止）
 
 **対応:** SSP

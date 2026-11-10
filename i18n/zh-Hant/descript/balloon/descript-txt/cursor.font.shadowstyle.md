@@ -1,9 +1,9 @@
-# cursor.font.shadowstyle,Style
+# cursor.font.shadowstyle,形態指定
 
 **カテゴリ:** descript.txt
 
-Display style of the choice marker shadow. offset places it at the bottom right; outline draws an outline.<br />
-Used when no raster operation command is specified.
+選項標記的陰影顯示方式。offset 表示右下方，outline 表示描邊。<br />
+未設定光柵運算指令時使用。
 
 **既定値:** font.shadowstyle
 

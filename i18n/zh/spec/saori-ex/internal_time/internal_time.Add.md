@@ -2,14 +2,14 @@
 
 **カテゴリ:** internal_time
 
-Returns the date and time obtained by adding an amount to a date and time, as epoch seconds. The amount may be negative.<br />
-`second` / `minute` / `hour` are added as elapsed time. `day` and larger units are added using the calendar in the zone specified by `--tz=` (the local time remains the same across daylight saving time transitions).<br />
-Month ends are clamped (January 31 + 1 month = February 28 or 29).<br />
-If the result falls at a time that does not exist due to a daylight saving time transition (a time skipped when the clock moves forward), it becomes the next valid time. If the result falls at a time that occurs twice, the earlier occurrence is used (see [Around daylight saving time transitions](zone-tz.md#夏時間の切り替えの前後)).
+返回日期时间加上指定量后的结果，以纪元秒表示。量可以为负数。<br />
+`second` / `minute` / `hour` 按经过的时间相加。`day`及更大的单位按 `--tz=`指定时区的日历相加（即使跨越夏令时切换，时间也保持不变）。<br />
+月末日期会向前调整（1 月 31 日加 1 个月＝2 月 28 日或 29 日）。<br />
+若相加后的结果落在夏令时切换时不存在的时间（时钟前拨时跳过的时间），则使用时钟前拨后的时间。若结果落在重复出现的时间，则使用较早的那个时间（[夏令时切换前后](zone-tz.md#夏時間の切り替えの前後)）。
 
-- **Argument1**: Date and time
-- **Argument2**: Amount (integer)
-- **Argument3**: Unit: `second` `minute` `hour` `day` `week` `month` `year` (plural forms such as `days` are also accepted)
-- **Options**: `--tz=`
+- **Argument1**: 日期时间
+- **Argument2**: 量（整数）
+- **Argument3**: 单位：`second` `minute` `hour` `day` `week` `month` `year`（也可使用复数形式，如 `days`）
+- **选项**: `--tz=`
 
 **対応:** SSP 2.9.13

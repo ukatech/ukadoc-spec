@@ -1,10 +1,10 @@
-# number.font.name,font name
+# number.font.name,字体名称
 
 **カテゴリ:** descript.txt
 
-Font used for the counter number.<br />
-A font file placed in the balloon's folder can also be specified as the font name (SSP only).<br />
-Multiple font names can be specified, separated by commas. The font is selected from those installed automatically, in the order listed (SSP only).
+计数器数值使用的字体。<br />
+字体名称也可以指定放在气球文件夹中的字体文件（仅 SSP）。<br />
+可以用逗号分隔指定多个字体名称，并按照书写顺序（优先级顺序）从已自动安装的字体中选择（仅 SSP）。
 
 **既定値:** ＭＳ ゴシック
 

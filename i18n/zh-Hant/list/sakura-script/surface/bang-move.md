@@ -1,8 +1,8 @@
 # `\![move]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Move to the specified coordinates. [※See below](bang-moveasync.note.md)
+移動至指定座標。[※請參閱下方說明](bang-moveasync.note.md)
 
 **対応:** SSP / CROW
 

@@ -1,10 +1,10 @@
 # Send60stair_Dobon
 
-**カテゴリ:** Ghost “Curry Family / Saki and Ukon”
+**カテゴリ:** ghost「咖哩家族／沙紀與右近」
 
-Occurs when any participating ghost gets Dobon during a game played by Curry Family / Saki and Ukon.
+在咖哩家族／沙紀與右近進行的遊戲中，任一參賽 ghost ドボン時發生。
 
-- **Reference0**: Name of the ghost that got Dobon.
-- **Reference1**: Current position of the ghost that got Dobon.
-- **Reference2**: Marked position of the ghost that got Dobon.
-- **Reference3**: Die roll.
+- **Reference0**: ドボン的 ghost 名稱。
+- **Reference1**: ドボン的 ghost 目前的位置。
+- **Reference2**: ドボン的 ghost 標記的位置。
+- **Reference3**: 骰子的點數。

@@ -1,6 +1,6 @@
-# Ghost “Foreigner” supplement “march of phantasma”
+# ghost「フォーリナー」附錄「march of phantasma」
 
-- Publisher: [http://rakudaya.sakura.tv/mop/beta.html](http://rakudaya.sakura.tv/mop/beta.html) ([archive](https://web.archive.org/web/20231218032438/http://rakudaya.sakura.tv/mop/beta.html))
+- 發布來源：[http://rakudaya.sakura.tv/mop/beta.html](http://rakudaya.sakura.tv/mop/beta.html)（[封存頁面](https://web.archive.org/web/20231218032438/http://rakudaya.sakura.tv/mop/beta.html)）
 
 **対応:** SSP
 

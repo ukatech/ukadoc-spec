@@ -1,21 +1,21 @@
 # keep-alive
 
-Since SSP 2.9.03, (Socket) SSTP can also send multiple requests consecutively over a single TCP connection using keep-alive, just like HTTP \[SSP 2.9.03\].<br />
-This avoids the overhead of establishing a connection, making it suitable for clients that send SSTP repeatedly at short intervals.
+从 SSP 2.9.03 开始，(Socket) SSTP 也可以像 HTTP 一样使用 keep-alive，在一个 TCP 连接上连续发送多个请求 \[SSP 2.9.03\]。<br />
+这样可以省去建立连接的开销，适合短时间内多次发送 SSTP 的客户端。
 
-- The connection is kept alive only when the request includes a `Connection: keep-alive` header (the same explicit specification method as HTTP/1.0). If omitted, the connection is closed after the response as before, and the response content is unchanged.
-- This applies only to SSTP/1.x. For other versions, the Connection header is ignored and the connection is always closed.
-- Direct SSTP is not covered because it has no concept of a connection. SSTP over HTTP follows the HTTP keep-alive rules (see [SSTP over HTTP](http.md)).
-- If the request includes a Connection header, the response always includes a Connection header as well.<br />
-  If `Connection: keep-alive` and `Keep-Alive: timeout=seconds` are returned, the connection is being kept alive.<br />
-  If `Connection: close` is returned, the connection is closed after the response (for example, when the maximum number of simultaneous connections has been reached).
-- Responses that keep the connection alive always include Charset and Content-Length headers when there is additional data, and no blank line follows the additional data. If there is no additional data, the response ends with the blank line immediately after the headers.<br />
-  Also, the zero terminator (0x00) that was appended to the end of responses when the connection was closed is not sent. Determine the end of the response using the blank line and Content-Length only.
-- Send the next request only after receiving the entire previous response (pipelining is not supported). If the next request is sent before the response, the connection may be closed after that response.
-- Do not append extra bytes such as a zero terminator to the end of a request. They will be treated as part of the next request.
-- If no next request arrives within the number of seconds indicated by the Keep-Alive timeout after the response (5 seconds in SSP 2.9.03), SSP will close the connection. Make sure the client can reconnect and resend at any time if the connection is closed.
+- 只有在 request 中添加 `Connection: keep-alive` 头时，连接才会保持（与 HTTP/1.0 相同，必须显式指定）。若未添加，则仍会在响应后断开连接，响应内容也与以往相同。
+- 仅适用于 SSTP/1.x。对于其他版本，Connection 头会被忽略，连接始终会断开。
+- Direct SSTP 没有连接的概念，因此不适用。SSTP over HTTP 遵循 HTTP 的 keep-alive 规则（参见 [SSTP over HTTP](http.md)）。
+- 如果 request 中包含 Connection 头，response 中也一定会包含 Connection 头。<br />
+  若返回 `Connection: keep-alive` 和 `Keep-Alive: timeout=秒数`，则连接会保持。<br />
+  若返回 `Connection: close`，则响应后会断开连接（例如，同时保持的连接数已达到上限）。
+- 对于连接保持期间的响应，如果有附加数据，则一定会包含 Charset 和 Content-Length 头，附加数据后面不会跟空行。如果没有附加数据，则以头之后的空行结束。<br />
+  此外，不会发送以往断开连接的响应末尾所带的零终止符（0x00）。请仅根据空行和 Content-Length 判断响应结束。
+- 请在接收完前一个 response 后再发送下一个 request（不支持流水线）。如果在收到 response 之前发送下一个 request，连接可能会在该响应后断开。
+- 请勿在 request 末尾添加零终止符等多余字节。这些字节会被视为下一个 request 的一部分。
+- response 之后，如果在 Keep-Alive 的 timeout 指定的秒数内（SSP 2.9.03 中为 5 秒）没有收到下一个 request，SSP 会主动断开连接。客户端应确保无论何时连接断开，都能重新连接并重新发送请求。
 
-## request sample
+## request 示例
 
 ```
 EXECUTE SSTP/1.4
@@ -25,7 +25,7 @@ Command: GetVersion
 Connection: keep-alive
 ```
 
-## response sample (connection kept alive, with data)
+## response 示例（保持连接，有数据）
 
 ```
 SSTP/1.4 200 OK
@@ -37,7 +37,7 @@ Content-Length: 24
 追加データはここ
 ```
 
-## response sample (connection closed, no data)
+## response 示例（断开连接，无数据）
 
 ```
 SSTP/1.4 204 No Content

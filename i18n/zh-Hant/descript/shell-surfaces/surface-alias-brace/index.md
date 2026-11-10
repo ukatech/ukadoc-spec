@@ -1,7 +1,7 @@
-# surface.alias brace
+# surface.alias 大括號
 
 ## 一覧
 
-- [surface.alias brace examples](introduction_surface.aliasbrace.md)
+- [surface.alias 大括號記述範例](introduction_surface.aliasbrace.md)
 - [alias.txt](caption_aliastxt.md)
 - [\*,\[\*\]](star.md)

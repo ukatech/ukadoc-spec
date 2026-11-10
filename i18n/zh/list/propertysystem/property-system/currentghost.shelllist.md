@@ -1,7 +1,7 @@
-# currentghost.shelllist(shell name/path).generic property name
+# currentghost.shelllist(shell 名称/路径).通用属性名
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-Gets information from the current ghost's shell by its name or path.
+根据当前 ghost 的 shell 名称或路径获取信息。
 
 **対応:** SSP / CROW

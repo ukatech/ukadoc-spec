@@ -1,9 +1,9 @@
 # char\*.bind.menu
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** 属性系统 \> 通用属性名
 
-(Valid only for currentghost) Visibility of items in the dressup menu for the target shell's scope number \*.<br />
-hidden when set to hidden, auto in automatic enumeration mode, or none otherwise<br />
-*\[SET enabled\]*Default value is [char\*.menu](../../../../descript/shell/descript-txt/char-star-.menu.md) in the shell's descript.txt
+（仅对 currentghost 有效）目标 shell 的第\*号 scope 的 dressup 菜单中的项目隐藏状态。<br />
+隐藏设置时为 hidden，自动枚举模式时为 auto，否则为 none<br />
+*\[SET有效\]*初始值为 shell 侧 descript.txt 的[char\*.menu](../../../../descript/shell/descript-txt/char-star-.menu.md)
 
 **対応:** SSP

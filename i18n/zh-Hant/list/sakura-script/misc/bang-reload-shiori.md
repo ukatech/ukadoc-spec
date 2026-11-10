@@ -1,8 +1,8 @@
 # `\![reload,shiori]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads shiori.dll.
+重新載入shiori.dll。
 
 **対応:** SSP
 

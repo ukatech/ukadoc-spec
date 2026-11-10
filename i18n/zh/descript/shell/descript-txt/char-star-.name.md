@@ -1,9 +1,9 @@
-# char\*.name,name
+# char\*.name、名称
 
 **カテゴリ:** descript.txt
 
-Name for `\p[*]`.
+`\p[*]`的名称。
 
-**既定値:** ghost descript settings
+**既定値:** ghost的descript设置
 
 **対応:** SSP

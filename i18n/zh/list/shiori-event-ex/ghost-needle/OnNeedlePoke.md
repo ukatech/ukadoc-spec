@@ -1,8 +1,8 @@
 # OnNeedlePoke
 
-**カテゴリ:** Ghost “Needle”
+**カテゴリ:** ghost「Needle」
 
-Occurs when Needle “pokes” another ghost by overlapping it. If Needle overlaps multiple scopes at once, the event is sent once for each scope.
+Needle 与其他 ghost 重叠时进行“戳击”会触发此事件。若 Needle 同时与多个 scope 重叠，则每个 scope 各发送一次事件。
 
-- **Reference0**: ID of the poked scope. The main character is 0, side characters are 1, and additional characters are 2 or higher.
-- **Reference1**: Name of the shell currently used by Needle.
+- **Reference0**: 被戳击的 scope ID。主要角色为 0，侧面角色为 1，追加角色为 2 及以上。
+- **Reference1**: Needle 当前使用的 shell 名称。

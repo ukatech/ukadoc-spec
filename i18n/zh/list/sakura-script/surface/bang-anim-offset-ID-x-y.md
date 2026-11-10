@@ -1,11 +1,11 @@
 # `\![anim,offset,ID,x座標,y座標]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Offset the position of the surface animation with the specified ID by the specified coordinates.<br />
-Dressup items can also be offset.
+将ID编号的表面动画按指定坐标偏移。<br />
+也可以偏移dressup。
 
-This remains in effect until the surface changes (execution of `\s[ID]`).
+在更改表面（执行`\s[ID]`）之前有效。
 
 **対応:** SSP
 

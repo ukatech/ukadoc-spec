@@ -1,9 +1,9 @@
-# cursor,File name / mousecursor,File name
+# cursor,檔案名稱 / mousecursor,檔案名稱
 
 **カテゴリ:** descript.txt
 
-Cursor used over areas of the balloon that can be operated. mousecursor can be specified starting with SSP 2.5.40.
+用於 balloon 中可操作部分的游標。從 SSP 2.5.40 起可使用 mousecursor。
 
-**既定値:** Cursor specified by the ghost → cursor configured in the OS (arrow)
+**既定値:** ghost 指定的游標→OS 設定的游標（箭頭）
 
 **対応:** Materia / SSP

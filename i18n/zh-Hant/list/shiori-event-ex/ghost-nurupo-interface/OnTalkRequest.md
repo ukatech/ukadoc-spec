@@ -1,5 +1,5 @@
 # OnTalkRequest
 
-**カテゴリ:** ghost “Nurupo Interface”
+**カテゴリ:** ghost「Nurupo Interhigh」
 
-Occurs when a talk request is received from Nurupo Interface.
+Nurupo Interhigh 要求對話時觸發。

@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventAtonement
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when karma increases and the player is no longer a criminal.
+業報值上升並不再是罪犯時發生。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80 為止，請參閱[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

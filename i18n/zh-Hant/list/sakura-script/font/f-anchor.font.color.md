@@ -1,9 +1,9 @@
 # `\f[anchor.font.color,色指定]`
 
-**カテゴリ:** Text change command
+**カテゴリ:** 文字變更指令
 
-Changes the anchor text color.<br />
-For details on how to specify the color, see [※refer below](../choice-marker/note-1.md#形状指定の方法).
+變更錨點文字顏色。<br />
+指定方式請參閱[※下方說明](../choice-marker/note-1.md#形状指定の方法)。
 
 **対応:** SSP
 

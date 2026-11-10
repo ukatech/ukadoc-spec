@@ -1,9 +1,9 @@
-# cursor.font.color.g,Number
+# cursor.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green component of the choice marker font color (0–255)<br />
-Used when no raster operation command is specified.
+选项标记的字体绿色(0～255)<br />
+未指定光栅操作命令时使用。
 
 **既定値:** 0
 

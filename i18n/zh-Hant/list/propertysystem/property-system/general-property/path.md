@@ -1,7 +1,7 @@
 # path
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** プロパティシステム \> 通用屬性名稱
 
-The target's path.
+目標的路徑。
 
 **対応:** SSP / CROW

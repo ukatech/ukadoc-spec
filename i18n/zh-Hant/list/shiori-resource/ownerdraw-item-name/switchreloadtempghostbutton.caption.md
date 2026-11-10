@@ -1,7 +1,7 @@
 # switchreloadtempghostbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the option to keep temporarily launched ghosts.
+保留暫時啟動的 ghost 的名稱。
 
 **対応:** SSP

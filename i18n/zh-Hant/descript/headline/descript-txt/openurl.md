@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-URL that is actually opened when jumping to the site.
+跳轉至網站時實際開啟的 URL。
 
-**既定値:** Required
+**既定値:** 不可省略
 
 **対応:** Materia / SSP / CROW

@@ -2,29 +2,29 @@
 
 ## .narignore / .updateignore
 
-.narignore/.updateignore allow the .gitignore syntax to be used as-is, providing more flexibility than the developer_options.txt syntax.
+为了比developer_options.txt的写法更加灵活，.narignore/.updateignore允许直接使用.gitignore的写法。
 
-For the syntax, consult the [.gitignore manual](https://git-scm.com/docs/gitignore/ja) or ask an LLM (text-generating AI) to generate it by describing what you want to do.
+写法请参阅 [.gitignore手册](https://git-scm.com/docs/gitignore/ja)，或者向LLM（文本生成AI）描述需求并让其生成。
 
-However, unlike .gitignore, these files do not work when placed in a subdirectory. They are effective only when placed directly in the ghost's root directory.
+但与.gitignore不同，即使放在子目录中也不会生效。只有放在ghost根目录下时才有效。
 
-As a special feature exclusive to 伺か, include: directives are available. For example,<br />
+作为伺か专用的特殊功能，可以使用include:指定。例如<br />
 include:.narignore<br />
-causes the contents of the .narignore file to be processed as if they had been inserted in their entirety at that line.
+这样写时，会将.narignore文件的全部内容视为插入在这一行的位置来处理。
 
-Relative paths specified in include: are resolved relative to the directory containing the file where the line is written, not the ghost's root directory. Files that are read can themselves contain include: directives; in that case, the base directory is updated each time to the directory containing the currently read file (the base moves from parent to child, then from child to grandchild).
+include:指定的相对路径并非以ghost根目录为基准，而是以写有该行的文件所在目录为基准解析。也可以在读取的文件中继续写include:；此时基准目录会依次更新为“当前读取的文件所在目录”（基准会从父级移至子级，再从子级移至孙级）。
 
-Recursive reading has a limit and can traverse at most 3 levels. include: directives that exceed this depth are rejected. Either / or \\ can be used as the path separator.
+递归读取有深度上限，最多可遍历3层。超过该深度的include:会被拒绝读取。路径分隔符可以使用 / 或 \\。
 
-For example, if you write include:sub/extra.txt in .narinclude directly under the ghost's root directory, sub/extra.txt is read. If you then write include:foo.txt in extra.txt, sub/foo.txt is read relative to the sub/ directory containing extra.txt, not the ghost's root directory.
+例如，在ghost根目录下的.narinclude中写入include:sub/extra.txt，会读取sub/extra.txt。如果在该extra.txt中继续写入include:foo.txt，则会以extra.txt所在的sub/目录为基准，而不是ghost根目录，读取sub/foo.txt。
 
 **対応:** SSP
 
 ## .narinclude / .updateinclude
 
-Whitelist versions of .narignore/.updateignore. Only the items written here are included in update files/NAR.<br />
-Unlike gitignore, subdirectories are handled so that, for example, writing only shell/master without writing shell/ still correctly includes the parent directory.
+这是.narignore/.updateignore的白名单版本。只有写在这里的内容才会包含在更新文件/NAR中。<br />
+对子目录的处理方式与gitignore不同，例如只写shell/master而不写shell/，也会正确地包含父目录并进行处理。
 
-Also, like .narignore/.updateignore and unlike .gitignore, these files do not work when placed in a subdirectory. They are effective only when placed directly in the ghost's root directory.
+此外，与.narignore/.updateignore一样，它也与.gitignore不同，即使放在子目录中也不会生效。只有放在ghost根目录下时才有效。
 
 **対応:** SSP

@@ -1,10 +1,10 @@
 # OnHeadlinesenseComplete
 
-**カテゴリ:** Headline/RSS sensing event
+**カテゴリ:** 頭條／RSS 感知事件
 
-Occurs when the headline sensor finishes successfully.<br />
-Currently, successful headline sensing means that reading aloud has started, so this event is notified only when retrieval succeeds but there are no updates.
+headline sensor 正常結束時觸發。<br />
+目前 headline sensor 成功代表開始讀出，因此此事件只會在取得成功但沒有更新時通知。
 
-- **Reference0**: [※Reason for completion](caption_headlinesenseresult.md)　Currently fixed to "no update".
+- **Reference0**: [※結束原因](caption_headlinesenseresult.md)　目前固定為「no update」。
 
 **対応:** Materia / SSP

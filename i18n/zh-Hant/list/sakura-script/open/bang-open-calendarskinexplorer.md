@@ -1,8 +1,8 @@
 # `\![open,calendarskinexplorer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the calendar shell explorer.
+開啟行事曆 skin 瀏覽器。
 
 **対応:** SSP
 

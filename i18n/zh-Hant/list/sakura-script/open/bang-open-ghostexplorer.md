@@ -1,10 +1,10 @@
 # `\![open,ghostexplorer]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens the ghost explorer.<br />
-It can also be opened from the owner draw menu.<br />
-The explorers listed below can also be changed manually by selecting the ghost explorer type (T).
+開啟 ghost 瀏覽器。<br />
+也可以從 owner draw 選單開啟。<br />
+以下的瀏覽器也可透過「ghost 瀏覽器」的種類(T)手動切換。
 
 **対応:** Materia / SSP / CROW
 

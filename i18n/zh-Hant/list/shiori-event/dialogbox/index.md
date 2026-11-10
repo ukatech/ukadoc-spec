@@ -1,4 +1,4 @@
-# Dialog box events
+# 對話方塊事件
 
 ## 一覧
 

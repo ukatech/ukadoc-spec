@@ -1,4 +1,4 @@
-# Wait commands
+# 等待指令
 
 ## 一覧
 

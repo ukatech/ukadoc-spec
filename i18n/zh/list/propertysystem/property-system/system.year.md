@@ -1,7 +1,7 @@
 # system.year
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Current year.
+当前年份。
 
 **対応:** SSP / CROW

@@ -1,8 +1,8 @@
 # `\![open,balloonexplorer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the balloon explorer.
+開啟 balloon 瀏覽器。
 
 **対応:** Materia / SSP / CROW
 

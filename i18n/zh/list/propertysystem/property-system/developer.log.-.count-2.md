@@ -1,8 +1,8 @@
-# developer.log.log type(name).count
+# developer.log.日志类型(名称).count
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-The number of log entries whose name matches the specified name. Matching is case-insensitive.<br />
-Note that the parentheses immediately follow without an intervening dot (`developer.log.script(～)`, not `developer.log.script.(～)`).
+日志中 name 与名称匹配的条目数。不区分大小写。<br />
+请注意，括号直接跟在属性名后面，中间不加点号（`developer.log.script(～)`，而不是`developer.log.script.(～)`）。
 
 **対応:** SSP

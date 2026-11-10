@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventOffer
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when an item is offered at an altar.
+向祭壇獻上物品時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Offered item.
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 獻上的物品。

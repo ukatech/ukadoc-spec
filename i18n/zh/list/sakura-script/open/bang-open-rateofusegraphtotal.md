@@ -1,7 +1,7 @@
 # `\![open,rateofusegraphtotal]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 打开命令
 
-Display the combined ghost usage rates. Currently, this is supported only by Materia; elsewhere, it has the same effect as running rateofusegraph.
+显示 ghost 使用率（合计）。目前除 Materia 外均不支持（执行效果与运行rateofusegraph相同）。
 
 **対応:** Materia

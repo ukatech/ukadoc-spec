@@ -1,8 +1,8 @@
-# SAORI/1.0 Overview
+# SAORI/1.0 概要
 
-For the full and correct definition of SAORI/1.0, refer to the original source (external site). This page provides a brief summary of only the parts needed to read it.
+SAORI/1.0的正確定義請參閱原始規格（外部網站）。此處僅簡要整理閱讀本頁所需的內容。
 
-## Request
+## 要求
 
 ```
 EXECUTE SAORI/1.0
@@ -13,11 +13,11 @@ Argument0: 1つ目の引数
 Argument1: 2つ目の引数
 ```
 
-Lines end with CR+LF, and the request ends with a blank line. Arguments are listed in numerical order, starting from `Argument0`. An empty argument still counts as an argument in its position.<br />
-`Charset` is the character encoding of the request, and the response is returned in the same encoding.<br />
-Use `GET Version SAORI/1.0` to check whether the feature is available.
+換行使用 CR+LF，並以空白行結尾。引數從`Argument0`開始依序排列。值為空的引數也會計入其位置。<br />
+`Charset`是要求的字元編碼，回應也會使用相同的字元編碼。<br />
+使用`GET Version SAORI/1.0`確認功能是否可用。
 
-## Response
+## 回應
 
 ```
 SAORI/1.0 200 OK
@@ -26,7 +26,7 @@ Result: 結果
 Value0: 複数の値を返すときの1つ目
 ```
 
-- **200 OK**: Success. `Result` contains the result. When returning multiple values, they are also placed in `Value0`, `Value1`, and so on.
-- **204 No Content**: The operation succeeded, but there are no values to return (the result is an empty string).
-- **400 Bad Request**: Incorrect invocation.
-- **500 Internal Server Error**: Processing failed.
+- **200 OK**: 成功。`Result`為結果。需要回傳多個值時，也會放入`Value0`、`Value1`…。
+- **204 No Content**: 成功，但沒有要回傳的值（結果為空字串）。
+- **400 Bad Request**: 呼叫方式錯誤。
+- **500 Internal Server Error**: 處理失敗。

@@ -1,20 +1,20 @@
-# iCal filtering options \[2.8.90\]
+# iCal 筛选选项 \[2.8.90\]
 
-Options for specifying which events to return from the retrieved calendar with [`\![execute,ical-get/ical-post]`](bang-execute-ical-get-URL.md).<br />
-\[2.8.92\] Options with the same names can also be used with rss-get/rss-post, but their behavior when omitted differs (see [RSS filtering options](bang-execute-rss-post-URL.note.md)). They are ignored for other requests.
+此选项用于在[`\![execute,ical-get/ical-post]`](bang-execute-ical-get-URL.md)中指定从获取到的日历返回哪些事件。<br />
+\[2.8.92\] rss-get/rss-post 也可以使用同名选项，但省略时的处理方式不同（请参阅[RSS 筛选选项](bang-execute-rss-post-URL.note.md)）。其他请求会忽略此选项。
 
-Writing any of --from, --to, --expand, or --limit enables “period mode”, which returns only events that occur during the period. If only --limit is specified, the period starts from today.<br />
-If none are specified, all VEVENTs in the file are returned as-is, in order from the beginning (with no filtering by period and no limit on the number of events).
+指定 --from・--to・--expand・--limit 中的任意一项时，将进入“期间模式”，仅返回在期间内发生的日程。只指定 --limit 时，期间模式的起始日为当天。<br />
+如果以上选项都未指定，则按文件中的顺序原样返回所有 VEVENT（不按期间筛选，也不限制数量）。
 
-- **Setting the period**: The start date is the date specified by --from, or today if omitted.<br />
-  The end date is the date specified by --to (inclusive). If --to is omitted, the period is the number of days specified by --expand if it has a number of days; otherwise it is 30 days if --expand is present, or 1830 days if --expand is absent.<br />
-  The period is capped at 1830 days (if it is longer, it is cut off at 1830 days). If --to is earlier than --from, the period is empty and no events are returned.
-- **With --expand (per occurrence)**: Expand RRULE repetitions one occurrence at a time and return one Reference per occurrence. Results are sorted by date in ascending order.<br />
-  If the same event occurs multiple times during the period, a Reference is returned for each occurrence.
-- **Without --expand (per VEVENT)**: Return one event per VEVENT that occurs at least once during the period. Results are sorted by the date of their first occurrence within the period (and by start date and time when dates are the same).<br />
-  In this case, the “occurrence date” in each Reference is the date of the first occurrence within the period.
-- **Maximum number of events**: Stop when the number specified by --limit is reached. The default in period mode is 200; --limit=0 means unlimited.<br />
-  There is no limit outside period mode (when no options are specified).
-- **Determining occurrence dates**: RRULE (FREQ, INTERVAL, COUNT, UNTIL, BYDAY, BYMONTHDAY, BYMONTH) and EXDATE are interpreted to determine occurrence dates.<br />
-  For an event that spans multiple days from DTSTART through DTEND (or, if the event specifies its duration with DURATION instead of DTEND, through its end), all those days are considered occurrence dates.<br />
-  Dates listed in EXDATE are treated as non-occurrences, regardless of whether the event repeats.
+- **期间的确定方式**: 开始日期为 --from 指定的日期，省略时为当天。<br />
+  结束日期为 --to 指定的日期（包含该日期）。省略 --to 时，如果指定了 --expand=天数，则期间为指定天数；如果 --expand 未指定天数，则为30天；如果未指定 --expand，则为1830天。<br />
+  期间最长为1830天（超过时截断为1830天）。如果 --to 早于 --from，则期间为空，不返回日程。
+- **指定了 --expand（按发生次数）**: 将 RRULE 重复规则逐次展开，每次“发生”返回一个 Reference。按日期升序排列。<br />
+  同一日程在期间内多次发生时，会按发生次数返回多个 Reference。
+- **未指定 --expand（按 VEVENT）**: 期间内至少发生一次的日程，每个 VEVENT 仅返回一个 Reference。按期间内首次发生日期的升序排列（日期相同时按开始时间排列）。<br />
+  此时，每个 Reference 的“发生日期”是期间内首次发生的日期。
+- **数量上限**: 达到 --limit 指定的数量时停止返回。期间模式下省略该选项时，上限为200；--limit=0 表示不设上限。<br />
+  非期间模式下（未指定任何选项时）没有数量上限。
+- **发生日期的判定**: 根据 RRULE（FREQ・INTERVAL・COUNT・UNTIL・BYDAY・BYMONTHDAY・BYMONTH）和 EXDATE 进行判定。<br />
+  DTSTART 到 DTEND（以 DURATION 指定时则到其表示的结束时间）跨越多天的日程，其跨越的所有日期都视为“发生日期”。<br />
+  EXDATE 中列出的日期，无论是否重复发生，均视为未发生。

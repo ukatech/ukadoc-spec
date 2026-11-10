@@ -1,12 +1,12 @@
-# `\_b`\[file path,x,y,[options](note-1.md#_bファイルパスについて),options...\]
+# `\_b`\[文件路径,x,y,[选项](note-1.md#_bファイルパスについて),选项...\]
 
-**カテゴリ:** Balloon, text commands
+**カテゴリ:** 气球、文本命令
 
-Embeds an image at the XY coordinates of a balloon.<br />
-The base folder is \[the folder of the running ghost\]/ghost/master.<br />
-※Instead of a file name, an image can be specified using base64 encoding or an exe/dll resource; [see below](note-1.md#補足).
+将图像插入气球的 XY 坐标处。<br />
+\[已执行的 ghost 的文件夹\]/ghost/master 是基准文件夹。<br />
+※可以使用 base64 编码或 exe/dll 资源代替文件名来指定图像，[※参见下文](note-1.md#補足)。
 
-For the options that can be specified, [see below](note-1.md#_bファイルパスについて).
+可指定的选项请参见[※下文](note-1.md#_bファイルパスについて)。
 
 **対応:** SSP
 

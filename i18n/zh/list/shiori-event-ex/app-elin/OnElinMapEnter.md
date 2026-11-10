@@ -1,17 +1,17 @@
 # OnElinMapEnter
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 应用程序“Elin”
 
-Occurs when entering a map.
+进入地图时触发。
 
-- **Reference0**: Map name
-- **Reference1**: Information about enemy NPCs
-- **Reference2**: Information about neutral NPCs
-- **Reference3**: Information about friendly NPCs
-- **Reference4**: Information about allied NPCs
-- **Reference5**: Information about items lying on the ground or placed on the map
-- **Reference6**: Whether it is a town
-- **Reference7**: Whether it is a Nefia
-- **Reference8**: Whether it is a property owned by the PC (?)
-- **Reference9**: Whether it is a fixed Nefia
-- **Reference10**: Whether it is an empty field map
+- **Reference0**: 地图名称
+- **Reference1**: 敌对 NPC 的信息
+- **Reference2**: 中立 NPC 的信息
+- **Reference3**: 友好 NPC 的信息
+- **Reference4**: 友方 NPC 的信息
+- **Reference5**: 掉落在地面上或放置在地面上的物品信息
+- **Reference6**: 是否为城镇
+- **Reference7**: 是否为奈菲亚
+- **Reference8**: 是否为 PC 的所有物(?) 
+- **Reference9**: 是否为固定奈菲亚
+- **Reference10**: 是否为空旷的野外地图

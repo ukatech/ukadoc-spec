@@ -1,14 +1,14 @@
 # `\![set,scaling,倍率]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** サーフェス命令
 
-Change the surface's scaling factor.
+變更 surface 的倍率。
 
-Change the surface's scaling factor. The unit is %.<br />
-The scaling factor is relative to the user's setting of 100%.<br />
-Negative values are allowed; -100 flips the surface along that axis.
+變更 surface 的倍率。單位為%。<br />
+以使用者設定的倍率為100％的倍率。<br />
+可指定負數，指定-100時會沿該軸方向反轉。
 
-Valid until the ghost ends.
+在 ghost 結束前有效。
 
 **対応:** SSP / CROW
 

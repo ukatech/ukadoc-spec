@@ -1,7 +1,7 @@
 # sakura.portalbuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of the main character's portal.
+本體側入口的名稱。
 
 **対応:** Materia / SSP / CROW / Ninix

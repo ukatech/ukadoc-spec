@@ -1,10 +1,10 @@
 # `\m[umsg,wparam,lparam]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-For SSTP only.<br />
-Executes<br />
-postmessage(hwnd,umsg,wparam,lparam) on the window handle set in advance by the Wnd header.
+僅限SSTP。<br />
+對Wnd標頭預先設定的視窗控制代碼<br />
+執行postmessage(hwnd,umsg,wparam,lparam)。
 
 **対応:** Materia / SSP / Ninix
 

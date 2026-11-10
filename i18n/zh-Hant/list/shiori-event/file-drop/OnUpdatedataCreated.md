@@ -1,7 +1,7 @@
 # OnUpdatedataCreated
 
-**カテゴリ:** File drop event
+**カテゴリ:** 檔案拖放事件
 
-Occurs when updates2.dau is created.
+建立 updates2.dau 時觸發。
 
 **対応:** Materia / SSP / CROW

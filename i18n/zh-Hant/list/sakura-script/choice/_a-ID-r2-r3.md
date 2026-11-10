@@ -1,11 +1,11 @@
 # `\_a[ID,r2,r3...]`
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-The range up to `\_a` becomes an anchor. Choices do not time out, but the balloon times out as with normal talk.<br />
-Clicking the anchor starts the SHIORI event [OnAnchorSelect*Ex*](../../shiori-event/choice/OnAnchorSelectEx.md).<br />
-The text used as the anchor is stored in Reference0, the ID in Reference1, and subsequent arguments in Reference2 and later.<br />
-OnAnchorSelect also occurs after OnAnchorSelectEx, but since Reference1 and later contain nothing, this syntax is meaningless.
+將直到`\_a`為止的範圍設為錨點。選項不會逾時，但與一般對話相同，氣球會逾時。<br />
+點擊跳轉文字後，會觸發 SHIORI 事件[OnAnchorSelect*Ex*](../../shiori-event/choice/OnAnchorSelectEx.md)。<br />
+跳轉文字會存入 Reference0，ID 會存入 Reference1，後續引數則會依序存入 Reference2 以後。<br />
+OnAnchorSelectEx 之後也會觸發 OnAnchorSelect，但 Reference1 以後沒有資料，因此這種寫法沒有意義。
 
 **対応:** SSP
 

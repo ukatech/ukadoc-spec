@@ -1,9 +1,9 @@
 # OnKinokoObjectCreate
 
-**カテゴリ:** App "Kinoko"
+**カテゴリ:** 应用“Kinoko”
 
-Occurs when a mushroom skin grows on the head.
+Kinoko 外观长到头上时触发。
 
-- **Reference0**: Name of the mushroom skin.
-- **Reference1**: Names of the ghosts that the mushroom skin mainly targets. If there are multiple names, they are comma-separated.
-- **Reference2**: Categories of the mushroom skin. If there are multiple categories, they are comma-separated.
+- **Reference0**: 该 Kinoko 外观的名称。
+- **Reference1**: 该 Kinoko 外观主要面向的 ghost 名称。存在多个时以逗号分隔。
+- **Reference2**: 该 Kinoko 外观的类别。存在多个时以逗号分隔。

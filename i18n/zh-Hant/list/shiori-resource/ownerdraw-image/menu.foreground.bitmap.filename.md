@@ -1,7 +1,7 @@
 # menu.foreground.bitmap.filename
 
-**カテゴリ:** Owner-draw menu images
+**カテゴリ:** owner draw 選單圖片
 
-Foreground display image file name. Relative path from the SHIORI location.
+前景顯示圖片的檔案名稱。相對於 SHIORI 所在位置的相對路徑。
 
 **対応:** Materia / SSP / CROW / Ninix

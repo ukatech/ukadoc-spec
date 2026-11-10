@@ -1,7 +1,7 @@
 # purgeghostcachebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of clearing the ghost cache.
+清除 ghost 缓存的名称。
 
 **対応:** SSP

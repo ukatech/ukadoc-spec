@@ -1,8 +1,8 @@
 # `\c`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Clears the text in the balloon belonging to the current scope.
+清除目前 scope 側氣球內的文字。
 
 **対応:** Materia / SSP / CROW / Ninix
 

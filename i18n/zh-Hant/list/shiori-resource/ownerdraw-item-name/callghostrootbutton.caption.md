@@ -1,7 +1,7 @@
 # callghostrootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name for calling other ghosts.
+呼叫其他 ghost 的項目名稱。
 
 **対応:** SSP

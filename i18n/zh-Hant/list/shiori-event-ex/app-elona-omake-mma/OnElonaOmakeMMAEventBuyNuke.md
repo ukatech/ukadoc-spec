@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventBuyNuke
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when purchasing a nuclear bomb.
+購買核彈時發生。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80 為止，請參閱[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

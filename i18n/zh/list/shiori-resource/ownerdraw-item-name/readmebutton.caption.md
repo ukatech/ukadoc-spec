@@ -1,7 +1,7 @@
 # readmebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of information about the character.
+角色相关说明的名称。
 
 **対応:** Materia / SSP

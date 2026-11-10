@@ -1,11 +1,11 @@
 # alternativestart,(ID1,ID2...)
 
-**カテゴリ:** surface brace \> drawing method
+**カテゴリ:** surface brace \> 繪製方法
 
-Plays one of the animations with the specified IDs (the number in place of \* in animation\*).<br />
-In a pattern definition that specifies this drawing method, the surface ID, weight, and XY coordinates are ignored.<br />
-In SSP, parentheses can also be written as \[\], and separators can also be "." instead of ",".<br />
-Cannot be used for dressups or elements.<br />
-[Legacy definition](../caption_seriko-redefine.md): alternativestart,\[ID1,ID2...\]
+播放指定的多個 ID（animation\* 中 \* 所代表的數字）之一的動畫。<br />
+在指定此繪製方法的 pattern 定義中，surface ID、權重和 XY 座標都會被忽略。<br />
+在 SSP 中，括號也可使用 \[\]，分隔符也可使用「.」而非「,」，皆能正常讀取。<br />
+不可用於 dressup 或 element。<br />
+[舊版定義](../caption_seriko-redefine.md)：alternativestart,\[ID1,ID2...\]
 
 **対応:** Materia / SSP

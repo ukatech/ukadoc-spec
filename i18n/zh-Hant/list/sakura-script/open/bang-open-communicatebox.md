@@ -1,11 +1,11 @@
 # `\![open,communicatebox]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open CommunicateBox.<br />
-After input is confirmed, [OnCommunicate](../../shiori-event/inputbox/OnCommunicate.md) is triggered. When it is closed, [OnCommunicateInputCancel](../../shiori-event/inputbox/OnCommunicateInputCancel.md) is triggered.<br />
-SSP only: default text can be specified after the command (in the form `\![open,communicatebox,テキスト]`).<br />
-SSP only: options can be specified in the form --option=○○; see [※options](bang-close-textareabox-ID.note.md). Optional.
+開啟 CommunicateBox。<br />
+輸入確定後會觸發 [OnCommunicate](../../shiori-event/inputbox/OnCommunicate.md)。關閉時會觸發 [OnCommunicateInputCancel](../../shiori-event/inputbox/OnCommunicateInputCancel.md)。<br />
+只有 SSP 可以接著指定預設文字（形式為 `\![open,communicatebox,テキスト]`）。<br />
+只有 SSP 可以使用 --option=○○ 的形式指定[※選項](bang-close-textareabox-ID.note.md)。可省略。
 
 **対応:** Materia / SSP / CROW / Ninix
 

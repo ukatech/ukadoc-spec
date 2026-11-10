@@ -1,7 +1,7 @@
-# headlinelist(headline name/path).generic property name
+# headlinelist(headline 名稱/路徑).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** プロパティシステム
 
-Get information using the headline name or path.
+透過 headline 名稱或路徑取得資訊。
 
 **対応:** SSP

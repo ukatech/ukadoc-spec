@@ -1,9 +1,9 @@
 # uniqueid
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notify the unique ID. *\[NOTIFY\]*
+通知唯一 ID。*\[NOTIFY\]*
 
-- **Reference0**: The ghost's unique ID. Used when sending special SSTP.
+- **Reference0**: ghost 的唯一 ID。用于发送特殊 SSTP。
 
 **対応:** Materia / SSP

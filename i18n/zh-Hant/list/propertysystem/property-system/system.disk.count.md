@@ -1,7 +1,7 @@
 # system.disk.count
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Number of drives (logical drives) recognized by the OS.
+OS 識別的磁碟機（邏輯磁碟機）數量。
 
 **対応:** SSP 2.8.17

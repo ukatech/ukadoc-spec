@@ -1,9 +1,9 @@
-# point.osuwaripos.y,coordinates
+# point.osuwaripos.y,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface brace
 
-The Y coordinate of the point used to align with another window or the screen rectangle when sitting ([`\![set,alignmenttodesktop,osuwari,…]`](../../../list/sakura-script/surface/bang-set-alignmenttodesktop.note.md) with `--origin=osuwari`). The value is the distance from the top edge of the surface and scales with the surface.
+坐姿（[`\![set,alignmenttodesktop,osuwari,…]`](../../../list/sakura-script/surface/bang-set-alignmenttodesktop.note.md)的`--origin=osuwari`）中，與其他視窗或螢幕矩形對齊的點之 Y 座標。這是從 surface 上端起算的距離，會隨 surface 縮放而縮放。
 
-**既定値:** Same as `point.basepos.y` (if not specified, the default is the bottom edge of the surface)
+**既定値:** 與`point.basepos.y`相同（若未設定，則為預設 surface 的下端）
 
 **対応:** SSP (2.9.34)

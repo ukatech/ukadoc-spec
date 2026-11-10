@@ -1,9 +1,9 @@
-# menu.background.font.color.r,Numeric value
+# menu.background.font.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Background text color red (0–255)
+背景文字红色(0～255)
 
-**既定値:** Menu text color configured in the OS
+**既定値:** OS设定的菜单文字颜色
 
 **対応:** Materia / SSP / CROW

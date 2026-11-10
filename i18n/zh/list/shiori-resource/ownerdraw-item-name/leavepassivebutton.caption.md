@@ -1,7 +1,7 @@
 # leavepassivebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of forced exit from restricted mode.
+解除限制模式的名称。
 
 **対応:** SSP

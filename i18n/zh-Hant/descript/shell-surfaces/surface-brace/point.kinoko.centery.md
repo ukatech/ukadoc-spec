@@ -1,9 +1,9 @@
-# point.kinoko.centery,coordinates
+# point.kinoko.centery,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface 區塊
 
-The Y coordinate where the mushroom appears.
+蘑菇長出的 Y 座標。
 
-**既定値:** 20 pixels below the top edge of the surface (SSP)
+**既定値:** surface 上緣往下 20 像素（SSP）
 
 **対応:** Materia / SSP / CROW

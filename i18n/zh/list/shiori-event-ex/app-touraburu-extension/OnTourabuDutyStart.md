@@ -1,5 +1,5 @@
 # OnTourabuDutyStart
 
-**カテゴリ:** Google Chrome extension "TouRabu Extension"
+**カテゴリ:** Google Chrome 扩展“刀剑乱舞扩展”
 
-Occurs when an internal duty starts.
+内番开始时触发。

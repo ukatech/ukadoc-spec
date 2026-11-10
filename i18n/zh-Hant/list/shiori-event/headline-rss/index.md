@@ -1,4 +1,4 @@
-# Headline/RSS sensing events
+# 頭條／RSS 感知事件
 
 ## 一覧
 
@@ -9,5 +9,5 @@
 - [OnRSSBegin](OnRSSBegin.md)
 - [OnRSSComplete](OnRSSComplete.md)
 - [OnRSSFailure](OnRSSFailure.md)
-- [Headline sensing OnFind phases](caption_headlinesensephase.md)
-- [Headline sensing completion reasons](caption_headlinesenseresult.md)
+- [Headline sensor OnFind 階段](caption_headlinesensephase.md)
+- [Headline sensor 結束原因](caption_headlinesenseresult.md)

@@ -1,11 +1,11 @@
 # blend-soft-light-fast
 
-**カテゴリ:** surface brace \> drawing methods
+**カテゴリ:** surface花括号 \> 绘制方法
 
-Overlay the *new layer* using soft light blending, according to the opacity of the *base layer*.<br />
-Like overlay-fast, this does not change the outline, but performs soft light blending with the current surface instead of overwriting it.<br />
-Can also be used with dressup and element.<br />
-The word “fast” in the name is historical; it does not mean that processing is faster.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+根据*基础图层*的不透明度，将*新建图层*以柔光混合的方式叠加。<br />
+行为与 overlay-fast 相同，外形不会改变，但会对当前 surface 执行柔光混合，而不是覆盖。<br />
+也可用于 dressup 和 element。<br />
+名称中的“fast”源于历史原因，并不表示处理速度更快。<br />
+建议在 shell 的 descript.txt 中设置[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.39

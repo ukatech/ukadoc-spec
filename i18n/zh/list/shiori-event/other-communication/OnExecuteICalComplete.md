@@ -1,22 +1,22 @@
 # OnExecuteICalComplete
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通信事件
 
-Occurs when retrieval and parsing complete successfully with [`\![execute,ical-get/ical-post]`](../../sakura-script/misc/bang-execute-ical-get-URL.md).
+通过[`\![execute,ical-get/ical-post]`](../../sakura-script/misc/bang-execute-ical-get-URL.md)成功获取并完成解析时触发。
 
-Reference0 contains information for the entire calendar, and Reference1 onward contain one event each. The fields within each Reference are separated by byte value 1 (hereafter \[`\1`\]).<br />
-The number of events and which ones are included are determined by the [iCal filtering options](../../sakura-script/misc/bang-execute-ical-post-URL.note.md).
+Reference0包含整个日历的信息，Reference1及之后的Reference各包含一条日程。每个Reference内部以字节值1（下文记为\[`\1`\]）分隔。<br />
+返回的日程数量及其顺序由[iCal筛选选项](../../sakura-script/misc/bang-execute-ical-post-URL.note.md)决定。
 
-- **Reference0**: Calendar name (X-WR-CALNAME) \[`\1`\] Time zone (X-WR-TIMEZONE) \[`\1`\] Calendar scale (CALSCALE; usually GREGORIAN) \[`\1`\] Number of events returned by this event \[`\1`\] Total number of events in the file \[`\1`\] Start date of filtering period \[`\1`\] End date of filtering period<br />
-  The start and end dates of the period use the format "year,month,day,,, ". If none of --from, --to, --expand, or --limit are specified, these fields are empty.
-- **Reference1～**: UID \[`\1`\] Start date and time \[`\1`\] End date and time \[`\1`\] Title (SUMMARY) \[`\1`\] Description (DESCRIPTION) \[`\1`\] Location (LOCATION) \[`\1`\] URL \[`\1`\] Status (STATUS) \[`\1`\] Categories (CATEGORIES) \[`\1`\] Recurrence rule (original RRULE text) \[`\1`\] All-day flag \[`\1`\] Occurrence date<br />
-  Reference1, 2, 3, etc. continue for each event.<br />
-  Start date and time, end date and time, and occurrence date use the same comma-separated format as RSS: "year,month,day,hour,minute,second". For all-day events, hour, minute, and second are empty, so the value looks like "2026,9,10,,, ".<br />
-  The end date and time is the final date of the event (since the DTEND date value is exclusive, the value is one day earlier). For events that specify duration with DURATION instead of DTEND, the duration is added to the start date and time (for all-day events, the value is likewise one day earlier).<br />
-  If there are multiple categories, they are comma-separated. Commas within category names are not distinguished from separator commas.<br />
-  The all-day flag is 1 for all-day events and 0 for events with a time.<br />
-  The occurrence date is included only when one of --from, --to, or --expand is specified. With --expand, it is the occurrence date for the expanded instance; without --expand, it is the first occurrence within the period. If none is specified, the field is empty.<br />
-  RRULE is passed through as-is, so you can interpret it yourself without using SSP's expansion.<br />
-  Titles, descriptions, locations, URLs, categories, and calendar names are escaped so they are not interpreted as Sakura Script (\\→\\\\, %→\\%, newlines and tabs→half-width spaces).
+- **Reference0**: 日历名称(X-WR-CALNAME) \[`\1`\] 时区(X-WR-TIMEZONE) \[`\1`\] 历法(CALSCALE。通常为GREGORIAN) \[`\1`\] 本事件返回的日程数 \[`\1`\] 文件中的日程总数 \[`\1`\] 筛选期间的开始日期 \[`\1`\] 筛选期间的结束日期<br />
+  期间的开始日期和结束日期采用“年,月,日,,,”格式。如果未指定--from・--to・--expand・--limit，则为空。
+- **Reference1～**: UID \[`\1`\] 开始日期时间 \[`\1`\] 结束日期时间 \[`\1`\] 标题(SUMMARY) \[`\1`\] 说明(DESCRIPTION) \[`\1`\] 位置(LOCATION) \[`\1`\] URL \[`\1`\] 状态(STATUS) \[`\1`\] 分类(CATEGORIES) \[`\1`\] 重复规则(RRULE原文) \[`\1`\] 全天标志 \[`\1`\] 发生日期<br />
+  按日程数量依次追加Reference1、2、3～。<br />
+  开始日期时间、结束日期时间和发生日期采用与RSS相同的逗号分隔格式“年,月,日,时,分,秒”。全天日程的时、分、秒为空，例如“2026,9,10,,,”。<br />
+  结束日期时间是该日程的最后一天（DTEND的日期值为排他指定，因此此处的值会减去一天）。如果日程使用DURATION而非DTEND指定时长，则此处为开始日期时间加上时长后的值（全天日程同样会减去一天）。<br />
+  如果有多个分类，则以逗号分隔。分类名称本身包含的逗号与分隔用的逗号无法区分。<br />
+  全天标志在全天日程时为1，有具体时刻时为0。<br />
+  仅在指定了--from・--to・--expand中的任意一个选项时，才会包含发生日期。指定--expand时，包含展开后某一次发生的日期；未指定--expand时，包含期间内最早发生的日期。未指定这些选项时为空。<br />
+  RRULE会按原文传递，因此也可以不使用SSP的展开功能，而是自行解析。<br />
+  标题、说明、位置、URL、分类和日历名称都经过转义，不会被解释为Sakura Script（\\→\\\\、%→\\%、换行符和制表符→半角空格）。
 
 **対応:** SSP 2.8.90

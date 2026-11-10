@@ -1,7 +1,7 @@
 # enableballoonmovebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Enable balloon position adjustment.”
+启用 balloon 位置校正的名称。
 
 **対応:** SSP

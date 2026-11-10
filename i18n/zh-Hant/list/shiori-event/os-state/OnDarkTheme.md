@@ -1,11 +1,11 @@
 # OnDarkTheme
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when the OS switches to a dark theme (darker display).<br />
-Notified as NOTIFY (cannot speak) immediately after startup, and as GET (can speak) when the theme changes.
+OS 切換為深色主題（較暗的顯示）時觸發。<br />
+啟動後立即以 NOTIFY（無法發話）通知，切換時則以 GET（可以發話）通知。
 
-- **Reference0**: 0/1: Application setting; 1 is dark theme, 0 is normal (light) theme
-- **Reference1**: 0/1: System setting; 1 is dark theme, 0 is normal (light) theme (2.6.29)
+- **Reference0**: 0/1：應用程式設定，1 為深色主題，0 為一般（明亮）主題
+- **Reference1**: 0/1：系統設定，1 為深色主題，0 為一般（明亮）主題 (2.6.29)
 
 **対応:** SSP 2.5.02

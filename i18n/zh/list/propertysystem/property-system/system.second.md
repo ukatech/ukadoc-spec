@@ -1,7 +1,7 @@
 # system.second
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Current second.
+当前秒数。
 
 **対応:** SSP / CROW

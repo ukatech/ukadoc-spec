@@ -1,9 +1,9 @@
-# type,type
+# type,種類
 
 **カテゴリ:** descript.txt
 
-The type of file set. For a balloon, this is balloon.
+檔案組合的種類。若為 balloon，則設定為 balloon。
 
-**既定値:** cannot be omitted | balloon( on SSP)
+**既定値:** 不可省略 | balloon( on SSP)
 
 **対応:** Materia / SSP / CROW

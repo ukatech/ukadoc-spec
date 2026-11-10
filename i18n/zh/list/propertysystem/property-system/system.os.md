@@ -1,23 +1,23 @@
 # system.os.(キー)
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Information about the running OS. The strings that can be used for (キー) are as follows.
+运行中OS的信息。(キー)可使用以下字符串。
 
-- **type**: OS type, such as Windows,MacOS,Darwin,Linux,Android,FreeBSD,ReactOS. For a runtime on the web, the value is "Web". (Values are in TitleCase for historical reasons.)
-- **arch**: OS architecture, such as x86,x64,arm,arm64,ia64,risc-v,ppc,mips,loongarch. If it cannot be determined or is architecture-independent, the value is "unknown".
-- **name**: OS name. Example: Windows 11 22H2
-- **version**: OS kernel version. Example: 10.0. Note that it may differ from the OS's commonly used name. For example, both Windows 10 and 11 have the version 10.0.
-- **build**: OS build number. Example: 22621
-- **parenttype**: If running in some kind of compatibility OS or compatibility layer, its type. If there is none, an empty string. Currently, this may be Wine or ReactOS.
-- **parentname**: Name of the host-side (parent) OS for a compatibility OS or compatibility layer. If there is none, an empty string. Example: Linux 5.19.0-23-generic
-- **locale**: OS UI locale name. A language code and country/region code joined by "-". Example: ja-JP (SSP 2.8.17 and later)
-- **locale.language**: OS UI language code (ISO 639). Example: ja (SSP 2.8.17 and later)
-- **locale.country**: OS UI country/region code (ISO 3166). Example: JP (SSP 2.8.17 and later)
-- **timezone.offset**: Current time zone offset from UTC (in minutes). Regions ahead of UTC have negative values. Example: -540 for Japan Standard Time (SSP 2.8.17 and later)
-- **dst**: 1 if daylight saving time (summer time) is currently in effect, otherwise 0. (SSP 2.8.17 and later)
-- **uptime**: Elapsed time since the OS started (seconds). (SSP 2.8.17 and later)
-- **unixtime**: Current UNIX time (seconds elapsed since 1970-01-01 00:00:00 UTC). (SSP 2.8.17 and later)
-- **idletime**: Elapsed time since the last user input (keyboard or mouse operation) (seconds). (SSP 2.8.17 and later)
+- **type**: OS类型。例如Windows、MacOS、Darwin、Linux、Android、FreeBSD、ReactOS等。若运行时位于Web上，则为"Web"。（由于历史原因，值采用TitleCase）
+- **arch**: OS架构。例如x86、x64、arm、arm64、ia64、risc-v、ppc、mips、loongarch等。无法确定或与架构无关时为"unknown"
+- **name**: OS名称。例如：Windows 11 22H2
+- **version**: OS内核版本。例如：10.0。请注意，这可能与OS的名称不一致。例如，Windows 10和11的版本号都是10.0。
+- **build**: OS内部版本号。例如：22621
+- **parenttype**: 若通过某种兼容OS/兼容层运行，则为其类型。若不存在则为空字符串。目前包括Wine或ReactOS。
+- **parentname**: 兼容OS/兼容层的宿主侧（父级）OS名称。若不存在则为空字符串。例如：Linux 5.19.0-23-generic
+- **locale**: OS的UI区域设置名称。由语言代码和国家/地区代码以「-」连接组成。例如：ja-JP（SSP 2.8.17及以后版本）
+- **locale.language**: OS的UI语言代码（ISO 639）。例如：ja（SSP 2.8.17及以后版本）
+- **locale.country**: OS的UI国家/地区代码（ISO 3166）。例如：JP（SSP 2.8.17及以后版本）
+- **timezone.offset**: 当前时区相对UTC的偏移量（单位为分钟）。相对于UTC时间较早的地区将返回负值。例如：日本标准时间为-540（SSP 2.8.17及以后版本）
+- **dst**: 当前是否采用夏令时。采用时为1，否则为0。（SSP 2.8.17及以后版本）
+- **uptime**: OS启动后的经过时间（秒）。（SSP 2.8.17及以后版本）
+- **unixtime**: 当前时间的UNIX时间戳（自1970-01-01 00:00:00 UTC起经过的秒数）。（SSP 2.8.17及以后版本）
+- **idletime**: 自最后一次用户输入（键盘或鼠标操作）起经过的时间（秒）。（SSP 2.8.17及以后版本）
 
 **対応:** SSP 2.6.26/27

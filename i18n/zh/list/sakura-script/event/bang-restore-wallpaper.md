@@ -1,8 +1,8 @@
 # `\![restore,wallpaper]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Restores the wallpaper saved with save,wallpaper.<br />
-\[2.8.93\] In window mode, restores the background saved with save,wallpaper while in window mode as the window-mode background (the OS wallpaper is not changed). Does nothing if nothing has been saved in window mode.
+恢复使用save,wallpaper保存的壁纸。<br />
+\[2.8.93\] 在窗口模式下，将使用save,wallpaper在窗口模式下保存的背景恢复为窗口模式背景（不更改OS壁纸）。如果从未在窗口模式下保存过，则不执行任何操作。
 
 **対応:** SSP 2.8.11

@@ -1,9 +1,9 @@
-# `\![sound,stop,ファイル名]`
+# `\![sound,stop,文件名]`
 
-**カテゴリ:** Sound commands
+**カテゴリ:** サウンドコマンド
 
-Completely stops playback. Unlike pause, this releases the audio data and stops playback completely. In some cases, another audio file cannot be played unless this command is used to stop playback.<br />
-If the filename is omitted, stops all currently playing sounds.
+彻底停止播放。与pause不同，此命令会释放音频数据并彻底停止播放。如果不使用此命令停止，可能无法播放其他音频数据。<br />
+省略文件名时，会停止所有正在播放的声音。
 
 **対応:** SSP
 

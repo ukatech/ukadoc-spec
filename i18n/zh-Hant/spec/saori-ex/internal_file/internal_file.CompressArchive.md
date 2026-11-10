@@ -2,30 +2,30 @@
 
 **カテゴリ:** internal_file
 
-Compresses a folder into a ZIP file (or 7z file). This makes the same operation as `CompressArchive` in [SSTP's EXECUTE](../../sstp/method_execute.md) callable via SAORI over DirectSSTP.<br />
-The archive format is determined by the extension of the destination. `.7z` means 7z (compressed using LZMA); all other extensions mean ZIP (even if `.lzh` or `.cab` is specified, the contents will be ZIP).<br />
-Archive processing may take several seconds, so using [`--async`](../async.md) is strongly recommended. If called synchronously, the ghost will stop during processing.
+將資料夾壓縮成 ZIP 檔案（或 7z 檔案）。此功能可透過 SAORI over DirectSSTP 呼叫，執行與[SSTP 的 EXECUTE](../../sstp/method_execute.md)中的`CompressArchive`相同的處理。<br />
+壓縮檔格式由目的地副檔名決定。`.7z`會使用 7z（以 LZMA 壓縮），其他副檔名一律使用 ZIP（即使指定`.lzh`或`.cab`，內容仍會是 ZIP）。<br />
+壓縮檔處理可能需要數秒，因此強烈建議使用[`--async`](../async.md)。若以同步方式呼叫，ghost 會在處理期間停止。
 
-- **Argument1**: Path to the destination archive. Relative paths are based on the ghost's folder (ghost/master). Both `/` and `\` can be used as separators. If a relative path is passed when called without a ghost, the result is 400 (`ghost required`).
-- **Argument2**: Path to the folder to compress (files inside are included recursively, but hidden files and hidden folders, including their contents, are excluded). Written in the same way as Argument1. If it does not exist, the result is 400 (`file not found`). This path is not limited to folders managed by SSP; folders outside its management can also be compressed (only the destination is restricted). \[SSP 2.9.33\] Passing a path that is not a folder (such as a file path) results in 400 (`invalid parameter`). Before this version, passing a file path failed with 500 (`file not found`).
+- **Argument1**: 壓縮檔的目的地路徑。相對路徑以 ghost 資料夾（ghost/master）為基準。分隔符可使用`/`或`\`。在沒有 ghost 的情況下呼叫並傳入相對路徑時，會回傳 400（`ghost required`）。
+- **Argument2**: 要壓縮的資料夾路徑（會遞迴包含其中的檔案，但不包含隱藏檔案與隱藏資料夾〔包括其中的內容〕）。寫法與 Argument1 相同。路徑不存在時會回傳 400（`file not found`）。此路徑不限於 SSP 管理的資料夾，也可壓縮管理範圍以外的資料夾（只有壓縮目的地受限）。\[SSP 2.9.33\] 若傳入的不是資料夾（例如檔案路徑），會回傳 400（`invalid parameter`）。在此版本之前，傳入檔案路徑會因 500（`file not found`）而失敗。
 
-The options are as follows (if the same name is specified twice, the later one takes effect).
+選項如下（同名選項寫入兩次時，以後者為準）。
 
-- --password=password……Encrypts using the specified password (AES-encrypted ZIP for ZIP archives).
-- --option=option……Specify the following values **together as a single comma-separated value** (for example, `--option=overwrite,lzma`. If `--option=` is specified twice, only the later one takes effect).<br />
-  overwrite……Replace the destination archive if it already exists.<br />
-  append……Append to the destination archive if it already exists.<br />
-  lzma……Compress using LZMA (for ZIP; 7z always uses LZMA, so specifying this has no effect).<br />
-  headerencrypt……Also encrypt the header (list of file names) (requires `--password=`). **Works only with 7z and has no effect with ZIP** (file names remain unencrypted in ZIP).<br />
-  If the destination archive already exists and neither `overwrite` nor `append` is specified, the result is 400 (`file exists`).
+- --password=密碼……使用指定的密碼加密（若為 ZIP，則使用 AES 加密 ZIP）。
+- --option=選項……以逗號分隔並**合併為一個值**指定下列選項（例如`--option=overwrite,lzma`。若將`--option=`分開寫成兩項，只有後者有效）。<br />
+  overwrite……若目的地壓縮檔已存在，則予以取代。<br />
+  append……若目的地壓縮檔已存在，則將內容附加至其中。<br />
+  lzma……使用 LZMA 壓縮（適用於 ZIP。7z 一律使用 LZMA，因此指定此選項也不會改變結果）。<br />
+  headerencrypt……也加密標頭（檔名清單）（需要`--password=`）。**僅適用於 7z，對 ZIP 不會產生作用**（ZIP 的檔名仍會以未加密的狀態保留）。<br />
+  若目的地壓縮檔已存在，且未指定`overwrite`或`append`，則會回傳 400（`file exists`）。
 
-On success, the result is 200, with the number of compressed files in `Result`, the compressed size in bytes in `Value0`, and the uncompressed size in bytes in `Value1` (decimal integers). These are the same values as `Reference1`–`Reference3` of SSTP's EXECUTE [OnCompressArchiveComplete](../../../list/shiori-event/other/OnCompressArchiveComplete.md). With [`--async`](../async.md), they are returned in `Reference1` (`Result`) and `Reference4` and `Reference5` (`Value0` and `Value1`).<br />
-For ZIP, `Value0` is the number of bytes added to the archive (including the header and central directory; only the added amount when using `append`), so it is slightly larger than the size of the compressed data alone.<br />
-\[SSP 2.9.26\] The file count and byte sizes are also returned correctly for ZIP (in \[SSP 2.9.25\], compressing to ZIP returned 0).
+成功時會回傳 200，並在`Result`中放入壓縮的檔案數量，在`Value0`中放入壓縮後的位元組數，在`Value1`中放入壓縮前（解壓後）的位元組數（十進位整數）。這些值與 SSTP 的 EXECUTE 中[OnCompressArchiveComplete](../../../list/shiori-event/other/OnCompressArchiveComplete.md)的`Reference1`～`Reference3`相同；使用[`--async`](../async.md)時，會放入`Reference1`（`Result`）以及`Reference4`、`Reference5`（`Value0`、`Value1`）。<br />
+ZIP 的`Value0`是壓縮檔增加的位元組數（包含標頭與中央目錄；使用`append`時僅計算新增部分），會比壓縮資料本身的大小稍大。<br />
+\[SSP 2.9.26\] ZIP 也會正確填入檔案數量與位元組數（\[SSP 2.9.25\]中，壓縮成 ZIP 時數值會是 0）。
 
-Failures are as follows. 400 indicates `file not found` (source does not exist) / `invalid parameter` (missing argument, empty path, invalid option, or, \[SSP 2.9.33\], source is not a folder) / `ghost required` / `file exists` / `path not allowed` (destination is outside folders managed by SSP). 500 indicates the reason compression failed, such as `open failed`.
+失敗情況如下。400 代表`file not found`（壓縮來源不存在）/ `invalid parameter`（引數不足、路徑為空、選項無效、\[SSP 2.9.33\] 壓縮來源不是資料夾）/ `ghost required` / `file exists` / `path not allowed`（壓縮目的地位於 SSP 管理資料夾之外）。500 則表示`open failed`等壓縮失敗原因。
 
-For security reasons, the destination is restricted to locations under folders managed by SSP (locations specified in settings such as the ghost and balloon folders). The path is checked after resolving `..` and similar components. Since these restrictions may be strengthened as needed, it is safer to limit the destination to locations under the folder containing the ghost's own data.
+基於安全考量，壓縮目的地限制在 SSP 管理的資料夾（例如 ghost 資料夾、balloon 資料夾等「資料夾」設定指定的位置）之下。檢查時會先解析`..`等路徑。由於此限制可能視需要加強，建議將目的地限於存放 ghost 本身資料的資料夾之下。
 
 ## 記述例
 

@@ -2,9 +2,9 @@
 
 **カテゴリ:** internal_random
 
-Return a UUID (RFC 9562) in lowercase canonical form (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).<br />
-Version 4 is entirely random. For version 7, the first 48 bits are the current time (UNIX time in milliseconds), making UUIDs easier to sort in creation order (the order within the same millisecond is not guaranteed).
+以小寫標準格式（`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`）回傳 UUID（RFC 9562）。<br />
+版本4的整體內容皆為隨機值。版本7的前48位元是目前時間（UNIX 時間的毫秒），便於依建立順序排列（不保證同一毫秒內的順序）。
 
-- **オプション**: `--version=4` (default) / `--version=7` (any other value returns 400 `invalid parameter`)
+- **オプション**: `--version=4`（預設） / `--version=7`（其他值回傳 400 `invalid parameter`）
 
 **対応:** SSP 2.9.13

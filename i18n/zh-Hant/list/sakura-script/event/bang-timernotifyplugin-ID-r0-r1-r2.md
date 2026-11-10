@@ -1,8 +1,8 @@
 # `\![timernotifyplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Same as timerraiseplugin, except that any values returned by this notification event are not reflected in SSP.
+與 timerraiseplugin 相同，差異僅在於即使此通知事件傳回任何值，也不會反映至 SSP。
 
 **対応:** SSP
 

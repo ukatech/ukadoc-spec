@@ -1,7 +1,7 @@
 # `\![reload,aigraph]`
 
-**カテゴリ:** Uncategorized commands
+**カテゴリ:** 未分類コマンド
 
-Reload the AI graph only if it is currently displayed. The getaistate SHIORI request is also issued again.
+僅在 AI 圖表已顯示時重新載入 AI 圖表。也會再次發出 getaistate SHIORI 請求。
 
 **対応:** SSP 2.6.89

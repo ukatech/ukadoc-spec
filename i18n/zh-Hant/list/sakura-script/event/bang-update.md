@@ -1,13 +1,13 @@
 # `\![update,更新対象(,オプション,オプション...)]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Start a network update event for the specified update targets.<br />
-ghost, shell, and balloon can be specified. To update multiple targets at once, separate them with 「+」.<br />
-Setting the update target to all has the same effect as `\![updatebymyself]`.<br />
-Unlike `\![updatebymyself]`, `\![update,ghost+shell+balloon]` forces an update regardless of the SSP settings.<br />
-When updating anything other than ghost, if an update is available, events such as the SHIORI event [OnUpdateOtherReady](../../shiori-event/network-update/OnUpdateOtherReady.md), in which OnUpdate is changed to OnUpdateOther, are sent. After all updates are complete, [OnUpdateResult](../../shiori-event/network-update/OnUpdateResult.md) occurs to summarize the results.<br />
-Options are supported only by SSP. See [Update options](note-1.md#補足).
+開始指定更新對象的網路更新事件。<br />
+可指定 ghost、shell、balloon；若要同時更新多個對象，可用「+」連接指定。<br />
+將更新對象指定為 all 時，與 `\![updatebymyself]` 相同。<br />
+指定 `\![update,ghost+shell+balloon]` 時，與 `\![updatebymyself]` 不同，無論 SSP 本體設定為何，都會強制執行更新。<br />
+更新 ghost 以外的對象時，若有更新，會通知 SHIORI 事件 [OnUpdateOtherReady](../../shiori-event/network-update/OnUpdateOtherReady.md) 等將 OnUpdate 改為 OnUpdateOther 的事件；全部更新完成後，會觸發 [OnUpdateResult](../../shiori-event/network-update/OnUpdateResult.md) 彙整結果。<br />
+只有 SSP 支援指定選項。請參閱[更新選項設定](note-1.md#補足)。
 
 **対応:** SSP
 

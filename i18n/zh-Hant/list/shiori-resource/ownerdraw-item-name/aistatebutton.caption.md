@@ -1,7 +1,7 @@
 # aistatebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the AI graph.
+AI 圖表的項目名稱。
 
 **対応:** SSP

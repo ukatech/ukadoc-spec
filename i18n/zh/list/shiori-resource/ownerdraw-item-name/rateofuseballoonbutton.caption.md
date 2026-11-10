@@ -1,7 +1,7 @@
 # rateofuseballoonbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Balloon - individual usage rate name.
+balloon - 单独项目的名称。
 
 **対応:** Materia

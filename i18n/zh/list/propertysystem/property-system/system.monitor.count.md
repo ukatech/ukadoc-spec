@@ -1,7 +1,7 @@
 # system.monitor.count
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Number of connected monitors.
+已连接的显示器数量。
 
 **対応:** SSP 2.8.16

@@ -2,14 +2,14 @@
 			<h1>Target Ghost</h1>
 			<!-- 実行対象のゴーストを選択するリスト -->
 			<div id="ghost_select">
-				<p>Press the "Load" button to retrieve a list of running ghosts. Select the ghost on which to run the example:</p>
+				<p>按下「載入」按鈕即可取得目前正在執行的 ghost 清單。請選擇要執行記述範例的目標 ghost：</p>
 				<select id="ghost_list_content" onchange="reload_button()"></select>
 				<!-- 読み込みボタン -->
-				<button id="ghost_reload_button" onclick="reload_button()">Load</button>
+				<button id="ghost_reload_button" onclick="reload_button()">載入</button>
 			</div>
 			<div>
-				<p>Some tags are dangerous and will not be executed unless the target ghost supports the following event:</p>
+				<p>部分標籤具有危險性，除非目標 ghost 支援以下事件，否則不會執行：</p>
 				<a href="list_shiori_event_ex.html#OnUkadocScriptExample">OnUkadocScriptExample</a>
-				<p>When running an event, take care to escape dangerous tags.</p>
+				<p>執行事件時，請務必小心將危險標籤跳脫。</p>
 			</div>
 		</section>

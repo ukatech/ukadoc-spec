@@ -1,18 +1,18 @@
 # OnScheduleTodayNotify
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 行事曆事件
 
-Occurs when the contents of “Today's schedule” in the built-in calendar change. *\[NOTIFY\]*<br />
-For example, when the date changes, a schedule is added or deleted, or the results from the schedule sensor change. It does not occur if there is no change.<br />
-This is sent to all running ghosts, not to a specific ghost.
+本體行事曆功能的「今日行程」內容變更時觸發。*\[NOTIFY\]*<br />
+例如日期變更、新增或刪除行程，或行程感測器的取得結果變更時。內容沒有變更時不會觸發。<br />
+此通知會傳送給所有正在執行的 ghost，而非特定 ghost。
 
-Reference0 onward each contain one item from the updated “Today's schedule.” The contents of each Reference are separated by byte value 1 (hereafter \[`\1`\]).<br />
-If there are no remaining schedule items, the event occurs with no References.
+Reference0 起的各項內容，分別代表更新後的「今日行程」中的一筆行程。每個 Reference 的內容以位元組值 1（以下稱為 \[`\1`\]）分隔。<br />
+若沒有任何行程，則會在完全沒有 Reference 的狀態下觸發。
 
-- **Reference0～**: Event [type](caption_scheduletype.md) \[`\1`\] Event content (caption) \[`\1`\] Additional data (subtitle) \[`\1`\] Script (script) \[`\1`\] Start date and time \[`\1`\] End date and time \[`\1`\]<br />
-  References continue as Reference0, 1, 2, and so on, for the number of schedules. Note that a delimiter \[`\1`\] is also appended at the end.<br />
-  Start and end dates and times use the comma-separated format “year,month,day,hour,minute,second.” For schedules with no time set, hour, minute, and second are empty, as in “2026,9,10,,,.”<br />
-  The end date and time are included only for schedules with an end time set. Otherwise, they are empty.<br />
-  caption, subtitle, and script are the strings registered in the built-in calendar, unchanged; no escaping for Sakura Script is performed.
+- **Reference0～**: 事件的[類型](caption_scheduletype.md) \[`\1`\] 事件內容 (caption) \[`\1`\] 附加資料 (subtitle) \[`\1`\] 腳本 (script) \[`\1`\] 開始日期時間 \[`\1`\] 結束日期時間 \[`\1`\]<br />
+  Reference0、1、2～依行程數量排列。請注意，最後也會附上分隔符號 \[`\1`\]。<br />
+  開始日期時間與結束日期時間的格式為以逗號分隔的「年,月,日,時,分,秒」。未設定時間的行程，其時、分、秒欄位會留空，例如「2026,9,10,,,」。<br />
+  只有設定了結束時間的行程才會有結束日期時間。未設定時為空。<br />
+  caption、subtitle、script 的內容與登錄在本體行事曆中的字串完全相同，不會進行 Sakura Script 用的跳脫處理。
 
 **対応:** SSP 2.8.90

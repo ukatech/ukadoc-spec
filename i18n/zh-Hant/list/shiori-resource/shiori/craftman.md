@@ -1,8 +1,8 @@
 # craftman
 
-**カテゴリ:** SHIORI information
+**カテゴリ:** SHIORI 資訊
 
-Occurs immediately after SHIORI loads.<br />
-SHIORI returns its author's name in response to this event. Only 7-bit characters can be used.
+SHIORI 載入後立即發生。<br />
+SHIORI 會針對此事件回傳 SHIORI 作者名稱。僅能使用 7 位元字元。
 
 **対応:** Materia / SSP / CROW

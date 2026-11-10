@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-Always use bold font. 0 disables / 1 enables.
+始终使用粗体。0为禁用/1为启用。
 
 **既定値:** 0
 

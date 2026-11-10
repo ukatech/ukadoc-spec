@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventHour
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when one in-game hour has passed.
+遊戲內經過1小時時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

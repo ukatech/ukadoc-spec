@@ -1,11 +1,11 @@
 # `\![open,dialog,save,パラメータ]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens a file save dialog. Saving from this dialog does not actually save anything.<br />
-When confirmed, the SHIORI event [OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md) is triggered, with “save” stored in reference0 and the file path stored in Reference2. Each ghost author must implement and run the actual processing here.<br />
-When the dialog is closed, the SHIORI event [OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md) is triggered.<br />
-[Parameters described below](bang-open-dialog-color.note.md) can be specified as a comma-separated list.
+開啟檔案儲存對話框。在此對話框中執行儲存，不會實際儲存任何內容。<br />
+按下確定時會觸發 SHIORI 事件[OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md)，reference0 會存入「save」，Reference2 會存入檔案路徑，因此各 ghost 作者須在此處實作並執行實際處理。<br />
+關閉時會觸發 SHIORI 事件[OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md)。<br />
+以逗號分隔，可指定多個[參數設定方式請見後述](bang-open-dialog-color.note.md)。
 
 **対応:** SSP
 

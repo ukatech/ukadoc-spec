@@ -1,8 +1,8 @@
 # `\p[ID番号]`
 
-**カテゴリ:** Scope command
+**カテゴリ:** Scope 指令
 
-Display the scope with the specified ID.
+顯示 ID 號碼所指定的 scope。
 
 **対応:** SSP / CROW / Ninix
 

@@ -1,16 +1,16 @@
 # OnMouseWheel
 
-**カテゴリ:** Mouse event
+**カテゴリ:** 鼠标事件
 
-Occurs when the mouse wheel is rotated.<br />
-Since SSP2.3.53, on touch-panel environments, if SHIORI returns nothing (204 No Content) for an [OnMouseGesture](OnMouseGesture.md) event whose Reference5 is up or down, OnMouseWheel is also triggered as a fallback event. In that case, the numeric value of Reference2 is converted based on the original OnMouseGesture movement amount and the up or down direction (positive for up, negative for down).
+鼠标滚轮转动时触发。<br />
+从SSP2.3.53开始，在触摸屏环境下，如果SHIORI对[OnMouseGesture](OnMouseGesture.md)的Reference5为up或down的事件未返回任何内容（返回204 No Content），则也会触发OnMouseWheel作为替代事件。此时，Reference2的数值会根据原始OnMouseGesture的移动量及up・down方向进行转换（up为正数，down为负数）。
 
-- **Reference0**: x coordinate of the mouse cursor (local coordinates)
-- **Reference1**: y coordinate of the mouse cursor (local coordinates)
-- **Reference2**: Mouse wheel rotation amount and direction.
-- **Reference3**: 0 for the main character, 1 for the partner. SSP/CROW may also use 2 and above.
-- **Reference4**: Hit-test identifier.
-- **Reference5**: ※SSP/NINIX only　Always 0.
-- **Reference6**: ※SSP/NINIX only　Input from a touch panel in a multi-touch-compatible environment (※touchpads are not supported) is reported as touch, input from a pen tablet as pen, input from the eraser side of a pen tablet as eraser, and input from a mouse or similar device as mouse
+- **Reference0**: 鼠标光标的 x 坐标（局部坐标）
+- **Reference1**: 鼠标光标的 y 坐标（局部坐标）
+- **Reference2**: 鼠标滚轮的转动量及转动方向。
+- **Reference3**: 主角色为0，搭档为1。SSP/CROW中还可能有2及以上的值。
+- **Reference4**: 命中判定的标识符。
+- **Reference5**: ※仅限SSP/NINIX　始终为0。
+- **Reference6**: ※仅限SSP/NINIX　来自支持多点触控环境的触摸屏（※不包括触摸板）的输入为touch，来自数位板的输入为pen，来自数位板橡皮擦端的输入为eraser，来自鼠标等设备的输入为mouse
 
 **対応:** Materia / SSP / CROW / Ninix

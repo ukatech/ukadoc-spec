@@ -1,6 +1,6 @@
-# App “Satoristo”
+# 应用“Satorist”
 
-- Publisher: [http://nanachi.sakura.ne.jp/](http://nanachi.sakura.ne.jp/)
+- 发布方：[http://nanachi.sakura.ne.jp/](http://nanachi.sakura.ne.jp/)
 
 **対応:** SSP
 

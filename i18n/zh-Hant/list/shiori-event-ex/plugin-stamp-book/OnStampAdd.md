@@ -1,14 +1,14 @@
 # OnStampAdd
 
-**カテゴリ:** Plugin "Stamp Book"
+**カテゴリ:** plugin「印章簿」
 
-An event sent to the Stamp Book using raiseplugin to add a stamp.
+為蓋印而透過 raiseplugin 傳送至印章簿的事件。
 
-- **Reference0**: Path to the stamp image file.
-- **Reference1**: Stamp title.<br />
-  Specify a string that does not contain Sakura Script (it will be removed).<br />
-  Optional.
-- **Reference2**: Stamp comment.<br />
-  Specify a string that does not contain Sakura Script (it will be removed).<br />
-  Line breaks can be inserted with &lt;br\> (&lt;BR\>, ＜br＞, ＜BR＞).<br />
-  Optional.
+- **Reference0**: 印章圖片檔案的路徑。
+- **Reference1**: 印章標題。<br />
+  請指定不含 Sakura Script 的字串（會被移除）。<br />
+  可省略。
+- **Reference2**: 印章留言。<br />
+  請指定不含 Sakura Script 的字串（會被移除）。<br />
+  可使用 &lt;br\>（&lt;BR\>、＜br＞、＜BR＞）換行。<br />
+  可省略。

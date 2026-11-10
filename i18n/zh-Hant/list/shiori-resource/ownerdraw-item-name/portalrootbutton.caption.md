@@ -1,7 +1,7 @@
 # portalrootbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the portal item.
+入口網站的名稱。
 
 **対応:** Materia / SSP / CROW

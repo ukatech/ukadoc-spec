@@ -1,7 +1,7 @@
 # `\![open,addressbar]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the address bar. This provides the same operation as dragging and dropping a URL.
+開啟網址列。可執行與拖放 URL 相同的操作。
 
 **対応:** SSP

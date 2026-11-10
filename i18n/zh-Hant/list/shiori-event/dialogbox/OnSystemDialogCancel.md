@@ -1,10 +1,10 @@
 # OnSystemDialogCancel
 
-**カテゴリ:** Dialog box events
+**カテゴリ:** 對話方塊事件
 
-Occurs when Cancel is clicked in a file-related dialog.
+在檔案相關對話方塊中按下取消時觸發。
 
-- **Reference0**: One of open, save, folder, or color.
-- **Reference1**: Event ID.
+- **Reference0**: open、save、folder、color 其中之一。
+- **Reference1**: 事件 ID。
 
 **対応:** SSP

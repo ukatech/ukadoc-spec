@@ -1,6 +1,6 @@
 # UKADOC
 
-- Publisher: [Sakura Script List](../../sakura-script/index.md)
+- 发布来源：[Sakura Script列表](../../sakura-script/index.md)
 
 **対応:** SSP
 

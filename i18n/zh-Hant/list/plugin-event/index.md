@@ -1,13 +1,13 @@
-# PLUGIN Event List
+# PLUGIN Event 清單
 
-This page summarizes the events that the baseware notifies *to* plugins.
+本頁整理由 baseware通知給 plugin*的*事件。
 
-Information such as the PLUGIN/2.0 communication specification itself is available on the [PLUGIN/2.0](../../spec/plugin.md) page.
+關於 PLUGIN/2.0 通訊規格本身等內容，請參閱[PLUGIN/2.0](../../spec/plugin.md)頁面。
 
-Events marked *\[NOTIFY\]* are always notified using the NOTIFY command.<br />
-Any script returned in response to an event notified using the NOTIFY command is completely ignored.
+標示*\[NOTIFY\]*的事件一律透過 NOTIFY 命令通知。<br />
+即使對透過 NOTIFY 命令通知的事件回傳指令碼，也會完全遭到忽略。
 
-Events without a specific indication may be notified using either NOTIFY or GET, depending on the situation.
+未特別標示的事件，視情況可能透過 NOTIFY 或 GET 通知。
 
 ## 一覧
 

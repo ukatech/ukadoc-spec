@@ -1,7 +1,7 @@
 # currentghost.shelllist.count
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The number of installed shells.
+已安装 shell 的数量。
 
 **対応:** SSP / CROW

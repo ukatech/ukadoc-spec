@@ -1,9 +1,9 @@
-# onlinemarker.x,coordinate [\*1](../index.md#balloon設定)
+# onlinemarker.x,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-X coordinate of the online indicator.
+在线显示的 X 坐标。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

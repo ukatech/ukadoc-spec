@@ -1,4 +1,4 @@
-# Related Sakura Script
+# 相关Sakura Script
 
 - [`\![raiseother]`](../sakura-script/event/bang-raiseother-r0-r1-r2.md)
 - [`\![notifyother]`](../sakura-script/event/bang-notifyother-r0-r1-r2.md)

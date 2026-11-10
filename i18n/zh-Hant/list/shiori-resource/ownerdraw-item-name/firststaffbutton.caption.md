@@ -1,7 +1,7 @@
 # firststaffbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name of the version information item.
+版本資訊的名稱。
 
 **対応:** Materia / SSP / CROW

@@ -1,5 +1,5 @@
-# Headline sensing end reasons
+# 标题感知结束原因
 
-- **no update**: (Currently only OnHeadlinesenseComplete) There were no updates
-- **can't download**: The file could not be retrieved
-- **can't analyze**: The file was retrieved, but no valid headlines could be obtained
+- **no update**: （目前仅用于OnHeadlinesenseComplete）没有更新
+- **can't download**: 无法获取文件
+- **can't analyze**: 已获取文件，但未能取得有效标题

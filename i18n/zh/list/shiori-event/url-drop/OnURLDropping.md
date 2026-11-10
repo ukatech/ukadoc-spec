@@ -1,11 +1,11 @@
 # OnURLDropping
 
-**カテゴリ:** URL drop events
+**カテゴリ:** URL拖放事件
 
-Occurs when a URL is dropped and the download is about to start.<br />
-This event occurs before the download process. It does not occur for other cases (such as homeurl installation or feed (RSS) installation).
+URL被拖放后，开始下载时触发。<br />
+此事件在下载处理前触发。其他情况（安装homeurl或feed(RSS)）不会触发。
 
-- **Reference0**: Dropped URL.
-- **Reference1**: Scope number of the character the URL was dropped on. Main character is 0, partner is 1, and the third character onward are 2 and above.
+- **Reference0**: 已拖放的URL。
+- **Reference1**: 已拖放的角色的scope编号。本体侧为0，搭档为1，第三人及之后为2以上。
 
-**対応:** Materia / SSP Ref1 is 2.6.36 / CROW
+**対応:** Materia / SSP Ref1自2.6.36起支持 / CROW

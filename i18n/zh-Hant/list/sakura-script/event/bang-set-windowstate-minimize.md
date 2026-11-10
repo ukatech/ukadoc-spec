@@ -1,8 +1,8 @@
 # `\![set,windowstate,minimize]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Minimize.
+將視窗最小化。
 
 **対応:** Materia / SSP
 

@@ -1,9 +1,9 @@
 # `\![execute,http-get,URL,オプション,オプション,オプション...]`
 
-**カテゴリ:** Unclassified command
+**カテゴリ:** 未分類命令
 
-Perform an HTTP GET request with [※options](bang-execute-http-options-URL.note.md) and store the response in a file.<br />
-The file is stored in the \[folder of the executing ghost\]/ghost/master/var folder.
+使用[※選項](bang-execute-http-options-URL.note.md)發送 HTTP GET 請求，並將回應存入檔案。<br />
+檔案會存放在\[執行中的 ghost 資料夾\]/ghost/master/var 資料夾。
 
 **対応:** SSP / Ninix
 

@@ -1,16 +1,16 @@
 # OnOSUpdateInfo
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Notifies the dates and times of OS update checks and installations, along with update history.<br />
-Notified via NOTIFY (cannot speak) immediately after startup, and via GET (can speak) shortly after an update is installed.
+通知OS更新的检查时间、执行时间和历史记录信息。<br />
+启动后立即通过NOTIFY(无法说话)通知；执行更新时，则会稍后通过GET(可以说话)通知。
 
-- **Reference0**: Check date and time: year, month, day, hour, minute, second; comma-separated; local time
-- **Reference1**: Installation date and time: year, month, day, hour, minute, second; comma-separated; local time
-- **Reference2～**: Update history entries follow in the format below. \[`\1`\] is byte value 1.<br />
-  Status\[`\1`\]error code\[`\1`\]update time\[`\1`\]update details (title)<br />
-  Status: one of not_started (not started), in_progress (in progress), success (successful), success_with_errors (successful with errors), fail (failed), abort (aborted), or unknown (unknown)<br />
-  Error code: Non-zero if an error occurred during the update, or 0 otherwise. In Windows, this is 8 hexadecimal digits.<br />
-  Update time: year, month, day, hour, minute, second; comma-separated; local time
+- **Reference0**: 检查时间 年、月、日、时、分、秒，以半角逗号分隔，使用本地时间
+- **Reference1**: 执行时间 年、月、日、时、分、秒，以半角逗号分隔，使用本地时间
+- **Reference2～**: 后续按以下格式附加更新历史记录信息。\[`\1`\]是字节值1。<br />
+  状态\[`\1`\]错误代码\[`\1`\]更新时间\[`\1`\]更新内容(标题)<br />
+  状态：取值为not_started(未执行)・in_progress(更新中)・success(成功)・success_with_errors(成功但有错误)・fail(失败)・abort(中止)・unknown(未知)之一<br />
+  错误代码：更新时发生错误则为非0，否则为0。Windows中为8位十六进制数。<br />
+  更新时间：年、月、日、时、分、秒，以半角逗号分隔，使用本地时间
 
 **対応:** SSP 2.5.02

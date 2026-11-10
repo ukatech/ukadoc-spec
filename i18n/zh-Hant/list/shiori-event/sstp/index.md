@@ -1,4 +1,4 @@
-# SSTP Events
+# SSTP 事件
 
 ## 一覧
 

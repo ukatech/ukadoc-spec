@@ -1,11 +1,11 @@
-# Relative path,ignore
+# 相对路径,ignore
 
 **カテゴリ:** updates_def.txt
 
-Specify options, separated by commas, for files given by relative paths from the ghost's home folder.<br />
-Directories cannot be specified.<br />
-When the ignore option is present, the target is excluded from update targets when updates2.dau (updates.txt) is created.
+对于指定为相对于ghost主目录的文件路径，可以用逗号分隔指定选项。<br />
+不能对文件夹进行指定。<br />
+指定ignore选项后，创建updates2.dau（updates.txt）时不会将该文件纳入更新对象。
 
-**既定値:** No effect
+**既定値:** 无效果
 
 **対応:** SSP

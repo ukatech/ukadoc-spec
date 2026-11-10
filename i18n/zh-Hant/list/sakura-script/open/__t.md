@@ -1,7 +1,7 @@
 # `\__t`
 
-**カテゴリ:** Open command
+**カテゴリ:** オープンコマンド
 
-\[Deprecated\] Opens the TeachBox.
+\[舊規格\]開啟TeachBox。
 
 **対応:** Materia / SSP

@@ -1,8 +1,8 @@
 # `\![open,pluginexplorer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 打开命令
 
-Open the plugin explorer.
+打开插件浏览器。
 
 **対応:** SSP
 

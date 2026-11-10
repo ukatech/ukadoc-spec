@@ -1,7 +1,7 @@
 # OnElinCatchFish
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 應用程式「Elin」
 
-Occurs when something is caught.
+釣起物品時發生。
 
-- **Reference0**: Name of the caught item
+- **Reference0**: 釣起的物品名稱

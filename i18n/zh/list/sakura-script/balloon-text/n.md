@@ -1,8 +1,8 @@
 # `\n`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Inserts a line break in the balloon text.
+在气球内换行。
 
 **対応:** Materia / SSP / CROW / Ninix
 

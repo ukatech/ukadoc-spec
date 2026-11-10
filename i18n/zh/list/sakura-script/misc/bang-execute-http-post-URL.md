@@ -1,9 +1,9 @@
 # `\![execute,http-post,URL,パラメータ]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分类命令
 
-Sends an HTTP POST request with parameters and stores the response in a file.<br />
-The file is stored in the var folder at \[folder of the ghost that executed this command\]/ghost/master/var.
+发送带参数的 http post 请求，并将响应保存到文件中。<br />
+文件保存在\[执行该命令的 ghost 文件夹\]/ghost/master/var 文件夹中。
 
 **対応:** SSP / Ninix
 

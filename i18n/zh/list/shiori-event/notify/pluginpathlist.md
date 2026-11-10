@@ -1,9 +1,9 @@
 # pluginpathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the plugin storage folder (the plugin setting under SSP's main settings-\>Folders).*\[NOTIFY\]*
+通知 plugin 存放文件夹（SSP 的本体设置 -> 文件夹中的 plugin 设置）的路径。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the plugin storage folder
+- **Reference\***: plugin 存放文件夹的绝对路径
 
 **対応:** SSP

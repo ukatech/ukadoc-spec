@@ -1,7 +1,7 @@
-# pluginlist(plugin name/path/ID).generic property name
+# pluginlist(Plugin 名稱/路徑/ID).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Get information using the plugin name, path, or ID.
+從 plugin 名稱、路徑或 ID 取得資訊。
 
 **対応:** SSP

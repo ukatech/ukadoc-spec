@@ -1,6 +1,6 @@
-# Ghost “マギルトリエ”
+# ghost「Magilutorie」
 
-- Published by: closed
+- 发布地址：已关闭
 
 **対応:** SSP
 

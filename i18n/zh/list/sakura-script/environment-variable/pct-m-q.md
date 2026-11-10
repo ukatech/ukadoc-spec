@@ -1,7 +1,7 @@
 # %m?
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word- unrestricted.
+单词-未限定。
 
 **対応:** Materia / SSP / CROW / Ninix

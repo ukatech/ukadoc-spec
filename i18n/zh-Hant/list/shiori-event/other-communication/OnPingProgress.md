@@ -1,13 +1,13 @@
 # OnPingProgress
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs while ping is running with `\![execute,ping]`.
+透過 `\![execute,ping]` 執行 ping 期間觸發。
 
-- **Reference0**: The exact string specified with --event
-- **Reference1**: Source address \[`\1`\] total number sent \[`\1`\] number successful \[`\1`\] number failed \[`\1`\] are separated by byte value 1
-- **Reference2**: "OK" or error information \[`\1`\] responding address \[`\1`\] RTT (round-trip time in ms) \[`\1`\] are separated by byte value 1<br />
-  Starting at Reference2, information for each Ping sent is recorded. For Progress, the information is incomplete.<br />
-  For error information, see the [Status header of the ICMP_ECHO_REPLY Structure](http://msdn.microsoft.com/en-us/library/aa366053%28v=vs.85%29.aspx).
+- **Reference0**: --event 所指定的字串原文
+- **Reference1**: 來源位址 \[`\1`\] 總傳送次數 \[`\1`\] 成功次數 \[`\1`\] 失敗次數 \[`\1`\]各欄位之間以位元組值 1 分隔
+- **Reference2**: 「OK」或錯誤資訊 \[`\1`\] 回應來源位址 \[`\1`\] RTT（往返所需時間，單位為 ms） \[`\1`\]各欄位之間以位元組值 1 分隔<br />
+  從 Reference2 開始，會記錄每次已送出的 Ping 資訊。Progress 事件中的資料可能不完整。<br />
+  錯誤資訊請參閱 [ICMP_ECHO_REPLY Structure 的 Status 標頭](http://msdn.microsoft.com/en-us/library/aa366053%28v=vs.85%29.aspx)。
 
 **対応:** SSP

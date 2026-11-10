@@ -1,8 +1,8 @@
 # Send60stair_GetStatus
 
-**カテゴリ:** Ghost "Curry Family/Saki and Ukon"
+**カテゴリ:** ghost「咖喱家族／沙纪与右近」
 
-Event to send to Saki using \\\[raiseother\].
+应通过\\\[raiseother\]向沙纪发送的事件。
 
-- **Reference0**: `\0` name of the sending ghost.
-- **Reference1**: Boldness. (0–60)
+- **Reference0**: 发送方 ghost 的`\0`名称。
+- **Reference1**: 大胆程度。(0～60)

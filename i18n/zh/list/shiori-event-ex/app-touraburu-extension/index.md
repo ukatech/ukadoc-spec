@@ -1,8 +1,8 @@
-# Google Chrome Extension “Touken Ranbu Extension”
+# Google Chrome 扩展“刀剑乱舞扩展”
 
-- Publisher: <del>Touken Ranbu Extension - Chrome Web Store</del><ins>disappeared</ins>
-- Related: [https://ayachi.hatenablog.com/entry/2015/03/14/183856](https://ayachi.hatenablog.com/entry/2015/03/14/183856) ([archive](https://web.archive.org/web/20210725183730/https://ayachi.hatenablog.com/entry/2015/03/14/183856))
-- Related: [https://ayachi.hatenablog.com/entry/2015/03/14/210107](https://ayachi.hatenablog.com/entry/2015/03/14/210107) ([archive](https://web.archive.org/web/20210725191159/https://ayachi.hatenablog.com/entry/2015/03/14/210107))
+- 发布方：<del>刀剑乱舞扩展 - Chrome 网上应用店</del><ins>已失效</ins>
+- 相关：[https://ayachi.hatenablog.com/entry/2015/03/14/183856](https://ayachi.hatenablog.com/entry/2015/03/14/183856)（[存档](https://web.archive.org/web/20210725183730/https://ayachi.hatenablog.com/entry/2015/03/14/183856)）
+- 相关：[https://ayachi.hatenablog.com/entry/2015/03/14/210107](https://ayachi.hatenablog.com/entry/2015/03/14/210107)（[存档](https://web.archive.org/web/20210725191159/https://ayachi.hatenablog.com/entry/2015/03/14/210107)）
 
 **対応:** SSP
 

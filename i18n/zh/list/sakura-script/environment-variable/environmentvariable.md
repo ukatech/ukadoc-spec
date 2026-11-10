@@ -1,6 +1,6 @@
-# Environment variable example
+# 环境变量的示例
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
 ## 記述例
 

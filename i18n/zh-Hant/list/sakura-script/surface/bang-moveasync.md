@@ -1,10 +1,10 @@
 # `\![moveasync]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Move asynchronously to the specified coordinates. [※See below](bang-moveasync.note.md)
+非同步移動至指定座標。[※請參閱下方說明](bang-moveasync.note.md)
 
-Movement started by `\![moveasync]` can be stopped midway using `\![moveasync,cancel]`.
+`\![moveasync]` 可在移動途中使用 `\![moveasync,cancel]` 停止。
 
 **対応:** SSP
 

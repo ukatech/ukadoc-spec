@@ -1,9 +1,9 @@
 # OnMemoryLoadHigh
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Occurs when memory usage is high. (Currently, it triggers when usage stays at around 80% for a while.)
+内存使用率较高时触发。(目前大约达到80％并持续一段时间后触发)
 
-- **Reference0**: Current usage percentage
+- **Reference0**: 当前使用率％
 
 **対応:** SSP 2.5.56

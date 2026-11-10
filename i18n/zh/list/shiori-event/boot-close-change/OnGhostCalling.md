@@ -1,14 +1,14 @@
 # OnGhostCalling
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when a call to another ghost is requested.
+收到呼叫其他 ghost 的指示时触发。
 
-- **Reference0**: The name of the main body of the ghost to call.
-- **Reference1**: Returns manual when switched manually<br />
-  and automatic when switched by the system<br />
-  .
-- **Reference2**: The name of the ghost to call.
-- **Reference3**: The path of the ghost to call.
+- **Reference0**: 要呼叫的 ghost 的主角色名称。
+- **Reference1**: 手动切换时返回 manual<br />
+  由系统切换时返回 automatic<br />
+  。
+- **Reference2**: 要呼叫的 ghost 的名称。
+- **Reference3**: 要呼叫的 ghost 的路径。
 
 **対応:** SSP / Ninix

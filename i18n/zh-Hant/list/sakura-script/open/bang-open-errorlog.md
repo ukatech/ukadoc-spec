@@ -1,7 +1,7 @@
 # `\![open,errorlog]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens the error log window.
+開啟錯誤記錄視窗。
 
 **対応:** SSP

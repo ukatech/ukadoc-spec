@@ -2,10 +2,10 @@
 
 **カテゴリ:** internal_data
 
-Rewrites data in a different format (such as base64 ⇔ hexadecimal ⇔ percent-encoding ⇔ string). Specify the input with `--data-in=` and the output with `--out=`.
+將資料轉換為其他格式（例如base64⇔16進位⇔百分比編碼⇔字串）。以`--data-in=`指定輸入格式，以`--out=`指定輸出格式。
 
-- **Argument1**: data (default format is `text`)
-- **オプション**: `--data-in=` / `--out=` (default is `text`) / `--charset=` / `--hrp=` (\[SSP 2.9.14\] hrp for `--out=bech32`)
+- **Argument1**: data（預設格式為`text`）
+- **選項**: `--data-in=` / `--out=`（預設為`text`） / `--charset=` / `--hrp=`（\[SSP 2.9.14\] `--out=bech32`時使用的hrp）
 
 ## 記述例
 

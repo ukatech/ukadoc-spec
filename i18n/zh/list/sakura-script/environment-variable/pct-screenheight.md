@@ -1,7 +1,7 @@
 # %screenheight
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-The height of the display screen.
+显示屏的高度。
 
 **対応:** Materia / SSP / CROW / Ninix

@@ -1,11 +1,11 @@
 # `\![send,websocket,URL,data1,data2,...]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Sends data as a text frame to an established WebSocket session. The URL identifies the target session. If two or more data values are specified, they are joined with CRLF and sent as text. If the session does not exist (before connection or after disconnection), the tag is ignored.
+以文字框架傳送至已連線的WebSocket工作階段。以URL指定目標工作階段。指定兩個以上的data時，會以CRLF連接後傳送文字。若工作階段不存在（尚未連線或已中斷），則會忽略此標籤。
 
-- URL……The same string as the URL used when connecting.
-- data1,data2,……UTF-8 text to send. If two or more values are specified, they are joined with CRLF.
+- URL……與連線時使用的URL相同的字串。
+- data1,data2,……要傳送的UTF-8文字。指定兩個以上時，會以CRLF連接。
 
 **対応:** SSP 2.8.05
 

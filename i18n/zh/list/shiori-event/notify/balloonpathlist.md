@@ -1,9 +1,9 @@
 # balloonpathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the balloon storage folder (the balloon setting under SSP's main settings-\>Folders).*\[NOTIFY\]*
+通知存放气球的文件夹路径（SSP的本体设置-\>文件夹　中的气球设置）。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the balloon storage folder
+- **Reference\***: 气球存放文件夹的绝对路径
 
 **対応:** SSP

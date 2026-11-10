@@ -1,7 +1,7 @@
 # `\![set,shioridebugmode,(true/false)]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Turns the SHIORI debug mode in the developer palette on or off.
+切換開發者面板中的SHIORI除錯模式。
 
 **対応:** SSP 2.5.78

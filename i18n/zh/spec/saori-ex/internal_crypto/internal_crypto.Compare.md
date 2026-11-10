@@ -2,11 +2,11 @@
 
 **カテゴリ:** internal_crypto
 
-Compare two byte sequences in the same amount of time, regardless of their contents. Returns `1` if they are equal and `0` if they differ (also returns `0` if their lengths differ).<br />
-Use this when you do not want the contents to be inferred from the comparison time, such as when checking a Webhook signature. To compare hexadecimal signatures, use `--a-in=hex --b-in=hex` to ignore differences in letter case.
+以固定时间比较两个字节序列，不受内容影响。相等时返回`1`，不相等时返回`0`（长度不同则返回`0`）。<br />
+用于Webhook签名校验等不希望他人根据比较耗时推测内容的场景。比较十六进制签名时，指定`--a-in=hex --b-in=hex`即可忽略大小写差异。
 
-- **Argument1**: a (default format is `text`)
-- **Argument2**: b (default format is `text`)
-- **Options**: `--a-in=` / `--b-in=` / `--charset=`
+- **Argument1**: a（默认格式为`text`）
+- **Argument2**: b（默认格式为`text`）
+- **选项**: `--a-in=` / `--b-in=` / `--charset=`
 
 **対応:** SSP 2.9.13

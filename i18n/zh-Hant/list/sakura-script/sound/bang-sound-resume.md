@@ -1,8 +1,8 @@
 # `\![sound,resume,ファイル名]`
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Resume playback. If the filename is omitted, playback of all currently playing sounds is resumed.
+解除暫停。若省略檔名，則會解除所有正在播放的音效的暫停狀態。
 
 **対応:** SSP / Ninix
 

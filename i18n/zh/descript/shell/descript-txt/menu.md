@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-Hides the shell from the ghost's shell-switching menu.
+该shell将不再显示在ghost的shell切换菜单中。
 
-**既定値:** No value
+**既定値:** 无值
 
 **対応:** SSP

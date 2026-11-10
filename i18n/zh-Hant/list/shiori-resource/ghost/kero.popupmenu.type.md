@@ -1,7 +1,7 @@
 # kero.popupmenu.type
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-Changes the partner's owner-draw menu. 0 for the main menu, 1 for the simplified menu.
+變更搭檔側的 owner draw 選單。0為本體側選單，1為精簡選單。
 
 **対応:** SSP

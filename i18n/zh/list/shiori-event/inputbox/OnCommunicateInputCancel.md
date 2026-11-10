@@ -1,10 +1,10 @@
 # OnCommunicateInputCancel
 
-**カテゴリ:** Input box events
+**カテゴリ:** 输入框事件
 
-Occurs when CommunicateBox is closed.
+CommunicateBox关闭时触发。
 
-- **Reference0**: (Empty string. A placeholder to align the Reference number with OnUserInputCancel.)
-- **Reference1**: If closed, cancel.
+- **Reference0**:（空字符串。为与OnUserInputCancel的Reference编号保持一致而保留的空位。）
+- **Reference1**: 关闭时为cancel。
 
 **対応:** SSP / Ninix

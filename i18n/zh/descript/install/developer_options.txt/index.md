@@ -3,5 +3,5 @@
 ## 一覧
 
 - [developer_options.txt](introduction_developeroptions.txt.md)
-- [Relative path, option 1, option 2,...](entry.md)
-- [Automatically excluded items](caption_ignore.md)
+- [相对路径,选项1,选项2,...](entry.md)
+- [自动排除的对象](caption_ignore.md)

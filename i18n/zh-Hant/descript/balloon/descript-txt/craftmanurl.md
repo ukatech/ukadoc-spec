@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-Author's URL.
+作者的 URL。
 
-**既定値:** No value
+**既定値:** 無值
 
 **対応:** Materia / SSP / CROW

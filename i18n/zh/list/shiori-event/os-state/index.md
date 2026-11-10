@@ -1,4 +1,4 @@
-# OS state events
+# OS状态事件
 
 ## 一覧
 

@@ -1,7 +1,7 @@
 # OnNekodorifExist
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when SSP starts and 猫どりふ is already running.
+启动SSP时，如果猫踊已经启动，则会触发此事件。
 
 **対応:** SSP

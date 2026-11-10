@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventEtherDisease
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when an ether disease develops.
+以太病發作時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Mutation message.
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 變異訊息。

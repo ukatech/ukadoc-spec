@@ -1,12 +1,12 @@
 # OnNSLookupComplete
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs on success with `\![execute,nslookup]`.
+透過 `\![execute,nslookup]` 成功時觸發。
 
-- **Reference0**: The exact string specified with --event
-- **Reference1**: The exact string specified with --host
-- **Reference2**: lookup for a forward lookup, reverse for a reverse lookup
-- **Reference3**: Result. IP address for a forward lookup; hostname for a reverse lookup.
+- **Reference0**: --event 所指定的字串原文
+- **Reference1**: --host 所指定的字串原文
+- **Reference2**: 正向查詢時為 lookup，反向查詢時為 reverse
+- **Reference3**: 執行結果。正向查詢時為 IP，反向查詢時為主機名稱。
 
 **対応:** SSP

@@ -1,9 +1,9 @@
-# arrow0.y,coordinates [\*1](../index.md#balloon設定)
+# arrow0.y,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-Y coordinate of the upper scroll-marker arrow.
+滚动标记上方箭头的 Y 坐标。
 
-**既定値:** Unknown
+**既定値:** 未知
 
 **対応:** Materia / SSP / CROW

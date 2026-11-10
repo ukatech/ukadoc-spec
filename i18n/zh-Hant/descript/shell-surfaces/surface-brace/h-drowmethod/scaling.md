@@ -1,13 +1,13 @@
 # scaling
 
-**カテゴリ:** surface brace \> drawing methods
+**カテゴリ:** surface區塊 \> 繪製方法
 
-Enlarges or shrinks the character window by the specified scale factor.<br />
-This is the only drawing method that allows decimal values for the X and Y coordinates (e.g., 92.5).<br />
-The scale factor is calculated as follows.<br />
-User-specified scale x `\![scaling]` tag-specified scale x currently running scaling animation setting 1 x currently running scaling animation setting 2 ...<br />
-Note 1: Scaling the window is quite costly, so do not overuse it.<br />
-Note 2: Unless there are special circumstances, failing to return to 100% at the end of an animation can cause bugs.<br />
-Note 3: If the feature that disables move is enabled, scaling will also stop working.
+以指定倍率放大或縮小顯示角色視窗。<br />
+只有此繪製方法可在X、Y座標指定小數（例如：92.5）。<br />
+倍率由以下公式計算得出。<br />
+使用者指定的放大倍率 x `\![scaling]`標籤指定值 x 執行中scaling動畫指定值1 x 執行中scaling動畫指定值2 ...<br />
+注意1：視窗縮放的成本相當高，請勿濫用。<br />
+注意2：除非有非常特殊的原因，否則動畫結束時若不恢復為100％，可能會造成錯誤。<br />
+注意3：若啟用了停用move的功能，scaling也會停止作用。
 
 **対応:** SSP 2.7.28

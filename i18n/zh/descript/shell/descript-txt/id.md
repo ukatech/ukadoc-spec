@@ -1,11 +1,11 @@
-# id,ID name
+# id,ID名
 
 **カテゴリ:** descript.txt
 
-The shell’s ID name. Half-width alphanumeric characters only. (SSP allows all characters)<br />
-For now, this is only used in places such as the display resembling the console shown at startup.<br />
-In SSP, it is not visible unless Settings - General - Enable transparent status display window is turned ON.
+该shell的ID名。仅限半角英数字。（SSP允许所有字符）<br />
+目前除了显示在类似启动时控制台的界面中，没有其他用途。<br />
+必须开启SSP的设置-常规-显示透明状态窗口，才能看到。
 
-**既定値:** no value
+**既定値:** 无值
 
 **対応:** Materia / SSP / CROW

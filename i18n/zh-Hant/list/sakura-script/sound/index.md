@@ -1,4 +1,4 @@
-# Sound commands
+# 音效指令
 
 ## 一覧
 

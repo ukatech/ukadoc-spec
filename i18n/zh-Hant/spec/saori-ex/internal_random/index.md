@@ -1,6 +1,6 @@
 # internal_random
 
-Cryptographically secure random numbers (OpenSSL `RAND_bytes`).
+提供密碼學安全的亂數（OpenSSL 的`RAND_bytes`）。
 
 ## 一覧
 

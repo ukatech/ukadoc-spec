@@ -1,7 +1,7 @@
 # OnCacheRestore
 
-**カテゴリ:** Startup, shutdown, and switching event
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when exiting the ghost cache.
+从 ghost 缓存中恢复时触发。
 
 **対応:** SSP

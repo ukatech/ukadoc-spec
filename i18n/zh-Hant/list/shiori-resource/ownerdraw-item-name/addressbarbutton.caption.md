@@ -1,7 +1,7 @@
 # addressbarbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the address bar.
+位址列的項目名稱。
 
 **対応:** SSP

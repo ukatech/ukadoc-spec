@@ -1,7 +1,7 @@
 # menu.separator.color.g
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字顏色
 
-Separator color, green (0–255)
+分隔線顏色的綠色值（0～255）
 
 **対応:** Materia / SSP / CROW

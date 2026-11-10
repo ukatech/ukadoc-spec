@@ -1,9 +1,9 @@
 # `\sID番号`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Change the surface of the current scope to the surface with the specified ID number.<br />
-Only 0–9 can be used in this form.
+將目前 scope 一側的 surface 變更為指定 ID 編號的 surface。<br />
+此格式僅能使用 0～9。
 
 **対応:** Materia / SSP / CROW
 

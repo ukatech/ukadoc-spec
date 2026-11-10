@@ -1,3 +1,3 @@
-# Detecting Implementation Support
+# 偵測實作支援狀況
 
-Implementation support for extended headers is notified at the start of SHIORI execution via [ID: capability](../../list/shiori-event/notify/capability.md).
+擴充標頭的實作支援狀況會在 SHIORI 執行初期，透過[ID: capability](../../list/shiori-event/notify/capability.md)通知。

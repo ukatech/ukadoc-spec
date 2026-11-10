@@ -1,8 +1,8 @@
-# char\*.seriko.defaultsurface,Number
+# char\*.seriko.defaultsurface,数值
 
 **カテゴリ:** descript.txt
 
-Default surface number for the ghost of `\p[*]`.
+`\p[*]`对应ghost的默认surface编号。
 
 **既定値:** 10
 

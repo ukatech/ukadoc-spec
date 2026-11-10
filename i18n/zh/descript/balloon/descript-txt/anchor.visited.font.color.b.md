@@ -1,8 +1,8 @@
-# anchor.visited.font.color.b,numeric
+# anchor.visited.font.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue font color for visited anchors (0–255)
+已访问锚点的字体颜色蓝色(0～255)
 
 **既定値:** 0
 

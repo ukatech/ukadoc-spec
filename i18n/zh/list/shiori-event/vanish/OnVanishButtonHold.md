@@ -1,12 +1,12 @@
 # OnVanishButtonHold
 
-**カテゴリ:** Vanish events
+**カテゴリ:** 消失事件
 
-Occurs when a vanish event is canceled by double-clicking during the event.
+在消失事件期间，通过双击取消时触发。
 
-- **Reference0**: Script where the interrupting action occurred.
-- **Reference1**: Scope number of the balloon where the interrupting action occurred. Main character is 0, partner is 1, and so on.
-- **Reference2**: Position of the interruption, expressed as the number of characters from the start of the script. The character count includes Sakura Script tags.<br />
-  Example) If interrupted at the 「あ」 in `\s[2]`あいうえお, the value is 6
+- **Reference0**: 发生中断操作的脚本。
+- **Reference1**: 发生中断操作的balloon的scope编号。本体侧为0，搭档侧为1，之后依此类推。
+- **Reference2**: 中断位置。以脚本开头起算的字符数表示。字符数包括Sakura Script标签。<br />
+  示例）在`\s[2]`あいうえお 中断于「あ」之前时，为6
 
 **対応:** Materia / SSP / CROW / Ninix

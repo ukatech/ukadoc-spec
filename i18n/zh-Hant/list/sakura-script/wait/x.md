@@ -1,9 +1,9 @@
 # `\x`
 
-**カテゴリ:** Wait command
+**カテゴリ:** 等待指令
 
-Wait for a click on the balloon.<br />
-After the click, the scope is reset to `\0`, and the effects of Sakura Script commands in the `\f` (text styling) family are also cleared. Sakura Script commands that are cleared by `\e` continue.
+讓 balloon 等待點擊。<br />
+點擊後會重設 scope 為 `\0`，並解除 `\f`（文字裝飾）類 Sakura Script 的效果。由 `\e` 解除的 Sakura Script 則會繼續生效。
 
 **対応:** Materia / SSP / CROW / Ninix
 

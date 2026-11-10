@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventPrayEyth
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the PC tries praying to a god while having no faith.
+無信仰時嘗試向神祈禱時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

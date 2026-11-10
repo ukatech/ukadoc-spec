@@ -1,7 +1,7 @@
 # OnSysSuspend
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、结束与切换事件
 
-Occurs when entering suspend (both sleep and hibernation). *\[NOTIFY\]*
+开始挂起（包括睡眠和休眠状态）时触发。*\[NOTIFY\]*
 
 **対応:** SSP

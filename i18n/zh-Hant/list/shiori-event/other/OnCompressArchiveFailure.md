@@ -1,12 +1,12 @@
 # OnCompressArchiveFailure
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when archive compression fails.
+封存檔壓縮失敗時觸發。
 
-If the identifier specified with the --event option in [`\![execute,compressarchive]`](../../sakura-script/misc/bang-execute-compressarchive.md) starts with On, an event with "Failure" appended to that identifier is fired. Otherwise, this event is fired.
+透過 [`\![execute,compressarchive]`](../../sakura-script/misc/bang-execute-compressarchive.md) 的 --event 選項指定的識別碼若以 On 開頭，便會觸發在該識別碼後加上「Failure」的事件。否則會觸發本事件。
 
-- **Reference0**: Event identifier specified with Sakura Script's --event option.
-- **Reference1**: Error details. See [※list of error codes](caption_archive_error_codes.md).
+- **Reference0**: Sakura Script 的 --event 選項所指定的事件識別碼。
+- **Reference1**: 錯誤內容。請參閱[錯誤碼一覽](caption_archive_error_codes.md)。
 
 **対応:** SSP 2.7.23

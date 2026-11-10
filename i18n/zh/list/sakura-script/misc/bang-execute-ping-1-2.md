@@ -1,20 +1,20 @@
 # `\![execute,ping,パラメータ1,パラメータ2,...]`
 
-**カテゴリ:** Unclassified command
+**カテゴリ:** 未分类命令
 
-Ping the specified host. Supports IPv6.<br />
-The parameters are as follows.
+向指定主机发送 ping。支持 IPv6。<br />
+参数如下。
 
-- --host=hostname or IP
-- --ttl=TTL……(packet lifetime (number of times it can be routed); default 255
-- --count=number of transmissions……default 3
-- --size=transmission size……(--size is ignored when --data is enabled); default 32
-- --timeout=timeout (ms)……default 5000
-- --df=(true|false)……true means packets cannot be fragmented; false means fragmentation is allowed; default false
-- --data=string……String embedded in the ICMP Echo data field (converted to UTF-8)
-- --event=event or identifier……If a string starting with On is specified, that event occurs instead of the event described below
+- --host=主机名或 IP
+- --ttl=TTL……（数据包生存时间，即可路由次数）默认255
+- --count=发送次数……默认3
+- --size=发送大小……（--data 有效时 --size 无效）默认32
+- --timeout=超时时间（ms）……默认5000
+- --df=(true|false)……true 表示禁止拆分数据包，false 表示允许拆分，默认 false
+- --data=字符串……嵌入 ICMP Echo 数据字段的字符串（将转换为 UTF-8）
+- --event=事件或标识符……指定以 On 开头的字符串时，将触发该事件（代替下文所述事件）
 
-See [OnPingProgress](../../shiori-event/other-communication/OnPingProgress.md) and [OnPingComplete](../../shiori-event/other-communication/OnPingProgress.md) for the specifications of events during and after execution.
+有关运行期间及运行结束后的事件规格，请参阅[OnPingProgress](../../shiori-event/other-communication/OnPingProgress.md)・[OnPingComplete](../../shiori-event/other-communication/OnPingProgress.md)。
 
 **対応:** SSP
 

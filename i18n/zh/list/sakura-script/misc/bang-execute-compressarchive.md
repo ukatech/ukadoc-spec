@@ -1,19 +1,19 @@
 # `\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分类命令
 
-Compresses files into a ZIP archive. Using full paths is recommended. Relative paths are interpreted relative to ghost/master/.<br />
-The available options are as follows.
+压缩ZIP文件。建议使用完整路径指定。使用相对路径时，会解释为相对于ghost/master/的路径。<br />
+选项如下。
 
-- --event=イベント識別子……Specifying an event identifier allows compression to continue while Sakura Script execution proceeds. When compression finishes, an event is triggered. If the identifier begins with On, an event with that identifier is triggered; otherwise, OnCompressArchiveComplete or OnCompressArchiveFailure is triggered. If omitted, script execution pauses until processing is complete.
-- --password=パスワード……Enables AES-encrypted ZIPs using the specified password.
+- --event=事件标识符……指定事件标识符后，会在继续执行Sakura Script的同时进行压缩，并在完成后触发事件。如果标识符以On开头，则触发该标识符对应的事件；否则触发OnCompressArchiveComplete或OnCompressArchiveFailure。省略时，脚本执行会暂停，直至处理完成。
+- --password=密码……启用AES加密ZIP，并使用指定的密码。
 
-See [OnCompressArchiveComplete](../../shiori-event/other/OnCompressArchiveComplete.md) and [OnCompressArchiveFailure](../../shiori-event/other/OnCompressArchiveFailure.md) for specifications on events triggered after processing.<br />
-Specify a folder as the directory name. \[SSP 2.9.33\] If the path is not a folder (for example, it is a file path), compression fails without proceeding (if `--event=` is specified, `Reference1` of the failure event (OnCompressArchiveFailure, or the specified identifier with `Failure` appended) is set to `invalid parameter`).<br />
-For security reasons, the destination for compression is restricted to locations under folders managed by SSP (such as the ghost and balloon folders, and locations specified by the “Folder” settings).<br />
-This restriction may be tightened as appropriate, so it is safest to limit the destination to a location under the folder containing the ghost's own data.
+有关处理完成后触发的事件的规范，请参阅[OnCompressArchiveComplete](../../shiori-event/other/OnCompressArchiveComplete.md)和[OnCompressArchiveFailure](../../shiori-event/other/OnCompressArchiveFailure.md)。<br />
+目录名必须指定文件夹。\[SSP 2.9.33\] 如果指定的不是文件夹（例如文件路径），则会失败，不执行压缩（如果指定了`--event=`，失败事件（OnCompressArchiveFailure，或在标识符后附加`Failure`的事件）的`Reference1`会设为`invalid parameter`）。<br />
+出于安全考虑，压缩目标仅限于SSP管理的文件夹（如ghost文件夹、balloon文件夹，以及通过“文件夹”设置指定的位置）下的路径。<br />
+此外，此限制可能会视情况加强，因此最好将压缩目标限制在存放该ghost自身数据的文件夹下。
 
-**対応:** SSP options supported from 2.7.23
+**対応:** SSP 选项指定仅支持2.7.23及更高版本
 
 ## 記述例
 

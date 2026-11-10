@@ -1,10 +1,10 @@
 # `\![open,terms]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Display the terms dialog using \[the folder of the ghost that ran the command\]/terms.txt from the running ghost.<br />
-This has no effect if terms.txt does not exist (only an error sound is played).<br />
-This forcibly interrupts the user's actions with a dialog, so it should not be used excessively.
+使用目前執行中的 ghost 的\[執行中的 ghost 資料夾\]/terms.txt，顯示使用條款對話框。<br />
+若沒有 terms.txt，則不會有任何作用（只會播放錯誤音效）。<br />
+由於此功能會透過對話框強制中斷使用者的操作，因此不應濫用。
 
 **対応:** SSP 2.5.33
 

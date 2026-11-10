@@ -1,10 +1,10 @@
 # blend-luminosity
 
-**カテゴリ:** surface brace \> Drawing method
+**カテゴリ:** surface blend \> 描画方法
 
-*New layer* is composited over the image using luminosity.<br />
-This corresponds to the Luminosity layer blend mode in image-editing software such as Photoshop.<br />
-This can also be used with dressup and element.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+*新建图层*以亮度合成的方式叠加。<br />
+相当于 Photoshop 等图像编辑软件中的亮度（Luminosity）图层合成。<br />
+也可用于 dressup 和 element。<br />
+建议在 shell 的 descript.txt 中设置[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.39

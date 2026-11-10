@@ -1,9 +1,9 @@
 # OnDisplayPowerStatus
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Occurs when a monitor is powered ON/OFF. This includes not only when it is simply turned ON/OFF, but also when a laptop lid is closed.
+显示器电源开启或关闭时触发。不仅在单纯开启或关闭时触发，笔记本电脑合上盖子时也会触发。
 
-- **Reference0**: 1 = ON / 0 = OFF
+- **Reference0**: 1 = 开启 / 0 = 关闭
 
-**対応:** SSP 2.4 onward
+**対応:** SSP 2.4及以后

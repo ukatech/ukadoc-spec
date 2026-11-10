@@ -1,11 +1,11 @@
 # inputbox.autocomplete
 
-**カテゴリ:** Input box events
+**カテゴリ:** 輸入框事件
 
-Triggered when the box is expanded. Returning a list of text items separated by the character with byte value 1 enables autocomplete in the input box.<br />
-(Windows Me/2000 and later)
+輸入框展開時觸發。若此事件傳回以位元組值 1 分隔的文字清單，輸入框便會啟用自動完成。<br />
+(WinMe/2000 以後)
 
-- **Reference0**: Input box type: one of inputbox, teachbox, or communicatebox.
-- **Reference1**: Only for inputbox: event name/identifier triggered when input is completed.
+- **Reference0**: 輸入框的種類。為 inputbox、teachbox 或 communicatebox 其中之一。
+- **Reference1**: 僅限 inputbox，為輸入完成時觸發的事件名稱／識別碼。
 
 **対応:** SSP

@@ -1,13 +1,13 @@
 # OnKanadeTeaPartyInfomationRequest
 
-**カテゴリ:** 伺か「奏でる日常の音色」
+**カテゴリ:** ghost「奏响日常的音色」
 
-An event sent from 奏でる日常の音色 to each ghost before the tea party begins.<br />
-Ghosts participating in the tea party must immediately run the following in this event:<br />
+在茶会开始前，奏响日常的音色向各个 ghost 通知的事件。<br />
+参加茶会的 ghost 必须通过此事件立即执行<br />
 `\![raiseother,かなで,返信イベント名,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,※お茶会バージョンへの対応情報]`<br />
-They must run this Sakura Script.<br />
-Any other talk in the event besides running this script is not recommended.
+中的 Sakura Script。<br />
+不推荐在事件中执行此脚本以外的对话。<br />
 
-- **Reference0**: Tea party version number.
-- **Reference1**: The recipient ghost's baseware-side name for the reply event (fixed as 「かなで」).
-- **Reference2**: Reply event name.
+- **Reference0**: 茶会版本号。
+- **Reference1**: 回复事件的目标 ghost 本体侧名称（固定为「かなで」）。
+- **Reference2**: 回复事件名称。

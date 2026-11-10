@@ -1,4 +1,4 @@
-# Other communication events
+# 其他通訊事件
 
 ## 一覧
 

@@ -1,8 +1,8 @@
 # `\_s[ID1,ID2,ID3...]`
 
-**カテゴリ:** Wait command
+**カテゴリ:** 等待指令
 
-Synchronize the scopes with the specified IDs.
+將指定 ID 的 scope 設為同步區段。
 
 **対応:** SSP
 

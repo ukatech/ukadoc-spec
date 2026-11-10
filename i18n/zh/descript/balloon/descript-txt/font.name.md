@@ -1,10 +1,10 @@
-# font.name,font name
+# font.name,字体名称
 
 **カテゴリ:** descript.txt
 
-Font to use. The default is ＭＳ ゴシック.<br />
-A font file placed in the balloon's folder can also be specified as the font name (SSP only).<br />
-Multiple font names can be specified separated by commas; they are selected from those installed automatically in the order written, with earlier names taking priority (SSP only).
+所用字体。默认值为ＭＳ ゴシック。<br />
+也可以指定放在balloon文件夹中的字体文件（仅SSP）。<br />
+可以用逗号分隔指定多个字体名称，程序会按书写顺序（即优先级顺序）从已安装的字体中自动选择（仅SSP）。
 
 **既定値:** ＭＳ ゴシック
 

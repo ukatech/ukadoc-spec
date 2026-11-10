@@ -1,11 +1,11 @@
 # OnRequestValues
 
-**カテゴリ:** Generic inter-ghost event
+**カテゴリ:** ghost 間通用事件
 
-Occurs when another ghost sends this event at any time.<br />
-When this event is sent, you must send an OnGetValues event using \\\[raiseother\].
+其他 ghost 任意傳送時發生。<br />
+收到此事件時，必須使用 \\\[raiseother\] 傳送 OnGetValues 事件。
 
-- **Reference0**: Name of the sending ghost.
-- **Reference1**: Name of the requested variable (key). Reference2 and subsequent references follow the same format for as many requested variables as exist.
+- **Reference0**: 傳送端 ghost 名稱。
+- **Reference1**: 要求的變數名稱（key）。Reference2 以後也依此類推，直到列出所有要求的變數。
 
 **対応:** SSP

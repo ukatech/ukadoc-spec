@@ -2,19 +2,19 @@
 
 **カテゴリ:** internal_time
 
-Formats a date and time in the zone specified by `--tz=`. Weekday and month names are always in English (regardless of language or regional settings).
+将日期时间格式化为 `--tz=`指定时区的日期时间。星期和月份名称固定使用英语（不受语言和地区设置影响）。
 
-- **Argument1**: Date and time
-- **Argument2**: Format (defaults to `iso8601` if omitted or empty)
-- **Options**: `--tz=`
+- **Argument1**: 日期时间
+- **Argument2**: 格式（省略或为空时使用 `iso8601`）
+- **选项**: `--tz=`
 
-The format can be one of the following names or a format using `%`. An unknown format name or unknown `%` character results in 400 (`invalid parameter`).
+格式可以使用以下名称之一，也可以使用包含 `%` 的格式字符串。未知格式名称或未知的 `%` 转换字符会返回 400（`invalid parameter`）。
 
-- **iso8601 / rfc3339**: `2026-10-11T21:00:00+09:00`. If the offset is 0, the string ends with `Z`.
-- **http**: `Sun, 11 Oct 2026 12:00:00 GMT`. Always uses GMT, regardless of `--tz=`.
-- **epoch / epochms**: Epoch seconds / epoch milliseconds.
-- **% formats**: `%Y` (four-digit year) `%y` (last two digits of the year) `%m` (month) `%d` (day) `%H` (hour) `%M` (minute) `%S` (second) `%j` (day of year) `%u` (weekday, Monday=1 to Sunday=7) `%w` (weekday, Sunday=0 to Saturday=6) `%a` (Sun) `%A` (Sunday) `%b` (Jan) `%B` (January) `%z` (+0900) `%:z` (+09:00) `%s` (epoch seconds) `%%` (%).<br />
-  Characters other than `%` are output as-is.
+- **iso8601 / rfc3339**: `2026-10-11T21:00:00+09:00`。偏移量为 0 时，末尾为 `Z`。
+- **http**: `Sun, 11 Oct 2026 12:00:00 GMT`。始终使用 GMT，不受 `--tz=`影响。
+- **epoch / epochms**: 纪元秒 / 纪元毫秒。
+- **%格式**: `%Y`（4 位年份） `%y`（年份后两位） `%m`（月） `%d`（日） `%H`（时） `%M`（分） `%S`（秒） `%j`（一年中的第几天） `%u`（星期，周一=1～周日=7） `%w`（星期，周日=0～周六=6） `%a`（Sun） `%A`（Sunday） `%b`（Jan） `%B`（January） `%z`（+0900） `%:z`（+09:00） `%s`（纪元秒） `%%`（%）。<br />
+  `%`以外的字符会原样输出。
 
 ## 記述例
 

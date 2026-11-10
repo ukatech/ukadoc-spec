@@ -1,6 +1,6 @@
-# Headline sensing OnFind phases
+# Headline sensor OnFind 階段
 
-- **First**: first page
-- **First and Last**: first page with no next page
-- **Last**: last page
-- **Next**: any other page
+- **First**: 第 1 頁
+- **First and Last**: 第 1 頁，且沒有下一頁
+- **Last**: 最後一頁
+- **Next**: 其他頁面

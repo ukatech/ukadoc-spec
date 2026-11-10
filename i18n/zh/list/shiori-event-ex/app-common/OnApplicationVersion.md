@@ -1,13 +1,13 @@
 # OnApplicationVersion
 
-**カテゴリ:** Generic external application event
+**カテゴリ:** 外部应用程序通用事件
 
-Occurs when version information about an external application is received.
+收到外部应用程序的版本信息通知时触发。
 
-- **Reference0**: Application name.
-- **Reference1**: Application information.
-- **Reference2**: Version number.
-- **Reference3**: Copyright.
-- **Reference4**: Developer URL.
+- **Reference0**: 应用程序名称。
+- **Reference1**: 应用程序信息。
+- **Reference2**: 版本号。
+- **Reference3**: 版权信息。
+- **Reference4**: 开发方的 URL。
 
 **対応:** Materia / SSP / CROW

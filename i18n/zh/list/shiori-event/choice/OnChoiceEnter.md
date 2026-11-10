@@ -1,12 +1,12 @@
 # OnChoiceEnter
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when the cursor moves onto or *off* a choice.<br />
-OnChoiceEnter occurs without References when the cursor moves off a choice.
+当光标移到选项上以及*离开选项时*触发。<br />
+离开选项时触发的OnChoiceEnter不包含Reference。
 
-- **Reference0**: Choice text (label).
-- **Reference1**: Choice ID.
-- **Reference\***: Extended information (the third and subsequent arguments in the `\q` tag).
+- **Reference0**: 选项文本（标签）。
+- **Reference1**: 选项ID。
+- **Reference\***: 扩展信息（`\q`标签内从第3个起的参数）。
 
 **対応:** Materia / SSP / CROW / Ninix

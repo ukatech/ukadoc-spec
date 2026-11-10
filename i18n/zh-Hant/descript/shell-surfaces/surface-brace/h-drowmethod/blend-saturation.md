@@ -1,10 +1,10 @@
 # blend-saturation
 
-**カテゴリ:** surface brace \> drawing method
+**カテゴリ:** surface區塊 \> 繪製方法
 
-Overlay the *new layer* using saturation blending.<br />
-This is equivalent to the Saturation layer blending mode in image-editing software such as Photoshop.<br />
-It can also be used with dressup and element.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+以彩度混合方式疊加*新圖層*。<br />
+相當於Photoshop等影像編輯軟體中的彩度（Saturation）圖層混合。<br />
+也可用於dressup與element。<br />
+建議在shell的descript.txt中設定[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.39

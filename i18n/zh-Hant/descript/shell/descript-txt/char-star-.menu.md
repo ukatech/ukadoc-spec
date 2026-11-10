@@ -1,10 +1,10 @@
-# char\*.menu,auto or hidden
+# char\*.menu,auto 或 hidden
 
 **カテゴリ:** descript.txt
 
-Display the dressup menu for the shell's third character onward.<br />
-Automatically displayed with auto; hidden with hidden.
+shell 第 3 人及之後的 dressup 選單顯示方式。<br />
+設為 auto 時自動顯示，設為 hidden 時隱藏。
 
-**既定値:** no action (manual setting)
+**既定値:** 不執行任何動作（手動設定）
 
 **対応:** SSP

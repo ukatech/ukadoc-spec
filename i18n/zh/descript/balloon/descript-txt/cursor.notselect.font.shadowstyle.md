@@ -1,8 +1,8 @@
-# cursor.notselect.font.shadowstyle,style
+# cursor.notselect.font.shadowstyle,形态指定
 
 **カテゴリ:** descript.txt
 
-Shadow display style for unselected options. offset places it at the bottom right; outline adds an outline.
+未选中选项的阴影显示样式。offset表示右下方，outline表示描边。
 
 **既定値:** font.shadowstyle
 

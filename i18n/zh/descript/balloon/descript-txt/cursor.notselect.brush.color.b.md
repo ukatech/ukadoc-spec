@@ -1,8 +1,8 @@
-# cursor.notselect.brush.color.b,Number
+# cursor.notselect.brush.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue component of the color inside the rectangle of an unselected choice (0–255)
+未选中选项的矩形内部的蓝色(0～255)
 
 **既定値:** 0
 

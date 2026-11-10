@@ -1,13 +1,13 @@
 # OnKanadeTeaPartyInfomationRequest
 
-**カテゴリ:** Ghost “Melody of Everyday Life”
+**カテゴリ:** ghost「奏でる日常の音色」
 
-Event sent by Melody of Everyday Life to each ghost before the tea party starts.<br />
-Ghosts participating in the tea party must immediately run the following<br />
+奏でる日常の音色會在茶會開始前向各個ghost傳送此事件。<br />
+參加茶會的ghost必須透過此事件立即執行<br />
 `\![raiseother,かなで,返信イベント名,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,※お茶会バージョンへの対応情報]`<br />
-Sakura Script in this event.<br />
-Dialogue other than running this script during the event is not recommended.
+這段Sakura Script。<br />
+不建議在事件中執行此Sakura Script以外的對話。
 
-- **Reference0**: Tea party version number.
-- **Reference1**: Baseware-side name of the ghost to receive the reply event (fixed as “かなで”).
-- **Reference2**: Reply event name.
+- **Reference0**: 茶會版本號碼。
+- **Reference1**: 回覆事件的接收端ghost本體側名稱（固定為「かなで」）。
+- **Reference2**: 回覆事件名稱。

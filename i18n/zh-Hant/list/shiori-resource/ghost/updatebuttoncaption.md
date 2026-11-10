@@ -1,7 +1,7 @@
 # updatebuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of the network update.
+network update 的名稱。
 
 **対応:** Materia / SSP / CROW / Ninix

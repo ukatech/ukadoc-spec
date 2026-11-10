@@ -1,9 +1,9 @@
 # `\*`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-In a script containing this command, choices do not time out.<br />
-This setting is effective only within the current script. It is also effective if written after the choice.
+在包含此标记的脚本中，选项不会超时。<br />
+仅在该脚本中有效。即使写在选项后面也有效。
 
 **対応:** Materia / SSP / CROW
 

@@ -1,7 +1,7 @@
 # vanishbuttonvisible
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-Displays the disappearance notice. 1 to display, 0 to hide. The notice is displayed if there is no response.
+設定消失通知的顯示狀態。1 為顯示，0 為隱藏。若沒有回應，則顯示。
 
 **対応:** Materia / SSP / CROW / Ninix

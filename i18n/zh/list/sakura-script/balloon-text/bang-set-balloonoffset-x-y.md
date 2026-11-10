@@ -1,9 +1,9 @@
 # `\![set,balloonoffset,x,y]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Changes the balloon offset to the specified XY coordinates. The coordinates set by the user by dragging the balloon are added to this value to determine the balloon's display position.<br />
-Normally, specifying numeric values overrides the default offset value in descript.txt. Prefixing a value with @ instead specifies coordinates relative to the offset values in descript.txt or surfaces.txt.
+将气球的偏移值改为 XY 坐标。用户通过拖动气球确定的坐标会加到此值上，并据此确定气球的显示坐标。<br />
+通常指定数值时，会忽略 descript.txt 中的默认 offset 值；在数值前加上 @ 时，则表示相对于 descript.txt 或 surfaces.txt 中偏移值的坐标。
 
 **対応:** SSP / Ninix
 

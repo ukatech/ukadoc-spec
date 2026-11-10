@@ -1,14 +1,14 @@
-# windowposition.x,coordinate
+# windowposition.x,座標
 
 **カテゴリ:** descript.txt
 
-Adjusts the balloon's position in the x-coordinate direction relative to its default position.<br />
-Specify a numeric value in pixels or use a keyword.<br />
-For numeric values, **right is always +**, regardless of whether the balloon appears on the left or right. Note that unlike the shell's [balloon.offsetx](../../shell/descript-txt/sakura.balloon.offsetx.md), the sign is not reversed when the balloon appears on the right.<br />
-center (top has the same effect in SSP only) fixes the balloon to the top center of the shell.<br />
-bottom (SSP only) fixes it to the bottom center of the shell.<br />
-Other strings (left, right, free, etc.) are not accepted and are treated as 0. SSP outputs a warning to the error log.<br />
-SSP also allows this to be specified in descript.txt.
+相對於 balloon 基本位置的 x 座標方向位移。<br />
+可用像素數值或關鍵字指定。<br />
+以數值指定時，**無論 balloon 顯示在左側或右側，向右一律為+**。請注意，這與 shell 的[balloon.offsetx](../../shell/descript-txt/sakura.balloon.offsetx.md)不同，顯示在右側時符號也不會反轉。<br />
+指定center時，會固定在 shell 的中央上方（僅限 SSP，指定top也相同）。<br />
+指定bottom時，會固定在 shell 的中央下方（僅限 SSP）。<br />
+不接受上述以外的字串（例如 left、right、free），並會視為0。SSP 會在錯誤記錄中顯示警告。<br />
+此外，僅限 SSP，也可以寫在 descript.txt 中。
 
 **既定値:** 0
 

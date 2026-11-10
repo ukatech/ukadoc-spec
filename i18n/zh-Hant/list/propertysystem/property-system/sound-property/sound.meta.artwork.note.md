@@ -1,11 +1,11 @@
-# About Sound Property Metadata (meta.～) \[2.8.73\]
+# 關於音效屬性的中繼資料（meta.～）\[2.8.73\]
 
-Sound properties that begin with meta. retrieve tag information embedded in media files (such as ID3, Vorbis Comment, MP4 metadata atoms, and ASF attributes). All are read-only.
+以 meta. 開頭的音效屬性會取得嵌入媒體檔案中的標籤資訊（ID3、Vorbis Comment、MP4 中繼資料 atom、ASF 屬性等）。這些屬性皆為唯讀。
 
-**If a tag does not exist or cannot be retrieved for some reason, the property itself is treated as nonexistent.** Note that, unlike [error](sound.error.md), which returns an empty string, referencing the property itself fails (the behavior is the same as when a nonexistent property name is specified). When handling media whose tags may or may not exist, write your scripts with this in mind.
+**若標籤不存在，或因某些原因無法取得，該屬性本身會視為不存在。**這點請特別注意：它不會像 [error](sound.error.md) 一樣回傳空字串，而是無法參照該屬性（行為與指定不存在的屬性名稱相同）。處理標籤是否存在不確定的媒體時，請依照此前提撰寫 script。
 
-Naturally, all meta. properties fail to be retrieved for formats that do not have tags.
+當然，對於不含標籤的格式，所有 meta. 屬性都會無法取得。
 
-\[2.9.32\] For tags in ID3 (v1 / v2.2 / v2.3 / v2.4) for MP3 and other formats, comments in FLAC, Ogg Vorbis, and Opus, and INFO in WAV and AVI (including WAV id3 chunks), SSP reads the tags itself without relying on the OS. This also allows it to read tags that the OS misreads, such as Shift_JIS or ISO-8859-1 tags interpreted using the OS's default character encoding, ID3v2 tags with unsynchronisation or extended headers, ID3v2.2, and WAV tags. Items SSP cannot read, as well as other formats (such as MP4 and WMA), are still retrieved from the OS as before.<br />
-For tags with no specified character encoding (ID3v1, ISO-8859-1 in ID3v2, and INFO in WAV and AVI), SSP guesses the encoding in this order: UTF-8 → Shift_JIS → the OS's default character encoding. Since this is an estimate, especially on operating systems that are not Japanese, Western-language text and Japanese may be mistaken for one another.<br />
-Retrieval is now performed per item: SSP reads the tags first, and only items it could not read are supplemented by the OS or media playback components. As a result, even if only some items are retrieved from a tag, the remaining items may be supplemented by the OS or media playback components (for example, in some environments, the artist value is used to supplement a tag that has no album artist).
+\[2.9.32\] SSP 會自行讀取 MP3 等格式的 ID3（v1 / v2.2 / v2.3 / v2.4）、FLAC・Ogg Vorbis・Opus 的註解，以及 WAV・AVI 的 INFO 標籤（包括 WAV 的 id3 區塊），而不依賴 OS。即使 OS 讀取錯誤的情況也能讀取，例如以 OS 預設字元編碼解讀的 Shift_JIS 或 ISO-8859-1 標籤、帶有 unsynchronisation 或擴充標頭的 ID3v2、ID3v2.2、WAV 標籤等。SSP 無法讀取的項目以及其他格式（例如 MP4・WMA），則仍從 OS 取得。<br />
+未指定字元編碼的標籤（ID3v1、ID3v2 的 ISO-8859-1、WAV・AVI 的 INFO），SSP 會依序嘗試 UTF-8 → Shift_JIS → OS 預設字元編碼。這是推測結果，因此特別是在非日文 OS 上，可能會混淆西歐語言和日文。<br />
+現在會逐項先由 SSP 讀取，僅以 OS 或媒體播放元件補足 SSP 無法讀取的項目。因此，即使某些標籤只有部分項目可取得，其他項目仍可能由 OS 或媒體播放元件補足（因此，在沒有專輯演出者的標籤中，有些環境會以演出者的相同值補足專輯演出者）。

@@ -3,4 +3,4 @@
 ## 一覧
 
 - [delete.txt](introduction_delete.txt.md)
-- [Relative path](entry.md)
+- [相對路徑](entry.md)

@@ -1,9 +1,9 @@
-# validrect.top,coordinate [\*1](../index.md#balloon設定)
+# validrect.top,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The top position of the text drawing area.
+文字繪製範圍的頂端位置。
 
-**既定値:** unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

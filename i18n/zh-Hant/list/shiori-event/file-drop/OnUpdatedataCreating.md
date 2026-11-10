@@ -1,7 +1,7 @@
 # OnUpdatedataCreating
 
-**カテゴリ:** File drop event
+**カテゴリ:** 檔案拖放事件
 
-Triggered when a ghost folder is dragged and dropped.
+拖放 ghost 資料夾時觸發。
 
 **対応:** Materia / SSP / CROW

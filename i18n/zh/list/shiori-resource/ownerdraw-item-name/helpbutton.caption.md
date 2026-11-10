@@ -1,7 +1,7 @@
 # helpbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of the manual.
+说明书名称。
 
 **対応:** SSP

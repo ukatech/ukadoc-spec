@@ -1,7 +1,7 @@
 # updatefmobutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the FMO cleanup/update option.
+FMO 整理／更新的名稱。
 
 **対応:** SSP

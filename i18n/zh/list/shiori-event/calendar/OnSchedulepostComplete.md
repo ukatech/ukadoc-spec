@@ -1,10 +1,10 @@
 # OnSchedulepostComplete
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 日历事件
 
-\[Legacy specification\] Occurs when a schedule sensor completes posting.<br />
-**This event does not occur in current versions of SSP because the posting feature itself has been deprecated.**
+\[旧规格\]日程传感器完成发布处理时触发。<br />
+**由于发布功能本身已废止，当前的SSP不会触发此事件。**
 
-- **Reference0**: Schedule sensor name
+- **Reference0**: 日程传感器名称
 
 **対応:** SSP

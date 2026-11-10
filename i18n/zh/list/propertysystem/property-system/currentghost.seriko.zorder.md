@@ -1,17 +1,17 @@
 # currentghost.seriko.zorder
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The current setting state of [`\![set,zorder,～]`](../../sakura-script/surface/bang-set-zorder-ID-ID.md).<br />
-Elements within a group are comma-separated, and groups are separated by semicolons. Elements are listed from front to back.<br />
-In explicit element specification mode, values are returned in abbreviated form as `s` (surface) or `b` (balloon) followed by a scope ID, such as `s0,b0,s1;s2,b2`.<br />
-In the legacy mode, which specifies only scope IDs, only numbers are returned, such as `0,1;2,3`.<br />
-If there are no settings, the value is empty.<br />
-*\[SET enabled\]*
+当前[`\![set,zorder,～]`](../../sakura-script/surface/bang-set-zorder-ID-ID.md)的设置状态。<br />
+组内的元素以逗号分隔，不同组之间以分号分隔。元素按从前到后的顺序排列。<br />
+在显式指定元素的模式下，返回类似 `s0,b0,s1;s2,b2` 的值，其中 `s`（surface）和 `b`（balloon）后跟 scope ID 的简写。<br />
+在仅指定 scope ID 的旧模式下，返回类似 `0,1;2,3` 的纯数字值。<br />
+没有任何设置时，值为空。<br />
+*\[SET有效\]*
 
-When writing, the current settings are **completely replaced** using the same format. Note that this differs from Sakura Script tags, which add groups.<br />
-Writing an empty string clears all Z-order settings.<br />
-Writing back the value as read reproduces the original state.<br />
-Groups with fewer than two elements are ignored. Also, because explicit specification mode and legacy mode are mutually exclusive, **the two modes cannot be mixed**, as in `s0,b0;2,3`.
+写入时，使用相同格式**完全替换当前设置**。请注意，这与 Sakura Script 标签逐步添加组的行为不同。<br />
+写入空字符串会解除所有 Z 顺序设置。<br />
+将读取的值原样写回，即可恢复原来的状态。<br />
+元素少于2个的组会被忽略。此外，显式指定模式与旧模式互斥，因此**不能混用两种模式**，例如 `s0,b0;2,3`。
 
 **対応:** SSP 2.8.78

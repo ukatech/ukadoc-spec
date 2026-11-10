@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventZeomeKilled
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the False Prophet, "Zeome," is defeated.
+擊敗偽預言者「澤姆」時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

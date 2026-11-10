@@ -1,8 +1,8 @@
 # `\f[default]`
 
-**カテゴリ:** Text change command
+**カテゴリ:** 文字變更指令
 
-Restores all balloon attributes to their default values.
+將所有 balloon 屬性恢復為預設值。
 
 **対応:** SSP / Ninix
 

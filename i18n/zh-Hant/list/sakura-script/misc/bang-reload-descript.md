@@ -1,8 +1,8 @@
 # `\![reload,descript]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads all descript.txt files.
+重新載入所有descript.txt。
 
 **対応:** SSP
 

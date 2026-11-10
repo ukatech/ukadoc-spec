@@ -1,8 +1,8 @@
 # Send60stair_Goal
 
-**カテゴリ:** Ghost "Curry Family/Saki and Ukon"
+**カテゴリ:** ghost「咖喱家族／沙纪与右近」
 
-Occurs when any ghost reaches the goal during a game played by Curry Family/Saki and Ukon.
+咖喱家族／沙纪与右近进行的游戏中，任一 ghost 到达终点时发生。
 
-- **Reference0**: Name of the winning ghost.
-- **Reference1**: Rank.
+- **Reference0**: 获胜的 ghost 名称。
+- **Reference1**: 名次。

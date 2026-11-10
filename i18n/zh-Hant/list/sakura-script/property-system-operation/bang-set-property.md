@@ -1,9 +1,9 @@
 # `\![set,property,プロパティ名,値]`
 
-**カテゴリ:** Property system operation command
+**カテゴリ:** 屬性系統操作命令
 
-Entering a value into the property system.<br />
-※For details about the property system, see the [Property System](../../propertysystem/index.md) page.
+將值寫入屬性系統。<br />
+※屬性系統的詳細資訊請參閱[屬性系統](../../propertysystem/index.md)頁面。
 
 **対応:** SSP / CROW
 

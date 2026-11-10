@@ -1,14 +1,14 @@
 # OnVirtualDesktopChanged
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、结束与切换事件
 
-Occurs when the virtual desktop is switched.<br />
-Currently effective only on Windows 10.<br />
-**This is an experimental feature, so its specification may change in the future**.
+虚拟桌面切换时触发。<br />
+目前仅在Windows 10上有效。<br />
+**这是实验性功能，今后规格可能会发生变化**。
 
-- **Reference0**: current：The current virtual desktop and the desktop displaying the ghost are the same<br />
-  hidden：The virtual desktop has been switched, and the ghost is hidden<br />
-  minimize：The window is minimized, and it is unclear which virtual desktop it belongs to
-- **Reference1**: Current virtual desktop ID.
+- **Reference0**: current：当前虚拟桌面与显示ghost的桌面相同<br />
+  hidden：虚拟桌面已切换，处于隐藏状态<br />
+  minimize：窗口已最小化，无法确定其所属的虚拟桌面
+- **Reference1**: 当前虚拟桌面ID。
 
 **対応:** SSP

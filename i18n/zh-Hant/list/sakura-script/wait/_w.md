@@ -1,8 +1,8 @@
 # `\_w[時間]`
 
-**カテゴリ:** Wait command
+**カテゴリ:** 等待指令
 
-Precise wait. Wait for \[time\] ms.
+精密等待。\[時間\] 毫秒。
 
 **対応:** SSP / CROW / Ninix
 

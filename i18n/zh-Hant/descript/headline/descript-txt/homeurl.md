@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-URL for network updates.
+用於 network update 的 URL。
 
-**既定値:** No value
+**既定値:** 無值
 
 **対応:** SSP

@@ -1,7 +1,7 @@
 # char\*.recommendsites.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项目名称
 
-Name for recommendations when using `\p[*]`.
+使用 `\p[*]` 时“推荐”的名称。
 
 **対応:** SSP

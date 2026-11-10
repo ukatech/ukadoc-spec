@@ -1,7 +1,7 @@
 # baseware.name
 
-**カテゴリ:** プロパティシステム
+**カテゴリ:** 屬性系統
 
-Baseware 名稱。
+baseware 名稱。
 
 **対応:** SSP / CROW

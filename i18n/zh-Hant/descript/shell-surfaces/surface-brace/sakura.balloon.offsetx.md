@@ -1,22 +1,22 @@
-# sakura.balloon.offsetx,coordinates
+# sakura.balloon.offsetx,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface brace
 
-The X coordinate of the main-side balloon position for this surface only.<br />
-Appending one direction character after offsetx / offsety allows different values to be used depending on where the balloon appears (SSP only).
+僅適用於該 surface 的本體側 balloon 位置 X 座標。<br />
+在 offsetx / offsety 後方加上表示方向的 1 個字元，即可根據 balloon 的顯示位置使用不同的值（僅限 SSP）。
 
-- **offsetx / offsety**: No direction specified. Used as the default when the entries below are not written.
-- **offsetxl / offsetyl**: When displaying the balloon to the left of the shell.
-- **offsetxr / offsetyr**: When displaying the balloon to the right of the shell.
-- **offsetxc / offsetyc**: When displaying the balloon above the head or at the feet of the shell. Shared by both centered positions.
-- **offsetxb / offsetyb**: When displaying the balloon at the feet of the shell. Use these when different values are needed for above the head and at the feet.
+- **offsetx / offsety**: 未指定方向。以下項目未設定時使用的預設值。
+- **offsetxl / offsetyl**: balloon 顯示在 shell 左側時。
+- **offsetxr / offsetyr**: balloon 顯示在 shell 右側時。
+- **offsetxc / offsetyc**: balloon 顯示在 shell 頭上或腳下時。共用於兩種置中情況。
+- **offsetxb / offsetyb**: balloon 顯示在 shell 腳下時。要讓頭上與腳下使用不同值時使用。
 
-If offsetxb is not specified, offsetxc is used; if that is also not specified, offsetx is used. If offsetxc / offsetxl / offsetxr are not specified, offsetx is used. The X and Y coordinates are determined independently.<br />
-The value specified here takes precedence over the same-named value in the shell's [descript.txt](../../shell/descript-txt/sakura.balloon.offsetx.md).
+若未設定 offsetxb，則使用 offsetxc；若也未設定，則使用 offsetx。若未設定 offsetxc / offsetxl / offsetxr，則使用 offsetx。X 座標與 Y 座標分別獨立決定。<br />
+此處設定的值優先於 shell 的[descript.txt](../../shell/descript-txt/sakura.balloon.offsetx.md)中設定的同名值。
 
-The sign direction is the same as for [sakura.balloon.offsetx in descript.txt](../../shell/descript-txt/sakura.balloon.offsetx.md).
+正負號的方向與[descript.txt 的 sakura.balloon.offsetx](../../shell/descript-txt/sakura.balloon.offsetx.md)相同。
 
-**既定値:** When displayed to the left or right: the position where the left or right edge of the balloon aligns with the right or left edge of the surface<br />
-When displayed above the head or at the feet: the center of the surface
+**既定値:** 顯示在左右時：使 balloon 的左右端與 surface 的左右端對齊的位置<br />
+顯示在頭上或腳下時：surface 的中央
 
 **対応:** Materia / SSP / CROW

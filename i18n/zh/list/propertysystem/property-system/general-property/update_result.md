@@ -1,7 +1,7 @@
 # update_result
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-Update result of the target.
+目标更新结果。
 
 **対応:** SSP

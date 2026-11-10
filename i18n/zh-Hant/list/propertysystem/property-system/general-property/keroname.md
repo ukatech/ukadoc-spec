@@ -1,7 +1,7 @@
 # keroname
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** 屬性系統 \> 一般屬性名稱
 
-The name of the target ghost's partner-side character.
+目標 ghost 的搭檔名稱。
 
 **対応:** SSP / CROW

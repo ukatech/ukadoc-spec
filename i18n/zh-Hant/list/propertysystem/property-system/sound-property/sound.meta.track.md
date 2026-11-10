@@ -1,8 +1,8 @@
 # meta.track
 
-**カテゴリ:** Property System \> Sound Property Name
+**カテゴリ:** 屬性系統 \> 音效屬性名稱
 
-Track number recorded in the tag of the target media.<br />
-For behavior when no tag is present or the track number cannot be retrieved, see [here](sound.meta.artwork.note.md).
+目標媒體標籤中記錄的曲目編號。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

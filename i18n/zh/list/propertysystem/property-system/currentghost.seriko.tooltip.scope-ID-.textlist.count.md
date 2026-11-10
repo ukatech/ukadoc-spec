@@ -1,7 +1,7 @@
 # currentghost.seriko.tooltip.scope(ID).textlist.count
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The number of tooltip definitions in the list.
+工具提示定义列表的数量。
 
 **対応:** SSP (2.3.83)

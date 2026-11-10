@@ -1,13 +1,13 @@
-# balloon.offsety, coordinates
+# balloon.offsety,座標
 
 **カテゴリ:** surface brace
 
-The Y coordinate for the balloon position on this surface only (for either the main character or the partner).<br />
-Can also be written as offset.y.<br />
-For the format that appends a single character indicating the direction (l / r / c / b), see [sakura.balloon.offsetx](sakura.balloon.offsetx.md).
+僅套用於該 surface 的 balloon Y 座標（不限本體或搭檔）。<br />
+也可以記述為 offset.y。<br />
+關於在後方加上表示方向的 1 個字元（l / r / c / b）的寫法，請參照 [sakura.balloon.offsetx](sakura.balloon.offsetx.md)。
 
-**既定値:** When displayed to the left or right: the position where the balloon's top edge aligns with the surface's top edge<br />
-When displayed above the head: the position where the balloon's bottom edge aligns with the surface's top edge<br />
-When displayed at the feet: the position where the balloon's top edge aligns with the surface's bottom edge
+**既定値:** 顯示於左右時：balloon 上緣與 surface 上緣對齊的位置<br />
+顯示於頭上時：balloon 下緣與 surface 上緣對齊的位置<br />
+顯示於腳下時：balloon 上緣與 surface 下緣對齊的位置
 
 **対応:** SSP

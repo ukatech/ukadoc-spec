@@ -1,6 +1,6 @@
-# Shell
+# shell
 
-The files in the shell folder are as follows.
+shell 資料夾中的檔案如下。
 
 ```filetree
 +-(myghost)
@@ -23,114 +23,114 @@ The files in the shell folder are as follows.
 　　　　　　+-menu_sidebar.png
 ```
 
-※For menu_background.png, menu_foreground.png, and menu_sidebar.png, see the page 「[Owner Draw Menu](owner-draw-menu.md)」.
+※關於 menu_background.png、menu_foreground.png、menu_sidebar.png，請參閱「[owner draw 選單](owner-draw-menu.md)」頁面。
 
-- **[descript.txt](../descript/shell/index.md)**: A file for identifying the shell and configuring basic settings.
+- **[descript.txt](../descript/shell/index.md)**: 用來識別 shell 並進行基本設定的檔案。
 
-  For the contents of the text file, see the [linked page](../descript/shell/index.md).
+  文字檔中的記載事項請參閱[連結頁面](../descript/shell/index.md)。
 
-- **readme.txt**: Used by the shell creator to provide information such as the distribution source.
+- **readme.txt**: shell 製作者用來記載發佈來源等資訊的檔案。
 
-  This file is optional, but if provided, it can be referenced during installation and from the baseware menu.
+  可以省略，但若有準備，安裝時或透過 baseware 選單等方式便能參閱。
 
-  It is particularly advisable to provide one when the ghost creator and shell creator are different.
+  尤其是 ghost 作者與 shell 作者不同時，建議盡可能準備此檔案。
 
-- **surface\*.png**: Surface files.
+- **surface\*.png**: surface 檔案。
 
-  Images displayed on the desktop.
+  顯示在桌面上的圖像。
 
-  There are no restrictions on image size or color depth.
+  圖像尺寸與色數皆無限制。
 
-  The file format is PNG[※](shell.md#シェル).
+  檔案格式為 PNG[※](shell.md#シェル)。
 
-  Areas with the same color as the top-left pixel (coordinates 0,0) are treated as the transparent color (key color) and displayed as transparent.
+  與圖像左上角的 1 個像素（座標 0,0）同色的區域會被視為透明色（去背色），顯示時將會透明。
 
-  Although there is a [somewhat standard assignment](../descript/shell-surfaces/surface-brace/caption_standarddef.md) for surface numbers, they are basically unrestricted.
+  surface 編號[有一定程度的標準分配方式](../descript/shell-surfaces/surface-brace/caption_standarddef.md)，但基本上可自由設定。
 
-  However, surface0 and surface10 are required (recommended but not required for SSP).
+  不過，surface0 和 surface10 為必須項目（SSP 中建議使用，但不是必須）。
 
-  Therefore, even for a ghost with only one character, you need to provide an image filled with a single color as surface10.png, for example.
+  因此，即使是只有一個角色的 ghost，也需要準備 surface10.png，例如放置一張以單色填滿的圖像。
 
-  If the baseware is MATERIA (embryo, the original 伺か), surface numbers can range from 0 to 8192.
+  如果 baseware 是 MATERIA（embryo、本家的 伺か (Ukagaka)），surface 編號範圍為 0～8192。
 
-  Other baseware has no restrictions.
+  其他 baseware 則沒有此限制。
 
-  In SSP 2.7.38 and later, specifying an animated GIF/APNG/animated WebP as surface\*.png will animate it without requiring a SERIKO definition.
+  SSP 2.7.38 之後，若將動畫 GIF/APNG/WebP 動畫指定為 surface\*.png，即使不撰寫 SERIKO 定義也會播放動畫。
 
-- **surface\*.pna**: Surface alpha channel definition files.
+- **surface\*.pna**: surface 的 alpha 通道定義檔。
 
-  These are grayscale PNG images (black: transparent ←→ opaque: white) renamed with the pna extension.
+  將灰階 PNG 圖像（黑：透明 ←→ 不透明：白）的副檔名改為 pna。
 
-  Placing a pna file with the same number as the surface enables the surface to be made translucent.
+  放置與 surface 編號相同的 pna 檔案，即可讓 surface 半透明。
 
   | ![](../assets/image/surface0_png1.jpg) | → | ![](../assets/image/surface0_pna.jpg) | → | ![](../assets/image/surface0_png2.jpg) |
   | --- | --- | --- | --- | --- |
-  | surface0.png |  | surface0.pna |  | Desktop display |
+  | surface0.png |  | surface0.pna |  | 桌面顯示 |
 
-  Areas that are not fully transparent will have hit detection.
+  未完全透明的區域會產生命中判定。
 
-  In unsupported environments, such as Windows9x and very old graphics cards, pna files are ignored.
+  此外，在 Windows9x 或非常老舊的顯示卡等不支援的環境中，pna 會被忽略。
 
-  In SSP, you can also configure it to use the PNG's own alpha channel (transparency information) through the [setting](../descript/shell/descript-txt/seriko.use_self_alpha.md).
+  另外，在 SSP 中也可以透過[設定](../descript/shell/descript-txt/seriko.use_self_alpha.md)使用 PNG 本身的 alpha 通道（透明度資訊）。
 
-- **(element).png**: The [element](../descript/shell-surfaces/surface-brace/element-star.md) specification allows PNG images[※](shell.md#シェル) with arbitrary names to be composited as parts and treated as a single surface. These are the images used for those parts.
+- **(element).png**: 依照 [element](../descript/shell-surfaces/surface-brace/element-star.md) 規格，可將任意名稱的 PNG 圖像[※](shell.md#シェル)作為零件合成，並視為一個 surface。這是用於此目的的零件圖像。
 
-  ※You can replace (element) with any name you like. Any number of images can be used, and they are not required.
+  ※可將 (element) 部分替換為任意名稱。可使用任意數量的圖像，也可以完全不使用。
 
-  In SSP 2.7.38 and later, specifying an animated GIF/APNG/animated WebP in an element definition in surfaces.txt will animate it without requiring a SERIKO definition.
+  SSP 2.7.38 之後，若在 surfaces.txt 的 element 定義中指定動畫 GIF/APNG/WebP 動畫，即使不撰寫 SERIKO 定義也會播放動畫。
 
-  See also 「surfaces.txt」 below for details.
+  詳情也請參閱後述的「surfaces.txt」。
 
-- **(element).pna**: A pna file for each element composite part image.
+- **(element).pna**: 各 element 合成用零件圖像的 pna。
 
-- **[surfaces.txt](../descript/shell-surfaces/index.md)**: A file defining surface ID assignments, layer composition, animation, hit detection, and other properties.
+- **[surfaces.txt](../descript/shell-surfaces/index.md)**: 定義 surface ID 分配、圖層合成、動畫、命中判定等的檔案。
 
-  For the definitions, see [surfaces.txt](../descript/shell/index.md).
+  定義內容請參閱 [surfaces.txt](../descript/shell/index.md)。
 
-  For animation and dressup, see Animation.
+  動畫與 dressup 請參閱動畫。
 
-- **[surfaces\*\*.txt](../descript/shell-surfaces/index.md)**: For SSP only.
+- **[surfaces\*\*.txt](../descript/shell-surfaces/index.md)**: SSP 專用。
 
-  Any string can be used in place of \*\*.
+  \*\*可使用任意字串。
 
-  Support for the name surfaces2.txt in the 2.01 series and later, allowing arbitrary strings to be appended, was introduced in 2.2.57 and later.
+  2.01 系列之後開始支援 surfaces2.txt 這類名稱，而可加上任意字串則是從 2.2.57 之後開始。
 
-  Its functionality is the same as `surfaces.txt`.
+  功能與 `surfaces.txt` 相同。
 
-  This file is for using SSP-specific features while maintaining compatibility.
+  此檔案可在維持相容性的同時使用 SSP 專用功能。
 
-  This file is optional. It is also fine to add only the necessary parts.
+  此檔案可以省略。只追加需要的部分也沒有問題。
 
-- **[alias.txt](../descript/shell-surfaces/surface-alias-brace/caption_aliastxt.md)**: Legacy specification. A text file for describing sakura(kero).alias braces.
+- **[alias.txt](../descript/shell-surfaces/surface-alias-brace/caption_aliastxt.md)**: 舊規格。用來記述 sakura(kero).alias 括號的文字檔。
 
-  Its functionality has now been integrated into surfaces.txt.
+  目前此功能已整合至 surfaces.txt。
 
-- **thumbnail.png**: A thumbnail displayed when selecting a shell in the menu tree.
+- **thumbnail.png**: 在選單樹中選取 shell 時顯示的縮圖。
 
-  Supported image formats are png and jpg.
+  可使用的圖像格式為 png 或 jpg。
 
-  Renaming a png file to pnr makes areas with the same color as the top-left pixel (coordinates 0,0) transparent.
+  將 png 改名為 pnr 後，圖像左上角的 1 個像素（座標 0,0）同色部分會變透明。
 
-  This file is optional.
+  此檔案可以省略。
 
-- **[makoto.dll](translator.md)**: Used for the translate feature.
+- **[makoto.dll](translator.md)**: 用來使用轉譯功能。
 
-  It can be provided on the [ghost side](ghost.md) as well. See the [linked page](translator.md) for details.
+  與可準備在 [ghost 端](ghost.md)的檔案相同。詳情請參閱[連結頁面](translator.md)。
 
-  This file is optional.
+  此檔案可以省略。
 
-- **[surfacetable.txt](../descript/shell-surfacetable/index.md)**: For SSP only.
+- **[surfacetable.txt](../descript/shell-surfacetable/index.md)**: SSP 專用。
 
-  A file defining surface contents, intended for use with the “Surface Test” feature in the SSP development palette and other shell creation support utilities.
+  定義 surface 內容的檔案，供 SSP 開發用面板的「surface 測試」功能及其他 shell 製作支援工具使用。
 
-  See the [linked page](../descript/shell-surfacetable/index.md) for details.
+  詳情請參閱[連結頁面](../descript/shell-surfacetable/index.md)。
 
-  This file is optional.
+  此檔案可以省略。
 
-!!! tip "Tip"
+!!! tip "提示"
 
-    - **[※1](shell.md#シェル),[※2](shell.md#シェル)**: SSP can also use encrypted PNG (DAP/DDP/DFP/DGP), GIF (non-animated), JPEG, and BMP, but these formats are *deprecated*.
+    - **[※1](shell.md#シェル),[※2](shell.md#シェル)**: SSP 也可以使用加密 PNG（DAP/DDP/DFP/DGP）、GIF（非動畫）、JPEG、BMP，但*不建議使用*。
 
-      They can be loaded for backward compatibility, but there is no guarantee that formats other than PNG will be supported in features and specifications added in the future.
+      為了向前相容而仍可載入，但不保證日後新增的功能或規格會支援 PNG 以外的格式。
 
-      Also, even now, transparency features (pna and [seriko.use_self_alpha](../descript/shell/descript-txt/seriko.use_self_alpha.md)) are unavailable for all formats except PNG, and JPEG has the additional drawback of being prone to color shifts due to compression, making it unsuitable for use with transparent colors.
+      此外，目前 PNG 以外的所有格式都無法使用透明度規格（pna 及 [seriko.use_self_alpha](../descript/shell/descript-txt/seriko.use_self_alpha.md)）；而 JPEG 也容易因壓縮造成色彩偏移，因此不適合搭配透明色使用。

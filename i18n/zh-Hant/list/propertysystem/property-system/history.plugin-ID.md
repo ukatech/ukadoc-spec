@@ -1,7 +1,7 @@
-# history.plugin(plugin name/path/ID).generic property name
+# history.plugin(Plugin 名稱/路徑/ID).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Get information using the name, path, or ID of a recently used plugin.
+從最近使用項目的 plugin 名稱、路徑或 ID 取得資訊。
 
 **対応:** SSP

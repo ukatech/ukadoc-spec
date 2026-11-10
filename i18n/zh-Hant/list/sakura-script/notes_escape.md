@@ -1,9 +1,9 @@
-# Sakura Script escaping
+# Sakura Script 的跳脫
 
-- To display "\\" as a character rather than as the Sakura Script start marker, write it as "\\\\"
-- Similarly, write the environment-variable insertion tag "%" as "\\%"
-- Within tags that take arguments inside square brackets (such as `\q[ラベル名,ID]`), "\]" can be written as "\\\]".
-- If you want a comma "," to be part of the second or a later argument in a tag with multiple arguments inside square brackets, enclose the entire argument in "" to treat it as a single argument.<br />
-  Example: `\![raise,OnTest,"100,2"]`
-- Similarly, if you want a double quote """ to be part of an argument, enclose the entire argument in "" and double each ".<br />
-  Example: `\![call,ghost,"the ""MobileMaster"""]`
+- 若要只顯示「\\」而非將其視為Sakura Script的起始符號，請寫成「\\\\」
+- 同樣地，若要顯示環境變數嵌入標籤的「%」，請寫成「\\%」
+- 僅在方括號內帶有引數的標籤（例如 `\q[ラベル名,ID]`）中，「\]」可寫成「\\\]」。
+- 在方括號內帶有多個引數的標籤中，若要在第二個及之後的引數中使用「,」作為引數內容，將整個引數以""括住，即可將其視為單一引數。<br />
+  例：`\![raise,OnTest,"100,2"]`
+- 同樣地，若要在引數內容中使用「"」，請將整個引數以""括住，並將"加倍。<br />
+  例：`\![call,ghost,"the ""MobileMaster"""]`

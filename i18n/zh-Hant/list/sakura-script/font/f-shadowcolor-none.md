@@ -1,8 +1,8 @@
 # `\f[shadowcolor,none]`
 
-**カテゴリ:** Text change command
+**カテゴリ:** 文字變更指令
 
-Disables the text shadow color.
+停用文字陰影顏色。
 
 **対応:** SSP
 

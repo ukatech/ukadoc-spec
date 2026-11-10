@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventAddNewsTopic
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 应用程序“Elona omake_MMA”
 
-Occurs when an adventurer news topic is added.
+新增冒险者新闻主题时触发。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: News title.
+- **Reference\***: Reference0～80，参见[※共通参考](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 新闻标题。

@@ -2,20 +2,20 @@
 
 **カテゴリ:** internal_jwt
 
-Verify the JWT signature and expiration, and return the payload (JSON) if valid. If the payload contains line breaks, replace them with spaces before returning it (this does not change its meaning as JSON).<br />
-**alg must be specified with `--alg=`** (if omitted, return 400 `invalid parameter`). Do not trust the token header's `alg`; fail if it does not match the specified value (to prevent alg substitution or forgery using `none`).<br />
-If `exp` (expiration time) and `nbf` (time before which the token is not valid) are present, verify them. Other fields such as `iss`, `aud`, and `iat` are not checked, so verify them in a script if needed.
+驗證 JWT 的簽章與有效期限，若正確則回傳 Payload（JSON）。若 Payload 中有換行，會以空白取代後回傳（不會改變 JSON 的意義）。<br />
+**必須透過`--alg=`指定 alg**（若未指定，則回傳 400 `invalid parameter`）。不信任 Token 標頭中的`alg`，若與指定值不符則判定失敗（以防止 alg 替換或利用`none`偽造）。<br />
+若有`exp`（有效期限）和`nbf`（生效時間），則會進行檢查。不會檢查`iss`、`aud`、`iat`等其他項目，必要時請在 script 中自行檢查。
 
 - **Argument1**: Token
-- **Argument2**: Key (symmetric key for HS\*, public key otherwise)
-- **オプション**: `--alg=` (required) / `--leeway=` (seconds; allowed clock skew; default: 0; 0–86400) / `--key-in=` (HS\* only) / `--time=` (date and time to use instead of the current time. Uses the same format as the date-and-time argument in [internal_time](../internal_time/index.md); defaults to the current time)
+- **Argument2**: 金鑰（HS\*為共用金鑰，其餘為公開金鑰）
+- **オプション**: `--alg=`（必填） / `--leeway=`（秒。時鐘偏差的容許值。預設為0。0～86400） / `--key-in=`（僅限 HS\*） / `--time=`（用來取代目前時間的日期時間。寫法與[internal_time](../internal_time/index.md)的日期時間引數相同。預設為目前時間）
 
-Failures are as follows.
+失敗情況如下。
 
-- **500 authentication failed**: Signature does not match. The header's `alg` differs from `--alg=` (case-sensitive). The header contains `crit`. The token is malformed (not split into three parts, cannot be read as base64url, header or payload is not a JSON object, or is invalid UTF-8). `exp` / `nbf` is not numeric.
-- **500 expired**: The current time is at or after `exp` + leeway (the token expires exactly at the time specified by `exp`).
-- **500 not yet valid**: The current time + leeway is before `nbf`.
-- **400 invalid key**: The key cannot be read, is of the wrong type, or is too short for HS\*.
+- **500 authentication failed**: 簽章不符。標頭的`alg`與`--alg=`不同（區分大小寫）。標頭中有`crit`。Token 格式錯誤（無法分成三個部分、無法作為 base64url 讀取、標頭或 Payload 不是 JSON 物件、不是有效的 UTF-8）。`exp` / `nbf`不是數值。
+- **500 expired**: 目前時間已到`exp`＋leeway（在`exp`的時間點即失效）。
+- **500 not yet valid**: 目前時間＋leeway早於`nbf`。
+- **400 invalid key**: 無法讀取金鑰、金鑰類型不符，或 HS\*金鑰太短。
 
 ## 記述例
 

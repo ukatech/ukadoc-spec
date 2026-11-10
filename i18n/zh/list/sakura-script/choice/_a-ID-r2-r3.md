@@ -1,11 +1,11 @@
 # `\_a[ID,r2,r3...]`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-The range up to `\_a` is treated as an anchor. Choices do not time out, but the balloon times out as with normal talk.<br />
-Clicking the link triggers the SHIORI event [OnAnchorSelect*Ex*](../../shiori-event/choice/OnAnchorSelectEx.md).<br />
-The text that became the link is stored in Reference0, the ID in Reference1, and the subsequent arguments in Reference2 and later references.<br />
-OnAnchorSelect also occurs after OnAnchorSelectEx, but since nothing is stored in Reference1 or later, this syntax has no effect on it.
+将`\_a`之前的范围设为锚点。选项不会超时，但与普通对话一样会触发气球超时。<br />
+点击跳转链接时，将触发 SHIORI 事件[OnAnchorSelect*Ex*](../../shiori-event/choice/OnAnchorSelectEx.md)。<br />
+跳转链接对应的文本存入 Reference0，ID 存入 Reference1，后续参数依次存入 Reference2 及之后的项目。<br />
+在 OnAnchorSelectEx 之后也会触发 OnAnchorSelect，但 Reference1 之后没有任何内容，因此这种写法下该事件没有意义。
 
 **対応:** SSP
 

@@ -1,6 +1,6 @@
-# App “Cat Drift”
+# 应用“猫咪漂流”
 
-- Published by: [http://umeici.onjn.jp/](http://umeici.onjn.jp/)
+- 发布方：[http://umeici.onjn.jp/](http://umeici.onjn.jp/)
 
 **対応:** Materia / SSP / CROW
 

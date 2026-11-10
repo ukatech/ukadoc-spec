@@ -1,13 +1,13 @@
 # OnLanguageChange
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Notified when the language setting changes and immediately after startup.<br />
-When notified immediately after startup, this is always a NOTIFY event, and it cannot respond by speaking.
+語言設定變更時，以及啟動後會收到通知。<br />
+若通知是在啟動後送出，則一定是 NOTIFY，無法在事件中回應並發話。
 
-- **Reference0**: Language name (name)
-- **Reference1**: Language ID (langid)
-- **Reference2**: Full path to the folder containing the language setting files
-- **Reference3**: URL containing help information
+- **Reference0**: 語言名稱 (name)
+- **Reference1**: 語言 ID (langid)
+- **Reference2**: 存放語言設定檔的資料夾完整路徑
+- **Reference3**: 記載說明的 URL
 
 **対応:** SSP 2.5

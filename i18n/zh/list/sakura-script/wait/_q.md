@@ -1,10 +1,10 @@
 # `\_q`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Quick section.<br />
-Messages are displayed without a wait until the next `\_q` or `\e`.<br />
-However, all Sakura Script commands that cause a wait are still executed, and waits still occur during instant display.
+快速区段。<br />
+直到下一个 `\_q` 或 `\e` 为止，消息将以无等待方式显示。<br />
+不过，所有会产生等待的 Sakura Script 都会执行，瞬间显示期间也会产生等待。
 
 **対応:** Materia / SSP / CROW / Ninix
 

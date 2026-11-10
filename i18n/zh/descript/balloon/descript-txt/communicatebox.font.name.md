@@ -1,11 +1,11 @@
-# communicatebox.font.name,font name
+# communicatebox.font.name,字体名称
 
 **カテゴリ:** descript.txt
 
-Font used in the input box.<br />
-A font file placed in the balloon folder can also be specified as the font name (SSP only).<br />
-Multiple font names can be specified as a comma-separated list. They are selected from the fonts installed automatically in the order written, which indicates priority (SSP only).
+输入框使用的字体。<br />
+字体名称也可以指定放置在 balloon 文件夹中的字体文件（仅 SSP）。<br />
+可以用逗号分隔指定多个字体名称，系统会按照书写顺序（优先级顺序）从已安装的字体中自动选择（仅 SSP）。
 
-**既定値:** MS Gothic
+**既定値:** ＭＳ ゴシック
 
 **対応:** SSP

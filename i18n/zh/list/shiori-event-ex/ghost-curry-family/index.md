@@ -1,6 +1,6 @@
-# Ghost "Curry Family/Saki and Ukon"
+# ghost「咖喱家族／沙纪与右近」
 
-- Publisher: [http://curryfamily.me.land.to/ghost_saki.html](http://curryfamily.me.land.to/ghost_saki.html) ([Archive](https://web.archive.org/web/20260330033424/http://curryfamily.me.land.to/ghost_saki.html))
+- 发布地址：[http://curryfamily.me.land.to/ghost_saki.html](http://curryfamily.me.land.to/ghost_saki.html)（[存档](https://web.archive.org/web/20260330033424/http://curryfamily.me.land.to/ghost_saki.html)）
 
 **対応:** SSP
 

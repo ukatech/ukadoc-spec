@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventBecomeCriminal
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 应用程序“Elona omake_MMA”
 
-Occurs when karma decreases and the PC becomes a criminal.
+业报值下降、成为罪犯时触发。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80，参见[※共通参考](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

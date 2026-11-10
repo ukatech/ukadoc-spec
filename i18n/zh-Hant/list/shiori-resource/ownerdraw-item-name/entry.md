@@ -1,7 +1,7 @@
 # -
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-*\[Cannot be changed\]* Name for Language.
+*\[不可變更\]*Language 的名稱。
 
 **対応:** SSP

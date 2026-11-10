@@ -1,9 +1,9 @@
-# communicatebox.width,Size
+# communicatebox.width,尺寸
 
 **カテゴリ:** descript.txt
 
-Width of the input area.
+可輸入區域的寬度。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

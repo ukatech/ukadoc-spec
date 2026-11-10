@@ -1,7 +1,7 @@
 # `\_!`
 
-**カテゴリ:** Balloon, text commands
+**カテゴリ:** 气球、文本命令
 
-\[Obsolete specification\] Displays tags as-is without executing them, until the next `\_!`.
+\[旧规格\]直到下一个`\_!`为止，不执行标签，而是原样显示。
 
 **対応:** Materia / SSP

@@ -1,7 +1,7 @@
 # inforootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of information.
+信息名称。
 
 **対応:** SSP

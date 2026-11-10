@@ -1,9 +1,9 @@
-# use_input_alpha,number
+# use_input_alpha,數值
 
 **カテゴリ:** descript.txt
 
-If the value is 1, input-box-style balloons are also made translucent. However, the input box border cannot be made translucent.<br />
-This setting applies only to the entire balloon and cannot be overridden.
+數值為1時，輸入框類型的 balloon 也會半透明化。但輸入框外框無法設為半透明。<br />
+此設定只能套用至整個 balloon，不能覆寫。
 
 **既定値:** 0
 

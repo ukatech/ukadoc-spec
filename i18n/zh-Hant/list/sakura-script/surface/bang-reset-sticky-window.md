@@ -1,8 +1,8 @@
 # `\![reset,sticky-window]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Cancel the above setting and restore the value previously specified in descript.
+解除上述設定，並還原為 descript 預先指定的設定。
 
 **対応:** SSP 2.3.77
 

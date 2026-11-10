@@ -1,11 +1,11 @@
 # OnFileDrop
 
-**カテゴリ:** File drop events
+**カテゴリ:** 檔案拖放事件
 
-\[Legacy specification\] Occurs when a file is drag-and-dropped.
+\[舊規格\]檔案以 DnD 拖放時觸發。
 
-- **Reference0**: Path of the dropped file.
-- **Reference1**: Scope number of the character the file was dropped on. The main character is 0, the partner is 1, and the third and subsequent characters are 2 or higher.
-- **Reference2**: MIME type of the dropped file (SSP 2.7.98 and later).
+- **Reference0**: 拖放的檔案路徑。
+- **Reference1**: 拖放目標角色的 scope 編號。主體一側為 0，搭檔為 1，第三名角色起為 2 以上。
+- **Reference2**: 拖放檔案的 MIME 類型（SSP 2.7.98 以後）。
 
 **対応:** SSP / CROW

@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventTravelGuide
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when Norn's adventure guide is displayed.
+顯示諾恩的冒險指南時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference82**: Help number written in data\\exhelp.txt (the number in %n)
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference82**: data\\exhelp.txt中記載的說明編號（%n的數字）

@@ -1,9 +1,9 @@
-# Environment variables
+# 环境变量
 
 ## 一覧
 
-- [How to specify environment variables](notes_environmentvariable.md)
-- [Environment variable example](environmentvariable.md)
+- [环境变量的指定方法](notes_environmentvariable.md)
+- [环境变量的示例](environmentvariable.md)
 - [%month](pct-month.md)
 - [%day](pct-day.md)
 - [%hour](pct-hour.md)

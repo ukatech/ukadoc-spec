@@ -1,6 +1,6 @@
-# Ghost “マギルトリエ”
+# ghost「マギルトリエ」
 
-- Publisher: Closed
+- 發布來源：已關閉
 
 **対応:** SSP
 

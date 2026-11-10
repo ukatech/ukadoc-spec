@@ -2,10 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-URL for network update.<br />
-While the ghost is running, the SHIORI-side setting takes priority. For updates from Explorer or calls via the property system, this setting takes priority (to avoid the cost of loading SHIORI).<br />
-Be sure to include a trailing / in the URL.
+用于network update的URL。<br />
+ghost运行期间，优先采用SHIORI侧的说明；在资源管理器中执行更新或通过属性系统调用时，则优先采用此处设置（以避免SHIORI加载开销）。<br />
+请注意不要忘记在url末尾添加/。
 
-**既定値:** No value
+**既定値:** 无值
 
 **対応:** SSP

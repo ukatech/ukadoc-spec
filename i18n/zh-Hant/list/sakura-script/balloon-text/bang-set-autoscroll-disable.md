@@ -1,8 +1,8 @@
 # `\![set,autoscroll,disable]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Stop automatic scrolling of the balloon. Manual scrolling is still possible.
+停止 balloon 自動捲動。仍可手動捲動。
 
 **対応:** Materia / SSP / Ninix
 

@@ -1,6 +1,6 @@
-# SHIORI information
+# SHIORI 資訊
 
-Requests with the following four IDs are normally returned automatically by SHIORI, and are not handled by the ghost author.
+以下 4 個 ID 的請求通常由 SHIORI 自動回覆，個別 ghost 作者不會處理。
 
 ## 一覧
 

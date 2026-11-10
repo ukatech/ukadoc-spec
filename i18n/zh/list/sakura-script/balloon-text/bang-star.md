@@ -1,8 +1,8 @@
 # `\![*]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Displays a marker. The marker is configured by the balloon.
+显示标记。标记由气球设置。
 
 **対応:** Materia / SSP / Ninix
 

@@ -1,8 +1,8 @@
 # `\![executesntp]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Same as `\7`.
+与 `\7` 相同。
 
 **対応:** Materia / SSP / CROW
 

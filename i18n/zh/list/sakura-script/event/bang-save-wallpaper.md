@@ -1,8 +1,8 @@
 # `\![save,wallpaper]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Temporarily saves the current wallpaper so that it can be restored with restore.<br />
-\[2.8.93\] In window mode, saves the window-mode background (background type, image, placement, and color) instead of the OS wallpaper. This is stored separately from the content saved in normal mode.
+暂存当前壁纸，使其之后可以通过restore恢复。<br />
+\[2.8.93\] 在窗口模式下，保存窗口模式背景（背景类型、图像、布局、颜色），而不是OS壁纸。该内容与在普通模式下保存的内容分开保存。
 
 **対応:** SSP 2.8.11

@@ -1,8 +1,8 @@
 # OnGhostTermsAccept
 
-**カテゴリ:** Dialog box events
+**カテゴリ:** 對話方塊事件
 
-Occurs when Accept is clicked in the terms of use dialog.<br />
-No event occurs when the close button in the upper right is clicked.
+在使用條款對話方塊中按下接受時觸發。<br />
+按下右上角的關閉按鈕時不會觸發任何事件。
 
 **対応:** SSP 2.5.33

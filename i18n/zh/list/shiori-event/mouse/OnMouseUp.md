@@ -1,15 +1,15 @@
 # OnMouseUp
 
-**カテゴリ:** Mouse event
+**カテゴリ:** 鼠标事件
 
-Occurs when the left or right mouse button is released.
+鼠标左键或右键释放时触发。
 
-- **Reference0**: Mouse cursor x-coordinate (local coordinates)
-- **Reference1**: Mouse cursor y-coordinate (local coordinates)
-- **Reference2**: Always 0.
-- **Reference3**: 0 for the main character, 1 for the partner. SSP/CROW may also use 2 and higher.
-- **Reference4**: Hit-test region identifier.
-- **Reference5**: Left click is 0, right click is 1, middle click is 2 (compatibility specification: migration to OnMouseClickEx is recommended).
-- **Reference6**: For input from a touch panel in a multitouch-capable environment (※ touchpads are not supported), touch; from a pen tablet, pen; from the eraser end of a pen tablet, eraser; and from a mouse or similar device, mouse
+- **Reference0**: 鼠标光标的 x 坐标（局部坐标）
+- **Reference1**: 鼠标光标的 y 坐标（局部坐标）
+- **Reference2**: 始终为0。
+- **Reference3**: 主角色为0，搭档为1。SSP/CROW中还可能有2及以上的值。
+- **Reference4**: 命中判定的标识符。
+- **Reference5**: 左键单击为0，右键单击为1，中键单击为2（兼容性规格：建议迁移到OnMouseClickEx）。
+- **Reference6**: 来自支持多点触控环境的触摸屏（※不包括触摸板）的输入为touch，来自数位板的输入为pen，来自数位板橡皮擦端的输入为eraser，来自鼠标等设备的输入为mouse
 
 **対応:** SSP / Ninix

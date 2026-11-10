@@ -1,12 +1,12 @@
-# cursor.style,shape
+# cursor.style,形状
 
 **カテゴリ:** descript.txt
 
-Shape of the option marker.<br />
-square displays a rectangle.<br />
-underline displays an underline.<br />
-square+underline displays a rectangle and an underline.<br />
-none displays neither a rectangle nor an underline.
+选项标记的形状。<br />
+square显示矩形。<br />
+underline显示下划线。<br />
+square+underline同时显示矩形和下划线。<br />
+none表示既不显示矩形也不显示下划线。
 
 **既定値:** square
 

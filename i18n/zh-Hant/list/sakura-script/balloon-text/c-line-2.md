@@ -1,8 +1,8 @@
 # `\c[line,数値,開始位置]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Clears the specified number of lines from the start position (line number) in the current scope. The start position is zero-based (0 for the first line, 1 for the second). The determination of which lines are cleared is the same as for `\c[line,数値]`.
+從目前 scope 側的指定起始位置（行數）起，清除指定行數。起始位置以 0 為起點（第 1 行為 0，第 2 行為 1）。清除行的判定方式與 `\c[line,数値]` 相同。
 
 **対応:** SSP
 

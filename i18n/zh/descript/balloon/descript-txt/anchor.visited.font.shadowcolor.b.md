@@ -1,8 +1,8 @@
-# anchor.visited.font.shadowcolor.b,numeric
+# anchor.visited.font.shadowcolor.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue shadow color for visited anchors (0–255)
+已访问锚点的阴影颜色蓝色(0～255)
 
 **既定値:** font.shadowcolor
 

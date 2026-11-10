@@ -1,9 +1,9 @@
 # legacyinterface
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost信息
 
-Whether to use the legacy interface in the right-click menu.<br />
-Returning 0 for this disables the "ghost, shell, and balloon switch buttons".<br />
-Works only in materia582.
+是否在右键菜单中使用旧版接口。<br />
+返回0后，“ghost、shell、balloon各自的切换按钮”将不再显示。<br />
+仅在materia582中有效。
 
 **対応:** Materia

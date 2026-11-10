@@ -1,10 +1,10 @@
 # `\!`\[sound,play,ファイル名,[オプション](bang-sound-option.note.md)...\]
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Same function as `\_v`, but options can be specified in the [options](bang-sound-option.note.md).
+功能與 `\_v` 相同，但可以指定[選項](bang-sound-option.note.md)。
 
-**対応:** SSP (options from 2.4) / Ninix
+**対応:** SSP（選項自 2.4 起支援）/ Ninix
 
 ## 記述例
 

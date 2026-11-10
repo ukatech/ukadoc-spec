@@ -1,9 +1,9 @@
 # OnSessionReconnect
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Occurs when returning to the running user account after using Fast User Switching.<br />
-In Windows, it is notified together with OnSessionUnlock, and OnWindowStateRestore also occurs because the forced minimization is undone.<br />
-Note that this behavior is a Windows-specific limitation and may not be the same on other operating systems.
+通过快速用户切换返回正在运行的用户帐户时发生。<br />
+在Windows上会与OnSessionUnlock一起通知，并且由于强制最小化状态被解除，也会发生OnWindowStateRestore。<br />
+请注意，这是Windows特有的限制，在其他OS上不一定会有相同的行为。
 
 **対応:** SSP 2.5.53

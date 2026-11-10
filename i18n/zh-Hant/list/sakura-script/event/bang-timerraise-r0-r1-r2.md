@@ -1,15 +1,15 @@
 # `\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Specify the wait time (in milliseconds) in 「時間」 to execute an event.<br />
-For 「繰り返すか否か」, specify 0 to trigger the event repeatedly at the specified interval, or 1 or greater to trigger it only once.<br />
-The fifth and subsequent arguments are references.<br />
-Events with different names can each be executed, but repeated execution of an event with the same name overwrites the previous one.<br />
-To cancel, execute Sakura Script with the same event name and a time of 0.<br />
-The timer persists after a network update.
+指定「時間」（毫秒）後執行事件。<br />
+「是否重複」指定為 0 時，事件會依指定時間重複發生；指定為 1 以上時，事件只會發生一次。<br />
+第 5 個引數以後為 reference。<br />
+不同名稱的事件可以分別執行，但若對同名事件重複執行，先前的設定會被覆寫。<br />
+執行事件名稱相同、時間為 0 的 Sakura Script，即可取消計時器。<br />
+網路更新後，計時器仍會保留。
 
-If 「繰り返すか否か」 is 0, it remains active until the specified event occurs. If 「繰り返すか否か」 is 1 or greater, it remains active until the ghost exits.
+「是否重複」為 0 時，計時器會持續有效，直到指定事件發生。「是否重複」為 1 以上時，計時器會持續有效，直到 ghost 結束。
 
 **対応:** SSP
 

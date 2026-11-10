@@ -1,9 +1,9 @@
 # calendarskinpathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the calendar skin storage folder.*\[NOTIFY\]*
+通知日历皮肤存放文件夹的路径。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the calendar skin storage folder
+- **Reference\***: 日历皮肤存放文件夹的绝对路径
 
 **対応:** SSP

@@ -1,7 +1,7 @@
 # path
 
-**カテゴリ:** Property system \> Sound property name
+**カテゴリ:** 屬性系統 \> 聲音屬性名稱
 
-Full path of the target media after resolution. If a URL is specified, this is the URL itself.
+目標媒體解析後的完整路徑。若指定 URL，則為 URL 本身。
 
 **対応:** SSP 2.8.72

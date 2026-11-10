@@ -1,13 +1,13 @@
 # `\![reload,descript,パラメータ]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads the specified descript.txt files.<br />
-Multiple files can be specified, separated by half-width spaces.<br />
+重新載入指定的 descript.txt。<br />
+可用半形空格分隔指定多個項目。<br />
 ghost shell balloon headline plugin language calendar.skin calendar.plugin
 
-calendar.skin is a calendar skin, and calendar.plugin is a schedule sensor (the same category as [install.txt's type](../../../descript/install/install-txt/type.md)).<br />
-The same notation as install.txt, "calendar skin" and "calendar plugin", is also accepted, but since parameters are separated by half-width spaces, the dotted notation is recommended.
+calendar.skin是行事曆外觀，calendar.plugin是行程感測器（與[install.txt的type](../../../descript/install/install-txt/type.md)相同分類）。<br />
+也接受與install.txt相同的「calendar skin」「calendar plugin」寫法，但由於參數以半形空格分隔，建議使用點號寫法。
 
 **対応:** SSP
 

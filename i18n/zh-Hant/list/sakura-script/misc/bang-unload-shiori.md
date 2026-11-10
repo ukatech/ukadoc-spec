@@ -1,8 +1,8 @@
 # `\![unload,shiori]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Unloads shiori.dll and keeps it unloaded.<br />
-After unloading, load it again at an appropriate time. It cannot respond to anything while it remains unloaded.
+卸載（解除載入）shiori.dll，並維持卸載狀態。<br />
+卸載後請在適當時機執行load。若一直維持卸載狀態，將無法對任何事情做出反應。
 
 **対応:** SSP 2.5.58

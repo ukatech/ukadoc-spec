@@ -1,8 +1,8 @@
 # `\![open,calendarpluginexplorer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the calendar plugin (schedule sensor) explorer.
+開啟行事曆 plugin（行程感測器）瀏覽器。
 
 **対応:** SSP
 

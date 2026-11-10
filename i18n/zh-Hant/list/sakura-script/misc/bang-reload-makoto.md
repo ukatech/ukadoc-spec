@@ -1,8 +1,8 @@
 # `\![reload,makoto]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads makoto.dll.
+重新載入makoto.dll。
 
 **対応:** SSP
 

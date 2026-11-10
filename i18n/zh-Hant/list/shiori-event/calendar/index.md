@@ -1,4 +1,4 @@
-# Calendar events
+# 行事曆事件
 
 ## 一覧
 
@@ -10,5 +10,5 @@
 - [OnSchedulesenseFailure](OnSchedulesenseFailure.md)
 - [OnSchedulepostBegin](OnSchedulepostBegin.md)
 - [OnSchedulepostComplete](OnSchedulepostComplete.md)
-- [Schedule sensor update timing and events](caption_schedulesensetiming.md)
-- [Schedule types](caption_scheduletype.md)
+- [行程感測器的更新時機與事件](caption_schedulesensetiming.md)
+- [行程類型](caption_scheduletype.md)

@@ -1,7 +1,7 @@
 # ghostlist.count
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-The number of installed ghosts.
+已安裝的 ghost 數量。
 
 **対応:** SSP / CROW

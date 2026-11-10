@@ -1,16 +1,16 @@
 # OnGamepadAxisMove
 
-**カテゴリ:** Gamepad event
+**カテゴリ:** 遊戲手把事件
 
-Occurs when the value of a gamepad analog stick or trigger changes significantly from the time it was last reported.<br />
-Events do not occur for minor fluctuations. Values near the center of a stick or in a trigger's dead zone are automatically rounded to 0.<br />
-When a stick or trigger returns to the center position (neutral), the event always occurs regardless of the amount of change.<br />
-The event is broadcast simultaneously to all running ghosts.<br />
-Axis events may occur frequently while operating a stick, so consider rate limiting on the ghost side when performing heavy processing.
+遊戲手把類比搖桿或扳機的值，相較於上次通知時大幅變化時觸發。<br />
+微小的抖動不會觸發事件。搖桿中央附近或扳機的空行程區域（死區）值會自動歸零。<br />
+搖桿或扳機回到中央位置（中立位置）時，不論變化量大小都必定觸發。<br />
+此事件會同時廣播給所有正在執行的 ghost。<br />
+由於操作搖桿時軸事件可能會頻繁觸發，若要執行較耗費資源的處理，建議在 ghost 端考慮控制觸發頻率。
 
-- **Reference0**: [Pad index](caption_gamepad_padindex.md).
-- **Reference1**: [Axis name](caption_gamepad_axis.md).
-- **Reference2**: Raw value (integer). The range depends on the baseware implementation.
-- **Reference3**: Normalized value (decimal). Sticks range from -1.0 to 1.0, and triggers range from 0.0 to 1.0. This is usually the value to use.
+- **Reference0**: [手把索引](caption_gamepad_padindex.md)。
+- **Reference1**: [軸名稱](caption_gamepad_axis.md)。
+- **Reference2**: 原始值（整數）。範圍依 baseware 的實作而異。
+- **Reference3**: 正規化值（小數）。搖桿範圍為 -1.0～1.0，扳機範圍為 0.0～1.0。通常使用此值。
 
 **対応:** SSP 2.7.54

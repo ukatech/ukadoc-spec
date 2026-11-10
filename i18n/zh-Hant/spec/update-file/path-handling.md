@@ -1,9 +1,9 @@
-# Path handling
+# 路徑處理
 
-- **URL encoding**: If all entries are percent-encoded, decode them before use. Otherwise, only the URL side is encoded.
+- **URL 編碼**：若所有項目都已經過百分比編碼，則先解碼再使用。否則只會對 URL 端進行編碼。
 
-- **Security checks**: Entries that meet any of the following conditions are treated as invalid.
+- **安全性檢查**：符合以下條件的項目會視為無效。
 
-  - No MD5.
-  - Ends in `/` or `\` (directory entry).
-  - Contains `..\` or `../` (to prevent directory traversal).
+  - 沒有 MD5。
+  - 結尾為 `/` 或 `\`（目錄項目）。
+  - 包含 `..\` 或 `../`（防止目錄遍歷）。

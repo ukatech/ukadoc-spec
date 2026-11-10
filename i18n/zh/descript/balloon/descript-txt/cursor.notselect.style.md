@@ -1,13 +1,13 @@
-# cursor.notselect.style,shape
+# cursor.notselect.style,形状
 
 **カテゴリ:** descript.txt
 
-Shape of the unselected option marker.<br />
-square displays a rectangle.<br />
-underline displays an underline.<br />
-square+underline displays a rectangle and an underline.<br />
-none displays neither a rectangle nor an underline.
+未选中选项标记的形状。<br />
+square显示矩形。<br />
+underline显示下划线。<br />
+square+underline同时显示矩形和下划线。<br />
+none表示既不显示矩形也不显示下划线。
 
-**既定値:** unknown
+**既定値:** 未知
 
 **対応:** SSP

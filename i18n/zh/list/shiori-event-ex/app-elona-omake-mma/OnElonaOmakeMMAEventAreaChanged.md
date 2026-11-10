@@ -1,9 +1,9 @@
 # OnElonaOmakeMMAEventAreaChanged
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 应用程序“Elona omake_MMA”
 
-Occurs when moving to an unspecified other area.
+移动到未指定的其他区域时触发。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Name of the area occupied before moving.
-- **Reference82**: Number of the area occupied before moving.
+- **Reference\***: Reference0～80，参见[※共通参考](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 移动前所在区域的名称。
+- **Reference82**: 移动前所在区域的编号。

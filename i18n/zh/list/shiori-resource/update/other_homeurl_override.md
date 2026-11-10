@@ -1,14 +1,14 @@
 # other_homeurl_override
 
-**カテゴリ:** Update information
+**カテゴリ:** 更新信息
 
-In `\![updateother]` and the simultaneous shell/balloon update feature, forcibly replace the update destination URL (homeurl) for the update target.<br />
-If no replacement is needed, return 204 or an empty string.
+在 `\![updateother]` 或 shell/balloon 同时更新功能中，强制替换更新目标的更新 URL（homeurl）。<br />
+如果不需要替换，请返回 204 或空字符串。
 
-- **Reference0**: Type of update target (shell, balloon, headline, plugin, language, etc.)
-- **Reference1**: Name of update target (name in descript.txt)
-- **Reference2**: Author name of update target (craftmanname in descript.txt)
-- **Reference3**: Folder name.
-- **Reference4**: The homeurl that should originally have been used for the update.
+- **Reference0**: 更新目标的类型（shell、balloon、headline、plugin、language 等）
+- **Reference1**: 更新目标的名称（descript.txt 中的 name）
+- **Reference2**: 更新目标的作者名（descript.txt 中的 craftmanname）
+- **Reference3**: 更新目标的文件夹名称。
+- **Reference4**: 原本应当用于更新的 homeurl。
 
 **対応:** SSP 2.5.33

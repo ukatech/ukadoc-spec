@@ -1,10 +1,10 @@
 # OnDirectoryDrop
 
-**カテゴリ:** File drop events
+**カテゴリ:** 檔案拖放事件
 
-Occurs when a directory is drag-and-dropped.
+目錄以 DnD 拖放時觸發。
 
-- **Reference0**: Path of the dropped directory.
-- **Reference1**: Scope number of the character the directory was dropped on. The main character is 0, the partner is 1, and the third and subsequent characters are 2 or higher.
+- **Reference0**: 拖放的目錄路徑。
+- **Reference1**: 拖放目標角色的 scope 編號。主體一側為 0，搭檔為 1，第三名角色起為 2 以上。
 
 **対応:** SSP / CROW

@@ -1,9 +1,9 @@
-# name,Shell name
+# name,shell 名称
 
 **カテゴリ:** descript.txt
 
-The name of this shell.
+该 shell 的名称。
 
-**既定値:** Required
+**既定値:** 不可省略
 
 **対応:** Materia / SSP / CROW

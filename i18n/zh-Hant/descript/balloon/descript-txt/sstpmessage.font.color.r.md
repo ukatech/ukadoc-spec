@@ -1,8 +1,8 @@
-# sstpmessage.font.color.r,number
+# sstpmessage.font.color.r,數值
 
 **カテゴリ:** descript.txt
 
-SSTP message font red (0–255)
+SSTP 訊息字型顏色的紅色值（0～255）
 
 **既定値:** 0
 

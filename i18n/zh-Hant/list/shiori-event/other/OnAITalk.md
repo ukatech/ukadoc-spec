@@ -1,7 +1,7 @@
 # OnAITalk
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when random talk is requested, such as by executing the [`\a` tag](../../sakura-script/event/a.md).
+透過執行 [`\a` 標籤](../../sakura-script/event/a.md)等方式要求隨機對話時觸發。
 
 **対応:** SSP

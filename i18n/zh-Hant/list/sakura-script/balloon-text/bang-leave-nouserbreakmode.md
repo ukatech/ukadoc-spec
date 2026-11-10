@@ -1,8 +1,8 @@
 # `\![leave,nouserbreakmode]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Disable the mode described above.
+解除上述模式。
 
 **対応:** SSP
 

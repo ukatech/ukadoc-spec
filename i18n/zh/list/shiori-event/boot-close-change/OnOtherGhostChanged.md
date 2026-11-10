@@ -1,16 +1,16 @@
 # OnOtherGhostChanged
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when switching between other ghosts.
+在其他 ghost 之间切换时触发。
 
-- **Reference0**: Name of the previous ghost on the baseware side.
-- **Reference1**: Name of the ghost switched to on the baseware side.
-- **Reference2**: Script used when switching from the previous ghost.
-- **Reference3**: Script used when switching to the other ghost.
-- **Reference4**: Name of the previous ghost.
-- **Reference5**: Name of the ghost switched to.
-- **Reference14**: Shell name of the previous ghost.
-- **Reference15**: Shell name of the ghost switched to.
+- **Reference0**: 前一个 ghost 的主角色名称。
+- **Reference1**: 切换后的 ghost 的主角色名称。
+- **Reference2**: 前一个 ghost 切换时的脚本。
+- **Reference3**: 切换后的 ghost 切换时的脚本。
+- **Reference4**: 前一个 ghost 的名称。
+- **Reference5**: 切换后的 ghost 的名称。
+- **Reference14**: 前一个 ghost 的 shell 名称。
+- **Reference15**: 切换后的 ghost 的 shell 名称。
 
 **対応:** SSP / Ninix

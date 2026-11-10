@@ -1,10 +1,10 @@
 # OnChoiceSelect
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when a choice is selected.
+选中选项时触发。
 
-- **Reference0**: ID of the selected choice.
-- **Reference\***: ※CROW only: the second and subsequent choice IDs.
+- **Reference0**: 被选中的选项ID。
+- **Reference\***: ※仅CROW：第2个及之后的选项ID。
 
 **対応:** Materia / SSP / CROW / Ninix

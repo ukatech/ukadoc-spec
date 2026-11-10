@@ -1,7 +1,7 @@
 # system.monitor.index(ID).primary
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Whether the monitor with ID is the primary monitor. Returns 1 if it is primary, otherwise 0.
+ID对应的显示器是否为主显示器。若为主显示器则为1，否则为0。
 
 **対応:** SSP 2.8.16

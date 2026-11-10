@@ -1,6 +1,6 @@
 # response
 
-## Sample
+## 範例
 
 ```
 SHIORI/3.0 200 OK
@@ -9,39 +9,39 @@ Sender: AYA
 Value: \1\s[10]\0\s[0]\e
 ```
 
-※The line ending is CR+LF.<br />
-※The response must end with a blank line (two consecutive CR+LF sequences, including the line ending of the preceding line).
+※換行碼為CR+LF。<br />
+※最後以空行（加上前一行的結尾，為(CR+LF)x2）結束。
 
-- **Status code**: As with HTTP, codes in the 200 range indicate success; other codes indicate some kind of failure (error).<br />
-  The following codes are currently used most often.
+- **狀態碼**: 與HTTP相同，200系列表示成功，其他則表示某種失敗（錯誤）。<br />
+  目前主要使用的狀態碼如下。
 
   - **200**: 200 OK<br />
-    Success, with a return value (Value).
+    成功，有回傳值（Value）。
   - **204**: 204 No Content<br />
-    Success, with no return value.
+    成功，沒有回傳值。
   - **311**: 311 Not Enough<br />
-    For ID: OnTeach (the TEACH method in SHIORI/2.x), indicates that more information is required.<br />
-    Reopen the input box to ask the user, then add a Reference containing the input string after input is complete.
+    在ID: OnTeach（SHIORI/2系列的TEACH方法）中，表示需要更多資訊。<br />
+    再次開啟輸入方塊詢問使用者，輸入完成後新增包含輸入字串的Reference。
   - **312**: 312 Advice<br />
-    For ID: OnTeach (the TEACH method in SHIORI/2.x), indicates that the most recently entered string cannot be interpreted and should be discarded.<br />
-    Discard the last Reference, reopen the input box to ask the user, then add a Reference containing the input string after input is complete.
+    在ID: OnTeach（SHIORI/2系列的TEACH方法）中，表示最近輸入的字串無法解讀，應予以捨棄。<br />
+    捨棄最後一個Reference，再次開啟輸入方塊詢問使用者，輸入完成後新增包含輸入字串的Reference。
   - **400**: 400 Bad Request<br />
-    The request string could not be interpreted.
+    無法解讀請求字串。
   - **500**: 500 Internal Server Error<br />
-    An error of some kind occurred inside SHIORI, and it could not return a response.
+    SHIORI內部發生某種錯誤，無法傳回回應。
 
-- **Charset**: Character encoding. It is preferable to place this on the first line, or at least before any line containing characters outside the ASCII range.
+- **Charset**: 字元編碼。最好放在第一行，或至少放在含有非ASCII範圍字元的行之前。
 
-- **Sender**: The sender. Usually the name of SHIORI.
+- **Sender**: 傳送者。通常是SHIORI的名稱。
 
-- **Value**: The script to speak.
+- **Value**: 要說出的腳本。
 
-- **ValueNotify \[SSP extension 2.5.35\]**: *\[Experimental feature\]*<br />
-  An extension for executing Sakura Script even when the request method is NOTIFY.<br />
-  When Sakura Script is returned in this header, it executes immediately. For GET, it executes before the script in the Value header.<br />
-  The tags that can be executed are extremely limited; all other tags and strings are ignored.<br />
-  <del>Ignored if the method is not NOTIFY or if a Value header already exists.</del> Restriction removed in 2.6.76<br />
-  The tags that can currently be executed are as follows:
+- **ValueNotify \[SSP擴充 2.5.35\]**: *\[實驗性功能\]*<br />
+  即使請求方法為NOTIFY，也能執行Sakura Script的擴充功能。<br />
+  若以此標頭傳回Sakura Script，會立即執行。若為GET，則會在執行Value標頭中的腳本之前執行。<br />
+  可執行的標籤非常有限，其他標籤及所有其他字串都會被忽略。<br />
+  <del>若方法不是NOTIFY，或Value標頭已存在，則會被忽略。</del> 2.6.76已取消限制<br />
+  目前可執行的標籤如下：
 
   - `\![sound]`
   - `\![set,trayicon]`
@@ -54,49 +54,49 @@ Value: \1\s[10]\0\s[0]\e
   - `\![notify]`
   - `\![notifyother]`
   - `\![notifyplugin]`
-  - `\![get,property]` +2.6.82
-  - `\![set,property]` +2.6.82
+  - `\![get,property]` ＋2.6.82
+  - `\![set,property]` ＋2.6.82
 
-- **SecurityLevel \[SSP extension\]**: One of the following.
+- **SecurityLevel \[SSP擴充\]**: 以下擇一。
 
-  - **local**: A security level equivalent to a script originating from the running device.
-  - **external**: A security level equivalent to a script originating outside the running device.
+  - **local**: 相當於來自執行中裝置內部的腳本之安全性等級。
+  - **external**: 相當於來自執行中裝置外部的腳本之安全性等級。
 
-  The SecurityLevel of the script to speak. When set to external, some scripts cannot be executed due to security features.
+  要說出的腳本之SecurityLevel。若為external，部分腳本會因安全性功能而無法執行。
 
-- **Marker \[SSP extension\]**: The string to display in the balloon marker (additional information below the balloon).
+- **Marker \[SSP擴充\]**: 要顯示於balloon標記（balloon下方的附加資訊）的字串。
 
-- **ErrorLevel \[SSP extension\]**: The level of an error that occurred inside SHIORI. One of the following. To represent multiple errors, separate them with byte value 1.
+- **ErrorLevel \[SSP擴充\]**: SHIORI內部發生錯誤的等級。以下擇一。若要表示多個錯誤，以位元組值1分隔。
 
-  - **info**: Information. Not an error.
-  - **notice**: Notice. Descriptions that should be fixed, although they are not quite errors.
-  - **warning**: Warning. There are issues such as writing errors; processing has not stopped, but it is better to address them.
-  - **error**: A regular error. Processing has stopped due to issues such as writing errors and cannot be resumed.
-  - **critical**: A critical error. More severe than error, and should be addressed immediately.
+  - **info**: 資訊。不是錯誤。
+  - **notice**: 通知。雖然難以稱為錯誤，但有需要修正的描述等。
+  - **warning**: 警告。有描述錯誤等問題，處理尚未停止，但最好加以處理。
+  - **error**: 一般錯誤。因描述錯誤等問題，部分處理已停止且無法恢復。
+  - **critical**: 嚴重錯誤。比error更嚴重，最好立即採取某種處理。
 
-  When this header is present, the user is notified that an error of some kind has occurred.<br />
-  The levels to be notified can be configured by the user. Normally, error and above.<br />
-  In SSP, the error is recorded in the error log, and an error icon appears in the notification area.
+  若有此標頭，會通知使用者發生了某種錯誤。<br />
+  通知的等級可由使用者變更設定。一般為error以上。<br />
+  在SSP中，錯誤會記錄在錯誤記錄中，通知區域也會顯示錯誤圖示。
 
-- **ErrorDescription \[SSP extension\]**: Details of an error that occurred inside SHIORI. Valid only when ErrorLevel is present.<br />
-  To represent multiple errors, separate them with byte value 1.<br />
-  The number of elements in ErrorLevel and ErrorDescription must be the same.
+- **ErrorDescription \[SSP擴充\]**: SHIORI內部發生錯誤的詳細資訊。只有在有ErrorLevel時才有效。<br />
+  若要表示多個錯誤，以位元組值1分隔。<br />
+  ErrorLevel和ErrorDescription的元素數量必須相同。
 
-- **BalloonOffset \[SSP extension\]**: Balloon offset values (X,Y).
+- **BalloonOffset \[SSP擴充\]**: balloon的偏移值（X,Y）。
 
-- **Reference0**: When sending a Communicate, the name of the ghost's `\0` side.
+- **Reference0**: 若要傳送communicate，填入ghost的`\0`側名稱。
 
-- **Reference1～**: Additional information for Communicate.<br />
-  Response Reference1 = SSTP Communicate Reference0 = recipient's OnCommunicate Reference2<br />
-  Note that these are offset as shown above for compatibility reasons.
+- **Reference1～**: communicate的其他資訊。<br />
+  回應的Reference1＝SSTP Communicate的Reference0＝接收方OnCommunicate的Reference2<br />
+  請注意，因相容性問題，項目會如上所示錯開。
 
-- **Age \[SSP extension\]**: The generation number of a Communicate. The first is zero. Increases by 1 with each exchange.<br />
-  This is an SSP extension, but in practice it is SHIORI/2.x compatibility processing.
+- **Age \[SSP擴充\]**: communicate的世代數。第一次為零。每往返一次就+1。<br />
+  雖然是SSP擴充，實際上是SHIORI/2.x相容處理。
 
-- **MarkerSend \[SSP extension\]**: The balloon marker string to display “on the other party's side” during a Communicate.<br />
-  Sent as the SSTP Marker header.
+- **MarkerSend \[SSP擴充\]**: communicate期間要顯示在「對方側」的balloon標記字串。<br />
+  會作為SSTP的Marker標頭傳送。
 
-- **X-SSTP-PassThru-(任意の文字列) \[SSP 2.5.03～ extension\]**: Only in responses to event notifications from SSTP, this header is added unchanged to the SSTP response.<br />
-  Ignored when not using SSTP.<br />
-  Multiple headers can be specified, but use different header names if you want to return multiple headers.<br />
-  (Old header name: X-SSTP-Return- is scheduled for deprecation)
+- **X-SSTP-PassThru-(任意字串) \[SSP 2.5.03～擴充\]**: 僅限來自SSTP的事件通知所產生的回應，此標頭會原樣附加至SSTP回應。<br />
+  其他來源會忽略此標頭。<br />
+  可指定多個標頭，但若要傳回多個標頭，請使用不同的標頭名稱。<br />
+  （舊標頭名稱：X-SSTP-Return- 預定廢止）

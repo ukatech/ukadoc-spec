@@ -1,7 +1,7 @@
 # biffbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name for checking mail.
+檢查郵件的項目名稱。
 
 **対応:** Materia / SSP / CROW

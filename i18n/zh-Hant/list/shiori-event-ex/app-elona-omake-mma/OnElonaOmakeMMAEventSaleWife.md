@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventSaleWife
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the PC sells their wife to Rafael.
+將妻子賣給拉斐爾時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference82**: 1 if the wife is non-human.
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference82**: 妻子為非人類時為1。

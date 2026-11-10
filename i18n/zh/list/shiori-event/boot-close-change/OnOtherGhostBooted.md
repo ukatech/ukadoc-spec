@@ -1,13 +1,13 @@
 # OnOtherGhostBooted
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when another ghost starts after being called by another ghost.<br />
-In other words, it occurs for an unrelated ghost at the same time that OnGhostCallComplete occurs for the calling ghost.
+其他 ghost 被呼叫并启动时触发。<br />
+换言之，在被呼叫的 ghost 触发 OnGhostCallComplete 时，此事件会在无关的 ghost 上触发。
 
-- **Reference0**: Name of the started ghost on the baseware side.
-- **Reference1**: Startup script of the started ghost.
-- **Reference2**: Name of the started ghost.
-- **Reference7**: Shell name of the started ghost.
+- **Reference0**: 已启动 ghost 的主角色名称。
+- **Reference1**: 已启动 ghost 的启动脚本。
+- **Reference2**: 已启动 ghost 的名称。
+- **Reference7**: 已启动 ghost 的 shell 名称。
 
 **対応:** SSP / Ninix

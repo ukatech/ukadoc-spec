@@ -1,9 +1,9 @@
-# dllname,file name
+# dllname,檔案名稱
 
 **カテゴリ:** descript.txt
 
-Path to the dll that implements the headline.
+作為 headline 本體的 dll 路徑。
 
-**既定値:** Required
+**既定値:** 不可省略
 
 **対応:** Materia / SSP / CROW

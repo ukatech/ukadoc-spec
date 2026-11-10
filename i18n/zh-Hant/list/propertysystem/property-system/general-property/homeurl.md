@@ -1,7 +1,7 @@
 # homeurl
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** 屬性系統 \> 一般屬性名稱
 
-The target's homeurl.
+目標的 homeurl。
 
 **対応:** SSP

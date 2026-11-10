@@ -2,14 +2,14 @@
 
 **カテゴリ:** internal_jwt
 
-Sign the payload and create a JWT.<br />
-The payload must be a JSON object, and is used as written (in UTF-8). If it is not a single JSON object, return 400 (`invalid parameter`).<br />
-The header has the form `{"alg":"HS256","typ":"JWT"}`. Writing a JSON object to `--header=` adds its fields (such as `kid`) (`typ` takes precedence if specified; if `alg` is specified, it must have the same value as Argument1, or 400 `invalid parameter` is returned).
+對 Payload 簽章並建立 JWT。<br />
+Payload 必須是 JSON 物件，並以原始字串（UTF-8）使用。若不是單一 JSON 物件，則回傳 400（`invalid parameter`）。<br />
+標頭格式為`{"alg":"HS256","typ":"JWT"}`。在`--header=`中填入 JSON 物件即可新增項目（例如`kid`）；若填入`typ`，則以該值為優先。填入`alg`時，必須與 Argument1 的值相同，否則回傳 400 `invalid parameter`。
 
 - **Argument1**: alg
-- **Argument2**: Key (symmetric key for HS\*, private key otherwise)
-- **Argument3**: Payload (JSON)
-- **オプション**: `--header=` (JSON) / `--key-in=` (HS\* only)
+- **Argument2**: 金鑰（HS\*為共用金鑰，其餘為私密金鑰）
+- **Argument3**: Payload（JSON）
+- **オプション**: `--header=`（JSON） / `--key-in=`（僅限 HS\*）
 
 ## 記述例
 

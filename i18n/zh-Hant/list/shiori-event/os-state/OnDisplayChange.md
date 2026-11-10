@@ -1,11 +1,11 @@
 # OnDisplayChange
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when the desktop (primary screen) resolution / color depth changes. *\[NOTIFY at startup / GET otherwise\]*
+桌面（主要螢幕）的解析度／色深變更時觸發。*\[啟動時NOTIFY/其他GET\]*
 
-- **Reference0**: Color depth after the change (bpp)
-- **Reference1**: Resolution after the change (width)
-- **Reference2**: Resolution after the change (height)
+- **Reference0**: 變更後的色深（bpp）
+- **Reference1**: 變更後的解析度（width）
+- **Reference2**: 變更後的解析度（height）
 
 **対応:** SSP / CROW / Ninix

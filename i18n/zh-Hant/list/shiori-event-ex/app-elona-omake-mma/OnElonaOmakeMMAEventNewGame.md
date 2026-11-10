@@ -1,52 +1,52 @@
 # OnElonaOmakeMMAEventNewGame
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when starting a new game.
+開始新遊戲時觸發。
 
-- **Reference0**: Game version.
-- **Reference1**: In-game year
-- **Reference2**: In-game month
-- **Reference3**: In-game day
-- **Reference4**: In-game hour
-- **Reference5**: In-game minute
-- **Reference6**: In-game second
-- **Reference7**: In-game weather
-- **Reference8**: Map name
-- **Reference9**: Area name
-- **Reference10**: World name
-- **Reference11**: Floor
-- **Reference12**: Guild affiliation
-- **Reference\***: References 13–19 are unused and reserved.
-- **Reference20**: Character number targeted by each event (0: PC, 1–15: pets, 16–55: adventurers, 56–: other NPCs)
-- **Reference21**: PC: Name
-- **Reference22**: PC: Alias
-- **Reference23**: PC: Race
-- **Reference24**: PC: Class
-- **Reference25**: PC: Faith
-- **Reference26**: PC: Character type name (PC has no type, so "bug" is assigned)
-- **Reference27**: PC: Sex
-- **Reference28**: PC: Age
-- **Reference29**: PC: Height
-- **Reference30**: PC: Weight
-- **Reference31**: PC: Level
-- **Reference32**: PC: Current HP
-- **Reference33**: PC: Maximum HP
-- **Reference34**: PC: Current MP
-- **Reference35**: PC: Maximum MP
-- **Reference36**: PC: Money held
-- **Reference37**: PC: Fame
-- **Reference38**: PC: Karma
-- **Reference39**: PC: DV
-- **Reference40**: PC: PV
-- **Reference41**: PC: Strength
-- **Reference42**: PC: Constitution
-- **Reference43**: PC: Dexterity
-- **Reference44**: PC: Perception
-- **Reference45**: PC: Learning
-- **Reference46**: PC: Will
-- **Reference47**: PC: Magic
-- **Reference48**: PC: Charisma
-- **Reference49**: PC: Speed
-- **Reference50**: PC: Luck
-- **Reference\***: References 51–80 contain the event target character's data in the same order as the PC data, with 30 added to each reference number.
+- **Reference0**: 遊戲版本。
+- **Reference1**: 遊戲內年份
+- **Reference2**: 遊戲內月份
+- **Reference3**: 遊戲內日期
+- **Reference4**: 遊戲內小時
+- **Reference5**: 遊戲內分鐘
+- **Reference6**: 遊戲內秒數
+- **Reference7**: 遊戲內天氣
+- **Reference8**: 地圖名稱
+- **Reference9**: 區域名稱
+- **Reference10**: 世界名稱
+- **Reference11**: 樓層
+- **Reference12**: 所屬公會
+- **Reference\***: Reference13-19未使用，保留。
+- **Reference20**: 各事件的目標角色編號（0:PC、1～15:寵物、16～55:冒險者、56～:其他NPC）
+- **Reference21**: PC：名稱
+- **Reference22**: PC：稱號
+- **Reference23**: PC：種族
+- **Reference24**: PC：職業
+- **Reference25**: PC：信仰
+- **Reference26**: PC：角色類型名稱（PC沒有角色類型，因此會代入「錯誤」）
+- **Reference27**: PC：性別
+- **Reference28**: PC：年齡
+- **Reference29**: PC：身高
+- **Reference30**: PC：體重
+- **Reference31**: PC：等級
+- **Reference32**: PC：目前HP
+- **Reference33**: PC：最大HP
+- **Reference34**: PC：目前MP
+- **Reference35**: PC：最大MP
+- **Reference36**: PC：持有金額
+- **Reference37**: PC：名聲
+- **Reference38**: PC：業報
+- **Reference39**: PC：DV
+- **Reference40**: PC：PV
+- **Reference41**: PC：力量
+- **Reference42**: PC：耐力
+- **Reference43**: PC：靈巧
+- **Reference44**: PC：感覺
+- **Reference45**: PC：學習
+- **Reference46**: PC：意志
+- **Reference47**: PC：魔力
+- **Reference48**: PC：魅力
+- **Reference49**: PC：速度
+- **Reference50**: PC：運勢
+- **Reference\***: Reference51-80會依照相同順序，填入編號為PC資訊+30的事件目標角色資料。

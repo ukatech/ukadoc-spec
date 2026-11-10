@@ -1,15 +1,15 @@
 # OnMouseUpEx
 
-**カテゴリ:** Mouse event
+**カテゴリ:** 鼠标事件
 
-Occurs when a mouse button other than the left or right button is released.
+鼠标左键和右键以外的按键释放时触发。
 
-- **Reference0**: Mouse cursor x-coordinate (local coordinates)
-- **Reference1**: Mouse cursor y-coordinate (local coordinates)
-- **Reference2**: Always 0.
-- **Reference3**: 0 for the main character, 1 for the partner. SSP/CROW may also use 2 and higher.
-- **Reference4**: Hit-test region identifier.
-- **Reference5**: Wheel click (or the middle button on a three-button mouse) is middle; extended button 1 (usually assigned to “Back”) is xbutton1; extended button 2 (usually assigned to “Forward”) is xbutton2.
-- **Reference6**: For input from a touch panel in a multitouch-capable environment (※ touchpads are not supported), touch; from a pen tablet, pen; from the eraser end of a pen tablet, eraser; and from a mouse or similar device, mouse
+- **Reference0**: 鼠标光标的 x 坐标（局部坐标）
+- **Reference1**: 鼠标光标的 y 坐标（局部坐标）
+- **Reference2**: 始终为0。
+- **Reference3**: 主角色为0，搭档为1。SSP/CROW中还可能有2及以上的值。
+- **Reference4**: 命中判定的标识符。
+- **Reference5**: 滚轮单击（或三键鼠标的中键）为middle，扩展按键1（通常分配为“后退”）为xbutton1，扩展按键2（通常分配为“前进”）为xbutton2。
+- **Reference6**: 来自支持多点触控环境的触摸屏（※不包括触摸板）的输入为touch，来自数位板的输入为pen，来自数位板橡皮擦端的输入为eraser，来自鼠标等设备的输入为mouse
 
 **対応:** SSP / Ninix

@@ -1,11 +1,11 @@
 # OnExecuteRSS_SSLInfo
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通信事件
 
-This event is reported even if retrieval fails (HTTP response is not 200), because the connection succeeded at the SSL/TLS level.
+即使取得失敗（HTTP 回應不是 200），只要 SSL/TLS 層級的連線成功，就會發出通知。
 
-Even if an ID beginning with On is specified with --async or --sync, the event name is not replaced; this event is always reported.
+即使透過 --async・--sync 指定以 On 開頭的 ID，事件名稱也不會替換，一律以本事件通知。
 
-- **Reference0～**: [The same as for OnExecuteHTTPSSLInfo](OnExecuteHTTPSSLInfo.md)
+- **Reference0～**: [與 OnExecuteHTTPSSLInfo 相同](OnExecuteHTTPSSLInfo.md)
 
 **対応:** SSP

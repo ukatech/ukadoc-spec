@@ -1,13 +1,13 @@
 # OnURLDropFailure
 
-**カテゴリ:** URL drop events
+**カテゴリ:** URL拖放事件
 
-Occurs when receiving a dropped URL fails or is canceled.<br />
-This event occurs when an attempt to install a NAR fails. It does not occur for other cases (such as homeurl installation or feed (RSS) installation).
+接收已拖放的URL失败或被取消时触发。<br />
+此事件在尝试安装NAR失败时触发。其他情况（安装homeurl或feed(RSS)）不会触发。
 
-- **Reference0**: Local path of the portion of the file that has finished downloading.
-- **Reference1**: [※Reason for failure](../network-update/caption_updateresultfailure.md)
-- **Reference2**: Dropped URL.
-- **Reference3**: Scope number of the character the URL was dropped on. Main character is 0, partner is 1, and the third character onward are 2 and above.
+- **Reference0**: 已完成下载的文件的本地路径。
+- **Reference1**: [※失败原因](../network-update/caption_updateresultfailure.md)
+- **Reference2**: 已拖放的URL。
+- **Reference3**: 已拖放的角色的scope编号。本体侧为0，搭档为1，第三人及之后为2以上。
 
-**対応:** Materia / SSP Ref2,3 are 2.6.36 / CROW
+**対応:** Materia / SSP Ref2,3自2.6.36起支持 / CROW

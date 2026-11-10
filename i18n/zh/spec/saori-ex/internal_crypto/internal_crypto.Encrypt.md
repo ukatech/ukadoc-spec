@@ -2,12 +2,12 @@
 
 **カテゴリ:** internal_crypto
 
-Encrypt data using symmetric-key encryption.
+使用对称密钥加密进行加密。
 
-- **Argument1**: algorithm name (see [symmetric-key encryption](internal_crypto_cipher.md))
-- **Argument2**: key (default format is `text`)
-- **Argument3**: data (default format is `text`)
-- **Options**: `--key-in=` / `--data-in=` / `--aad=` (additional authenticated data; authenticated encryption only; `--aad-in=`, default format is `text`) / `--iv=` (`--iv-in=`, default format is `hex`) / `--pack=none` / `--out=` (default is `base64`) / `--charset=`
+- **Argument1**: 算法名称（参阅[对称密钥加密](internal_crypto_cipher.md)）
+- **Argument2**: key（默认格式为`text`）
+- **Argument3**: data（默认格式为`text`）
+- **选项**: `--key-in=` / `--data-in=` / `--aad=`（附加认证数据，仅用于带认证的加密；`--aad-in=`，默认格式为`text`） / `--iv=`（`--iv-in=`，默认格式为`hex`） / `--pack=none` / `--out=`（默认值为`base64`） / `--charset=`
 
 ## 記述例
 

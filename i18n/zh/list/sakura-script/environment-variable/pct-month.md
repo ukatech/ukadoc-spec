@@ -1,7 +1,7 @@
 # %month
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Current month.
+当前月份。
 
 **対応:** Materia / SSP / CROW / Ninix

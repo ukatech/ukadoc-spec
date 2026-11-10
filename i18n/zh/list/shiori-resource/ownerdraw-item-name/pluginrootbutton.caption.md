@@ -1,7 +1,7 @@
 # pluginrootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of the plugin.
+plugin 的名称。
 
 **対応:** Materia / SSP

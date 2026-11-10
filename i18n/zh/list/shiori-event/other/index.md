@@ -1,4 +1,4 @@
-# Other events
+# 其他事件
 
 ## 一覧
 
@@ -16,7 +16,7 @@
 - [OnMusicPlayEx](OnMusicPlayEx.md)
 - [OnVideoPlayEx](OnVideoPlayEx.md)
 - [OnMusicPlay](OnMusicPlay.md)
-- [OnMusicPlayEx extended information list](caption_musicplayex_codes.md)
+- [OnMusicPlayEx的扩展信息列表](caption_musicplayex_codes.md)
 - [OnTextDrop](OnTextDrop.md)
 - [OnShellScaling](OnShellScaling.md)
 - [OnBalloonScaling](OnBalloonScaling.md)
@@ -30,4 +30,4 @@
 - [OnInternalSaoriFailure](OnInternalSaoriFailure.md)
 - [property.get](property.get.md)
 - [property.set](property.set.md)
-- [Archive operation error codes](caption_archive_error_codes.md)
+- [归档操作错误代码](caption_archive_error_codes.md)

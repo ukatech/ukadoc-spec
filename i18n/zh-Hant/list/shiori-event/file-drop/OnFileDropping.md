@@ -1,10 +1,10 @@
 # OnFileDropping
 
-**カテゴリ:** File drop events
+**カテゴリ:** 檔案拖放事件
 
-Occurs when the cursor, while dragging a file, hovers over a ghost.
+拖曳檔案時，游標停留在 ghost 上方即觸發。
 
-- **Reference0**: Path of the file being dragged.
-- **Reference1**: Scope number of the character the file was dropped on. The main character is 0, the partner is 1, and the third and subsequent characters are 2 or higher.
+- **Reference0**: 正在拖曳的檔案路徑。
+- **Reference1**: 拖放目標角色的 scope 編號。主體一側為 0，搭檔為 1，第三名角色起為 2 以上。
 
 **対応:** SSP / CROW

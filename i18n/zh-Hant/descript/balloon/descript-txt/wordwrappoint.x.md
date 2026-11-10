@@ -1,10 +1,10 @@
-# wordwrappoint.x,coordinate [\*1](../index.md#balloon設定)
+# wordwrappoint.x,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The X coordinate at which automatic line wrapping occurs.<br />
-Used only for horizontal writing ([vertical](vertical.md) is 0).<br />
-If unspecified, text is treated as writable up to validrect.right.
+自動換行時的 X 座標。<br />
+僅用於橫書（[vertical](vertical.md)為0）時。<br />
+未指定時，會視為可以寫到 validrect.right。
 
 **既定値:** validrect.right
 

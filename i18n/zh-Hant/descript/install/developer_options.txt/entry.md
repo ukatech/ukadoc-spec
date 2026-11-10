@@ -1,19 +1,19 @@
-# Relative path,option 1,option 2,...
+# 相對路徑,選項1,選項2,...
 
 **カテゴリ:** developer_options.txt
 
-Specify comma-separated options for files and folders using paths relative to the ghost's home folder.<br />
-Separate path levels with "/" rather than "\\".<br />
-To specify a folder, add / at the end.<br />
-You can use \* and ? as wildcards (since SSP 2.5.17).<br />
-The options are as follows.
+以 ghost 的 home 資料夾為基準，指定檔案或資料夾的相對路徑，並以逗號分隔指定選項。<br />
+相對路徑的階層以「/」分隔，而非「\\」。<br />
+指定資料夾時，請在路徑結尾加上/。<br />
+可使用\*和?作為萬用字元 (自 SSP 2.5.17 起)<br />
+選項如下。
 
-- **nonar**: Excludes the item from the nar when creating a nar.
-- **noupdate**: Excludes the item from updates when creating updates2.dau (updates.txt).
+- **nonar**: 建立 nar 時不將目標項目納入 nar。
+- **noupdate**: 建立 updates2.dau（updates.txt）時不將目標項目列入更新範圍。
 
 <br />
-Note that these options control file creation, so they are effective *only when creating nar or update files using SSP or an application that can recognize this file*.
+請注意，這些設定都是在建立檔案時生效，因此*僅在使用 SSP 或可辨識本檔案的應用程式功能建立 nar 或更新檔案時*才有效。
 
-**既定値:** No behavior
+**既定値:** 無作用
 
 **対応:** SSP

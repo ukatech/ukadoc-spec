@@ -1,22 +1,22 @@
-# animation\*.pattern\*, drawing method, surface number, weight, X coordinate, Y coordinate (, options...)
+# animation\*.pattern\*,繪製方法,サーフェス編號,權重,X座標,Y座標（,選項...）
 
 **カテゴリ:** surface brace
 
-Defines each animation frame. Normally, each frame is drawn by compositing it onto the base surface, resetting the preceding frame (strictly speaking, this depends on the drawing method).<br />
-The \* following animation is the animationID (the same as the \* in animation\*.interval).<br />
-The \* following pattern (pattern ID) is a sequential number starting at 0 within a series of animation\*.pattern definitions. In materia, the maximum is 127. Frames are drawn layered in ascending order of their numbers.<br />
-For drawing methods, see [Drawing methods](h-drowmethod/index.md) below.<br />
-The weight is the wait time *until* the frame is drawn. The unit is milliseconds. SSP alone also allows the format “minimum weight-maximum weight,” with the values separated by a hyphen; in that case, a value is selected at random from the range.<br />
-The X and Y coordinates specify how far to offset the frame when displaying it relative to the base (the drawing result up to that frame).<br />
-For the surface number, -1 stops the animation, and -2 stops all other animations currently running. In either case, the drawing method and X and Y coordinates are ignored.<br />
-An alias other than the ID specified in the name definition can also be used as the surface number. (SSP 2.8.25～)<br />
-[Legacy definition](caption_seriko-redefine.md): \*pattern\*, surface ID, weight, drawing method, X coordinate, Y coordinate
+動畫各影格的定義。一般而言，各影格會重設先前的影格，再與 base surface 合成後繪製（嚴格來說，取決於繪製方法）。<br />
+animation 後方的 \* 部分是 animationID（與 animation\*.interval 的 \* 相同）。<br />
+pattern 後方的 \* 部分（pattern ID），是一系列 animation\*.pattern 定義中從 0 開始的連續編號。Materia 的上限為 127。編號較小的項目會先繪製，並依序疊加。<br />
+繪製方法請參照下列[繪製方法](h-drowmethod/index.md)。<br />
+權重是繪製該影格*之前*的等待時間，單位為毫秒。僅限 SSP，也可以用減號分隔「最小權重-最大權重」；此時會在最小值至最大值之間隨機選取。<br />
+X 座標、Y 座標用來指定該影格相對於 base（截至該影格為止的繪製結果）的位移量。<br />
+サーフェス編號設為 -1 可停止該動畫，設為 -2 則可停止目前正在執行的所有其他動畫。兩種情況下都會忽略繪製方法、X 座標和 Y 座標。<br />
+サーフェス編號也可指定 name 定義中指定的 ID 以外的別名。（SSP 2.8.25～）<br />
+[舊定義](caption_seriko-redefine.md)：\*pattern\*,サーフェスID,權重,繪製方法,X座標,Y座標
 
-The options are as follows. To specify multiple options, continue listing them as in “animation0.pattern0,overlay,101,700,0,0,--alpha,128,--option2,...”.
+選項如下。若要指定多個選項，可像「animation0.pattern0,overlay,101,700,0,0,--alpha,128,--option2,...」一樣接續記述。
 
-- **--alpha,value(0-255)**: \[SSP 2.8.37～\]Specifies the opacity when drawing. 0 is fully transparent; 255 is fully opaque.<br />
-  Example: animation0.pattern0,overlay,101,700,0,0,--alpha,128
+- **--alpha,值(0-255)**: \[SSP 2.8.37～\]指定繪製時的不透明度。0 為完全透明，255 為完全不透明。<br />
+  例：animation0.pattern0,overlay,101,700,0,0,--alpha,128
 
-**既定値:** No behavior
+**既定値:** 無動作
 
 **対応:** Materia / SSP / CROW

@@ -1,14 +1,14 @@
 # OnExtractArchiveComplete
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when an archive has been successfully extracted.
+存档解压成功完成时触发。
 
-If the identifier specified with the --event option in [`\![execute,extractarchive]`](../../sakura-script/misc/bang-execute-extractarchive.md) begins with On, an event with that identifier is triggered. Otherwise, this event is triggered.
+在[`\![execute,extractarchive]`](../../sakura-script/misc/bang-execute-extractarchive.md)中，如果通过--event选项指定的标识符以On开头，则会触发名称与该标识符相同的事件。否则触发本事件。
 
-- **Reference0**: Event identifier specified with Sakura Script's --event option.
-- **Reference1**: Number of extracted files.
-- **Reference2**: Compressed size (bytes).
-- **Reference3**: Uncompressed size (bytes).
+- **Reference0**: Sakura Script的--event选项指定的事件标识符。
+- **Reference1**: 解压出的文件数。
+- **Reference2**: 压缩大小（字节）。
+- **Reference3**: 未压缩大小（字节）。
 
 **対応:** SSP 2.7.23

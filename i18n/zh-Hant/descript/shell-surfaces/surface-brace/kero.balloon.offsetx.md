@@ -1,11 +1,11 @@
-# kero.balloon.offsetx,coordinates
+# kero.balloon.offsetx,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface 區塊
 
-The X coordinate of the partner-side balloon position for this surface only.<br />
-For the syntax that appends one direction character (l / r / c / b), see [sakura.balloon.offsetx](sakura.balloon.offsetx.md).
+僅適用於該 surface 的搭檔 balloon X 座標。<br />
+關於在後方加上表示方向的 1 個字元（l / r / c / b）的寫法，請參閱[sakura.balloon.offsetx](sakura.balloon.offsetx.md)。
 
-**既定値:** When displayed to the left or right: the position where the left or right edge of the balloon aligns with the right or left edge of the surface<br />
-When displayed above the head or at the feet: the center of the surface
+**既定値:** 顯示於左右時：balloon 左右邊緣與 surface 左右邊緣對齊的位置<br />
+顯示於頭上或腳邊時：surface 中央
 
 **対応:** Materia / SSP / CROW

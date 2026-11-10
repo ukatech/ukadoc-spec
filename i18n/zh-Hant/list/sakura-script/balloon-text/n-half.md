@@ -1,8 +1,8 @@
 # `\n[half]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Performs a line break at half the normal height.
+以一般行高的一半換行。
 
 **対応:** Materia / SSP / CROW / Ninix
 

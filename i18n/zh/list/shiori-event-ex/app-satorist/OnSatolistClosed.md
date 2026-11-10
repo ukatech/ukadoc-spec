@@ -1,5 +1,5 @@
 # OnSatolistClosed
 
-**カテゴリ:** App “Satorist”
+**カテゴリ:** 应用“Satorist”
 
-Fires when Satorist is about to exit.
+Satorist 即将退出时触发。

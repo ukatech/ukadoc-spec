@@ -1,8 +1,8 @@
 # meta.year
 
-**カテゴリ:** Property system \> Sound property names
+**カテゴリ:** 屬性系統 \> 聲音屬性名稱
 
-Year (Gregorian calendar) recorded in the target media's tags.<br />
-For behavior when no tags are present or the year cannot be retrieved, see [here](sound.meta.artwork.note.md).
+目標媒體標籤中記錄的年份（西元）。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

@@ -1,3 +1,3 @@
-# Notes
+# 补充
 
-*\[Legacy specification\]*; specify this in developer_options.txt now.
+*\[旧仕様\]*，现在应通过developer_options.txt指定。

@@ -1,9 +1,9 @@
 # `\pID番号`
 
-**カテゴリ:** Scope command
+**カテゴリ:** Scope 指令
 
-Display the scope with the specified ID.<br />
-In this case, only 0～9 can be used.
+顯示 ID 號碼所指定的 scope。<br />
+此格式只能使用 0～9。
 
 **対応:** SSP / CROW / Ninix
 

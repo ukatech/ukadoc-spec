@@ -1,7 +1,7 @@
 # %day
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Current day.
+当前日期。
 
 **対応:** Materia / SSP / CROW / Ninix

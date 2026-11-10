@@ -1,12 +1,12 @@
 # `\b[ID番号]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Change the balloon for the current scope to the balloon with the specified ID.<br />
-Odd-numbered IDs are reserved for balloons displayed to the right of a character, so only ID 0 or even-numbered IDs can be used.<br />
-Hide the balloon with `\b[-1]`.
+將目前 scope 側的氣球切換為指定 ID 的氣球。<br />
+奇數保留給顯示在角色右側的氣球使用，因此只能使用 ID 0 或偶數。<br />
+使用 `\b[-1]` 可隱藏氣球。
 
-Starting with SSP 2.6.34, writing `\b[ID1,--fallback=ID2,--fallback=ID3]` makes the command use ID2 if ID1 is unavailable, and ID3 if ID2 is also unavailable.
+從 SSP 2.6.34 起，若寫成 `\b[ID1,--fallback=ID2,--fallback=ID3]`，則 ID1 不存在時會改用 ID2，若 ID2 也不存在則改用 ID3。
 
 **対応:** Materia / SSP / CROW / Ninix
 

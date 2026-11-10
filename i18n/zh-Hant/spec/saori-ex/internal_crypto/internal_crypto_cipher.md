@@ -1,17 +1,17 @@
-# Symmetric-key encryption (Encrypt / Decrypt)
+# 對稱金鑰加密（Encrypt / Decrypt）
 
-The algorithms are as follows (the presence of hyphens or underscores in names, and letter case, are ignored). Other algorithms return 400 (`unsupported algorithm`).
+演算法如下（名稱中的連字號、底線有無及大小寫均不區分）。其他演算法會回傳400（`unsupported algorithm`）。
 
-- **aes-256-gcm（recommended） / aes-128-gcm / chacha20-poly1305**: Authenticated encryption. Tampered ciphertext cannot be decrypted. The ciphertext format is “nonce (12 bytes) + ciphertext + authentication tag (16 bytes).”
-- **aes-256-cbc / aes-128-cbc**: PKCS#7 padding. The ciphertext format is “IV (16 bytes) + ciphertext.” Tampering cannot be detected, so use this only when exchanging data with other systems.
-- **aes-256-ctr**: The ciphertext format is “IV (16 bytes) + ciphertext.” Tampering cannot be detected.
-- **chacha20**: \[SSP 2.9.14\] Unauthenticated ChaCha20 (RFC 8439; 12-byte nonce, block counter starts at 0). The ciphertext format is “nonce (12 bytes) + ciphertext.” Tampering cannot be detected, so use this only when exchanging data with other systems that add a separate MAC, such as nostr's NIP-44.
+- **aes-256-gcm（建議） / aes-128-gcm / chacha20-poly1305**: 附帶驗證的加密。遭竄改的密文無法解密。密文格式為「nonce（12位元組）＋密文＋驗證標籤（16位元組）」。
+- **aes-256-cbc / aes-128-cbc**: 使用PKCS#7填補。密文格式為「IV（16位元組）＋密文」。由於無法偵測竄改，僅在與其他系統交換資料時使用。
+- **aes-256-ctr**: 密文格式為「IV（16位元組）＋密文」。無法偵測竄改。
+- **chacha20**: \[SSP 2.9.14\] 不附帶驗證的ChaCha20（RFC 8439。nonce為12位元組，區塊計數器從0開始）。密文格式為「nonce（12位元組）＋密文」。由於無法偵測竄改，僅在與其他系統交換資料時使用（例如nostr的NIP-44等另外附加MAC的方式）。
 
-The key length must exactly match the algorithm's key length (32 bytes for AES-256 and ChaCha20, 16 bytes for AES-128); otherwise, 400 (`invalid key`) is returned. To derive a key from a password, use [DeriveKey](internal_crypto.DeriveKey.md).<br />
-A nonce / IV is generated randomly for each encryption and prepended to the ciphertext. `--iv=` (specifying a nonce / IV) and `--pack=none` (not prepending it) are intended only for cases where another system passes the nonce separately. **Using the same nonce / IV twice with the same key breaks GCM, ChaCha20-Poly1305, and CTR as ciphers** (plaintext is exposed and tampering becomes possible). Do not use a fixed value for `--iv=` and reuse it.
+金鑰（key）的長度必須恰好等於演算法的金鑰長度（AES-256與ChaCha20為32位元組，AES-128為16位元組），否則會回傳400（`invalid key`）。從密碼產生金鑰時，請使用[DeriveKey](internal_crypto.DeriveKey.md)。<br />
+每次加密時都會以亂數產生nonce / IV，並加在密文開頭。`--iv=`（指定nonce / IV）與`--pack=none`（不加在開頭）僅供其他系統另外傳遞nonce時使用。**以相同金鑰重複使用相同nonce / IV，會使GCM・ChaCha20-Poly1305・CTR的加密失效**（明文會洩漏，也會變得可以竄改）。請勿在`--iv=`中設定並重複使用固定值。
 
-All errors in options return 400 (`invalid parameter`).
+所有選項錯誤都會回傳400（`invalid parameter`）。
 
-- `--aad=` was specified for an unauthenticated mode (CBC, CTR, or `chacha20`).
-- The length of `--iv=` does not exactly match the nonce / IV length for the mode (“12 bytes” or “16 bytes” above).
-- A value other than `none` was specified for `--pack=`.
+- 將`--aad=`用於不附帶驗證的方式（CBC・CTR・`chacha20`）。
+- `--iv=`的長度與該方式的nonce / IV長度（上述「12位元組」或「16位元組」）不完全相同。
+- 在`--pack=`中指定`none`以外的值。

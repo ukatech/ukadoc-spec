@@ -1,9 +1,9 @@
 # `\__w[時間]`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Wait until the specified number of milliseconds has elapsed since playback started or since `\x`.<br />
-Reset the timer with `\__w[clear]`.
+从开始播放或 `\x` 起，等待指定毫秒数。<br />
+使用 `\__w[clear]` 重置计时。
 
 **対応:** SSP
 

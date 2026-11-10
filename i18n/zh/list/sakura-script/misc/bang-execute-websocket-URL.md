@@ -1,7 +1,7 @@
 # `\![execute,websocket,URL,オプション,オプション,オプション...]`
 
-**カテゴリ:** Unclassified commands
+**カテゴリ:** 未分类命令
 
-Establish a WebSocket connection with [※options](bang-execute-http-options-URL.note.md). SHIORI events are issued when the connection is established, when data is received, and when it is disconnected. Specify the parameters in the same way as for rss-get.
+使用[※选项](bang-execute-http-options-URL.note.md)建立 WebSocket 连接。在连接、接收和断开连接的各个时机都会触发 SHIORI 事件。参数组的指定方式与 rss-get 相同。
 
 **対応:** SSP 2.8.05

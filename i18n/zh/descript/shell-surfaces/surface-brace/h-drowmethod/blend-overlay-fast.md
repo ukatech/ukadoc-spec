@@ -1,12 +1,12 @@
 # blend-overlay-fast
 
-**カテゴリ:** surface brace \> Drawing method
+**カテゴリ:** surface混合 \> 绘制方法
 
-*New layer* is composited over the image using overlay, according to the opacity of the *base layer*.<br />
-Its behavior is the same as overlay-fast and its outline does not change, but overlay blending is applied to the current surface instead of overwriting it.<br />
-This is unrelated to the [overlay](overlay.md) method: dark areas use multiply, while light areas use screen blending.<br />
-This can also be used with dressup and element.<br />
-The word "fast" in the name is due to historical circumstances; processing is not faster.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+根据*基础图层*的不透明度，以叠加混合的方式覆盖*新图层*。<br />
+其行为与overlay-fast相同，外形不会改变，但不是覆盖，而是对当前surface执行叠加混合处理。<br />
+这与[overlay](overlay.md)方法无关，暗部使用正片叠底，亮部使用滤色混合。<br />
+也可用于dressup和element。<br />
+名称中的「fast」源于历史原因，处理速度并不快。<br />
+建议在shell的descript.txt中设置[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.36

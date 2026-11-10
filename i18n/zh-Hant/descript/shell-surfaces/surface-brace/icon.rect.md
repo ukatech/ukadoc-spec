@@ -1,13 +1,13 @@
-# icon.rect,始点X,始点Y,終点X,終点Y
+# icon.rect,起點X,起點Y,終點X,終點Y
 
-**カテゴリ:** surface brace
+**カテゴリ:** surface 區塊
 
-Explicitly specifies the clipping rectangle for the face thumbnail (a reduced image clipped from the character's face, used in places such as the backlog and speech history window).<br />
-When specified, this takes precedence over automatic detection using the face/顔 or head/頭 hitboxes (see [collision](collision-star.md)).
+明確指定臉部縮圖（在回溯／發言紀錄視窗等處使用，擷取角色臉部並縮小的圖片）的裁切矩形。<br />
+指定後，會優先於使用碰撞判定的 face/臉部或 head/頭部進行自動偵測（參見 [collision](collision-star.md)）。
 
-Unlike automatic face/head detection, the specified rectangle is used as-is, without enlarging it to add margins.<br />
-However, because the output is square, it is adjusted to a square based on the longer side of the specified rectangle, centered on the rectangle.
+與 face/head 自動偵測不同，指定的矩形會直接採用，不會進行放大並留出邊界的處理。<br />
+不過，輸出會是正方形，因此會以指定矩形長寬中較長的一邊為基準，並以矩形中心為基準調整為正方形。
 
-**既定値:** Unspecified (automatic detection from collision face/顔 or head/頭)
+**既定値:** 未指定（從 collision 的 face/臉部・head/頭部自動偵測）
 
 **対応:** SSP 2.8.52

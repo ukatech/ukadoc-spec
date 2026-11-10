@@ -1,13 +1,13 @@
 # OnBIFF2Complete
 
-**カテゴリ:** Mail-check event
+**カテゴリ:** 邮件检查事件
 
-Occurs when the number of messages in the mail spool increases.<br />
-In SSP, this occurs only if no script was returned for OnBIFFComplete.
+邮件队列数量增加时触发。<br />
+在SSP中，仅当OnBIFFComplete未返回脚本时才会触发。
 
-- **Reference0**: Number of messages in the spool, expressed as a 1-based count.
-- **Reference1**: Number of bytes of mail in the spool.
-- **Reference2**: Name of the mail server to check; in SSP and CROW, the account name.
-- **Reference3**: TopResult for all mail.
+- **Reference0**: 队列中的邮件数量，以1为起点计数。
+- **Reference1**: 队列中的邮件字节数。
+- **Reference2**: 要检查的邮件服务器名称；对于SSP和CROW，则为账户名。
+- **Reference3**: 所有邮件的TopResult。
 
 **対応:** Materia / SSP

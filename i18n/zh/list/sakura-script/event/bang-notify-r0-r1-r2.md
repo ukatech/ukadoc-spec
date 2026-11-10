@@ -1,8 +1,8 @@
 # `\![notify,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Same as raise, except that any value returned by this notification event is not reflected in SSP.
+与 raise 相同，唯一的区别是，即使此通知事件返回某个值，也不会反映到 SSP。
 
 **対応:** SSP
 

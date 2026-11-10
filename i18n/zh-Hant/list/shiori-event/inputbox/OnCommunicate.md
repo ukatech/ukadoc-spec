@@ -1,11 +1,11 @@
 # OnCommunicate
 
-**カテゴリ:** Input box events
+**カテゴリ:** 輸入框事件
 
-Triggered when a script is passed from CommunicateBox or another ghost.
+透過 CommunicateBox 或其他 ghost 傳入 Sakura Script 時觸發。
 
-- **Reference0**: user when sent from a box; the ghost's baseware-side name when sent by a ghost.
-- **Reference1**: Script contents.
-- **Reference\***: Extended information.
+- **Reference0**: 從 Box 傳入時為 user，從 ghost 傳入時為該 ghost 的本體名稱。
+- **Reference1**: Sakura Script 的內容。
+- **Reference\***: 擴充資訊。
 
 **対応:** Materia / SSP / Ninix

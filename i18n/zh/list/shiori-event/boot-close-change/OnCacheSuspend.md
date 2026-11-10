@@ -1,7 +1,7 @@
 # OnCacheSuspend
 
-**カテゴリ:** Startup, shutdown, and switching event
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when entering the ghost cache.
+进入 ghost 缓存时触发。
 
 **対応:** SSP

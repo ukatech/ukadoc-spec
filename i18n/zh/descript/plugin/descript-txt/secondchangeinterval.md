@@ -1,9 +1,9 @@
-# secondchangeinterval,Seconds
+# secondchangeinterval,秒数
 
 **カテゴリ:** descript.txt
 
-Interval (in seconds) for notifying the PLUGIN Event [OnSecondChange](../../../list/plugin-event/plugin-event/OnSecondChange.md).<br />
-A value of 0 disables notifications.
+通知PLUGIN Event [OnSecondChange](../../../list/plugin-event/plugin-event/OnSecondChange.md)的间隔（秒）。<br />
+设为0时不会发送通知。
 
 **既定値:** 1
 

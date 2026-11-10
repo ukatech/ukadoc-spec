@@ -1,9 +1,9 @@
-# char\*.name,Name
+# char\*.name,名称
 
 **カテゴリ:** descript.txt
 
-Name of `\p[*]`.
+`\p[*]`的名称。
 
-**既定値:** Optional.　※Used for the window title setting
+**既定値:** 可省略。　※用于设置窗口标题
 
 **対応:** SSP 2.6.66

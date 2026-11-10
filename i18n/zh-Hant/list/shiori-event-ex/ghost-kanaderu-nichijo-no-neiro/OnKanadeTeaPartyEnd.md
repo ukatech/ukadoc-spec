@@ -1,7 +1,7 @@
 # OnKanadeTeaPartyEnd
 
-**カテゴリ:** Ghost “Melody of Everyday Life”
+**カテゴリ:** ghost「奏でる日常の音色」
 
-Tea party end event. Notifies after Melody of Everyday Life has performed its tea party closing talk.
+茶會結束事件。奏でる日常の音色在播放茶會結束對話後會傳送通知。
 
-- **Reference0**: Version of the tea party that was held.
+- **Reference0**: 已執行的茶會版本。

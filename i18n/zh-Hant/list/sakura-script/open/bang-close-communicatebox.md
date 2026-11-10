@@ -1,9 +1,9 @@
 # `\![close,communicatebox]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Close CommunicateBox.<br />
-Note that this does not trigger [OnCommunicateInputCancel](../../shiori-event/inputbox/OnCommunicateInputCancel.md).
+關閉 CommunicateBox。<br />
+請注意，不會觸發 [OnCommunicateInputCancel](../../shiori-event/inputbox/OnCommunicateInputCancel.md)。
 
 **対応:** SSP
 

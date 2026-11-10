@@ -1,10 +1,10 @@
 # OnFullScreenAppRestore
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs when SSP restores from minimization after a full-screen app exits.<br />
-Overrides OnWindowStateRestore, which occurs during normal restoration from minimization.
+退出全屏应用时，SSP 从最小化状态恢复时触发。<br />
+此事件会覆盖通常从最小化状态恢复时触发的 OnWindowStateRestore。
 
-- **Reference0**: (SSP only) Reason for minimization. Always fullscreen.
+- **Reference0**: （仅限 SSP）最小化的原因。始终为 fullscreen。
 
 **対応:** SSP

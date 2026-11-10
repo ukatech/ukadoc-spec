@@ -1,9 +1,9 @@
 # `\![raise,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Executes an event.<br />
-The third and subsequent arguments are stored in Reference0 and onward, in order.
+执行事件。<br />
+第3个及之后的参数会依次存入Reference0及后续项。
 
 **対応:** Materia / SSP / CROW / Ninix
 

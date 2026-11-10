@@ -1,9 +1,9 @@
-# validrect.right,coordinate [\*1](../index.md#balloon設定)
+# validrect.right,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The right position of the text drawing area.
+文字繪製範圍的右側位置。
 
-**既定値:** unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

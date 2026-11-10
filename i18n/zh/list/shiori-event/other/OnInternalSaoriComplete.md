@@ -1,14 +1,14 @@
 # OnInternalSaoriComplete
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-When an internal module is called via [SAORI over DirectSSTP](../../../spec/saori-ex/index.md) with `--async=identifier`, this event is sent if processing succeeds. If the identifier begins with On, an event with the same name as the identifier is sent instead of this event.<br />
-See [Asynchronous calls](../../../spec/saori-ex/async.md) for details.
+通过[SAORI over DirectSSTP](../../../spec/saori-ex/index.md)调用内置模块时，如果附带`--async=标识符`且处理成功，则会发送此事件。如果标识符以On开头，则会发送与该标识符同名的事件，而非本事件。<br />
+详情请参阅[异步调用](../../../spec/saori-ex/async.md)。
 
-- **Reference0**: Identifier specified with --async=.
-- **Reference1**: Result. (Same as Result for a synchronous call.)
-- **Reference2**: Module name. (For example, internal_crypto.)
-- **Reference3**: Function name. (For example, Digest.)
-- **Reference4 onward**: Values returned by a function that returns multiple values. (Value0 onward for a synchronous call.)
+- **Reference0**: 通过--async=指定的标识符。
+- **Reference1**: 结果。（同步调用中的Result）
+- **Reference2**: 模块名。（例如internal_crypto）
+- **Reference3**: 函数名。（例如Digest）
+- **Reference4以后**: 返回多个值的函数所返回的值。（同步调用中的Value0及以后）
 
 **対応:** SSP 2.9.13

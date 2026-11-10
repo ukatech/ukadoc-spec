@@ -1,9 +1,9 @@
 # OnInstallFailure
 
-**カテゴリ:** Installation events
+**カテゴリ:** 安裝事件
 
-Triggered when installation fails.
+安裝失敗時觸發。
 
-- **Reference0**: [※Reason for failure](caption_install-reasonoffailure.md).
+- **Reference0**: [※失敗原因](caption_install-reasonoffailure.md)。
 
 **対応:** Materia / SSP / CROW / Ninix

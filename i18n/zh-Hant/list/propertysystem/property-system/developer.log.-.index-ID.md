@@ -1,16 +1,16 @@
-# developer.log.log type.index(ID).log property name
+# developer.log.ログ種別.index(ID).ログプロパティ名
 
-**カテゴリ:** Property System
+**カテゴリ:** 屬性系統
 
-Retrieve information from the log entry at index ID.<br />
-IDs are numbered 0, 1, 2... starting with the newest entry. If an out-of-range ID is specified, retrieval fails.<br />
-See [developer.log.ログ種別.count](developer.log.-.count.md) for log types. The following strings can be used as log property names.
+從指定 ID 的記錄中取得資訊。<br />
+ID 會按照新到舊的順序從 0、1、2... 編號。指定超出範圍的 ID 時，取得會失敗。<br />
+記錄種類請參閱[developer.log.ログ種別.count](developer.log.-.count.md)。記錄屬性名稱可使用以下字串。
 
-- **type**: Log type.<br />
-  For script, the format is Ghost(...) or SSTP(...), with the applicable attributes listed inside the parentheses, separated by commas (Ghost: External, Embed, SSF, Plugin　SSTP: Local or Remote, TempGhost, Auth　Common: NoTranslate). If no attributes apply to Ghost, the parentheses are omitted, leaving only Ghost. If additional information is available, ":additional information" is appended.<br />
-  For other log types, one of Info, Notice, Warning, Error, Critical, or System.
-- **name**: Name of the log source (such as the ghost name). If there is no source, this is \[SYSTEM\].
-- **value**: Log message. The full text is returned, even for long messages.
-- **time**: Date and time when the log was recorded. This is in local time, with the OS's short date format and 24-hour hour:minute notation separated by a half-width space. The format depends on the OS regional settings.
+- **type**: 記錄種類。<br />
+  script 中會以 Ghost(～) 或 SSTP(～) 的格式表示，括號內以逗號分隔列出對應屬性（Ghost：External、Embed、SSF、Plugin　SSTP：Local 或 Remote、TempGhost、Auth　共通：NoTranslate）。Ghost 沒有對應屬性時，會省略括號，只顯示 Ghost。有附加資訊時，末尾會加上「:附加資訊」。<br />
+  其他記錄種類則為 Info、Notice、Warning、Error、Critical、System 其中之一。
+- **name**: 記錄來源名稱（例如 ghost 名稱）。沒有來源時為\[SYSTEM\]。
+- **value**: 記錄內容。即使內容很長，也會完整回傳，不會省略。
+- **time**: 記錄寫入的日期與時間。使用當地時間，並以半形空格分隔 OS 的短日期格式和 24 小時制的時:分。格式取決於 OS 的地區設定。
 
 **対応:** SSP

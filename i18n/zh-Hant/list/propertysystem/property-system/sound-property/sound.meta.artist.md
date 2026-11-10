@@ -1,9 +1,9 @@
 # meta.artist
 
-**カテゴリ:** プロパティシステム \> サウンドプロパティ名
+**カテゴリ:** 屬性系統 \> 音效屬性名稱
 
-Artist name recorded in the target media's tags.<br />
-If multiple names are recorded, they are joined with "; " (a semicolon and a half-width space).<br />
-See [here](sound.meta.artwork.note.md) for behavior when there are no tags or they cannot be retrieved.
+目標媒體標籤中記錄的演出者名稱。<br />
+若記錄了多個名稱，會以「; 」分隔並串接（分號和半形空格）。<br />
+沒有標籤或無法取得時的行為請參閱[此處](sound.meta.artwork.note.md)。
 
 **対応:** SSP 2.8.73

@@ -1,8 +1,8 @@
 # `\![open,passwordinput,ID,表示時間,テキスト,オプション]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open an InputBox that hides the entered characters. Other behavior is the same as [inputbox](bang-open-inputbox-ID.md).
+開啟會隱藏文字的 InputBox。其他動作與[inputbox](bang-open-inputbox-ID.md)相同。
 
 **対応:** SSP / Ninix
 

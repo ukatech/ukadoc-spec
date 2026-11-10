@@ -1,11 +1,11 @@
 # `\q[タイトル,ID]`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-Displays a choice.<br />
-After selection, the SHIORI event [OnChoiceSelect](../../shiori-event/choice/OnChoiceSelect.md) is triggered (SSP first triggers [OnChoiceSelectEx](../../shiori-event/choice/OnChoiceSelectEx.md)).<br />
-The ID is stored in Reference0.<br />
-Use the `\__q[]` tag to automatically wrap the text.
+显示选项。<br />
+选择后，将触发 SHIORI 事件 [OnChoiceSelect](../../shiori-event/choice/OnChoiceSelect.md)（仅 SSP 会在此之前触发 [OnChoiceSelectEx](../../shiori-event/choice/OnChoiceSelectEx.md)）。<br />
+ID 会存储在 Reference0 中。<br />
+要自动换行文本，请使用 `\__q[]` 标签。
 
 **対応:** Materia / SSP / CROW / Ninix
 

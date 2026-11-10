@@ -1,28 +1,28 @@
-# Compatibility modules
+# 兼容模块
 
-SSP includes compatibility functions for the following commonly used SAORI DLLs. When a ghost loads one of these DLLs, SSP replaces it with its built-in function without reading the DLL (determined by the file name).<br />
-\[SSP 2.9.13\] These can also be called from Direct SSTP using the DLL name without `.dll` (such as `Module: string`). Arguments and return values are the same as the original SAORI.
+SSP内置了对以下常用SAORI DLL的兼容功能。ghost加载这些DLL时，SSP不会读取DLL，而是替换为内置功能（根据文件名判断）。<br />
+\[SSP 2.9.13\] 也可以通过Direct SSTP调用这些功能，调用时使用去掉`.dll`的DLL名（例如`Module: string`）。参数和返回值与原版SAORI相同。
 
-`houchi` `clipcopy` `textcopy` `saori_ip` `saori_cpuid` `mciaudio` `cpuusage` `httpc` `string` `hanayu` `osuwari`（`osuwari` is available since \[SSP 2.9.33\]）
+`houchi` `clipcopy` `textcopy` `saori_ip` `saori_cpuid` `mciaudio` `cpuusage` `httpc` `string` `hanayu` `osuwari`（`osuwari`为 \[SSP 2.9.33\]）
 
-- Direct SSTP has no `load` / `unload`, so modules that maintain state per ghost (`mciaudio` / `httpc` / `string` / `hanayu`) are initialized on that ghost's first call and discarded when the ghost exits (including when SHIORI is reloaded). They do not share state with instances loaded as DLLs.
-- When called without a ghost, operations that depend on a ghost (`httpc` retrieval, saving, and `bg`; `hanayu`'s `show`; `mciaudio`'s `load` / `play` / `loop` / `stop`) return 400 (`ghost required`).
-- `houchi` takes effect when loaded, so calling it from Direct SSTP does nothing.
-- Direct SSTP requests are processed on SSP's main thread, so use `bg` for `httpc` retrieval (otherwise, SSP's screen will freeze during retrieval).
+- Direct SSTP没有`load` / `unload`，因此，对于按ghost分别维护状态的功能（`mciaudio` / `httpc` / `string` / `hanayu`），会在该ghost首次调用时进行初始化，并在ghost结束时（包括重新加载SHIORI）丢弃状态。这些状态不会与作为DLL加载的实例共享。
+- 不带ghost调用时，依赖ghost的处理（`httpc`的获取、保存和`bg`，`hanayu`的`show`，`mciaudio`的`load` / `play` / `loop` / `stop`）会返回400（`ghost required`）。
+- `houchi`会在加载时生效，因此从Direct SSTP调用不会产生任何效果。
+- Direct SSTP请求由SSP主线程处理，因此请使用`bg`进行`httpc`获取（否则，获取期间SSP画面会停止响应）。
 
 ## osuwari \[SSP 2.9.33\]
 
-Compatibility with ukiya's `Osuwari.dll`. It makes the ghost's window follow the foreground window, a specified window, or a rectangle on the screen (the same operation as [`\![set,alignmenttodesktop,osuwari,…]`](../../list/sakura-script/surface/bang-set-alignmenttodesktop.note.md); the meaning of the options is also described there). Arguments are positional, as in the original.
+这是对ukiya氏的`Osuwari.dll`的兼容实现。可使ghost窗口追随前景窗口、指定窗口或屏幕矩形（与[`\![set,alignmenttodesktop,osuwari,…]`](../../list/sakura-script/surface/bang-set-alignmenttodesktop.note.md)执行相同处理，选项含义也见该页面）。参数与原版相同，采用位置参数。
 
-- `START`: Starting from `Argument1`, specify the controlled HWND / follow target (`ACTIVE` `FIX` `@title` `#handle`) / origin (`TL` `TR` `BL` `BR`) / x offset / y offset / update interval (milliseconds; 0 means 100) / (optional) options (`XMOVE` `YMOVE` `NOCLIP` `BACK`, separated by spaces; `BACK` sits immediately behind the target window; not available in the original) / (optional) placement when it cannot sit (`DESKTOP` `WORKAREA` and `CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`, separated by spaces) / (optional) clipping margin (`left_top_right_bottom`).
-  - If the seventh and subsequent arguments are omitted, their values from the previous `START` are carried over. This matches the original behavior. With `\![set,alignmenttodesktop,osuwari,…]`, omitted options are set to their defaults each time (they are not carried over).
-  - The controlled HWND can only be the **character window of that ghost** reported by the `OnHWND` event (`hwnd`). Other windows will not be moved (500 if it cannot be found).
-- `STOP`: Stops the seating set by SAORI and restores the alignment to the ghost/shell default (`descript.txt`). If the default in `descript.txt` is osuwari, it sits down with osuwari again. This does not stop settings made with `\![set,alignmenttodesktop,osuwari,…]`. It also stops when SAORI is unloaded (including when SHIORI is reloaded).
-- Returns 204 on success, 400 if arguments are missing or cannot be interpreted, and 500 if the controlled HWND cannot be found (`source window is not exist`).
-- The differences from the original are as follows.
-  - Window rectangles are measured using the visible frame.
-  - The reference screen is the monitor containing the target window (clipping is checked against the area spanning all monitors).
-  - The original bug where `side` is always `TOP` when `DESKTOP` is specified is not present.
-  - It does not sit on minimized or hidden windows.
-  - There is no need to write `seriko.alignmenttodesktop,free` in the shell's `descript.txt`.
-- Renamed DLLs (such as `osuwari0.dll`) are not covered by compatibility. The actual DLL is loaded.
+- `START`: 从`Argument1`开始，依次指定控制对象的HWND / 追随目标（`ACTIVE` `FIX` `@标题` `#句柄`） / 原点（`TL` `TR` `BL` `BR`） / x偏移 / y偏移 / 更新间隔（毫秒。0表示100） / (可省略)选项（`XMOVE` `YMOVE` `NOCLIP` `BACK`，以空格分隔。`BACK`表示紧挨着目标窗口后方就座。原版没有此选项） / (可省略)无法就座时的指定（`DESKTOP` `WORKAREA`，以及以空格分隔的`CENTER` `LEFT` `RIGHT` `TOP` `BOTTOM`） / (可省略)裁切边距（`左_上_右_下`）。
+  - 省略第7个及之后的参数时，会沿用上一次`START`的值。行为与原版相同。而对于`\![set,alignmenttodesktop,osuwari,…]`，每次都会将省略的选项设为默认值（不会沿用）。
+  - 仅可将通过`OnHWND`事件（`hwnd`）通知的**该ghost角色的窗口**指定为控制对象HWND。不会移动其他窗口（找不到时返回500）。
+- `STOP`: 停止SAORI设置的就座，并将对齐方式恢复为ghost和shell的默认值（`descript.txt`）。如果`descript.txt`的默认值为osuwari，则会重新就座到osuwari。不会停止通过`\![set,alignmenttodesktop,osuwari,…]`设置的项目。卸载SAORI时（包括重新加载SHIORI）也会停止。
+- 成功时返回204；参数不足或无法解析时返回400；找不到控制对象HWND时返回500（`source window is not exist`）。
+- 与原版的差异如下。
+  - 窗口矩形按照视觉边框测量。
+  - 基准屏幕为目标窗口所在的显示器（裁切情况则按所有显示器组成的区域判断）。
+  - 没有原版在指定`DESKTOP`时`side`总是变为`TOP`的缺陷。
+  - 不会就座到最小化或隐藏的窗口上。
+  - shell的`descript.txt`中无需写入`seriko.alignmenttodesktop,free`。
+- 改名后的DLL（如`osuwari0.dll`）不属于兼容范围，将会读取真实DLL。

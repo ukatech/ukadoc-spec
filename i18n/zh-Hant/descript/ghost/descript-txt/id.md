@@ -1,11 +1,11 @@
-# id,ID name
+# id,ID 名
 
 **カテゴリ:** descript.txt
 
-The ghost's ID name. Half-width alphanumeric characters only (SSP allows all characters).<br />
-Currently, it has no use other than appearing in a display resembling the console at startup.<br />
-In SSP, it is not visible unless you turn ON Settings - General - Enable transparent status display window.
+該 ghost 的 ID 名稱。僅限半形英數字。（SSP 允許所有字元）<br />
+目前除了顯示在類似啟動時主控台的畫面中以外，沒有其他用途。<br />
+若未將 SSP 的「設定-一般-透明狀態顯示視窗」設為 ON，便無法看見。
 
-**既定値:** No value
+**既定値:** 無值
 
 **対応:** Materia / SSP / CROW

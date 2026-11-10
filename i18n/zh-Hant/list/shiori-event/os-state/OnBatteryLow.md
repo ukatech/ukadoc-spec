@@ -1,11 +1,11 @@
 # OnBatteryLow
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when the battery level becomes low (OnBatteryNotify Reference3 is low or lower).<br />
-Note that an event with [the same name](../../shiori-event-ex/app-kinoko/OnBatteryCritical-kinoko.md) is also notified by the external application “Kinoko”.<br />
-Implemented as a compatibility event for “Kinoko”.
+電池電量偏低（OnBatteryNotify Reference3 為 low 或更低）時觸發。<br />
+請注意，外部應用程式「きのこ」通知的事件中也有[同名事件](../../shiori-event-ex/app-kinoko/OnBatteryCritical-kinoko.md)。<br />
+此事件是為了與「きのこ」相容而實作。
 
-- **Reference0～**: Same as OnBatteryNotify. If Reference3 becomes low or lower, this event also occurs after OnBatteryNotify, so no handling is needed here if appropriate handling is implemented for OnBatteryNotify.
+- **Reference0～**: 與 OnBatteryNotify 相同。Reference3 變為 low 或更低時，OnBatteryNotify 觸發後也會觸發此事件；若已為 OnBatteryNotify 實作適當處理，則不必處理此事件。
 
 **対応:** SSP

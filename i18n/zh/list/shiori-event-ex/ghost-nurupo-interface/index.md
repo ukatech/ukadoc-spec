@@ -1,6 +1,6 @@
-# Ghost “Nurupo Interface”
+# ghost「Nullpo Interface」
 
-- Publisher: Closed
+- 发布地址：已关闭
 
 **対応:** SSP
 

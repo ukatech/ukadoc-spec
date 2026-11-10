@@ -1,12 +1,12 @@
 # `\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open a slider-style InputBox.<br />
-When input is confirmed, the SHIORI event [OnUserInput](../../shiori-event/inputbox/OnUserInput.md) occurs, and the input value is placed in Reference1.<br />
-Options can be specified in the form --option=○○ [※オプション](bang-close-textareabox-ID.note.md).<br />
-Other behavior is the same as [inputbox](bang-open-inputbox-ID.md).<br />
-The minimum allowed value is -2147483648 and the maximum is 2147483647.
+開啟滑桿調整型的 InputBox。<br />
+確定輸入時會觸發 SHIORI 事件[OnUserInput](../../shiori-event/inputbox/OnUserInput.md)，並將輸入值放入 Reference1。<br />
+可使用 --option=○○ 的形式指定[※選項](bang-close-textareabox-ID.note.md)。<br />
+其他動作與[inputbox](bang-open-inputbox-ID.md)相同。<br />
+允許的最小值為 -2147483648，最大值為 2147483647。
 
 **対応:** SSP
 

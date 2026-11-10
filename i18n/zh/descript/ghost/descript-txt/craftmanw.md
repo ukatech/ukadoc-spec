@@ -1,9 +1,9 @@
-# craftmanw,Author name
+# craftmanw,作者名
 
 **カテゴリ:** descript.txt
 
-Author name of the ghost.
+该ghost的作者名。
 
-**既定値:** Cannot be omitted / no value in SSP
+**既定値:** 不可省略/SSP中无值
 
 **対応:** Materia / SSP / CROW

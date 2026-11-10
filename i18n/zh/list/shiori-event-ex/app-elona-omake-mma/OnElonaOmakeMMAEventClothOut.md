@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventClothOut
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 应用程序“Elona omake_MMA”
 
-Occurs when the PC starts removing clothes for sexual pleasure.
+PC 为了享受愉悦而开始脱衣服时触发。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80，参见[※共通参考](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

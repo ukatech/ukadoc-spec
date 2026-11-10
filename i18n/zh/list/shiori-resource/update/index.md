@@ -1,4 +1,4 @@
-# Update information
+# 更新信息
 
 ## 一覧
 

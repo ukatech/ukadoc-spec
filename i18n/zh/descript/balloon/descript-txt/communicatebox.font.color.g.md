@@ -1,8 +1,8 @@
-# communicatebox.font.color.g,numeric
+# communicatebox.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green font color of the input box (0–255)
+输入框字体颜色绿色(0～255)
 
 **既定値:** 0
 

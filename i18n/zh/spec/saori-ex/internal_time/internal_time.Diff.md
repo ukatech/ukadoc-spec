@@ -2,13 +2,13 @@
 
 **カテゴリ:** internal_time
 
-Returns the integer difference between date and time 2 and date and time 1, counted in the specified unit. Fractions are truncated toward zero.<br />
-`day` and larger units are counted using the calendar in the zone specified by `--tz=`. For example, if date and time 2 is a date only (midnight on that day), the number of days remaining decreases by one at midnight in the `--tz=` zone. `month` / `year` are counted as calendar months, returning the largest number that can be added using [Add](internal_time.Add.md) without exceeding the target (from January 31, one month is the same time on February 28 in a common year, or February 29 in a leap year).
+返回以指定单位计算的日期时间2－日期时间1的整数。小数部分向0方向舍去。<br />
+`day`及以上单位按`--tz=`时区的日历计算。例如，日期时间2只有日期（当天0时）时，“还有几天”会在`--tz=`时区日期变更的时刻减1。`month` / `year`按日历月计算，并返回使用[Add](internal_time.Add.md)递增且不会超过日期时间2的最大数值（从1月31日开始，平年时为2月28日、闰年时为2月29日的同一时刻算作1个月）。
 
-- **Argument1**: Date and time 1
-- **Argument2**: Date and time 2
-- **Argument3**: Unit (same as [Add](internal_time.Add.md))
-- **Options**: `--tz=`
+- **Argument1**: 日期时间1
+- **Argument2**: 日期时间2
+- **Argument3**: 单位（与[Add](internal_time.Add.md)相同）
+- **选项**: `--tz=`
 
 ## 記述例
 
@@ -21,6 +21,6 @@ Argument3: day
 → Result: 3（3日と14時間なので3）
 ```
 
-To get the difference between calendar dates (how many days from today), specify date only for date and time 1 as well (you can create today's date using `%Y-%m-%d` in [Format](internal_time.Format.md)).
+如果需要计算日历日期之间的差值（“从今天起几天后”），请将日期时间1也设为仅日期（可通过[Format](internal_time.Format.md)的`%Y-%m-%d`生成今天的日期）。
 
 **対応:** SSP 2.9.13

@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-Always use italic style. 0 disables / 1 enables.
+始终使用斜体样式。0为禁用/1为启用。
 
 **既定値:** 0
 

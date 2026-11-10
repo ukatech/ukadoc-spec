@@ -1,11 +1,11 @@
 # `\t`
 
-**カテゴリ:** Wait command
+**カテゴリ:** 等待指令
 
-Time-critical section.<br />
-From here until the script is broken (for example, by selecting a choice or interrupting with a double-click on the balloon) or `\e`, event notifications such as mouse events are not sent.<br />
-Note that writing `\t` again does not cancel this state.<br />
-To cancel it mid-script, use `\![raise,イベント名]` to end the current script and trigger another event.
+時間關鍵區段。<br />
+直到指令碼中斷（例如選擇選項，或以滑鼠雙擊 balloon 中斷）或執行 `\e` 為止，不會發出滑鼠等事件通知。<br />
+請注意，即使再次輸入 `\t` 也不會解除。<br />
+若要在途中解除，請使用 `\![raise,事件名]` 暫時結束指令碼，並觸發其他事件。
 
 **対応:** Materia / SSP / CROW / Ninix
 

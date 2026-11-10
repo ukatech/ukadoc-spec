@@ -1,10 +1,10 @@
 # `\![lock,balloonrepaint]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Stop redrawing the balloon until `\![unlock,balloonrepaint]` is called or the script ends.<br />
-This stop is automatically lifted when the script ends.<br />
-However, specifying `\![lock,balloonrepaint,manual]` keeps redrawing stopped until explicitly unlocked. \[2.5.16\]
+停止重繪 balloon，直到呼叫 `\![unlock,balloonrepaint]` 或腳本結束。<br />
+此停止處理會在腳本結束時自動解除。<br />
+但是，指定為 `\![lock,balloonrepaint,manual]` 時，會持續停止，直到明確解除鎖定\[2.5.16\]
 
 **対応:** SSP
 

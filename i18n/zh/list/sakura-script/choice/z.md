@@ -1,7 +1,7 @@
 # `\z`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-\[Legacy syntax\] The [`\e`](../event/e.md) command for scripts containing choices.
+\[旧规范\]在包含选项的脚本中使用的 [`\e`](../event/e.md)。
 
 **対応:** Materia / SSP

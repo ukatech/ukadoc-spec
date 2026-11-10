@@ -1,7 +1,7 @@
 # OnDive
 
-**カテゴリ:** Plugin "Virtual Dotonbori (TOMBORI)"
+**カテゴリ:** plugin「虛擬道頓堀（TOMBORI）」
 
-Triggered when the plugin is executed.
+plugin 執行時發生。
 
-- **Reference0**: Destination to dive into (Dotonbori)
+- **Reference0**: 跳入的目的地（道頓堀）

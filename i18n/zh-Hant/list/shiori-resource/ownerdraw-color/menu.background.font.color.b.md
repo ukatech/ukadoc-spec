@@ -1,7 +1,7 @@
 # menu.background.font.color.b
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字色彩
 
-Background text color, blue (0–255)
+背景文字藍色（0～255）
 
 **対応:** Materia / SSP / CROW / Ninix

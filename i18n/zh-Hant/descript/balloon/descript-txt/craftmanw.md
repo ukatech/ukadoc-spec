@@ -1,9 +1,9 @@
-# craftmanw,Author name
+# craftmanw,作者名稱
 
 **カテゴリ:** descript.txt
 
-Author name of the balloon.
+該 balloon 的作者名稱。
 
-**既定値:** No value
+**既定値:** 無值
 
 **対応:** Materia / SSP / CROW

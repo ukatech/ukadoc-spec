@@ -1,7 +1,7 @@
 # dressuprootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Dressup.”
+dressup 名称。
 
 **対応:** Materia / SSP

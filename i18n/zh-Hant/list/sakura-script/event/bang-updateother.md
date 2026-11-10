@@ -1,16 +1,16 @@
 # `\![updateother,更新対象/オプション群,...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Start a network update event for update targets with arbitrary names. Targets do not need to be running.<br />
-Any number of the following options can be added.<br />
---balloon=balloon name<br />
---shell=shell name<br />
---plugin=plugin name<br />
---headline=headline name<br />
---language=language resource name<br />
-If an update is available, events such as the SHIORI event [OnUpdateOtherReady](../../shiori-event/network-update/OnUpdateOtherReady.md), in which OnUpdate is changed to OnUpdateOther, are sent. After all updates are complete, [OnUpdateResultEx](../../shiori-event/network-update/OnUpdateResultEx.md) occurs to summarize the results.<br />
-Options specified with --option= are supported only by SSP. See [Update options](note-1.md#補足).
+開始任意名稱之更新對象的網路更新事件。也可以指定未執行中的對象。<br />
+以下項目可任意新增多個。<br />
+--balloon=balloon 名稱<br />
+--shell=shell 名稱<br />
+--plugin=plugin 名稱<br />
+--headline=標題名稱<br />
+--language=語言資源名稱<br />
+若有更新，會通知 SHIORI 事件 [OnUpdateOtherReady](../../shiori-event/network-update/OnUpdateOtherReady.md) 等將 OnUpdate 改為 OnUpdateOther 的事件；全部更新完成後，會觸發 [OnUpdateResultEx](../../shiori-event/network-update/OnUpdateResultEx.md) 彙整結果。<br />
+只有 SSP 支援使用 --option= 指定選項。請參閱[更新選項設定](note-1.md#補足)。
 
 **対応:** SSP
 

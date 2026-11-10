@@ -1,12 +1,12 @@
 # OnInstallCompleteEx
 
-**カテゴリ:** Installation events
+**カテゴリ:** 安裝事件
 
-Triggered when installation completes successfully.<br />
-If this event is unavailable, OnInstallComplete is triggered.
+安裝成功完成時觸發。<br />
+若沒有此事件，則會觸發 OnInstallComplete。
 
-- **Reference0**: [※Identifier](caption_install-identifier.md) of the installed item. For multiple items, values are separated by the character with byte value 1.
-- **Reference1**: Name of the installed item. For multiple items, values are separated by the character with byte value 1.
-- **Reference2**: Installation location. For multiple items, values are separated by the character with byte value 1.
+- **Reference0**: 已安裝項目的[※識別碼](caption_install-identifier.md)。多個項目時以位元組值 1 分隔。
+- **Reference1**: 已安裝項目的名稱。多個項目時以位元組值 1 分隔。
+- **Reference2**: 已安裝項目的位置。多個項目時以位元組值 1 分隔。
 
 **対応:** SSP / Ninix

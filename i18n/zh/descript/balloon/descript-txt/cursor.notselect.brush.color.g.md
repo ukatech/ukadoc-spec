@@ -1,8 +1,8 @@
-# cursor.notselect.brush.color.g,Number
+# cursor.notselect.brush.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green component of the color inside the rectangle of an unselected choice (0–255)
+未选中选项的矩形内部的绿色(0～255)
 
 **既定値:** 0
 

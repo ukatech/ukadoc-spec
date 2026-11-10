@@ -1,7 +1,7 @@
-# currentghost.shelllist.current.generic property name
+# currentghost.shelllist.current.通用属性名
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-Gets information from the current shell of the current ghost.
+从当前 ghost 的当前 shell 获取信息。
 
 **対応:** SSP / CROW

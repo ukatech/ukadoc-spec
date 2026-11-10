@@ -1,8 +1,8 @@
-# anchor.brush.color.g,Number
+# anchor.brush.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green value (0–255) of the color inside the selected anchor's rectangle
+选中锚点矩形内的绿色值（0～255）
 
 **既定値:** 0
 

@@ -1,12 +1,12 @@
 # OnExecuteWebSocketClose
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通訊事件
 
-Occurs when the WebSocket connection is finally disconnected. If automatic reconnection is attempted, this event fires afterward. Does not fire on Failure.<br />
-If the eventID specified with the --async option starts with "On", the event name is eventID+"Close".
+WebSocket 連線最終中斷時觸發。若曾嘗試自動重新連線，則會在重新連線後觸發。Failure 時不會觸發。<br />
+若以 --async 選項指定的 eventID 以 "On" 開頭，事件名稱會是 eventID+"Close"。
 
-- **Reference0**: Event identifier specified with Sakura Script's --async option.
-- **Reference1**: Connection URL.
-- **Reference2**: Disconnection cause code. "1000"=normal disconnection (by the server or `\![close,websocket]`), "userbreak"=forced interruption by `\![cancel,websocket]` or ghost termination.
+- **Reference0**: Sakura Script 的 --async 選項所指定的事件識別碼。
+- **Reference1**: 連線 URL。
+- **Reference2**: 中斷原因代碼。"1000"=正常中斷（由伺服器或 `\![close,websocket]` 引起）、"userbreak"=`\![cancel,websocket]` 或因 ghost 結束而強制中斷。
 
 **対応:** SSP 2.8.05

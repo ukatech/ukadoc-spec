@@ -1,15 +1,15 @@
 # `\![set,balloonwait,倍率]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Specifies the multiplier for the speed at which text flows in the balloon (the wait time per character).<br />
-Numbers only: accepts 0–100. 1 means normal speed. Decimal values are allowed. Example: specifying 1.5 makes it 50% slower.<br />
-With a % suffix: accepts 0–10000. 100 means normal speed. Integers of 0 or greater only.<br />
-With an ms suffix: accepts 0–10000. Specifies the absolute wait time per character in milliseconds.
+指定气球中字符串逐字显示的速度（每个字符的等待时间）的倍率。<br />
+仅指定数值：可指定 0～100。1 表示原速。可以指定小数。例如：指定 1.5 时，显示速度慢 50%。<br />
+数值后加％：可指定 0～10000。100 表示原速。只能指定大于等于 0 的整数。<br />
+数值后加 ms：可指定 0～10000，以毫秒为单位绝对指定每个字符的等待时间。
 
-Omitting the value or specifying 1: restores the default value<br />
-Specifying 0: always displays text immediately
+省略参数或指定为 1：恢复默认值<br />
+指定为 0：始终立即显示
 
-After the script finishes executing, it resets to the equivalent of a 100% specification.
+脚本执行结束后会重置为相当于指定 100% 的状态。
 
 **対応:** SSP

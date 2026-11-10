@@ -1,7 +1,7 @@
 # system.month
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Current month.
+当前月份。
 
 **対応:** SSP / CROW

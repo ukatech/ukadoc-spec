@@ -1,11 +1,11 @@
-# Additional Notes
+# 補充
 
-## Character and Item Information
+## 角色與物品資訊
 
-## Item Information
+## 物品資訊
 
-Items are delimited by byte value 1. Example: Soil0x01Gold Nugget0x01Iron Pickaxe0x01…
+物品之間以位元組值 1 分隔。範例：土0x01金塊0x01鐵十字鎬0x01…
 
-## Character Information
+## 角色資訊
 
-Each character's name and carried items are delimited by byte value 1, and each character is further delimited by byte value 2. Example: Yeek0x02Copper Dagger0x01Goblin0x02Paper Greatsword0x02Coral Light Cloak0x01Samurai…
+每個角色的名稱與持有物品之間以位元組值 1 分隔，而角色之間則以位元組值 2 分隔。範例：伊克0x02銅匕首0x01哥布林0x02紙製大劍0x02珊瑚輕外套0x01武士…

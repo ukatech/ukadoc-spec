@@ -1,10 +1,10 @@
 # OnTextDrop
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when text data is drag-and-dropped.
+文本数据被拖放时触发。
 
-- **Reference0**: Text content. (Line breaks are byte value 1)
-- **Reference1**: ID of the character that received the drag-and-drop.
+- **Reference0**: 文本内容。（换行符的字节值为1）
+- **Reference1**: 被拖放字符的ID。
 
 **対応:** SSP

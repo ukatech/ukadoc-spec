@@ -1,21 +1,21 @@
 # `\_l[x,y]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Move the cursor position in the current scope to the specified XY coordinates. X and Y can be specified as follows.<br />
-Note that immediately after `\_l` runs, line alignment is reset to left alignment to prevent problems. Set it again as needed.
+將目前 scope 側的游標位置移至 XY 座標。X、Y 可使用以下方式指定。<br />
+請注意，執行 `\_l` 後會為避免問題而將對齊方式重設為靠左。必要時請重新指定。
 
-- **number**: Coordinates in pixels from the start of text rendering in the balloon (the [origin](../../../descript/balloon/descript-txt/origin.x.md) position; the upper-left of the text-rendering area for horizontal text)
-- **(omitted)**: Do not move. Omitting both X and Y has no effect.
-- **centerx / centery**: If you write centerx for X and centery for Y, the cursor moves to the center of the balloon image (half its width / height). This is the only option based on the balloon image itself, rather than the start of text rendering.
-- **XXem**: Add em at the end to specify coordinates based on the text height. 1em is the text height when the tag is written. Decimal values are allowed.
-- **XXlh**: Add lh at the end to specify coordinates based on the line height. 1lh = 1em + line spacing. Decimal values are allowed.
-- **XX%**: Add % at the end to specify coordinates based on the text height. 100% is the text height when the tag is written. Decimal values are allowed.
-- **@XX**: Specifies relative coordinates from the current text-rendering position. A negative X value moves left; a negative Y value moves up. Can be combined with em and % specifications.
+- **數值**: 以像素為單位的座標，原點為氣球文字繪製起點（[origin](../../../descript/balloon/descript-txt/origin.x.md)的位置；橫排時為文字繪製範圍的左上角）
+- **(省略)**: 不移動。X、Y 兩者都省略時不會產生效果。
+- **centerx / centery**: 在 X 指定 centerx、在 Y 指定 centery 時，會移至氣球圖片中央（寬度／高度的一半）。只有這種指定方式以氣球圖片本身為基準，而非文字繪製起點。
+- **XXem**: 末尾加上 em 時，會以文字高度為基準指定座標。1em＝撰寫標籤時的文字高度。可指定小數。
+- **XXlh**: 末尾加上 lh 時，會以行高為基準指定座標。1lh＝1em＋行距。可指定小數。
+- **XX%**: 末尾加上 % 時，會以文字高度為基準指定座標。100%＝撰寫標籤時的文字高度。可指定小數。
+- **@XX**: 會指定相對於目前文字繪製位置的座標。X 為負值時向左，Y 為負值時向上。可與 em 或 % 指定方式併用。
 
-The coordinate axes remain the same as the balloon image in [vertical-text balloons](../../../descript/balloon/descript-txt/vertical.md), with positive X pointing right and positive Y pointing down.<br />
-However, the start of text rendering is at the *upper right* of the text-rendering area, and columns advance to the left. Therefore, specify a negative X value to move to the next column. Y follows the direction of character progression (top to bottom), so it works the same way as for horizontal text.<br />
-For example, `\_l[@-1lh,0]` means “move to the start of the column one column to the left” (equivalent to `\_l[0,@1lh]` in horizontal text), while `\_l[,@1em]` means “advance character progression by one character.”
+在[直排氣球](../../../descript/balloon/descript-txt/vertical.md)中，座標軸也以氣球圖片本身為基準，X 正方向為右、Y 正方向為下。<br />
+但文字繪製起點會位於文字繪製範圍的*右上角*，文字欄會由此向左排列，因此要移至下一欄時，X 必須指定負值。Y 為字元排列方向（由上往下），可用與橫排相同的方式操作。<br />
+例如，`\_l[@-1lh,0]`表示「移至左側一欄的開頭」（相當於橫排的 `\_l[0,@1lh]`），`\_l[,@1em]`則表示「字元排列位置前進一個字元」。
 
 **対応:** Materia / SSP / CROW / Ninix
 

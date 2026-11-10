@@ -1,8 +1,8 @@
-# font.color.b,numeric value
+# font.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Font color blue (0–255)
+字体颜色蓝色(0～255)
 
 **既定値:** 0
 

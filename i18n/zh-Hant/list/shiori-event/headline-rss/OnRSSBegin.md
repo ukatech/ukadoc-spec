@@ -1,10 +1,10 @@
 # OnRSSBegin
 
-**カテゴリ:** Headline/RSS sensing event
+**カテゴリ:** 頭條／RSS 感知事件
 
-Occurs when RSS sensing is requested. If the event is not handled, OnHeadlineSenseBegin is called.
+收到開始 RSS 感知的指示時觸發。若未回應此事件，則會呼叫 OnHeadlineSenseBegin。
 
-- **Reference0**: Name of the site to perform RSS sensing on.
-- **Reference1**: URL to perform RSS sensing on.
+- **Reference0**: RSS 感知網站名稱。
+- **Reference1**: RSS 感知 URL。
 
 **対応:** SSP

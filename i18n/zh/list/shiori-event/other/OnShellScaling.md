@@ -1,12 +1,12 @@
 # OnShellScaling
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when the shell scaling changes.
+shell缩放比例更改时会触发此事件。
 
-- **Reference0**: Horizontal scale after the change. (Percent.)
-- **Reference1**: Horizontal scale before the change. (Percent.)
-- **Reference2**: Vertical scale after the change. (Percent.)
-- **Reference3**: Vertical scale before the change. (Percent.)
+- **Reference0**: 水平方向更改后的缩放比例。（百分比）
+- **Reference1**: 水平方向更改前的缩放比例。（百分比）
+- **Reference2**: 垂直方向更改后的缩放比例。（百分比）
+- **Reference3**: 垂直方向更改前的缩放比例。（百分比）
 
 **対応:** SSP

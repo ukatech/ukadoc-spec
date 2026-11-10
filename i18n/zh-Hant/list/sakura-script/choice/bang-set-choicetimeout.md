@@ -1,14 +1,14 @@
 # `\![set,choicetimeout,時間]`
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-Specifies the timeout duration for choices. The unit is milliseconds.<br />
-The countdown starts after all the talk has finished displaying.<br />
-This setting is effective only for the current script. It is effective even if written after the choices.<br />
-If a choice times out, the [OnChoiceTimeout](../../shiori-event/choice/OnChoiceTimeout.md) event occurs.
+設定選項的逾時時間。單位為毫秒。<br />
+文字全部顯示完畢後，才開始計時。<br />
+只在該腳本中有效。即使寫在選項之後也有效。<br />
+選項逾時時，會觸發[OnChoiceTimeout](../../shiori-event/choice/OnChoiceTimeout.md)事件。
 
-Omitting the duration resets it to the default value.<br />
-A duration of 0 or -1 disables the timeout.
+省略時間指定：恢復預設值<br />
+時間指定為 0 或 -1：不逾時
 
 **対応:** Materia / SSP / CROW
 

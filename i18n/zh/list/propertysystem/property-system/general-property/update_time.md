@@ -1,7 +1,7 @@
 # update_time
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-Update time of the target.
+目标更新时间。
 
 **対応:** SSP

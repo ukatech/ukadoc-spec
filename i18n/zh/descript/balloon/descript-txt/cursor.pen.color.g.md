@@ -1,8 +1,8 @@
-# cursor.pen.color.g,numeric value
+# cursor.pen.color.g,数値
 
 **カテゴリ:** descript.txt
 
-Border and underline color green for the option marker (0–255)
+选项标记的矩形框及下划线颜色绿色(0～255)
 
 **既定値:** cursor.font.color.g
 

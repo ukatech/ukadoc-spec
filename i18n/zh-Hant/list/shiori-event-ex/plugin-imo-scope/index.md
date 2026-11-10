@@ -1,6 +1,6 @@
-# Plugin "Potato Scope"
+# plugin「芋頭 scope」
 
-- Publisher: [http://rakudaya.sakura.tv/htc.html](http://rakudaya.sakura.tv/htc.html)
+- 發布來源：[http://rakudaya.sakura.tv/htc.html](http://rakudaya.sakura.tv/htc.html)
 
 **対応:** SSP
 

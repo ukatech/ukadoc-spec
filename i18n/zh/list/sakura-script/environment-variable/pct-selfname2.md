@@ -1,7 +1,7 @@
 # %selfname2
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-The second name on the baseware side.
+本体侧的名称2。
 
 **対応:** SSP / Ninix

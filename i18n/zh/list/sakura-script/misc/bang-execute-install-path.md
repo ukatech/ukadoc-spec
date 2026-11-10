@@ -1,8 +1,8 @@
 # `\![execute,install,path,ファイル名]`
 
-**カテゴリ:** Unclassified command
+**カテゴリ:** 未分类命令
 
-Install the specified nar file. Specify a full path (relative paths are not supported).
+安装指定的 nar 文件。必须使用完整路径指定（不可使用相对路径）。
 
 **対応:** SSP
 

@@ -1,7 +1,7 @@
 # OnSysResourceCritical
 
-**カテゴリ:** App “Kinoko”
+**カテゴリ:** 应用“Kinoko”
 
-Occurs when system resources fall below 30%.
+系统资源低于30％时触发。
 
-- **Reference0**: Percentage value.
+- **Reference0**: 百分比数值。

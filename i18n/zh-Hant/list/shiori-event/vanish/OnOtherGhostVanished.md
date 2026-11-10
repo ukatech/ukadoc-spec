@@ -1,12 +1,12 @@
 # OnOtherGhostVanished
 
-**カテゴリ:** Vanish event
+**カテゴリ:** 消失事件
 
-Occurs when another ghost vanishes while multiple ghosts are running.
+同時啟動多個 ghost 時，其他 ghost 消失時發生。
 
-- **Reference0**: Name of the vanished ghost on the baseware side.
-- **Reference1**: Script from the vanished ghost's OnVanishSelected event.
-- **Reference2**: Name of the vanished ghost.
-- **Reference7**: *Shell name of the ghost that was switched to.*
+- **Reference0**: 消失的 ghost 在本體側使用的名稱。
+- **Reference1**: 消失的 ghost 的OnVanishSelected事件腳本。
+- **Reference2**: 消失的 ghost 名稱。
+- **Reference7**: *切換後的 ghost 的*shell 名稱。
 
 **対応:** SSP

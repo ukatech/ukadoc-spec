@@ -1,7 +1,7 @@
 # `\![open,dressupexplorer]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens the dressup explorer.
+開啟 dressup 瀏覽器。
 
 **対応:** SSP 2.7.00 RC3

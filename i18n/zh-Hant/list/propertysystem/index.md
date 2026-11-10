@@ -1,5 +1,5 @@
-# Property System
+# 屬性系統
 
 ## 一覧
 
-- [Property System](property-system/index.md)
+- [屬性系統](property-system/index.md)

@@ -1,8 +1,8 @@
 # `\![open,aigraph]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the AI graph. Nothing happens if the executing ghost does not respond to the SHIORI resource [getaistate](../../shiori-resource/ghost/getaistate.md).
+開啟 AI 圖表。若執行此命令的 ghost 未對 SHIORI 資源 [getaistate](../../shiori-resource/ghost/getaistate.md) 作出回應，則不會發生任何事。
 
 **対応:** SSP
 

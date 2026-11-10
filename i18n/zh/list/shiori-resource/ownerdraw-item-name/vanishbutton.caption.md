@@ -1,7 +1,7 @@
 # vanishbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for the vanish notification.
+消失通知的名称。
 
 **対応:** Materia / SSP / CROW

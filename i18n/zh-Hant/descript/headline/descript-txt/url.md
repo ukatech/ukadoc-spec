@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-URL from which the headline is loaded.
+headline 的讀取來源 URL。
 
-**既定値:** Required
+**既定値:** 不可省略
 
 **対応:** Materia / SSP / CROW

@@ -1,7 +1,7 @@
 # OnElonaOmakeMMAEventLomiasInTheParty
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when the emissary of the strange forest, "Lomias," is in the party.
+異形之森的使者『羅米亞斯』加入隊伍時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。

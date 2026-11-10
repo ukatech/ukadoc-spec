@@ -1,23 +1,23 @@
 # OnSpectrePlugin.Surface
 
-**カテゴリ:** Plugin "Spectre"
+**カテゴリ:** plugin「Spectre」
 
-Triggered during a Spectre conversation when a request is made to change the surface of the ghost currently being addressed.<br />
-Note that this event is not triggered directly by the plugin itself, but is called by the ghost through an embedded tag in the conversation.<br />
-The expressions included are those in [recommended expressions](../../../descript/shell-surfaces/surface-brace/caption_standarddef.md), with a few additions commonly used by English-speaking ghosts.<br />
-*Ignore any expressions the ghost's shell cannot represent accurately, and do not return a response.* The plugin uses this information for its own purposes.
+Spectre 對話期間，要求目前對話中的 ghost 切換 surface 時發生。<br />
+請注意，此事件並非由 plugin 本身直接發出，而是由 ghost 透過對話中的內嵌標籤呼叫。<br />
+其中包含[建議表情](../../../descript/shell-surfaces/surface-brace/caption_standarddef.md)，並額外加入一些英語系 ghost 常用的表情。<br />
+*若 ghost 的 shell 無法準確呈現指定表情，請忽略並不要回應。* plugin 會將此資訊用於自身用途。
 
-- **Reference0**: The requested expression. It takes one of the following values.
+- **Reference0**: 要求的表情。值為下列其中之一。
 
-  - normal …… Usually surface0
-  - embarrassed …… Usually surface1
-  - surprised …… Usually surface2
-  - anxious …… Usually surface3
-  - discouraged …… Usually surface4
-  - smile …… Usually surface5
-  - relieved …… Usually surface6. Also called "contented"
-  - angry …… Usually surface7
-  - sweat …… Usually surface8. Also called "sweat smile" or "cold smile"
-  - indignant …… Usually surface9. Also called "embarrassed anger"
-  - thinking …… Commonly used by some English-speaking ghosts. Also called "thoughtful" or "confused"
-  - unamused …… Commonly used by some English-speaking ghosts. Also called "bored"
+  - normal …… 通常是 surface0
+  - embarrassed …… 通常是 surface1
+  - surprised …… 通常是 surface2
+  - anxious …… 通常是 surface3
+  - discouraged …… 通常是 surface4
+  - smile …… 通常是 surface5
+  - relieved …… 通常是 surface6。也稱為「contented」
+  - angry …… 通常是 surface7
+  - sweat …… 通常是 surface8。也稱為「sweat smile」或「cold smile」
+  - indignant …… 通常是 surface9。也稱為「embarrassed anger」
+  - thinking …… 部分英語系 ghost 常用。也稱為「thoughtful」或「confused」
+  - unamused …… 部分英語系 ghost 常用。也稱為「bored」

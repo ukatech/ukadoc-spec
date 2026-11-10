@@ -1,16 +1,16 @@
 # `\![open,dialog,color,パラメータ]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the color palette dialog. Selecting a color in this dialog does not perform any action by itself.<br />
-When a selection is confirmed, the SHIORI event [OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md) is triggered. Reference0 contains "color", and Reference2 contains the selected color in "R,G,B" format. Each ghost author must implement and run the actual processing here.<br />
-When the dialog is closed, the SHIORI event [OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md) is triggered.<br />
-The following parameters can be specified as comma-separated values.
+開啟色彩選擇器對話方塊。在此對話方塊中指定顏色，不會直接執行任何操作。<br />
+按下確定時會觸發 SHIORI 事件 [OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md)，Reference0 會存放「color」，Reference2 會以「R,G,B」格式存放選取的顏色，因此各 ghost 作者需在此建立並執行實際處理。<br />
+關閉時會觸發 SHIORI 事件 [OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md)。<br />
+參數可用逗號分隔，指定如下。
 
-- **--color=R G B**: Specify each RGB value from 0 to 255.
-- **--id=event ID**: ID to send with OnSystemDialog/OnSystemDialogCancel.<br />
-  If the event ID begins with On~, an event with that ID is triggered. The Reference contents are the same as for OnSystemDialog.<br />
-  Reference0 is fixed to "color".
+- **--color=R G B**: RGB 各以 0～255 指定
+- **--id=事件 ID**: 傳送至 OnSystemDialog/OnSystemDialogCancel 的 ID<br />
+  若事件 ID 以 On～ 開頭，則會觸發該 ID 的事件。Reference 的內容與 OnSystemDialog 相同。<br />
+  Reference0 固定為「color」。
 
 **対応:** SSP
 

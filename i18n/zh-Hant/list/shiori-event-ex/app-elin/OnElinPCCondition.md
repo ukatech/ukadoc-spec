@@ -1,7 +1,7 @@
 # OnElinPCCondition
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 應用程式「Elin」
 
-Occurs when the PC is afflicted with a status condition.
+PC 陷入異常狀態時發生
 
-- **Reference0**: Status condition name
+- **Reference0**: 異常狀態名稱

@@ -1,9 +1,9 @@
-# charset,character encoding
+# charset、字符编码
 
 **カテゴリ:** descript.txt
 
-The character encoding to use for display. Shift_JIS is recommended when compatibility with older environments is required; otherwise, UTF-8 is recommended.
+显示所用的字符编码。若需考虑与旧环境的兼容性，建议使用Shift_JIS；其他情况建议使用UTF-8。
 
-**既定値:** (OS default setting or SSP-\>Internationalization-\>Default character encoding-\>Text definition)
+**既定値:** （OS的默认设置或SSP-\>国际化-\>省略时的字符编码-\>文本定义）
 
 **対応:** SSP / CROW

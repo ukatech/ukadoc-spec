@@ -1,9 +1,9 @@
-# cursor.font.color.r,Number
+# cursor.font.color.r,數值
 
 **カテゴリ:** descript.txt
 
-Red component (0–255) of the choice marker font color<br />
-Used when no raster operation command is specified.
+選項標記的字型紅色(0～255)<br />
+未設定光柵運算指令時使用。
 
 **既定値:** 0
 

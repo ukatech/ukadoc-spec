@@ -1,11 +1,11 @@
 # OnApplicationOperationFinish
 
-**カテゴリ:** Generic external application event
+**カテゴリ:** 外部應用程式通用事件
 
-Occurs when an external application or some operation completes.
+外部應用程式或某項處理完成時發生。
 
-- **Reference0**: Application name.
-- **Reference1**: Operation details.
-- **Reference2**: Operation target.
+- **Reference0**: 應用程式名稱。
+- **Reference1**: 處理內容。
+- **Reference2**: 處理對象。
 
 **対応:** Materia / SSP / CROW

@@ -1,7 +1,7 @@
 # closebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Exit.”
+退出名称。
 
 **対応:** SSP

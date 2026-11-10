@@ -1,12 +1,12 @@
-# Method: SEND
+# 方法：SEND
 
-SEND is a method for sending Sakura Script or SHIORI events from an external application to a ghost and playing them back.<br />
-SEND and NOTIFY are handled identically. There is no functional difference between them. The following specifications also apply to NOTIFY as-is.<br />
-Both methods are available: specifying Sakura Script directly in the Script header, or sending an event in the Event header and obtaining a script in the SHIORI response.<br />
-Event and Script can be used together. If the SHIORI response to the Event does not return a script, the script in the Script header is used as a fallback.<br />
-If the target ghost is not specified, the currently running ghost is the target.
+SEND 是從外部應用程式向 ghost 傳送 Sakura Script 或 SHIORI 事件並使其播放的方法。<br />
+SEND 和 NOTIFY 會視為相同的處理方式。兩者在功能上沒有差異。以下規格同樣適用於 NOTIFY。<br />
+可以使用 Script 標頭直接指定 Sakura Script，也可以使用 Event 標頭傳送事件，再從 SHIORI 回應取得腳本。<br />
+Event 和 Script 可以併用；若 SHIORI 對 Event 的回應沒有傳回腳本，則會使用 Script 標頭中的腳本作為後備。<br />
+未指定目標 ghost 時，會以目前已啟動的 ghost 為目標。
 
-## Basic script playback sample
+## 基本腳本播放範例
 
 ```
 SEND SSTP/1.4
@@ -15,7 +15,7 @@ Sender: SampleApp
 Script: \h\s[0]こんにちは。\w5\u\s[10]ご機嫌いかが？\e
 ```
 
-## Event sending sample
+## 傳送事件範例
 
 ```
 SEND SSTP/1.4
@@ -26,7 +26,7 @@ Reference0: param1
 Reference1: param2
 ```
 
-## Event and fallback script sample
+## 事件＋後備腳本範例
 
 ```
 SEND SSTP/1.4
@@ -37,9 +37,9 @@ Reference0: data
 Script: \h\s[0]イベント未対応時のスクリプト\e
 ```
 
-By specifying the IfGhost header multiple times and pairing it with the corresponding Script header, different scripts can be specified for each ghost.
+重複指定 IfGhost 標頭，並與對應的 Script 標頭組合，即可為不同 ghost 指定不同腳本。
 
-## Routing sample using IfGhost
+## 使用 IfGhost 分流範例
 
 ```
 SEND SSTP/1.4
@@ -52,7 +52,7 @@ IfGhost: 花ちゃん,妹
 Script: \h\s[0]花ちゃんと妹さん、こんにちは。\e
 ```
 
-## Sample with interruption suppression
+## 抑制中斷的範例
 
 ```
 SEND SSTP/1.4
@@ -62,37 +62,37 @@ Script: \h\s[0]割り込まないで追加。\e
 Option: nobreak
 ```
 
-## Request-specific headers
+## request 專用標頭
 
-- **Sender**: A common header, but the special value `Sender: First` can be used with SEND/NOTIFY. When specified, the ghost (sakura) that starts up on the first launch is the target.<br />
-  If both Sender and User-Agent are omitted, the response is 400 Bad Request.
-- **Script**: The Sakura Script to play.<br />
-  When used together with the Event header, this is used as a fallback if the SHIORI response to the Event does not return a script.
-- **Entry**: Entry data. Passed to SHIORI.
-- **Event**: SHIORI event name. In SHIORI/3.0, this is handled as a specification of the ID header.
-- **Reference\***: Event Reference headers. SHIORI performs only minimal processing, such as character encoding conversion, and passes them through as-is.
-- **IfGhost**: Specify the ghost name in the format `\0` side name,`\1` side name to treat the immediately following Script header as exclusive to a particular ghost.<br />
-  If a Script header occurs that is not immediately after an IfGhost, it is used as the default Script for when no IfGhost matches.<br />
-  If omitted, the same Script header is played for all ghosts.<br />
-  For detailed routing rules, see [Script routing using IfGhost](method_send.md#ifghostによるスクリプト振り分け) below.
-- **Ghost**: Specify the target ghost by its name (the name in descript.txt).
-- **Option**: Specify options for how Sakura Script executed through SSTP is handled.<br />
-  Multiple options can be specified, separated by commas. In addition to common options (nodescript, notranslate, etc.), the following option flags can be used with SEND/NOTIFY.<br />
-  nobreak : Queue without interrupting the currently playing script.<br />
-  notify : Send the SHIORI event in notify mode (no response required). It is also forcibly handled as if the script had been [returned in a ValueNotify header](../shiori3/request.md). \[SSP 2.6.76\]
+- **Sender**：雖然是共通標頭，但在 SEND/NOTIFY 中可使用特殊值 `Sender: First`。指定後，會以首次啟動時的 ghost（sakura）為目標。<br />
+  Sender 和 User-Agent 兩者皆未指定時，會回應 400 Bad Request。
+- **Script**：要播放的 Sakura Script。<br />
+  與 Event 標頭併用時，若 SHIORI 對 Event 的回應沒有傳回腳本，則會使用此標頭作為後備。
+- **Entry**：項目資料。會傳遞給 SHIORI。
+- **Event**：SHIORI 事件名稱。在 SHIORI/3.0 中會作為 ID 標頭指定值處理。
+- **Reference\***：事件的 Reference 標頭。只會對 SHIORI 進行字元編碼轉換等最低限度的處理，之後原樣傳遞。
+- **IfGhost**：使用 `\0`側名,`\1`側名 的格式指定 ghost 名稱時，緊接其後的 Script 標頭會視為專供特定 ghost 使用。<br />
+  若有不在 IfGhost 後方的 Script 標頭，則該標頭會作為不符合 IfGhost 時的預設處理腳本。<br />
+  省略時，所有 ghost 都會播放相同的 Script 標頭。<br />
+  詳細分流規則請參閱後文的[使用 IfGhost 分流腳本](method_send.md#ifghostによるスクリプト振り分け)。
+- **Ghost**：以 ghost 名稱（descript.txt 的 name）指定目標 ghost。
+- **Option**：指定 SSTP 執行的 Sakura Script 如何處理。<br />
+  可用逗號分隔指定多個選項。除了共通選項（nodescript、notranslate 等）之外，SEND/NOTIFY 可使用的選項旗標如下。<br />
+  nobreak：將腳本加入佇列，不中斷目前正在播放的腳本。<br />
+  notify：以 notify 模式（不需要回應）傳送 SHIORI 事件。此外，也會強制以與[透過 ValueNotify 標頭傳回腳本時](../shiori3/request.md)相同的方式處理。 \[SSP 2.6.76\]
 
-## Response-specific headers
+## response 專用標頭
 
-- **Script**: The script that was actually played. Line breaks are removed.
-- **SHIORI custom headers**: Headers included in the SHIORI response are passed through.
+- **Script**：實際播放的腳本。會移除換行字元。
+- **SHIORI 自訂標頭**：SHIORI 回應所包含的標頭會透傳。
 
-## Script routing using IfGhost
+## 使用 IfGhost 分流腳本
 
-By specifying the IfGhost header multiple times and pairing it with the corresponding Script header, different scripts can be specified for each ghost.<br />
-IfGhost and Script are paired according to their order of appearance. A Script written before the first IfGhost becomes the default script.
+重複指定 IfGhost 標頭，並與對應的 Script 標頭組合，即可為不同 ghost 指定不同腳本。<br />
+IfGhost 和 Script 會依出現順序配對。第一個 IfGhost 之前指定的 Script 會作為預設腳本。
 
-- **Name matching**: If IfGhost is in the format "`\0` side name,`\1` side name", both names must match.<br />
-  If IfGhost contains only "`\0` side name", it is selected when the `\0` side name matches.<br />
-  If neither matches, the default script is used. However, the default script is also not used if the ghost is configured to "reject SSTP when unspecified".
-- **Treating as the default ghost**: The following names are treated as the default ghost (sakura), and their script also functions as the default script.<br />
-  "さくら", "エミリ", "えみりぃ"
+- **名稱比對**：IfGhost 的格式為「`\0`側名,`\1`側名」時，兩個名稱都必須相符。<br />
+  IfGhost 的格式只有「`\0`側名」時，只要 `\0`側名相符就會選用。<br />
+  若兩者皆不相符，則會使用預設腳本。但若 ghost 設定為「拒絕未指定的 SSTP」，也不會使用預設腳本。
+- **視為預設 ghost**：以下名稱會視為預設 ghost（sakura），其腳本也會作為預設腳本。<br />
+  「さくら」「エミリ」「えみりぃ」

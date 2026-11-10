@@ -1,9 +1,9 @@
-# name,definition name
+# name,定義名稱
 
-**カテゴリ:** surface block
+**カテゴリ:** surface 區塊
 
-The name of the surface. It is handled in the same way as surface.alias and can be used in place of an ID with the `\s[]` tag.
+surface 的名稱。其處理方式與 surface.alias 區塊相同，可在 `\s[]` 標籤中代替 ID 使用。
 
-**既定値:** undefined
+**既定値:** 未定義
 
 **対応:** SSP 2.8.24

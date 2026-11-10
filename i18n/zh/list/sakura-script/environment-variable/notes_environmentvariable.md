@@ -1,4 +1,4 @@
-# How to specify environment variables
+# 环境变量的指定方法
 
-SSP replaces environment variables when drawing to a balloon.<br />
-Items beginning with 「word-」 have multiple candidates, from which one is selected at random.
+SSP 向 balloon 绘制内容时，会替换环境变量。<br />
+以「单词-」开头的变量有多个候选项，会随机选择一个。

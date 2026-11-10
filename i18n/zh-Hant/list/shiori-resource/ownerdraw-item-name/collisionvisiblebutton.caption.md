@@ -1,7 +1,7 @@
 # collisionvisiblebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name for displaying the head/face/chest hit areas.
+顯示頭部／臉部／胸部碰撞判定的名稱。
 
 **対応:** Materia

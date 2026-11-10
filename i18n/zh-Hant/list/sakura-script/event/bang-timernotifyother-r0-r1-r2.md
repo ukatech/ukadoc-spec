@@ -1,8 +1,8 @@
 # `\![timernotifyother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-It is the same as timerraiseother, except that any value returned by this notification event is not applied to SSP.
+與 timerraiseother 相同，差異僅在於即使此通知事件傳回任何值，也不會反映至 SSP。
 
 **対応:** SSP
 

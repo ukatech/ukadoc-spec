@@ -1,7 +1,7 @@
 # name
 
-**カテゴリ:** プロパティシステム \> サウンドプロパティ名
+**カテゴリ:** 屬性系統 \> 聲音屬性名稱
 
-Target media element name. The file name/path/URL itself specified with `\![sound,play,～]`, etc.
+目標媒體的元素名稱。也就是以 `\![sound,play,～]` 等指定的檔名／路徑／URL 本身。
 
 **対応:** SSP 2.8.72

@@ -1,9 +1,9 @@
 # OnElonaOmakeMMAEventStealItem
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the PC finishes stealing an item.
+偷竊物品完成時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Name of the stolen item.
-- **Reference82**: 1 for an NPC's possession, 0 for an item on the map.
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 偷竊的物品名稱。
+- **Reference82**: NPC持有的物品為1，地圖上的物品為0。

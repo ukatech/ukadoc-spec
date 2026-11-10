@@ -1,21 +1,21 @@
 # `\![set,sticky-window,スコープID,スコープID,...]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Make the specified scope windows move together while dragging or when a move tag is executed.<br />
-For example, specifying 1,0 makes the `\0` (kero) and `\1` (sakura) windows move together when dragged with the mouse or moved by other means.
+使指定 scope 的窗口在拖动过程中或执行 move 标签时成组移动。<br />
+例如指定1,0后，执行鼠标拖动等操作时，`\0`(相方側)和`\1`(本体側)窗口会一起移动。
 
-Multiple groups can be created by executing the tag multiple times with different scope IDs.<br />
-Example: executing `\![set,sticky-window,1,0]` and `\![set,sticky-window,3,2]` groups `\1` with `\0`, and `\p[3]` with `\p[2]`.
+多次执行此标签并指定不同的 scope ID，可以建立多个组。<br />
+例如：执行`\![set,sticky-window,1,0]` `\![set,sticky-window,3,2]`后，`\1`和`\0`组成一组，`\p[3]`和`\p[2]`组成一组。
 
-There is no limit to the number of scope IDs that can be specified, but specifying **too many** will significantly slow things down, so around 2–3 is recommended.<br />
-Executing a tag that includes a scope ID already paired with another will cause an error. To change the pairings, first use the `\![reset]` tag and then try again.
+可指定的 scope ID 数量没有限制，但指定过多会**显著**降低性能，因此建议指定2～3个。<br />
+执行包含已配对 scope ID 的标签时会出错。若要更改组合，请先使用`\![reset]`标签，再重新设置。
 
-If window positions are constrained by `\![set,alignmenttodesktop]` or similar, those constraints take precedence, and only the freely movable coordinates among X and Y will follow.<br />
-Even if one window in a group is moved using the `\![move]` tag, the other windows will follow.<br />
-However, the --option=ignore-sticky-window option of the move tag allows a window to be moved independently.
+如果通过`\![set,alignmenttodesktop]`等限制了窗口位置，则优先遵循该限制，只有X、Y中可自由移动的方向会跟随。<br />
+即使通过`\![move]`标签移动组内某个窗口，其他窗口也会跟随。<br />
+但可通过 move 标签的 --option=ignore-sticky-window 单独移动窗口。
 
-Effective until the ghost ends.
+在 ghost 结束前有效。
 
 **対応:** SSP 2.3.77
 

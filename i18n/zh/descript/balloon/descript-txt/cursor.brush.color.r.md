@@ -1,8 +1,8 @@
-# cursor.brush.color.r,Number
+# cursor.brush.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Red component of the color inside the choice marker rectangle (0–255)
+选项标记矩形内部的红色(0～255)
 
 **既定値:** 0
 

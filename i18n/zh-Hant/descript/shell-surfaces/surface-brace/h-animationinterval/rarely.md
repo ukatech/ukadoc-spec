@@ -1,7 +1,7 @@
 # rarely
 
-**カテゴリ:** surface brace \> animation interval
+**カテゴリ:** surface brace \> 動畫間隔
 
-Plays with a probability of 1/4 per second while that surface is displayed.
+在該 surface 顯示期間，每秒以四分之一的機率播放。
 
 **対応:** Materia / SSP / CROW

@@ -1,9 +1,9 @@
 # OnKinokoObjectInstalled
 
-**カテゴリ:** App "Kinoko"
+**カテゴリ:** 應用程式「Kinoko」
 
-Occurs when a Kinoko skin is installed by dropping it.
+拖放安裝 Kinoko skin 時觸發。
 
-- **Reference0**: Name of the installed Kinoko skin.
-- **Reference1**: Names of the ghosts primarily targeted by the installed Kinoko skin. If there are multiple names, they are comma-separated.
-- **Reference2**: Categories of the installed Kinoko skin. If there are multiple categories, they are comma-separated.
+- **Reference0**: 已安裝的 Kinoko skin 名稱。
+- **Reference1**: 已安裝的 Kinoko skin 主要適用的 ghost 名稱。若有多個，以逗號分隔。
+- **Reference2**: 已安裝的 Kinoko skin 類別。若有多個，以逗號分隔。

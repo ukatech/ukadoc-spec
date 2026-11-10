@@ -1,9 +1,9 @@
-# communicatebox.background.color.b,numeric
+# communicatebox.background.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue background color of the input box (0–255)
+输入框背景色蓝色(0～255)
 
-**既定値:** Center color of the input box image
+**既定値:** 输入框图片的中心色
 
 **対応:** SSP 2.6.39

@@ -1,7 +1,7 @@
-# Notes
+# 補充
 
-The following includes *events issued by external parties* and *events returned by their recipients*, such as events sent via SSTP by applications outside the baseware, and events issued by ghosts or plugins to other ghosts.
+以下包含由 baseware 外部的應用程式透過 SSTP 發送的事件，以及 ghost 或 plugin 向其他 ghost 發出的事件等，也就是*發送者位於外部的事件*，以及*這些事件的接收者所回傳的事件*。
 
-This page is only unofficial documentation for the issuers of these events, so information may be inaccurate due to subsequent updates. For details, refer to each event's official documentation.
+對這些事件的發送者而言，本頁僅是非官方文件；在記載後，資訊可能因各自的更新等因素而不再準確。詳情請參閱各自的官方說明。
 
-If you know of any unlisted events, please [report them](http://ssp.shillest.net/bts/?project=misc&action=top). We will add them.
+如果您知道尚未記載的事件，請務必[回報](http://ssp.shillest.net/bts/?project=misc&action=top)。我們會將其記載於此。

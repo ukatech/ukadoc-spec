@@ -1,8 +1,8 @@
-# don't need onmousemove,Number
+# don't need onmousemove,数值
 
 **カテゴリ:** descript.txt
 
-Set to 1 to stop sending OnMouseMove.
+设为1时不再发送OnMouseMove。
 
 **既定値:** 0
 

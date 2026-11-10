@@ -1,5 +1,5 @@
 # OnBeerShower
 
-**カテゴリ:** Plugin “Virtual beer shower (BeerShower)”
+**カテゴリ:** plugin「虚拟啤酒泼洒（BeerShower）」
 
-Occurs when the plugin is run.
+plugin执行时触发。

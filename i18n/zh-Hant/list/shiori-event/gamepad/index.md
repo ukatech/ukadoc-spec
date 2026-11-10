@@ -1,4 +1,4 @@
-# Gamepad events
+# 遊戲手把事件
 
 ## 一覧
 
@@ -7,7 +7,7 @@
 - [OnGamepadAxisMove](OnGamepadAxisMove.md)
 - [OnGamepadConnected](OnGamepadConnected.md)
 - [OnGamepadDisconnected](OnGamepadDisconnected.md)
-- [Button name list](caption_gamepad_button.md)
-- [Axis name list](caption_gamepad_axis.md)
-- [About the pad index](caption_gamepad_padindex.md)
-- [XInput-specific specifications for SSP on Windows](caption_gamepad_xinput.md)
+- [按鈕名稱一覽](caption_gamepad_button.md)
+- [軸名稱一覽](caption_gamepad_axis.md)
+- [手把索引說明](caption_gamepad_padindex.md)
+- [Windows 上 SSP 的 XInput 特定規格](caption_gamepad_xinput.md)

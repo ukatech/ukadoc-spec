@@ -1,11 +1,11 @@
 # `\![raiseother,ゴースト名,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Notifies another running ghost of an event.<br />
-The fourth and subsequent arguments are references.<br />
-Setting the ghost name to “\_\_SYSTEM_ALL_GHOST\_\_” notifies all running ghosts.<br />
-Only direct ghost names can be specified; multiple names can be specified, separated by byte value 1.
+向其他正在运行的ghost发送事件通知。<br />
+第4个及之后的参数是reference。<br />
+将ghost名称设为「\_\_SYSTEM_ALL_GHOST\_\_」时，会向所有正在运行的ghost发送通知。<br />
+仅可直接指定ghost名称；可以使用字节值1作为分隔符指定多个名称。
 
 **対応:** SSP / Ninix
 

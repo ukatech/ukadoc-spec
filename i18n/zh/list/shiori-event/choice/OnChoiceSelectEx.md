@@ -1,12 +1,12 @@
 # OnChoiceSelectEx
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when a choice is selected.<br />
-Starts before OnChoiceSelect.
+选中选项时触发。<br />
+先于OnChoiceSelect开始。
 
-- **Reference0**: Choice text (label).
-- **Reference1**: Choice ID.
-- **Reference\***: Extended information (the third and subsequent arguments in the `\q` tag).
+- **Reference0**: 选项文本（标签）。
+- **Reference1**: 选项ID。
+- **Reference\***: 扩展信息（`\q`标签内从第3个起的参数）。
 
 **対応:** SSP

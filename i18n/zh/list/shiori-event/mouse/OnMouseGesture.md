@@ -1,22 +1,22 @@
 # OnMouseGesture
 
-**カテゴリ:** Mouse event
+**カテゴリ:** 鼠标事件
 
-Occurs when the mouse is right-dragged or the wheel is dragged.<br />
-Also, from SSP 2.3.53 onward, in a touch-panel environment, if SHIORI returns nothing (204 No Content is returned) for an OnMouseGesture whose Reference5 is up or down, [OnMouseWheel](OnMouseWheel.md) occurs as a fallback event. See the OnMouseWheel section for details.
+使用鼠标右键拖动或拖动滚轮时触发。<br />
+另外，从 SSP 2.3.53 起，在触摸屏环境中，如果 SHIORI 对 Reference5 为 up 或 down 的 OnMouseGesture 没有返回任何内容（返回了 204 No Content），则会触发替代事件 [OnMouseWheel](OnMouseWheel.md)。详情请参阅 OnMouseWheel 一节。
 
-- **Reference0**: 0 for the main character, 1 for the partner. SSP/CROW may also use 2 and higher.
-- **Reference1**: The xy coordinates of the mouse cursor (separated by byte value 1)
-- **Reference2**: The hit-test region identifier.
-- **Reference3**: The xy coordinates of the mouse cursor when the right-drag started (separated by byte value 1)
-- **Reference4**: The hit-test region identifier where the right-drag started.
-- **Reference5**: Gesture direction.<br />
-  left_up (upper left) up (up) right_up (upper right)<br />
-  left (left) right (right)<br />
-  left_down (lower left) down (down) right_down (lower right)<br />
-  circle.cw (clockwise) circle.ccw (counterclockwise)<br />
-  end (right button released)
-- **Reference6**: Gesture movement angle.<br />
-  Measured counterclockwise from 0 degrees to the right.
+- **Reference0**: 对于本体为 0，对于搭档为 1。SSP/CROW 中也可能为 2 或更大。
+- **Reference1**: 鼠标光标的 xy 坐标（以字节值 1 分隔）
+- **Reference2**: 命中区域的标识符。
+- **Reference3**: 开始右键拖动时鼠标光标的 xy 坐标（以字节值 1 分隔）
+- **Reference4**: 开始右键拖动时的命中区域标识符。
+- **Reference5**: 手势方向。<br />
+  left_up（左上） up（上） right_up（右上）<br />
+  left（左） right（右）<br />
+  left_down（左下） down（下） right_down（右下）<br />
+  circle.cw（顺时针） circle.ccw（逆时针）<br />
+  end（松开鼠标右键）
+- **Reference6**: 手势移动角度。<br />
+  从右侧的 0 度开始，逆时针旋转 360 度。
 
 **対応:** SSP

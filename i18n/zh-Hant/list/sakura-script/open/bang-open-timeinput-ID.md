@@ -1,14 +1,14 @@
 # `\![open,timeinput,ID,表示時間,時,分,秒,オプション]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open a time-input InputBox.<br />
-The hour, minute, and second values are the initial values, using the 24-hour clock.<br />
-The input value is placed in Reference1 of OnUserInput as comma-separated “hour,minute,second”.<br />
-Options can be specified in the form --option=○○ [※オプション](bang-close-textareabox-ID.note.md).
+開啟時間輸入 InputBox。<br />
+時、分、秒為初始值，使用 24 小時制。<br />
+輸入值會以逗號分隔的「時、分、秒」形式放入 OnUserInput 的 Reference1。<br />
+可使用 --option=○○ 的形式指定[※選項](bang-close-textareabox-ID.note.md)。
 
 <br />
-Other behavior is the same as [inputbox](bang-open-inputbox-ID.md).
+其他動作與[inputbox](bang-open-inputbox-ID.md)相同。
 
 **対応:** SSP
 

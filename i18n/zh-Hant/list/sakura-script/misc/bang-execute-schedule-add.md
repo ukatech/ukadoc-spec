@@ -1,29 +1,29 @@
 # `\![execute,schedule-add,オプション,オプション,オプション...]`
 
-**カテゴリ:** Uncategorized commands
+**カテゴリ:** 未分類コマンド
 
-Add one event to the ghost calendar. The event is displayed in the SSP calendar and, like the user's events, is included in today's schedule and in [OnSchedule5MinutesToGo](../../shiori-event/calendar/OnSchedule5MinutesToGo.md).<br />
-The ghost calendar is stored in a separate file (data/schedule/ghost/schedule.ics) from the user's events and the schedule sensor, and is shared by all ghosts. Events added by other ghosts can also be overwritten or deleted.<br />
-Users can view the events in the calendar but cannot edit them. They can delete all of them at once from the calendar menu: "Delete all" → "Events added by ghosts".<br />
-Results are reported through [OnExecuteScheduleComplete](../../shiori-event/other-communication/OnExecuteScheduleComplete.md), or [OnExecuteScheduleFailure](../../shiori-event/other-communication/OnExecuteScheduleFailure.md) on failure. This command cannot be run from scripts sent externally, such as via SSTP.
+在 ghost 專用行事曆中新增一筆行程。新增的行程會顯示在 SSP 行事曆中，並與使用者的行程一樣，列入今日行程及[OnSchedule5MinutesToGo](../../shiori-event/calendar/OnSchedule5MinutesToGo.md)的觸發對象。<br />
+ghost 專用行事曆會儲存在與使用者行程、排程感測器不同的檔案（data/schedule/ghost/schedule.ics）中，並由所有 ghost 共用。也可以覆寫或刪除其他 ghost 新增的行程。<br />
+使用者可以在行事曆中檢視，但無法編輯。可從行事曆的選單「全部刪除」→「ghost 新增的行程」一次刪除所有行程。<br />
+結果會透過[OnExecuteScheduleComplete](../../shiori-event/other-communication/OnExecuteScheduleComplete.md)通知，失敗時則透過[OnExecuteScheduleFailure](../../shiori-event/other-communication/OnExecuteScheduleFailure.md)通知。從 SSTP 等外部來源傳送的 script 無法執行此命令。
 
-Options (--summary and --start are required)<br />
---summary=title: Event title (SUMMARY).<br />
---start=date and time: Start date and time. yyyymmdd indicates an all-day event; yyyymmddThhmm or yyyymmddThhmmss indicates an event with a time (local time). The - and : separators are ignored.<br />
---end=date and time: End date and time. The format is the same as for --start. If omitted, the event lasts only for the start date.<br />
---uid=UID: Event identifier. Only single-byte alphanumeric characters and symbols, excluding spaces, are allowed. Replaces any event with the same UID. If omitted, SSP assigns one and returns it in OnExecuteScheduleComplete.<br />
---description=description: DESCRIPTION.<br />
---location=location: LOCATION.<br />
---url=URL: URL.<br />
---categories=categories: CATEGORIES. Separate multiple values with commas (they are stored as-is as the value of iCal's CATEGORIES).<br />
---status=status: STATUS (CONFIRMED / TENTATIVE / CANCELLED).<br />
---type=type: Event type. Used as Reference0 for [OnSchedule5MinutesToGo](../../shiori-event/calendar/OnSchedule5MinutesToGo.md) and other events.<br />
---rrule=rule: Recurrence rule (the value portion of RRULE; for example, FREQ=WEEKLY;BYDAY=MO).<br />
---exdate=date: Date to exclude from the recurrence (yyyymmdd). Separate multiple dates with commas.<br />
---notify=minutes: How many minutes in advance to notify. If omitted, the SSP setting is used.<br />
---script=script: Sakura Script to attach to the event. It is run when notifying the user and when reading the event.<br />
---event=event ID: If an ID beginning with On is specified, the result event name is set to that ID (on failure, the name has Failure appended to the ID).<br />
-When specifying a value that contains commas (such as --rrule, --exdate, or --categories), enclose the entire argument in " ".
+選項（--summary 與 --start 為必填）<br />
+--summary=標題 : 行程標題（SUMMARY）。<br />
+--start=日期時間 : 開始日期時間。yyyymmdd 表示全天行程；yyyymmddThhmm 或 yyyymmddThhmmss 表示包含時間的行程（本地時間）。分隔符號 - 與 : 會被忽略。<br />
+--end=日期時間 : 結束日期時間。格式與 --start 相同。省略時，行程僅持續開始日一天。<br />
+--uid=UID : 行程識別碼。只能使用不含空白的半形英數字與符號。若已有相同 UID 的行程，則會取代該行程。省略時由 SSP 指派，並透過 OnExecuteScheduleComplete 傳回。<br />
+--description=說明 : DESCRIPTION。<br />
+--location=地點 : LOCATION。<br />
+--url=URL : URL。<br />
+--categories=分類 : CATEGORIES。有多個分類時以逗號分隔（會直接以 iCal 的 CATEGORIES 值儲存）。<br />
+--status=狀態 : STATUS（CONFIRMED / TENTATIVE / CANCELLED）。<br />
+--type=種類 : 行程種類。會放入[OnSchedule5MinutesToGo](../../shiori-event/calendar/OnSchedule5MinutesToGo.md)等事件的 Reference0。<br />
+--rrule=規則 : 重複規則（RRULE 的值部分，例如 FREQ=WEEKLY;BYDAY=MO）。<br />
+--exdate=日期 : 從重複行程中排除的日期（yyyymmdd）。有多個日期時以逗號分隔。<br />
+--notify=分鐘 : 提前幾分鐘通知。省略時依 SSP 設定。<br />
+--script=script : 附加至行程的 Sakura Script。通知時或讀取行程時會執行。<br />
+--event=事件 ID : 指定以 On 開頭的 ID，結果事件名稱就會使用該 ID（失敗時則在 ID 後加上 Failure）。<br />
+指定包含逗號的值（例如 --rrule、--exdate、--categories）時，請以 " " 括住整個引數。
 
 **対応:** SSP 2.8.91
 

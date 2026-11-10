@@ -1,7 +1,7 @@
 # vanishbuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of the disappearance notice.
+消失通知的名稱。
 
 **対応:** Materia / SSP / CROW / Ninix

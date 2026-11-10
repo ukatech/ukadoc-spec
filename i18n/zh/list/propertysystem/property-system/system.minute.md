@@ -1,7 +1,7 @@
 # system.minute
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Current minute.
+当前分钟数。
 
 **対応:** SSP / CROW

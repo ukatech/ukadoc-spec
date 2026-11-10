@@ -1,7 +1,7 @@
 # yen-e
 
-**カテゴリ:** surface brace \> animation interval
+**カテゴリ:** surface brace \> 動畫間隔
 
-Runs when `\e` is encountered in Sakura Script.
+Sakura Script 出現 `\e` 時執行。
 
 **対応:** Materia / SSP / CROW

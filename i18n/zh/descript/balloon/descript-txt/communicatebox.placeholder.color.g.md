@@ -1,9 +1,9 @@
-# communicatebox.placeholder.color.g,Number
+# communicatebox.placeholder.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green component of the text color (0–255) for the hint text displayed dimly when the input box is empty ([--placeholder=](../../../list/sakura-script/open/bang-close-textareabox-ID.note.md))
+输入框为空时以浅色显示的提示文本([--placeholder=](../../../list/sakura-script/open/bang-close-textareabox-ID.note.md))的文字绿色(0～255)
 
-**既定値:** A color shifted toward the text color's background color and with its saturation further reduced
+**既定値:** 将文字颜色向背景色靠拢，并进一步降低饱和度后的颜色
 
 **対応:** SSP 2.9.10

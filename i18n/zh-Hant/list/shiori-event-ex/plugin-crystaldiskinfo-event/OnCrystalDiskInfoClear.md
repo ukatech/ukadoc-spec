@@ -1,6 +1,6 @@
 # OnCrystalDiskInfoClear
 
-**カテゴリ:** Plugin "CrystalDiskInfo Event PLUGIN"
+**カテゴリ:** plugin「CrystalDiskInfo Event PLUGIN」
 
-Triggered when previously available information disappears.<br />
-For example, when CrystalDiskInfo is closed.
+原本有資訊，但資訊消失時發生。<br />
+例如 CrystalDiskInfo 結束時。

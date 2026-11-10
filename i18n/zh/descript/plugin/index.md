@@ -1,6 +1,6 @@
-# Plugin settings
+# Plugin设置
 
-For the overall plugin specification, see [PLUGIN/2.0](../../spec/plugin.md).
+plugin整体规范请参阅[PLUGIN/2.0](../../spec/plugin.md)。
 
 ## 一覧
 

@@ -1,9 +1,9 @@
 # installedshellname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed shells.*\[NOTIFY\]*
+通知已安装的 shell。*\[NOTIFY\]*
 
-- **Reference\***: Installed shell name.
+- **Reference\***: 已安装的 shell 名称。
 
 **対応:** SSP / CROW / Ninix

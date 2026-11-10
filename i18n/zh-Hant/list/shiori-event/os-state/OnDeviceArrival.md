@@ -1,9 +1,9 @@
 # OnDeviceArrival
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when a device is detected.
+偵測到裝置時觸發。
 
-- **Reference\***: Type, name, manufacturer name, and device file name are returned separated by byte value 1.
+- **Reference\***: 類型、名稱、製造商名稱及裝置檔案名稱以位元組值1分隔後傳回。
 
 **対応:** SSP

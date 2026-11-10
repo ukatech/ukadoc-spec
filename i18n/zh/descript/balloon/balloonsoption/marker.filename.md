@@ -1,9 +1,9 @@
-# marker.filename,Filename
+# marker.filename,文件名
 
-**カテゴリ:** balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt (individual setting)
+**カテゴリ:** balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt（单独指定）
 
-Specifies the image filename displayed by the `\![*]` tag. The extension is not needed.
+指定通过 `\![*]` 标签显示的图像文件名。无需指定扩展名。
 
-**既定値:** marker / individual: markers,markerk,markerp\*def
+**既定値:** marker / 单独指定：markers,markerk,markerp\*def
 
 **対応:** SSP 2.5.51

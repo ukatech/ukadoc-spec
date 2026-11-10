@@ -1,7 +1,7 @@
 # systeminfobutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for submitting system information.
+提交系统信息的名称。
 
 **対応:** SSP

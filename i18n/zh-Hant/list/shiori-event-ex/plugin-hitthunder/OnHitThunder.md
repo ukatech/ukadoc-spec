@@ -1,5 +1,5 @@
 # OnHitThunder
 
-**カテゴリ:** Plugin "Materialization (HitThunder)"
+**カテゴリ:** plugin「實體化（HitThunder）」
 
-Triggered when the plugin is executed.
+plugin 執行時發生。

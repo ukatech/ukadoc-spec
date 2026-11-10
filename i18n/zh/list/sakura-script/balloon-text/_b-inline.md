@@ -1,10 +1,10 @@
-# `\_b[file path,inline]`
+# `\_b[文件路径,inline]`
 
-**カテゴリ:** Balloon, text commands
+**カテゴリ:** 气球、文本命令
 
-Embeds an image within a line of balloon text, treating it as one character.<br />
-The base folder is \[the folder of the running ghost\]/ghost/master.<br />
-※Instead of a file name, an image can be specified using base64 encoding or an exe/dll resource; [see below](note-1.md#補足).
+将图像插入气球的文本行内，并按一个字符处理。<br />
+\[已执行的 ghost 的文件夹\]/ghost/master 是基准文件夹。<br />
+※可以使用 base64 编码或 exe/dll 资源代替文件名来指定图像，[※参见下文](note-1.md#補足)。
 
 **対応:** SSP / Ninix
 

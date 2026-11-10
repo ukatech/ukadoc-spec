@@ -1,9 +1,9 @@
 # ghostpathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the ghost storage folder (the ghost setting under SSP's main settings-\>Folders).*\[NOTIFY\]*
+通知ghost存放文件夹（SSP的本体设置-\>文件夹　中的ghost设置）的路径。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the ghost storage folder
+- **Reference\***: ghost存放文件夹的绝对路径
 
 **対応:** SSP

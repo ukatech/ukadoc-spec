@@ -1,7 +1,7 @@
-# ghostlist.index(ID).general property name
+# ghostlist.index(ID).通用属性名
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Retrieve information from the ghost at position ID in the list.
+从列表中ID位置的ghost获取信息。
 
 **対応:** SSP / CROW

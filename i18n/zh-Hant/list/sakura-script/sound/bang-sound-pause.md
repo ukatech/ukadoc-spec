@@ -1,8 +1,8 @@
 # `\![sound,pause,ファイル名]`
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Pause playback. If the filename is omitted, all currently playing sounds are paused.
+暫停播放。若省略檔名，則會暫停所有正在播放的音效。
 
 **対応:** SSP / Ninix
 

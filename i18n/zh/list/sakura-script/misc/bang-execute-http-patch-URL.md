@@ -1,7 +1,7 @@
 # `\![execute,http-patch,URL,オプション,オプション,オプション...]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分类命令
 
-Perform an http patch request with [※options](bang-execute-http-options-URL.note.md).
+执行带有[※选项](bang-execute-http-options-URL.note.md)的http patch请求。
 
 **対応:** SSP 2.7.34

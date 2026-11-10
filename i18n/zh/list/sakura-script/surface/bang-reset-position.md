@@ -1,7 +1,7 @@
 # `\![reset,position]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Cancel the above.
+解除上述设置。
 
 **対応:** CROW

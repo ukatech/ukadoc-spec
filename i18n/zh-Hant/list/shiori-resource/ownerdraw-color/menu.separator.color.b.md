@@ -1,7 +1,7 @@
 # menu.separator.color.b
 
-**カテゴリ:** Owner-draw menu text color
+**カテゴリ:** owner draw 選單文字顏色
 
-Separator color, blue (0–255)
+分隔線顏色的藍色值（0～255）
 
 **対応:** Materia / SSP / CROW

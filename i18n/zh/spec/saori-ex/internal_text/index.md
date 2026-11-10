@@ -1,6 +1,6 @@
 # internal_text
 
-String processing.
+字符串处理。
 
 ## 一覧
 

@@ -1,7 +1,7 @@
 # hidebutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name of the minimize-to-icon item.
+最小化為圖示的名稱。
 
 **対応:** Materia / SSP / CROW

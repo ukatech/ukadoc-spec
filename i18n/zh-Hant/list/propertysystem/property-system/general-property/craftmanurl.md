@@ -1,7 +1,7 @@
 # craftmanurl
 
-**カテゴリ:** Property System \> General property names
+**カテゴリ:** 屬性系統 \> 一般屬性名稱
 
-The URL where the target is distributed.
+目標的散布網址。
 
 **対応:** SSP

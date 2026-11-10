@@ -1,7 +1,7 @@
 # dictationbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name for speech recognition.
+語音辨識的名稱。
 
 **対応:** SSP

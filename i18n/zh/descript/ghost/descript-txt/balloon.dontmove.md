@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-Turn off the default setting for balloon position adjustment.
+将balloon位置调整的默认设置设为OFF。
 
 **既定値:** false
 

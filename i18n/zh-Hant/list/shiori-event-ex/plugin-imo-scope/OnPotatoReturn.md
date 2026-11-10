@@ -1,8 +1,8 @@
 # OnPotatoReturn
 
-**カテゴリ:** Plugin "Potato Scope"
+**カテゴリ:** plugin「芋頭 scope」
 
-Triggered if the folder specified is valid and the save file is found successfully.
+資料夾指定正確，且順利找到存檔時發生。
 
-- **Reference0**: The requested variable names joined with commas (&lt;variable1\>,&lt;variable2\>...)
-- **Reference\***: The values of each variable, starting from 1
+- **Reference0**: 以逗號連接要求的變數名稱（&lt;變數1\>,&lt;變數2\>...）
+- **Reference\***: 從 1 開始依序為各變數的值

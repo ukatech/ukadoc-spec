@@ -1,8 +1,8 @@
-# menu.frame.color.b,Numeric value
+# menu.frame.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Frame color blue (0–255)
+边框蓝色(0～255)
 
 **既定値:** 0
 

@@ -1,13 +1,13 @@
-# `\![set,alpha,数値,オプション]`
+# `\![set,alpha,數値,オプション]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Change the opacity of the current scope's surface to a value from 0 to 100. 0 is fully transparent; 100 is opaque. Values above 100 are clamped to 100. A negative value only redraws the surface without changing the value.<br />
-Options can specify the animation duration and whether to wait for it to finish.<br />
-Valid until the ghost ends.
+將目前 scope 的 surface 透明度變更為 0～100。0 為完全透明，100 為不透明。超過 100 的值會限制為 100。負值只會重新繪製，不會變更數值。<br />
+可透過選項指定動畫時間，或等待動畫完成。<br />
+持續有效，直到 ghost 結束。
 
-- --time=milliseconds……Animation duration in milliseconds. If omitted or negative, the value is 0 (applied immediately). Can also be specified as a positional parameter (for backward compatibility).
-- --wait……Wait for the animation to finish before continuing script execution. If omitted, execution is asynchronous (the next operation begins immediately). SSP 2.7.52 and later.
+- --time=毫秒……動畫時間（毫秒）。省略時或指定負值時為 0（立即套用）。也可作為位置參數指定（為了向下相容）。
+- --wait……等待指令執行至動畫完成。省略時為非同步（立即進入下一個處理）。適用於 SSP 2.7.52 及更新版本。
 
 **対応:** SSP
 

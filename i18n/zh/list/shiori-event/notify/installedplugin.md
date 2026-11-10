@@ -1,9 +1,9 @@
 # installedplugin
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed plugins.*\[NOTIFY\]*
+通知已安装的 plugin。*\[NOTIFY\]*
 
-- **Reference\***: Installed plugin name and plugin ID, separated by one byte value
+- **Reference\***: 以字节值 1 分隔的已安装 plugin 名称、plugin ID
 
 **対応:** SSP

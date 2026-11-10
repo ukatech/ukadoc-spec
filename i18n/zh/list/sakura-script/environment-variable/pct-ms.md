@@ -1,7 +1,7 @@
 # %ms
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—person.
+单词-人物。
 
 **対応:** Materia / SSP / CROW / Ninix

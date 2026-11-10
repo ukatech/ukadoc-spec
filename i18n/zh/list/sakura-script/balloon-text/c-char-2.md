@@ -1,8 +1,8 @@
-# `\c[char,数値,開始位置]`
+# `\c[char,数值,起始位置]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Clears the specified number of characters starting at the specified position in the current scope. The starting position is zero-based (the 1st character is 0, the 2nd is 1). The characters cleared are determined in the same way as with `\c[char,数値]`.
+从当前 scope 一侧的指定位置开始，清除指定字符数。起始位置从 0 开始计数（第 1 个字符为 0，第 2 个字符为 1）。清除字符的判定方式与`\c[char,数值]`相同。
 
 **対応:** SSP
 

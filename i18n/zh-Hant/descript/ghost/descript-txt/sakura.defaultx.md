@@ -1,12 +1,12 @@
-# sakura.defaultx,X coordinate
+# sakura.defaultx,X 座標
 
 **カテゴリ:** descript.txt
 
-The default X coordinate for the main character (`\0`). The surface reference point (usually the bottom center of the surface) is placed at this position.\[2.9.13\]<br />
-The value format and meaning (unit, coordinate system, negative values, handling of --, and conditions under which the value becomes invalid) are the same as for the SHIORI resource [sakura.defaultx](../../../list/shiori-resource/ghost/sakura.defaultx.md).<br />
-The priority order is SHIORI resource > [shell-side descript.txt](../../shell/descript-txt/sakura.defaultx.md) > ghost-side descript.txt.<br />
-If [sakura.defaultleft](sakura.defaultleft.md) is also specified in the same descript.txt, this value (defaultx) takes precedence.
+本體側(`\0`)預設位置的 X 座標。將 surface 的基準點(通常是 surface 的中央下方)放在此位置。\[2.9.13\]<br />
+值的格式與意義(單位、座標系、負值、--的處理方式、無效的條件)與 SHIORI 資源的[sakura.defaultx](../../../list/shiori-resource/ghost/sakura.defaultx.md)相同。<br />
+優先順序為 SHIORI 資源＞[shell 側的descript.txt](../../shell/descript-txt/sakura.defaultx.md)＞ghost 側的descript.txt。<br />
+同一個 descript.txt 也有記載[sakura.defaultleft](sakura.defaultleft.md)時，則以此項目(defaultx)為優先。
 
-**既定値:** No value (the main character is placed at the bottom right of the primary monitor's work area)
+**既定値:** 無值(本體側會放在主要螢幕工作區的右下角)
 
 **対応:** SSP

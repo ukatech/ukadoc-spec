@@ -1,13 +1,13 @@
 # `\![change,balloon,バルーン名]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Switches to the specified balloon.<br />
-If the specified balloon does not exist, this command is ignored.<br />
-After the change, the SHIORI event [OnBalloonChange](../../shiori-event/boot-close-change/OnBalloonChange.md) is notified.
+切换到指定的 balloon。<br />
+如果没有对应的 balloon，则忽略此命令。<br />
+切换后会通知 SHIORI 事件[OnBalloonChange](../../shiori-event/boot-close-change/OnBalloonChange.md)。
 
-Setting the balloon name to lastinstalled switches to the last balloon installed. However, this is unavailable after SSP has been exited once.<br />
-Setting the balloon name to random switches to a randomly selected balloon.
+将 balloon 名称设为 lastinstalled 时，会切换到最后安装的 balloon。但如果 SSP 曾经退出，则此功能无效。<br />
+将 balloon 名称设为 random 时，会随机切换。
 
 **対応:** SSP / Ninix
 

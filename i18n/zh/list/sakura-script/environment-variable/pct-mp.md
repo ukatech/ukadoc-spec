@@ -1,7 +1,7 @@
 # %mp
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—place name.
+单词-地名。
 
 **対応:** Materia / SSP / CROW / Ninix

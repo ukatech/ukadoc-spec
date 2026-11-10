@@ -1,7 +1,7 @@
 # `\![execute,emptyrecyclebin]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Empties the Recycle Bin. It is not emptied immediately after execution; [OnRecycleBinEmpty](../../shiori-event/os-state/OnRecycleBinEmpty.md) is notified when deletion is complete.
+清空資源回收筒。執行後不會立即清空，刪除處理完成時會通知[OnRecycleBinEmpty](../../shiori-event/os-state/OnRecycleBinEmpty.md)。
 
 **対応:** SSP 2.6.04

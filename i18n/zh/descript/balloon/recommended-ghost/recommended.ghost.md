@@ -1,9 +1,9 @@
-# recommended.ghost,Ghost name
+# recommended.ghost,ゴースト名
 
-**カテゴリ:** descript.txt - Recommended ghost
+**カテゴリ:** descript.txt - 推荐ghost
 
-Recommended ghost name. A strong warning is displayed if an attempt is made to use a different ghost.
+推荐使用的ghost名称。尝试使用其他名称时，会显示内容强烈的警告。
 
-**既定値:** Not specified
+**既定値:** 未指定
 
 **対応:** SSP 2.4

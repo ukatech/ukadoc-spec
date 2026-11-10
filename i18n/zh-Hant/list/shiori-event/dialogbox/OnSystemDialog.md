@@ -1,11 +1,11 @@
 # OnSystemDialog
 
-**カテゴリ:** Dialog box events
+**カテゴリ:** 對話方塊事件
 
-Occurs when Save/OK is clicked in a file-related dialog.
+在檔案相關對話方塊中按下儲存／確定時觸發。
 
-- **Reference0**: One of open, save, folder, or color.
-- **Reference1**: Event ID.
-- **Reference2**: File path or comma-separated RGB values.
+- **Reference0**: open、save、folder、color 其中之一。
+- **Reference1**: 事件 ID。
+- **Reference2**: 檔案路徑或以逗號分隔的 RGB 值。
 
 **対応:** SSP

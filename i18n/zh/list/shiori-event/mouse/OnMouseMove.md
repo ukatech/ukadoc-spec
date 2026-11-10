@@ -1,15 +1,15 @@
 # OnMouseMove
 
-**カテゴリ:** Mouse event
+**カテゴリ:** 鼠标事件
 
-Occurs when the mouse moves.
+鼠标移动时触发。
 
-- **Reference0**: Mouse cursor x-coordinate (local coordinates)
-- **Reference1**: Mouse cursor y-coordinate (local coordinates)
-- **Reference2**: Mouse wheel rotation amount and direction.
-- **Reference3**: 0 for the main character, 1 for the partner. SSP/CROW may also use 2 and higher.
-- **Reference4**: Hit-test region identifier.
-- **Reference5**: ※ SSP/NINIX only: always 0.
-- **Reference6**: ※ SSP only: for input from a touch panel in a multitouch-capable environment (※ touchpads are not supported), touch; from a pen tablet, pen; from the eraser end of a pen tablet, eraser; and from a mouse or similar device, mouse
+- **Reference0**: 鼠标光标的 x 坐标（局部坐标）
+- **Reference1**: 鼠标光标的 y 坐标（局部坐标）
+- **Reference2**: 鼠标滚轮的旋转量和旋转方向。
+- **Reference3**: 对于本体为 0，对于搭档为 1。SSP/CROW 中也可能为 2 或更大。
+- **Reference4**: 命中区域的标识符。
+- **Reference5**: ※仅限 SSP/NINIX　始终为 0。
+- **Reference6**: ※仅限 SSP　来自支持多点触控环境的触摸屏（※不包括触摸板）的输入为 touch，来自数位板的输入为 pen，来自数位板橡皮擦端的输入为 eraser，来自鼠标等设备的输入为 mouse
 
 **対応:** Materia / SSP / CROW / Ninix

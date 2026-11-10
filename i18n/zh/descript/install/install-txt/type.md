@@ -1,23 +1,23 @@
-# type,Type
+# type,类型
 
 **カテゴリ:** install.txt
 
-The type of archive contents. The types are as follows.
+归档内容的类型。类型如下。
 
 - **ghost**: ghost
-- **shell**: Additional shell for a ghost
-- **supplement**: Additional files for a ghost
+- **shell**: ghost 的附加 shell
+- **supplement**: ghost 的附加文件
 - **balloon**: balloon
 - **plugin**: plugin
 - **headline**: headline sensor
-- **language**: (SSP only) language pack
-- **calendar skin**: (SSP only) calendar appearance file
-- **calendar plugin**: (SSP only) calendar schedule sensor
-- **package**: (SSP only) package for multiple installations
+- **language**: （仅 SSP）语言包
+- **calendar skin**: （仅 SSP）日历外观文件
+- **calendar plugin**: （仅 SSP）日历日程传感器
+- **package**: （仅 SSP）用于多个安装的包
 
-\[Legacy specification\](SSPのみ) Writing only calendar is treated the same as calendar skin.<br />
-This is for compatibility with the era when calendar plugin did not exist, and must not be written now.
+\[旧规范\](SSPのみ) 只填写 calendar 时，会按与 calendar skin 相同的方式处理。<br />
+这是为兼容没有 calendar plugin 的时期而保留的用途，现在不得填写。
 
-**既定値:** Cannot be omitted
+**既定値:** 不可省略
 
 **対応:** Materia / SSP / CROW

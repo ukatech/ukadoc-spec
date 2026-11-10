@@ -1,9 +1,9 @@
-# mousecursor.text,filename
+# mousecursor.text,文件名
 
 **カテゴリ:** descript.txt
 
-Cursor (I-beam) used in input boxes.
+用于输入框的光标（I-BEAM）。
 
-**既定値:** Cursor specified by the ghost → cursor set in the OS (I-beam)
+**既定値:** 使用 ghost 指定的光标→使用 OS 设置的光标（I 型）
 
 **対応:** SSP 2.5.40

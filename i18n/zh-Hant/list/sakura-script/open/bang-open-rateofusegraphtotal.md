@@ -1,7 +1,7 @@
 # `\![open,rateofusegraphtotal]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Display combined ghost usage rates. Currently unsupported by baseware other than Materia (works the same as running rateofusegraph).
+顯示 ghost 使用率（合計）。目前除 Materia 以外皆不支援（效果與執行 rateofusegraph 相同）。
 
 **対応:** Materia

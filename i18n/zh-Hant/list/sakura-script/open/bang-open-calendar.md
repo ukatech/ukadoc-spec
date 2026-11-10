@@ -1,8 +1,8 @@
 # `\![open,calendar]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the calendar.
+開啟行事曆。
 
 **対応:** SSP
 

@@ -1,8 +1,8 @@
-# cursor.notselect.pen.color.r,numeric value
+# cursor.notselect.pen.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Border and underline color red for unselected options (0–255)
+未选中选项的矩形框及下划线颜色红色(0～255)
 
 **既定値:** cursor.notselect.font.color.r
 

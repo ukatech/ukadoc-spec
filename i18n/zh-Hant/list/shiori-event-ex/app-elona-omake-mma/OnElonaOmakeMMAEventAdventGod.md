@@ -1,8 +1,8 @@
 # OnElonaOmakeMMAEventAdventGod
 
-**カテゴリ:** Application "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when a god descends.
+神降臨時發生。
 
-- **Reference\***: Reference0–80: [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: God's name.
+- **Reference\***: Reference0～80 為止，請參閱[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 神的名稱。

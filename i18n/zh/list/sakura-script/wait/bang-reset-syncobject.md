@@ -1,9 +1,9 @@
 # `\![reset,syncobject,同期オブジェクト名]`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Set the specified named synchronization object to the non-signaled state (deactivate it).<br />
-For an Event, ResetEvent sets it to the non-signaled state; for a WaitableTimer, CancelWaitableTimer does so.<br />
-Reset has no effect on a Semaphore or Mutex and is ignored.
+将指定名称的同步对象设为非信号状态（停用）。<br />
+Event 使用 ResetEvent，WaitableTimer 使用 CancelWaitableTimer 设为非信号状态。<br />
+对 Semaphore 和 Mutex 执行 reset 没有意义，因此会被忽略。
 
 **対応:** SSP 2.8.28

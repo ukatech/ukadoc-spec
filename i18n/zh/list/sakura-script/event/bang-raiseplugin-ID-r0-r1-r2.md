@@ -1,10 +1,10 @@
 # `\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Sends the specified event to a plugin.<br />
-Setting the plugin name to random selects one at random.<br />
-Setting it to lastinstalled starts the last plugin installed.
+向插件发送指定的事件。<br />
+将插件名称设为random时，会随机选择插件。<br />
+设为lastinstalled时，会启动最后安装的插件。
 
 **対応:** SSP
 

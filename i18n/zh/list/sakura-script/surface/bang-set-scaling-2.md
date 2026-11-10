@@ -1,12 +1,12 @@
 # `\![set,scaling,横倍率,縦倍率]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Change the surface scale separately for the vertical and horizontal axes. Unit: %.<br />
-The scale is relative to the user-configured scale, which is treated as 100%.<br />
-Negative values are allowed; -100 flips the surface along that axis.
+分别调整 surface 的纵向和横向缩放倍率。单位为%。<br />
+以用户设置的缩放倍率为100％计算。<br />
+可以指定负数，-100会沿对应轴方向翻转。
 
-Effective until the ghost ends.
+在 ghost 结束前有效。
 
 **対応:** SSP
 

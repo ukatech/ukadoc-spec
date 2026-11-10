@@ -1,8 +1,8 @@
-# don't need bind,Number
+# don't need bind,数值
 
 **カテゴリ:** descript.txt
 
-Set to 1 to disable dressup.
+设为1时禁用dressup。
 
 **既定値:** 0
 

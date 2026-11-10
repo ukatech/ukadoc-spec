@@ -1,8 +1,8 @@
 # `\w時間`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Wait for x × 50 ms. The value can be set from 1 to 9. With `\w10`, the character "0" is displayed in the balloon after a 50 ms wait.
+等待 x×50ms。可设置的值为 1-9。`\w10` 会等待 50ms，随后在 balloon 中显示字符「0」。
 
 **対応:** Materia / SSP / CROW / Ninix
 

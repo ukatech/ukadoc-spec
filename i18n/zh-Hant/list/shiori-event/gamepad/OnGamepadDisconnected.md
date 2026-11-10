@@ -1,10 +1,10 @@
 # OnGamepadDisconnected
 
-**カテゴリ:** Gamepad event
+**カテゴリ:** 遊戲手把事件
 
-Occurs when a gamepad is disconnected.<br />
-The event is broadcast simultaneously to all running ghosts.
+遊戲手把中斷連線時觸發。<br />
+此事件會同時廣播給所有正在執行的 ghost。
 
-- **Reference0**: [Pad index](caption_gamepad_padindex.md)。
+- **Reference0**: [手把索引](caption_gamepad_padindex.md)。
 
 **対応:** SSP 2.7.54

@@ -1,7 +1,7 @@
-# ghostlist(ghost name/main character name/path).general property name
+# ghostlist(ghost名/主程序侧名/路径).通用属性名
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Retrieve information for that ghost using its ghost name (name), main character name (sakuraname), or path.
+根据该ghost的ghost名（name）、主程序侧名（sakuraname）或路径获取信息。
 
 **対応:** SSP / CROW

@@ -1,9 +1,9 @@
 # OnElinPCDead
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 应用程序“Elin”
 
-Occurs when the PC dies.
+PC 死亡时触发
 
-- **Reference0**: PC name
-- **Reference1**: Cause of death
-- **Reference2**: (If present) name of the NPC that killed the PC
+- **Reference0**: PC 名称
+- **Reference1**: 死因
+- **Reference2**: （如果存在）杀死 PC 的 NPC 名称

@@ -1,9 +1,9 @@
 # `\_s`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Synchronize section.<br />
-Display messages in both balloons until the next `\_s` or `\e`.
+同步区段。<br />
+直到下一个 `\_s` 或 `\e` 为止，消息会显示在两个 balloon 中。
 
 **対応:** Materia / SSP / CROW / Ninix
 

@@ -1,9 +1,9 @@
-# sstpmarker.x,coordinate [\*1](../index.md#balloon設定)
+# sstpmarker.x,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-X coordinate of the SSTP marker.
+SSTP 标记的 X 坐标。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

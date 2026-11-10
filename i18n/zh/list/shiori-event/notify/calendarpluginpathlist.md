@@ -1,9 +1,9 @@
 # calendarpluginpathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the calendar schedule sensor storage folder.*\[NOTIFY\]*
+通知日历日程传感器存放文件夹的路径。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the calendar schedule sensor storage folder
+- **Reference\***: 日历日程传感器存放文件夹的绝对路径
 
 **対応:** SSP

@@ -1,7 +1,7 @@
 # history.plugin.count
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Number of recently used plugins.
+最近使用項目的 plugin 數量。
 
 **対応:** SSP

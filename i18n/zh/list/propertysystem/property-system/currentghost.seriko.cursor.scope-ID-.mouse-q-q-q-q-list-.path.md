@@ -1,12 +1,12 @@
-# currentghost.seriko.cursor.scope(ID).mouse????list(hit-test name).path
+# currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The cursor file name for the specified hit-test name (relative path: searched in the shell, then the ghost folder).<br />
-The following values can be specified for mouse????list: mouseuplist・mousedownlist・mousehoverlist・mousewheellist<br />
-If SET to an empty string, the definition is treated as deleted, and the shell's default cursor can be displayed again.<br />
-The cursor can be specified in the same way as in the [cursor section of surfaces.txt](../../../descript/shell-surfaces/cursor-brace/introduction_cursorbrace.md).<br />
-*\[SET enabled\]*
+指定的命中区域所对应的光标文件名（相对路径：依次在 shell 和 ghost 文件夹内查找）<br />
+mouse????list可指定以下值：mouseuplist・mousedownlist・mousehoverlist・mousewheellist<br />
+将空字符串设为SET值时，会视为删除定义，并恢复显示 shell 的默认光标。<br />
+可以使用与[surfaces.txt的cursor区段](../../../descript/shell-surfaces/cursor-brace/introduction_cursorbrace.md)相同的指定方式。<br />
+*\[SET有效\]*
 
 **対応:** SSP (2.3.83)
 

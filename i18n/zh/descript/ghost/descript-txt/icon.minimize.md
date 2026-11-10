@@ -1,8 +1,8 @@
-# icon.minimize,File name
+# icon.minimize,文件名
 
 **カテゴリ:** descript.txt
 
-Icon displayed when the ghost is minimized.
+该ghost最小化时使用的图标。
 
 **既定値:** icon
 

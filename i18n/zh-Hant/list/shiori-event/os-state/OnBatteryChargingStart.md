@@ -1,10 +1,10 @@
 # OnBatteryChargingStart
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when battery charging starts.<br />
-A compatibility event for “[Ukagaka for Android](http://tatadenden.blog23.fc2.com/) ([archive](https://web.archive.org/web/20240106101741/http://tatadenden.blog23.fc2.com/))”.
+電池開始充電時觸發。<br />
+相容於「[Android 伺か](http://tatadenden.blog23.fc2.com/)（[封存頁面](https://web.archive.org/web/20240106101741/http://tatadenden.blog23.fc2.com/)）」的事件。
 
-- **Reference0～**: Same as OnBatteryNotify.
+- **Reference0～**: 與 OnBatteryNotify 相同。
 
 **対応:** SSP

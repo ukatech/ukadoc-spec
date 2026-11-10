@@ -1,7 +1,7 @@
-# `\!`\[sound,option,file name,[option](bang-sound-option.note.md)...\]
+# `\!`\[sound,option,ファイル名,[オプション](bang-sound-option.note.md)...\]
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Change the [option](bang-sound-option.note.md) during playback.
+變更播放期間的[選項](bang-sound-option.note.md)。
 
 **対応:** SSP 2.4

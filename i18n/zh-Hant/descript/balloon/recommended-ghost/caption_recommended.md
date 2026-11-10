@@ -1,4 +1,4 @@
-# Meaning of “recommended”
+# 建議使用的意義
 
-When writing the definition above, it indicates that the specified balloon is *extremely specialized* for a particular ghost in terms of its shape, images, and other aspects, to the extent that users may be asked whether to delete it when uninstalling that ghost.<br />
-In other words, it is strongly recommended that you do not specify this if the design has even a slight chance of being used with other ghosts.
+撰寫上述定義時，表示指定的 balloon 在形狀、影像等方面是為特定 ghost *高度專用*而製作，甚至在解除安裝特定 ghost 時，會詢問是否一併刪除。<br />
+換句話說，若設計上仍有可能用於其他 ghost，即強烈建議不要指定。

@@ -1,7 +1,7 @@
 # sakura.popupmenu.visible
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-Displays the main character's owner-draw menu. 1 to display, 0 to hide. The menu is displayed if there is no response.
+設定本體側 owner draw 選單的顯示狀態。1 為顯示，0 為隱藏。若沒有回應，則顯示。
 
 **対応:** SSP / Ninix

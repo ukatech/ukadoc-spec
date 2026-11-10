@@ -1,9 +1,9 @@
 # OnChoiceTimeout
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when the choice timeout expires.
+选项等待时间超时时触发。
 
-- **Reference0**: Timed-out script.
+- **Reference0**: 超时的脚本。
 
 **対応:** Materia / SSP / CROW / Ninix

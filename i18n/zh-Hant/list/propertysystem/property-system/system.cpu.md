@@ -1,14 +1,14 @@
-# system.cpu.(key)
+# system.cpu.(キー)
 
-**カテゴリ:** プロパティシステム
+**カテゴリ:** 屬性系統
 
-Information about the CPU of the running environment. The strings that can be used for (key) are as follows.
+執行中環境的 CPU 資訊。可填入 (キー) 的字串如下。
 
-- **load**: Load percentage (unit: %, integer; smoothed by calculating a moving average over an interval of approximately one minute, as appropriate)
-- **num**: Total number of cores recognized by the OS
-- **vendor**: Vendor name. Example: GenuineIntel
-- **name**: Name. Example: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-- **clock**: Clock frequency
-- **features**: List of interpretable extended instructions (separated by half-width spaces). Example: MMX SSE SSE2 SSE3
+- **load**: 負載率（單位為％，整數，會適時以約每分鐘為單位計算移動平均並加以平滑）
+- **num**: OS 識別的核心總數
+- **vendor**: 廠商名稱。例如：GenuineIntel
+- **name**: 名稱。例如：11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+- **clock**: 時脈頻率
+- **features**: 可解讀的擴充指令清單（以半形空白分隔）。例如：MMX SSE SSE2 SSE3
 
 **対応:** SSP 2.6.26

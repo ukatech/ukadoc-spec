@@ -1,5 +1,5 @@
 # OnPotatoError
 
-**カテゴリ:** Plugin "Potato Scope"
+**カテゴリ:** plugin「芋頭 scope」
 
-Triggered if the folder specified is incorrect or the SHIORI is not supported.
+資料夾指定錯誤，或 SHIORI 不支援此操作時發生。

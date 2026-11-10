@@ -1,8 +1,8 @@
 # `\![close,dialog,ID]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Close the dialog with the specified event ID. To close all dialogs, specify \_\_SYSTEM_ALL_DIALOG\_\_.
+關閉指定事件 ID 的對話方塊。若要關閉全部，請指定 \_\_SYSTEM_ALL_DIALOG\_\_。
 
 **対応:** SSP
 

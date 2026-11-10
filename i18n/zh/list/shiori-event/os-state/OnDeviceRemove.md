@@ -1,9 +1,9 @@
 # OnDeviceRemove
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Occurs when a device is removed.
+设备被移除时触发。
 
-- **Reference\***: The type, name, manufacturer name, and device file name are returned, separated by byte value 1.
+- **Reference\***: 类型、名称、制造商名称、设备文件名以字节值1分隔后返回。
 
 **対応:** SSP

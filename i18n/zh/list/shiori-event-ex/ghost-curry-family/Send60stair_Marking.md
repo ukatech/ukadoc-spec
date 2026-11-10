@@ -1,7 +1,7 @@
 # Send60stair_Marking
 
-**カテゴリ:** Ghost "Curry Family/Saki and Ukon"
+**カテゴリ:** ghost「咖喱家族／沙纪与右近」
 
-Occurs when a ghost marks a position during a game played by Curry Family/Saki and Ukon.
+咖喱家族／沙纪与右近进行的游戏中，标记位置时发生。
 
-- **Reference0**: Marked position.
+- **Reference0**: 标记位置。

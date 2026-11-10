@@ -1,23 +1,23 @@
 # OnHandActivate
 
-**カテゴリ:** Ghost “The Hand”
+**カテゴリ:** ghost「The Hand」
 
-Occurs when The Hand starts or finishes touching another ghost.<br />
-While touching, it sends the (OnMouseMove|OnMouseDoubleClick|OnMouseWheel) event to the ghost with Sender:The Hand.
+The Hand前往觸碰其他ghost或完成觸碰時會發生。<br />
+觸碰期間會以Sender:The Hand為寄件者，向ghost傳送(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)事件。
 
-- **Reference0**: Normal touch start: NormalStart<br />
-  Normal touch end: NormalEnd<br />
-  Special move start: SuperStart<br />
-  Special move in progress: SuperContinue<br />
-  Special move end: SuperEnd<br />
-  Homing activated during special move: SuperHoming
-- **Reference1**: Collision region name.<br />
-  If interrupted, escaped.<br />
-  For a special move, 1–4.
-- **Reference2**: Event triggered for the other party.<br />
-  Normal: (OnMouseMove|OnMouseDoubleClick|OnMouseWheel)<br />
-  During a special move: number of touches<br />
-  At the end of a special move: (MAX touch count|escaped|nocollision|attacked|deleted)
-- **Reference3**: Script used when moving in to touch.<br />
-  During a special move, the collision region name.
-- **Reference4**: Shell number.
+- **Reference0**: 一般觸碰開始：NormalStart<br />
+  一般觸碰結束：NormalEnd<br />
+  必殺技開始：SuperStart<br />
+  必殺技進行中：SuperContinue<br />
+  必殺技結束：SuperEnd<br />
+  必殺技進行中觸發追蹤：SuperHoming
+- **Reference1**: 命中判定名稱。<br />
+  若遭到停止則為escaped。<br />
+  必殺技時為1～4。
+- **Reference2**: 對手身上發生的事件。<br />
+  一般狀態：(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)<br />
+  必殺技期間：觸碰次數<br />
+  必殺技結束時：(MAX觸碰次數|escaped|nocollision|attacked|deleted)
+- **Reference3**: 前往觸碰時執行的指令。<br />
+  必殺技期間為命中判定名稱。
+- **Reference4**: shell編號。

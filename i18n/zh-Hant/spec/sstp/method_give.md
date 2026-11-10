@@ -1,9 +1,9 @@
-# Method: GIVE
+# 方法：GIVE
 
-*\[Deprecated specification\]* This method gives various types of data to a ghost for processing or response.<br />
-This specification is very old, and there is no reason to use it today. Use NOTIFY or COMMUNICATE instead.
+*\[舊規格\]* 這個方法可向 ghost 提供各種資料，讓它進行處理或做出反應。<br />
+這是非常古老的規格，目前已沒有使用它的意義。請改用 NOTIFY 或 COMMUNICATE。
 
-## request example
+## request 範例
 
 ```
 GIVE SSTP/1.1
@@ -19,9 +19,9 @@ Sender: SSTPクライアント
 Song: 佐世保の時雨
 ```
 
-## request-specific headers
+## request 專用標頭
 
-- **Document**: Document (a general-purpose string)<br />
-  In SHIORI/3.0, this is treated the same as user communication, and the OnCommunicate event is triggered.
-- **Song**: Song name.<br />
-  In SHIORI/3.0, the OnMusicPlay event is triggered, and Reference0 is set to the string specified in the Song header.
+- **Document**：文件（一般用途的字串）<br />
+  在 SHIORI/3.0 中會以與使用者 COMMUNICATE 相同的方式處理，並觸發 OnCommunicate 事件。
+- **Song**：歌曲名稱。<br />
+  在 SHIORI/3.0 中會觸發 OnMusicPlay 事件，Reference0 會設為 Song 標頭中指定的字串。

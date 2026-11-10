@@ -2,9 +2,9 @@
 
 **カテゴリ:** internal_random
 
-Select one integer uniformly at random from the range inclusive of the minimum and maximum. Supports the range of signed 64-bit integers. If the minimum is greater than the maximum, return 400 (`invalid parameter`).
+不偏不倚地選出一個大於等於最小值且小於等於最大值的整數。可使用有號 64 位元整數的範圍。若最小值大於最大值，則回傳 400（`invalid parameter`）。
 
-- **Argument1**: Minimum
-- **Argument2**: Maximum
+- **Argument1**: 最小值
+- **Argument2**: 最大值
 
 **対応:** SSP 2.9.13

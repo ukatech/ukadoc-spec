@@ -1,8 +1,8 @@
 # `\![unlock,repaint]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Unlock the above.
+解除上述设置。
 
 **対応:** Materia / SSP / Ninix
 

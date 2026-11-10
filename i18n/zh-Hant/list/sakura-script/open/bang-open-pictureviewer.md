@@ -1,7 +1,7 @@
 # `\![open,pictureviewer,(ファイル名)]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the image viewer. If you specify (file name), that file is displayed automatically (optional).
+開啟圖片檢視器。指定(檔案名稱)時，會自動顯示該檔案（選用）。
 
 **対応:** SSP 2.8.33

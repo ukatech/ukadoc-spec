@@ -1,7 +1,7 @@
-# shiori.variable name
+# shiori.变量名
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-The target ghost's SHIORI.
+目标 ghost 的 SHIORI。
 
 **対応:** CROW

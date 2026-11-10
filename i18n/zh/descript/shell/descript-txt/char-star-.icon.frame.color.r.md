@@ -1,9 +1,9 @@
-# char\*.icon.frame.color.r,numeric value
+# char\*.icon.frame.color.r、数值
 
 **カテゴリ:** descript.txt
 
-The red component (0–255) of the frame around the icon (face thumbnail) for the partner side of the second and later characters when displayed in the [backlog (utterance history) window](../../../list/sakura-script/open/bang-open-backlogviewer.md). [※Notes](note-1.md#メニュー画像の位置指定)
+第二个及之后的搭档一侧的图标（脸部缩略图）显示在[历史记录（发言历史）窗口](../../../list/sakura-script/open/bang-open-backlogviewer.md)时，边框的红色分量（0～255）。[※注意](note-1.md#メニュー画像の位置指定)
 
-**既定値:** no value
+**既定値:** 无值
 
 **対応:** SSP 2.8.53

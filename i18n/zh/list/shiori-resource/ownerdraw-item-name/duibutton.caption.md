@@ -1,7 +1,7 @@
 # duibutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Development interface.”
+开发用接口名称。
 
 **対応:** Materia

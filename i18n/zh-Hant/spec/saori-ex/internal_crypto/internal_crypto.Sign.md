@@ -2,12 +2,12 @@
 
 **カテゴリ:** internal_crypto
 
-Signs data with a private key.
+使用私密金鑰對資料簽章。
 
-- **Argument1**: method (see [public-key cryptography](internal_crypto_pkey.md))
-- **Argument2**: private key
-- **Argument3**: data (default format is `text`)
-- **Options**: `--data-in=` / `--out=` (default is `base64url`; `bip340` uses `hex`) / `--charset=` / `--key-in=` (`bip340` only; default is `hex`) / `--aux=` (`bip340` only; 32 bytes of BIP-340 auxiliary random data. `--aux-in=`, default format is `hex`. Random data is generated each time if omitted. Use only when comparing against test vectors.)
+- **Argument1**: 方法（請參閱[公開金鑰密碼學](internal_crypto_pkey.md)）
+- **Argument2**: 私密金鑰
+- **Argument3**: data（預設格式為`text`）
+- **選項**: `--data-in=` / `--out=`（預設為`base64url`。`bip340`為`hex`） / `--charset=` / `--key-in=`（僅限`bip340`。預設為`hex`） / `--aux=`（僅限`bip340`。BIP-340 的輔助亂數，32 位元組。`--aux-in=`，預設格式為`hex`。省略時每次使用亂數。除非要與測試向量比對，否則請勿使用）
 
 ## 記述例
 
@@ -31,8 +31,8 @@ Argument5: --aux=000000000000000000000000000000000000000000000000000000000000000
 → Result: 6896bd60eeae296db48a229ff71dfe071bde413e6d43f917dc8dcf8c78de33418906d11ac976abccb20b091292bff4ea897efcb639ea871cfa95f6de339e4b0a
 ```
 
-(BIP-340 test vector 1)
+（BIP-340 測試向量 1）
 
-Ed25519 and RSA (rs256 / rs384 / rs512) produce the same signature every time for the same key and data. es256 / es384 / es512, ps256 / ps384 / ps512, and bip340 produce a different signature each time (all can be verified with [Verify](internal_crypto.Verify.md)).
+Ed25519 和 RSA（rs256 / rs384 / rs512）使用相同金鑰和資料時，每次都會產生相同簽章。es256 / es384 / es512、ps256 / ps384 / ps512、bip340 每次則會產生不同簽章（皆可透過[Verify](internal_crypto.Verify.md)驗證）。
 
 **対応:** SSP 2.9.14

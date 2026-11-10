@@ -1,12 +1,12 @@
 # system.power.(キー)
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Power and battery status. The strings that can be used for (キー) are as follows. If the information cannot be obtained, including on systems without a battery such as desktop PCs, each value will be set to the value indicated below for "unavailable".
+电源和电池状态。(キー)可使用以下字符串。在无法获取信息的环境中（包括台式电脑等没有电池的情况），各值将返回下文所述的“无法获取时”的值。
 
-- **source**: Current power source: one of battery (battery-powered), ac (connected to AC power/outlet), or ups (via a UPS). If unavailable, the value is unknown.
-- **battery.percent**: Remaining battery charge (%; integer). If unavailable or the remaining charge is unknown, the value is -1.
-- **battery.lifetime**: Remaining operating time on battery power alone (seconds). If unavailable or the remaining time is unknown, the value is -1.
-- **battery.flag**: Battery status flags. Lists applicable statuses separated by commas. Possible values are high (sufficient charge), low (low charge), critical (critically low charge), charging (charging), no_battery (no battery), and power_saving (battery saver enabled; Windows 10 and later only). If unavailable, an empty string.
+- **source**: 当前电源来源。为battery（电池供电）、ac（连接AC电源/插座）或ups（通过UPS供电）之一。无法获取时为unknown。
+- **battery.percent**: 电池剩余电量（％，整数）。无法获取或剩余电量未知时为-1。
+- **battery.lifetime**: 仅使用电池时的剩余运行时间（秒）。无法获取或剩余时间未知时为-1。
+- **battery.flag**: 电池状态标志。将符合的状态以逗号分隔列出。可用值为high（电量充足）、low（电量低）、critical（电量危急）、charging（正在充电）、no_battery（无电池）、power_saving（已启用电池节能功能，仅限Windows 10及以后版本）。无法获取时为空字符串。
 
 **対応:** SSP 2.8.17

@@ -1,13 +1,13 @@
 # OnSchedulesenseFailure
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 日历事件
 
-Occurs when schedule sensor processing fails.<br />
-This is sent to all running ghosts, not a specific ghost.
+日程传感器处理失败时触发。<br />
+此通知会发送给所有正在运行的ghost，而不是特定的ghost。
 
-Unlike Begin/Complete, this [also occurs during periodic checks](caption_schedulesensetiming.md).
+与Begin/Complete不同，[定期检查时也会触发](caption_schedulesensetiming.md)。
 
-- **Reference0**: [Reason for failure](../headline-rss/caption_headlinesenseresult.md) (shared with headline sensors). If the data could not be retrieved, the reason is can't download; if it was retrieved but could not be parsed as iCal, the reason is can't analyze.
-- **Reference1**: Schedule sensor name. Since there is no Begin event during periodic checks, this is needed to identify which sensor failed.
+- **Reference0**: [失败原因](../headline-rss/caption_headlinesenseresult.md)（与headline sensor使用的原因相同）。无法获取时为can't download；成功获取但无法解析为iCal时为can't analyze。
+- **Reference1**: 日程传感器名称。定期检查时不会触发Begin，因此没有此项就无法知道哪个传感器发生了故障
 
 **対応:** SSP

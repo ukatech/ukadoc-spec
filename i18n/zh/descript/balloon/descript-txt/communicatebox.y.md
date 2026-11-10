@@ -1,9 +1,9 @@
-# communicatebox.y,Coordinate
+# communicatebox.y,坐标
 
 **カテゴリ:** descript.txt
 
-Y coordinate of the starting point of the input area.
+可输入区域起点的Y坐标。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

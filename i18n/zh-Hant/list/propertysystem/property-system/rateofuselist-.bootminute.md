@@ -1,7 +1,7 @@
-# rateofuselist(name).bootminute
+# rateofuselist(名稱).bootminute
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-The amount of time that ghost has been running (in minutes).
+該 ghost 的啟動時間。（以分鐘為單位）
 
 **対応:** SSP

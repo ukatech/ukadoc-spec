@@ -1,10 +1,10 @@
 # `\bID番号`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Change the balloon for the current scope to the balloon with the specified ID.<br />
-In this form, only IDs 0–9 can be used.<br />
-Odd-numbered IDs are reserved for balloons displayed to the right of a character, so only ID 0 or even-numbered IDs can be used.
+將目前 scope 側的氣球切換為指定 ID 的氣球。<br />
+此格式只能使用 0～9。<br />
+奇數保留給顯示在角色右側的氣球使用，因此只能使用 ID 0 或偶數。
 
 **対応:** Materia / SSP / CROW / Ninix
 

@@ -1,12 +1,12 @@
 # OnSurfaceChange
 
-**カテゴリ:** Surface event
+**カテゴリ:** surface 事件
 
-Occurs when the surface changes.<br />
+surface 變更時會發生。<br />
 *\[NOTIFY\]*
 
-- **Reference0**: Current surface on the main character side.
-- **Reference1**: Current surface on the partner side.
-- **Reference2**: ※SSP only: character ID, surface number, width, height
+- **Reference0**: 主程式端目前的 surface。
+- **Reference1**: 搭檔端目前的 surface。
+- **Reference2**: ※僅 SSP　角色 ID、surface 編號、寬度、高度
 
 **対応:** SSP / CROW / Ninix

@@ -1,7 +1,7 @@
 # `\![open,developer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the development palette. Nothing happens if developer mode is OFF.
+開啟開發用面板。若開發者模式為 OFF，則不會發生任何事。
 
 **対応:** SSP 2.5.78

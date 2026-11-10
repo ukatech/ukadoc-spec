@@ -1,7 +1,7 @@
 # craftmanw
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-Author name of the target.
+目标的作者姓名。
 
 **対応:** SSP / CROW

@@ -1,9 +1,9 @@
 # OnMemoryLoadLow
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Triggers when memory usage drops from a high level. (Currently, it triggers when usage falls below 60% after OnMemoryLoadHigh.)
+内存使用率从较高状态恢复到较低状态时触发。(目前在High触发后，使用率低于60％时触发)
 
-- **Reference0**: Current usage percentage
+- **Reference0**: 当前使用率％
 
 **対応:** SSP 2.5.56

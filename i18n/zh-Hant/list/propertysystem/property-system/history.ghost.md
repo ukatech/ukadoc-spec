@@ -1,7 +1,7 @@
-# history.ghost(ghost name/path).generic property name
+# history.ghost(ghost 名稱/路徑).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** プロパティシステム
 
-Get information using the name or path of a recently used ghost.
+透過最近使用過的 ghost 名稱或路徑取得資訊。
 
 **対応:** SSP

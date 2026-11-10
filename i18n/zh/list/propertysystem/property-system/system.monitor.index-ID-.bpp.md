@@ -1,7 +1,7 @@
 # system.monitor.index(ID).bpp
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Color depth (bits per pixel) of the monitor with ID.
+ID对应显示器的色深（bits per pixel）。
 
 **対応:** SSP 2.8.16

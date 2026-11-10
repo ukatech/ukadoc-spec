@@ -1,7 +1,7 @@
 # `\__c`
 
-**カテゴリ:** Open command
+**カテゴリ:** オープンコマンド
 
-\[Deprecated\] Opens the CommunicateBox.
+\[舊規格\]開啟CommunicateBox。
 
 **対応:** Materia / SSP

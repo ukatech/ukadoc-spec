@@ -1,7 +1,7 @@
 # `\![open,backlogviewer]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the backlog (conversation history) window.
+開啟對話記錄（發言歷史）視窗。
 
 **対応:** SSP 2.8.52

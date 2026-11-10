@@ -1,7 +1,7 @@
 # historyrootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of recently used items.
+最近使用项目名称。
 
 **対応:** SSP

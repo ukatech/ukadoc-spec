@@ -1,10 +1,10 @@
 # `\![get,property,イベント名,プロパティ名,プロパティ名,...]`
 
-**カテゴリ:** Property system operation command
+**カテゴリ:** 屬性系統操作命令
 
-Retrieves values from the property system.<br />
-The event specified by the event name occurs, and the property system values are placed one by one in reference0 and subsequent references.<br />
-※For details about the property system, see the [property system](../../propertysystem/index.md) page.
+取得屬性系統的值。<br />
+會觸發指定的事件，並依序將屬性系統的值放入該事件的 Reference0 及後續項目。<br />
+※屬性系統的詳細資訊請參閱[屬性系統](../../propertysystem/index.md)頁面。
 
 **対応:** SSP / CROW
 

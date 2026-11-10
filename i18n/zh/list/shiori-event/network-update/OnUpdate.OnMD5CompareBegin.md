@@ -1,13 +1,13 @@
 # OnUpdate.OnMD5CompareBegin
 
-**カテゴリ:** Network update event
+**カテゴリ:** 网络更新事件
 
-Occurs when MD5 comparison begins.
+开始校验MD5时触发。
 
-- **Reference0**: Name of the file to compare.
-- **Reference1**: Correct MD5 value.
-- **Reference2**: MD5 value of the downloaded file.
-- **Reference3**: SSP [※Update target type](caption_updatetype.md)
-- **Reference4**: SSP 2.3: [※Reason for performing the update](caption_updatereason.md)。
+- **Reference0**: 要比较的文件名。
+- **Reference1**: 正确的MD5值。
+- **Reference2**: 下载文件的MD5值。
+- **Reference3**: SSP　[※更新对象类型](caption_updatetype.md)
+- **Reference4**: SSP 2.3：[※更新执行原因](caption_updatereason.md)。
 
 **対応:** Materia / SSP / CROW / Ninix

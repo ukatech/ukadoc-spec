@@ -1,12 +1,12 @@
-# sakura.defaulty,Y coordinate
+# sakura.defaulty,Y坐标
 
 **カテゴリ:** descript.txt
 
-The Y coordinate of the default position on the main body side (`\0`). The surface reference point (usually the bottom center of the surface) is placed at this position.\[2.9.13\]<br />
-The format and meaning of the value (units, coordinate system, negative values, handling of --, and conditions under which it is invalid) are the same as for the SHIORI resource [sakura.defaulty](../../../list/shiori-resource/ghost/sakura.defaulty.md).<br />
-The priority order is SHIORI resource > [shell-side descript.txt](../../shell/descript-txt/sakura.defaulty.md) > ghost-side descript.txt.<br />
-If [sakura.defaulttop](sakura.defaulttop.md) is also specified in the same descript.txt, this setting (defaulty) takes priority.
+主机侧(`\0`)默认位置的Y坐标。将 surface 的基准点（通常是 surface 的底部中央）置于此位置。\[2.9.13\]<br />
+值的格式和含义（单位、坐标系、负值、--的处理方式、无效条件）与SHIORI资源的[sakura.defaulty](../../../list/shiori-resource/ghost/sakura.defaulty.md)相同。<br />
+优先级为：SHIORI资源＞[shell侧的descript.txt](../../shell/descript-txt/sakura.defaulty.md)＞ghost侧的descript.txt。<br />
+如果同一descript.txt中也写有[sakura.defaulttop](sakura.defaulttop.md)，则此项(defaulty)优先。
 
-**既定値:** No value (the main body is placed at the bottom edge of the work area)
+**既定値:** 无值（主机侧会置于工作区下端）
 
 **対応:** SSP

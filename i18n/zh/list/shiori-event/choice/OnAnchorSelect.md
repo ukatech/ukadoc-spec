@@ -1,9 +1,9 @@
 # OnAnchorSelect
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when a `\_a` anchor is clicked.
+点击`\_a`跳转链接时触发。
 
-- **Reference0**: ID of the selected anchor.
+- **Reference0**: 被选中的跳转链接ID。
 
 **対応:** Materia / SSP / CROW / Ninix

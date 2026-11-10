@@ -1,7 +1,7 @@
 # %lastobjectname
 
-**カテゴリ:** 環境変数
+**カテゴリ:** 環境變數
 
-For installation use. Name of the object that last handled an event.
+安裝時使用。最後執行事件的物件名稱。
 
 **対応:** Materia / SSP

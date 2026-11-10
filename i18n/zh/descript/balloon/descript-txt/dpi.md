@@ -1,9 +1,9 @@
-# dpi,recommended DPI
+# dpi,推荐DPI
 
 **カテゴリ:** descript.txt
 
-The recommended screen DPI value for this balloon. If not specified, it is fixed at the Windows default of 96.<br />
-Check Scale in System - Display - Scale in the Windows settings of the environment where the balloon was created, then choose a value according to the table below.
+此balloon推荐使用的屏幕DPI值。未指定时，固定为Windows标准值96。<br />
+请查看制作balloon时所用环境的Windows设置中的“系统-显示-缩放”，并根据下表选择数值。
 
 - 100% - 96
 - 125% - 120
@@ -11,7 +11,7 @@ Check Scale in System - Display - Scale in the Windows settings of the environme
 - 175% - 168
 - 200% - 192
 
-Guideline: 144 (150%) for a 4K monitor, 120–144 (125–150%) for a recent laptop
+参考值：4K显示器可设为144(150%)，较新的笔记本电脑可设为120-144(125-150%)
 
 **既定値:** 96
 

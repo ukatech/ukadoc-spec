@@ -1,8 +1,8 @@
-# menu.separator.color.b,Numeric value
+# menu.separator.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Separator color blue (0–255)
+分隔线蓝色(0～255)
 
 **既定値:** menu.background.font.color.b
 

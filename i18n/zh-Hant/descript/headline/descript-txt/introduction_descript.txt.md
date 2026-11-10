@@ -1,10 +1,10 @@
-# descript.txt (for Headline)
+# descript.txt（Headline 的）
 
-## Overview
+## 概要
 
-Basic configuration file for the headline sensor.
+headline sensor 的基本設定檔。
 
-## 記述例 and basic writing
+## 記述例與基本寫法
 
 ```
 charset,Shift_JIS
@@ -14,6 +14,6 @@ url,http://ほげほげ/hoge.html
 openurl,http://ほげほげ/spec/
 ```
 
-name, dllname, url, and openurl are required.
+name、dllname、url、openurl 為必填。
 
-Strings beginning with \\ or % are treated as Sakura Script or environment variable tags and discarded as a security measure. To include them as literal characters, escape them as \\\\ or \\%.
+另外，以\\或%開頭的字串會被視為 Sakura Script 或環境變數標籤，基於安全風險會被丟棄。若要將這些字元當作一般文字使用，必須以\\\\或\\%等方式跳脫。

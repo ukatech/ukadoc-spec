@@ -1,9 +1,9 @@
 # OnCPULoadHigh
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 狀態事件
 
-Occurs when CPU load is high. (Currently, it triggers if the load stays at around 80% for a short while.)
+CPU 負載高時觸發。（目前大約是負載達 80％ 並持續一小段時間時觸發）
 
-- **Reference0**: Current load percentage
+- **Reference0**: 目前的負載率％
 
 **対応:** SSP 2.5.56

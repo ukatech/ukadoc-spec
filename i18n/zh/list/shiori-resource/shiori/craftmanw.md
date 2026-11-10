@@ -1,8 +1,8 @@
 # craftmanw
 
-**カテゴリ:** SHIORI information
+**カテゴリ:** SHIORI 信息
 
-Occurs immediately after SHIORI is loaded.<br />
-In response to this event, SHIORI returns the name of its author. In addition to 7-bit characters, 8-bit characters and multibyte characters in the default encoding can also be used.
+在 SHIORI 加载后立即发生。<br />
+SHIORI 对此事件返回 SHIORI 作者名。除 7 位字符外，还可以使用 8 位字符以及默认编码的多字节字符。
 
 **対応:** Materia / SSP / CROW

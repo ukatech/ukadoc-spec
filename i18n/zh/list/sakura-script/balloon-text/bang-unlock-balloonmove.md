@@ -1,7 +1,7 @@
 # `\![unlock,balloonmove]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Unlocks the above. It cannot be unlocked if it is already specified in descript.txt.
+解除上述设置。如果 descript.txt 中已经指定，则无法解除。
 
 **対応:** SSP 2.4.96

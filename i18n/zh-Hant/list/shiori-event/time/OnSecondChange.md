@@ -1,15 +1,15 @@
 # OnSecondChange
 
-**カテゴリ:** Time event
+**カテゴリ:** 時間事件
 
-Occurs every second.
+每秒發生一次。
 
-When a talk cannot be played, the event is notified with Reference3 set to 0 via NOTIFY. **The returned script is ignored.**
+無法播放對話時，Reference3會設為0，並以NOTIFY通知事件。**回傳的腳本會被忽略。**
 
-- **Reference0**: OS uptime (hour)
-- **Reference1**: 1 when clipped, otherwise 0.
-- **Reference2**: 1 when overlapping, otherwise 0.
-- **Reference3**: 1 when a talk can be played, otherwise 0.
-- **Reference4**: ※SSP only: Time spent idle (at the OS level), in seconds.
+- **Reference0**: OS連續運作時間（小時）
+- **Reference1**: 部分隱藏時為1，其他情況為0。
+- **Reference2**: 重疊時為1，其他情況為0。
+- **Reference3**: 可播放對話時為1，其他情況為0。
+- **Reference4**: ※僅限SSP　（在OS層級）未進行任何操作的閒置時間，單位為秒。
 
 **対応:** Materia / SSP / CROW / Ninix

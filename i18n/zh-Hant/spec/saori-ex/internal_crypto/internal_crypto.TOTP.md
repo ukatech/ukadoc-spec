@@ -2,10 +2,10 @@
 
 **カテゴリ:** internal_crypto
 
-Generates a time-based one-time password (RFC 6238; the number displayed by two-factor authentication apps). If the result has fewer than the specified number of digits, it is padded with leading zeroes.
+計算以時間為基礎的一次性密碼（RFC 6238；即雙重驗證應用程式產生的數字）。若位數不足，會在前面補 0。
 
-- **Argument1**: key (default format is `base32`; the secret key string to register in an authentication app)
-- **Options**: `--key-in=` / `--digits=` (default is 6; 6–10) / `--period=` (seconds; default is 30; 1–86400) (values outside the range result in 400 `out of range`) / `--digest=` (default is `sha1`; `md5` is not available and results in 400 `unsupported algorithm`) / `--time=` (date and time. Use the same format as the date/time argument in [internal_time](../internal_time/index.md); values without a zone are interpreted in the OS time zone. Defaults to the current time) / `--charset=`
+- **Argument1**: key（預設格式為`base32`。登記至驗證應用程式的密鑰字串）
+- **選項**: `--key-in=` / `--digits=`（預設為 6。6～10） / `--period=`（秒。預設為 30。1～86400）（超出範圍時回傳 400 `out of range`） / `--digest=`（預設為`sha1`。不能使用`md5`，會回傳 400 `unsupported algorithm`） / `--time=`（日期時間。寫法與 [internal_time](../internal_time/index.md) 的日期時間引數相同；未指定時區的值會視為作業系統時區的時間。預設為目前時間） / `--charset=`
 
 ## 記述例
 

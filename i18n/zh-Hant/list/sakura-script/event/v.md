@@ -1,11 +1,11 @@
 # `\v`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Displays the ghost in the foreground. From this script onward, it is always displayed on top.<br />
-However, which scope is displayed in front (the main character or the partner) depends on user actions.
+顯示在前景。從此指令之後，將一律顯示在最上層。<br />
+但各 scope 之間的重疊順序（本體或搭檔哪一方在上方）取決於使用者的操作。
 
-This remains in effect until the ghost exits.
+直到 ghost 結束前都有效。
 
 **対応:** Materia / SSP / Ninix
 

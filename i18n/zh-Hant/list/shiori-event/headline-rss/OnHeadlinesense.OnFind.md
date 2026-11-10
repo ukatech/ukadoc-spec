@@ -1,13 +1,13 @@
 # OnHeadlinesense.OnFind
 
-**カテゴリ:** Headline/RSS sensor event
+**カテゴリ:** 頭條／RSS 感知事件
 
-Occurs when there is a headline sensor item to read aloud.
+有應讀出的 headline sensor 資訊時觸發。
 
-- **Reference0**: Name of the site to perform headline sensing on.
-- **Reference1**: URL to perform headline sensing on.
-- **Reference2**: [※OnFind phase](caption_headlinesensephase.md)
-- **Reference3**: Headline content. The content has been sanitized by the baseware.<br />
-  The baseware may have added Sakura Script for control purposes.
+- **Reference0**: headline sensor 網站名稱。
+- **Reference1**: headline sensor URL。
+- **Reference2**: [※OnFind 階段](caption_headlinesensephase.md)
+- **Reference3**: headline 內容。內容已由 baseware 清理。<br />
+  baseware 可能會加入控制用的 Sakura Script。
 
 **対応:** Materia / SSP

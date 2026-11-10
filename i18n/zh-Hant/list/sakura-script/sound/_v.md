@@ -1,9 +1,9 @@
 # `\_v[ファイル名]`
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-The baseware plays wave, mp3, and wma files. Specify a relative path from \[folder of the executing ghost\]/ghost/master, or an absolute path.<br />
-If the file does not exist, it is ignored.
+由 baseware 播放 wave、mp3、wma 檔案。可使用相對於\[執行中的 ghost 資料夾\]/ghost/master 的路徑，或指定絕對路徑。<br />
+若檔案不存在，則會忽略此指令。
 
 **対応:** Materia / SSP / CROW / Ninix
 

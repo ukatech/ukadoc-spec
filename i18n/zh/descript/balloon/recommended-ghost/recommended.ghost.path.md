@@ -1,9 +1,9 @@
-# recommended.ghost.path,Path
+# recommended.ghost.path,路径
 
-**カテゴリ:** descript.txt - Recommended ghost
+**カテゴリ:** descript.txt - 推荐ghost
 
-Relative path to the recommended ghost. A strong warning is displayed if an attempt is made to use a different ghost.
+推荐使用的ghost相对路径。尝试使用其他路径时，会显示内容强烈的警告。
 
-**既定値:** Not specified
+**既定値:** 未指定
 
 **対応:** SSP 2.4

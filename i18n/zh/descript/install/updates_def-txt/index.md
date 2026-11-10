@@ -2,5 +2,5 @@
 
 ## 一覧
 
-- [Notes](note-1.md)
-- [Relative path,ignore](entry.md)
+- [补充](note-1.md)
+- [相对路径,ignore](entry.md)

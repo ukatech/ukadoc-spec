@@ -1,7 +1,7 @@
 # OnExecuteHTTPProgress
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通信事件
 
-Occurs when --progress-notify is specified with execute-http. References are the same as for Complete.
+通过execute-http指定--progress-notify时触发。Reference与Complete相同。
 
 **対応:** SSP \[2.6.44\]

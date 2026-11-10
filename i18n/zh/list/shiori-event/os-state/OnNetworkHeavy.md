@@ -1,10 +1,10 @@
 # OnNetworkHeavy
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Occurs when the remote server does not respond within the allotted time.
+对方服务器未在规定时间内响应时触发。
 
-- **Reference0**: SSP only. Time until timeout (in seconds).
-- **Reference1**: SSP only. Elapsed time so far (in seconds). \[2.6.42～\]
+- **Reference0**: ※仅SSP　超时时间。(单位：秒)
+- **Reference1**: ※仅SSP　截至目前经过的时间。(单位：秒) \[2.6.42～\]
 
 **対応:** Materia / SSP / CROW

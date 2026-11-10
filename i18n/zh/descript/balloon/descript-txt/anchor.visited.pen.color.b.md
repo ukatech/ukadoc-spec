@@ -1,8 +1,8 @@
-# anchor.visited.pen.color.b,numeric
+# anchor.visited.pen.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue color for the rectangular border and underline of visited anchor choice markers (0–255)
+已访问锚点的选项标记矩形边框及下划线的颜色蓝色(0～255)
 
 **既定値:** anchor.visited.font.color.b
 

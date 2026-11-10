@@ -1,8 +1,8 @@
 # `\![unlock,balloonrepaint]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Unlocks the setting described above.
+解除上述設定。
 
 **対応:** SSP
 

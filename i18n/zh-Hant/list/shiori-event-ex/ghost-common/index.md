@@ -1,7 +1,7 @@
-# Generic Inter-Ghost Events
+# ghost 間通用事件
 
 ## 一覧
 
 - [OnRequestValues](OnRequestValues.md)
 - [OnGetValues](OnGetValues.md)
-- [Notes](note-1.md)
+- [補充說明](note-1.md)

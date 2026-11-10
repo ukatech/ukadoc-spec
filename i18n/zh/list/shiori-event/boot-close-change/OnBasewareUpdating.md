@@ -1,10 +1,10 @@
 # OnBasewareUpdating
 
-**カテゴリ:** Startup, shutdown, and switching event
+**カテゴリ:** 启动、关闭和切换事件
 
-Occurs during a baseware update, after the download finishes and before file updates begin. If there is no response to this event, OnCloseAll and then OnClose occur.
+本体更新时，下载结束、开始更新文件之前触发。如果没有对此事件作出响应，则依次触发 OnCloseAll、OnClose。
 
-- **Reference0**: Version number before the update; example: 2.3.58
-- **Reference1**: Version number before the update, matching the version shown in Windows Explorer properties; example: 2.3.58.3000
+- **Reference0**: 更新前的版本号　例：2.3.58
+- **Reference1**: 与更新前在 Windows 资源管理器中查看到的属性相同的版本号　例：2.3.58.3000
 
 **対応:** SSP

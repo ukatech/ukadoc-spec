@@ -1,7 +1,7 @@
 # %\*
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Same function as `\![*]`.
+与 `\![*]` 功能相同。
 
 **対応:** SSP

@@ -1,13 +1,13 @@
 # OnSchedulesenseBegin
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 行事曆事件
 
-Occurs when the schedule sensor starts connecting.<br />
-This is sent to all running ghosts, not to a specific ghost.
+行程感測器開始連線時觸發。<br />
+此通知會傳送給所有正在執行的 ghost，而非特定 ghost。
 
-**Occurs only during a manual update (when a sensor is selected from the calendar menu to update).** It does not occur during periodic checks, as [described below](caption_schedulesensetiming.md).
+**只有手動更新（從行事曆的選單選取感測器並更新）時才會觸發。**定期檢查時則如[下文](caption_schedulesensetiming.md)所述，不會觸發。
 
-- **Reference0**: Schedule sensor name
-- **Reference1**: Schedule sensor subscription URL
+- **Reference0**: 行程感測器名稱
+- **Reference1**: 行程感測器的訂閱 URL
 
 **対応:** SSP

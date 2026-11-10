@@ -1,4 +1,4 @@
-# Event Commands
+# 事件命令
 
 ## 一覧
 
@@ -9,7 +9,7 @@
 - [`\![update,platform]`](bang-update-platform.md)
 - [`\![update,更新対象(,オプション,オプション...)]`](bang-update.md)
 - [`\![updateother,更新対象/オプション群,...]`](bang-updateother.md)
-- [Notes](note-1.md)
+- [補充說明](note-1.md)
 - [`\6`](6.md)
 - [`\7`](7.md)
 - [`\![executesntp]`](bang-executesntp.md)

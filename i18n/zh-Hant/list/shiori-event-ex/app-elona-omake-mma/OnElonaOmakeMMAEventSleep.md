@@ -1,9 +1,9 @@
 # OnElonaOmakeMMAEventSleep
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Triggered when the PC goes to sleep.
+進入睡眠時觸發。
 
-- **Reference\***: Reference0–80, [※Common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Bedding name.
-- **Reference82**: 1 if leaving a gene.
+- **Reference\***: Reference0～80，[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 寢具名稱。
+- **Reference82**: 要留下遺傳因子時為1。

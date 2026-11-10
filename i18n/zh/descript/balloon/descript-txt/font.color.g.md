@@ -1,8 +1,8 @@
-# font.color.g,numeric value
+# font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Font color green (0–255)
+字体颜色绿色(0～255)
 
 **既定値:** 0
 

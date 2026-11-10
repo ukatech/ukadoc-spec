@@ -1,19 +1,19 @@
 # `\![execute,dropdefault,file,ファイルパス,ファイルパス...]` `\![execute,dropdefault,url,URL,種別]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Perform the baseware's default action, which would not have run because the ghost responded to a drag-and-drop event.<br />
-Use this when you want to say something in response to a drop and then let the baseware handle what comes next. It can be run later, such as after a choice is selected, not only within the script that responded to the event.
+ghost 回應拖放事件後，執行原本未執行的 baseware 預設處理。<br />
+適用於希望在接收檔案後先說些話，再將後續處理交給 baseware 的情況。不只能在回應事件的 script 中使用，也可以在選擇選項後等較晚的時機執行。
 
-- file……Perform the same action as when there was no response to [OnFileDrop2](../../shiori-event/file-drop/OnFileDrop2.md) (including OnFileDropEx and OnFileDrop). Open images with an image viewer, audio and video with a media player, and archives with an archive viewer. Do nothing with files that cannot be opened by any of these (they are not opened with their associated applications).<br />
-  For the file paths, you may pass the OnFileDrop2 Reference0 (separated by byte value 1) as-is, or list multiple paths separated by commas. If a path contains a comma, enclose it in " ". Relative paths are based on the ghost's folder (ghost/master).<br />
-  Since there is no default action for directories when the ghost does not respond, do nothing if the first item is a directory.<br />
-  Installing nar or SSF, and changing the wallpaper ([OnWallpaperChange](../../shiori-event/file-drop/OnWallpaperChange.md)), are handled before OnFileDrop2, so this tag does not perform these actions.
-- url……Perform the same action as when there was no response to [OnURLQuery](../../shiori-event/url-drop/OnURLQuery.md). Pass the OnURLQuery Reference3 as the type.<br />
-  Do nothing if the type is unknown. If the type is omitted, determine it again from the Content-Type and the file contents (this causes another network request for the determination).<br />
-  This performs the same action as [`\![execute,install,url]`](bang-execute-install-url-URL.md), but the scope number for events such as OnURLDropping that occur afterward is the scope that executed this tag.
+- file……執行與未回應[OnFileDrop2](../../shiori-event/file-drop/OnFileDrop2.md)（包含 OnFileDropEx、OnFileDrop 等）時相同的處理。圖片會以圖片檢視器開啟，音訊與影片會以媒體播放器開啟，壓縮檔會以封存檔檢視器開啟。無法以任何一種方式開啟的檔案不會進行任何處理（不會以關聯的應用程式開啟）。<br />
+  檔案路徑可以直接傳入 OnFileDrop2 的 Reference0（以 byte 值 1 分隔），也可以用逗號分隔並列出多個路徑。路徑包含逗號時，請以 " " 括住。相對路徑以 ghost 資料夾（ghost/master）為基準。<br />
+  由於原本在未回應的情況下不會對目錄進行處理，因此若開頭是目錄，則不會進行任何處理。<br />
+  nar 或 SSF 的安裝，以及桌布變更（[OnWallpaperChange](../../shiori-event/file-drop/OnWallpaperChange.md)）會在 OnFileDrop2 之前處理，因此不會由此標籤執行。
+- url……執行與未回應[OnURLQuery](../../shiori-event/url-drop/OnURLQuery.md)時相同的處理。種類直接傳入 OnURLQuery 的 Reference3。<br />
+  種類為 unknown 時不會進行任何處理。省略種類時，會根據 Content-Type 和檔案內容重新判別（判別時會再次進行通訊）。<br />
+  處理方式與[`\![execute,install,url]`](bang-execute-install-url-URL.md)相同，但之後發生的 OnURLDropping 等事件，其 scope 編號會是執行此標籤的 scope。
 
-[OnPictureViewerOpen](../../shiori-event/file-drop/OnPictureViewerOpen.md), [OnMediaPlayerOpen](../../shiori-event/file-drop/OnMediaPlayerOpen.md), and [OnArchiveViewerOpen](../../shiori-event/file-drop/OnArchiveViewerOpen.md) also occur for image viewers and other applications opened by this tag. Reference1 (scope number) is the scope that executed this tag.
+使用此標籤開啟圖片檢視器等時，也會發生[OnPictureViewerOpen](../../shiori-event/file-drop/OnPictureViewerOpen.md)、[OnMediaPlayerOpen](../../shiori-event/file-drop/OnMediaPlayerOpen.md)、[OnArchiveViewerOpen](../../shiori-event/file-drop/OnArchiveViewerOpen.md)。Reference1（scope 編號）會是執行此標籤的 scope。
 
 **対応:** SSP 2.9.10
 

@@ -1,11 +1,11 @@
 # blend-luminosity-fast
 
-**カテゴリ:** surface brace \> Drawing method
+**カテゴリ:** surface 括號 \> 繪圖方法
 
-Overlay the *new layer* using luminosity compositing, according to the opacity of the *base layer*.<br />
-Its behavior is the same as overlay-fast and its outline does not change, but it applies luminosity compositing to the current surface instead of overwriting it.<br />
-Can also be used with dressup and element.<br />
-The word "fast" in the name is historical; processing is not actually faster.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+依據*基底圖層*的不透明度，以明度合成方式疊加*新圖層*。<br />
+其行為與 overlay-fast 相同，外形不變，但會對目前的 surface 執行明度合成，而非覆寫。<br />
+也可用於 dressup 與 element。<br />
+名稱中的「fast」源自歷史因素，並不代表處理速度較快。<br />
+建議在 shell 的 descript.txt 中設定[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.39

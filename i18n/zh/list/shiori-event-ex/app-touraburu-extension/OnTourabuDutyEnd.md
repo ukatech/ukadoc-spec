@@ -1,5 +1,5 @@
 # OnTourabuDutyEnd
 
-**カテゴリ:** Google Chrome extension "TouRabu Extension"
+**カテゴリ:** Google Chrome 扩展“刀剑乱舞扩展”
 
-Occurs when an internal affairs duty ends.
+内番结束时触发。

@@ -1,13 +1,13 @@
 # OnGamepadButtonDown
 
-**カテゴリ:** Gamepad event
+**カテゴリ:** 遊戲手把事件
 
-Occurs when a gamepad button is pressed.<br />
-Does not occur while the button is held down (only at the moment it is pressed).<br />
-If multiple buttons change at the same time, a separate event occurs for each button.<br />
-The event is broadcast simultaneously to all active ghosts.
+遊戲手把按鈕按下的瞬間觸發。<br />
+按住按鈕時不會觸發（僅在按下瞬間觸發）。<br />
+若多個按鈕同時變化，會針對每個按鈕分別觸發事件。<br />
+此事件會同時廣播給所有正在執行的 ghost。
 
-- **Reference0**: [Pad index](caption_gamepad_padindex.md).
-- **Reference1**: [Button name](caption_gamepad_button.md).
+- **Reference0**: [手把索引](caption_gamepad_padindex.md)。
+- **Reference1**: [按鈕名稱](caption_gamepad_button.md)。
 
 **対応:** SSP 2.7.54

@@ -1,13 +1,13 @@
 # kero.recommendsites
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost信息
 
-The partner's recommendations list.<br />
-The value is<br />
-Item name 1\[byte value 1\]url1\[byte value 1\]banner image path 1\[byte value 1\]talk script on selection 1\[byte value 2\]item name 2\[byte value 1\]...<br />
-It is returned in this format.<br />
-However, SHIORI may perform this conversion internally, so refer to the documentation for each SHIORI for details.<br />
-The talk script portion is Sakura Script, not a plain string.<br />
-If the url portion contains a description beginning with script: instead of a url, that script is executed (for example, [`\![raise]`](../../sakura-script/event/bang-raise-r0-r1-r2.md) is also possible).
+搭档侧的推荐列表。<br />
+值为<br />
+项目名1\[字节值1\]url1\[字节值1\]横幅图片路径1\[字节值1\]选中时的对话脚本1\[字节值2\]项目名2\[字节值1\]...<br />
+以此格式返回。<br />
+不过，有时SHIORI会在内部完成该格式的转换，详情请参阅各SHIORI的说明。<br />
+对话脚本部分不是普通字符串，而是Sakura Script。<br />
+url部分可用以script:开头的内容代替url，这样即可执行该脚本（也可以使用[`\![raise]`](../../sakura-script/event/bang-raise-r0-r1-r2.md)等）。
 
 **対応:** Materia / SSP / CROW / Ninix

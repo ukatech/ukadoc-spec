@@ -1,9 +1,9 @@
 # `\![set,othersurfacechange,trueかfalse]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Set whether to send notifications for [OnOtherSurfaceChange](../../shiori-event/surface/OnOtherSurfaceChange.md). The default is false.<br />
-When set to true, notifications for OnOtherSurfaceChange are sent whenever the surface of another concurrently running ghost changes.
+設定是否通知[OnOtherSurfaceChange](../../shiori-event/surface/OnOtherSurfaceChange.md)。初始值為false。<br />
+設為true後即啟用，同時啟動的其他ghost變更surface時，便會通知OnOtherSurfaceChange。
 
 **対応:** SSP / Ninix
 

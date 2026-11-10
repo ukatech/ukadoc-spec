@@ -1,10 +1,10 @@
 # OnKanadeTeaParty
 
-**カテゴリ:** Ghost “Melody of Everyday Life”
+**カテゴリ:** ghost「奏でる日常の音色」
 
-Main tea party event. Notifies when the tea party starts.
+茶會本體事件。茶會開始時會收到通知。
 
-- **Reference0**: Version of the tea party that implements the combinations from Reference1 onward.
-- **Reference1**: Drink.
-- **Reference2**: Snack
-- **Reference\***: Reference3 onward contains extended information.
+- **Reference0**: 已實作Reference1以後組合的茶會版本。
+- **Reference1**: 飲料。
+- **Reference2**: 點心
+- **Reference\***: Reference3以後為擴充資訊。

@@ -1,7 +1,7 @@
 # `\![anim,stop,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-End playback of the surface animation with the specified ID (same as clear).
+结束播放ID编号的表面动画（与clear相同）。
 
 **対応:** CROW / SSP

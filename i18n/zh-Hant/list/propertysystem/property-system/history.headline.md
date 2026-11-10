@@ -1,7 +1,7 @@
-# history.headline(headline name/path).generic property name
+# history.headline(Headline 名稱/路徑).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Get information using the name or path of a recently used headline.
+從最近使用項目的 headline 名稱或路徑取得資訊。
 
 **対応:** SSP

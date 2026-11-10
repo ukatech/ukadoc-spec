@@ -1,10 +1,10 @@
-# currentghost.seriko.tooltip.scope(ID).textlist(hit-test name).text
+# currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-The tooltip text displayed for the specified hit-test name.<br />
-If SET to an empty string, the tooltip definition is treated as deleted, and the tooltip can be hidden.<br />
-*\[SET enabled\]*
+指定命中区域的工具提示显示文本。<br />
+将空字符串设为SET值时，会视为删除工具提示定义，从而不再显示工具提示。<br />
+*\[SET有效\]*
 
 **対応:** SSP (2.3.83)
 

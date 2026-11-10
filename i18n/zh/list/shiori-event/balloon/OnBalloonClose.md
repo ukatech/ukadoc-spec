@@ -1,9 +1,9 @@
 # OnBalloonClose
 
-**カテゴリ:** Balloon event
+**カテゴリ:** balloon事件
 
-Occurs when the balloon is closed.
+关闭balloon时触发。
 
-- **Reference0**: Script displayed when it was closed.
+- **Reference0**: 关闭时显示的脚本。
 
 **対応:** SSP / Ninix

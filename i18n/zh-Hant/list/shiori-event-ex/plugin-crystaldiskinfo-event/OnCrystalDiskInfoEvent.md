@@ -1,10 +1,10 @@
 # OnCrystalDiskInfoEvent
 
-**カテゴリ:** Plugin "CrystalDiskInfo Event PLUGIN"
+**カテゴリ:** plugin「CrystalDiskInfo Event PLUGIN」
 
-Triggered when information is available or updated at ghost startup.
+ghost 啟動時已有資訊，或資訊更新時發生。
 
-- **Reference0**: The status of all disks (that is, information for the worst one) and the update date.<br />
-  It is comma-separated and takes the form "(Good|Caution|Bad|Unknown),YYYY,NN,DD,HH,MM,SS".
-- **Reference\***: Individual disk status.<br />
-  Comma-separated values: machine name, existing disk, overall status, capacity, temperature in Celsius, temperature warning
+- **Reference0**: 所有磁碟的整體狀態（＝狀態最差者的資訊）與更新日期。<br />
+  以逗號分隔，內容如下：「(Good|Caution|Bad|Unknown),YYYY,NN,DD,HH,MM,SS」。
+- **Reference\***: 個別磁碟的狀態。<br />
+  以逗號分隔，內容依序為電腦名稱、存在的磁碟、整體狀態、容量、攝氏溫度、溫度警告

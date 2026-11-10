@@ -1,7 +1,7 @@
 # OnSatolistSaved
 
-**カテゴリ:** Satolist application
+**カテゴリ:** 应用“Satorist”
 
-Occurs when saving a ghost in Satolist.
+在 Satorist 中保存 ghost 时触发。
 
-- **Reference0**: If saved when Satolist exits, the value is closing; otherwise, it is edit.
+- **Reference0**: 如果在退出 Satorist 时保存，则为 closing；否则为 edit

@@ -1,13 +1,13 @@
 # OnUpdate.OnDownloadBegin
 
-**カテゴリ:** Network update event
+**カテゴリ:** 网络更新事件
 
-Occurs when a file download begins.
+文件开始下载时触发。
 
-- **Reference0**: Name of the file to download.
-- **Reference1**: (Except CROW) Index of the update file being downloaded (sequential numbering starting at 0).
-- **Reference2**: (Except CROW) Total number of files to be updated minus 1 (sequential numbering starting at 0).
-- **Reference3**: (SSP only) [※Update target type](caption_updatetype.md).
-- **Reference4**: SSP 2.3: [※Reason for performing the update](caption_updatereason.md)。
+- **Reference0**: 要下载的文件名。
+- **Reference1**: （CROW除外）正在下载的更新文件编号（从0开始的连续编号）。
+- **Reference2**: （CROW除外）需要更新的文件总数减1（从0开始的连续编号）。
+- **Reference3**: （仅限SSP）[※更新对象类型](caption_updatetype.md)。
+- **Reference4**: SSP 2.3：[※更新执行原因](caption_updatereason.md)。
 
 **対応:** Materia / SSP / CROW / Ninix

@@ -1,12 +1,12 @@
 # OnFileDrop2
 
-**カテゴリ:** File drop events
+**カテゴリ:** 檔案拖放事件
 
-Occurs when a file is drag-and-dropped. This is the latest specification at present.<br />
-When this event is handled, the baseware's default processing (opening the file in an image viewer, media player, or archive viewer) is not performed. To handle the event and also perform the default processing, use [ `\![execute,dropdefault,file]`](../../sakura-script/misc/bang-execute-dropdefault-file-.-bang-execute-dropdefault-url-URL.md).\[2.9.10\]
+檔案以 DnD 拖放時觸發。此事件是目前最新的規格。<br />
+若回應此事件，便不會執行本體的預設處理（以影像檢視器、媒體播放器或封存檢視器開啟）。若要在回應事件的同時也執行預設處理，請使用 [`\![execute,dropdefault,file]`](../../sakura-script/misc/bang-execute-dropdefault-file-.-bang-execute-dropdefault-url-URL.md)。\[2.9.10\]
 
-- **Reference0**: Path of the dropped file. If there are multiple files/directories, they are separated by byte value 1.
-- **Reference1**: Scope number of the character the file was dropped on. The main character is 0, the partner is 1, and the third and subsequent characters are 2 or higher.
-- **Reference2**: MIME type of the dropped file (SSP 2.7.98 and later). If there are multiple files/directories, they are separated by byte value 1.
+- **Reference0**: 拖放的檔案路徑。若有多個檔案／目錄，則以 byte 值 1 分隔。
+- **Reference1**: 拖放目標角色的 scope 編號。主體一側為 0，搭檔為 1，第三名角色起為 2 以上。
+- **Reference2**: 拖放檔案的 MIME 類型（SSP 2.7.98 以後）。若有多個檔案／目錄，則以 byte 值 1 分隔。
 
 **対応:** Materia / SSP / CROW / Ninix

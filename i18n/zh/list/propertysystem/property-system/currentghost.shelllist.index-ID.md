@@ -1,7 +1,7 @@
-# currentghost.shelllist.index(ID).generic property name
+# currentghost.shelllist.index(ID).通用属性名
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-Gets information from the shell at the specified ID position in the current ghost's list.
+从当前 ghost 列表中指定 ID 位置的 shell 获取信息。
 
 **対応:** SSP / CROW

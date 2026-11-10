@@ -1,10 +1,10 @@
 # OnMusicPlay
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Notifies the ghost of information about the currently playing track in supported music player software, such as the Windows default media player.
+在 Windows 標準媒體播放器等支援的音樂播放軟體中，播放歌曲時會將歌曲資訊通知 ghost。
 
-- **Reference0**: Track title
-- **Reference1**: Artist name
+- **Reference0**: 歌曲標題
+- **Reference1**: 藝人名稱
 
 **対応:** SSP 2.7.55

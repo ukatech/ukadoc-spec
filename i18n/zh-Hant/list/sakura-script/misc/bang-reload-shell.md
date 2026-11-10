@@ -1,8 +1,8 @@
 # `\![reload,shell]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Reloads the shell.
+重新載入shell。
 
 **対応:** SSP
 

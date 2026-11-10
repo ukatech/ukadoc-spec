@@ -1,13 +1,13 @@
-# SHIORI Resource list
+# SHIORI Resource 列表
 
 ## 一覧
 
 - [SHIORI Resource](caption_shioriresource.md)
-- [SHIORI information](shiori/index.md)
-- [Ghost information](ghost/index.md)
-- [Update information](update/index.md)
-- [Owner-draw menu images](ownerdraw-image/index.md)
-- [Owner-draw menu text colors](ownerdraw-color/index.md)
-- [Owner-draw menu item display](ownerdraw-item-display.md)
-- [Owner-draw menu item names](ownerdraw-item-name/index.md)
-- [Tooltip-related](tooltip/index.md)
+- [SHIORI 信息](shiori/index.md)
+- [幽灵信息](ghost/index.md)
+- [更新信息](update/index.md)
+- [owner draw 菜单图像](ownerdraw-image/index.md)
+- [owner draw 菜单文字颜色](ownerdraw-color/index.md)
+- [owner draw 菜单项目显示](ownerdraw-item-display.md)
+- [owner draw 菜单项目名称](ownerdraw-item-name/index.md)
+- [工具提示相关](tooltip/index.md)

@@ -1,8 +1,8 @@
 # internal_system
 
-Lists built-in modules and how to call their functions. Use this to check from a script which functions are available and which options and algorithm names can be used.<br />
-Only modules whose names start with `internal_` appear in the list ([compatibility modules](../compat.md) are not included).<br />
-The results of `ListModules` / `ListFunctions` are comma-separated in `Result`, with one item each in `Value0` onward. The order is not significant.
+列出內建模組並說明函式的呼叫方式。可用來從 script 確認哪些函式可用，以及可用的選項或演算法名稱。<br />
+清單只會列出名稱以`internal_`開頭的模組（不包含[相容模組](../compat.md)）。<br />
+`ListModules` / `ListFunctions`的結果會以逗號分隔，放在`Result`中，並從`Value0`開始逐一放入。排序順序沒有特別意義。
 
 ## 一覧
 

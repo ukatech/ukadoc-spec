@@ -1,79 +1,79 @@
-# UKADOC Home Page
+# UKADOC 首页
 
-## About UKADOC
+## 关于 ukadoc
 
-A collection of documents edited by the [UKADOC project](https://github.com/ukatech/ukadoc-spec), a project that aggregates specification documents related to 伺か (Ukagaka).
+由伺か（Ukagaka）相关规格文档汇总项目 [UKADOC project](https://github.com/ukatech/ukadoc-spec) 编辑的文档集。
 
-*The documents here are treated as the official documentation for [SSP](http://ssp.shillest.net/).*
+*[SSP](http://ssp.shillest.net/)相关文档以本站文档作为官方文档*。
 
-Please send corrections, questions, opinions, requests, and information to [BaguTora Laboratory ToDo](http://ssp.shillest.net/bts/?project=misc&action=top).
+如需指出错误、提问、发表意见或需求，或提供信息，请前往[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)。
 
-The text on this site is available under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.ja) license. You are free to quote, reproduce, and modify it, not only for ghost creation. When doing so, please credit the original author by naming this project (UKADOC project) or linking to this site.
+本站文章采用[知识共享署名 4.0 国际许可协议（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)。无论是否用于 ghost 制作，均可自由引用、转载和修改。使用时，请注明「原著作者」，即标注本项目（UKADOC project）的名称或本站链接。
 
-> For offline reading, we provide [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip), an archive containing the HTML, CSS, JS, and images for this site. You can read it by opening `ukadoc-spec/index.html` after extracting it.
+> 本站提供了将本站 HTML、CSS、JS 和图片文件打包而成的 [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip)，可供离线阅读。解压后可从 `ukadoc-spec/index.html` 开始阅读。
 >
-> For AI agents, we provide [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt), a guide to finding information. The Markdown source for each page can be retrieved as a `.md` file at the same path as in the repository (e.g.: `https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`).
+> 本站为 AI 代理提供了查找指南 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt)。每个页面的 Markdown 原稿可通过与仓库相同路径的 `.md` 文件获取（例如：`https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）。
 
-## Target versions
+## 目标版本
 
-- [SSP](http://ssp.shillest.net/) latest version (official specifications)
+- [SSP](http://ssp.shillest.net/) 最新版（官方规格文档）
 - [MATERIA](http://usada.sakura.vg/) period 583
-- [CROW](http://crow.aqrs.jp/) ver0.5.2 (development version)
-- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) latest version
+- [CROW](http://crow.aqrs.jp/) ver0.5.2（开发版）
+- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) 最近版本
 
-## External links
+## 外部链接
 
-- [伺か development information search](http://ukadev.shillest.net/)
-- [SSP startup options (SSP Help)](https://ukatech.shillest.net/ukadoc-ssp/functions/option/)
-- [Official 伺か specifications](http://usada.sakura.vg/contents/specification.html)
-- [CROW・SSP specifications](http://crow.aqrs.jp/reference/all/)
-- [Ooyashima.NET unofficial specifications](http://www.ooyashima.net/db/)
-- [Da-debe Wiki specification notes](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
+- [伺か（Ukagaka）开发信息搜索](http://ukadev.shillest.net/)
+- [SSP 启动选项（SSP 帮助）](https://ukatech.shillest.net/ukadoc-ssp/functions/option/)
+- [伺か（Ukagaka）官方规格文档](http://usada.sakura.vg/contents/specification.html)
+- [CROW・SSP 规格文档](http://crow.aqrs.jp/reference/all/)
+- [大八州.NET 非官方规格文档](http://www.ooyashima.net/db/)
+- [駄でべwiki 规格备忘](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
 
-## How to use ukadoc
+## 如何阅读 ukadoc
 
-The articles in the sidebar cover the following topics, organized by category.
+侧边栏中的文章按类别分别介绍以下内容。
 
-- **File structure**: Describes the files that make up various 伺か-related content and their directory structures.
+- **文件结构**：介绍构成各类伺か（Ukagaka）相关内容的文件，以及目录结构。
 
-  Refer to this section when you want an overview of what files are required or available.
+  如果想了解需要哪些文件、可以使用哪些文件的整体情况，可参考此处。
 
-- **Configuration files**: Explains the contents of individual configuration files used by various 伺か-related content.
+- **设置文件**：介绍各类伺か（Ukagaka）相关内容所用的单个设置文件的具体写法。
 
-  You can refer to these explanations when writing configuration files. Examples are provided wherever possible.
+  编写各个设置文件时可参考此处。文档尽可能提供了示例。
 
-- **Sakura Script**: Explains each Sakura Script command, which controls ghost behavior.
+- **Sakura Script**：介绍用于指示 ghost 执行动作的「Sakura Script」中的各项命令。
 
-  Refer to this section to learn what commands are available and how to use them.
+  可参考此处了解有哪些命令，以及如何使用这些命令。
 
-- **Events**: Explains the IDs of events that the baseware notifies SHIORI, PLUGIN, and others about.
+- **事件**：介绍 baseware 向 SHIORI 或 PLUGIN 等发送通知的各个事件 ID。
 
-  Refer to this section when creating ghosts, PLUGINs, SHIORI, and related content, or when you need information about individual events and their References.
+  制作 ghost、PLUGIN、SHIORI 等内容时，如果想了解各个事件及其 Reference，可参考此处。
 
-- **Specifications**: Compiles various specifications related to 伺か-related content.
+- **规格**：汇总各种与伺か（Ukagaka）相关内容有关的规格。
 
-  This section mainly covers information about core system components such as SHIORI, SAORI, and baseware.
+  这里的信息主要涉及 SHIORI、SAORI、baseware 等系统的核心部分。
 
-- **HowTo**: Introduces basic methods for creating various 伺か-related content.
+- **HowTo**：介绍创建各类伺か（Ukagaka）相关内容的基础方法。
 
-  However, it is difficult to cover tips for every individual case, so please also look for external sites if you need more specific information.
+  但要涵盖针对各种具体情况的 TIPS 并不现实；如果需要更具体的信息，请尝试查找外部网站。
 
-- **Other**: Includes notes and supplementary articles about specifications for baseware such as SSP.
+- **其他**：其他内容，例如有关 SSP 等 baseware 规格的备忘和补充文章。
 
 ## 目次
 
-### File structure
+### 文件结构
 
-- [Overall structure](manual/directory.md)
-- [Ghost](manual/ghost.md)
-- [Shell](manual/shell.md)
-- [Owner draw menu](manual/owner-draw-menu.md)
-- [Installation](manual/install.md)
-- [Network update](manual/update.md)
-- [Translator](manual/translator.md)
-- [Balloon](manual/balloon.md)
+- [整体结构](manual/directory.md)
+- [ghost](manual/ghost.md)
+- [shell](manual/shell.md)
+- [owner draw 菜单](manual/owner-draw-menu.md)
+- [安装](manual/install.md)
+- [网络更新](manual/update.md)
+- [转换器](manual/translator.md)
+- [balloon](manual/balloon.md)
 
-### Configuration files
+### 设置文件
 
 - Ghost
   - [descript.txt](descript/ghost/index.md)
@@ -99,38 +99,38 @@ The articles in the sidebar cover the following topics, organized by category.
 - [SAKURA Script](list/sakura-script/index.md)
 - [Property System](list/propertysystem/index.md)
 
-### Events
+### 事件
 
 - SHIORI
   - [SHIORI Event](list/shiori-event/index.md)
-  - [SHIORI Event (external)](list/shiori-event-ex/index.md)
+  - [SHIORI Event（外部）](list/shiori-event-ex/index.md)
   - [SHIORI Resource](list/shiori-resource/index.md)
 - PLUGIN
   - [PLUGIN Event](list/plugin-event/index.md)
 
-### Specifications
+### 规格
 
 - [SHIORI/3.0](spec/shiori3/index.md)
 - [SSTP/1.x](spec/sstp/index.md)
-- [SAORI/1.0 (external site)](http://www.boreas.dti.ne.jp/~sdn/saori.html)
+- [SAORI/1.0（外部网站）](http://www.boreas.dti.ne.jp/~sdn/saori.html)
 - [SAORI over DirectSSTP](spec/saori-ex/index.md)
 - [PLUGIN/2.0](spec/plugin.md)
 - [HEADLINE/2.0](spec/headline.md)
 - [DLL](spec/dll.md)
 - [FMO/Mutex](spec/fmo-mutex/index.md)
-- [Web-related](spec/web/index.md)
-- [Specification notes (external site)](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
+- [Web 相关](spec/web/index.md)
+- [规格备忘（外部网站）](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
 
 ### HowTo
 
-- [Creating files for distribution](dev/nar.md)
-- [Supporting network updates](dev/update.md)
-- [Creating a shell](dev/shell.md)
-- [Configuring dressup](dev/bind.md)
-- [Configuring an owner draw menu](dev/ownerdraw.md)
-- [Resolving error messages](dev/shell-error.md)
+- [制作分发文件](dev/nar.md)
+- [支持网络更新](dev/update.md)
+- [制作 shell](dev/shell.md)
+- [设置 dressup](dev/bind.md)
+- [设置 owner draw 菜单](dev/ownerdraw.md)
+- [解决错误消息](dev/shell-error.md)
 
-### Other
+### 其他
 
-- [Supplement: What is a SHIORI Event?](memo/shiori-event.md)
-- [Notes](memo/memo.md)
+- [补充：什么是 SHIORI Event](memo/shiori-event.md)
+- [备忘](memo/memo.md)

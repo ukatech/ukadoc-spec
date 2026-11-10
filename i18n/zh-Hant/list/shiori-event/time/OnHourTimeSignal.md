@@ -1,15 +1,15 @@
 # OnHourTimeSignal
 
-**カテゴリ:** Time event
+**カテゴリ:** 時間事件
 
-Hourly time signal event. Occurs at the start of each hour (around ? o'clock, 0 minutes, 0 seconds).
+報時事件。每逢整點（約在 ? 時 0 分 0 秒）發生。
 
-If a talk cannot be played, it waits until one can be played. Therefore, **the event may be notified at a slightly later time.**
+無法播放談話時，會等待到能播放談話為止。因此，**通知時間可能會稍有延遲。**
 
-- **Reference0**: OS uptime (hour)
-- **Reference1**: 1 when clipped, otherwise 0.
-- **Reference2**: 1 when overlapping, otherwise 0.
-- **Reference3**: Always 1. (Because it waits until a talk can be played)
-- **Reference4**: ※SSP only: Time spent idle (at the OS level), in seconds.
+- **Reference0**: OS 連續運作時間（小時）
+- **Reference1**: 被切出視窗時為 1，其他情況為 0。
+- **Reference2**: 重疊時為 1，其他情況為 0。
+- **Reference3**: 固定為 1。（因為會等待到可以播放談話為止）
+- **Reference4**: ※僅 SSP　（OS 層級）未操作而閒置的時間，單位為秒。
 
 **対応:** SSP

@@ -1,11 +1,11 @@
 # installedcalendarpluginname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed calendar plugins (schedule sensors).*\[NOTIFY\]*
+通知已安装的日历插件（日程传感器）。*\[NOTIFY\]*
 
-Can be used with [`\![execute,calendarplugin,calendar plugin name]`](../../sakura-script/event/bang-execute-calendarplugin.md).
+可用于[`\![execute,calendarplugin,カレンダープラグイン名]`](../../sakura-script/event/bang-execute-calendarplugin.md)。
 
-- **Reference\***: Installed calendar plugin name.
+- **Reference\***: 已安装的日历插件名称。
 
 **対応:** SSP 2.8.93

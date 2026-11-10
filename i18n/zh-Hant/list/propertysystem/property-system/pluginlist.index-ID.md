@@ -1,7 +1,7 @@
-# pluginlist.index(ID).generic property name
+# pluginlist.index(ID).通用屬性名稱
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Get information from the plugin at the ID position in the list.
+從清單中 ID 所在位置的 plugin 取得資訊。
 
 **対応:** SSP

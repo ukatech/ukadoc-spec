@@ -1,9 +1,9 @@
 # otherghostname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the base-side names of other running ghosts.*\[NOTIFY\]*
+通知其他正在运行的 ghost 的本体侧名称。*\[NOTIFY\]*
 
-- **Reference\***: Base-side names of other running ghosts, base-side surface numbers, and partner-side surface numbers, separated by one byte value.
+- **Reference\***: 以字节值 1 分隔的其他正在运行的 ghost 的本体侧名称、本体侧 surface 编号、搭档侧 surface 编号。
 
 **対応:** Materia / SSP / CROW

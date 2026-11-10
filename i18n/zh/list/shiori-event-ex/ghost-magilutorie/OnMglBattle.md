@@ -1,10 +1,10 @@
 # OnMglBattle
 
-**カテゴリ:** Ghost “マギルトリエ”
+**カテゴリ:** ghost「Magilutorie」
 
-Occurs for each result of the virtual battles held by マギルトリエ.
+Magilutorie 进行的虚拟战斗中，每次产生结果时发生。
 
-- **Reference0**: Version information.
-- **Reference2**: Sender ghost.
-- **Reference3**: Mgl event name.
-- **Reference\***: Content for the Mgl event.
+- **Reference0**: 版本信息。
+- **Reference2**: 发送方 ghost。
+- **Reference3**: Mgl 事件名称。
+- **Reference\***: Mgl 事件的内容。

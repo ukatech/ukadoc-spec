@@ -188,7 +188,7 @@ def line_hint(src_prose, out_prose):
     return hint
 
 
-def check_md(src, out, key, check_language=True):
+def check_md(src, out, key, check_language=True, lang=None):
     """訳文 out が、原文 src と同じ構造か。違う点を文字列のリストで返す（空なら通った）"""
     a, b = md_facts(src), md_facts(out)
     errors = []
@@ -236,7 +236,29 @@ def check_md(src, out, key, check_language=True):
         base = len(HIRAGANA.findall(strip_fixed('\n'.join(a['prose']))))
         if left >= 2 and left > base * 0.3:
             errors.append(f'日本語（ひらがな {left} 字）が訳されずに残っている')
+        errors += wrong_language('\n'.join(a['prose']), '\n'.join(b['prose']), lang)
     return errors
+
+
+HAN = re.compile(r'[一-鿿]')
+JA_TEXT = re.compile(r'[぀-ヿ一-鿿]')
+
+
+def wrong_language(src_text, out_text, lang):
+    """中国語の訳文が、中国語になっているか（モデルが英語で返すことがある）。原文に訳すべき日本語があるのに、
+    訳文に漢字がほとんど無ければ、別の言語で返したとみなす。構造の語（記述例・目次・一覧）の漢字は数えない"""
+    if lang not in ('zh', 'zh-Hant'):
+        return []
+    def bare(t):
+        t = strip_fixed(t)
+        for w in MARKER_HEADINGS:
+            t = t.replace(w, '')
+        return t
+    base = len(JA_TEXT.findall(bare(src_text)))
+    han = len(HAN.findall(bare(out_text)))
+    if base >= 4 and han < base * 0.15:
+        return [f'訳文が中国語になっていない（原文の日本語 {base} 字に対し、訳文の漢字は {han} 字）。英語で返さず、必ず {LANGS[lang]} で訳すこと（Write the translation in {LANGS[lang]}, not in English）']
+    return []
 
 
 def strip_fixed(text):
@@ -254,7 +276,13 @@ def html_skeleton(text):
     return re.findall(r'<[^>]*>', text)
 
 
-def check_html(src, out, key, check_language=True):
+def html_text(text):
+    """HTML の断片の、訳す字（タグの外の文字と、alt / title / aria-label / value / placeholder の中身）"""
+    attrs = re.findall(r'\b(?:alt|title|aria-label|value|placeholder)="([^"]*)"', text)
+    return re.sub(r'<[^>]*>', '', text) + '\n' + '\n'.join(attrs)
+
+
+def check_html(src, out, key, check_language=True, lang=None):
     errors = []
     if html_skeleton(src) != html_skeleton(out):
         errors.append('タグ・属性（href・class・id など）が原文と違う。訳してよいのはタグの外の文字と alt / title / aria-label / value / placeholder だけ')
@@ -263,12 +291,13 @@ def check_html(src, out, key, check_language=True):
         base = len(HIRAGANA.findall(re.sub(r'<[^>]*>', '', src)))
         if left >= 2 and left > base * 0.3:
             errors.append(f'日本語（ひらがな {left} 字）が訳されずに残っている')
+        errors += wrong_language(html_text(src), html_text(out), lang)
     return errors
 
 
-def check(src, out, key, check_language=True):
+def check(src, out, key, check_language=True, lang=None):
     fn = check_html if key.endswith('.html') else check_md
-    return fn(src, out, key, check_language)
+    return fn(src, out, key, check_language, lang)
 
 
 # ---------------------------------------------------------------- プロンプト
@@ -286,6 +315,8 @@ def load_glossary(lang):
 def system_prompt(lang):
     glossary = load_glossary(lang)
     text = f"""You are translating the UKADOC specification into {LANGS[lang]}. UKADOC documents the Ukagaka desktop-mascot ecosystem (SSP, SHIORI, SAORI, Sakura Script, ghosts, shells, balloons). The source is Japanese Markdown (or an HTML fragment of the site frame). Readers are developers; be accurate and concise, in a plain technical-documentation tone.
+
+OUTPUT LANGUAGE: {LANGS[lang]}. Every translated sentence must be written in {LANGS[lang]}, even if the glossary below or the technical terms are in English. Never answer in English unless the target language is English.
 
 INPUT FORMAT: one or more files, each wrapped like
 <<<FILE path>>>
@@ -435,7 +466,7 @@ def translate_batch(cfg, budget, lang, system, files, check_language=True, fallb
             failed[key] = ['返答に見つからなかった']
             continue
         out = normalize(got[key])
-        problems = check(sources[key], out, key, check_language)
+        problems = check(sources[key], out, key, check_language, lang)
         if problems:
             failed[key] = problems
         else:
@@ -450,7 +481,7 @@ def translate_batch(cfg, budget, lang, system, files, check_language=True, fallb
                 problems = ['返答に見つからなかった' if finish != 'length' else '出力が途中で切れた']
                 continue
             out = normalize(got[key])
-            problems = check(sources[key], out, key, check_language)
+            problems = check(sources[key], out, key, check_language, lang)
             if not problems:
                 done[key] = out
                 del failed[key]
@@ -472,7 +503,7 @@ def translate_batch(cfg, budget, lang, system, files, check_language=True, fallb
                 parts.append(d[sub])
             else:
                 joined = normalize('\n'.join(p.rstrip('\n') + '\n' for p in parts))
-                problems = check(sources[key], joined, key, check_language)
+                problems = check(sources[key], joined, key, check_language, lang)
                 if not problems:
                     done[key] = joined
                     del failed[key]
@@ -506,7 +537,7 @@ def translate_big(cfg, budget, lang, system, key, src, check_language=True):
             return {}, {key: [f'分割 {i + 1} 番目: ' + '; '.join(failed.get(sub, ['不明']))]}
         parts.append(done[sub])
     joined = normalize('\n'.join(p.rstrip('\n') + '\n' for p in parts))
-    problems = check(src, joined, key, check_language)
+    problems = check(src, joined, key, check_language, lang)
     if problems:
         return {}, {key: ['つないだ全体: ' + p for p in problems]}
     return {key: joined}, {}
@@ -536,7 +567,7 @@ def recheck(lang, all_targets, manifest):
         out_file = out_path(lang, key)
         if not os.path.isfile(out_file):
             continue
-        problems = check(normalize(read_text(path)), read_text(out_file), key)
+        problems = check(normalize(read_text(path)), read_text(out_file), key, True, lang)
         if problems:
             bad += 1
             manifest.pop(key, None)

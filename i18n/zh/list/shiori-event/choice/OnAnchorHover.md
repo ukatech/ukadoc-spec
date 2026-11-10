@@ -1,11 +1,11 @@
 # OnAnchorHover
 
-**カテゴリ:** Choice event
+**カテゴリ:** 选择事件
 
-Occurs when the cursor rests over a `\_a` anchor.
+当光标停留在`\_a`跳转链接上时触发。
 
-- **Reference0**: Anchor text.
-- **Reference1**: Anchor ID.
-- **Reference\***: Extended information (the second and subsequent arguments in the `\_a` tag).
+- **Reference0**: 跳转链接的文本。
+- **Reference1**: 跳转链接的ID。
+- **Reference\***: 扩展信息（`\_a`标签内从第2个起的参数）。
 
 **対応:** SSP

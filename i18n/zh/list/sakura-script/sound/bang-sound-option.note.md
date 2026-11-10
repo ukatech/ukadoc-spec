@@ -1,32 +1,32 @@
-# Options for sound play/load/option
+# sound play/load/option 的选项
 
-- **--volume=0～100**: Change the playback volume. The maximum is 100. This does not control the overall OS volume.
-- **--balance=-100～0～100**: Left/right balance. -100 is fully left, and 100 is fully right.
-- **--rate=1～100～10000**: Playback speed. 100 is normal speed.<br />
-  The actual available range depends on the sound driver and other implementation details. Values around 400 or higher (435 or higher) often cause an error.
-- **--seektime=time \[2.8.70/72\]**: Specify the playback start position. For play, playback starts after seeking to the specified position. For option, if playback is in progress, playback continues after jumping to that position; if playback is paused, it seeks internally to that position and waits (without starting playback).<br />
-  For load, it waits after seeking to the specified position, and retains that position until the next play. However, specifying load again for a file that is already loaded does not change the position. Use option in that case.<br />
-  There are two time formats: if the value does not contain “:”, it is interpreted as an integer in milliseconds; if it contains “:”, it is interpreted as \[\[hours:\]minutes:\]seconds\[.milliseconds\]. “90500”, “1:30.5”, and “0:01:30.5” all indicate 1 minute 30.5 seconds.<br />
-  The fractional part is limited to 3 digits (milliseconds); any digits from the 4th onward are truncated. Unparseable formats and negative values are treated as 0 (the beginning).
-  Some file formats may not support seeking. In that case, the value is ignored and playback starts from the beginning. In particular, wav files support only uncompressed PCM/IEEE float; compressed wave formats such as ADPCM cannot be sought.<br />
-  Prefix the value with @ to specify a relative position from the current playback position. Negative values can also be specified in this case.
-- **--window=false/true (=OFF/ON)**: Whether to display a window with a seek bar. If true, the window is displayed even for audio-only playback. If unspecified, it is hidden for audio-only playback and shown for video.
-- **--sound-only=false/true (=OFF/ON)**: Only applies to load: allows playback of only the audio from a video file. If unspecified, this is equivalent to false.
-- **--spectrum=interval \[2.9.18\]**: Notifies the [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md) event of the spectrum of the sound being played (the volume level for each frequency band) at the specified interval (in milliseconds). The allowed range is 20–1000; values from 1 to 19 are clamped to 20, and values above 1000 are clamped to 1000. \[2.9.33\] On Windows 10 (1803) and later, the interval is precise and notifications arrive as specified (the period does not drift even if processing is delayed; if the ghost cannot keep up, notifications are dropped rather than queued). On 2.9.32 and earlier, and on older OS versions, the actual interval depends on the OS timer resolution (usually about 15.6 ms); shorter intervals are less likely to match the specified value (100 means about every 111 ms). 0 (and negative values) stops notifications. Notifications are not sent if this is unspecified.<br />
-  Notifications can be started, stopped, and have their interval changed at any time with option, even during playback. If started partway through playback, the band levels may appear slightly low for a short time immediately after starting.
-- **--spectrum-bands=0/5/10/15/31 \[2.9.18\]**: The number of bands to report with --spectrum=. Specify one of 0, 5, 10, 15, or 31 (any other value is rounded to the nearest one. For example, 16 becomes 15, 20 becomes 15, and 64 becomes 31). The default is 10. This can also be changed during playback.<br />
-  \[2.9.19\] Setting this to 0 disables analysis of individual bands and reports only the overall volume level for each channel (Reference2 and 3 of [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)) and the playback position (Reference6). It can be used as an elapsed-time notification with volume levels. The playback position is also reported for sounds that cannot provide a waveform, such as MIDI and CD tracks (the volume is 0).<br />
-  The frequencies of each band are determined by a fixed table for each number of bands, as shown in the [table below](bang-sound-option.note-2.md).
-- **--spectrum-hold=milliseconds \[2.9.18\]**: The hold time for the peak hold value reported with --spectrum= (Reference3 and 5 of [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)). The range is 0–10000; the default is 500. Setting this to 0 disables hold (the peak is the same as the current value). This can also be changed during playback.<br />
-  Whenever the current value exceeds the peak, the peak rises to that value and its hold time is reset. It remains unchanged for the hold time, then falls at a rate of 100 (the full range to 0) per second. If the current value catches up while the peak is falling, the same behavior starts again from that point.
-- **--spectrum-skipbusy=false/true (=OFF/ON) \[2.9.33\]**: When reporting with --spectrum=, do not send notifications (drop them) while the ghost's script is playing or queued for playback. The default is false. This can also be changed during playback.<br />
-  Unless the script returned by [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md) starts with `\C`, it interrupts scripts that are playing or queued for playback (including those returned by other events). Since notifications are frequent, they may cancel scripts returned by events such as per-second events before their tags are executed. Specify this option to avoid that.<br />
-  Dropped notifications are not delivered (they may be sent again at the next interval if the ghost is idle). Notifications where all levels are 0, sent on playback start or stop, are not dropped.<br />
-  This option cannot prevent events such as OnSecondChange that occur while the ghost is playing a notification script from becoming NOTIFY events that cannot return a script, just like ordinary events.
-- **--eq=gain:gain:… \[2.9.29\]**: Graphic equalizer. List the gain (dB) for each band, from the lowest-frequency band, separated by `:`. Example: `\![sound,play,bgm.wav,--eq=-12:-12:-6:0:0:0:6:12:12:12]`<br />
-  The number of values specifies the number of bands and must be 5, 10, 15, or 31. The frequencies of each band use the same [fixed table](bang-sound-option.note-2.md) as --spectrum-bands=, corresponding directly to the bands shown in the spectrum (for 10 bands: 32,64,125,…,16kHz). Gains may be integers or decimals and may include a sign. They are clamped to the range -24 to 24 (values outside the range are set to the nearest limit). If all bands are set to 0, the sound is not processed. Commas cannot be used as separators (they separate arguments in `\![sound,…]`).<br />
-  Specifying only `--eq=` (with an empty value) resets all bands to 0 dB. If the number of values is not 5, 10, 15, or 31, or if any value cannot be read as a number, the entire setting is ignored and the current settings are retained.<br />
-  This can be changed at any time during playback with [`\![sound,option,…]`](bang-sound-option.md). Changes transition smoothly over about 10 milliseconds, so no clicks occur. The setting applies to that sound and is not carried over when the same file is played again after playback ends.<br />
-  Each band is designed so that the volume at its center frequency matches the specified gain (overlap with adjacent bands is compensated for). Between bands, the gain shifts slightly more as the gain is raised or lowered by larger amounts (around 1 dB at ±12 dB). At most boundaries, the shift is toward 0 dB relative to the specified value (slightly lower when boosting and slightly less deep when cutting). Bands too close to half the sample rate (the Nyquist frequency) have no effect.<br />
-  The equalizer is applied before --volume and --balance, and before the [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md) analysis. Therefore, the equalizer is also reflected in the OnSoundSpectrum values. It has no effect on sounds that cannot provide a waveform, such as MIDI and CD tracks.
-- **--eq-preamp=gain \[2.9.29\]**: The overall equalizer gain (dB). It is clamped to the range -24 to 24 (values outside the range are set to the nearest limit); the default is 0. Use this to reduce the overall level and prevent clipping when boosted bands make the sound too loud and cause clipping. It can be specified independently of --eq= and works even if --eq= is not specified. It can also be changed during playback.
+- **--volume=0～100**: 更改播放音量。最大值为100。但这不会操作整个OS的音量。
+- **--balance=-100～0～100**: 左右平衡。-100为最左，100为最右。
+- **--rate=1～100～10000**: 播放速度。100为正常速度。<br />
+  实际可指定的范围取决于声音驱动程序等的实现，通常超过约400（435以上）时会报错。
+- **--seektime=时刻 \[2.8.70/72\]**: 指定播放开始位置。对于play，会先跳转到指定位置，然后开始播放。对于option，如果正在播放，则跳转到该位置并继续播放；如果处于暂停状态，则在内部跳转到该位置并等待（不会开始播放声音）。<br />
+  对于load，会跳转到指定位置并等待，该位置会保留到下一次play。不过，对于已经load的文件再次指定load，位置不会改变。这种情况下请使用option。<br />
+  时间格式有两种：不包含「:」时，按毫秒为单位的整数解析；包含「:」时，按\[\[时:\]分:\]秒\[.毫秒\]解析。「90500」「1:30.5」「0:01:30.5」都表示1分30.5秒。<br />
+  小数点后最多保留3位（毫秒），第4位及之后会被截断。指定无法解析的格式或负值时，会按0（开头）处理。<br />
+  某些文件格式可能无法跳转，此时会忽略该指定，从开头开始播放。尤其是wav，仅支持未压缩的PCM/IEEE float，无法跳转ADPCM等压缩wave。<br />
+  在开头加上@，即可指定相对于当前播放位置的偏移。此时也可以指定负值。
+- **--window=false/true (=OFF/ON)**: 是否显示带有进度条的窗口。为true时，即使仅播放音频也会强制显示。未指定时，仅播放音频则不显示，播放视频则显示。
+- **--sound-only=false/true (=OFF/ON)**: 仅限load时：可以只播放视频文件中的音频。未指定时与false相同。
+- **--spectrum=间隔 \[2.9.18\]**: 按指定间隔（毫秒），通过[OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)事件通知正在播放的声音频谱（各频段的音量级别）。可指定范围为20～1000，1～19会限制为20，1001以上会限制为1000。\[2.9.33\] 在Windows 10 (1803)及之后版本中，间隔会精确计时，并按指定值通知（即使处理延迟，周期也不会偏移；ghost处理不及时时，通知不会累积，而是会被跳过）。在2.9.32及更早版本，以及更旧的OS中，实际间隔会受OS定时器的计时精度（通常约为每15.6毫秒）影响，间隔越短就越难按指定值通知（指定100时，约每111毫秒通知一次）。指定0（负值也相同）时会停止通知。未指定时不通知。<br />
+  播放期间也可以随时通过option开始或停止通知，以及更改间隔。从中途开始时，刚开始的一小段时间内，频段值可能会偏小。
+- **--spectrum-bands=0/5/10/15/31 \[2.9.18\]**: --spectrum=通知的频段数。指定0、5、10、15或31（指定其他数值时会取最接近的值。例如：16会取15，20会取15，64会取31）。未指定时为10。播放期间也可以更改。<br />
+  \[2.9.19\] 指定0时，不进行各频段分析，只通知各声道的整体音量级别（[OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)的Reference2・3）和播放位置（Reference6）。可用作带音量的经过时间通知。即使对于MIDI、CD音轨等无法获取波形的声音，也会通知播放位置（音量为0）。<br />
+  各频段的频率由频段数对应的固定表决定，如[下表](bang-sound-option.note-2.md)所示。
+- **--spectrum-hold=毫秒 \[2.9.18\]**: --spectrum=通知的峰值保持值（[OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)的Reference3・5）的保持时间。范围为0～10000，未指定时为500。指定0时不保持峰值（峰值与当前值相同）。播放期间也可以更改。<br />
+  每当当前值超过峰值时，峰值就会升至该值并重新计算保持时间；在保持时间内保持不变，超过保持时间后，则以每秒下降100（到0的整个范围）的速度降低。如果下降过程中当前值追上峰值，就会从该处重新开始同样的变化。
+- **--spectrum-skipbusy=false/true (=OFF/ON) \[2.9.33\]**: 通过--spectrum=通知时，如果ghost脚本正在播放或等待播放，则不发送通知（跳过通知）。未指定时为false。播放期间也可以更改。<br />
+  [OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)返回的脚本，除非开头加上`\C`，否则会中断正在播放或等待播放的脚本（包括其他事件返回的脚本）。由于通知频繁，可能会在执行标签前取消每秒事件等返回的脚本。想要避免这种情况时请指定此选项。<br />
+  被跳过的通知不会送达（下一个间隔时，如果空闲则会再次发送）。播放或停止时，所有级别均为0的通知不会被跳过。<br />
+  此选项无法防止以下情况：ghost正在播放通知脚本时发生的OnSecondChange等事件，与普通事件一样，会成为无法返回脚本的NOTIFY。
+- **--eq=增益:增益:… \[2.9.29\]**: 图形均衡器。按低频到高频的顺序，用`:`分隔并列出各频段的增益（dB）。例如：`\![sound,play,bgm.wav,--eq=-12:-12:-6:0:0:0:6:12:12:12]`<br />
+  项目数量就是频段数，必须为5、10、15或31。各频段的频率与--spectrum-bands=相同，依据[固定表](bang-sound-option.note-2.md)确定，并与频谱显示的频段一一对应（10个频段时为32,64,125,…,16kHz）。增益可以是整数或小数，也可以带符号。范围限制为-24～24（超出范围时取边界值）。所有频段均为0时，不会处理声音。不能使用逗号分隔（因为逗号是`\![sound,…]`参数的分隔符）。<br />
+  仅指定`--eq=`（值为空）时，会将所有频段恢复为0dB。项目数量不是5、10、15或31，或包含无法解析为数值的值时，会忽略整个指定，保留当前设置。<br />
+  播放期间也可以随时通过[`\![sound,option,…]`](bang-sound-option.md)更改。更改会在约10毫秒内平滑过渡，因此不会产生噪声。此指定仅应用于该声音；播放结束后重新播放同一文件时不会沿用。<br />
+  各频段经过调整，使其中心频率处的音量恰好达到指定增益（会补偿相邻频段之间的重叠）。频段之间的增益会有轻微偏差，增益变化越大，偏差越明显（±12dB时约为1dB）。多数边界处的偏差会向0dB靠近（提高时略低，降低时略浅）。过于接近采样率一半（奈奎斯特频率）的频段不会生效。<br />
+  均衡器会在--volume和--balance之前、[OnSoundSpectrum](../../shiori-event/other/OnSoundSpectrum.md)分析之前应用。因此，均衡器也会反映在OnSoundSpectrum的值中。对于MIDI、CD音轨等无法获取波形的声音，均衡器不会生效。
+- **--eq-preamp=增益 \[2.9.29\]**: 均衡器整体增益（dB）。范围限制为-24～24（超出范围时取边界值），未指定时为0。当提高频段增益导致声音失真（音量过大而达到削波上限）时，可降低整体增益以避免失真。可以独立于--eq=指定，即使未指定--eq=也会生效。播放期间也可以更改。

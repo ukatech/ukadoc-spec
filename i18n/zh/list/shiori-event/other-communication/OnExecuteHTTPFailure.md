@@ -1,9 +1,9 @@
 # OnExecuteHTTPFailure
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通信事件
 
-Occurs when execute-http fails to retrieve data. References are the same as for Complete.
+通过execute-http获取失败时触发。Reference与Complete相同。
 
-\[2.8.90\] If retrieval from the same URL is already in progress, the later request is not executed and this event occurs (Reference4=downloading). Before this, the tag was silently ignored.
+\[2.8.90\] 如果相同URL的获取已在进行中，则后发出的请求不会执行，并触发此事件（Reference4=downloading）。此前标签会被静默忽略。
 
 **対応:** SSP / Ninix

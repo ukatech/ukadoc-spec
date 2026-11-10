@@ -1,7 +1,7 @@
 # switchrootbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for switches.
+各类开关的名称。
 
 **対応:** Materia

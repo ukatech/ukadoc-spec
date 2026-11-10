@@ -1,8 +1,8 @@
 # OnMopClear
 
-**カテゴリ:** Ghost “Foreigner” supplement “march of phantasma”
+**カテゴリ:** ghost「フォーリナー」附錄「march of phantasma」
 
-Notifies when a map is cleared.
+地圖通關時通知。
 
-- **Reference0**: Members at the time of clearing, separated by byte value 1 (unique units only).
-- **Reference1**: Name of the cleared map.
+- **Reference0**: 通關時的隊伍成員，以位元組值1分隔（僅限固有單位）。
+- **Reference1**: 通關的地圖名稱。

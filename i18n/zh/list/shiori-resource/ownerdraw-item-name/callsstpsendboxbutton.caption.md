@@ -1,7 +1,7 @@
 # callsstpsendboxbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项目名称
 
-Name for “SSTP box.”
+SSTP 发送框的名称。
 
 **対応:** Materia

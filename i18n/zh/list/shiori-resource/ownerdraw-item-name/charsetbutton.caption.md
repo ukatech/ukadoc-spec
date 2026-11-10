@@ -1,7 +1,7 @@
 # charsetbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Character encoding.”
+字符编码名称。
 
 **対応:** SSP

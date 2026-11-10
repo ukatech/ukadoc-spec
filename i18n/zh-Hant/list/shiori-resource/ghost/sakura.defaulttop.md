@@ -1,11 +1,11 @@
 # sakura.defaulttop
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The default Y coordinate of the main character (`\0`). The top edge of the character window is placed at this position.<br />
-The circumstances in which the default position is used, the units and coordinate system of the value, and the conditions under which it is invalid are the same as for [sakura.defaulty](sakura.defaulty.md) (it is enabled in modes such as free-movement mode). If [sakura.defaulty](sakura.defaulty.md) is also specified, that setting takes precedence.<br />
-A negative value is the distance from the bottom edge of the primary monitor's work area to the character's bottom edge. -0 places it exactly at the bottom edge. The bottom edge here is shifted upward by the amount set in SSP's "Desktop bottom offset" setting.\[2.9.13\]<br />
-Prefixing the value with two hyphens gives the negative coordinate itself (--100 is Y coordinate -100).\[2.9.13\]<br />
-The same item can also be specified in the descript.txt of a [ghost](../../../descript/ghost/descript-txt/sakura.defaulttop.md) or [shell](../../../descript/shell/descript-txt/sakura.defaulttop.md). The SHIORI Resource takes precedence.
+本體側(`\0`)預設位置的 Y 座標。將角色視窗的上緣放在此位置。<br />
+預設位置的使用時機、值的單位與座標系，以及失效條件皆與[sakura.defaulty](sakura.defaulty.md)相同（在自由移動模式等情況下有效）。若也指定了[sakura.defaulty](sakura.defaulty.md)，則以該項目為優先。<br />
+負值表示從主螢幕工作區下緣到角色下緣的距離。-0 會剛好貼齊下緣。此處的下緣是依 SSP 設定中的「桌面下緣偏移」向上移動後的位置。\[2.9.13\]<br />
+連續寫兩個-會指定負的座標值本身（--100 表示 Y 座標 -100）。\[2.9.13\]<br />
+也可以在[ghost](../../../descript/ghost/descript-txt/sakura.defaulttop.md)與[shell](../../../descript/shell/descript-txt/sakura.defaulttop.md)的 descript.txt 中寫入相同項目。SHIORI Resource 的設定優先。
 
 **対応:** SSP

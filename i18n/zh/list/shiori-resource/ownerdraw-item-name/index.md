@@ -1,8 +1,8 @@
-# Owner-draw menu item names
+# owner draw 菜单项名称
 
 ## 一覧
 
-- [Shortcut keys](caption_menushortcut.md)
+- [快捷键](caption_menushortcut.md)
 - [-](entry.md)
 - [activaterootbutton.caption](activaterootbutton.caption.md)
 - [addressbarbutton.caption](addressbarbutton.caption.md)

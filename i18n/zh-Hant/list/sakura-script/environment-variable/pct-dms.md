@@ -1,7 +1,7 @@
 # %dms
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 環境變數
 
-Word—“something that does something to something.”
+單字-「對～做～的～」。
 
 **対応:** Materia / SSP / CROW / Ninix

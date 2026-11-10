@@ -1,12 +1,12 @@
 # `\![set,otherghosttalk,true|false|before|after]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Set whether to send notifications for [OnOtherGhostTalk](../../shiori-event/other/OnOtherGhostTalk.md). The default is false.<br />
-When set to anything other than false, OnOtherGhostTalk is sent when another concurrently running ghost speaks.<br />
-When before is specified, the notification is sent before it speaks; when after is specified, it is sent after it speaks. true is equivalent to after.
+設定是否通知[OnOtherGhostTalk](../../shiori-event/other/OnOtherGhostTalk.md)。初始值為false。<br />
+設定為false以外的值時，同時啟動的其他ghost說話後，便會通知OnOtherGhostTalk。<br />
+指定before時，會在說話前通知；指定after時，則在說話後通知。true與after相同。
 
-This setting remains in effect until the ghost exits.
+在ghost結束前有效。
 
 **対応:** SSP / Ninix
 

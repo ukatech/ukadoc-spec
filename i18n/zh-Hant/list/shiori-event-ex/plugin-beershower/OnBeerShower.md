@@ -1,5 +1,5 @@
 # OnBeerShower
 
-**カテゴリ:** Plugin “バーチャルビールかけ（BeerShower）”
+**カテゴリ:** plugin「虛擬啤酒浴（BeerShower）」
 
-Occurs when the plugin is executed.
+plugin 執行時發生。

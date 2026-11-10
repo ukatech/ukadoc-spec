@@ -1,14 +1,14 @@
 # OnWindowStateMinimize
 
-**カテゴリ:** Startup, shutdown, and switching events
+**カテゴリ:** 启动、结束与切换事件
 
-Occurs when minimization is requested.<br />
-※Only SSP can be configured to speak in response.
+收到最小化指令时触发。<br />
+※仅SSP可通过设置让ghost发言。
 
-- **Reference0**: (SSP only) Reason for minimization.<br />
-  system : Forced minimization by the OS (including minimization from the taskbar)<br />
-  script : From Sakura Script<br />
-  sakuraapi : From Sakura API<br />
-  user : Menu operation
+- **Reference0**: （仅SSP）最小化原因。<br />
+  system : OS强制执行的最小化操作（包括从任务栏最小化的情况）<br />
+  script : 来自Sakura Script<br />
+  sakuraapi : 来自Sakura API<br />
+  user : 菜单操作
 
 **対応:** Materia / SSP / CROW / Ninix

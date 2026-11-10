@@ -1,9 +1,9 @@
 # installedheadlinename
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed RSS/headlines.*\[NOTIFY\]*
+通知已安装的 RSS/标题。*\[NOTIFY\]*
 
-- **Reference\***: Installed RSS/headline name.
+- **Reference\***: 已安装的 RSS/标题名称。
 
 **対応:** SSP

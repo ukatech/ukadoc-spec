@@ -1,16 +1,16 @@
 # OnBIFFComplete
 
-**カテゴリ:** Mail-check event
+**カテゴリ:** 邮件检查事件
 
-Occurs when a mail check succeeds.
+邮件检查成功时触发。
 
-- **Reference0**: Number of messages in the spool, expressed as a 1-based count.
-- **Reference1**: Number of bytes of mail in the spool.
-- **Reference2**: Name of the mail server to check.
-- **Reference3**: Difference in new mail.
-- **Reference4**: TopResult for all mail. Complete list of POP communication headers. Separated by byte value 2 for each message, with headers separated by byte value 1 (normally, use the information in Reference7).
-- **Reference5**: ListResult. IDs on the mail server; equivalent to the result of the POP command "LIST".
-- **Reference6**: UidlResult. IDs used to distinguish messages; equivalent to the result of the POP command "UIDL".
-- **Reference7**: Sender and subject, separated by byte value 1.
+- **Reference0**: 邮件队列中的邮件数，以 1 为起始值。
+- **Reference1**: 邮件队列中的邮件字节数。
+- **Reference2**: 要检查的邮件服务器名称。
+- **Reference3**: 新邮件差异。
+- **Reference4**: 所有邮件的 TopResult。POP 通信的所有头部列表。每封邮件以字节值 2 分隔，每个头部以字节值 1 分隔（通常使用 Reference7 中的信息即可）。
+- **Reference5**: ListResult。邮件服务器上的 ID。内容相当于 POP 命令「LIST」的结果。
+- **Reference6**: UidlResult。用于区分邮件的 ID。内容相当于 POP 命令「UIDL」的结果。
+- **Reference7**: 以字节值 1 分隔的发件人和标题。
 
 **対応:** Materia / SSP / CROW

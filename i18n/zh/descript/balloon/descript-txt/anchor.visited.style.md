@@ -1,13 +1,13 @@
-# anchor.visited.style,shape
+# anchor.visited.style,形状
 
 **カテゴリ:** descript.txt
 
-Shape of visited anchors.<br />
-square displays a rectangle.<br />
-underline displays an underline.<br />
-square+underline displays a rectangle and an underline.<br />
-none displays neither a rectangle nor an underline.
+已访问锚点的形状。<br />
+square 显示矩形。<br />
+underline 显示下划线。<br />
+square+underline 显示矩形和下划线。<br />
+none 表示不显示矩形和下划线。
 
-**既定値:** Unknown
+**既定値:** 未知
 
 **対応:** SSP

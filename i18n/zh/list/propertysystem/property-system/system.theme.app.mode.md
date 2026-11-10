@@ -1,7 +1,7 @@
 # system.theme.app.mode
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Theme mode of the SSP app UI: dark (dark theme) or light (light theme).
+SSP应用UI的主题模式。为dark（深色主题）或light（浅色主题）。
 
 **対応:** SSP 2.8.17

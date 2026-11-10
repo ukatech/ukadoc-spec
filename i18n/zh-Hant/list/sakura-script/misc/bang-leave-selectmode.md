@@ -1,9 +1,9 @@
 # `\![leave,selectmode]`
 
-**カテゴリ:** Uncategorized commands
+**カテゴリ:** 未分類コマンド
 
-Exit the mode described above. After execution, [OnSelectModeComplete](../../shiori-event/select-region-mode/OnSelectModeComplete.md) is issued.<br />
-If the hit-test region is invalid (no region is selected), for example, [OnSelectModeCancel](../../shiori-event/select-region-mode/OnSelectModeCancel.md) is issued.
+解除上述模式。執行後會觸發[OnSelectModeComplete](../../shiori-event/select-region-mode/OnSelectModeComplete.md)。<br />
+若命中判定區域無效（未選取）等情況，則會觸發[OnSelectModeCancel](../../shiori-event/select-region-mode/OnSelectModeCancel.md)。
 
 **対応:** SSP
 

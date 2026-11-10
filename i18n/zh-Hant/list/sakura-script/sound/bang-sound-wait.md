@@ -1,8 +1,8 @@
 # `\![sound,wait]`
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Same function as `\_V`.
+功能與 `\_V` 相同。
 
 **対応:** SSP / Ninix
 

@@ -1,8 +1,8 @@
 # `\![open,rateofusegraphballoon]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Display balloon usage rates. In environments that do not support this command, it works the same as running rateofusegraph.
+顯示 balloon 使用率。在不支援的環境中，效果與執行 rateofusegraph 相同。
 
 **対応:** Materia / SSP 2.3.77
 

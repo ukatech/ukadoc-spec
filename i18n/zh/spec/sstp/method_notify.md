@@ -1,10 +1,10 @@
-# Method: NOTIFY
+# 方法：NOTIFY
 
-This method notifies a ghost of an event.<br />
-SEND and NOTIFY are handled identically and have no functional differences. For details about common headers and specifications such as the IfGhost routing rules, see [Method: SEND](method_send.md).<br />
-The Event header corresponds to the SHIORI/3.0 ID, and Reference\* is passed through as is.
+用于向 ghost 通知事件。<br />
+SEND和NOTIFY按相同的处理方式处理，在功能上没有差异。有关共通标头的详细信息以及IfGhost的分发规则等规范，请参阅[方法：SEND](method_send.md)。<br />
+Event标头对应SHIORI/3.0的ID，Reference\*会原样传递。
 
-## Event notification only sample (NOTIFY/1.0)
+## 仅通知事件的示例（NOTIFY/1.0）
 
 ```
 NOTIFY SSTP/1.0
@@ -15,10 +15,10 @@ Reference0: 自由の翼
 Reference1: Linked Horizon
 ```
 
-If the ghost does not respond to the specified event ID, you can specify a “fallback” script to play instead.<br />
-If you specify an IfGhost header in this case, the Script header immediately following it is treated as a script exclusive to the specified ghost.
+如果 ghost 不响应指定的事件ID，可以指定一段“备用”脚本并播放。<br />
+此时，如果指定了IfGhost标头，则紧随其后的Script标头会被视为仅供指定 ghost 使用的脚本。
 
-## Sample with fallback response (NOTIFY/1.1)
+## 带备用响应的示例（NOTIFY/1.1）
 
 ```
 NOTIFY SSTP/1.1
@@ -33,14 +33,14 @@ IfGhost: ラーシェ,ティセ
 Script: \0\s[3]巨人っていっても、身長は列車数両分しかないよね。\1\s[14]それが縦に立ち上がるとさすがに大きいと思うけどね。
 ```
 
-## Request-specific headers
+## request专用标头
 
-For details about common headers such as Event, Reference\*, Script, IfGhost, and Ghost, see [Method: SEND](method_send.md).
+有关Event、Reference\*、Script、IfGhost、Ghost等共通标头的详细信息，请参阅[方法：SEND](method_send.md)。
 
-- **Option**: Specifies options for how Sakura Script executed by SSTP or the specified event is handled.<br />
-  Multiple values can be specified, separated by commas. Of the strings that can be specified, the NOTIFY-specific one is as follows.<br />
-  notify : Forces the event to be sent as NOTIFY. Also, the fallback script is handled forcibly in the same way as when returned in a [ValueNotify header](../shiori3/request.md). \[SSP 2.6.76\]
+- **Option**: 指定SSTP执行的Sakura Script或指定事件的处理方式。<br />
+  可以用逗号分隔指定多个选项。指定字符串中，NOTIFY特有的选项如下。<br />
+  notify : 强制通过NOTIFY发送事件。此外，备用脚本也会像[ValueNotify标头返回时](../shiori3/request.md)一样被强制处理。 \[SSP 2.6.76\]
 
-## Response-specific headers
+## response专用标头
 
-- **Script**: The script played as a result of the event notification. Currently supported only by SSP.
+- **Script**: 事件通知后播放的脚本。目前仅SSP支持。

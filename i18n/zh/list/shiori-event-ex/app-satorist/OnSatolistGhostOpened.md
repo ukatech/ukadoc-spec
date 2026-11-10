@@ -1,8 +1,8 @@
 # OnSatolistGhostOpened
 
-**カテゴリ:** App "Satorist"
+**カテゴリ:** 应用“Satorist”
 
-Fires when Satorist loads a ghost.
+Satorist 加载 ghost 时触发。
 
-- **Reference0**: Character name on the baseware side.
-- **Reference1**: Ghost name.
+- **Reference0**: baseware 端的角色名称。
+- **Reference1**: ghost 名称。

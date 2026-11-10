@@ -1,7 +1,7 @@
 # switchproxybutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for enabling the proxy server.
+启用代理服务器的名称。
 
 **対応:** Materia / SSP

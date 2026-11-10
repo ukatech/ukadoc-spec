@@ -1,7 +1,7 @@
 # username
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The user's name.
+使用者名稱。
 
 **対応:** Materia / SSP / CROW / Ninix

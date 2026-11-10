@@ -1,13 +1,13 @@
-# paint_transparent_region_black,value
+# paint_transparent_region_black,数值
 
 **カテゴリ:** descript.txt
 
-Controls the display of regions that have the image's transparency color (the color at the top-left of the image) but are not transparent according to the transparency value.<br />
-If set to 0, the original image color (transparency color) is displayed with the specified transparency.<br />
-If set to 1, the region is filled with black instead of the image color, then displayed with the specified transparency.<br />
-For example, if 0 is specified and an entirely white pna is prepared, the image is displayed as-is, with no transparency color.<br />
-This setting applies only to the entire balloon and cannot be overridden.
+对于颜色与图像透明色（图像左上角的颜色）相同、但透明度值却不透明的区域，设置其显示方式。<br />
+为0时，以指定的透明度显示图像原本的颜色（透明色）。<br />
+为1时，先用黑色替代图像颜色填充，再以指定的透明度显示。<br />
+例如，指定0并准备一张全白的 pna 图像时，该图像会以原样显示，不使用透明色。<br />
+此设置只能统一设置整个气球，不能覆盖。
 
-**既定値:** Not specified (acts like 1 for images that use pna for transparency, and like 0 for [images that use the image's own alpha channel for transparency](use_self_alpha.md))
+**既定値:** 未指定（将 pna 作为透明度的图像相当于设置为1，[将图像自身的 alpha 通道作为透明度的图像](use_self_alpha.md)相当于设置为0）
 
 **対応:** SSP

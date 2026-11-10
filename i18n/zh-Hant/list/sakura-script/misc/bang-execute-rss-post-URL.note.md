@@ -1,13 +1,13 @@
-# RSS filtering options \[2.8.92\]
+# RSS 篩選選項 \[2.8.92\]
 
-Options for specifying which items to return from the retrieved feed with [`\![execute,rss-get/rss-post]`](bang-execute-rss-get-URL.md).<br />
-The syntax is the same as for the [iCal filtering options](bang-execute-ical-post-URL.note.md), but the behavior when omitted differs. --expand is ignored.
+在[`\![execute,rss-get/rss-post]`](bang-execute-rss-get-URL.md)中，用來指定要從取得的 feed 回傳哪些項目的選項。<br />
+格式與[iCal 篩選選項](bang-execute-ical-post-URL.note.md)相同，但省略時的處理方式不同。--expand 會被忽略。
 
-If none are specified, all items are returned.
+若未指定任何選項，則回傳所有項目。
 
-- **Period (--from and --to)**: --from=yyyymmdd returns items with an update date and time at or after 00:00:00 on that day; --to=yyyymmdd returns items with an update date and time up to the end of that day (inclusive). Dates are evaluated using the local date in the execution environment.<br />
-  An omitted bound is unrestricted (unlike iCal, it does not default to the current day). A nonexistent date is treated as if the option were omitted. If --to is earlier than --from, no items are returned.<br />
-  If either --from or --to is specified, items without an update date and time (or with one that cannot be interpreted) are not returned.
-- **Maximum number of items (--limit)**: If specified, retrieval stops once the specified number of items is reached. --limit=0 means unlimited.<br />
-  Unlike iCal, there is no default limit (200 items), and specifying only --limit does not filter by period.<br />
-  Items are sorted by update date and time, newest first, so --limit=5 returns the latest 5 items (if no items in the feed have an update date and time, the first 5 items in the order listed in the feed are returned).
+- **期間（--from・--to）**：--from=yyyymmdd 會回傳更新日期時間在該日 0 時 0 分 0 秒之後的項目；--to=yyyymmdd 則會回傳更新日期時間在該日結束前（包含該日）的項目。日期依執行環境的本地日期判定。<br />
+  省略其中一側時不設限制（不會像 iCal 一樣從當日開始）。若指定不存在的日期，則視同省略。若 --to 早於 --from，則不會回傳任何項目。<br />
+  若指定 --from 或 --to，則不會回傳沒有更新日期時間（或無法解析日期時間）的項目。
+- **件數上限（--limit）**：只有在指定時，才會於達到該件數時停止。--limit=0 表示不限件數。<br />
+  與 iCal 不同，沒有預設上限（200 件）；只指定 --limit 也不會篩選期間。<br />
+  項目會依更新日期時間由新到舊排序，因此 --limit=5 會回傳最新的 5 個項目（若 feed 中所有項目都沒有更新日期時間，則回傳 feed 所列順序的前 5 個項目）。

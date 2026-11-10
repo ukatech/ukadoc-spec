@@ -1,10 +1,10 @@
 # `\![set,windowstate,stayontop]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Display in front. From this script onward, it is always displayed on top.
+顯示在最上層。從這段指令之後，視窗會一直顯示在最前面。
 
-This setting remains in effect until the ghost exits.
+直到 ghost 結束前都有效。
 
 **対応:** Materia / SSP / CROW / Ninix
 

@@ -1,4 +1,4 @@
-# Startup, shutdown, and switching events
+# 启动、结束与切换事件
 
 ## 一覧
 

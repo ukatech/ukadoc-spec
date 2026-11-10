@@ -1,14 +1,14 @@
 # `\![set,choicetimeout,時間]`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-Sets the choice timeout duration. The unit is milliseconds.<br />
-The timer starts after all the talk has finished displaying.<br />
-This setting is effective only within the current script. It is also effective if written after the choice.<br />
-When a choice times out, the [OnChoiceTimeout](../../shiori-event/choice/OnChoiceTimeout.md) event occurs.
+指定选项的超时时间。单位为毫秒。<br />
+计时从对话显示完毕后开始。<br />
+仅在当前脚本中有效。写在选项之后也有效。<br />
+选项超时时，将触发[OnChoiceTimeout](../../shiori-event/choice/OnChoiceTimeout.md)事件。
 
-Omit the duration: reset to the default value<br />
-Duration is 0 or -1: no timeout
+省略时间：恢复默认值<br />
+时间指定为0或-1：不超时
 
 **対応:** Materia / SSP / CROW
 

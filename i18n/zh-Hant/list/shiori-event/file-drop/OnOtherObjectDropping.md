@@ -1,16 +1,16 @@
 # OnOtherObjectDropping
 
-**カテゴリ:** File drop event
+**カテゴリ:** 檔案拖放事件
 
-Occurs when an item that cannot be treated as a "file" is hovered over the ghost. Example: Windows "My Computer", etc.
+游標移至 ghost 上方時，若該物件無法視為「檔案」，就會觸發此事件。例如：Windows 的「我的電腦」等。
 
-- **Reference0**: Scope number of the dropped character. The main character is 0, the partner is 1, and the third character onward is 2 or higher.
-- **Reference1**: Name of the dropped item (affected by the OS language settings).<br />
-  If there are multiple items, they are separated by byte value 1.
-- **Reference2**: An ID-like value for the dropped item that is not identified by the OS language settings.<br />
-  If there are multiple items, they are separated by byte value 1. Examples on Windows follow.
-  - PC (My Computer) = ::\{20D04FE0-3AEA-1069-A2D8-08002B30309D\}
-  - Recycle Bin = ::\{645FF040-5081-101B-9F08-00AA002F954E\}
-  - (My) Network = ::\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C\}
+- **Reference0**: 被拖放角色的 scope 編號。本體側為 0，搭檔為 1，第 3 人起為 2 以上。
+- **Reference1**: 被拖放物件的名稱（會受 OS 語言設定影響）。<br />
+  若有多個物件，以 byte 值 1 分隔。
+- **Reference2**: 類似識別 ID 的值，不受被拖放物件的 OS 語言設定影響。<br />
+  若有多個物件，以 byte 值 1 分隔。以下為 Windows 範例。
+  - PC（我的電腦） = ::\{20D04FE0-3AEA-1069-A2D8-08002B30309D\}
+  - 資源回收筒 = ::\{645FF040-5081-101B-9F08-00AA002F954E\}
+  - （我的）網路 = ::\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C\}
 
 **対応:** SSP 2.6.41

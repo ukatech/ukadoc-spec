@@ -1,15 +1,15 @@
 # OnRecycleBinEmpty
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS状态事件
 
-Occurs when the Recycle Bin is emptied using [`\![execute,emptyrecyclebin]`](../../sakura-script/misc/bang-execute-emptyrecyclebin.md).<br />
-OnRecycleBinEmptyFromOther is also notified to all running ghosts, not just the ghost that ran the script.
+通过[`\![execute,emptyrecyclebin]`](../../sakura-script/misc/bang-execute-emptyrecyclebin.md)清空回收站时触发。<br />
+除执行脚本的ghost外，所有正在运行的ghost也会收到OnRecycleBinEmptyFromOther通知。
 
-- **Reference0**: Number of files currently in the Recycle Bin (usually 0 immediately after emptying)
-- **Reference1**: Size of files currently in the Recycle Bin (usually 0 immediately after emptying), in bytes
-- **Reference2**: Difference from the previous number of files in the Recycle Bin (usually a negative value immediately after emptying)
-- **Reference3**: Difference from the previous size of files in the Recycle Bin (usually a negative value immediately after emptying), in bytes
-- **Reference4**: 1 if emptying succeeded, 0 if an error occurred (also 0 if it was already empty)
-- **Reference5**: Name of the baseware-side ghost that ran the tag (sakuraname).
+- **Reference0**: 当前回收站中的文件数(刚清空后通常为0)
+- **Reference1**: 当前回收站中的文件大小(刚清空后通常为0) 单位：字节
+- **Reference2**: 当前回收站中的文件数与清空前的差值(刚清空后通常为负值)
+- **Reference3**: 当前回收站中的文件大小与清空前的差值(刚清空后通常为负值) 单位：字节
+- **Reference4**: 成功清空时为1，发生错误时为0(即使原本为空也为0)
+- **Reference5**: 执行标签的ghost的主体侧名称(sakuraname)。
 
-**対応:** SSP 2.6.04/Ref4 is 2.6.35
+**対応:** SSP 2.6.04/Ref4为2.6.35

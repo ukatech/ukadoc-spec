@@ -1,9 +1,9 @@
-# number.xr,coordinate [\*1](../index.md#balloon設定)
+# number.xr,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-X coordinate of the counter number, measured from the right. Same as [number.x](number.x.md).
+计数器数值的 X 坐标。从右侧起点。与[number.x](number.x.md)相同。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

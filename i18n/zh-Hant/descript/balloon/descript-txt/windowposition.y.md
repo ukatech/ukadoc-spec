@@ -1,16 +1,16 @@
-# windowposition.y,coordinate
+# windowposition.y,座標
 
 **カテゴリ:** descript.txt
 
-Adjusts the balloon's position in the y-coordinate direction relative to its default position.<br />
-Specify a numeric value in pixels. Note that down is + and up is -.
+相對於 balloon 基本位置的 y 座標方向位移。<br />
+以像素數值指定。請注意，向下為+，向上為-。
 
-The default position varies according to the windowposition.x setting:<br />
-center,top……The bottom edge of the balloon meets the top edge of the shell image<br />
-bottom……The top edge of the balloon meets the bottom edge of the shell image<br />
-Numeric value……The top edges of the balloon and shell image overlap
+基本位置會依 windowposition.x 的指定而變化：<br />
+center、top……balloon 下緣與 shell 影像上緣相接的位置<br />
+bottom……balloon 上緣與 shell 影像下緣相接的位置<br />
+指定數值……balloon 與 shell 影像上緣重疊的位置
 
-Only SSP allows this to be specified in descript.txt.
+僅限 SSP，也可以寫在 descript.txt 中。
 
 **既定値:** 0
 

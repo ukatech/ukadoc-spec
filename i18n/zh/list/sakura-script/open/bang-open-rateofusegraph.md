@@ -1,8 +1,8 @@
 # `\![open,rateofusegraph]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 打开命令
 
-Display ghost usage rates.
+显示 ghost 使用率。
 
 **対応:** Materia / SSP / CROW
 

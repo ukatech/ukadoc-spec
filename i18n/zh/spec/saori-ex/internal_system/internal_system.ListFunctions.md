@@ -2,10 +2,10 @@
 
 **カテゴリ:** internal_system
 
-Returns a list of function names in the specified built-in module. Function names are returned in their canonical spelling (including case).<br />
-A name that is not a built-in module (including compatibility modules) results in 400 (`unknown module`).
+返回指定内置模块的函数名列表。返回的函数名采用规范拼写（大小写）。<br />
+名称不是内置模块的模块（包括兼容模块）会返回 400（`unknown module`）。
 
-- **Argument1**: Module name (case-insensitive)
+- **Argument1**: 模块名（不区分大小写）
 
 ## 記述例
 

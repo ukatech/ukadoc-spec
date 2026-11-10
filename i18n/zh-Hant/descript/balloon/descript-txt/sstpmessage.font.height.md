@@ -1,8 +1,8 @@
-# sstpmessage.font.height,size
+# sstpmessage.font.height,大小
 
 **カテゴリ:** descript.txt
 
-Height of the SSTP message (in pixels, not points).
+SSTP 訊息的高度方向大小（單位為像素，不是點）。
 
 **既定値:** 10
 

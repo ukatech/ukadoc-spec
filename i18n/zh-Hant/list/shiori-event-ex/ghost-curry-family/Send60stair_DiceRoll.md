@@ -1,8 +1,8 @@
 # Send60stair_DiceRoll
 
-**カテゴリ:** Ghost “Curry Family / Saki and Ukon”
+**カテゴリ:** ghost「咖哩家族／沙紀與右近」
 
-Occurs when a ghost rolls the dice during a game played by Curry Family / Saki and Ukon, unless the result is Dobon.
+在咖哩家族／沙紀與右近進行的遊戲中，ghost 擲骰且未擲出ドボン時發生。
 
-- **Reference0**: First die roll.
-- **Reference1**: Second die roll.
+- **Reference0**: 第一顆骰子的點數。
+- **Reference1**: 第二顆骰子的點數。

@@ -1,8 +1,8 @@
 # `\c[char,数値]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Clears the specified number of characters from the cursor position in the current scope. The characters to be cleared are determined by their order of appearance in the script, regardless of their position in the balloon. An image pasted with `\_b[ファイルパス,inline]` is treated as one character and is cleared.
+從目前 scope 側的游標位置起，清除指定字元數。清除的字元依據腳本中的出現順序判定，與 balloon 顯示位置無關。透過 `\_b[ファイルパス,inline]` 貼上的圖片視為 1 個字元並會被清除。
 
 **対応:** SSP
 

@@ -1,11 +1,11 @@
 # `\![open,dialog,folder,パラメータ]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens a folder selection dialog. Selecting a folder in this dialog does not perform any action by itself.<br />
-When confirmed, the SHIORI event [OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md) is triggered, with “folder” stored in reference0 and the folder path stored in Reference2. Each ghost author must implement and run the actual processing here.<br />
-When the dialog is closed, the SHIORI event [OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md) is triggered.<br />
-[Parameters described below](bang-open-dialog-color.note.md) can be specified as a comma-separated list.
+開啟選擇資料夾的對話框。在此對話框中選取資料夾，不會實際執行任何操作。<br />
+按下確定時會觸發 SHIORI 事件[OnSystemDialog](../../shiori-event/dialogbox/OnSystemDialog.md)，reference0 會存入「folder」，Reference2 會存入資料夾路徑，因此各 ghost 作者須在此處實作並執行實際處理。<br />
+關閉時會觸發 SHIORI 事件[OnSystemDialogCancel](../../shiori-event/dialogbox/OnSystemDialogCancel.md)。<br />
+以逗號分隔，可指定多個[參數設定方式請見後述](bang-open-dialog-color.note.md)。
 
 **対応:** SSP
 

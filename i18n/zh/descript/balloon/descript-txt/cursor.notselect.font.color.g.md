@@ -1,9 +1,9 @@
-# cursor.notselect.font.color.g,numeric value
+# cursor.notselect.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Font color green for unselected options (0–255)<br />
-Used when there is no raster operation command.
+未选中选项的字体颜色绿色(0～255)<br />
+没有光栅操作命令时使用。
 
 **既定値:** 0
 

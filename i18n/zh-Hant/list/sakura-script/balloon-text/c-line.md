@@ -1,10 +1,10 @@
 # `\c[line,数値]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Clears the specified number of lines from the balloon cursor position in the current scope.<br />
-Content divided into “lines” by `\_l[x,y]`, `\n`, `\n[half]`, or `\n[パーセント]` is treated as lines. However, empty content divided by anything other than `\_l[x,y]`, such as `\n\n`, is not treated as a line.<br />
-As with `\c[char,数値]`, the order of appearance in the script is used.
+清除目前 scope 側，從氣球游標位置起指定行數的文字。<br />
+將對話以`\_l[x,y]`,`\n`,`\n[half]`,`\n[パーセント]`分割後的部分視為「行」。但是，像`\n\n`這樣以`\_l[x,y]`以外的方式分割、且不含內容的部分不視為一行。<br />
+與`\c[char,数値]`相同，會參照指令在腳本中的出現順序。
 
 **対応:** SSP
 

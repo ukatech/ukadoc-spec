@@ -1,5 +1,5 @@
 # Send60stair_Call
 
-**カテゴリ:** Ghost “Curry Family / Saki and Ukon”
+**カテゴリ:** ghost「咖哩家族／沙紀與右近」
 
-Occurs when Curry Family / Saki and Ukon invite a ghost running at the same time to play a game.
+咖哩家族／沙紀與右近邀請同時啟動的 ghost 一起玩遊戲時發生。

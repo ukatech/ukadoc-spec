@@ -1,10 +1,10 @@
 # property.get
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when retrieving an extended property using [activeghostlist(ghost name/path/ID).ext](../../propertysystem/property-system/activeghostlist-.ext.md).<br />
-Returns the retrieved property's value.
+通过[activeghostlist(ghost名/路径/ID).ext](../../propertysystem/property-system/activeghostlist-.ext.md)获取扩展属性时触发。<br />
+返回获取到的属性值。
 
-- **Reference0**: Extended property name.
+- **Reference0**: 扩展属性的名称。
 
 **対応:** SSP 2.7.85

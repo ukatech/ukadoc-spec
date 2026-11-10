@@ -1,9 +1,9 @@
 # OnElinAllyDead
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 應用程式「Elin」
 
-Occurs when a pet dies.
+寵物死亡時發生。
 
-- **Reference0**: Pet name
-- **Reference1**: Cause of death
-- **Reference2**: Name of the NPC that killed the pet (if one exists)
+- **Reference0**: 寵物名稱
+- **Reference1**: 死因
+- **Reference2**: （若存在）殺死寵物的 NPC 名稱

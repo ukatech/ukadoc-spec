@@ -1,11 +1,11 @@
 # `\![open,editor,ファイル,表示行]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Edits the specified file using the editor configured in the baseware.<br />
-This is the editor specified in “External Applications -> Editor Settings” under the owner draw menu’s baseware settings.<br />
-When opening the file, the cursor is moved to the specified line in “display line”.
+使用 baseware 設定的編輯器編輯指定檔案。<br />
+可在 owner draw 選單的 baseware 設定中，透過「外部應用程式 -\> 編輯器設定」指定。<br />
+開啟時，會預先將游標移至「顯示行」指定的行。
 
-If no editor is specified, the behavior is the same as right-clicking a file in Explorer and selecting “Edit”. In this case, “display line” is ignored.
+若未指定編輯器，則行為與在檔案總管中按右鍵並選擇「編輯」相同。此時會忽略「顯示行」。
 
 **対応:** SSP 2.5.16

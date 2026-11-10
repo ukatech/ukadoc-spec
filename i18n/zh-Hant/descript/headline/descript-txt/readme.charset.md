@@ -1,9 +1,9 @@
-# readme.charset,character encoding
+# readme.charset,字元編碼
 
 **カテゴリ:** descript.txt
 
-Character encoding of the description text file.
+說明文字檔的字元編碼。
 
-**既定値:** (OS default setting or SSP-\>Internationalization-\>Default character encoding-\>readme)
+**既定値:** (OS 的標準設定，或 SSP-\>國際化-\>省略時的文字編碼-\>readme)
 
 **対応:** SSP 2.5.10

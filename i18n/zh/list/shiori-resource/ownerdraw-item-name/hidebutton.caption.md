@@ -1,7 +1,7 @@
 # hidebutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of iconification.
+最小化到图标的名称。
 
 **対応:** Materia / SSP / CROW

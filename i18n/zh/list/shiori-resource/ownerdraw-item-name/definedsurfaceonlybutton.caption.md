@@ -1,7 +1,7 @@
 # definedsurfaceonlybutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Ignore undefined surfaces.”
+忽略未定义 surface 的名称。
 
 **対応:** SSP

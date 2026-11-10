@@ -1,72 +1,72 @@
-# http/rss/ical/websocket options
+# http/rss/ical/websocket 选项
 
-- **--accept=Accept request header contents \[2.7.34\]**: Specify the Accept header, which specifies the Content-Type formats that can be received.
-- **--accept-language=Accept-Language request header contents \[2.7.34\]**: Specify the Accept-Language header, which controls internationalization-related behavior.
-- **--async=identifier**: Continue executing Sakura Script without waiting for processing to finish, and notify an event after processing is complete.<br />
-  For HTTP, this is [OnExecuteHTTPComplete](../../shiori-event/other-communication/OnExecuteHTTPComplete.md) or [OnExecuteHTTPFailure](../../shiori-event/other-communication/OnExecuteHTTPFailure.md).<br />
-  For RSS, this is [OnExecuteRSSComplete](../../shiori-event/other-communication/OnExecuteRSSComplete.md) or [OnExecuteRSSFailure](../../shiori-event/other-communication/OnExecuteRSSFailure.md).<br />
-  For iCal, this is [OnExecuteICalComplete](../../shiori-event/other-communication/OnExecuteICalComplete.md) or [OnExecuteICalFailure](../../shiori-event/other-communication/OnExecuteICalFailure.md). \[2.8.90\]<br />
-  For WebSocket, [OnExecuteWebSocketOpen](../../shiori-event/other-communication/OnExecuteWebSocketOpen.md)/[Receive](../../shiori-event/other-communication/OnExecuteWebSocketReceive.md)/[Reconnect](../../shiori-event/other-communication/OnExecuteWebSocketReconnect.md)/[Close](../../shiori-event/other-communication/OnExecuteWebSocketClose.md)/[Failure](../../shiori-event/other-communication/OnExecuteWebSocketFailure.md) occur at the respective times of connection, receiving, and disconnection (because operation is always asynchronous, --sync cannot be used).<br />
-  If an ID that does not start with On is specified, events with the names listed above occur.<br />
-  If an ID that starts with On is specified, HTTP/RSS/iCal trigger \[specified ID\] (success)/\[specified ID\]Failure (failure). WebSocket triggers \[specified ID\]Open/\[specified ID\] (receive)/\[specified ID\]Reconnect/\[specified ID\]Close/\[specified ID\]Failure.<br />
-  Example: with --async=OnExample, HTTP/RSS/iCal → OnExample/OnExampleFailure; WebSocket → OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure<br />
-  However, SSLInfo events ([OnExecuteHTTPSSLInfo](../../shiori-event/other-communication/OnExecuteHTTPSSLInfo.md)/[OnExecuteRSS_SSLInfo](../../shiori-event/other-communication/OnExecuteRSS_SSLInfo.md)/[OnExecuteICal_SSLInfo](../../shiori-event/other-communication/OnExecuteICal_SSLInfo.md)/[OnExecuteWebSocket_SSLInfo](../../shiori-event/other-communication/OnExecuteWebSocket_SSLInfo.md)) are excluded, and are always reported using the event names listed above even if an ID starting with On is specified.<br />
-  To temporarily pause Sakura Script processing, write --sync instead (not applicable to WebSocket).
-- **--authorization=Authorization request header contents \[2.6.37\]**: Set this in advance when an Authorization header is required, such as for OAuth.
-- **--cookie=cookie data**: Cookie data; if needed, specify the value of Reference5 from OnExecuteHTTPComplete as-is.
-- **--content-type=(multipart/form-data | application/x-www-form-urlencoded | any other value)**: Only for http-post. Specify the format used to send parameters specified with param.<br />
-  If nothing is specified, application/x-www-form-urlencoded is used.<br />
-  Note that some formats constrain how param can be written.<br />
-  Since \[2.6.37\], this information is applied directly to the Content-Type request header.
-- **--expand or --expand=number of days \[2.8.90\]**: Only for ical-get/ical-post. See [※iCal filtering options](bang-execute-ical-post-URL.note.md).<br />
-  Expand RRULE recurrences and return one item per occurrence. If a number of days is specified, it becomes the period length used when --to is omitted (default: 30 days).
-- **--file=filename**: Specify the name to use when saving the retrieved data. It is saved to \[the folder of the executing ghost\]/ghost/master/var/filename.
-- **--from=yyyymmdd \[2.8.90\]**: Only for ical-get/ical-post and rss-get/rss-post \[2.8.92\]. See [※iCal filtering options](bang-execute-ical-post-URL.note.md) and [※RSS filtering options](bang-execute-rss-post-URL.note.md).<br />
-  The start date of the period for returned events. Defaults to today if omitted.<br />
-  \[2.8.92\] For rss-get/rss-post, this is the lower bound for the update date of returned items (from 0:00 on that day). There is no lower bound if omitted.
-- **--header=SomeHeader: request header contents \[2.6.40\]**: Set a request header with an arbitrary name. The colon separating the name and contents is required.<br />
-  This overrides header information set by SSP, so take care not to specify conflicting values.
-- **--insecure \[2.7.34\]**: Skip TLS certificate verification.
-- **--limit=count \[2.8.90\]**: Only for ical-get/ical-post and rss-get/rss-post \[2.8.92\]. See [※iCal filtering options](bang-execute-ical-post-URL.note.md) and [※RSS filtering options](bang-execute-rss-post-URL.note.md).<br />
-  The maximum number of events to return. Defaults to 200; specify 0 for unlimited.<br />
-  Writing only --limit enables period mode with today as the start date. If none of --from, --to, --expand, or --limit is specified, there is no limit on the number of items returned (all items are returned).<br />
-  \[2.8.92\] For rss-get/rss-post, if specified, the results are truncated to the specified count in descending order of recency. If omitted or set to 0, there is no limit, and writing only --limit does not filter by period.
-- **--log=filename**: Log all communication with the server. Mainly for debugging during development.
-- **--nodescript**: Do not display the online display or download status.
-- **--nofile=parameter (character encoding) \[2.5.77\]**: Retrieve and expand data in memory without creating a temporary file, then store it in the event's Reference3.<br />
-  Specify the character encoding to use when interpreting the retrieved data. If omitted, UTF-8 is assumed.<br />
-  Because Reference cannot contain line breaks, line break characters are converted to byte value 1.<br />
-  The maximum retrievable size is 128KB.<br />
-  \[2.8.90\] For rss-get/rss-post and ical-get/ical-post, this option is ignored because a file is required for parsing.
-- **--no-cache \[2.7.34\]**: Specify Cache-Control: no-cache to suppress the use of cached data.
-- **--param=parameter**: Specify parameters for get/post/put. This can be specified multiple times.<br />
-  For multipart/form-data:<br />
-  　Repeat the format --param=field name=data as many times as needed.<br />
-  　Example: --param=message_body=data<br />
-  For application/x-www-form-urlencoded:<br />
-  　When the format --param=field name=data is repeated as many times as needed, all values are joined with & and sent to the server.<br />
-  　Otherwise, all values are joined with newline characters (CRLF) and sent to the server (for backward compatibility).<br />
-  For other content-type values:<br />
-  　If defined multiple times, all values are joined with newline characters (CRLF) and sent to the server.
-- **--param-charset=character encoding**: Specify the character encoding, such as Shift_JIS, EUC-JP, or UTF-8. Defaults to UTF-8.
-- **--param-input-file=filename \[2.6.40\]**: To send large data that cannot be specified entirely with the --param option, specify the file containing the data to send.<br />
-  If the specified path is not absolute, it is interpreted relative to \[the folder of the executing ghost\]/ghost/master/.<br />
-  Do not specify --param at the same time.<br />
-  The contents are generally not inspected, so the caller is responsible for handling character encoding, encoding, and other processing.<br />
-  However, for multipart/form-data only, the first line is read and interpreted as the separator between fields.<br />
-  The specified file path must be under SSP's control (at or below the location of SSP.exe, or below a folder specified for listing ghosts, etc.).
-- **--progress-notify \[2.6.44\]**: During download processing, notify the [OnExecuteHTTPProgress](../../shiori-event/other-communication/OnExecuteHTTPProgress.md) event (for ical-get/ical-post, [OnExecuteICalProgress](../../shiori-event/other-communication/OnExecuteICalProgress.md) \[2.8.90\]), or, if the event ID starts with On, an event with Progress appended to it.<br />
-  If an ID starting with On is specified, SHIORI Event \[specified ID\]Progress occurs instead of the above event.<br />
-  Example: with --async=OnExample, OnExampleProgress<br />
-  Events are notified one by one during download processing, which reduces the download speed.<br />
-  Also note that when outputting to a file, the file is temporarily closed when an event is notified and then reopened after the response is received, which further slows the download.
-- **--streaming or --streaming=type \[2.8.14\]**: Specify streaming processing for HTTP requests. Use --streaming=sse for Server-Sent Events and --streaming=text for newline-delimited streaming (such as NDJSON).<br />
-  If --streaming is specified without a type, streaming is handled appropriately based on the Content-Type of the server response.<br />
-  Received data is reported through the [OnExecuteHTTPStreaming](../../shiori-event/other-communication/OnExecuteHTTPStreaming.md) event or, if the event ID starts with On, an event with Streaming appended to it, such as OnHogehogeStreaming.
-- **--sync=identifier \[2.6.44\]**: Behaves the same as --async, except that Sakura Script execution is paused while waiting for processing to finish.
-- **--timeout=seconds**: Specify how long to wait for a response (not the time required for downloading). The maximum is 300 seconds.<br />
-  If no response is received within the specified time, the SHIORI event "OnExecuteHTTPFailure" is notified, and Reference4 contains "timeout".
-- **--to=yyyymmdd \[2.8.90\]**: Only for ical-get/ical-post and rss-get/rss-post \[2.8.92\]. See [※iCal filtering options](bang-execute-ical-post-URL.note.md) and [※RSS filtering options](bang-execute-rss-post-URL.note.md).<br />
-  The end date of the period for returned events (inclusive).<br />
-  \[2.8.92\] For rss-get/rss-post, this is the upper bound for the update date of returned items (through the end of that day). There is no upper bound if omitted.
-- **--m_websocketProtocol=Sec-Websocket-Protocol \[2.8.08\]**: Specify the Sec-Websocket-Protocol header to use when connecting to WebSocket. If not specified, this header is not sent.
+- **--accept=Accept请求头内容 \[2.7.34\]**: 指定Accept请求头，用于指定可接收的Content-Type格式。
+- **--accept-language=Accept-Language请求头内容 \[2.7.34\]**: 指定用于控制国际化相关行为的Accept-Language请求头。
+- **--async=识别ID**: 不等待处理完成，继续执行Sakura Script，并在处理完成后通知事件。<br />
+  HTTP时为[OnExecuteHTTPComplete](../../shiori-event/other-communication/OnExecuteHTTPComplete.md)或[OnExecuteHTTPFailure](../../shiori-event/other-communication/OnExecuteHTTPFailure.md)。<br />
+  RSS时为[OnExecuteRSSComplete](../../shiori-event/other-communication/OnExecuteRSSComplete.md)或[OnExecuteRSSFailure](../../shiori-event/other-communication/OnExecuteRSSFailure.md)。<br />
+  iCal时为[OnExecuteICalComplete](../../shiori-event/other-communication/OnExecuteICalComplete.md)或[OnExecuteICalFailure](../../shiori-event/other-communication/OnExecuteICalFailure.md)。 \[2.8.90\]<br />
+  WebSocket时会在连接、接收、断开连接的各个时机触发[OnExecuteWebSocketOpen](../../shiori-event/other-communication/OnExecuteWebSocketOpen.md)/[Receive](../../shiori-event/other-communication/OnExecuteWebSocketReceive.md)/[Reconnect](../../shiori-event/other-communication/OnExecuteWebSocketReconnect.md)/[Close](../../shiori-event/other-communication/OnExecuteWebSocketClose.md)/[Failure](../../shiori-event/other-communication/OnExecuteWebSocketFailure.md)（始终为Async模式，因此不能使用--sync）。<br />
+  如果指定的ID不以On开头，则会触发与上述事件名一致的事件。<br />
+  如果指定的ID以On开头，HTTP/RSS/iCal会触发\[指定的ID\]（成功）/\[指定的ID\]Failure（失败）。WebSocket会触发\[指定的ID\]Open/\[指定的ID\]（接收）/\[指定的ID\]Reconnect/\[指定的ID\]Close/\[指定的ID\]Failure。<br />
+  示例：--async=OnExample时，HTTP/RSS/iCal→OnExample/OnExampleFailure，WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure<br />
+  但是，SSLInfo类事件([OnExecuteHTTPSSLInfo](../../shiori-event/other-communication/OnExecuteHTTPSSLInfo.md)/[OnExecuteRSS_SSLInfo](../../shiori-event/other-communication/OnExecuteRSS_SSLInfo.md)/[OnExecuteICal_SSLInfo](../../shiori-event/other-communication/OnExecuteICal_SSLInfo.md)/[OnExecuteWebSocket_SSLInfo](../../shiori-event/other-communication/OnExecuteWebSocket_SSLInfo.md))不受此选项影响，即使指定以On开头的ID，也始终会以以上事件名通知。<br />
+  如果要暂时中断Sakura Script的执行，请改用--sync（不能用于WebSocket）。
+- **--authorization=Authorization请求头内容 \[2.6.37\]**: 需要Authorization请求头（例如OAuth）时，预先设置该请求头。
+- **--cookie=Cookie数据**: Cookie数据；必要时可直接指定OnExecuteHTTPComplete的Reference5值。
+- **--content-type=(multipart/form-data | application/x-www-form-urlencoded | 其他任意指定)**: 仅限http-post。指定如何发送通过param指定的参数。<br />
+  未指定时使用application/x-www-form-urlencoded。<br />
+  请注意，根据指定的格式，param的写法可能会受到限制。<br />
+  从\[2.6.37\]起，该信息会直接反映到Content-Type请求头中。
+- **--expand 或 --expand=天数 \[2.8.90\]**: 仅限ical-get/ical-post。请参阅[※iCal筛选选项](bang-execute-ical-post-URL.note.md)。<br />
+  展开RRULE重复项，并为每次「发生」分别返回一条记录。指定天数时，该值将作为未指定--to时的时间段长度（默认30天）。
+- **--file=文件名**: 指定所获取数据的保存名称。数据将保存到\[执行此操作的ghost文件夹\]/ghost/master/var/文件名。
+- **--from=yyyymmdd \[2.8.90\]**: 仅限ical-get/ical-post、rss-get/rss-post \[2.8.92\]。请参阅[※iCal筛选选项](bang-execute-ical-post-URL.note.md)和[※RSS筛选选项](bang-execute-rss-post-URL.note.md)。<br />
+  返回事件的时间段起始日期。省略时为当天。<br />
+  \[2.8.92\] 对于rss-get/rss-post，这是返回项目的更新时间下限（从当天0点开始）。省略时不设下限。
+- **--header=SomeHeader: 请求头内容 \[2.6.40\]**: 设置任意名称的请求头。名称与内容之间必须使用冒号分隔。<br />
+  该选项会覆盖SSP提供的请求头信息，使用时请注意不要指定冲突的内容。
+- **--insecure \[2.7.34\]**: 跳过TLS证书验证。
+- **--limit=条数 \[2.8.90\]**: 仅限ical-get/ical-post、rss-get/rss-post \[2.8.92\]。请参阅[※iCal筛选选项](bang-execute-ical-post-URL.note.md)和[※RSS筛选选项](bang-execute-rss-post-URL.note.md)。<br />
+  返回事件的最大条数。省略时为200条，指定0则不限制。<br />
+  只写--limit时，时间段模式的起始日期为当天。如果--from、--to、--expand、--limit均未指定，则不限制返回条数（返回全部记录）。<br />
+  \[2.8.92\] 对于rss-get/rss-post，仅在指定时才会按新到旧的顺序截取指定条数。省略或指定0时不限制；只写--limit也不会筛选时间段。
+- **--log=文件名**: 将与服务器之间的所有通信内容记录到日志中。主要用于开发时调试。
+- **--nodescript**: 不显示在线显示和下载状态。
+- **--nofile=参数(字符编码) \[2.5.77\]**: 不创建临时文件，而是在内存中展开获取的数据，并将其存入事件的Reference3。<br />
+  参数用于指定解读所获取数据时使用的字符编码。未指定时视为UTF-8。<br />
+  Reference中不能包含换行符，因此换行符会被转换为字节值1。<br />
+  可获取的数据大小上限为128KB。<br />
+  \[2.8.90\] 对于rss-get/rss-post、ical-get/ical-post，由于需要用于解析的文件，因此会忽略此选项。
+- **--no-cache \[2.7.34\]**: 指定Cache-Control: no-cache，以抑制缓存的使用。
+- **--param=参数**: 指定get/post/put的参数。可重复指定。<br />
+  multipart/form-data时：<br />
+  　按--param=字段名=数据的格式重复指定所需数量。<br />
+  　示例： --param=message_body=数据<br />
+  application/x-www-form-urlencoded时：<br />
+  　按--param=字段名=数据的格式重复指定所需数量时，所有参数会以&连接后发送到服务器。<br />
+  　除此以外，所有参数都会以换行符(CRLF)连接后发送到服务器（为兼容旧版本而保留的处理方式）。<br />
+  使用其他content-type时：<br />
+  　指定多个参数时，所有参数都会以换行符(CRLF)连接后发送到服务器。
+- **--param-charset=字符编码**: 指定字符编码。可使用Shift_JIS、EUC-JP、UTF-8等；默认值为UTF-8。
+- **--param-input-file=文件名 \[2.6.40\]**: 如果要发送无法通过--param选项指定的大容量数据，请指定存储发送数据的文件。<br />
+  如果指定的不是绝对路径，则视为相对于\[执行此操作的ghost文件夹\]/ghost/master/的路径。<br />
+  不要同时指定--param。<br />
+  原则上不会检查文件内容，因此字符编码、编码方式等应由使用方负责处理。<br />
+  但是，仅在multipart/form-data时，会读取第一行并将其解释为字段间分隔符。<br />
+  指定的文件路径必须位于SSP管辖范围内（SSP.exe所在位置及其子目录，或用于枚举ghost等的指定文件夹及其子目录）。
+- **--progress-notify \[2.6.44\]**: 下载过程中通知[OnExecuteHTTPProgress](../../shiori-event/other-communication/OnExecuteHTTPProgress.md)事件（ical-get/ical-post时为[OnExecuteICalProgress](../../shiori-event/other-communication/OnExecuteICalProgress.md) \[2.8.90\]）；如果事件ID以On开头，则通知在其后添加Progress的事件。<br />
+  如果指定的ID以On开头，则会触发SHIORI Event \[指定的ID\]Progress，而不是上述事件。<br />
+  示例：--async=OnExample时为OnExampleProgress<br />
+  下载过程中会逐次执行事件通知，因此下载速度会下降。<br />
+  另外，输出到文件时，每次事件通知都会暂时关闭文件，并在收到响应后重新打开文件，因此下载速度还会进一步下降，请注意。
+- **--streaming 或 --streaming=类型 \[2.8.14\]**: 指定HTTP请求的流式处理方式。--streaming=sse表示Server-Sent Events，--streaming=text表示按换行符分隔的流式处理（例如NDJSON）<br />
+  使用不带类型的--streaming时，会根据服务器响应的Content-Type进行相应的流式处理。<br />
+  接收的数据会通过[OnExecuteHTTPStreaming](../../shiori-event/other-communication/OnExecuteHTTPStreaming.md)事件通知；如果事件ID以On开头，则会通知在其后添加Streaming的事件，例如OnHogehogeStreaming。
+- **--sync=识别ID \[2.6.44\]**: 除了会暂时停止Sakura Script的执行并等待处理完成以外，其行为与指定--async相同。
+- **--timeout=秒数**: 指定等待响应的时间（不是下载所需的时间）。最长为300秒。<br />
+  如果在指定的秒数内未收到响应，则会通知SHIORI事件「OnExecuteHTTPFailure」，并在Reference4中写入「timeout」。
+- **--to=yyyymmdd \[2.8.90\]**: 仅限ical-get/ical-post、rss-get/rss-post \[2.8.92\]。请参阅[※iCal筛选选项](bang-execute-ical-post-URL.note.md)和[※RSS筛选选项](bang-execute-rss-post-URL.note.md)。<br />
+  返回事件的时间段结束日期（包含当天）。<br />
+  \[2.8.92\] 对于rss-get/rss-post，这是返回项目的更新时间上限（截至当天结束）。省略时不设上限。
+- **--m_websocketProtocol=Sec-Websocket-Protocol \[2.8.08\]**: 指定WebSocket连接时使用的Sec-Websocket-Protocol请求头。未指定时不会发送此请求头。

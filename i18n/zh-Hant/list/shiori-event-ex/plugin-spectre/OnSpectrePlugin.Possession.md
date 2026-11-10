@@ -1,13 +1,13 @@
 # OnSpectrePlugin.Possession
 
-**カテゴリ:** Plugin "Spectre"
+**カテゴリ:** plugin「Spectre」
 
-Triggered 15 seconds after Spectre displays a conversation through this ghost.<br />
-Note that this event is not triggered directly by the plugin itself, but is called by the ghost through a timerraise tag placed at the end of the conversation.
+Spectre 透過此 ghost 顯示對話 15 秒後發生。<br />
+請注意，此事件並非由 plugin 本身直接發出，而是由 ghost 透過放在對話末尾的 timerraise 標籤呼叫。
 
-- **Reference0**: The character's current "mood", based on the current conversation pool. It takes one of the following values:
-  - dissociated …… A deeply sad and incoherent mood
-  - miserable …… A sad or angry mood
-  - cheerful …… A happy or relaxed mood
-- **Reference1**: Whether the script played was a "spooky text" script. A "spooky text" script has special text effects that evoke a sense of unease, for example. 1 if so, 0 otherwise.<br />
-  Currently, "spooky text" scripts are played only in scenes where Reference0 is "dissociated".
+- **Reference0**: 根據目前對話池判定的角色目前「情緒」。值為下列其中之一。
+  - dissociated …… 極度悲傷、思緒混亂的情緒
+  - miserable …… 悲傷或憤怒的情緒
+  - cheerful …… 快樂或放鬆的情緒
+- **Reference1**: 播放的 script 是否為「spooky text」script。「spooky text」script 是指具有引發不安感之特殊文字效果的 script 等。若符合則為 1，否則為 0。<br />
+  目前只有在 Reference0 為「dissociated」的情境下，才會播放「spooky text」script。

@@ -1,9 +1,9 @@
-# menu.foreground.font.color.r,Numeric value
+# menu.foreground.font.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Foreground text color red (0–255)
+前景文字红色(0～255)
 
-**既定値:** Highlight text color configured in the OS
+**既定値:** OS设定的高亮文字颜色
 
 **対応:** Materia / SSP / CROW

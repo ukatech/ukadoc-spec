@@ -1,7 +1,7 @@
 # activaterootbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 選單項目名稱
 
-Name of the bring-to-front command.
+將視窗移至最前方的項目名稱。
 
 **対応:** SSP

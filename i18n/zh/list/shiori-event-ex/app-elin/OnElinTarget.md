@@ -1,7 +1,7 @@
 # OnElinTarget
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 应用程序“Elin”
 
-Occurs when targeting an NPC with Shift+F.
+使用 Shift+F 瞄准 NPC 时触发
 
-- **Reference0**: Name of the targeted NPC
+- **Reference0**: 被瞄准的 NPC 名称

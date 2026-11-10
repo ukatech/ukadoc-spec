@@ -1,11 +1,11 @@
-# Supplement
+# 补充
 
-## Character and item information
+## 角色和物品的信息
 
-## Item information
+## 物品信息
 
-Items are separated by byte value 1. Example: Soil0x01Gold nugget0x01Iron pickaxe0x01…
+物品之间以字节值1分隔。示例：土0x01金块0x01铁镐0x01…
 
-## Character information
+## 角色信息
 
-Each character's name and carried items are separated by byte value 1, and each character is further separated by byte value 2. Example: Yeek0x02Copper dagger0x01Goblin0x02Paper greatsword0x02Coral light cloak0x01Samurai…
+每个角色的名称和持有物品之间以字节值1分隔，角色之间则以字节值2分隔。示例：伊克0x02铜短剑0x01哥布林0x02纸制大剑0x02珊瑚轻斗篷0x01武士…

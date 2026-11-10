@@ -1,7 +1,7 @@
 # SSTP/1.x
 
-Reference: [SSTP](http://usada.sakura.vg/contents/sstp.html) (external site)
+參考：[SSTP](http://usada.sakura.vg/contents/sstp.html)（外部網站）
 
-At present, DirectSSTP depends heavily on Windows specifications, and implementation on other OSes is not anticipated.<br />
-Since IPC mechanisms also exist on other OSes, it would be desirable to specify them separately.<br />
-If a specification is established, we plan to publish it separately. Please contact the [Ukadoc Project](https://github.com/ponapalt/ukadoc).
+目前DirectSSTP在很大程度上依賴Windows規格，並未預期會在其他作業系統上實作。<br />
+由於其他作業系統也有IPC機制本身，因此建議另外制定規格。<br />
+若規格確定，將考慮另行刊載，請聯絡[Ukadoc Project](https://github.com/ponapalt/ukadoc)。

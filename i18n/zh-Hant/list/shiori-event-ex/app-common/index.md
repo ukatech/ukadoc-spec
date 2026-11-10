@@ -1,4 +1,4 @@
-# Generic External Application Events
+# 外部應用程式通用事件
 
 ## 一覧
 

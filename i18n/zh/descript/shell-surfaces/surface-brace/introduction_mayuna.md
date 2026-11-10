@@ -1,19 +1,19 @@
-# Dressup (MAYUNA)
+# dressup（MAYUNA）
 
-## Overview
+## 概述
 
-A shell in Ukagaka has a mechanism called dressup. It is used to show or hide parts such as clothing, or switch between their types, within a single shell.
+伺か（Ukagaka）的shell具有一种称为dressup的机制，可在单个shell中显示或隐藏多个服装等部件，或切换其种类。
 
-Dressup in Ukagaka shells is considered a type of animation.<br />
-However, unlike other animations, it does not play frame by frame. When the animation starts, all frames (patterns) and the base surface are composited immediately and are then treated as a still image (therefore, the wait parameter in pattern definitions is ignored).<br />
-This property—where the drawing behaves as though it has become one with the base surface—is well suited to representing things such as clothing.
+伺か（Ukagaka）的shell将dressup归类为一种动画。<br />
+但与其他动画不同，它不会逐帧播放，而是在动画开始时立即合成所有帧（pattern）和基础表面，此后作为静止图像处理（因此pattern定义中的等待时间参数会被忽略）。<br />
+这种“绘制表现得仿佛与基础表面融为一体”的特性，非常适合用于表示衣物之类的内容。
 
-The start and end of dressup animations are mainly controlled by switching them through the dressup menu in the owner draw menu. In SSP, they can also be controlled by the ghost using the Sakura Script [`\![bind]`](../../../list/sakura-script/surface/bang-bind.md) tag.<br />
-The owner draw menu settings are made in [descript.txt](../../shell/index.md), not in surfaces.txt; see that page.
+dressup动画的开始和结束，主要通过切换所有者绘制菜单中的dressup菜单来控制。在SSP中，还可以通过Sakura Script的[`\![bind]`](../../../list/sakura-script/surface/bang-bind.md)标签从ghost一侧进行控制。<br />
+所有者绘制菜单一侧的设置不在surfaces.txt中，而是在[descript.txt](../../shell/index.md)中进行，请参阅该页面。
 
-The specifications for the series of animations in surfaces.txt are called MAYUNA.
+此外，surfaces.txt中与动画相关的一系列规范称为MAYUNA。
 
-## Basic syntax and examples
+## 基本格式与示例
 
 ```
 surface0
@@ -41,38 +41,38 @@ element0,overlay,dress2.png,0,0
 }
 ```
 
-For example, a dressup definition in surfaces.txt can look like the above.
+surfaces.txt中的dressup定义例如上面所示。
 
-The example defines two dressups, “Clothing 1” and “Clothing 2,” for surface0.
+上例中，为surface0定义了“服1”和“服2”两种dressup。
 
-As with ordinary animation definitions, interval and pattern definitions are required. Specifying bind in the interval definition indicates that the animation is a dressup definition.
+与常规动画定义一样，需要interval定义和pattern定义。在interval定义中指定bind，表示该动画定义为dressup。
 
-For an animation, a pattern definition is made for each frame. For dressup, however, the specification is a still image, so the necessary parts are composited rather than individual frames. If, as in the example, a dressup consists of only one part, it needs only one pattern line. Also, because each part is composited immediately in dressup, the wait parameter is ignored.
+动画的pattern定义会按照帧数逐个编写；而dressup使用静止图像，因此需要合成的与其说是帧，不如说是所需数量的部件。如果构成dressup的部件只有一个，如示例所示，则只需一行pattern行。此外，dressup的各个部件会立即合成，因此会忽略等待时间参数。
 
-The drawing methods for pattern definitions are described below.
+pattern定义中的绘制方法将在后文说明。
 
-## Available drawing methods
+## 可用的绘制方法
 
-In MATERIA (the original Ukagaka), four methods provided for dressup were available: “bind,” “add,” “reduce,” and “insert.” Of these, bind is the old specification, and add is its upward-compatible equivalent.
+在MATERIA（本家伺か）中，可使用为dressup准备的4种方法，即“bind”“add”“reduce”“insert”。其中bind是旧规范，add与其向后兼容。
 
-In SSP, some of the methods provided as ordinary animation drawing methods can also be used for dressup.
+在SSP中，一部分为普通动画准备的绘制方法也可用于dressup。
 
-For details about drawing methods and other options available for dressup, see the [Drawing methods](h-drowmethod/introduction_drawmethod.md) section.
+有关dressup可用的绘制方法等详细信息，请参阅[绘制方法](h-drowmethod/introduction_drawmethod.md)一节。
 
-## bind in interval combinations
+## 间隔的组合指定中的bind
 
-In SSP, interval combinations can be specified, as mentioned in the [Animation intervals](h-animationinterval/introduction_animationinterval.md) section.
+在SSP中，如[动画间隔一节](h-animationinterval/introduction_animationinterval.md)所述，可以组合指定间隔。
 
-If bind is included in a combination, the animation loses the still-image property it would normally have with bind alone (the wait parameter in pattern definitions is no longer ignored). However, the animation's lifetime does not change. For example, with a combination such as bind+runonce, the display at the point when all patterns have finished drawing continues until the base surface or dressup state changes.
+在组合指定中包含bind时，动画会失去bind单独使用时原有的静止图像特性（pattern定义中的等待时间参数不再被忽略）。但动画的生命周期不会改变，因此例如使用bind+runonce这样的组合指定时，所有pattern绘制完成时的显示内容会持续保留，直到基础表面发生变化或dressup状态发生变化。
 
-Therefore, with an interval combination that includes bind, the animation should not be ended on the last line of the pattern definition; instead, composite the drawing that should remain as a still image.
+因此，在包含bind的间隔组合指定中，应该在pattern定义的最后一行合成要作为静止图像保留的绘制内容，而不结束动画。
 
-## Nested dressup definitions (SSP only)
+## 多重dressup定义（仅SSP）
 
-If an animation frame references a surface that has an animation defined for it, those animations are normally ignored.
+如果动画帧所引用的目标表面定义了该表面的动画，通常会忽略这些动画。
 
-In SSP, however, animations whose interval is bind (that is, dressups) are applied rather than ignored.
+但在SSP中，仅当interval为bind的动画（即dressup）不会被忽略，而是会生效。
 
-This makes it possible to define animations that respond to dressup on the animation frame side, for animations whose structure is affected by dressup.
+这样一来，对于会受dressup影响的动画结构，就可以在动画帧一侧定义与dressup相对应的内容。
 
-Nested dressups are also possible, but circular references are ignored.
+此外，也可以将多重dressup嵌套，但循环引用会被忽略。

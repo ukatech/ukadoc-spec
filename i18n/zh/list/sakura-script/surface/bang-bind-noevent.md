@@ -1,7 +1,7 @@
 # `\![bind-noevent,カテゴリ名,パーツ名,数値]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Like `\![bind]`, this operates dressup parts, but does not trigger an event.
+与`\![bind]`相同，用于操作dressup部件，但不会触发事件。
 
 **対応:** SSP 2.8.23

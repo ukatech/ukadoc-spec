@@ -1,8 +1,8 @@
 # `\![leave,passivemode]`
 
-**カテゴリ:** Unclassified commands
+**カテゴリ:** 未分类命令
 
-Exit the mode described above.
+解除上述模式。
 
 **対応:** Materia / SSP / CROW / Ninix
 

@@ -1,9 +1,9 @@
-# animation\*.name, definition name
+# animation\*.name,定義名稱
 
 **カテゴリ:** surface brace
 
-The animation name. As with animationID, it can be used in the ID fields of the `\i[]` and `\![anim]` tags, and of start, stop, and exclusivemode.
+動畫名稱。與 animationID 相同，可用於 `\i[]` 標籤、`\![anim]` 標籤，以及 start、stop、exclusivemode 等 ID 欄位。
 
-**既定値:** Undefined
+**既定値:** 未定義
 
 **対応:** SSP 2.8.24

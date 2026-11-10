@@ -1,7 +1,7 @@
 # `\![unload,makoto]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類コマンド
 
-Unloads makoto.dll and keeps it unloaded.
+卸載（解除載入）makoto.dll，並維持卸載狀態。
 
 **対応:** SSP 2.5.58

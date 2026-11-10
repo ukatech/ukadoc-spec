@@ -1,10 +1,10 @@
 # OnApplicationClose
 
-**カテゴリ:** Generic external application event
+**カテゴリ:** 外部應用程式通用事件
 
-Occurs when an external application closes.
+外部應用程式結束時發生。
 
-- **Reference0**: Application name.
-- **Reference1**: Application information.
+- **Reference0**: 應用程式名稱。
+- **Reference1**: 應用程式資訊。
 
 **対応:** Materia / SSP / CROW

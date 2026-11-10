@@ -1,7 +1,7 @@
 # thumbnail
 
-**カテゴリ:** Property system \> General property names
+**カテゴリ:** プロパティシステム \> 通用属性名
 
-Thumbnail of the target.
+目标缩略图。
 
 **対応:** SSP

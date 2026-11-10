@@ -1,9 +1,9 @@
-# recommended.balloon.path,path
+# recommended.balloon.path,路徑
 
 **カテゴリ:** descript.txt - 推薦 balloon
 
-Relative path of the recommended balloon. A strong warning appears when trying to switch to a different one.
+推薦使用之 balloon 的相對路徑。若嘗試切換成其他 balloon，會顯示措辭強烈的警告。
 
-**既定値:** Not specified
+**既定値:** 未指定
 
 **対応:** SSP 2.4

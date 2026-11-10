@@ -1,7 +1,7 @@
 # closeballoonbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for “Close balloon.”
+关闭 balloon 的名称。
 
 **対応:** SSP

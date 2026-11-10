@@ -1,52 +1,52 @@
 # OnPokerNotify
 
-**カテゴリ:** Ghost “卓上誘技”
+**カテゴリ:** ghost「卓上誘技」
 
-An event that does not require a response.
+不需要回應的事件。
 
-- **Reference0**: Protocol version (POKER/1.0)
+- **Reference0**: 通訊協定版本(POKER/1.0)
 
-## Additional information for Reference1 and later in POKER/1.0
+## POKER/1.0的Reference1以後的追加資訊
 
 - **Reference1**: game_start
-- **Reference\***: Names of ghosts that joined
+- **Reference\***: 成功參加的ghost名稱
 
 - **Reference1**: round_start
-- **Reference2**: Blind amount
-- **Reference\***: Ghost name (byte value 1) stack
+- **Reference2**: 盲注金額
+- **Reference\***: ghost名稱(位元組值1)籌碼
 
 - **Reference1**: hand
-- **Reference2**: Information about the dealt cards
-- **Reference3**: Information about the dealt cards<br />
-  The suit is one of the four initials (S,H,C,D), followed by a number.<br />
-  Example:<br />
+- **Reference2**: 發到的牌面資訊
+- **Reference3**: 發到的牌面資訊<br />
+  花色為首字母(S,H,C,D)其中之一，後面接數字。<br />
+  例：<br />
   Reference2: S1<br />
   Reference3: H12<br />
-  This format is also used for FLIP.
+  FLIP也使用此格式。
 
 - **Reference1**: flip
-- **Reference2**: Current pot
-- **Reference\***: Community card information<br />
-  For a pre-flop, Reference3 and later do not exist.
+- **Reference2**: 目前底池
+- **Reference\***: 公共牌資訊<br />
+  若為翻牌前階段，則沒有Reference3以後的資料
 
 - **Reference1**: blind_bet
-- **Reference2**: Forced bet amount<br />
-  Notifies that a forced bet was made as the SB or BB.
+- **Reference2**: 強制下注金額<br />
+  會通知玩家已在SB或BB位置進行強制下注。
 
-- **Reference1**: bet (information about the player who acted and the bet.)
-- **Reference2**: Current total bet amount
-- **Reference3**: Current bet amount
-- **Reference4**: Ghost name of the player who acted
-- **Reference5**: Action performed
+- **Reference1**: bet（進行動作的玩家與下注相關資訊。）
+- **Reference2**: 目前下注總額
+- **Reference3**: 目前下注額
+- **Reference4**: 進行動作的玩家ghost名稱
+- **Reference5**: 執行的動作
 
-- **Reference1**: show_down (sends card information at showdown.)
-- **Reference\***: Ghost name (byte value 1) first card (byte value 1) second card
+- **Reference1**: show_down（會傳送攤牌時的牌面資訊。）
+- **Reference\***: ghost名稱(位元組值1)第一張牌(位元組值1)第二張牌
 
-- **Reference1**: round_result (information about the winner of the round and participants' remaining stacks.)
-- **Reference2**: The winner of the current round, separated by byte value 1.
-- **Reference\***: Ghost name (byte value 1) stack<br />
-  There is generally one winner, but there may be two or more.<br />
-  Note that a stack reaching 0 is only reported here.
+- **Reference1**: round_result（該回合勝者及參加者剩餘籌碼的資訊。）
+- **Reference2**: 目前回合的勝者以位元組值1分隔列出。
+- **Reference\***: ghost名稱(位元組值1)籌碼<br />
+  勝者通常只有一人，但也可能有兩人以上。<br />
+  請注意，只有在此處才會通知籌碼歸零的情況。
 
 - **Reference1**: game_result
-- **Reference2**: Ghost name of the game winner
+- **Reference2**: 遊戲勝者的ghost名稱

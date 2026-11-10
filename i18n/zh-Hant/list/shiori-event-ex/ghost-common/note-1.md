@@ -1,16 +1,16 @@
-# Notes
+# 補充說明
 
-## List of Requested Property Names
+## 要求的屬性名稱一覽
 
-- Character name
-- Generation
-- Age group
-- Gender
-- Species
-- Species type
-- Behavior type
-- Profile
-- Card image path
+- 角色名稱
+- 世代
+- 年齡層
+- 性別
+- 種族
+- 種族類型
+- 行動類型
+- 個人資料
+- 卡片圖片路徑
 - LIFE
 - STR
 - DEX

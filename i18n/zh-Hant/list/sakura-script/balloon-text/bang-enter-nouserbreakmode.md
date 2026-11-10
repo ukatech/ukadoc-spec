@@ -1,9 +1,9 @@
 # `\![enter,nouserbreakmode]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Start a mode that disables interruption of script execution (the operation depends on SSP settings; normally, double-clicking the balloon).<br />
-Cannot be used with standard SSTP (Auth.SSTP (= Owned SSTP) is supported).
+腳本執行中斷（操作取決於 SSP 的設定。通常是雙擊 balloon）的停用模式開始。<br />
+一般的 SSTP 無法使用（Auth.SSTP（= Owned SSTP）可以）。
 
 **対応:** SSP
 

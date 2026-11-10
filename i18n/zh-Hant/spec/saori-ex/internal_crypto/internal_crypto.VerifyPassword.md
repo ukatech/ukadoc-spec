@@ -2,13 +2,13 @@
 
 **カテゴリ:** internal_crypto
 
-Checks whether the password matches the PHC string, returning `1` if it does and `0` otherwise. Parameters are read from the PHC string. [`--async`](../async.md) is recommended.<br />
-In addition to the output of [HashPassword](internal_crypto.HashPassword.md), strings created by other implementations can also be read if they have the same format (`$argon2id$` (with or without `v=`, including `v=16`) / `$scrypt$` / `$pbkdf2-sha1$` / `$pbkdf2-sha256$` / `$pbkdf2-sha512$`). However, parameters that exceed the memory limit (12MiB)—such as argon2-cffi's default of 64MiB—cannot be verified and return 400 (`out of range`).<br />
-\[SSP 2.9.23\] crypt(3) formats can also be read (`$2a$` / `$2b$` / `$2y$` (bcrypt; all three are handled identically) / `$6$` / `$5$` (with or without `rounds=`, including values below 1000, which are rounded up to 1000) / `$1$` / `$apr1$` / 20 characters beginning with `_` (BSDi extended DES) / 13 characters (traditional DES)). The bcrypt cost is limited to 16, and `rounds=` for SHA-crypt is limited to 10000000; values above these limits return 400 (`out of range`). `$2x$` and `$2$` are not supported.<br />
-Other algorithms return 400 (`unsupported algorithm`), malformed formats return 400 (`invalid parameter`), and parameters outside the range of [DeriveKey](internal_crypto.DeriveKey.md) return 400 (`out of range`; for scrypt, `ln=` must be from 1 to 62). If the pbkdf2 `l=` does not match the hash length, this is also treated as a malformed format and returns 400 (`invalid parameter`).
+檢查密碼是否與PHC字串相符，相符時回傳`1`，否則回傳`0`。參數會從PHC字串讀取。建議使用[`--async`](../async.md)。<br />
+除了[HashPassword](internal_crypto.HashPassword.md)的輸出外，也可以讀取其他實作產生的相同格式字串（`$argon2id$`（可省略`v=`，也可以是`v=16`） / `$scrypt$` / `$pbkdf2-sha1$` / `$pbkdf2-sha256$` / `$pbkdf2-sha512$`）。不過，參數超過記憶體上限（12MiB）的項目（例如argon2-cffi預設的64MiB）會回傳400（`out of range`），無法進行比對。<br />
+\[SSP 2.9.23\] 也可以讀取crypt(3)格式（`$2a$` / `$2b$` / `$2y$`（bcrypt。三者視為相同） / `$6$` / `$5$`（可省略`rounds=`，也可以是小於1000、會向上取整至1000的值） / `$1$` / `$apr1$` / 以`_`開頭的20個字元（BSDi擴充DES） / 13個字元（傳統DES））。bcrypt的成本最高為16，SHA-crypt的`rounds=`最高為10000000，超過時會回傳400（`out of range`）。不支援`$2x$`・`$2$`。<br />
+其他方式會回傳400（`unsupported algorithm`），格式錯誤會回傳400（`invalid parameter`），參數超出[DeriveKey](internal_crypto.DeriveKey.md)的範圍時會回傳400（`out of range`。scrypt的`ln=`必須介於1～62，否則會回傳此錯誤）。pbkdf2的`l=`與雜湊長度不一致時，也會視為格式錯誤並回傳400（`invalid parameter`）。
 
-- **Argument1**: password (default format is `text`)
-- **Argument2**: PHC string (or a string in crypt(3) format) (\[SSP 2.9.23\])
-- **オプション**: `--password-in=` / `--charset=`
+- **Argument1**: password（預設格式為`text`）
+- **Argument2**: PHC字串（\[SSP 2.9.23\] 或crypt(3)格式的字串）
+- **選項**: `--password-in=` / `--charset=`
 
 **対応:** SSP 2.9.13

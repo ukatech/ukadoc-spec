@@ -1,10 +1,10 @@
 # `\![set,alignmenttodesktop,free]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Allow the surface to move freely.
+讓 surface 可以自由移動。
 
-Valid until the ghost ends.
+設定會持續生效，直到 ghost 結束。
 
 **対応:** SSP / CROW / Ninix
 

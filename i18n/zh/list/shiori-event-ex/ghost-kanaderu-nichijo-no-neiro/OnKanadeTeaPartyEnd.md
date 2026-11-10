@@ -1,7 +1,7 @@
 # OnKanadeTeaPartyEnd
 
-**カテゴリ:** Ghost "The Sounds of Everyday Life"
+**カテゴリ:** ghost「奏响日常的音色」
 
-Tea party end event. Notifies after The Sounds of Everyday Life has delivered its tea party end dialogue.
+茶会结束事件。奏响日常的音色在进行茶会结束对话后通知。
 
-- **Reference0**: Version of the tea party that was held.
+- **Reference0**: 已执行的茶会版本。

@@ -1,8 +1,8 @@
-# number.font.color.b,value
+# number.font.color.b,数值
 
 **カテゴリ:** descript.txt
 
-Blue component of the counter number's font color (0–255)
+计数器数值的字体蓝色分量（0～255）
 
 **既定値:** 0
 

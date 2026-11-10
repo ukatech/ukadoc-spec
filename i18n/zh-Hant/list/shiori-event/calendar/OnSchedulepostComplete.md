@@ -1,10 +1,10 @@
 # OnSchedulepostComplete
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 行事曆事件
 
-\[Legacy specification\] Occurs when the schedule sensor completes posting.<br />
-**This does not occur in current versions of SSP because the post feature itself has been deprecated.**
+\[舊規格\]行程感測器完成發布處理時觸發。<br />
+**由於發布功能本身已廢止，目前的 SSP 不會觸發此事件。**
 
-- **Reference0**: Schedule sensor name
+- **Reference0**: 行程感測器名稱
 
 **対応:** SSP

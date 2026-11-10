@@ -1,7 +1,7 @@
 # kero.popupmenu.type
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost信息
 
-Changes the partner's owner-draw menu. 0 for the main character's menu, 1 for the abbreviated menu.
+更改搭档侧的owner draw菜单。0表示本体侧菜单，1表示简略菜单。
 
 **対応:** SSP

@@ -1,10 +1,10 @@
-# wordwrappoint.y,coordinate [\*1](../index.md#balloon設定)
+# wordwrappoint.y,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The Y coordinate at which automatic line wrapping occurs.<br />
-Used only for vertical writing ([vertical](vertical.md) is 1); ignored for horizontal writing.<br />
-If unspecified, text is treated as writable up to validrect.bottom.
+自動換行時的 Y 座標。<br />
+僅用於直書（[vertical](vertical.md)為1）時，橫書時會忽略。<br />
+未指定時，會視為可以寫到 validrect.bottom。
 
 **既定値:** validrect.bottom
 

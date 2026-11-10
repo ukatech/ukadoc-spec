@@ -1,4 +1,4 @@
-# Owner-draw menu text color
+# owner draw 選單文字色彩
 
 ## 一覧
 

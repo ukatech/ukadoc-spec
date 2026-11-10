@@ -1,15 +1,15 @@
-# Base surface
+# 基础surface
 
-## Base surface
+## 基础surface
 
-The image in each surface's basic state, before animations are composited, is called the base surface.
+每个surface的基本状态，即动画合成前的图像，称为基础surface。
 
-Animations are normally drawn above the base surface (closer to the viewer).
+动画通常绘制在基础surface的上层（屏幕前方）。
 
-## The base surface itself
+## 基础surface的实体
 
-The base surface of a surface is defined by the surface\*.png corresponding to its ID and by [element definitions](element-star.md) in the surface brace for that ID.
+某个surface的基础surface由与其ID对应的surface\*.png，以及与其ID对应的surface块中的[element指定](element-star.md)定义。
 
-For a surface with a surface\*.png, that image is its base surface. However, if element0 is also defined, the contents of surface\*.png are discarded and replaced by the element0 definition (this behavior is for compatibility).
+对于存在surface\*.png的surface，该图像就是surface\*的基础surface。但是，如果同时定义了element0，则surface\*.png的内容会被丢弃，并由element0的定义内容替代（这是为了确保兼容性而规定的行为）。
 
-If there are definitions for element1 and higher, they are composited sequentially on top, and the final composited result is treated as the base surface.
+如果定义了element1及之后的项，这些项会依次叠加合成，最终的合成结果将作为基础surface处理。

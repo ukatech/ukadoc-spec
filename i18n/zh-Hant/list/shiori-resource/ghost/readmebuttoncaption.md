@@ -1,7 +1,7 @@
 # readmebuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of Read Me!.
+Read Me!的名稱。
 
 **対応:** Materia / SSP

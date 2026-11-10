@@ -1,50 +1,50 @@
-# About `\![move]` and `\![moveasync]`
+# 關於 `\![move]`、`\![moveasync]`
 
-New specification: (SSP 2.3.85 and later)
+新規規格：（SSP 2.3.85 以後）
 
 `\![move(async),--X=X座標,--Y=Y座標,--time=移動時間,--base=移動基準,--base-offset=基準とするキャラ基準位置,--move-offset=動かすキャラ基準位置,--option=オプション]`
 
-All parameters are optional. Their order may also be changed. The case of parameter names is ignored (for example, you may write --x=10)
+所有項目皆可省略，順序也可以變更。指定名稱不區分大小寫（例如也可以寫成 --x=10）。
 
-Old specification:
+舊規格：
 
 `\![move(async),X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]`
 
-Parameters from the move duration onward are optional.
+移動時間之後的項目皆可省略。
 
-*X coordinate and Y coordinate* specify the destination coordinates.<br />
-Negative values are also allowed.<br />
-If either is omitted or specified as "fix", that coordinate is kept.<br />
-Default: "fix"
+*X 座標、Y 座標*指定目標座標。<br />
+也可以指定負值。<br />
+省略任一座標或指定為 "fix" 時，會保留該座標。<br />
+省略時為 "fix"。
 
-*Move duration* is in milliseconds.<br />
-If the move duration is omitted or specified as 0, the move is instantaneous.<br />
-Default: 0
+*移動時間*的單位為毫秒。<br />
+省略移動時間或指定為 0 時，會立即移動。<br />
+省略時為 0。
 
-*Reference position* is the character or other element used as the origin for the move (the origin of relative coordinates).<br />
-Specify it as follows.<br />
-Default: screen
+*基準位置*是作為移動基準（相對座標原點）的角色等。<br />
+指定方法如下。<br />
+省略時為 screen。
 
-- **screen**: Coordinates with the top-left corner of the monitor containing the current character window as the origin. Default value
-- **primaryscreen**: Coordinates with the top-left corner of the primary monitor (ID=1) as the origin.
-- **ID**: Relative coordinates to the character in the scope with the specified ID, such as 0 or 1 (corresponding to the number of `\0`, `\1`, `\p[2]`, etc.)
-- **本体側名/ID**: Relative coordinates to the character in the scope with the specified ID of another ghost, specified by its baseware-side name (sakura name, `\0` name)
-- **me**: Relative coordinates to the character being moved
-- **primaryscreen**: Coordinates with the top-left corner of the primary monitor as the origin
-- **global**: System coordinate system (the same as primaryscreen on windows)
+- **screen**：以目前角色視窗所在螢幕的左上角為原點的座標。初始值。
+- **primaryscreen**：以主螢幕（ID=1）的左上角為原點的座標。
+- **ID**：與指定為 0、1 等 ID 的 scope（相當於 `\0`、`\1`、`\p[2]` 等數值）的角色之相對座標。
+- **本體側名稱/ID**：與以本體側名稱（sakura 名稱、`\0` 名稱）指定的其他 ghost 之 ID scope 角色的相對座標。
+- **me**：與移動中的角色本身的相對座標。
+- **primaryscreen**：以主螢幕左上角為原點的座標。
+- **global**：系統座標系（在 Windows 中與 primaryscreen 相同）。
 
-*Character reference position* specifies which point is used as the origin when a character or screen is specified as the move reference.<br />
-Specify it in the form X reference.Y reference, combining one of the following four values for each:<br />
-X reference: left,right,base,center<br />
-Y reference: top,bottom,base,center<br />
-Combine the values, for example, as right.base.<br />
-Note that base follows the point.basepos setting in surfaces.txt.<br />
-Default: left.top
+*基準角色基準位置*是在移動基準指定角色或 screen 時，指定以哪個位置為原點。<br />
+以 X 基準.Y 基準的形式指定，分別組合以下 4 種指定值：<br />
+X 基準：left、right、base、center<br />
+Y 基準：top、bottom、base、center<br />
+組合後以 right.base 等形式記述。<br />
+其中，base 依照 surfaces.txt 中的 point.basepos 指定。<br />
+省略時為 left.top。
 
-For screen, base cannot be used; for global, right,bottom,center cannot be used.
+指定 screen 時不能使用 base；指定 global 時不能使用 right、bottom、center。
 
-*Moving character reference position* is specified in the same way as the character reference position.
+*移動角色基準位置*的指定方式與基準角色基準位置相同。
 
-*Options* can be specified multiple times. Specify them as follows. Only the new specification format is supported.
+*選項*可以指定多次。指定方法如下。僅能使用新規格式。
 
-- **ignore-sticky-window**: Move independently, ignoring the linked settings for `\![set,sticky-window]`
+- **ignore-sticky-window**：忽略 `\![set,sticky-window]` 的連動設定，單獨移動

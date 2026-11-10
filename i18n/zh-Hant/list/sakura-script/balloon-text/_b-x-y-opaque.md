@@ -1,11 +1,11 @@
 # `\_b[ファイルパス,x,y,opaque]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 氣球、文字指令
 
-Paste an image at the balloon's XY coordinates. The image is displayed behind the text.<br />
-Display without making the color in the upper-left corner transparent.<br />
-\[folder of the running ghost\]/ghost/master is the base folder.<br />
-※Instead of a file name, you can specify a base64-encoded image or an image resource from an exe/dll. [※See below](note-1.md#補足).
+將圖片貼至氣球的 XY 座標。圖片會顯示在文字下方。<br />
+顯示時不會將左上角的顏色設為透明。<br />
+\[執行中的 ghost 資料夾\]/ghost/master 為基準資料夾。<br />
+※也可以不使用檔名，而改以 base64 編碼或 exe/dll 資源指定圖片，[※請參閱下方](note-1.md#補足)。
 
 **対応:** SSP
 

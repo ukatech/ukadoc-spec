@@ -1,10 +1,10 @@
-# number.x,coordinate [\*1](../index.md#balloon設定)
+# number.x,坐标 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-X coordinate of the counter number. Same as [number.xr](number.xr.md), provided as an alias for specifying the position from the left.<br />
-In horizontal writing ([vertical](vertical.md) is 0), this indicates the right edge of the number (the edge toward which the number extends). In vertical writing, it indicates the position of the column containing the number; [number.yb](number.yb.md) determines the edge toward which the number extends.
+计数器数值的 X 坐标。与[number.xr](number.xr.md)相同，是为了从左侧起点书写而提供的别名。<br />
+横排（[vertical](vertical.md)为0）时指数值的右端（＝数值延伸方向的末端）。竖排时表示放置数值的列的位置；决定数值延伸方向末端的是[number.yb](number.yb.md)。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** SSP 2.8.83

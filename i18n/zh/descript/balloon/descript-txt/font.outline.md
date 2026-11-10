@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-Always add an outline. 0 disables / 1 enables.
+始终添加外框线。0为禁用/1为启用。
 
 **既定値:** 0
 

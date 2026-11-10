@@ -1,7 +1,7 @@
 # `\![execute,resetwindowpos]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Return each window to its initial position. This works the same as “Reset shell position” in the menu.
+将各窗口的位置恢复到初始位置。其作用与菜单中的“初始化shell位置”相同。
 
 **対応:** SSP 2.7 RC1

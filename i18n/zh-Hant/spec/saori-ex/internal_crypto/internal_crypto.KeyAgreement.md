@@ -2,21 +2,21 @@
 
 **カテゴリ:** internal_crypto
 
-Derives a shared secret from your private key and the other party's public key, so that only the two parties obtain the same value (ECDH). The result is 32 bytes and is not hashed (`secp256k1` returns the point's x-coordinate as-is, as in nostr's NIP-44; `x25519` returns the RFC 7748 result as-is; `p256` returns the point's x-coordinate as-is).<br />
-**Do not use the result directly as an encryption key.** Pass it through `hkdf` (or `hkdf-extract`) in [DeriveKey](internal_crypto.DeriveKey.md) before using it.
+從自己的私密金鑰和對方的公開金鑰計算出只有雙方能取得相同值的共享秘密（ECDH）。結果為 32 位元組，不會進行雜湊（`secp256k1`直接使用點的 x 座標，與 nostr 的 NIP-44 相同；`x25519`直接使用 RFC 7748 的結果；`p256`直接使用點的 x 座標）。<br />
+**請勿將結果直接用作加密金鑰。**請先經過 [DeriveKey](internal_crypto.DeriveKey.md) 的`hkdf`（或`hkdf-extract`）再使用。
 
-- **Argument1**: method: `secp256k1` / `x25519` (\[SSP 2.9.27\]) / `p256` (\[SSP 2.9.27\]. NIST P-256 = secp256r1 = prime256v1)
-- **Argument2**: private key (32 bytes; default format is `hex`)
-- **Argument3**: other party's public key (default format is `hex`)
-- **Options**: `--key-in=` / `--peer-in=` / `--out=` (default is `hex`)
+- **Argument1**: 方法：`secp256k1` / `x25519`（\[SSP 2.9.27\]） / `p256`（\[SSP 2.9.27\]。NIST P-256 = secp256r1 = prime256v1）
+- **Argument2**: 私密金鑰（32 位元組。預設格式為`hex`）
+- **Argument3**: 對方的公開金鑰（預設格式為`hex`）
+- **選項**: `--key-in=` / `--peer-in=` / `--out=`（預設為`hex`）
 
-Keys must be raw values, not DER / PEM.
+金鑰是原始值，不是 DER / PEM 格式。
 
-- **secp256k1**: The other party's public key can be 32 bytes containing only the x-coordinate (BIP-340 / nostr format), 33 bytes in compressed format, or 65 bytes in uncompressed format.
-- **x25519**: Both the private key and the other party's public key are 32 bytes (RFC 7748; SSP performs private-key bit clamping). Public keys that produce an all-zero result (low-order points) are rejected.
-- **p256**: The other party's public key must be 33 bytes in compressed format (starting with `02` or `03`) or 65 bytes in uncompressed format (starting with `04`). A 32-byte x-coordinate alone is not accepted (unlike `secp256k1`, this is not a valid P-256 public-key format).
+- **secp256k1**: 對方的公開金鑰可以是只有 x 座標的 32 位元組（BIP-340 / nostr 格式）、壓縮格式的 33 位元組，或非壓縮格式的 65 位元組。
+- **x25519**: 私密金鑰和對方的公開金鑰皆為 32 位元組（RFC 7748。SSP 會調整私密金鑰的位元（clamping））。不接受會使結果全為 0 的公開金鑰（低階點）。
+- **p256**: 對方的公開金鑰可以是壓縮格式的 33 位元組（開頭為`02`或`03`），或非壓縮格式的 65 位元組（開頭為`04`）。不接受只有 x 座標的 32 位元組格式（與`secp256k1`不同，這不是 P-256 公開金鑰的格式）。
 
-A private key outside the valid range (0 or greater than or equal to the order, or not 32 bytes for `x25519`), or an other party's public key that is not a point on the curve or has an incorrect length, results in 400 (`invalid key`). `x25519` / `p256` keys can be generated with [GenerateKeyPair](internal_crypto.GenerateKeyPair.md).
+私密金鑰超出範圍（為 0 或大於等於曲線階數；`x25519`時不是 32 位元組）、對方的公開金鑰不在曲線上或長度不符時，會回傳 400（`invalid key`）。`x25519` / `p256`的金鑰可用 [GenerateKeyPair](internal_crypto.GenerateKeyPair.md) 建立。
 
 ## 記述例
 
@@ -40,7 +40,7 @@ Argument5: --password-in=hex
 → Result: 3dfef0ce2a4d80a25e7a328accf73448ef67096f65f79588e358d9a0eb9013f1
 ```
 
-(NIP-44 conversation key. NIP-44 test vector)
+（NIP-44 的對話金鑰。NIP-44 測試向量）
 
 ```
 Argument0: KeyAgreement
@@ -51,6 +51,6 @@ Argument3: de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b78674dadfc7e146f882b4f
 → Result: 4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742
 ```
 
-(RFC 7748 §6.1 test vector. For `p256`, use `i` from RFC 5903 §8.1 as the private key and `04`＋the x and y coordinates of `gr` as the other party's public key to obtain `d6840f6b42f6edafd13116e0e12565202fef8e9ece7dce03812464d04b9442de`)
+（RFC 7748 §6.1 的測試向量。`p256`使用 RFC 5903 §8.1 的`i`作為私密金鑰，對方的公開金鑰則設為`04`＋`gr`的 x、y 座標，即可得到`d6840f6b42f6edafd13116e0e12565202fef8e9ece7dce03812464d04b9442de`）
 
-**対応:** SSP 2.9.14 (`x25519` / `p256` are supported in SSP 2.9.27)
+**対応:** SSP 2.9.14（`x25519` / `p256`為 SSP 2.9.27）

@@ -1,7 +1,7 @@
 # kero.recommendbuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of the partner's recommendations.
+搭檔側的推薦項目名稱。
 
 **対応:** Materia / SSP / CROW / Ninix

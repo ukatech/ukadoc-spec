@@ -1,10 +1,10 @@
 # `\![update,platform]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Start a baseware network update event.<br />
-If an update is available, the ghost exits first ([OnBasewareUpdating](../../shiori-event/boot-close-change/OnBasewareUpdating.md), or [OnClose](../../shiori-event/boot-close-change/OnClose.md) if there is no talk) and then starts again ([OnBasewareUpdated](../../shiori-event/boot-close-change/OnBasewareUpdated.md), or [OnBoot](../../shiori-event/boot-close-change/OnBoot.md) if there is no talk).<br />
-If there is no update, only a popup is displayed and no SHIORI event occurs.
+開始 baseware 的網路更新事件。<br />
+若有更新，ghost 會先結束（[OnBasewareUpdating](../../shiori-event/boot-close-change/OnBasewareUpdating.md)，若沒有對應對話則為 [OnClose](../../shiori-event/boot-close-change/OnClose.md)），然後重新啟動（[OnBasewareUpdated](../../shiori-event/boot-close-change/OnBasewareUpdated.md)，若沒有對應對話則為 [OnBoot](../../shiori-event/boot-close-change/OnBoot.md)）。<br />
+若沒有更新，只會顯示彈出視窗，不會觸發任何 SHIORI 事件。
 
 **対応:** SSP / CROW
 

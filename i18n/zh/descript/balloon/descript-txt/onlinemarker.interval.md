@@ -1,9 +1,9 @@
-# onlinemarker.interval,wait time
+# onlinemarker.interval,等待时间
 
 **カテゴリ:** descript.txt
 
-Interval for switching the online indicator's animation frames. Values under 50 milliseconds cannot be set, to avoid unnecessarily increasing the load.
+在线显示动画的切换间隔。为避免负载不必要地增加，不能设置为小于50毫秒。
 
-**既定値:** 500 milliseconds
+**既定値:** 500毫秒
 
 **対応:** SSP 2.5.77

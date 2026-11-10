@@ -1,10 +1,10 @@
 # `\![lock,repaint]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Stop repainting until `\![unlock,repaint]` is called.<br />
-This stop is automatically canceled at the end of the script.<br />
-However, specifying `\![lock,repaint,manual]` keeps repainting stopped until it is explicitly unlocked\[2.5.16\]
+停止重绘，直到调用`\![unlock,repaint]`。<br />
+此停止处理会在脚本结束时自动解除。<br />
+但是，指定为`\![lock,repaint,manual]`时，直到明确调用unlock才会解除停止\[2.5.16\]
 
 **対応:** Materia / SSP / Ninix
 

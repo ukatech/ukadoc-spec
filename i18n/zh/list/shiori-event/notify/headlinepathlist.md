@@ -1,9 +1,9 @@
 # headlinepathlist
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the path to the headline storage folder (the headline setting under SSP's main settings-\>Folders).*\[NOTIFY\]*
+通知标题栏存放文件夹（SSP的本体设置-\>文件夹　中的标题栏设置）的路径。*\[NOTIFY\]*
 
-- **Reference\***: Absolute path to the headline storage folder
+- **Reference\***: 标题栏存放文件夹的绝对路径
 
 **対応:** SSP

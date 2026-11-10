@@ -2,9 +2,9 @@
 
 **カテゴリ:** internal_system
 
-Returns a list of built-in module names (including `internal_system` itself).
+返回内置模块的名称列表（也包括 `internal_system` 本身）。
 
-- **引数**: None
+- **参数**: 无
 
 ## 記述例
 

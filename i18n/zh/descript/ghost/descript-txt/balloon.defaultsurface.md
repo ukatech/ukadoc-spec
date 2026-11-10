@@ -1,8 +1,8 @@
-# balloon.defaultsurface,Number
+# balloon.defaultsurface,数值
 
 **カテゴリ:** descript.txt
 
-Default surface number for the balloon.
+balloon的默认surface编号。
 
 **既定値:** 0
 

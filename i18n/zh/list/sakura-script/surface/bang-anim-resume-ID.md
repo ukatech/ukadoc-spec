@@ -1,8 +1,8 @@
 # `\![anim,resume,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Resume the animation paused above.
+解除上述暂停状态。
 
 **対応:** SSP
 

@@ -1,8 +1,8 @@
-# readme,File name
+# readme,文件名
 
 **カテゴリ:** descript.txt
 
-Name of the plugin description text file opened during installation.
+安装时打开的plugin说明文本文件名。
 
 **既定値:** readme.txt
 

@@ -1,9 +1,9 @@
 # `\-`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件指令
 
-Exit the baseware.<br />
-If multiple ghosts are running in SSP, only the ghost that executed this command exits.
+結束 baseware。<br />
+SSP 中若有多個 ghost 正在執行，只會結束執行此指令的 ghost。
 
 **対応:** Materia / SSP / CROW / Ninix
 

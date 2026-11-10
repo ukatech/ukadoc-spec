@@ -1,7 +1,7 @@
 # switchtalkghostbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the option to let the ghost decide when to speak.
+交由 ghost 決定說話時機的名稱。
 
 **対応:** SSP

@@ -1,9 +1,9 @@
 # `\i[ID,wait]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Display the surface animation with the specified ID, waiting for it to finish.<br />
-A string defined by animation\*.name in surfaces.txt can be used instead of the ID.
+等待 ID 編號的 surface 動畫期間顯示。<br />
+可使用 surfaces.txt 的 animation\*.name 所定義的字串代替 ID。
 
 **対応:** SSP
 

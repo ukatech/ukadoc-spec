@@ -1,42 +1,42 @@
 # `\![set,wallpaper,ファイル名,オプション]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Set the specified file as the wallpaper.<br />
-In addition to absolute paths, relative paths can also be used as the file name. Relative paths are searched in this order: \[the folder of the ghost that executed the command\]/ghost/master, \[the folder of the ghost that executed the command\], and the SSP folder.<br />
-If the path starts with !, it is treated as a relative path from the SSP folder. If it starts with \\ or /, it is treated as a relative path from the root of the drive containing SSP.<br />
-If no file name is specified or it is empty, the wallpaper setting is cleared (leaving only the background color, with no wallpaper).<br />
-The available options are as follows.
+将指定文件设为壁纸。<br />
+文件名可以使用绝对路径，也可以使用相对路径。相对路径会依次在\[执行该命令的ghost文件夹\]/ghost/master、\[执行该命令的ghost文件夹\]、SSP文件夹中查找。<br />
+如果文件名以!开头，则视为相对于SSP文件夹的路径；如果以\\或/开头，则视为相对于SSP所在驱动器根目录的路径。<br />
+不指定文件名或将其设为空时，会解除壁纸设置（变为没有壁纸、只有背景色的状态）。<br />
+选项如下。
 
-- **center**: Display centered (default if omitted)
-- **tile**: Display tiled.
-- **stretch**: Stretch to fill the monitor, ignoring the image's aspect ratio.
-- **stretch-x**: Scale the image, preserving its aspect ratio, to fit the width of the monitor. Windows 7 and later only.
-- **stretch-y**: Scale the image, preserving its aspect ratio, to fit the height of the monitor. Windows 7 and later only.
-- **fit**: Scale the image, preserving its aspect ratio, so the entire image fits on the monitor. The background color is shown in the margins.
-- **fill**: Scale the image, preserving its aspect ratio, to cover the entire monitor. Parts that extend beyond the edges are not displayed.
-- **span**: In a multi-monitor environment, scale the image to span all monitors. Windows 10 and later only.
+- **center**: 居中显示（省略时的默认值）
+- **tile**: 平铺显示（平铺）
+- **stretch**: 忽略图像的纵横比，将图像放大到填满整个显示器。
+- **stretch-x**: 将图像的宽度调整到填满显示器宽度，并在考虑纵横比的情况下放大。仅适用于Windows 7及更高版本。
+- **stretch-y**: 将图像的高度调整到填满显示器高度，并在考虑纵横比的情况下放大。仅适用于Windows 7及更高版本。
+- **fit**: 保持图像的纵横比，缩放图像使其完整显示在显示器内。空白部分会显示背景色。
+- **fill**: 保持图像的纵横比，缩放图像以覆盖整个显示器。超出部分不会显示。
+- **span**: 在多显示器环境中放大图像，使其横跨所有显示器。仅适用于Windows 10及更高版本。
 
-\[2.8.93\] The following format can also be used. Arguments beginning with -- can appear in any order and can be mixed with the file name and options specified above (arguments not beginning with -- are treated as a file name or option, in the order they appear).
+\[2.8.93\] 也可以使用以下格式指定。以--开头的参数顺序不限，也可以与上述文件名、选项的指定方式混用（不以--开头的参数会按出现顺序视为文件名、选项）。
 
-- **--file=ファイル名**: The file to use as the wallpaper. Same as the file name above.
-- **--position=配置**: Image placement. Specify one of the option values above. Defaults to center if omitted.
-- **--color=色指定**: Background color (used for image margins or as the solid background color when no image is specified). The R,G,B, R%,G%,B%, hexadecimal color code, and predefined keyword formats described in [How to specify text colors](../choice-marker/note-1.md#形状指定の方法) can be used.<br />
-  For formats containing commas, such as R,G,B, enclose the entire argument in double quotes, as in "--color=255,128,0".<br />
-  If the specified value cannot be interpreted as a color, this tag does nothing.
+- **--file=文件名**: 用作壁纸的文件。与上述文件名相同。
+- **--position=配置**: 图像的显示方式。指定与上述选项相同的值。省略时为center。
+- **--color=颜色指定**: 背景色（用于图像留白部分，或未指定图像时的纯色背景）。可以使用[文字颜色指定方法](../choice-marker/note-1.md#形状指定の方法)中的R,G,B、R%,G%,B%、十六进制颜色代码和预定义关键字。<br />
+  对于R,G,B这样包含逗号的格式，请将整个参数用双引号括起来，例如"--color=255,128,0"。<br />
+  如果指定的值无法解释为颜色，则此标签不执行任何操作。
 
-\[2.8.93\] The behavior depends on whether a file name and --color are specified, as follows.
+\[2.8.93\] 根据是否指定文件名和--color，行为如下。
 
-- **ファイル名のみ**: Set the image as the wallpaper. The background color is not changed.
-- **ファイル名と--color**: Set the image as the wallpaper and change the background color.
-- **--colorのみ**: Set a solid background of the specified color, with no image.
-- **どちらもなし**: Clear the wallpaper setting (remove the wallpaper, leaving only the background color. The background color is not changed).
+- **仅指定文件名**: 将图像设为壁纸。背景色不变。
+- **指定文件名和--color**: 将图像设为壁纸，并更改背景色。
+- **仅指定--color**: 设置为没有图像、使用指定颜色的纯色背景。
+- **两者都不指定**: 解除壁纸设置（移除壁纸，变为只有背景色的状态。背景色不变）。
 
-\[2.8.93\] While running in window mode, this changes the background of the window-mode window displaying the ghost, without changing the OS wallpaper (if all ghosts share one window, the background of all ghosts changes).<br />
-The background setting is treated as “Background - Image” and is retained after SSP exits.<br />
-For placement, span is treated the same as fill. If --color is omitted, the background color is set to the image's dominant color.<br />
-If neither a file name nor --color is specified, the background is restored to “Background - Desktop” (the setting that reproduces the OS wallpaper).<br />
-Changing the wallpaper by dragging and dropping an image file likewise changes the window-mode background.
+\[2.8.93\] 在窗口模式下运行时，不会更改OS壁纸，而是更改显示该ghost的窗口模式窗口的背景（如果所有ghost共用一个窗口，则所有ghost的背景都会改变）。<br />
+背景设置会按“背景 - 图像”处理，并在SSP退出后保留。<br />
+配置只有span会按与fill相同的方式处理。省略--color时，背景色会设为图像的主色。<br />
+未指定文件名和--color时，会将背景恢复为“背景 - 桌面”（重现OS壁纸的设置）。<br />
+通过拖放图像文件更改壁纸时，也会同样更改窗口模式的背景。
 
 **対応:** SSP / Ninix
 

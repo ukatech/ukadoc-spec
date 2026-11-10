@@ -1,7 +1,7 @@
-# rateofuselist(name).boottime
+# rateofuselist(名稱).boottime
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Number of times that ghost has been started.
+該 ghost 的啟動次數。
 
 **対応:** SSP

@@ -1,8 +1,8 @@
 # `\![anim,clear,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Stop playback of the surface animation with the specified ID.
+結束播放 ID 編號的 surface 動畫。
 
 **対応:** SSP
 

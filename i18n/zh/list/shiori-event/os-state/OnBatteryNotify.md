@@ -1,20 +1,20 @@
 # OnBatteryNotify
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Notify the remaining battery level. Notified using *\[NOTIFY\]* only at startup; otherwise, use GET.
+通知剩余电量。仅在启动时通过 *\[NOTIFY\]* 通知，其他情况下使用 GET。
 
-- **Reference0**: Remaining battery percentage.
-- **Reference1**: Remaining time. -1 if unknown.
-- **Reference2**: One of offline (running on battery), online (connected to power), or backup (auxiliary power such as a UPS).
-- **Reference3**: A comma-separated string indicating the following states. Example: low,charging<br />
-  high: Battery level is at least 2/3<br />
-  low: Battery level is 1/3 or less (OnBatteryLow also occurs)<br />
-  critical: Battery level is 5% or less (OnBatteryCritical also occurs)<br />
-  charging: Battery is charging (OnBatteryChargingStart/Stop also occurs)<br />
-  no_battery: Battery has been removed<br />
-  power_saving: Battery saver is ON (SSP 2.3.94 and later/Windows 10 and later)
+- **Reference0**: 剩余电量百分比。
+- **Reference1**: 剩余时间。未知时为 -1。
+- **Reference2**: offline（电池供电）、online（外接电源供电）、backup（UPS 等备用电源）之一。
+- **Reference3**: 以逗号分隔的字符串，表示以下状态。示例：low,charging<br />
+  high：电池电量为 2/3 以上<br />
+  low：电池电量为 1/3 以下（也会触发 OnBatteryLow）<br />
+  critical：电池电量为 5％ 以下（也会触发 OnBatteryCritical）<br />
+  charging：电池正在充电（也会触发 OnBatteryChargingStart/Stop）<br />
+  no_battery：电池已取出<br />
+  power_saving：电池节能功能已开启（SSP 2.3.94 及之后/Windows 10 及之后）
 
-On operating systems earlier than Windows 7, the thresholds for high/low may differ.
+在 Windows 7 之前的操作系统中，high/low 的判定标准可能不同。
 
 **対応:** SSP

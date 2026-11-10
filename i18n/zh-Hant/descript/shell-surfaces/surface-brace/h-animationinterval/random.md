@@ -1,7 +1,7 @@
-# random,number
+# random,數值
 
-**カテゴリ:** surface brace \> animation interval
+**カテゴリ:** surface brace \> 動畫間隔
 
-Plays with a probability of 1/number per second while that surface is displayed.
+在該 surface 顯示期間，每秒以指定數值分之一的機率播放。
 
 **対応:** Materia / SSP / CROW

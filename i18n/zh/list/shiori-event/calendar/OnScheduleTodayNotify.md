@@ -1,18 +1,18 @@
 # OnScheduleTodayNotify
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 日历事件
 
-Occurs when the contents of “Today's schedule” in the baseware calendar change. *\[NOTIFY\]*<br />
-For example, when the date changes, a schedule is added or deleted, or the results from a schedule sensor change. It does not occur if there is no change.<br />
-This is sent to all running ghosts, not a specific ghost.
+本体日历功能的“今日安排”内容发生变化时触发。*\[NOTIFY\]*<br />
+例如日期变更、添加或删除日程、日程传感器的获取结果发生变化等。内容未发生变化时不会触发。<br />
+此通知会发送给所有正在运行的ghost，而不是特定的ghost。
 
-Reference0 and onward contain each item in the updated “Today's schedule.” Each Reference's contents are separated by byte value 1 (hereafter \[`\1`\]).<br />
-If there are no remaining items, the event occurs with no References.
+Reference0及之后的内容依次为更新后的“今日安排”中的各条日程。每个Reference内部以字节值1（下称\[`\1`\]）分隔。<br />
+没有任何日程时，会在不包含任何Reference的情况下触发。
 
-- **Reference0～**: Event [type](caption_scheduletype.md) \[`\1`\] Event content (caption) \[`\1`\] Additional data (subtitle) \[`\1`\] Script (script) \[`\1`\] Start date and time \[`\1`\] End date and time \[`\1`\]<br />
-  References continue as Reference0, 1, 2, and so on, for each schedule. Note that a trailing separator \[`\1`\] is also appended.<br />
-  The start and end dates and times use the comma-separated format “year,month,day,hour,minute,second.” For schedules without a time set, hour, minute, and second are empty, as in “2026,9,10,,,”.<br />
-  The end date and time are included only for schedules with an end time set. Otherwise, they are empty.<br />
-  caption, subtitle, and script are the exact strings registered in the baseware calendar; no escaping for Sakura Script is performed.
+- **Reference0～**: 事件的[类型](caption_scheduletype.md) \[`\1`\] 事件内容(caption) \[`\1`\] 附加数据(subtitle) \[`\1`\] 脚本(script) \[`\1`\] 开始日期时间 \[`\1`\] 结束日期时间 \[`\1`\]<br />
+  Reference0、1、2～按日程数量依次排列。注意末尾也会附加分隔符\[`\1`\]。<br />
+  开始日期时间和结束日期时间采用以逗号分隔的“年,月,日,时,分,秒”格式。未设置时间的日程，其时、分、秒为空，例如“2026,9,10,,, ”。<br />
+  只有设置了结束时间的日程才会填入结束日期时间。未设置时为空。<br />
+  caption、subtitle、script的内容与登记在本体日历中的字符串完全相同，不会进行Sakura Script转义。
 
 **対応:** SSP 2.8.90

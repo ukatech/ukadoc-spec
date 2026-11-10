@@ -1,11 +1,11 @@
-# `\q`\[タイトル,ID,r*2*,r*3*...\]
+# `\q`\[標題,ID,r*2*,r*3*...\]
 
-**カテゴリ:** 選択肢コマンド
+**カテゴリ:** 選項指令
 
-Displays choices.<br />
-After selection, the SHIORI event [OnChoiceSelect*Ex*](../../shiori-event/choice/OnChoiceSelectEx.md) starts.<br />
-r\* is stored in the corresponding Reference\* of OnChoiceSelectEx.<br />
-OnChoiceSelect also occurs after OnChoiceSelectEx, but since Reference1 and later contain nothing, this syntax is meaningless.
+顯示選項。<br />
+選擇後，會觸發 SHIORI 事件[OnChoiceSelect*Ex*](../../shiori-event/choice/OnChoiceSelectEx.md)。<br />
+r\*會存入 OnChoiceSelectEx 的 Reference\*。<br />
+OnChoiceSelectEx 之後也會觸發 OnChoiceSelect，但 Reference1 以後沒有資料，因此這種寫法沒有意義。
 
 **対応:** SSP
 

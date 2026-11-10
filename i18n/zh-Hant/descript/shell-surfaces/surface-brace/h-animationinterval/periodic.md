@@ -1,7 +1,7 @@
-# periodic,number
+# periodic,數值
 
-**カテゴリ:** surface brace \> animation interval
+**カテゴリ:** surface brace \> 動畫間隔
 
-Plays periodically at intervals of the specified number of seconds while that surface is displayed.
+在該 surface 顯示期間，每隔指定的秒數定期播放。
 
 **対応:** SSP

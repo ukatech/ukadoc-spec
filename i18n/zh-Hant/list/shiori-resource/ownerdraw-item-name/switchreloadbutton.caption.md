@@ -1,7 +1,7 @@
 # switchreloadbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the ghost reload option.
+重新載入 ghost 的名稱。
 
 **対応:** SSP

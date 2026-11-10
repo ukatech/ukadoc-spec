@@ -1,9 +1,9 @@
 # `\![execute,schedule-delete,UID,オプション...]`
 
-**カテゴリ:** Unclassified commands
+**カテゴリ:** 未分类命令
 
-Delete the event with the specified UID from the ghost calendar. Events in the user's calendar and schedule sensor cannot be deleted.<br />
-Results are reported through [OnExecuteScheduleComplete](../../shiori-event/other-communication/OnExecuteScheduleComplete.md), and failures through [OnExecuteScheduleFailure](../../shiori-event/other-communication/OnExecuteScheduleFailure.md) (including when the specified event does not exist). This cannot be executed from scripts sent externally, such as via SSTP.<br />
-The only option is --event=event ID. It works the same way as in [schedule-add](bang-execute-schedule-add.md).
+从 ghost 专用日历中删除指定 UID 的日程。无法删除用户的日程或计划传感器的日程。<br />
+结果通过[OnExecuteScheduleComplete](../../shiori-event/other-communication/OnExecuteScheduleComplete.md)通知，失败时（包括不存在相应日程的情况）则通过[OnExecuteScheduleFailure](../../shiori-event/other-communication/OnExecuteScheduleFailure.md)通知。无法执行从 SSTP 等外部发送的脚本。<br />
+选项只有 --event=事件ID，与[schedule-add](bang-execute-schedule-add.md)相同。
 
 **対応:** SSP 2.8.91

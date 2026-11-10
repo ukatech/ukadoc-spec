@@ -1,8 +1,8 @@
-# char\*.balloon.defaultsurface,Number
+# char\*.balloon.defaultsurface,数值
 
 **カテゴリ:** descript.txt
 
-Default surface number for the balloon of `\p[*]`.
+`\p[*]`对应balloon的默认surface编号。
 
 **既定値:** 0
 

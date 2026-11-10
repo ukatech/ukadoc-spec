@@ -1,11 +1,11 @@
 # OnChoiceHover
 
-**カテゴリ:** Choice event
+**カテゴリ:** 選項事件
 
-Occurs when the cursor rests on a choice.
+游標停留在選項上時觸發。
 
-- **Reference0**: Choice text (label).
-- **Reference1**: Choice ID.
-- **Reference\***: Extended information (third and subsequent arguments in the `\q` tag).
+- **Reference0**: 選項文字（標籤）。
+- **Reference1**: 選項 ID。
+- **Reference\***: 擴充資訊（`\q` 標籤內的第 3 個及之後的引數）。
 
 **対応:** SSP

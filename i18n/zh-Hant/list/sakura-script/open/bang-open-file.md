@@ -1,10 +1,10 @@
 # `\![open,file,ファイル名]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Executes a file. Specify a relative path from \[the folder of the running ghost\]/ghost/master/ or an absolute path.<br />
-Windows environment variables such as %SYSTEMROOT%, %SYSTEM%, and %TEMP% can be used.<br />
-If the file name is an executable, its path is searched for automatically.
+執行檔案。以相對於\[執行中的 ghost 資料夾\]/ghost/master/的路徑或絕對路徑指定。<br />
+可以使用 Windows 環境變數（例如 %SYSTEMROOT%、%SYSTEM%、%TEMP%）。<br />
+若檔名指定為可執行檔，會自動搜尋路徑。
 
 **対応:** SSP
 

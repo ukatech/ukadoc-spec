@@ -1,7 +1,7 @@
 # %mz
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—inorganic substance.
+单词-无机物。
 
 **対応:** Materia / SSP / CROW / Ninix

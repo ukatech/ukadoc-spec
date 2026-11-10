@@ -1,9 +1,9 @@
 # OnRSSFailure
 
-**カテゴリ:** Headline/RSS sensing events
+**カテゴリ:** 頭條／RSS 感知事件
 
-Triggered when RSS sensing fails. If this event is not handled, OnHeadlineSenseFailure is called.
+RSS 感知失敗時觸發。若未回應此事件，則會呼叫 OnHeadlineSenseFailure。
 
-- **Reference0**: [※Reason for completion](caption_headlinesenseresult.md)
+- **Reference0**: [※結束原因](caption_headlinesenseresult.md)
 
 **対応:** SSP

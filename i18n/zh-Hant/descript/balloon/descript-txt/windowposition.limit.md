@@ -2,9 +2,9 @@
 
 **カテゴリ:** descript.txt
 
-Whether to keep the balloon within the screen. Set to 1 to keep it within the screen, or 0 not to (it may extend offscreen).
+是否強制讓 balloon 留在畫面內。設為1時會限制，設為0時不限制（即使 balloon 可能超出畫面也不處理）
 
-Only SSP also allows this to be specified in descript.txt.
+僅限 SSP，也可以寫在 descript.txt 中。
 
 **既定値:** 1
 

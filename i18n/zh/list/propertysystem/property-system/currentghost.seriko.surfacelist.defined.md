@@ -1,7 +1,7 @@
 # currentghost.seriko.surfacelist.defined
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-A comma-separated list of surface IDs available on the shell that have valid definitions in surfaces.txt.
+shell 上的有效 surface ID 中，在surfaces.txt内具有有效定义的项目列表，以逗号分隔。
 
 **対応:** SSP (2.5.98)

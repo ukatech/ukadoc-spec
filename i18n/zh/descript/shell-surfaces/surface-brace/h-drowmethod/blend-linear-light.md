@@ -1,10 +1,10 @@
 # blend-linear-light
 
-**カテゴリ:** surface brace \> Drawing method
+**カテゴリ:** surfaceブレース \> 描画メソッド
 
-*New layer* is composited over the image using linear light.<br />
-This corresponds to the Linear Light layer blend mode in image-editing software such as Photoshop.<br />
-This can also be used with dressup and element.<br />
-It is recommended to set [`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md) in the shell's descript.txt.
+以*新規レイヤ*をリニアライト合成で重ねる。<br />
+相当于 Photoshop 等图像编辑软件中的线性光（Linear Light）图层混合。<br />
+也可用于 dressup 和 element。<br />
+建议在 shell 的 descript.txt 中设置[`seriko.use_self_alpha,full`](../../../shell/descript-txt/seriko.use_self_alpha.md)。
 
 **対応:** SSP 2.8.40

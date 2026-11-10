@@ -1,8 +1,8 @@
-# cursor.pen.color.r,numeric value
+# cursor.pen.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Border and underline color red for the option marker (0–255)
+选项标记的矩形框及下划线颜色红色(0～255)
 
 **既定値:** cursor.font.color.r
 

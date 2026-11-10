@@ -1,7 +1,7 @@
-# Notes
+# 补充
 
-This section includes *events issued by external sources* and *events returned by their recipients*, such as events sent via SSTP by applications outside the baseware, or issued by ghosts or plugins to other ghosts.
+以下内容包括由baseware外部的应用程序通过SSTP发送的事件，以及由ghost或plugin向其他ghost发出的事件等，即*发起方位于外部的事件*，以及*这些事件的接收方返回的事件*。
 
-For the issuers of these events, this page is only unofficial documentation, and the information may have become inaccurate due to subsequent updates. For details, refer to the official documentation for each one.
+对于这类事件的发起方而言，本页面只是非官方文档。信息可能会因记载后的各自更新等而不准确。详情请查阅各自的官方说明。
 
-If you know of an event not listed here, please [report it](http://ssp.shillest.net/bts/?project=misc&action=top). We will add it.
+如果您知道尚未记载的事件，请[告知我们](http://ssp.shillest.net/bts/?project=misc&action=top)。我们会将其记载下来。

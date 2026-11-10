@@ -1,7 +1,7 @@
 # ghosthistorybutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of the switch to a (recently used) ghost.
+（最近使用）切换到 ghost 的名称。
 
 **対応:** SSP

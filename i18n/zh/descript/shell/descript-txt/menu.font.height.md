@@ -1,9 +1,9 @@
-# menu.font.height,Font size
+# menu.font.height,字体大小
 
 **カテゴリ:** descript.txt
 
-Size of the text used in owner-drawn menus.
+用于owner draw菜单的文字大小。
 
-**既定値:** Height of the standard UI font configured in the OS
+**既定値:** OS设定的UI标准字体高度
 
 **対応:** SSP

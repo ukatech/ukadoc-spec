@@ -1,8 +1,8 @@
-# anchor.visited.font.color.g,numeric
+# anchor.visited.font.color.g,数值
 
 **カテゴリ:** descript.txt
 
-Green font color for visited anchors (0–255)
+已访问锚点的字体颜色绿色(0～255)
 
 **既定値:** 0
 

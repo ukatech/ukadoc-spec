@@ -1,7 +1,7 @@
 # currentghost.seriko.surfacelist.all
 
-**カテゴリ:** Property System
+**カテゴリ:** 属性系统
 
-A comma-separated list of all surface IDs available on the shell.
+shell 上所有有效的 surface ID 列表，以逗号分隔。
 
 **対応:** SSP (2.5.98)

@@ -1,17 +1,17 @@
 # OnExecuteFileWatchFailure
 
-**カテゴリ:** Other communication events
+**カテゴリ:** 其他通信事件
 
-Occurs when [`\![execute,filewatch]`](../../sakura-script/misc/bang-execute-filewatch.md) fails or monitoring can no longer continue. In this case, monitoring is stopped.
+[`\![execute,filewatch]`](../../sakura-script/misc/bang-execute-filewatch.md)失敗時，或無法繼續監視時會發生此事件。此時會解除該監視。
 
-If an ID beginning with On is specified with --async, the event name is that ID followed by Failure.
+使用--async指定以On開頭的ID時，事件名稱會在該ID後面加上Failure。
 
-- **Reference0**: The exact string specified with --async (empty if none)
-- **Reference1**: The exact string of the specified path
-- **Reference2**: Reason for failure<br />
-  notauthorized: Attempted to monitor using a script sent from outside, such as via SSTP<br />
-  invalid: No path was specified<br />
-  notfound: The directory being monitored (or, for a file, the directory containing it) does not exist, monitoring cannot be started, or it disappeared during monitoring<br />
-  limit: The number of types of directories monitored across SSP exceeds the limit (63)
+- **Reference0**: 使用--async指定的字串本身（若無則為空）
+- **Reference1**: 指定路徑的字串本身
+- **Reference2**: 失敗原因<br />
+  notauthorized : 嘗試監視由SSTP等外部傳送的腳本<br />
+  invalid : 未指定路徑<br />
+  notfound : 監視目標目錄（若為檔案，則為存放該檔案的目錄）不存在、無法開始監視，或在監視期間消失<br />
+  limit : SSP整體監視的目錄種類數超過上限（63）
 
 **対応:** SSP 2.8.91

@@ -1,7 +1,7 @@
 # system.monitor.index(ID).dpi
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-DPI of the monitor with ID.
+ID对应显示器的DPI。
 
 **対応:** SSP 2.8.16

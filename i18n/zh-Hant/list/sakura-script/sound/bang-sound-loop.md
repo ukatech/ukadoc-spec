@@ -1,9 +1,9 @@
 # `\![sound,loop,ファイル名]`
 
-**カテゴリ:** Sound command
+**カテゴリ:** 音效指令
 
-Play in a loop. This is not affected by `\_V`.<br />
-To stop playback, execute `\![sound,stop]`.
+以循環方式播放。`\_V` 不會等待此指令。<br />
+若要停止播放，請執行 `\![sound,stop]`。
 
 **対応:** SSP / Ninix
 

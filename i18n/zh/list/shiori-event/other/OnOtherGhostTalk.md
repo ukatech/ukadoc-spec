@@ -1,22 +1,22 @@
 # OnOtherGhostTalk
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when another ghost speaks. Enable it with `\![set,otherghosttalk,true]`.
+其他ghost说话时会触发此事件。使用`\![set,otherghosttalk,true]`启用。
 
-- **Reference0**: Ghost name.
-- **Reference1**: Name of the ghost on the baseware side.
-- **Reference2**: If the talk was interrupted, break.<br />
-  For communication, communicate.<br />
-  For SSTP SEND, sstp-send.<br />
-  For Owned SSTP, owned.<br />
-  For non-local SSTP, remote.<br />
-  If translation is disabled, notranslate<br />
-  For scripts from plugins, plugin-script<br />
-  For event reactions from plugins, plugin-event<br />
-  Applicable values are returned as comma-separated entries.
-- **Reference3**: Event ID for the other ghost's talk.
-- **Reference4**: Script containing what the other ghost said.
-- **Reference5**: Reference passed to the other ghost, separated by byte value 1.
+- **Reference0**: ghost名称。
+- **Reference1**: ghost的本体侧名称。
+- **Reference2**: 中断对话时为break。<br />
+  Communicate时为communicate。<br />
+  SSTP SEND时为sstp-send。<br />
+  Owned SSTP时为owned。<br />
+  非本地SSTP时为remote。<br />
+  指定不进行翻译时为notranslate<br />
+  来自plugin的脚本时为plugin-script<br />
+  来自plugin的事件响应时为plugin-event<br />
+  符合条件的项目以逗号分隔后返回。
+- **Reference3**: 其他ghost说话时的事件ID。
+- **Reference4**: 其他ghost说话内容的脚本。
+- **Reference5**: 以字节值1分隔的传递给其他ghost的Reference。
 
 **対応:** SSP / Ninix

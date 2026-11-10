@@ -1,8 +1,8 @@
 # OnElinAllyCondition
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 应用程序“Elin”
 
-Occurs when a pet suffers from a status ailment.
+宠物陷入某种异常状态时触发。
 
-- **Reference0**: Pet name
-- **Reference1**: Status ailment name
+- **Reference0**: 宠物名称
+- **Reference1**: 异常状态名称

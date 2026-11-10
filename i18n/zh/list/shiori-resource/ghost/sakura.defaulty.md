@@ -1,13 +1,13 @@
 # sakura.defaulty
 
-**カテゴリ:** Ghost information
+**カテゴリ:** 幽灵信息
 
-The default Y coordinate for the main character (`\0`). The surface's reference point (usually the bottom center of the surface) is placed at this position.<br />
-The situations in which the default position is used, the units, and the coordinate system are the same as for [sakura.defaultx](sakura.defaultx.md).<br />
-A negative value is the distance from the bottom edge of the primary monitor's work area. -0 is the bottom edge itself. Here, the bottom edge is shifted upward by the amount specified by SSP's "Desktop bottom edge offset" setting.\[2.9.13\]<br />
-Prefixing a negative value with another - specifies the negative coordinate itself (--100 is Y coordinate -100).\[2.9.13\]<br />
-If [sakura.defaulttop](sakura.defaulttop.md) is also specified on the same axis, this setting (defaulty) takes precedence.<br />
-The same item can also be written in the descript.txt of the [ghost](../../../descript/ghost/descript-txt/sakura.defaulty.md) or [shell](../../../descript/shell/descript-txt/sakura.defaulty.md)\[2.9.13\]. The SHIORI Resource takes precedence.<br />
-When configured to display along the top or bottom edge of the desktop, this setting is invalid because the Y coordinate is determined by that configuration (it is effective in modes such as free-movement mode).
+本体侧（`\0`）的默认位置 Y 坐标。将 surface 的基准点（通常是 surface 的中央下方）放置在此位置。<br />
+默认位置的适用场景、值的单位和坐标系均与[sakura.defaultx](sakura.defaultx.md)相同。<br />
+负值表示距主显示器工作区域下边缘的距离。-0 表示下边缘本身。此处的下边缘是根据 SSP 设置中的“桌面下边缘偏移量”向上移后的位置。\[2.9.13\]<br />
+连续写两个-号时，表示负坐标本身（--100 表示 Y 坐标为-100）。\[2.9.13\]<br />
+同一轴上也指定了[sakura.defaulttop](sakura.defaulttop.md)时，此项（defaulty）优先。<br />
+[幽灵](../../../descript/ghost/descript-txt/sakura.defaulty.md)和[外壳](../../../descript/shell/descript-txt/sakura.defaulty.md)的 descript.txt 中也可以写入相同项目\[2.9.13\]。SHIORI Resource 的优先级更高。<br />
+设定为沿桌面上边缘/下边缘显示时，Y 坐标由该设置决定，因此此项无效（在自由移动模式等情况下有效）。
 
 **対応:** SSP

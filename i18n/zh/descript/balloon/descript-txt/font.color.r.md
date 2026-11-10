@@ -1,8 +1,8 @@
-# font.color.r,numeric value
+# font.color.r,数值
 
 **カテゴリ:** descript.txt
 
-Font color red (0–255)
+字体颜色红色(0～255)
 
 **既定値:** 0
 

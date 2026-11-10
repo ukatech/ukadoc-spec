@@ -1,4 +1,4 @@
-# Uncategorized commands
+# 未分類指令
 
 ## 一覧
 

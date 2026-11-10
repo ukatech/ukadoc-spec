@@ -1,11 +1,11 @@
-# system.memory.(key)
+# system.memory.(キー)
 
-**カテゴリ:** Property system
+**カテゴリ:** 屬性系統
 
-Information about the physical memory of the running environment. The strings used for (key) are as follows.
+執行中環境的實體記憶體資訊。可填入 (キー) 的字串如下。
 
-- **load**: Utilization (unit: %, integer; smoothed by calculating a moving average over an appropriate interval of about a few minutes)
-- **phyt**: Total physical memory (MB)
-- **phya**: Available physical memory (MB)
+- **load**: 使用率（單位為％，整數，會適時以約每分鐘為單位計算移動平均並加以平滑）
+- **phyt**: 實體記憶體總量（MB）
+- **phya**: 可用實體記憶體量（MB）
 
 **対応:** SSP 2.6.26

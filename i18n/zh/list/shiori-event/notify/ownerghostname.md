@@ -1,9 +1,9 @@
 # ownerghostname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the name of the current ghost.*\[NOTIFY\]*
+通知当前 ghost 名称。*\[NOTIFY\]*
 
-- **Reference0**: Name of the current ghost.
+- **Reference0**: 当前 ghost 名称。
 
 **対応:** Materia / SSP / CROW

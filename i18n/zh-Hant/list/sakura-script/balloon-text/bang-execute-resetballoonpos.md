@@ -1,7 +1,7 @@
 # `\![execute,resetballoonpos]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** balloon、文字指令
 
-Reset each balloon's position to its default position. This works the same as “Reset Balloon Position” in the menu.
+將各 balloon 的位置恢復為初始位置。作用與選單中的「初始化 balloon 位置」相同。
 
 **対応:** SSP 2.7.41

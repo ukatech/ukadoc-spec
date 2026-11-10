@@ -1,9 +1,9 @@
 # `\![execute,http-get,URL,パラメータ]`
 
-**カテゴリ:** Uncategorized command
+**カテゴリ:** 未分類命令
 
-Send an http get request with parameters and store the response in a file.<br />
-The file is stored in the /ghost/master/var folder under the \[folder of the executing ghost\].
+發送附帶參數的 HTTP GET 請求，並將回應存入檔案。<br />
+檔案會存放在\[執行中的 ghost 資料夾\]/ghost/master/var 資料夾。
 
 **対応:** SSP / Ninix
 

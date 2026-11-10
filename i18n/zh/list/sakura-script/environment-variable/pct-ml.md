@@ -1,7 +1,7 @@
 # %ml
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—group.
+单词-集合。
 
 **対応:** Materia / SSP / CROW / Ninix

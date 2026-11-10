@@ -1,9 +1,9 @@
-# communicatebox.x,Coordinate
+# communicatebox.x,座標
 
 **カテゴリ:** descript.txt
 
-X coordinate of the starting point of the input area.
+可輸入區域起點的 X 座標。
 
-**既定値:** Unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

@@ -1,9 +1,9 @@
-# validrect.bottom,coordinate [\*1](../index.md#balloon設定)
+# validrect.bottom,座標 [\*1](../index.md#balloon設定)
 
 **カテゴリ:** descript.txt
 
-The bottom position of the text drawing area.
+文字繪製範圍的底部位置。
 
-**既定値:** unknown
+**既定値:** 不明
 
 **対応:** Materia / SSP / CROW

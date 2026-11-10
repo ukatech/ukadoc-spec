@@ -1,9 +1,9 @@
-# cursor.font.shadowcolor.r,Number
+# cursor.font.shadowcolor.r,数值
 
 **カテゴリ:** descript.txt
 
-Red component of the choice marker shadow color (0–255)<br />
-Used when no raster operation command is specified.
+选项标记的阴影红色(0～255)<br />
+未指定光栅操作命令时使用。
 
 **既定値:** font.shadowcolor
 

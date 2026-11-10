@@ -1,7 +1,7 @@
 # sakura.popupmenu.type
 
-**カテゴリ:** Ghost information
+**カテゴリ:** 幽灵信息
 
-Changes the main character's owner-draw menu. 0 for the main character's menu, 1 for the abbreviated menu.
+更改本体侧的 owner draw 菜单。0 表示本体侧菜单，1 表示简化菜单。
 
 **対応:** SSP

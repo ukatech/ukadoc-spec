@@ -1,7 +1,7 @@
-# ghostlist(ghost name/main character name/path).icon
+# ghostlist(ghost名/主程序侧名/路径).icon
 
-**カテゴリ:** Property system
+**カテゴリ:** 属性系统
 
-Path to the icon for that ghost.
+该ghost的图标路径。
 
 **対応:** SSP

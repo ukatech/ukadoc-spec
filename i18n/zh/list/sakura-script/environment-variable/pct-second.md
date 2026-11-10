@@ -1,7 +1,7 @@
 # %second
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Current second.
+当前秒数。
 
 **対応:** Materia / SSP / CROW / Ninix

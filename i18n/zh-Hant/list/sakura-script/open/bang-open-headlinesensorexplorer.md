@@ -1,8 +1,8 @@
 # `\![open,headlinesensorexplorer]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens the headline sensor explorer.
+開啟 headline sensor 瀏覽器。
 
 **対応:** Materia / SSP / CROW
 

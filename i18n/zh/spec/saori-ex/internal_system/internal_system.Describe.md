@@ -2,24 +2,24 @@
 
 **カテゴリ:** internal_system
 
-Returns how to call a function in a built-in module (the number of positional arguments, accepted options, and named choices).<br />
-If a built-in module function is given an unknown option or algorithm name, it fails with 400 (`invalid parameter` or `unsupported algorithm`). This is what happens when you use an option or algorithm added in a newer SSP with an older SSP. You can check in advance with this function whether an option or algorithm is supported, without calling the function. [ListFunctions](internal_system.ListFunctions.md) only tells you whether a function exists.
+返回调用内置模块函数的方法（位置参数的数量、接受的选项、按名称选择的候选项）。<br />
+内置模块函数收到未知选项或未知算法名称时，会以 400（`invalid parameter`或`unsupported algorithm`）失败。在较旧的 SSP 中使用新增选项或算法时，就会出现这种情况。事先通过此函数查询，即可在不调用函数的情况下判断是否可用。[ListFunctions](internal_system.ListFunctions.md)只会回答函数是否存在。
 
-- **Argument1**: Module name (case-insensitive)
-- **Argument2**: Function name (case-insensitive)
+- **Argument1**: 模块名（不区分大小写）
+- **Argument2**: 函数名（不区分大小写）
 
-A name that is not a built-in module (including compatibility modules) results in 400 (`unknown module`); a function name not in that module results in 400 (`unknown function`). If either is missing, the result is 400 (`invalid parameter`).
+名称不是内置模块的名称（包括兼容模块）时返回 400（`unknown module`）；函数名不属于该模块时返回 400（`unknown function`）。任一参数缺失时返回 400（`invalid parameter`）。
 
-The results are as follows.
+结果如下。
 
-- **Result**: Function name (canonical spelling).
-- **Value0**: Maximum number of positional arguments. This is the number of arguments from `Argument1` onward that can appear before options. For functions with a variable number of positional arguments (such as `MediaInfo` in `internal_file`), this is the upper limit.
-- **Value1**: Number of required positional arguments.
-- **Value2**: `1` if the number of positional arguments is variable, or `0` if it is fixed. For functions with a variable number of arguments, everything from the first value in the second or later positional position that begins with `--` onward is read as an option ([common conventions](../internal.md#関数と引数)).
-- **Value3**: A comma-separated list of accepted option names, without `--`. This includes `async`, which is accepted by every function. Options in the form `--data-name-in=` (such as `data-in` and `key-in`) are listed as-is.
-- **Value4 onward**: If there are arguments or options that must be selected from a fixed set of choices, each has one value. The format is `name=choice|choice|…`, where the name is `Argument1` and so on for positional arguments (with the same number as the requested `ArgumentN`), or an option such as `--digest`. Choices use the same spelling as the names in each function's description. Functions without a fixed set of choices have no values from Value4 onward.
+- **Result**: 函数名（规范拼写）。
+- **Value0**: 位置参数的最大数量。即从`Argument1`开始、可置于选项之前的参数数量。位置参数数量可变的函数（例如`internal_file`的`MediaInfo`）中，此值为上限。
+- **Value1**: 必需的位置参数数量。
+- **Value2**: 位置参数数量可变时为`1`，固定时为`0`。对于可变参数函数，从第二个位置参数开始，遇到第一个以`--`开头的值后，其后的内容会作为选项读取（[通用规则](../internal.md#関数と引数)）。
+- **Value3**: 以逗号分隔列出的可接受选项名称。不加`--`。包括所有函数都接受的`async`。形如`--数据名-in=`的选项（例如`data-in`、`key-in`）也会原样列出。
+- **Value4以降**: 如果参数或选项需要从固定候选项中选择，则每项对应一个值。格式为`名称=候选项|候选项|…`，名称为位置参数时是`Argument1`等（与请求中的`ArgumentN`编号相同），选项时是`--digest`等。候选项的拼写与各函数说明中列出的名称相同。对于可选名称不固定的函数，不会返回Value4及后续值。
 
-Names in forms such as `--out=` and `--data-in=` ([common conventions](../internal.md#バイト列の入力の形式)), and the format names for [Format](../internal_time/internal_time.Format.md), are not included as choices.
+形如`--out=`或`--data-in=`的名称（[通用规则](../internal.md#バイト列の入力の形式)）以及[Format](../internal_time/internal_time.Format.md)的格式名称不包含在候选项中。
 
 ## 記述例
 
@@ -36,6 +36,6 @@ Argument2: KeyAgreement
 → Value4: Argument1=secp256k1|x25519|p256
 ```
 
-From this result, you can determine whether `x25519` is supported by splitting `Value4` on `=` and `|` and checking whether `x25519` is present.
+根据此结果，可以通过用`=`和`|`拆分`Value4`，检查其中是否包含`x25519`，来判断`x25519`是否可用。
 
 **対応:** SSP 2.9.27

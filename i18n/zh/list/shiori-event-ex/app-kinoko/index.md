@@ -1,6 +1,6 @@
-# App "Kinoko"
+# 应用“Kinoko”
 
-- Publisher: [http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/) ([Archive](https://web.archive.org/web/20241217204841/http://koumei.la.coocan.jp/cbs/software/kinoko/))
+- 发布方：[http://koumei.la.coocan.jp/cbs/software/kinoko/](http://koumei.la.coocan.jp/cbs/software/kinoko/)（[存档](https://web.archive.org/web/20241217204841/http://koumei.la.coocan.jp/cbs/software/kinoko/)）
 
 **対応:** Materia / SSP / CROW
 

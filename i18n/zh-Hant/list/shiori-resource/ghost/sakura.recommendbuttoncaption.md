@@ -1,7 +1,7 @@
 # sakura.recommendbuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** ghost 資訊
 
-The name of the main character's recommendations.
+本體側推薦項目的名稱。
 
 **対応:** Materia / SSP / CROW

@@ -1,7 +1,7 @@
 # rateofusebutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the usage frequency display item.
+顯示使用頻率的名稱。
 
 **対応:** Materia / SSP

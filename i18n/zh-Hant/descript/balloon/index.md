@@ -1,10 +1,10 @@
-# Balloon settings
+# Balloon 設定
 
-\*1 Among the coordinates below, those marked \*1 are relative to the bottom-right of the base image when specified as negative values.<br />
-If you need to specify a negative coordinate for any reason, write it as --number (two minus signs).
+\*1 以下座標值中標示\*1的項目，若指定負座標，則會以基準影像的右下角為原點計算相對座標。<br />
+若因故必須指定負座標，請以--數值的格式指定（兩個負號）。
 
 ## 一覧
 
 - [descript.txt](descript-txt/index.md)
-- [balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt (per-balloon settings)](balloonsoption/index.md)
-- [descript.txt - recommended ghosts](recommended-ghost/index.md)
+- [balloons\*s.txt/balloonk\*s.txt/balloonc\*s.txt（個別指定）](balloonsoption/index.md)
+- [descript.txt - 建議使用的 ghost](recommended-ghost/index.md)

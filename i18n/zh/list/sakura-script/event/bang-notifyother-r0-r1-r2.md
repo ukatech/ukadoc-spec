@@ -1,8 +1,8 @@
 # `\![notifyother,ゴースト名,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Same as raiseother, except that any value returned by this notification event is not reflected in SSP.
+与raiseother相同，区别仅在于，即使此通知事件返回了某个值，该值也不会反映到SSP中。
 
 **対応:** SSP
 

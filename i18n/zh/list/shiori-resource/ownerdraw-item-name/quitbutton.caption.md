@@ -1,7 +1,7 @@
 # quitbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name of exit all.
+全部退出的名称。
 
 **対応:** Materia / SSP / CROW

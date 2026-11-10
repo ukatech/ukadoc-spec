@@ -1,8 +1,8 @@
-# font.height,numeric value
+# font.height,数值
 
 **カテゴリ:** descript.txt
 
-Height of the font to use. (Unit is pixels, not points.)
+所用字体的高度方向尺寸。(单位为像素，不是点)
 
 **既定値:** 12
 

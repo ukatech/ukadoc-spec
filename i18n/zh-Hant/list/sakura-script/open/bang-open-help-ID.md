@@ -1,9 +1,9 @@
 # `\![open,help,ダイアログID]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens SSP Help.<br />
-Specify the ID name of a settings dialog as the dialog ID (see [Reference0 for OnConfigurationDialogHelp](../../shiori-event/dialogbox/OnConfigurationDialogHelp.md)) to display help for that settings dialog. If omitted, the index page is opened.
+開啟 SSP 說明。<br />
+將設定對話框的 ID 名稱設為對話框 ID（※參照[OnConfigurationDialogHelp 的 Reference0](../../shiori-event/dialogbox/OnConfigurationDialogHelp.md)），即可展開該設定對話框的說明。省略時會開啟索引頁面。
 
 **対応:** SSP
 

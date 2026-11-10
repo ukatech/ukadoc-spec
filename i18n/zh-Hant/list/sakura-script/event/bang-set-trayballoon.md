@@ -1,24 +1,24 @@
 # `\![set,trayballoon,オプション,オプション,オプション...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-Display a balloon from the tray icon.<br />
-OnTrayBalloonClick is raised when the balloon is dismissed by clicking it.<br />
-OnTrayBalloonTimeout is raised when it times out or is closed with the close button.<br />
-The following options can be specified.
+從系統匣圖示顯示balloon。<br />
+點擊balloon將其關閉時，會觸發OnTrayBalloonClick。<br />
+逾時或按下關閉按鈕將其關閉時，會觸發OnTrayBalloonTimeout。<br />
+可指定的選項如下。
 
-On Windows 10 and later, if file association settings are set to "Shortcuts only" or higher (excluding kiosk mode and read-only mode; changes to the setting take effect from the next startup), a toast notification is displayed instead of a balloon and remains in the notification center. In this case, it is not displayed by the tray icon. If the conditions are not met or display fails, it is displayed as a balloon as before.<br />
-For toast notifications, OnTrayBalloonClick is raised when clicked, and OnTrayBalloonTimeout is raised when closed with the close button or when it moves to the notification center after timing out. No event is raised if it is clicked after moving to the notification center.\[2.9.14\]
+Windows 10以上版本中，若檔案關聯設定為「僅捷徑」以上（不包括 kiosk 模式和唯讀模式。變更設定會從下次啟動起套用），將改為顯示 toast 通知，而非balloon，且通知會保留在通知中心。此時不會在系統匣圖示旁顯示。若不符合條件或顯示失敗，則與以往相同，以balloon顯示。<br />
+toast 通知在點擊時會觸發OnTrayBalloonClick；按下關閉按鈕將其關閉，或通知逾時並移至通知中心時，會觸發OnTrayBalloonTimeout。移至通知中心後再點擊不會觸發事件。\[2.9.14\]
 
-- **--text=テキスト**: Text to display in the balloon. Specify multiple values to display multiple lines. (Required)
-- **--title=タイトル**: Balloon title.
-- **--icon=アイコン設定名**: Icon setting for the icon displayed in the balloon.<br />
-  For toast notifications, the icon is displayed to the left of the body.\[2.9.14\]
-- **info**: Information icon
-- **error**: Error icon
-- **warning**: Warning icon
-- **none**: None
-- **--timeout=秒数**: Balloon display time (in seconds). Only values from 10 to 30 seconds can be specified. Ignored on Windows 7 and later. Also ignored for toast notifications.\[2.9.14\]
+- **--text=文字**: 顯示於balloon的字串，指定多個值時會分成多行。（必填）
+- **--title=標題**: balloon的標題。
+- **--icon=圖示設定名稱**: balloon中顯示的圖示設定。<br />
+  toast 通知中的圖示會顯示在內文左側。\[2.9.14\]
+- **info**: 資訊圖示
+- **error**: 錯誤圖示
+- **warning**: 警告圖示
+- **none**: 無
+- **--timeout=秒數**: balloon的顯示時間（單位＝秒）。只能指定10～30秒。Windows 7以上版本會忽略此設定。toast 通知也會忽略此設定。\[2.9.14\]
 
 **対応:** SSP
 

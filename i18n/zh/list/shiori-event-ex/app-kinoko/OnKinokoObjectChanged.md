@@ -1,9 +1,9 @@
 # OnKinokoObjectChanged
 
-**カテゴリ:** App "Kinoko"
+**カテゴリ:** 应用“Kinoko”
 
-Occurs when the Kinoko skin is switched.
+切换 Kinoko 外观时触发。
 
-- **Reference0**: Name of the Kinoko skin after switching.
-- **Reference1**: Name of the ghost primarily targeted by the Kinoko skin after switching. If there are multiple ghosts, they are separated by commas.
-- **Reference2**: Category of the Kinoko skin after switching. If there are multiple categories, they are separated by commas.
+- **Reference0**: 切换后的 Kinoko 外观名称。
+- **Reference1**: 切换后的 Kinoko 外观主要面向的 ghost 名称。存在多个时以逗号分隔。
+- **Reference2**: 切换后的 Kinoko 外观类别。存在多个时以逗号分隔。

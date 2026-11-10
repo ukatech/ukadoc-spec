@@ -1,9 +1,9 @@
 # OnKinokoObjectCreate
 
-**カテゴリ:** App “Kinoko”
+**カテゴリ:** 應用程式「蘑菇」
 
-Triggered when a mushroom skin grows on the head.
+蘑菇造型長在頭上時觸發。
 
-- **Reference0**: Name of the mushroom skin.
-- **Reference1**: Name of the ghost primarily targeted by the mushroom skin. Comma-separated if there are multiple.
-- **Reference2**: Category of the mushroom skin. Comma-separated if there are multiple.
+- **Reference0**: 該蘑菇造型的名稱。
+- **Reference1**: 該蘑菇造型主要適用的 ghost 名稱。有多個時以逗號分隔。
+- **Reference2**: 該蘑菇造型的類別。有多個時以逗號分隔。

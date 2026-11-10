@@ -1,7 +1,7 @@
 # updatefmobutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for organizing/updating the FMO.
+整理/更新 FMO 的名称。
 
 **対応:** SSP

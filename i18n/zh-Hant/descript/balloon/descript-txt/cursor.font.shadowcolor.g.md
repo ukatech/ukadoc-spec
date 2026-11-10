@@ -1,9 +1,9 @@
-# cursor.font.shadowcolor.g,Number
+# cursor.font.shadowcolor.g,數值
 
 **カテゴリ:** descript.txt
 
-Green component (0–255) of the choice marker shadow color<br />
-Used when no raster operation command is specified.
+選項標記的陰影綠色(0～255)<br />
+未設定光柵運算指令時使用。
 
 **既定値:** font.shadowcolor
 

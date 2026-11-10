@@ -1,7 +1,7 @@
 # termsbutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** owner draw 菜单项名称
 
-Name for the character's terms of use.
+角色使用条件的名称。
 
 **対応:** SSP

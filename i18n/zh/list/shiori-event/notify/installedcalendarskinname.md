@@ -1,11 +1,11 @@
 # installedcalendarskinname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies installed calendar skins.*\[NOTIFY\]*
+通知已安装的日历皮肤。*\[NOTIFY\]*
 
-Can be used with [`\![change,calendarskin,calendar skin name]`](../../sakura-script/event/bang-change-calendarskin.md).
+可用于[`\![change,calendarskin,カレンダースキン名]`](../../sakura-script/event/bang-change-calendarskin.md)。
 
-- **Reference\***: Installed calendar skin name.
+- **Reference\***: 已安装的日历皮肤名称。
 
 **対応:** SSP 2.8.93

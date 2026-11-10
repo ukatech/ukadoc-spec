@@ -1,10 +1,10 @@
 # `\![anim,pause,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Pause the surface animation with the specified ID.
+暂停播放ID编号的表面动画。
 
-This remains in effect until the surface changes (execution of `\s[ID]`).
+在更改表面（执行`\s[ID]`）之前有效。
 
 **対応:** SSP
 

@@ -1,15 +1,15 @@
 # OnRSSComplete
 
-**カテゴリ:** Headline/RSS sensing events
+**カテゴリ:** 标题/RSS感知事件
 
-Occurs when headline sensing completes successfully. If this event is not handled, a suitable script is generated for display and a headline completion event is called.
+标题感知正常结束时触发。如果未对此事件作出响应，则会生成适合显示的脚本，并调用标题感知完成类事件。
 
-- **Reference0**: When there are no updates: no update　[※Reason for ending](caption_headlinesenseresult.md)<br />
-  When there are no updates, Reference0 contains only the string "no update"<br />
-  When there are updates: RSS distribution site name.
-- **Reference1**: Only when there are updates: RSS source URL (points to the distribution site, not the feed itself)
-- **Reference2～**: Only when there are updates: title \[`\1`\] URL \[`\1`\] update date and time (format is comma-separated: year, month, day, hour, minute, second) \[`\1`\] author name \[`\1`\] content or summary<br />
-  When there are updates, Reference0, 1, 2～ continue for each RSS item<br />
-  \[`\1`\] is the character with byte value 1
+- **Reference0**: 无更新时：no update　[※结束原因](caption_headlinesenseresult.md)<br />
+  无更新时，仅有Reference0，且内容只有字符串"no update"<br />
+  有更新时：RSS分发网站名称。
+- **Reference1**: 仅有更新时：RSS来源URL（指向分发网站，而非Feed本身）
+- **Reference2～**: 仅有更新时：标题 \[`\1`\] URL \[`\1`\] 更新时间（格式为逗号分隔：年,月,日,时,分,秒）\[`\1`\] 作者名 \[`\1`\] 内容或摘要<br />
+  有更新时，将按RSS元素数量依次提供Reference0、1、2～<br />
+  \[`\1`\]是字节值1
 
-**対応:** SSP author name・content 2.4.10～
+**対応:** SSP 作者名、内容 2.4.10～

@@ -1,9 +1,9 @@
-# developer.log.log type(name).index(ID).log property name
+# developer.log.日志类型(名称).index(ID).日志属性名
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-Gets information from the ID-th entry among log entries whose name matches the specified name.<br />
-IDs are assigned starting from 0 to the newest entry, in order. If `.index(ID)` is omitted (`developer.log.log type(name).log property name`), the newest entry is selected.<br />
-Note that the parentheses immediately follow without an intervening dot. See [here](developer.log.-.index-ID.md) for log property names.
+从日志中 name 与名称匹配的条目里，获取第 ID 个条目的信息。<br />
+ID 按新到旧依次为 0、1、2...。省略`.index(ID)`时（`developer.log.ログ種別(名前).ログプロパティ名`），目标为最新条目。<br />
+请注意，括号直接跟在属性名后面，中间不加点号。日志属性名参见[此处](developer.log.-.index-ID.md)。
 
 **対応:** SSP

@@ -1,10 +1,10 @@
 # `\_a[ID]`
 
-**カテゴリ:** Choice command
+**カテゴリ:** 选项命令
 
-The range up to `\_a` is treated as an anchor. Choices do not time out, but the balloon times out as with normal talk.<br />
-Clicking the link triggers the SHIORI event [OnAnchorSelect](../../shiori-event/choice/OnAnchorSelect.md) (SSP first triggers [OnAnchorSelectEx](../../shiori-event/choice/OnAnchorSelectEx.md)).<br />
-The ID is stored in Reference0.
+将`\_a`之前的范围设为锚点。选项不会超时，但与普通对话一样会触发气球超时。<br />
+点击跳转链接时，将触发 SHIORI 事件[OnAnchorSelect](../../shiori-event/choice/OnAnchorSelect.md)（仅 SSP 会先触发[OnAnchorSelectEx](../../shiori-event/choice/OnAnchorSelectEx.md)）。<br />
+ID 存入 Reference0。
 
 **対応:** Materia / SSP / CROW / Ninix
 

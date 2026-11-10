@@ -1,11 +1,11 @@
 # OnTrayBalloonTimeout
 
-**カテゴリ:** Tray balloon events
+**カテゴリ:** 托盘balloon事件
 
-Occurs when the balloon for the tray icon is dismissed by timing out or clicking the close button.<br />
-If displayed as a toast notification instead of a balloon (see [`\![set,trayballoon]`](../../sakura-script/event/bang-set-trayballoon.md)), it occurs when the toast is closed with the close button or moves to the notification center after timing out.\[2.9.14\]
+托盘图标的balloon因超时或点击关闭按钮而关闭时触发。<br />
+如果改用Toast通知显示balloon（参见[`\![set,trayballoon]`](../../sakura-script/event/bang-set-trayballoon.md)），则在点击Toast关闭按钮将其关闭时，或Toast超时并移至通知中心时触发。\[2.9.14\]
 
-- **Reference0**: Title string.
-- **Reference1**: Display text.
+- **Reference0**: 标题字符串。
+- **Reference1**: 显示文本。
 
 **対応:** SSP

@@ -1,6 +1,6 @@
 # internal_data
 
-Conversion of data formats, and compression and decompression.
+轉換資料格式，以及壓縮與解壓縮。
 
 ## 一覧
 

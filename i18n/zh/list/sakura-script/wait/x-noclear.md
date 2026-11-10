@@ -1,10 +1,10 @@
 # `\x[noclear]`
 
-**カテゴリ:** Wait commands
+**カテゴリ:** 等待命令
 
-Wait for a click on the balloon temporarily.<br />
-After the click, the balloon contents and scope are retained.<br />
-Unlike `\x`, the effects of Sakura Script commands in the `\f` (text formatting) family remain.
+使 balloon 暂时等待点击。<br />
+点击后，保留 balloon 的内容和 scope。<br />
+与 `\x` 不同，`\f`（文字装饰）类 Sakura Script 的效果会保留。
 
 **対応:** SSP
 

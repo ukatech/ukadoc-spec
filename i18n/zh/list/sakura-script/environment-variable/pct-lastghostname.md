@@ -1,7 +1,7 @@
 # %lastghostname
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-For installation. The name of the ghost that last handled an event.
+用于安装时。最后执行过事件的 ghost 名称。
 
 **対応:** Materia / SSP

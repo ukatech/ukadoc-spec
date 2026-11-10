@@ -1,7 +1,7 @@
 # %mh
 
-**カテゴリ:** Environment variable
+**カテゴリ:** 环境变量
 
-Word—shop name.
+单词-店铺名称。
 
 **対応:** Materia / SSP / CROW / Ninix

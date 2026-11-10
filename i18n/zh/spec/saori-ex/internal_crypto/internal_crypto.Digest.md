@@ -2,11 +2,11 @@
 
 **カテゴリ:** internal_crypto
 
-Calculate a hash value.
+计算哈希值。
 
-- **Argument1**: Algorithm name (in addition to the hash functions in [list](index.md), \[SSP 2.9.27\] non-cryptographic checksums `crc32` / `adler32`)
-- **Argument2**: data (the default format is `text`; `file` can also be used)
-- **Options**: `--data-in=` / `--out=` (default is `hex`) / `--charset=`
+- **Argument1**: 算法名称（除[列表](index.md)中的哈希函数外，还包括 \[SSP 2.9.27\] 非加密用途的校验值`crc32` / `adler32`）
+- **Argument2**: data（默认格式为`text`，也可使用`file`）
+- **选项**: `--data-in=` / `--out=`（默认值为`hex`） / `--charset=`
 
 ## 記述例
 
@@ -18,8 +18,8 @@ Argument2: abc
 → Result: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
 ```
 
-Strings are hashed as UTF-8 byte sequences by default. To hash a Shift_JIS byte sequence, specify `--charset=Shift_JIS`.
+字符串默认按 UTF-8 字节序列进行哈希。若需要计算 Shift_JIS 字节序列的哈希，请指定`--charset=Shift_JIS`。
 
-\[SSP 2.9.27\] `crc32` (CRC-32, the same as zlib, gzip, and PNG) and `adler32` (Adler-32, the same as zlib) are checksums used to verify that a file is not corrupted; they provide no cryptographic strength (do not use them to detect tampering; use SHA-256 or similar for that). The result is 4 bytes (most significant byte first), and with the default `hex` for `--out=`, it is 8 characters (`crc32` of `123456789` is `cbf43926`, and `adler32` is `091e01de`). `file` can also be used. These algorithms cannot be used with `HMAC`, `DeriveKey`, or `TOTP` (400 `unsupported algorithm`).
+\[SSP 2.9.27\] `crc32`（CRC-32，与 zlib、gzip、PNG 相同）和`adler32`（Adler-32，与 zlib 相同）是用于检查文件是否损坏的校验值，不具备密码学强度（不能用于检测篡改；检测篡改应使用 SHA-256 等算法）。结果为 4 字节（从高位开始），使用`--out=`的默认值`hex`时会得到 8 个字符（`123456789`的`crc32`为`cbf43926`，`adler32`为`091e01de`）。也可使用`file`。不能用于`HMAC`、`DeriveKey`、`TOTP`的算法（返回 400 `unsupported algorithm`）。
 
 **対応:** SSP 2.9.13

@@ -1,12 +1,12 @@
 # OnSoundError
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when sound processing fails.
+音效處理失敗時會發生。
 
-- **Reference0**: Playback command that caused the error. Currently always play.
-- **Reference1**: Error code (numeric) from inside the sound playback engine.
-- **Reference2**: Name of the file being played.
-- **Reference3**: Error message output by the sound playback engine.
+- **Reference0**: 發生錯誤的播放命令。目前固定為 play。
+- **Reference1**: 音效播放引擎內部的錯誤代碼（數值）。
+- **Reference2**: 播放檔案名稱。
+- **Reference3**: 音效播放引擎輸出的錯誤訊息。
 
 **対応:** SSP

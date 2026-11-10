@@ -1,9 +1,9 @@
 # configuredbiffname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the list of configured email-checking accounts. Can be used with [`\![biff,account name]`](../../sakura-script/event/bang-biff.md).*\[NOTIFY\]*
+通知已设置的邮件检查账户列表。可用于[`\![biff,アカウント名]`](../../sakura-script/event/bang-biff.md)。*\[NOTIFY\]*
 
-- **Reference\***: Email account name
+- **Reference\***: 邮件账户名
 
 **対応:** SSP 2.5

@@ -1,8 +1,8 @@
-# don't need seriko talk,Number
+# don't need seriko talk,数值
 
 **カテゴリ:** descript.txt
 
-Set to 1 to disable the SERIKO talk method (lip-sync) feature.
+设为1时禁用SERIKO talk方法（口型同步）功能。
 
 **既定値:** 0
 

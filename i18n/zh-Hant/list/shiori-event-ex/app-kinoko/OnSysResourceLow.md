@@ -1,7 +1,7 @@
 # OnSysResourceLow
 
-**カテゴリ:** App “Kinoko”
+**カテゴリ:** 應用程式「香菇」
 
-Occurs when system resources fall below 50%.
+系統資源低於 50％ 時發生。
 
-- **Reference0**: The percentage value.
+- **Reference0**: 百分比數值。

@@ -1,14 +1,14 @@
 # `\![embed,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** 事件命令
 
-A special tag that **“embeds”** the result of an event in this tag within the currently executing script.<br />
-The options are used in the same way as for `\![raise]`, with the third and subsequent arguments stored in Reference0 and onward, in order.
+将事件的执行结果**“嵌入”**当前正在执行的脚本中此标签所在位置的特殊标签。<br />
+选项部分的用法与 `\![raise]` 相同，第3个及之后的参数会依次存入 Reference0 及后续项。
 
-When the `\![embed]` tag is encountered during execution, the specified event is called. If it returns a result, the entire `\![embed]` tag is replaced with the result string, and script execution resumes from the first character of the replacement string.<br />
-(This feature provides a more general-purpose way to use the mechanism for calling SAORI “sync” during Satori execution.)
+执行过程中遇到 `\![embed]` 标签时，会调用指定事件；如果返回了结果（Result），整个 `\![embed]` 标签会替换为该结果字符串，并从替换后字符串的第1个字符继续执行脚本。<br />
+（※这是为了更广泛、通用地提供里々在执行过程中调用 SAORI 的“sync”机制而实现的功能。）
 
-Originally, this was implemented for use with the property system as a mechanism to perform, “within a single script execution,” dynamic processing based on the result of the property system call, which itself does not return a result, by embedding a `\![embed]` tag immediately afterward. However, there is no particular restriction to this use; it can be used whenever you want to synchronize some processing with script execution.
+此功能最初设计为与属性系统配合使用：属性系统调用本身不返回结果，而是在紧随其后的 `\![embed]` 标签处，根据结果动态改变处理方式，并在“一次脚本执行中”完成。但它并没有这样的限制，可用于所有需要与脚本执行同步、同时执行其他处理的场合。
 
 **対応:** SSP / Ninix
 

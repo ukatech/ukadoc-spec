@@ -1,7 +1,7 @@
 # `\![filter,プラグイン名,起動時間,パラメータ]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Apply changes to the surface using a plugin each time it changes.
+每当表面发生变化时，通过plugin改变表面。
 
 **対応:** CROW

@@ -2,12 +2,12 @@
 
 **カテゴリ:** internal_crypto
 
-Wrap data using the OS data protection feature (Windows DPAPI). The wrapped data can only be unwrapped with [Unprotect](internal_crypto.Unprotect.md) by the same user on the same PC (or by any user on the same PC if `--scope=machine` is specified).<br />
-This is intended to prevent tokens and similar data stored in save data from being read if copied to another PC or another user; it does not isolate one ghost from another (other ghosts or programs running as the same user can unwrap it).
+使用OS的数据保护功能（Windows DPAPI）封装数据。只有同一台电脑上的同一用户（如果是`--scope=machine`，则为同一台电脑上的所有用户）才能通过[Unprotect](internal_crypto.Unprotect.md)解封。<br />
+此功能用于防止保存数据中的令牌等内容被复制到其他电脑或其他用户后仍可读取，并不用于隔离不同的ghost（使用同一用户运行的其他ghost或程序也能解封）。
 
-- **Argument1**: data (default format is `text`)
-- **Options**: `--data-in=` / `--scope=user` (default) / `--scope=machine` (any other value results in 400 `invalid parameter`) / `--out=` (default is `base64`) / `--charset=`
+- **Argument1**: data（默认格式为`text`）
+- **选项**: `--data-in=` / `--scope=user`（默认） / `--scope=machine`（其他值会返回400 `invalid parameter`） / `--out=`（默认格式为`base64`） / `--charset=`
 
-**If save data is moved to another PC (such as by sharing SSP save data, syncing through cloud storage, or copying it manually), or if the Windows user account is recreated, the data can no longer be unwrapped with Unprotect**. Scripts should handle an Unprotect failure as, for example, requiring the user to log in again.
+**如果将保存数据移到另一台电脑（例如共享SSP保存数据、通过云存储同步或手动复制），或重建Windows用户，将无法使用Unprotect**。脚本应将Unprotect失败视为需要“重新登录”等情况处理。
 
 **対応:** SSP 2.9.13

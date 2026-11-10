@@ -1,7 +1,7 @@
 # `\![set,position,x,y,スコープID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 命令
 
-Fix the specified scope at the XY coordinates. (Dragging and other movement will be disabled.)
+将指定 scope 固定在 XY 坐标处。（无法拖动等）
 
 **対応:** CROW

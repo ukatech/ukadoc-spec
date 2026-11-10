@@ -1,12 +1,12 @@
 # OnSchedule5MinutesToGo
 
-**カテゴリ:** Calendar event
+**カテゴリ:** 行事曆事件
 
-Occurs 5 minutes before the time of a schedule registered in the built-in calendar.
+在本體行事曆功能登錄的行程時間前 5 分鐘觸發。
 
-- **Reference0**: Event [type](caption_scheduletype.md)
-- **Reference1**: Event content (caption)
-- **Reference2**: Additional data (subtitle)
-- **Reference3**: Script (script)
+- **Reference0**: 事件的[類型](caption_scheduletype.md)
+- **Reference1**: 事件內容 (caption)
+- **Reference2**: 附加資料 (subtitle)
+- **Reference3**: 腳本 (script)
 
 **対応:** SSP

@@ -1,5 +1,5 @@
 # OnSatolistBoot
 
-**カテゴリ:** App “Satorist”
+**カテゴリ:** 应用“Satorist”
 
-Occurs when Satorist starts.
+Satorist 启动时触发。

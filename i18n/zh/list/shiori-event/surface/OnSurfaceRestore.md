@@ -1,12 +1,12 @@
 # OnSurfaceRestore
 
-**カテゴリ:** Surface events
+**カテゴリ:** surface事件
 
-Occurs once after a certain amount of time has passed since the talk.<br />
-In SSP, it occurs after the number of seconds set for the talk timeout in the baseware settings, plus 15 seconds (that is, 15 seconds after the balloon closes).<br />
-※The balloon remains displayed until OnSurfaceRestore occurs only when the talk timeout setting is 0.
+对话结束一段时间后触发一次。<br />
+在SSP中，会在本体设置的对话超时所设定的秒数加１５秒后触发（也就是balloon关闭后１５秒）。<br />
+※只有在对话超时设为０时，balloon才会持续显示，直到触发OnSurfaceRestore。
 
-- **Reference0**: Current surface on the main character.
-- **Reference1**: Current surface on the partner.
+- **Reference0**: 主体侧的当前surface。
+- **Reference1**: 搭档侧的当前surface。
 
 **対応:** Materia / SSP / CROW / Ninix

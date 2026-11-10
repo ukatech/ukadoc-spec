@@ -1,7 +1,7 @@
 # switchmovetodefaultpositionbutton.caption
 
-**カテゴリ:** Owner-draw menu item name
+**カテゴリ:** Owner draw 選單項目名稱
 
-Name of the shell position reset option.
+重設 shell 位置的名稱。
 
 **対応:** Materia / SSP

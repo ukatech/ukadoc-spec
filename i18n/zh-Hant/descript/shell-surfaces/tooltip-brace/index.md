@@ -2,5 +2,5 @@
 
 ## 一覧
 
-- [tooltip brace examples](introduction_tooltipbrace.md)
-- [Hit area name, displayed content](entry.md)
+- [tooltip brace 記述例](introduction_tooltipbrace.md)
+- [命中判定名稱,顯示內容](entry.md)

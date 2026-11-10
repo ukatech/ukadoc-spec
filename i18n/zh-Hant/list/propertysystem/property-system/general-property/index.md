@@ -1,4 +1,4 @@
-# General property names
+# 一般屬性名稱
 
 ## 一覧
 
@@ -13,7 +13,7 @@
 - [update_time](update_time.md)
 - [homeurl](homeurl.md)
 - [username](username.md)
-- [shiori.variable name](shiori.md)
+- [shiori.變數名稱](shiori.md)
 - [index](index-item.md)
 - [menu](menu.md)
 - [sakura.bind.menu](sakura.bind.menu.md)

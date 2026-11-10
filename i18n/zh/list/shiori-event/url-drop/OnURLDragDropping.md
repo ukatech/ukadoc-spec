@@ -1,11 +1,11 @@
 # OnURLDragDropping
 
-**カテゴリ:** URL drop events
+**カテゴリ:** URL拖放事件
 
-Occurs when the mouse cursor hovers over a URL being dragged for dropping.<br />
-This event occurs for every URL that can be accepted.
+当URL即将被拖放到此处且鼠标光标悬停其上时触发。<br />
+所有可接受的URL都会触发此事件。
 
-- **Reference0**: Dropped URL.
-- **Reference1**: Scope number of the character the URL was dropped on. Main character is 0, partner is 1, and the third character onward are 2 and above.
+- **Reference0**: 被拖放的URL。
+- **Reference1**: 被拖放角色的scope编号。主体侧为0，搭档侧为1，第三个及之后的角色为2及以上。
 
 **対応:** SSP 2.6.37

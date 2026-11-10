@@ -1,6 +1,6 @@
-# Plugin "Virtual Beer Shower (BeerShower)"
+# plugin「虛擬啤酒浴（BeerShower）」
 
-- Publisher: [http://ssp.shillest.net/](http://ssp.shillest.net/)
+- 發布來源：[http://ssp.shillest.net/](http://ssp.shillest.net/)
 
 **対応:** SSP
 

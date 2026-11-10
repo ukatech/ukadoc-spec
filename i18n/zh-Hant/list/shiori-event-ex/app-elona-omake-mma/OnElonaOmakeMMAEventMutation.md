@@ -1,9 +1,9 @@
 # OnElonaOmakeMMAEventMutation
 
-**カテゴリ:** App "Elona omake_MMA"
+**カテゴリ:** 應用程式「Elona omake_MMA」
 
-Occurs when a mutation develops.
+發生變異時觸發。
 
-- **Reference\***: References 0–80 are [※common references](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame).
-- **Reference81**: Mutation message.
-- **Reference82**: -1 for a harmful mutation, 1 for a beneficial mutation.
+- **Reference\***: Reference0～80 為[※共通參照](OnElonaOmakeMMAEventNewGame.md#onelonaomakemmaeventnewgame)。
+- **Reference81**: 變異訊息。
+- **Reference82**: 惡性變異為-1，良性變異為1。

@@ -1,8 +1,8 @@
 # `\![open,teachbox]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 打开命令
 
-Open TeachBox. [OnTeachStart](../../shiori-event/inputbox/OnTeachStart.md) is notified when the command runs; [OnTeach](../../shiori-event/inputbox/OnTeach.md) is notified when the OK button in TeachBox is pressed, and [OnTeachInputCancel](../../shiori-event/inputbox/OnTeachInputCancel.md) is notified when it is closed.
+打开 TeachBox。执行时会通知[OnTeachStart](../../shiori-event/inputbox/OnTeachStart.md)，按下 TeachBox 的 OK 按钮时会通知[OnTeach](../../shiori-event/inputbox/OnTeach.md)，关闭时会通知[OnTeachInputCancel](../../shiori-event/inputbox/OnTeachInputCancel.md)。
 
 **対応:** Materia / SSP / CROW / Ninix
 

@@ -1,11 +1,11 @@
 # OnTrayBalloonClick
 
-**カテゴリ:** Tray balloon events
+**カテゴリ:** 托盘balloon事件
 
-Occurs when the balloon for the tray icon is dismissed by clicking it.<br />
-If displayed as a toast notification instead of a balloon (see [`\![set,trayballoon]`](../../sakura-script/event/bang-set-trayballoon.md)), it occurs when the toast is clicked. It does not occur when clicked after it has moved to the notification center.\[2.9.14\]
+点击托盘图标的balloon将其关闭时触发。<br />
+如果改用Toast通知显示balloon（参见[`\![set,trayballoon]`](../../sakura-script/event/bang-set-trayballoon.md)），则在点击Toast时触发。通知进入通知中心后再点击不会触发。\[2.9.14\]
 
-- **Reference0**: Title string.
-- **Reference1**: Display text.
+- **Reference0**: 标题字符串。
+- **Reference1**: 显示文本。
 
 **対応:** SSP

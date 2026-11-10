@@ -1,13 +1,13 @@
-# Date and time arguments
+# 日期时间参数
 
-For an argument that takes a date and time, specify one of the following. If it cannot be parsed as any of them, the result is 400 (`invalid parameter`). Invalid dates (such as February 30) also result in 400.
+日期时间参数可使用以下任意一种格式。若无法按其中任何一种格式解析，则返回 400（`invalid parameter`）。不存在的日期（例如 2 月 30 日）也返回 400。
 
-- **Integer**: Epoch seconds. Negative values (before 1970) are allowed.
-- **now**: The current time.
-- **ISO 8601**: Examples: `2026-10-11`, `2026-10-11T21:00:00+09:00`, `2026-10-11 21:00`, and `20261011T210000Z`. Fractional seconds are discarded.<br />
-  Values without a zone (`Z` or `+09:00`) are interpreted in the zone specified by `--tz=`. For how times that occur twice or do not exist due to daylight saving time transitions are handled, see [Zones](zone-tz.md#夏時間の切り替えの前後).
-- **HTTP date**: Examples: `Sun, 11 Oct 2026 12:00:00 GMT`.
+- **整数**: Unix 纪元秒。也可以使用负值（1970 年之前）。
+- **now**: 当前时间。
+- **ISO 8601**: `2026-10-11`、`2026-10-11T21:00:00+09:00`、`2026-10-11 21:00`、`20261011T210000Z` 等。小数秒会被忽略。<br />
+  没有时区（`Z` 或 `+09:00`）的值会按 `--tz=`指定的时区解析。有关夏令时切换时重复或不存在的时间如何处理，请参阅[时区](zone-tz.md#夏時間の切り替えの前後)。
+- **HTTP 日期**: 例如 `Sun, 11 Oct 2026 12:00:00 GMT`。
 
-The supported range is 0001-01-01 to 9999-12-31 in UTC (1601 onward when `--tz=local`). Values outside this range result in 400 (`out of range`).<br />
-However, ISO 8601 and HTTP date strings can only represent dates from 1601 onward (earlier dates result in 400 `invalid parameter`; epoch seconds can represent them).<br />
-The range is determined in UTC, so formatting a date near 9999-12-31 in an eastern zone (such as `+09:00`) may produce a five-digit year, 10000.
+可处理的范围为 UTC 的 0001-01-01～9999-12-31（`--tz=local`时为 1601 年及之后）。超出范围时返回 400（`out of range`）。<br />
+但是，ISO 8601 和 HTTP 日期字符串只能表示 1601 年及之后的日期（更早的日期返回 400 `invalid parameter`；使用整数纪元秒则可以表示）。<br />
+范围按 UTC 确定，因此将 9999-12-31 附近的日期时间转换为东侧时区（例如 `+09:00`）时，年份可能变成 10000（5 位数）。

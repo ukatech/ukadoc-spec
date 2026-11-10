@@ -1,4 +1,4 @@
-# surface.alias brace examples
+# surface.alias brace 記述例
 
 ```
 sakura.surface.alias
@@ -9,4 +9,4 @@ sakura.surface.alias
 }
 ```
 
-For the partner, change the settings to kero.surface.alias or char\*.surface.alias (char\* is SSP only).
+搭檔一側的設定則改寫為 kero.surface.alias、char\*.surface.alias（char\* 僅限 SSP）。

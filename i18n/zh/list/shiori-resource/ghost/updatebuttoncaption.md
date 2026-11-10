@@ -1,7 +1,7 @@
 # updatebuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** 幽灵信息
 
-The name of the network update command.
+网络更新的名称。
 
 **対応:** Materia / SSP / CROW / Ninix

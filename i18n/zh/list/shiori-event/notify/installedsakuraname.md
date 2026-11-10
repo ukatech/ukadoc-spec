@@ -1,11 +1,11 @@
 # installedsakuraname
 
-**カテゴリ:** Notify event
+**カテゴリ:** Notify事件
 
-Notifies the sakura.name of installed ghosts.*\[NOTIFY\]*<br />
-Always notified before installedghostname.<br />
-The Reference numbers for installedsakuraname/installedkeroname/installedghostname, which refer to the same ghost, are guaranteed to match.
+通知已安装 ghost 的 sakura.name。*\[NOTIFY\]*<br />
+必定在 installedghostname 之前通知。<br />
+此外，表示同一个 ghost 的 installedsakuraname/installedkeroname/installedghostname 的 Reference 编号保证一致。
 
-- **Reference\***: The sakura.name of an installed ghost.
+- **Reference\***: 已安装 ghost 的 sakura.name。
 
 **対応:** SSP 2.6.47

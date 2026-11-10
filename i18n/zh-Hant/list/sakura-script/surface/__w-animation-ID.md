@@ -1,8 +1,8 @@
 # `\__w[animation,ID]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** surface 指令
 
-Wait until the animation with the specified ID has finished.
+等待 ID 編號的動畫播放完畢。
 
 **対応:** SSP
 

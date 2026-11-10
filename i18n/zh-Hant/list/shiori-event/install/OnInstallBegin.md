@@ -1,7 +1,7 @@
 # OnInstallBegin
 
-**カテゴリ:** Installation events
+**カテゴリ:** 安裝事件
 
-Triggered when installation of an archive begins.
+封存檔開始安裝時觸發。
 
 **対応:** Materia / SSP / CROW

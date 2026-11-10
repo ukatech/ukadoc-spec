@@ -1,8 +1,8 @@
-# `\c[char,数値]`
+# `\c[char,数值]`
 
-**カテゴリ:** balloon, text command
+**カテゴリ:** 气球、文本命令
 
-Clears the specified number of characters from the cursor position in the current scope. The characters to clear are determined by their order of appearance in the script, regardless of their position in the balloon. An image pasted with `\_b[ファイルパス,inline]` is treated as one character and cleared accordingly.
+从当前 scope 一侧的光标位置开始，清除指定字符数。判定要清除的字符时，不考虑气球中的显示位置，而是参考字符在脚本中的出现顺序。通过`\_b[ファイルパス,inline]`插入的图像按一个字符处理，也会被清除。
 
 **対応:** SSP
 

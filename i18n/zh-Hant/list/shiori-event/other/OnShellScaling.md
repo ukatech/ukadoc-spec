@@ -1,12 +1,12 @@
 # OnShellScaling
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when the shell scaling factor changes.
+shell 倍率變更時會發生。
 
-- **Reference0**: Horizontal scaling factor after the change. (percent)
-- **Reference1**: Horizontal scaling factor before the change. (percent)
-- **Reference2**: Vertical scaling factor after the change. (percent)
-- **Reference3**: Vertical scaling factor before the change. (percent)
+- **Reference0**: 變更後的水平倍率。（百分比）
+- **Reference1**: 變更前的水平倍率。（百分比）
+- **Reference2**: 變更後的垂直倍率。（百分比）
+- **Reference3**: 變更前的垂直倍率。（百分比）
 
 **対応:** SSP

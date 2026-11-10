@@ -1,6 +1,6 @@
-# Ghost “Needle”
+# ghost「Needle」
 
-- Published by: [https://ukagaka.zichqec.com/ghost/needle](https://ukagaka.zichqec.com/ghost/needle)
+- 发布地址：[https://ukagaka.zichqec.com/ghost/needle](https://ukagaka.zichqec.com/ghost/needle)
 
 **対応:** SSP
 

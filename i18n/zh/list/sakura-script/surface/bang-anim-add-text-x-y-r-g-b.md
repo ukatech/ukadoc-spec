@@ -1,8 +1,8 @@
 # `\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Display text on a surface.<br />
-The string is required.
+在表面上显示文本。<br />
+字符串之前的参数为必需参数。
 
 **対応:** CROW

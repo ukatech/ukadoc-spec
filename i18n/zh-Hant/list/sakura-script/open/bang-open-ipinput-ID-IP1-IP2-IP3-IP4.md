@@ -1,13 +1,13 @@
 # `\![open,ipinput,ID,表示時間,IP1桁目,IP2桁目,IP3桁目,IP4桁目,オプション]`
 
-**カテゴリ:** Open commands
+**カテゴリ:** 開啟指令
 
-Opens an IP address input box.<br />
-On Windows, only IPv4 addresses can be accepted due to input box limitations.<br />
-Options can be specified in the form --option=○○; see [※Options](bang-close-textareabox-ID.note.md).
+開啟 IP 位址輸入用的 InputBox。<br />
+在 Windows 上，由於輸入框的限制，只能接受 IPv4 位址。<br />
+可使用 --option=○○ 的格式指定[※選項](bang-close-textareabox-ID.note.md)。
 
 <br />
-Other behavior is the same as for [inputbox](bang-open-inputbox-ID.md).
+其他行為與[inputbox](bang-open-inputbox-ID.md)相同。
 
 **対応:** SSP
 

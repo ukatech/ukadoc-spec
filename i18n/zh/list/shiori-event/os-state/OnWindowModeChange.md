@@ -1,17 +1,17 @@
 # OnWindowModeChange
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Occurs when the SSP window mode changes. *\[NOTIFY at startup/other GET\]*<br />
-Window mode displays ghosts inside a window (container) provided by SSP, rather than on the desktop. The inside of the container serves as the screen for the ghost.<br />
-Since the screen size for the ghost changes when the mode switches, [OnDisplayChange](OnDisplayChange.md) also occurs after this event.<br />
-The current mode can also be obtained from [baseware.windowmode](../../propertysystem/property-system/baseware.windowmode.md).
+SSP的窗口模式切换时发生。*\[启动时NOTIFY/其他情况GET\]*<br />
+窗口模式是指不将ghost显示在桌面上，而是显示在SSP提供的窗口（容器）中的模式。容器内部就是ghost的屏幕。<br />
+由于切换会改变ghost屏幕的大小，因此此事件之后也会发生[OnDisplayChange](OnDisplayChange.md)。<br />
+当前模式也可以通过[baseware.windowmode](../../propertysystem/property-system/baseware.windowmode.md)获取。
 
-- **Reference0**: init (notification at startup) or update (change after startup)
-- **Reference1**: Current mode.<br />
-  normal: Normal mode (displays ghosts on the desktop)<br />
-  shared: Window mode. All ghosts share one container<br />
-  perghost: Window mode. Uses one container per ghost
-- **Reference2**: Previous mode. The possible values are the same as for Reference1. Empty if Reference0 is init.
+- **Reference0**: init（启动时通知）或 update（启动后的切换）
+- **Reference1**: 当前模式。<br />
+  normal：普通模式（将ghost显示在桌面上）<br />
+  shared：窗口模式。所有ghost共用一个容器<br />
+  perghost：窗口模式。每个ghost使用一个容器
+- **Reference2**: 上一个模式。值的种类与Reference1相同。如果Reference0为init，则为空。
 
 **対応:** SSP 2.8.93

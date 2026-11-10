@@ -1,7 +1,7 @@
 # OnElinMapItemGenerate
 
-**カテゴリ:** Application "Elin"
+**カテゴリ:** 應用程式「Elin」
 
-Occurs when a treasure chest is generated, for example.
+寶箱生成等情況發生
 
-- **Reference0**: Item information
+- **Reference0**: 物品資訊

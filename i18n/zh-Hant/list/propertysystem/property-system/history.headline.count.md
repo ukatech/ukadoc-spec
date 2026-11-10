@@ -1,7 +1,7 @@
 # history.headline.count
 
-**カテゴリ:** Property system
+**カテゴリ:** プロパティシステム
 
-Number of recently used headlines.
+最近使用過的 headline 數量。
 
 **対応:** SSP

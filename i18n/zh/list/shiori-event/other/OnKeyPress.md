@@ -1,13 +1,13 @@
 # OnKeyPress
 
-**カテゴリ:** Other events
+**カテゴリ:** 其他事件
 
-Occurs when a key is pressed while the baseware is active.
+本体处于活动状态时按下键盘按键会触发此事件。
 
-- **Reference0**: Pressed key. (Character printed on the key.)
-- **Reference1**: Pressed key. (Win32 virtual-key code.)
-- **Reference2**: ※SSP only: Key hold count.
-- **Reference3**: ※SSP only: Character window ID that received the key event.
-- **Reference4**: ※SSP only: Modifier keys, listed as comma-separated values. Example: "ctrl,alt"
+- **Reference0**: 输入的按键。（按键上的字符）
+- **Reference1**: 输入的按键。（Win32虚拟键码）
+- **Reference2**: ※仅限SSP　按键持续按下的计数。
+- **Reference3**: ※仅限SSP　收到键盘事件的角色窗口ID。
+- **Reference4**: ※仅限SSP　以逗号分隔列出的修饰键。示例："ctrl,alt"
 
 **対応:** Materia / SSP / CROW / Ninix

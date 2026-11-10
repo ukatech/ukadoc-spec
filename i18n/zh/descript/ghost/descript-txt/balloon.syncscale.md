@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-Force synchronization of the balloon's scaling with the ghost's scaling to be ON (effective only when set to true).<br />
-Do not overuse this, as it interferes with user actions.
+强制开启balloon缩放比例与ghost的联动（仅true有效）。<br />
+由于会妨碍用户操作，请勿滥用。
 
 **既定値:** false
 

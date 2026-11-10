@@ -1,7 +1,7 @@
 # headlinesensehistorybutton.caption
 
-**カテゴリ:** Owner draw menu item name
+**カテゴリ:** Owner-draw 選單項目名稱
 
-Name of the recently used headline sensor item.
+（最近使用過的項目）headline 的名稱。
 
 **対応:** SSP

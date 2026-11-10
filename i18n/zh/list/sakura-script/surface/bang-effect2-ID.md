@@ -1,7 +1,7 @@
 # `\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]`
 
-**カテゴリ:** Surface command
+**カテゴリ:** 表面命令
 
-Change an added surface using a plugin.
+通过plugin改变已添加的表面。
 
 **対応:** CROW

@@ -1,7 +1,7 @@
 # `\![open,archiveviewer,(ファイル名)]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open the archive viewer. If (filename) is specified, display that file automatically (optional).
+開啟封存檔檢視器。指定（檔案名稱）時，會自動顯示該檔案（選用）。
 
 **対応:** SSP 2.8.66

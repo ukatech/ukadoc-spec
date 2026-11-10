@@ -2,8 +2,8 @@
 
 ## 一覧
 
-- [balloon,balloon name](balloon.md)
-- [default.balloon.path,path](default.balloon.path.md)
-- [recommended.balloon,balloon name](recommended.balloon.md)
-- [recommended.balloon.path,path](recommended.balloon.path.md)
-- [How to use standard and recommended](caption_recommended.md)
+- [balloon,balloon 名稱](balloon.md)
+- [default.balloon.path,路徑](default.balloon.path.md)
+- [recommended.balloon,balloon 名稱](recommended.balloon.md)
+- [recommended.balloon.path,路徑](recommended.balloon.path.md)
+- [預設與推薦的區別](caption_recommended.md)

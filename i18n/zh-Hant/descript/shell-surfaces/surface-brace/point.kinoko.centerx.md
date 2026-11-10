@@ -1,9 +1,9 @@
-# point.kinoko.centerx,coordinates
+# point.kinoko.centerx,座標
 
-**カテゴリ:** surface block
+**カテゴリ:** surface 區塊
 
-The X coordinate where the mushroom appears.
+蘑菇長出的 X 座標。
 
-**既定値:** Center of the surface (width ÷ 2)
+**既定値:** surface 中心（寬度÷2）
 
 **対応:** Materia / SSP / CROW

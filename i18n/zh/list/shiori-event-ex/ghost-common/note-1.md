@@ -1,16 +1,16 @@
-# Notes
+# 补充
 
-## List of requested property names
+## 请求的属性名称列表
 
-- Character name
-- Generation
-- Age group
-- Gender
-- Species
-- Species type
-- Behavior type
-- Profile
-- Card image path
+- 角色名称
+- 世代
+- 年龄层
+- 性别
+- 种族
+- 种族类型
+- 行为类型
+- 个人资料
+- 卡片图像路径
 - LIFE
 - STR
 - DEX

@@ -1,7 +1,7 @@
 # headlinelist.count
 
-**カテゴリ:** Property System
+**カテゴリ:** プロパティシステム
 
-The number of installed headlines.
+已安裝的 headline 數量。
 
 **対応:** SSP

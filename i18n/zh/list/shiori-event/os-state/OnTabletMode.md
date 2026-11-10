@@ -1,10 +1,10 @@
 # OnTabletMode
 
-**カテゴリ:** OS state event
+**カテゴリ:** OS 状态事件
 
-Occurs when the OS switches to a state optimized for tablet operation.<br />
-Notified via NOTIFY (cannot speak) immediately after startup, and via GET (can speak) when the mode changes.
+OS切换到针对平板设备操作进行优化的状态时发生。<br />
+启动后会通过NOTIFY（无法发言）通知，切换时会通过GET（可以发言）通知。
 
-- **Reference0**: 0/1: 1 means tablet mode (the OS is optimized for tablet operation), and 0 means mode OFF
+- **Reference0**: 0/1：1表示平板模式（OS针对平板设备操作进行优化的状态），0表示模式关闭
 
 **対応:** SSP 2.5.02

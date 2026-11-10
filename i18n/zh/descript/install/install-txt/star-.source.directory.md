@@ -1,15 +1,15 @@
-# \*.source.directory,Directory name
+# \*.source.directory,目录名
 
 **カテゴリ:** install.txt
 
-Directory name inside the archive for content to be installed at the same time. Half-width alphanumeric characters are recommended.<br />
-Set this when the directory name after installation differs from the directory name inside the archive for content to be installed at the same time.<br />
-Numbered entries (such as balloon0.source.directory) can also be specified in the same way.
+同时安装的内容在存档中的目录名。建议使用半角字母数字。<br />
+如果同时安装的内容在安装后的目录名与存档中的目录名不一致，则设置此项。<br />
+也可以按编号指定（例如balloon0.source.directory）。
 
-From SSP 2.9.00 onward, relative paths that traverse directories inside the archive, such as extra\\bal1, can also be specified.<br />
-Either「\\」or「/」can be used as a separator. References to parent directories using「..」are not allowed (they are removed).<br />
-Before 2.9.00, separators are replaced with「\_」, so only single-level directory names can be specified.
+SSP 2.9.00及以上版本也可以指定用于遍历存档内目录层级的相对路径，例如extra\\bal1。<br />
+分隔符可以使用「\\」或「/」。「..」不能用于引用上一级目录（会被移除）。<br />
+低于2.9.00的版本会将分隔符替换为「\_」，因此只能指定单层目录名。
 
-**既定値:** Directory name set with \*.directory
+**既定値:** 通过\*.directory设置的目录名
 
 **対応:** SSP

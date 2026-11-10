@@ -1,7 +1,7 @@
 # sakura.recommendbuttoncaption
 
-**カテゴリ:** Ghost information
+**カテゴリ:** 幽灵信息
 
-The name of the main character's recommendations.
+本体侧“推荐”的名称。
 
 **対応:** Materia / SSP / CROW

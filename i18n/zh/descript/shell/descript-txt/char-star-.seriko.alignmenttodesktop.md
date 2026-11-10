@@ -1,11 +1,11 @@
-# char\*.seriko.alignmenttodesktop,position information
+# char\*.seriko.alignmenttodesktop、位置信息
 
 **カテゴリ:** descript.txt
 
-Default position for the partner side of the second and later characters [※position information](note-1.md#補足).<br />
-Has higher priority than the shell-wide setting ([seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)). In other words, this has the highest priority among all alignmenttodesktop settings.<br />
-※Ghost-wide setting < ghost scope-specific setting < shell-wide setting < this
+第二个及之后的搭档一侧的默认值[※显示位置信息](note-1.md#補足)。<br />
+其优先级高于shell整体指定（[seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)）。也就是说，它在所有alignmenttodesktop系列指定中的优先级最高。<br />
+※ghost整体指定＜ghost侧scope单独指定＜shell整体指定＜此项
 
-**既定値:** no value
+**既定値:** 无值
 
 **対応:** SSP

@@ -1,19 +1,19 @@
 # `\![open,textareabox,ID,表示時間,テキスト,オプション,...]`
 
-**カテゴリ:** Open command
+**カテゴリ:** 開啟命令
 
-Open a multiline input box (textareabox).<br />
-When input is confirmed (by pressing the OK button or Ctrl+Enter), the SHIORI event [OnTextAreaInput](../../shiori-event/inputbox/OnTextAreaInput.md) occurs. The Enter key inserts a line break.<br />
-If the display time expires (times out), or the box is closed by pressing the close button, [OnTextAreaInputCancel](../../shiori-event/inputbox/OnTextAreaInputCancel.md) occurs.
+開啟多行輸入框（textareabox）。<br />
+確定時（按下 OK 按鈕或 Ctrl+Enter）會觸發 SHIORI 事件[OnTextAreaInput](../../shiori-event/inputbox/OnTextAreaInput.md)。Enter 鍵會換行。<br />
+超過顯示時間（逾時）或按下關閉按鈕關閉時，會觸發[OnTextAreaInputCancel](../../shiori-event/inputbox/OnTextAreaInputCancel.md)。
 
 <br />
-Line breaks in the input are passed as characters with byte value 1 (`\1`) as separators. Line breaks in the text (the initially displayed content) are also represented by `\1`.<br />
-The handling of ID (when it begins with “On”, an event with that ID name occurs) is the same as [InputBox IDs](bang-close-textareabox-ID.note-2.md).<br />
-The display time, text, and [※options](bang-close-textareabox-ID.note.md) are the same as for [inputbox](bang-open-inputbox-ID.md), except for the following:<br />
-・--limit= counts line breaks as one character.<br />
-・--placeholder= (the guidance text displayed faintly when the field is empty) also uses `\1` to represent line breaks.<br />
-・Input completion ([inputbox.autocomplete](../../shiori-event/inputbox/inputbox.autocomplete.md)) is unavailable.<br />
-・If --balloon= is omitted, balloonc5 is used. If the balloon does not have balloonc5, the current balloon image of the speaking character is used as the background, and the validrect area becomes the input field (the text font, size, and color are also taken from the balloon text). The input field is horizontal even in a vertical-writing balloon.
+輸入內容中的換行會以位元組值 1 的字元（`\1`）分隔並傳遞。文字（初始顯示的內容）也同樣以 `\1` 表示換行。<br />
+ID 的處理方式（若以「On」開頭，則會觸發名稱相同的事件）與[InputBox 的 ID](bang-close-textareabox-ID.note-2.md)相同。<br />
+顯示時間、文字的指定方式及[※選項](bang-close-textareabox-ID.note.md)皆與[inputbox](bang-open-inputbox-ID.md)相同，但有以下差異。<br />
+・--limit= 會將換行計為 1 個字元。<br />
+・--placeholder=（欄位空白時以淡色顯示的提示文字）也以 `\1` 表示換行。<br />
+・無法使用輸入補完功能（[inputbox.autocomplete](../../shiori-event/inputbox/inputbox.autocomplete.md)）。<br />
+・省略 --balloon= 時會使用 balloonc5。若 balloon 中沒有 balloonc5，則會以交談中角色目前使用的 balloon 圖片為背景，並將 validrect 範圍設為輸入欄位（文字字型、大小與顏色也會沿用 balloon 本文的設定）。即使是直書 balloon，輸入欄位仍會以橫書方式顯示。
 
 **対応:** SSP 2.9.10
 
