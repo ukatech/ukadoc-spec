@@ -3,7 +3,7 @@
 Zensical には頼らず、次の流れで作る。
 
 1. scripts/prepare_site.py が作る _site_src/（「1 ディレクトリ 1 ページ」にまとめた Markdown）を読む
-2. Python-Markdown で HTML にし、旧版の HTML の構造（list.css / spec.css / base.css が前提にしている class と入れ子）に組み替える
+2. Python-Markdown で HTML にし、旧版の HTML の構造（list.css / base.css が前提にしている class と入れ子）に組み替える
 3. 旧版のファイル名（descript_ghost.html など）・旧版の CSS・画像で出す。枠の頁（manual_* など）の上の帯と左のメニューは、
    iframe にせず、templates/navigation.html と sidemenu.html の断片を頁に埋め込む
 
@@ -106,7 +106,7 @@ def out_name(md_rel):
 
 
 def page_kind(md_rel):
-    """list = descript_/list_/spec_ のまとめた頁（list.css）、spec = 単独の spec_*.md（spec.css）、frame = それ以外（base.css）"""
+    """list = descript_/list_/spec_ のまとめた頁（list.css）、spec = 単独の spec_*.md（組み方は違うが、見た目は list と同じく list.css）、frame = それ以外（base.css）"""
     parts = md_rel.split('/')
     if len(parts) >= 3 and parts[0] in BUNDLE_DIRS and parts[-1] == 'index.md' and len(parts) == 3:
         return 'list'
@@ -700,73 +700,43 @@ def build_list_page(md_rel, root, title):
     return h1, nav_bar, cats
 
 
-# ---------------------------------------------------------------- spec 頁（単独の spec_*.md、spec.css）
+# ---------------------------------------------------------------- spec 頁（単独の spec_*.md。list.css）
 
 def build_spec_page(md_rel, root):
+    """単独の spec_*.md も、spec/<名前>/ のまとめた頁（list.css）と同じ見た目に組む。
+    H2 を 1 項目とし、H3 以下の節を持つ H2 は説明の節（section.caption）、持たない H2 は辞書の項目（dl.entry）になる。
+    最初の H2 より前の文は、頁の題を名前にした項目にする（spec/shiori3 の頭の「SHIORI/3.0」と同じ形）"""
     h1 = next(c for c in root if c.tag == 'h1')
-    blocks = [c for c in root if c is not h1]
+    blocks = [c for c in root if c is not h1 and c.tag != 'hr']
+    if blocks and not (is_heading(blocks[0]) and level(blocks[0]) == 2):
+        head = new('h2')
+        set_inner(head, inner_html(h1))
+        head.set('id', 'chapter0')
+        blocks.insert(0, head)
+    units, cur = [], None
+    for el in blocks:
+        if is_heading(el) and level(el) == 2:
+            cur = Unit(el, 'item')
+            cur.level = 2
+            cur.supplement = False
+            units.append(cur)
+        else:
+            cur.body.append(el)
     nav_bar = new('section', 'navigation-bar')
     nh = new('h1')
     set_inner(nh, inner_html(h1))
     nav_bar.append(nh)
     cat_nav = new('section', 'navigation-category')
-    nh2 = new('h1')
-    set_inner(nh2, inner_html(h1))
-    cat_nav.append(nh2)
     ul = new('ul')
     cat_nav.append(ul)
     nav_bar.append(cat_nav)
-    text = new('div', 'text')
-    sec0 = new('section')
-    sec0.set('id', 'chapter0')
-    hh = new('h1')
-    set_inner(hh, inner_html(h1))
-    sec0.append(hh)
-    text.append(sec0)
-    stack = [(1, None)]
-    current = sec0
-    stack = [(1, sec0)]
-    first_h2_seen = False
-    for el in blocks:
-        if is_heading(el):
-            lv = level(el)
-            if lv == 2 and not first_h2_seen:
-                first_h2_seen = True
-                if text_of(el) == text_of(h1):
-                    continue       # 頁の題と同じ名前の最初の節は、導入（sec0）として扱う
-            sec = new('section')
-            if lv == 2:
-                sec.set('class', 'category')
-            if el.get('id'):
-                sec.set('id', el.get('id'))
-            h = new('h1')
-            set_inner(h, inner_html(el))
-            sec.append(h)
-            if lv == 2:
-                text.append(sec)
-                stack = [(2, sec)]
-                if el.get('id'):
-                    li = new('li')
-                    a = new('a', href='#' + el.get('id'))
-                    set_inner(a, inner_html(el))
-                    li.append(a)
-                    ul.append(li)
-            else:
-                while stack and stack[-1][0] >= lv:
-                    stack.pop()
-                if not stack:
-                    stack = [(1, sec0)]
-                stack[-1][1].append(sec)
-                stack.append((lv, sec))
-        elif el.tag == 'hr':
-            continue
-        else:
-            if el.tag == 'div' and 'admonition' in classes(el):
-                el, _, _ = admonition_to_remarks(el)
-            stack[-1][1].append(clean_tail(el))
-    convert_definition_lists_caption(text)
-    post_process_content(text)
-    return h1, nav_bar, text
+    cats = new('div', 'categories')
+    for unit in units:
+        sec = new('section', 'category')
+        render_unit(unit, sec, ul, 1, False)
+        cats.append(sec)
+    post_process_content(cats)
+    return h1, nav_bar, cats
 
 
 # ---------------------------------------------------------------- frame 頁（manual_*・dev_*・memo*・index）
@@ -1072,19 +1042,15 @@ def render_page(md_rel, text, known):
     mark_sakurascript(root)
     name = out_name(md_rel)
     menu = read_template('menu-header.html')
-    if kind == 'list':
-        h1, nav_bar, cats = build_list_page(md_rel, root, None)
+    if kind in ('list', 'spec'):
+        if kind == 'list':
+            h1, nav_bar, cats = build_list_page(md_rel, root, None)
+        else:
+            h1, nav_bar, cats = build_spec_page(md_rel, root)
         title = text_of(h1)
         out = head(title, 'list.css', page_script_tags(md_rel))
         out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n'
         out += drawer(menu + '\n' + serialize(nav_bar)) + '\n' + serialize(cats) + '\n'
-        out += '</body>\n</html>\n'
-    elif kind == 'spec':
-        h1, nav_bar, text_div = build_spec_page(md_rel, root)
-        title = text_of(h1)
-        out = head(title, 'spec.css')
-        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n'
-        out += drawer(menu + '\n' + serialize(nav_bar)) + '\n' + serialize(text_div) + '\n'
         out += '</body>\n</html>\n'
     else:
         h1, main = build_frame_page(md_rel, root)

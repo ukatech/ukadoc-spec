@@ -17,7 +17,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
 | 場所 | 内容 |
 |---|---|
 | `build.py` | 原稿 → HTML → 旧版の構造に組み替える。出力のファイル名は旧版と同じ（`descript_ghost.html` など） |
-| `static/` | 旧版の `list.css` `spec.css`・画像・`sakura_player.js`（そのまま）と、枠の頁の `base.css`（iframe をやめた作りに直してある）、新しい原稿のための補い（`oldstyle.css`）、`lang.js`（言語切替。`translate.js` はブラウザ翻訳の旧版で、いまは読み込まない）、`search.js`（サイト内検索） |
+| `static/` | 旧版の `list.css`・画像・`sakura_player.js`（そのまま）と、枠の頁の `base.css`（iframe をやめた作りに直してある）、新しい原稿のための補い（`oldstyle.css`）、`lang.js`（言語切替。`translate.js` はブラウザ翻訳の旧版で、いまは読み込まない）、`search.js`（サイト内検索） |
 | `templates/` | 旧版の枠の写し。上の帯（`navigation.html`）と左のメニュー（`sidemenu.html`）は、頁に埋め込む断片（`build.py` の `frame_open()` が `frame-open.html` に差し込む）。ほかに目次の表 `menu-header.html`、`frame-close.html` |
 | `check.py` | 出力（`_site_old/`）の内部リンクの検査。エラーは出力 HTML の名前で出る |
 | `../scripts/check_source.py` | 原稿（`.md`）の内部リンクの検査。エラーは原稿の `ファイル:行` で出る（MkDocs の strict 相当）。見出しの id の数え方は `prepare_site.py` と同じ。`CLAUDE.md`（例のリンクを含む）は調べない |
@@ -25,7 +25,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
 頁の種類は 3 つ（旧版と同じ）。
 
 - `list`（`descript_*` `list_*` `spec_*` のまとめた頁。`list.css`）: `nav.menu-header` + `section.navigation-bar` + `div.categories`。項目は `dl#id > dt.entry + dd.entry`、対応は `ul.supported-baseware`（アイコン）、既定値は `p.default`、記述例は `div.legend`
-- `spec`（単独の `spec/*.md`。`spec.css`）: `section.navigation-bar` + `div.text`
+- `spec`（単独の `spec/*.md`。`list.css`）: `list` と同じ形に組む。H2 を 1 項目とし、H3 以下の節を持つものは説明の節（`section.caption`）、持たないものは `dl.entry` になる。最初の H2 より前の文は、頁の題を名前にした項目にする。旧版はこの頁だけ `spec.css`（`div.text`）で見た目が違っていたが、`spec/<名前>/` のまとめた頁とそろえるため、`list.css` に統一した
 - `frame`（`manual_*` `dev_*` `memo*` `index`。`base.css`）: 上の帯 `header#navigation` + 左のメニュー `nav.sidebar` + `main`（`section.baseframe > section.body` の flex で並べる）
 
 旧版からの差:
@@ -55,7 +55,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
   - `prepare_site.py` は、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして `_site_src/` の写しに付けるところまでを受け持つ（`bundle-item` `bundle-support` `manual-item` など）
   - `build.py` は、`_site_src/` の Markdown を HTML にし、class と木の形を見て旧版の HTML の構造に組み替える。出力のファイル名は旧版と同じ（`descript_ghost.html` など）。頁の種類は 3 つ（上の「作り」）。対応のベースウェアはアイコン画像（`image/icon_m.png` `icon_s.png` `icon_c.png` `icon_n.png`）で出す。ベースウェアを足すときは `build.py` の `BASEWARE` と画像を足す
   - 記述例とファイル構成の木の色付けは、`site_ext/ukadoc_site/lexers.py` の Pygments レキサー（`sakurascript`・`ss`、`filetree`）。`pyproject.toml` の `pygments.lexers` で登録している。さくらスクリプトの誤りは、ビルドの警告に出る（ビルドは止めない）。色は `oldstyle/static/oldstyle.css`
-  - 見た目は `oldstyle/static/` の旧版の CSS（`base.css` `list.css` `spec.css`。`list.css` `spec.css` は旧版のまま。`base.css` は、枠の頁の iframe をやめたとき、上の帯・左メニューの CSS（旧 `iframes.css`）を取り込んで直した）と、新しい原稿のための補い `oldstyle.css`。旧版のままの CSS は、旧版の見た目を変えるとき以外は直さず、足りない分は `oldstyle.css` に書く
+  - 見た目は `oldstyle/static/` の旧版の CSS（`base.css` `list.css`。`list.css` は旧版のまま。`base.css` は、枠の頁の iframe をやめたとき、上の帯・左メニューの CSS（旧 `iframes.css`）を取り込んで直した）と、新しい原稿のための補い `oldstyle.css`。旧版のままの CSS は、旧版の見た目を変えるとき以外は直さず、足りない分は `oldstyle.css` に書く
   - 翻訳版は、LLM（`scripts/translate.py`）が作った `i18n/<言語>/` の訳文を、日本語の原稿に重ねてビルドする（`python oldstyle/build.py` が、日本語版の後に `i18n/` のある言語を `_site_old/<言語>/` へ続けて出す。`--lang=<言語>` でその言語だけ、`--no-langs` で日本語版だけ）
     - 見出しの id は、日本語の原稿から作る（訳した見出しでも、リンクの `#見出し` が切れない）。構造の判定に使う日本語の語（`**カテゴリ:**` `**対応:**` `**既定値:**`、`## 記述例` `## 目次` `## 一覧`、`!!! warning "非推奨"`）は訳文でも原文のまま残し、表示のときだけ `build.py` の `LABELS` で言語ごとの語にする。`NEGATION`（対応の否定の語）には、英語・中国語の言い換えも入れてある
     - 枠（左メニュー・上の帯・検索頁）のテンプレートは、`i18n/<言語>/templates/` に訳したものがあればそちらを使う（`read_template`）

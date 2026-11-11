@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 旧版の CSS（base.css / list.css / spec.css）に無い、新しい原稿のための補い。旧版の配色に合わせる */
+/* 旧版の CSS（base.css / list.css）に無い、新しい原稿のための補い。旧版の配色に合わせる */
 
 /* コードブロック（Pygments） */
 .highlight { margin: 2px 0; background: transparent; }
@@ -8,7 +8,7 @@
 .highlight pre { font-synthesis-weight: none; }
 .highlight pre code { white-space: inherit; }
 code, kbd, samp, .highlight pre, .highlight pre code, pre code { font-family: Consolas, "Courier New", "BIZ UDGothic", monospace; font-size: 13px; }
-main .highlight pre, .category .highlight pre, .caption .highlight pre, .text .highlight pre { padding: 5px; }
+main .highlight pre, .category .highlight pre, .caption .highlight pre { padding: 5px; }
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -97,7 +97,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 /* list / spec の頁を、画面の幅いっぱいに広げる（旧版は 25% + 65% + 余白で、右に 8% ほど余っていた）。
    左端の余白 20px に合わせて、右端も 20px 残す。左のナビゲーション 25% の残りを本文にする */
 .menu-header { width: auto; }
-.categories, .text { width: calc(75% - 64px); }
+.categories { width: calc(75% - 64px); }
 /* 左のナビゲーションは、画面に付いてくるフローティング（長いときはその中だけを縦にスクロール）。
    本文もナビゲーションもフロートで body の高さに入らないので、body の末尾でクリアして、sticky の動ける範囲を本文の終わりまでにする */
 body:after { content: ""; display: block; clear: both; }
@@ -123,7 +123,7 @@ main .remarks.admonition { margin: 0.5em 0; border-color: #7bb56b; background-co
 main .remarks.admonition.warning { border-color: #ccaa00; background-color: #ffffcc; }
 
 /* 表 */
-.category table, .caption table, .text table, main table { margin: 5px auto; font-size: 100%; }
+.category table, .caption table, main table { margin: 5px auto; font-size: 100%; }
 main table td { text-align: left; }
 .category td, .category th, .caption td, .caption th { padding: 3px; text-align: left; }
 .category th, .caption th { background-color: #eef; }
@@ -134,10 +134,9 @@ main table td { text-align: left; }
 .category dd.entry .legend section.code > p { margin: 3px; }
 .category dd.entry .legend section.code > h1 { background-color: transparent; }
 
-/* spec.css の頁（.text）のコードブロック: spec.css は code 要素に枠を付けるので、Pygments の div の側に付ける */
-.text .highlight { background-color: #ded; border: 2px solid #aba; padding: 5px; margin: 10px; }
-.text .highlight pre { padding: 0; }
-.text section .highlight code { display: inline; background: none; border: none; padding: 0; margin: 0; }
+/* 項目の本文（dd.entry）の直下のコードブロック: 段落と同じ字下げにし、説明の節（.caption pre）と同じ形の枠を、項目の青系の色で付ける */
+.category dd.entry > .highlight, .category dd.entry > dl.sub > dd > .highlight { margin: 5px 5px 5px 15px; background-color: #dde; border: 1px dotted #669; }
+.category dd.entry > dl.sub > dd > .highlight { margin-left: 0; }
 
 /* 翻訳ボタン（translate.js）。全頁で右上に固定 */
 .ukadoc-translate { position: fixed; top: 6px; right: 8px; z-index: 20; font-size: 12px; }
@@ -194,12 +193,12 @@ main table td { text-align: left; }
 
 	/* list / spec の頁: 本文を画面の幅いっぱいに */
 	#page-title { margin: 6px 10px; }
-	.categories, .text { float: none; width: auto; margin: 10px 0 40px; padding: 0 10px; overflow-wrap: anywhere; }
+	.categories { float: none; width: auto; margin: 10px 0 40px; padding: 0 10px; overflow-wrap: anywhere; }
 	.menu-header { width: auto; margin: 0 10px; }
 	.navigation-bar { float: none; width: auto; margin: 10px; position: static; max-height: none; }
-	.categories pre, .text pre { overflow-x: auto; }
-	.categories img, .text img { max-width: 100%; height: auto; }
-	.categories table, .text table { display: block; max-width: 100%; overflow-x: auto; }
+	.categories pre { overflow-x: auto; }
+	.categories img { max-width: 100%; height: auto; }
+	.categories table { display: block; max-width: 100%; overflow-x: auto; }
 
 	/* 枠の頁 */
 	section.baseframe { margin: 0; }
