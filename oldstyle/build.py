@@ -643,6 +643,12 @@ def render_unit(unit, parent, nav_list, depth, first_in_cat):
     for el in unit.body:
         if el.tag == 'hr':
             continue
+        if el.tag == 'p' and first_strong_label(el) == '対応:':     # 分類直下の「**対応:** SSP」も、項目と同じくベースウェアのアイコンにする
+            ul, extra = support_list(el)
+            cat.append(ul)
+            if extra is not None:
+                cat.append(extra)
+            continue
         cat.append(clean_tail(el))
     parent.append(cat)
     first = True
