@@ -2,22 +2,22 @@
 
 **カテゴリ:** Plugin “Spectre”
 
-Occurs during a Spectre conversation when the currently addressed ghost is asked to change its surface.<br />
-Note that this event is not raised directly by the plugin itself; it is called by the ghost through an embedded tag in the conversation.<br />
-The expressions included are the [recommended expressions](../../../descript/shell-surfaces/surface-brace/caption_standarddef.md), with a few expressions commonly used by English-language ghosts added.<br />
-*Ignore expressions that the ghost’s shell cannot represent accurately, and do not return a response.* The plugin uses this information for its own purposes.
+Occurs during Spectre's dialogues to call for surface changes from the ghost that is currently being spoken to.<br />
+Note that this event does not come directly from the plugin itself, but rather is called from the ghost side by embed tags within the dialogues.<br />
+The expressions included are the [recommended expressions](../../../descript/shell-surfaces/surface-brace/caption_standarddef.md), plus a few extra that are common in English ghosts.<br />
+*Expressions which the ghost's shell cannot produce accurately should be ignored and not return a response*, as the plugin will use this information for its own purposes.
 
-- **Reference0**: The requested expression. One of the following values:
+- **Reference0**: The expression being called for. May be one of the following values:
 
-  - normal …… Usually surface0
-  - embarrassed …… Usually surface1
-  - surprised …… Usually surface2
-  - anxious …… Usually surface3
-  - discouraged …… Usually surface4
-  - smile …… Usually surface5
-  - relieved …… Usually surface6. Also called “contented”
-  - angry …… Usually surface7
-  - sweat …… Usually surface8. Also called “sweat smile” or “cold smile”
-  - indignant …… Usually surface9. Also called “embarrassed anger”
-  - thinking …… Commonly used by some English-language ghosts. Also called “thoughtful” or “confused”
-  - unamused …… Commonly used by some English-language ghosts. Also called “bored”
+  - normal …… usually surface0
+  - embarrassed …… usually surface1
+  - surprised …… usually surface2
+  - anxious …… usually surface3
+  - discouraged …… usually surface4
+  - smile …… usually surface5
+  - relieved …… usually surface6, also known as "contented"
+  - angry …… usually surface7
+  - sweat …… usually surface8, also known as "sweat smile" or "cold smile"
+  - indignant …… usually surface9, also known as "embarrassed anger"
+  - thinking …… common in some English ghosts, also known as "thoughtful" or "confused"
+  - unamused …… common in some English ghosts, also known as "bored"

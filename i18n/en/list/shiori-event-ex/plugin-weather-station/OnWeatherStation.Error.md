@@ -2,11 +2,11 @@
 
 **カテゴリ:** Plugin "Weather Station"
 
-Sends error information to all running ghosts. If an error occurs, this event is sent instead of the event described above.
+Sends error information to all open ghosts. This event is sent in place of the previous events if there is an error of any kind.
 
-- **Reference0**: Error message. See [below](note-1.md#エラーの理由) for possible error messages.
-- **Reference1**: A more detailed error message provided by weatherapi.com. *This error message does not match the weatherapi online documentation, so it must not be used to identify errors.*
-- **Reference2**: Error code documented by weatherapi.com.
-- **Reference3**: The time when the plugin last attempted to update weather data, in seconds since EPOCH (1970/1/1 00:00:00).
-- **Reference4**: The plugin's current version number.
-- **Reference5**: 1 if a plugin update is available, or 0 otherwise. Always 0 if the user is offline.
+- **Reference0**: The error message. [※See below](note-1.md#エラーの理由) for possible error messages.
+- **Reference1**: A more descriptive error message, provided by weatherapi.com. *These error messages do not match the online documentation for weatherapi and should not be used for identifying errors.*
+- **Reference2**: The error code, as listed on weatherapi.com's documentation.
+- **Reference3**: The time the plugin last attempted to update the weather data, in seconds since EPOCH (1970/1/1 00:00:00).
+- **Reference4**: The current version number of the plugin.
+- **Reference5**: 1 if there is a plugin update available, 0 otherwise. If the user is offline, this will always be 0.

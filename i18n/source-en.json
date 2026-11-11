@@ -1,0 +1,54 @@
+{
+ "list/shiori-event-ex/app-music-player/OnMusicPlayer.SongInfo.md": {
+  "en": "74520a5601a9be4708d1146f4b3b85bcc98a52e0667640d7792c5554c6fc9d97",
+  "ja": "4add066f205156ea39136c955fc4bb9f6338307523ec1faeb073f8533b7de12e"
+ },
+ "list/shiori-event-ex/ghost-hydrate/OnHydrateStatsNotify.md": {
+  "en": "0cb04daab8e94d0bebd8b3d902b9346b7a41b6b2b4e2ab9f7eba074750ed5084",
+  "ja": "4bafdd09c9064fd11eab42f69a55e90bb8652e2d74d0457556241423c3f1fbb9"
+ },
+ "list/shiori-event-ex/ghost-needle/OnNeedlePoke.md": {
+  "en": "0ada838c98e87d53cca2b876a603bb790050d23ba1187791ffef82f18f3cacc9",
+  "ja": "94137117288e69a1b80e3cde6bea62d743e183e6aa97fe539d1d116e410d99a3"
+ },
+ "list/shiori-event-ex/plugin-spectre/OnSpectrePlugin.ConfirmCalibration.md": {
+  "en": "d6e6c18d85dd548a27032e01f3937b2009e5a09cee48960371f6c3c15d76b6a2",
+  "ja": "d97090099f24f2b507d46eecff150f8e8862dbb7994de18f13cb3fe419242f1f"
+ },
+ "list/shiori-event-ex/plugin-spectre/OnSpectrePlugin.Possession.md": {
+  "en": "a15df53c8158ba5865defd7301041314086430290b7f434133e8a4fdcd43a69c",
+  "ja": "e83d32a6ecfc469758f650aa36da3f342fdab50c2bd3e735b2c37c683505b280"
+ },
+ "list/shiori-event-ex/plugin-spectre/OnSpectrePlugin.Surface.md": {
+  "en": "670d39c4a424ee3eb1325c074aecaf542defc77b7e53bd6aba03e0839f33d1bf",
+  "ja": "3c95c79973b3aaf796af7fda83f3c7e3d17a60dd56e23fb4aa3a3b8ba7e74e5a"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Alerts.md": {
+  "en": "3e26400098c08cb40805d39f6dcb6cd462cc0320761ab658f48b267f2502e38c",
+  "ja": "22548b749ddf366be39e4cc48ed50375100058318043d0b0bd91c2d40f0a6df2"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Astro.md": {
+  "en": "000fdcef79013a835da96d8ed6b051ebcabebf95643353f94cb3fb97bbb722f5",
+  "ja": "d1b364edb7f6327388cd690d0b61f9d04ea8f3f9205a951367a07f74c140ff47"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Error.md": {
+  "en": "cce66b71758b9fbdd24fae3d429b71a4c4af5234c68955956c86ba54273ab332",
+  "ja": "94d6507d055f072f5a26bc8338572e2edd52a9b792d92ed3b0cc6e49e936440e"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Forecast.Day.md": {
+  "en": "f2694204d6332f784bc6f0b3e880be02709fd707bf0d8004141e119df2ba38d4",
+  "ja": "85a78abbe22c8a9352589627431d51d03070509de069d85f6a18411b06209872"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Forecast.Hourly.md": {
+  "en": "7abe376698d3a0035c941104eb2a37e33c07535735cb3c53d27802983b90fae7",
+  "ja": "3e46dbe6470372bde9348812bc8c92e7c3278a6af5afa0fb31d1abb8b2a66cf5"
+ },
+ "list/shiori-event-ex/plugin-weather-station/OnWeatherStation.Weather.md": {
+  "en": "b9e3d3b136fcb8018f733842ebdda696ad4d9967bf90fe656cbd4c5a0e104e29",
+  "ja": "767e99d7f00c8b443630ed5b033d2c8df1409db52b14657e2f3ab9156afd53e4"
+ },
+ "list/shiori-event-ex/plugin-weather-station/note-1.md": {
+  "en": "d1b4be39f3632a6d3161cd21e2480eece46c6c9f2a5d570c0722cbef0a745d05",
+  "ja": "3b262ed27923ef6ae3ea3921719211a5d7e37753022c234327178d8e545c8a41"
+ }
+}

@@ -2,23 +2,23 @@
 
 **カテゴリ:** Plugin "Weather Station"
 
-Sends information about the full-day forecast to all running ghosts. It must be invoked with `\![raiseplugin]`. An additional argument can specify which day's data to send: 0 is today, 1 is tomorrow, and 2 is the day after tomorrow. If no argument is given, today's data is sent.
+Sends information about the overall forecast for a day to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
 
-- **Reference0**: The day that the following information applies to. 0 is today, 1 is tomorrow, and 2 is the day after tomorrow.
-- **Reference1**: The day's maximum temperature (Fahrenheit).
-- **Reference2**: The day's maximum temperature (Celsius).
-- **Reference3**: The day's minimum temperature (Fahrenheit).
-- **Reference4**: The day's minimum temperature (Celsius).
-- **Reference5**: The day's average temperature (Fahrenheit).
-- **Reference6**: The day's average temperature (Celsius).
-- **Reference7**: The day's average humidity (percent).
-- **Reference8**: The day's maximum wind speed (mph).
-- **Reference9**: The day's maximum wind speed (kph).
-- **Reference10**: The day's total precipitation (inches).
-- **Reference11**: The day's total precipitation (millimeters).
-- **Reference12**: "Will it rain on this day?" 1 if yes, 0 if no.
-- **Reference13**: Probability of rain on this day (percent).
-- **Reference14**: "Will it snow on this day?" 1 if yes, 0 if no.
-- **Reference15**: Probability of snow on this day (percent).
-- **Reference16**: The day's average visibility (miles).
-- **Reference17**: The day's average visibility (kilometers).
+- **Reference0**: The day the following information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.
+- **Reference1**: Maximum temperature for the day, in Fahrenheit.
+- **Reference2**: Maximum temperature for the day, in Celsius.
+- **Reference3**: Minimum temperature for the day, in Fahrenheit.
+- **Reference4**: Minimum temperature for the day, in Celsius.
+- **Reference5**: Average temperature for the day, in Fahrenheit.
+- **Reference6**: Average temperature for the day, in Celsius.
+- **Reference7**: Average humidity for the day, as a percentage.
+- **Reference8**: Maximum windspeed for the day, in mph.
+- **Reference9**: Maximum windspeed for the day, in kph.
+- **Reference10**: Total precipitation for the day, in inches.
+- **Reference11**: Total precipitation for the day, in millimeters.
+- **Reference12**: "Will it rain this day", 1 if yes, 0 if no.
+- **Reference13**: Chance that it will rain this day, as a percentage.
+- **Reference14**: "Will it snow this day", 1 if yes, 0 if no.
+- **Reference15**: Chance that it will snow this day, as a percentage.
+- **Reference16**: Average visiblity for the day, in miles.
+- **Reference17**: Average visiblity for the day, in kilometers.

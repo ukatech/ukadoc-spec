@@ -1,10 +1,10 @@
-# Notes
+# 補足
 
-## List of weather conditions and condition codes
+## Weather Condition & Code List
 
-The list of conditions can be downloaded from the [weatherapi documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but the information sent by the plugin is always in English.
+A list of conditions can be downloaded from [weatherapi's documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but information from the plugin will always be sent in english.
 
-- **1000**: Sunny (becomes "Clear" after sunset)
+- **1000**: Sunny (If the sun is down, it will be "Clear" instead.)
 - **1003**: Partly cloudy
 - **1006**: Cloudy
 - **1009**: Overcast
@@ -53,19 +53,19 @@ The list of conditions can be downloaded from the [weatherapi documentation page
 - **1279**: Patchy light snow with thunder
 - **1282**: Moderate or heavy snow with thunder
 
-## UK Defra index quick reference
+## UK Defra Index reference
 
 | Index | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Category | Low | Low | Low | Medium | Medium | Medium | High | High | High | Very high |
+| Band | Low | Low | Low | Moderate | Moderate | Moderate | High | High | High | Very High |
 | µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71 or more |
 
-## Error reasons
+## Reason for Error
 
-- **no_location**: The user has not added location information or has deleted it.
-- **location_invalid**: The user's location information is invalid, so data cannot be retrieved.
-- **api_quota_exceeded**: The monthly free API call limit of 1 million has been exceeded.
-- **api_key_disabled**: The plugin developer has disabled the API key. Check whether a plugin update providing a new key is available.
-- **api_internal_error**: The API returned an internal error.
-- **no_api_response**: The API did not respond, the SAORI used by the plugin failed to run, or the user is offline.
-- **other**: Another error returned by the API. reference1 contains the error message returned by the API.
+- **no_location**: The user has not added their location, or has removed it.
+- **location_invalid**: The user's location is invalid and data cannot be gathered.
+- **api_quota_exceeded**: The 1 million free API calls per month has been exceeded.
+- **api_key_disabled**: The API key has been disabled by the plugin developer. Please check if a plugin update is available to provide a new key.
+- **api_internal_error**: The API responded with an internal error.
+- **no_api_response**: The API did not respond, the SAORI used by the plugin failed to work, or the user is offline.
+- **other**: Any other error sent by the API. reference1 will have the error message provided by the API.

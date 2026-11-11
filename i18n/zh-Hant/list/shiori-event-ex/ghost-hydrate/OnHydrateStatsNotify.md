@@ -2,16 +2,16 @@
 
 **カテゴリ:** ghost「Hydrate」
 
-通知Hydrate目前的狀態，以及使用者補充水分的統計資料。
+通知 Hydrate 的目前狀態及使用者的水分補充統計資訊。
 
-- **Reference0**: Hydrate目前使用的shell名稱。
-- **Reference1**: 目前dressup的清單。以二維陣列表示，dressup之間以0xFDEF分隔，各dressup的類別名稱與零件名稱以0x01分隔。（例: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea"）
-- **Reference2**: shell目前X方向的縮放比例（百分比）。
-- **Reference3**: shell目前Y方向的縮放比例（百分比）。
-- **Reference4**: 今天飲用的次數。
-- **Reference5**: 飲用次數總計。
-- **Reference6**: 目前的連續紀錄（連續飲用的次數）。
-- **Reference7**: 迄今為止的最高連續紀錄（連續飲用的次數）。
-- **Reference8**: 今天額外多喝一口的次數。
-- **Reference9**: 額外多喝一口的次數總計。
-- **Reference10**: Hydrate是否已最小化。若已最小化則為1，否則為0。
+- **Reference0**: Hydrate 目前使用的 shell 名稱。
+- **Reference1**: 目前的 dressup 清單。這是二維陣列，各 dressup 以0xFDEF分隔，每個 dressup 的類別名稱和部件名稱以0x01分隔。（例如: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea"）
+- **Reference2**: shell 目前的 X 方向縮放比例（百分比）。
+- **Reference3**: shell 目前的 Y 方向縮放比例（百分比）。
+- **Reference4**: 今天喝水的次數。
+- **Reference5**: 喝水的總次數。
+- **Reference6**: 目前的連續紀錄（連續喝水的次數）。
+- **Reference7**: 歷來最高的連續紀錄（連續喝水的次數）。
+- **Reference8**: 今天額外喝的一口水的次數。
+- **Reference9**: 額外喝的一口水的總次數。
+- **Reference10**: Hydrate 是否最小化。最小化時為1，否則為0。

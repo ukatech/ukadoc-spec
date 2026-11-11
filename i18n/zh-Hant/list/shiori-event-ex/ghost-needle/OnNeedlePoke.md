@@ -2,7 +2,7 @@
 
 **カテゴリ:** ghost「Needle」
 
-Needle與其他ghost重疊並「戳」對方時會發生。若Needle同時與多個scope重疊，會對每個scope各傳送一次事件。
+Needle（透過重疊）「戳」其他 ghost 時發生。若 Needle 同時與多個 scope 重疊，則每個 scope 各傳送一次事件。
 
-- **Reference0**: 被戳的scope ID。主要角色為0，側邊角色為1，追加角色為2以上。
-- **Reference1**: Needle目前使用的shell名稱。
+- **Reference0**: 被戳的 scope ID。主要角色為0，側邊角色為1，額外角色為2及以後。
+- **Reference1**: Needle 目前使用的 shell 名稱。

@@ -2,21 +2,21 @@
 
 **カテゴリ:** Music player notification event
 
-Notifies all running ghosts of information about the music player's internal state. *\[NOTIFY\]*<br />
-Because implementations are added and updated on the ghost side, some ghosts using older versions have fewer References.
+Notifies information about the music player's internal state to all open ghosts. *\[NOTIFY\]*<br />
+Because the implementation is added and updated on the ghost side, some ghosts may use an older version with fewer references.
 
 - **Reference0**: The sakura name of the ghost that sent the event.
 - **Reference1**: The file path of the currently loaded song. Empty if no song is loaded.
-- **Reference2**: The song's number in the current playlist. -1 if no song is loaded. It is also -1 in some situations, such as when playback continues after the song has been removed from the playlist.
-- **Reference3**: Playback state. 0 when stopped, 1 when playing, and 2 when paused.
-- **Reference4**: Current volume. 0–100.
-- **Reference5**: Current playback speed. Usually 0–400. Some implementations may support speeds above 400.
-- **Reference6**: Current left-right balance. -100 is fully left, 0 is center, and 100 is fully right.
-- **Reference7**: Playback mode. The numbers correspond to the following modes.
-  - 0 - Loop playlist
-  - 1 - Shuffle and loop
-  - 2 - Loop one song
-  - 3 - Play one song only
+- **Reference2**: The playlist index number of the currently loaded song. -1 if no song is loaded, and in certain circumstances when a song has been removed from the playlist but is still playing.
+- **Reference3**: The playback state. 0 if stopped, 1 if playing music, and 2 if playback is paused.
+- **Reference4**: The current volume, from 0-100.
+- **Reference5**: The current playback speed, usually from 0-400. Some implementations may allow speeds higher than 400.
+- **Reference6**: The current left/right balance. -100 is all the way to the left, 0 is centered, and 100 is all the way to the right.
+- **Reference7**: The play mode. Numbers correspond to the following modes.
+  - 0 - Loop Playlist
+  - 1 - Shuffle and Loop
+  - 2 - Loop One Song
+  - 3 - Play One Song
   - 4 - Random
-- **Reference8**: Special flags for stopping playback. "stop after playback" means playback stops when the current song ends, while "stop after playlist" means playback stops when the current playlist ends (this applies in both "Loop playlist" and "Shuffle and loop" modes). Empty if neither flag is set.
-- **Reference9**: Number of songs in the current playlist.
+- **Reference8**: A special flag for stopping playback. "stop after playback" means playback will stop when the current song ends. "stop after playlist" means playback will stop when the current playlist ends (applicable in both "Loop Playlist" and "Shuffle and Loop" modes). Empty if neither flag is set.
+- **Reference9**: The number of songs in the current playlist.

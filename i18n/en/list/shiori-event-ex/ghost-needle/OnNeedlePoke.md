@@ -2,7 +2,7 @@
 
 **カテゴリ:** Ghost “Needle”
 
-Occurs when Needle “pokes” another ghost by overlapping it. If Needle overlaps multiple scopes at the same time, the event is sent once for each scope.
+Occurs when Needle "pokes" another ghost (by overlapping them). If Needle is overlapping multiple scopes simultaneously, the event will be sent once for each scope.
 
-- **Reference0**: ID of the poked scope. The main character is 0, the side character is 1, and additional characters are 2 or higher.
-- **Reference1**: Name of the shell currently used by Needle.
+- **Reference0**: The ID of the scope that was poked. 0 for the main character, 1 for the side character, 2 and onwards for additional characters.
+- **Reference1**: The name of the shell Needle is currently using.

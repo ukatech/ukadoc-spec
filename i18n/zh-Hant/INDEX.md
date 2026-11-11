@@ -2,69 +2,71 @@
 
 ## 關於 ukadoc
 
-這是由[UKADOC project](https://github.com/ukatech/ukadoc-spec)編輯的文件集；該專案彙整伺か相關規格文件。
+由伺か（Ukagaka）相關規格文件彙整專案 [UKADOC project](https://github.com/ukatech/ukadoc-spec) 編輯的文件集。
 
-*[SSP](http://ssp.shillest.net/)的相關文件以此處的文件作為官方文件*。
+*[SSP](http://ssp.shillest.net/) 相關文件在此處被視為官方文件*。
 
-如要指出錯誤、提問、提供意見或需求，或提供資訊等，請前往[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)。
+如要指出錯誤，或提出問題、意見、需求、提供資訊等，請至[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)。
+
+若想提議新增或修正規格、事件，但不熟悉 GitHub 或 git 的操作，不需要建立 pull request。只要將詳細內容發佈到[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)或[GitHub 的 Issue](https://github.com/ukatech/ukadoc-spec/issues)，我們就會處理。
 
 管理者：[UKADOC Project](https://github.com/ukatech/ukadoc-spec)
 
-連結用的橫幅：
+連結用橫幅：
 
-![ukadoc 橫幅](assets/image/ukadoc_banner1.png)
+![ukadoc橫幅](assets/image/ukadoc_banner1.png)
 
-本站文章採用[創用 CC 姓名標示 4.0 國際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)授權。不限於製作 ghost，歡迎自由引用、轉載及修改。使用時，請標示本專案（UKADOC project）的名稱或本站連結，作為「原著作者的署名」。
+本網站的內容可依據[創用 CC 姓名標示 4.0 國際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)使用。不限於製作 ghost，引用、轉載、改作皆可自由進行。使用時請在「原著作者署名」中註明本專案（UKADOC project）的名稱，或提供本網站的連結。
 
-> 本站提供將 HTML、CSS、JS 與圖片等所有檔案打包的 [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip)，可作為離線閱讀用的封存檔。解壓縮後，可從 `ukadoc-spec/index.html` 閱讀。
+> 我們提供了 [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip)，其中收錄本網站的 HTML、CSS、JS 和圖片，方便離線閱讀。解壓縮後即可從 `ukadoc-spec/index.html` 閱讀。
 >
-> 本站也提供給 AI 代理程式使用的查找指南 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt)。各頁面的 Markdown 原稿可透過與儲存庫相同路徑的 `.md` 檔案取得（例如：`https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）。
+> 我們也為 AI agent 準備了尋找文件的指南 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt)。各頁面的 Markdown 原始檔可透過與儲存庫相同路徑的 `.md` 取得（例如：`https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）。
 
 ## 適用版本
 
 - [SSP](http://ssp.shillest.net/) 最新版（官方規格書）
 - [MATERIA](http://usada.sakura.vg/) period 583
 - [CROW](http://crow.aqrs.jp/) ver0.5.2（開發版）
-- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) 最近版本
+- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) 近期版本
 
 ## 外部連結
 
 - [伺か開發資訊搜尋](http://ukadev.shillest.net/)
 - [SSP 啟動選項（SSP 說明）](https://ukatech.shillest.net/ukadoc-ssp/functions/option/)
 - [伺か官方規格書](http://usada.sakura.vg/contents/specification.html)
-- [CROW・SSP 規格書](http://crow.aqrs.jp/reference/all/)
-- [大八州.NET 非官方規格書](http://www.ooyashima.net/db/)
-- [駄でべwiki 規格備忘](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
+- [CROW、SSP 規格書](http://crow.aqrs.jp/reference/all/)
+- [大八州.NET　非官方規格書](http://www.ooyashima.net/db/)
+- [駄でべwiki　規格備忘](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
 
 ## ukadoc 的閱讀方式
 
-側邊欄中的文章依分類分別介紹以下內容。
+側邊欄中的文章依照類別，分別涵蓋以下內容。
 
-- **檔案結構**：說明各種伺か相關內容所需的檔案，以及目錄結構。
+- **檔案結構**：說明構成各種伺か相關內容的檔案，以及目錄結構。
 
-  若想掌握需要或可使用哪些檔案的整體概況，可參閱此處。
+  想掌握需要哪些檔案、可以使用哪些檔案的整體概況時，可參考此處。
 
-- **設定檔**：說明各種伺か相關內容所使用的個別設定檔，其記述方式。
+- **設定檔**：說明各種伺か相關內容所使用的個別設定檔，以及其記述內容。
 
-  編寫各設定檔時可參閱此處。也盡可能提供範例。
+  編寫各個設定檔時可參考此處，並盡可能提供範例。
 
-- **Sakura Script**：說明作為 ghost 動作指示的「Sakura Script」各項指令。
+- **Sakura Script**：說明用於指示 ghost 動作的「Sakura Script」各項命令。
 
-  可參閱此處，了解有哪些指令可用，以及如何使用。
+  可參考此處了解有哪些命令，以及如何使用。
 
-- **事件**：說明 baseware 傳送給 SHIORI 或 PLUGIN 等的各個事件 ID。
+- **事件**：說明 baseware 通知 SHIORI、PLUGIN 等對象的各個事件 ID。
 
-  製作 ghost、PLUGIN 或 SHIORI 等內容時，若想了解個別事件或其 Reference，可參閱此處。
+  製作 ghost、PLUGIN、SHIORI 等內容時，若想了解個別事件或其 Reference，可參考此處。
 
-- **規格**：彙整各種伺か相關內容涉及的各項規格。
+- **規格**：彙整各種伺か相關內容所涉及的規格。
 
-  這裡主要是與 SHIORI、SAORI、baseware 等系統核心部分相關的資訊。
+  這部分主要是與 SHIORI、SAORI、baseware 等系統核心相關的資訊。
 
-- **HowTo**：介紹製作各種伺か相關內容所需的基礎方法。
+- **HowTo**：介紹製作各種伺か相關內容的基本方法。
 
-  不過，實際上很難涵蓋適用於個別情況的 TIPS；若需要更具體的資訊，請另外搜尋外部網站。
+  不過，要涵蓋依個別情況而異的 TIPS，在現實上有困難；若要尋找更具體的資訊，請參閱外部網站。
 
-- **其他**：其他與 SSP 等 baseware 規格相關的備忘與補充文章。
+- **其他**：其他與 SSP 等 baseware 規格相關的備忘或補充文章。
 
 ## 目次
 
@@ -76,7 +78,7 @@
 - [owner draw 選單](manual/owner-draw-menu.md)
 - [安裝](manual/install.md)
 - [network update](manual/update.md)
-- [轉換器](manual/translator.md)
+- [轉譯器](manual/translator.md)
 - [balloon](manual/balloon.md)
 
 ### 設定檔
@@ -94,7 +96,7 @@
   - [descript.txt](descript/plugin/index.md)
 - Headline
   - [descript.txt](descript/headline/index.md)
-- 安裝／更新
+- Install/Update
   - [install.txt](descript/install/index.md)
   - [delete.txt](descript/install/delete.txt/index.md)
   - [developer_options.txt](descript/install/developer_options.txt/index.md)
@@ -132,11 +134,11 @@
 - [建立散布用檔案](dev/nar.md)
 - [支援 network update](dev/update.md)
 - [建立 shell](dev/shell.md)
-- [設定 dressup](dev/bind.md)
-- [設定 owner draw 選單](dev/ownerdraw.md)
+- [dressup 設定](dev/bind.md)
+- [owner draw 選單設定](dev/ownerdraw.md)
 - [排除錯誤訊息](dev/shell-error.md)
 
 ### 其他
 
-- [補充：什麼是 SHIORI Event](memo/shiori-event.md)
+- [補充：SHIORI Event 是什麼](memo/shiori-event.md)
 - [備忘](memo/memo.md)

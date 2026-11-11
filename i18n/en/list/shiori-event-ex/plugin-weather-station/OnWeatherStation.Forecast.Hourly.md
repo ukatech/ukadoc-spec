@@ -2,38 +2,38 @@
 
 **カテゴリ:** Plugin "Weather Station"
 
-Sends information about the hourly forecast for one day to all running ghosts. It must be invoked with `\![raiseplugin]`. An additional argument can specify which day's data to send: 0 is today, 1 is tomorrow, and 2 is the day after tomorrow. If no argument is given, today's data is sent.
+Sends information about the hour-by-hour forecast for a day to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
 
-- **Reference0～23**: A comma-separated array containing forecast information. The Reference number corresponds to the hour (in 24-hour format) that the data applies to (for example, reference0 is 00:00/12 AM, and reference14 is 14:00/2 PM).
-  - \[0\] - The date and time that the information applies to.
-  - \[1\] - "Is it daytime?" 1 if the Sun is up, 0 if it has set.
-  - \[2\] - Temperature (Fahrenheit).
-  - \[3\] - Temperature (Celsius).
-  - \[4\] - "Feels like" temperature (Fahrenheit).
-  - \[5\] - "Feels like" temperature (Celsius).
-  - \[6\] - Humidity (percent).
-  - \[7\] - Wind speed (miles per hour).
-  - \[8\] - Wind speed (kilometers per hour).
-  - \[9\] - Wind direction (16-point compass; for example, NNW is north-northwest).
-  - \[10\] - Wind direction (degrees).
-  - \[11\] - Gust speed (miles per hour).
-  - \[12\] - Gust speed (kilometers per hour).
-  - \[13\] - Precipitation (inches).
-  - \[14\] - Precipitation (millimeters).
-  - \[15\] - Cloud cover (percent).
-  - \[16\] - "Will it rain?" 1 if yes, 0 if no.
-  - \[17\] - Probability of rain (percent).
-  - \[18\] - "Will it snow?" 1 if yes, 0 if no.
-  - \[19\] - Probability of snow (percent).
-  - \[20\] - Visibility (miles).
-  - \[21\] - Visibility (kilometers).
-  - \[22\] - Wind chill (Fahrenheit).
-  - \[23\] - Wind chill (Celsius).
-  - \[24\] - Heat index (Fahrenheit).
-  - \[25\] - Heat index (Celsius).
-  - \[26\] - Dew point (Fahrenheit).
-  - \[27\] - Dew point (Celsius).
-  - \[28\] - Pressure (inches).
-  - \[29\] - Pressure (millibars).
+- **Reference0～23**: A comma separated array containing forecast information. The number of the reference corresponds to the number of the hour the data is for, in 24 hour time (e.g.: reference0 is for 00:00/12AM, reference14 is for 14:00/2PM).
+  - \[0\] - Date and time the information is for.
+  - \[1\] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.
+  - \[2\] - Temperature in Fahrenheit.
+  - \[3\] - Temperature in Celsius.
+  - \[4\] - "Feels like" temperature in Fahrenheit.
+  - \[5\] - "Feels like" temperature in Celsius.
+  - \[6\] - Humidity as a percentage.
+  - \[7\] - Wind speed in miles per hour.
+  - \[8\] - Wind speed in kilometers per hour.
+  - \[9\] - Wind direction as a 16 point compass (e.g.: NNW for north/northwest).
+  - \[10\] - Wind direction in degrees.
+  - \[11\] - Wind gusts in miles per hour.
+  - \[12\] - Wind gusts in kilometers per hour.
+  - \[13\] - Precipitation in inches.
+  - \[14\] - Precipitation in millimeters.
+  - \[15\] - Cloud cover as a percentage.
+  - \[16\] - "Will it rain", 1 if yes, 0 if no.
+  - \[17\] - Chance of rain as a percentage.
+  - \[18\] - "Will it snow", 1 if yes, 0 if no.
+  - \[19\] - Chance of snow as a percentage.
+  - \[20\] - Visibility in miles.
+  - \[21\] - Visibility in kilometers.
+  - \[22\] - Wind chill in Fahrenheit.
+  - \[23\] - Wind chill in Celsius.
+  - \[24\] - Heat index in Fahrenheit.
+  - \[25\] - Heat index in Celsius.
+  - \[26\] - Dew point in Fahrenheit.
+  - \[27\] - Dew point in Celsius.
+  - \[28\] - Pressure in inches.
+  - \[29\] - Pressure in millibars.
   - \[30\] - UV index.
-- **Reference24**: The day to which the preceding information applies. 0 is today, 1 is tomorrow, and 2 is the day after tomorrow.
+- **Reference24**: The day the preceding information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.

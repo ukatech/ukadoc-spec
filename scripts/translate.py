@@ -9,7 +9,7 @@
 設定は環境変数か、リポジトリ直下の .env（.gitignore 済み）に書く:
     TRANSLATE_API_KEY=...                              （必須）
     TRANSLATE_BASE_URL=https://.../v1                  （必須。OpenAI 互換の /chat/completions の手前まで）
-    TRANSLATE_MODEL=gpt-6-luna                         （省略時は gpt-6-luna）
+    TRANSLATE_MODEL=gpt-6.1-terra                      （省略時は gpt-6.1-terra）
     TRANSLATE_PRICE_IN=0.1  TRANSLATE_PRICE_OUT=0.5    （100 万トークンあたりの米ドル。費用の集計用）
 
 方針:
@@ -18,6 +18,10 @@
 - 訳文は構造を検査し（見出し・リンク先・コードブロック・表・箇条書き・構造の判定に使う日本語の語）、通らなければ
   理由を添えて 1 ファイルずつ訳し直す。それでも通らないファイルは置かない（日本語のまま出る）
 - 費用が --max-cost に達したら、新しいリクエストを出さずに止める（済んだ分は残る。再実行で続きから）
+- 英語が原文のファイル（i18n/source-en.json に登録）は、i18n/en/ に置いた英語原文を人の手で保つ。
+  en は訳さず・上書きせず、zh / zh-Hant は日本語の原稿を訳す（構造の検査の基準）が、同じリクエストに英語原文を
+  参照として添え、意味・語調・用語は英語から取らせる。日本語の原稿と英語原文のどちらかが変わると、
+  どちらも直し終えたあと `--sync-originals` で記録し直すまで警告が出る
 """
 import argparse
 import concurrent.futures
@@ -38,6 +42,8 @@ I18N = os.path.join(ROOT, 'i18n')
 TEMPLATES = os.path.join(ROOT, 'oldstyle', 'templates')
 DIRS = ['manual', 'descript', 'list', 'spec', 'dev', 'memo']     # prepare_site.py の DIRS と同じ
 GLOSSARY = os.path.join(I18N, 'glossary.tsv')
+ORIGINALS = os.path.join(I18N, 'source-en.json')     # 英語が原文のファイル: {キー: {"en": 英語原文のハッシュ, "ja": 日本語の原稿のハッシュ}}（最後に両者を突き合わせた時点）
+REF_LANGS = ('zh', 'zh-Hant')                          # 英語原文を参照として添えて訳す言語
 
 LANGS = {
     'en': 'English',
@@ -111,6 +117,67 @@ def out_path(lang, key):
 
 def manifest_path(lang):
     return os.path.join(I18N, lang, '.manifest.json')
+
+
+def load_originals():
+    """英語が原文のファイルの登録簿（キー → {"en": ..., "ja": ...}）。無ければ空"""
+    try:
+        with open(ORIGINALS, encoding='utf-8') as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def english_original(key):
+    """登録されたファイルの英語原文（i18n/en/ に置いたもの）。無ければ None"""
+    path = out_path('en', key)
+    return normalize(read_text(path)) if os.path.isfile(path) else None
+
+
+def reference_texts(lang):
+    """lang の訳に参照として添える英語原文（キー → 英文）。REF_LANGS 以外の言語は空"""
+    if lang not in REF_LANGS:
+        return {}
+    return {k: t for k in load_originals() if (t := english_original(k))}
+
+
+def stamp(key, src, refs):
+    """翻訳済みの印（マニフェストに書くハッシュ）。英語原文を添えるファイルは、英語原文を直したときも訳し直しの対象になる"""
+    ref = refs.get(key)
+    return sha(src + '\n<<<EN>>>\n' + ref) if ref else sha(src)
+
+
+def check_originals(all_targets):
+    """英語が原文のファイルについて、日本語の原稿と英語原文がずれていないかを警告する。ずれていた数を返す"""
+    stale = 0
+    for key, rec in sorted(load_originals().items()):
+        ja = all_targets.get(key)
+        en = english_original(key)
+        if ja is None or en is None:
+            print(f'警告: 英語原文の登録 {key} に、日本語の原稿か i18n/en/ の英語原文が無い')
+            stale += 1
+            continue
+        ja_changed = rec.get('ja') != sha(normalize(read_text(ja)))
+        en_changed = rec.get('en') != sha(en)
+        if ja_changed or en_changed:
+            stale += 1
+            what = '日本語の原稿と英語原文の両方が' if ja_changed and en_changed else ('日本語の原稿が' if ja_changed else '英語原文が')
+            todo = '英語原文（i18n/en/）' if not en_changed else ('日本語の原稿' if not ja_changed else '両方')
+            print(f'警告: {key}: {what}、最後に突き合わせたときから変わっている。{todo}を、もう一方に合わせて直してから --sync-originals で記録すること')
+    return stale
+
+
+def sync_originals(all_targets):
+    """いまの日本語の原稿と英語原文を「突き合わせ済み」として記録する"""
+    rec = {}
+    for key in sorted(load_originals()):
+        en = english_original(key)
+        if key in all_targets and en is not None:
+            rec[key] = {'en': sha(en), 'ja': sha(normalize(read_text(all_targets[key])))}
+    with open(ORIGINALS, 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(rec, f, ensure_ascii=False, indent=1, sort_keys=True)
+        f.write('\n')
+    print(f'英語が原文のファイル {len(rec)} 件を、突き合わせ済みとして記録した')
 
 
 def load_manifest(lang):
@@ -340,13 +407,30 @@ STRUCTURE MUST BE PRESERVED EXACTLY (an automatic checker compares it; a failed 
 
 STYLE: Translate Japanese 「だ/である」 prose into plain declarative sentences. Keep terminology consistent across files. "Sakura Script" (さくらスクリプト) is a proper name.
 """
+    if lang in REF_LANGS:
+        text += """
+ENGLISH ORIGINALS: a few files are followed by a block
+<<<REFERENCE path>>>
+...English text...
+<<<END>>>
+The Japanese file was translated from that English text, which the original author wrote. The Japanese file is the structural authority (the checker compares your output with it, line by line), but the English text is the authority for meaning, tone and terminology. Translate the Japanese file into the target language so that it reads as a faithful translation of the English original: where the Japanese is vague or has lost a nuance, follow the English; keep the author's own wording for values and labels that the plugin or ghost really sends (for example moon phase names and weather condition names stay as in the file). Never output a REFERENCE block; return only the FILE blocks.
+"""
     if glossary:
         text += '\nGLOSSARY (use exactly these renderings):\n' + '\n'.join(glossary) + '\n'
     return text
 
 
+REFS = {}      # 訳している言語で、日本語の原稿に添える英語原文（run_lang が設定する）
+
+
 def user_message(files, problems=None):
-    body = '\n'.join(f'<<<FILE {key}>>>\n{src.rstrip(chr(10))}\n<<<END>>>' for key, src in files)
+    def block(key, src):
+        text = f'<<<FILE {key}>>>\n{src.rstrip(chr(10))}\n<<<END>>>'
+        ref = REFS.get(key.split('#')[0])         # 分割した塊（key#1 など）にも、ファイル全体の英語原文を添える
+        if ref:
+            text += f'\n<<<REFERENCE {key.split("#")[0]}>>>\n{ref.rstrip(chr(10))}\n<<<END>>>'
+        return text
+    body = '\n'.join(block(key, src) for key, src in files)
     if problems:
         body = ('Your previous translation of this file failed the automatic structure check:\n- ' + '\n- '.join(problems) +
                 '\nTranslate it again and fix these problems.\n\n') + body
@@ -570,6 +654,9 @@ def recheck(lang, all_targets, manifest):
         problems = check(normalize(read_text(path)), read_text(out_file), key, True, lang)
         if problems:
             bad += 1
+            if lang == 'en' and key in load_originals():     # 英語原文は訳し直さない（手で直す）
+                print(f'  [{lang}] {key}（英語原文。手で直すこと）: {"; ".join(problems)}')
+                continue
             manifest.pop(key, None)
             print(f'  [{lang}] {key}: {"; ".join(problems)}')
     save_manifest(lang, manifest)
@@ -577,15 +664,20 @@ def recheck(lang, all_targets, manifest):
 
 
 def run_lang(cfg, budget, lang, args, all_targets):
+    global REFS
     manifest = load_manifest(lang)
+    REFS = reference_texts(lang)
+    originals = load_originals() if lang == 'en' else {}      # 英語が原文のファイルは、en では訳さず・上書きしない
     if args.recheck:
         recheck(lang, all_targets, manifest)
     todo = []
     for key, path in all_targets.items():
         if args.only and not any(o in key for o in args.only):
             continue
+        if key in originals:
+            continue
         src = normalize(read_text(path))
-        if args.force or manifest.get(key) != sha(src) or not os.path.isfile(out_path(lang, key)):
+        if args.force or manifest.get(key) != stamp(key, src, REFS) or not os.path.isfile(out_path(lang, key)):
             todo.append((key, src))
     if args.limit:
         todo = todo[:args.limit]
@@ -619,7 +711,7 @@ def run_lang(cfg, budget, lang, args, all_targets):
         with lock:
             for key, text in done.items():
                 write_translation(lang, key, text)
-                manifest[key] = sha(sources[key])
+                manifest[key] = stamp(key, sources[key], REFS)
             failed_all.update(failed)
             save_manifest(lang, manifest)
             print(f'  [{lang}] {len(done)} 件完了、{len(failed)} 件失敗（費用 ${budget.cost:.3f} / ${budget.max_cost:.2f}）')
@@ -642,6 +734,7 @@ def main():
     ap.add_argument('--limit', type=int, help='先頭からこの数のファイルだけ')
     ap.add_argument('--force', action='store_true', help='ハッシュが同じでも訳し直す')
     ap.add_argument('--recheck', action='store_true', help='書き出し済みの訳文に今の検査を当て直し、通らないものを訳し直しの対象に戻す')
+    ap.add_argument('--sync-originals', action='store_true', help='英語が原文のファイルについて、いまの日本語の原稿と英語原文を「突き合わせ済み」として記録する（翻訳はしない）')
     ap.add_argument('--dry-run', action='store_true', help='API を呼ばず、対象と費用の目安だけ出す')
     ap.add_argument('--jobs', type=int, default=8, help='並列のリクエスト数（既定 8）')
     ap.add_argument('--max-cost', type=float, default=10.0, help='費用の上限（米ドル。既定 10）')
@@ -655,13 +748,17 @@ def main():
     cfg = {
         'api_key': os.environ.get('TRANSLATE_API_KEY', ''),
         'base_url': os.environ.get('TRANSLATE_BASE_URL', ''),
-        'model': os.environ.get('TRANSLATE_MODEL', 'gpt-6-luna'),
+        'model': os.environ.get('TRANSLATE_MODEL', 'gpt-6.1-terra'),
     }
     if not args.dry_run and not (cfg['api_key'] and cfg['base_url']):
         sys.exit('TRANSLATE_API_KEY と TRANSLATE_BASE_URL を環境変数か .env に書くこと')
     budget = Budget(args.max_cost, float(os.environ.get('TRANSLATE_PRICE_IN', '0.1')), float(os.environ.get('TRANSLATE_PRICE_OUT', '0.5')))
 
     all_targets = targets()
+    if args.sync_originals:
+        sync_originals(all_targets)
+        return
+    check_originals(all_targets)
     summary = {lang: run_lang(cfg, budget, lang, args, all_targets) for lang in langs}
 
     if args.dry_run:

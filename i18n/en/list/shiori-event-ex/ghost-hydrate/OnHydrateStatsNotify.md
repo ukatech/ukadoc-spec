@@ -2,16 +2,16 @@
 
 **カテゴリ:** Ghost "Hydrate"
 
-Notifies the current state of Hydrate and the user's hydration statistics.
+Notifies information about Hydrate's current state and the user's hydration stats.
 
-- **Reference0**: Name of the shell currently used by Hydrate.
-- **Reference1**: List of current dressups. This is a two-dimensional array, with dressups separated by 0xFDEF and each dressup's category name and part name separated by 0x01. (Example: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea")
-- **Reference2**: Current X-axis scale of the shell (percent).
-- **Reference3**: Current Y-axis scale of the shell (percent).
-- **Reference4**: Number of drinks today.
-- **Reference5**: Total number of drinks.
-- **Reference6**: Current streak (number of consecutive drinks).
-- **Reference7**: Longest streak to date (number of consecutive drinks).
-- **Reference8**: Number of extra sips taken today.
-- **Reference9**: Total number of extra sips.
-- **Reference10**: Whether Hydrate is minimized. 1 if minimized, otherwise 0.
+- **Reference0**: The name of the shell Hydrate is currently using.
+- **Reference1**: A list of the current dressups. This is a 2-dimensional array, where each dressup is delimited by 0xFDEF, and the category and part name of each dressup is delimited by 0x01. (Example: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea")
+- **Reference2**: The current X scaling of the shell (as a percentage).
+- **Reference3**: The current Y scaling of the shell (as a percentage).
+- **Reference4**: The number of drinks today.
+- **Reference5**: The number of drinks in total.
+- **Reference6**: The current drink streak (number of drinks in a row).
+- **Reference7**: The highest ever drink streak (number of drinks in a row).
+- **Reference8**: The number of extra sips taken today.
+- **Reference9**: The number of extra sips in total.
+- **Reference10**: Whether Hydrate is minimized or not. 1 if true, 0 otherwise.

@@ -2,19 +2,19 @@
 
 **カテゴリ:** Plugin "Weather Station"
 
-Sends information about the Sun and Moon to all running ghosts. It must be invoked with `\![raiseplugin]`. An additional argument can specify which day's data to send: 0 is today, 1 is tomorrow, and 2 is the day after tomorrow. If no argument is given, today's data is sent.
+Sends information about the sun and moon to all open ghosts. Must be called with `\![raiseplugin]`. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.
 
-- **Reference0**: The day that the following information applies to. 0 is today, 1 is tomorrow, and 2 is the day after tomorrow.
-- **Reference1**: Sunrise time in 12-hour format, in the form ##:## \*M
-- **Reference2**: Sunset time in 12-hour format, in the form ##:## \*M
-- **Reference3**: Moonrise time in 12-hour format, in the form ##:## \*M
-- **Reference4**: Moonset time in 12-hour format, in the form ##:## \*M
-- **Reference5**: Sunrise time in 24-hour format, in the form ##:##
-- **Reference6**: Sunset time in 24-hour format, in the form ##:##
-- **Reference7**: Moonrise time in 24-hour format, in the form ##:##
-- **Reference8**: Moonset time in 24-hour format, in the form ##:##
-- **Reference9**: A string representing the lunar phase: one of "New Moon", "Waxing Crescent", "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".
-- **Reference10**: Lunar phase number. The values correspond to the following lunar phases:
+- **Reference0**: The day the following information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.
+- **Reference1**: Sunrise time, given as 12 hour time with the format ##:## \*M
+- **Reference2**: Sunset time, given as 12 hour time with the format ##:## \*M
+- **Reference3**: Moonrise time, given as 12 hour time with the format ##:## \*M
+- **Reference4**: Moonset time, given as 12 hour time with the format ##:## \*M
+- **Reference5**: Sunrise time, given as 24 hour time with the format ##:##
+- **Reference6**: Sunset time, given as 24 hour time with the format ##:##
+- **Reference7**: Moonrise time, given as 24 hour time with the format ##:##
+- **Reference8**: Moonset time, given as 24 hour time with the format ##:##
+- **Reference9**: Moon phase as a string. Can be "New Moon", "Waxing Crescent". "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".
+- **Reference10**: Moon phase number. Numbers correspond to the following phases.
   - 0 - New Moon
   - 1 - Waxing Crescent
   - 2 - First Quarter
@@ -23,4 +23,4 @@ Sends information about the Sun and Moon to all running ghosts. It must be invok
   - 5 - Waning Gibbous
   - 6 - Last Quarter
   - 7 - Waning Crescent
-- **Reference11**: The illuminated fraction of the Moon, expressed as a percentage.
+- **Reference11**: Moon illumination as a percentage.

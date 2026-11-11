@@ -1,10 +1,10 @@
-# 補充說明
+# 補充
 
-## 天氣狀況與狀況代碼一覽
+## 天氣狀況與狀況代碼清單
 
-狀況一覽可從[weatherapi 文件頁面](https://www.weatherapi.com/docs/)下載。此一覽也提供其他語言版本，但外掛傳送的資訊一律為英文。
+可從 [weatherapi 的文件頁面](https://www.weatherapi.com/docs/)下載狀況清單。此清單也提供其他語言版本，但 plugin 傳送的資訊一律為英文。
 
-- **1000**: Sunny（日落後會改為"Clear"）
+- **1000**: Sunny（日落後會改為 "Clear"）
 - **1003**: Partly cloudy
 - **1006**: Cloudy
 - **1009**: Overcast
@@ -53,19 +53,19 @@
 - **1279**: Patchy light snow with thunder
 - **1282**: Moderate or heavy snow with thunder
 
-## UK Defra 指數速查表
+## UK Defra 指數對照表
 
 | 指數 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 區分 | 低 | 低 | 低 | 中 | 中 | 中 | 高 | 高 | 高 | 非常高 |
-| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71以上 |
+| 等級 | 低 | 低 | 低 | 中 | 中 | 中 | 高 | 高 | 高 | 非常高 |
+| µgm-3 | 0-11 | 12-23 | 24-35 | 36-41 | 42-47 | 48-53 | 54-58 | 59-64 | 65-70 | 71 以上 |
 
 ## 錯誤原因
 
-- **no_location**: 使用者尚未新增位置資訊，或已將其刪除。
+- **no_location**: 使用者尚未新增位置資訊，或已將其移除。
 - **location_invalid**: 使用者的位置資訊無效，無法取得資料。
-- **api_quota_exceeded**: 超過每月100萬次免費 API 呼叫的上限。
-- **api_key_disabled**: 外掛開發者已停用 API 金鑰。請確認外掛是否有提供新金鑰的更新。
-- **api_internal_error**: API 傳回內部錯誤。
-- **no_api_response**: API 沒有回應、外掛使用的 SAORI 執行失敗，或使用者目前離線。
-- **other**: API 傳回的其他錯誤。reference1會包含 API 傳回的錯誤訊息。
+- **api_quota_exceeded**: 已超過每月 100 萬次免費 API 呼叫的上限。
+- **api_key_disabled**: plugin 開發者已停用 API 金鑰。請確認是否有提供新金鑰的 plugin 更新。
+- **api_internal_error**: API 回傳內部錯誤。
+- **no_api_response**: API 未回應、plugin 使用的 SAORI 執行失敗，或使用者處於離線狀態。
+- **other**: API 回傳的其他錯誤。reference1 會包含 API 回傳的錯誤訊息。

@@ -1,17 +1,17 @@
 # OnHydrateStatsNotify
 
-**カテゴリ:** ghost「Hydrate」
+**カテゴリ:** ghost“Hydrate”
 
-通知 Hydrate 当前的状态以及用户的水分摄入统计。
+通知Hydrate的当前状态和用户的饮水统计信息。
 
-- **Reference0**: Hydrate 当前使用的 shell 名称。
-- **Reference1**: 当前 dressup 列表。为二维数组，dressup 项之间用 0xFDEF 分隔，每个 dressup 的类别名称和部件名称用 0x01 分隔。（例: "Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea"）
-- **Reference2**: shell 当前 X 方向的缩放率（百分比）。
-- **Reference3**: shell 当前 Y 方向的缩放率（百分比）。
-- **Reference4**: 今天饮水的次数。
-- **Reference5**: 饮水次数总计。
-- **Reference6**: 当前连续记录（连续饮水的次数）。
-- **Reference7**: 迄今为止的最高连续记录（连续饮水的次数）。
-- **Reference8**: 今天额外喝一口的次数。
+- **Reference0**: Hydrate当前使用的shell名称。
+- **Reference1**: 当前dressup的列表。这是一个二维数组，dressup之间以0xFDEF分隔，每个dressup的类别名和部件名以0x01分隔。（例："Glass shape\[0x01\]Tall\[0xFDEF\]Drink\[0x01\]Tea"）
+- **Reference2**: shell当前的X方向缩放比例（百分比）。
+- **Reference3**: shell当前的Y方向缩放比例（百分比）。
+- **Reference4**: 今日饮水次数。
+- **Reference5**: 饮水总次数。
+- **Reference6**: 当前连续饮水记录（连续饮水的次数）。
+- **Reference7**: 历史最高连续饮水记录（连续饮水的次数）。
+- **Reference8**: 今日额外喝一口的次数。
 - **Reference9**: 额外喝一口的总次数。
-- **Reference10**: Hydrate 是否处于最小化状态。最小化时为 1，否则为 0。
+- **Reference10**: Hydrate是否最小化。最小化时为1，否则为0。

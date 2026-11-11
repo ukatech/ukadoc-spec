@@ -8,6 +8,8 @@
 
 誤りの指摘や、質問、意見、要望、情報提供などは[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)までお願いします。
 
+新しい仕様やイベントの追加・修正を提案したいが、GitHub や git の操作に慣れていない場合は、プルリクエストを作る必要はありません。[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)や[GitHub の Issue](https://github.com/ukatech/ukadoc-spec/issues)に、詳しい内容を投稿してもらえれば対応します。
+
 管理者: [UKADOC Project](https://github.com/ukatech/ukadoc-spec)
 
 リンク用のバナー:
