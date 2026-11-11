@@ -2,14 +2,14 @@
 
 **カテゴリ:** plugin“Spectre”
 
-打开plugin菜单时，如果此ghost尚未“校准”，则发生此事件。用户选择“重新校准”此ghost时也会发生。<br />
-返回特定响应即可完成握手，使ghost能够自动完成“校准”步骤。<br />
-需要返回的响应是以下标签：`\![raiseplugin,Spectre,OnCustomCalibrationConfirm]`<br />
-在此标签中发送包含表情数据的Reference。Reference的写法与OnSpectrePlugin.Surface事件中接收的相同，顺序不限。<br />
-*默认情况下，只发送ghost不提供的表情。* plugin假定未列出的表情均存在。<br />
-对于兼容表情较少的ghost，可以通过选项反转此行为，使plugin只使用列出的表情。<br />
-对于完全没有兼容表情的ghost，提供了专用Reference。<br />
-*ghost的shell无法准确表现的表情应作为此标签的Reference列出*（使用反转行为时则应省略），因为plugin会将此信息用于自身用途。
+如果此 ghost 尚未“校准”，打开 plugin 菜单时会发生此事件。用户选择“重新校准”此 ghost 时也会发生此事件。<br />
+返回特定响应后，即可完成握手，使 ghost 自动完成“校准”步骤。<br />
+所需的响应是以下标签：`\![raiseplugin,Spectre,OnCustomCalibrationConfirm]`<br />
+发送此标签时，应附带包含表情数据的 Reference。Reference 的写法与 OnSpectrePlugin.Surface 事件中收到的相同，顺序不限。<br />
+*默认情况下，只发送 ghost 未提供的表情。* plugin 会假定列表中未列出的表情均存在。<br />
+对于兼容表情较少的 ghost，可以使用选项反转此行为，使 plugin 只使用列表中列出的表情。<br />
+对于没有任何兼容表情的 ghost，有一个专用的 Reference。<br />
+*ghost 的 shell 无法准确表现的表情应列为此标签的 Reference*（使用反转行为时则应省略），因为 plugin 会将此信息用于自身目的。
 
-- **--option=include**: 只使用列出的surface（反转行为）。
-- **\_\_NO_EXPRESSIONS\_\_**: 不使用任何表情。必须作为reference0发送。
+- **--option=include**: 只使用列表中列出的 surface（反转行为）。
+- **\_\_NO_EXPRESSIONS\_\_**: 不使用任何表情。必须作为 reference0 发送。

@@ -20,5 +20,5 @@ Sends information about the overall forecast for a day to all open ghosts. Must 
 - **Reference13**: Chance that it will rain this day, as a percentage.
 - **Reference14**: "Will it snow this day", 1 if yes, 0 if no.
 - **Reference15**: Chance that it will snow this day, as a percentage.
-- **Reference16**: Average visiblity for the day, in miles.
-- **Reference17**: Average visiblity for the day, in kilometers.
+- **Reference16**: Average visibility for the day, in miles.
+- **Reference17**: Average visibility for the day, in kilometers.

@@ -13,7 +13,7 @@ Sends information about the sun and moon to all open ghosts. Must be called with
 - **Reference6**: Sunset time, given as 24 hour time with the format ##:##
 - **Reference7**: Moonrise time, given as 24 hour time with the format ##:##
 - **Reference8**: Moonset time, given as 24 hour time with the format ##:##
-- **Reference9**: Moon phase as a string. Can be "New Moon", "Waxing Crescent". "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".
+- **Reference9**: Moon phase as a string. Can be "New Moon", "Waxing Crescent", "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".
 - **Reference10**: Moon phase number. Numbers correspond to the following phases.
   - 0 - New Moon
   - 1 - Waxing Crescent

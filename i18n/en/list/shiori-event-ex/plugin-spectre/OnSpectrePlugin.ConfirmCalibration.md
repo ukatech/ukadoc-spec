@@ -2,7 +2,7 @@
 
 **カテゴリ:** Plugin “Spectre”
 
-Occurs upon opening the plugin menu if this ghost is not yet "calibrated". Also occurs any time the user chooses to "racalibrate" this ghost.<br />
+Occurs upon opening the plugin menu if this ghost is not yet "calibrated". Also occurs any time the user chooses to "recalibrate" this ghost.<br />
 Returning a specific response completes a handshake that allows the ghost to complete the "calibration" step automatically.<br />
 The required response is the following tag: `\![raiseplugin,Spectre,OnCustomCalibrationConfirm]`<br />
 Within this tag, references should be sent containing expression data. The references should be written the same as the ones received in the OnSpectrePlugin.Surface event, and may be written in any order.<br />

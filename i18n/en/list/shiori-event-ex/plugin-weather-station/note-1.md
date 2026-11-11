@@ -2,7 +2,7 @@
 
 ## Weather Condition & Code List
 
-A list of conditions can be downloaded from [weatherapi's documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but information from the plugin will always be sent in english.
+A list of conditions can be downloaded from [weatherapi's documentation page](https://www.weatherapi.com/docs/). This list is also available in other languages, but information from the plugin will always be sent in English.
 
 - **1000**: Sunny (If the sun is down, it will be "Clear" instead.)
 - **1003**: Partly cloudy
