@@ -8,6 +8,12 @@
 
 誤りの指摘や、質問、意見、要望、情報提供などは[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)までお願いします。
 
+管理者: [UKADOC Project](https://github.com/ukatech/ukadoc-spec)
+
+リンク用のバナー:
+
+![ukadocバナー](assets/image/ukadoc_banner1.png)
+
 このサイトの文章は、[クリエイティブ・コモンズ 表示 4.0 国際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)のもとで利用できます。ゴースト制作に限らず、引用・転載・改変はご自由にどうぞ。その際は「原著作者のクレジット」として、当プロジェクト（UKADOC project）の名前、またはこのサイトへのリンクを示してください。
 
 > オフラインで読むためのアーカイブとして、このサイトの HTML・CSS・JS・画像一式を固めた [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip) を用意しています。展開した `ukadoc-spec/index.html` から読めます。

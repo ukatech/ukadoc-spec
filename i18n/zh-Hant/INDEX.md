@@ -2,24 +2,30 @@
 
 ## 關於 ukadoc
 
-這是由[UKADOC project](https://github.com/ukatech/ukadoc-spec)編輯的文件集，該專案旨在彙整伺か相關規格文件。
+這是由[UKADOC project](https://github.com/ukatech/ukadoc-spec)編輯的文件集；該專案彙整伺か相關規格文件。
 
-*[SSP](http://ssp.shillest.net/)的相關文件在此被視為官方文件*。
+*[SSP](http://ssp.shillest.net/)的相關文件以此處的文件作為官方文件*。
 
-如要回報錯誤、提出問題、意見或需求，或提供資訊，請至[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)。
+如要指出錯誤、提問、提供意見或需求，或提供資訊等，請前往[ばぐとら研究所ToDo](http://ssp.shillest.net/bts/?project=misc&action=top)。
 
-本網站的文字可依據[創用 CC 姓名標示 4.0 國際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)使用。不限於 ghost 製作，歡迎自由引用、轉載及修改。使用時請標示「原著作者的姓名」，註明本專案（UKADOC project）的名稱，或提供本網站的連結。
+管理者：[UKADOC Project](https://github.com/ukatech/ukadoc-spec)
 
-> 本網站提供 [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip)，其中打包了網站的 HTML、CSS、JS 及圖片，供離線閱讀。解壓縮後即可從 `ukadoc-spec/index.html` 開始閱讀。
+連結用的橫幅：
+
+![ukadoc 橫幅](assets/image/ukadoc_banner1.png)
+
+本站文章採用[創用 CC 姓名標示 4.0 國際（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.ja)授權。不限於製作 ghost，歡迎自由引用、轉載及修改。使用時，請標示本專案（UKADOC project）的名稱或本站連結，作為「原著作者的署名」。
+
+> 本站提供將 HTML、CSS、JS 與圖片等所有檔案打包的 [ukadoc-spec-offline.zip](https://ukatech.shillest.net/ukadoc-spec/ukadoc-spec-offline.zip)，可作為離線閱讀用的封存檔。解壓縮後，可從 `ukadoc-spec/index.html` 閱讀。
 >
-> 我們也為 AI 代理程式準備了搜尋指南 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt)。各頁面的 Markdown 原稿可從與儲存庫相同路徑的 `.md` 檔案取得（例如：`https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）。
+> 本站也提供給 AI 代理程式使用的查找指南 [llms.txt](https://ukatech.shillest.net/ukadoc-spec/llms.txt)。各頁面的 Markdown 原稿可透過與儲存庫相同路徑的 `.md` 檔案取得（例如：`https://ukatech.shillest.net/ukadoc-spec/manual/ghost.md`）。
 
 ## 適用版本
 
 - [SSP](http://ssp.shillest.net/) 最新版（官方規格書）
 - [MATERIA](http://usada.sakura.vg/) period 583
 - [CROW](http://crow.aqrs.jp/) ver0.5.2（開發版）
-- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) 最新版
+- [ninix-kagari](http://github.com/Tatakinov/ninix-kagari) 最近版本
 
 ## 外部連結
 
@@ -30,33 +36,33 @@
 - [大八州.NET 非官方規格書](http://www.ooyashima.net/db/)
 - [駄でべwiki 規格備忘](http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2)
 
-## 如何閱讀 ukadoc
+## ukadoc 的閱讀方式
 
-側邊欄中的文章依照類別，分別介紹以下內容。
+側邊欄中的文章依分類分別介紹以下內容。
 
-- **檔案結構**：介紹構成各種伺か相關內容的檔案，以及目錄結構。
+- **檔案結構**：說明各種伺か相關內容所需的檔案，以及目錄結構。
 
-  可參閱此處以掌握所需及可用檔案的整體概況。
+  若想掌握需要或可使用哪些檔案的整體概況，可參閱此處。
 
-- **設定檔**：說明各種伺か相關內容所使用的個別設定檔如何撰寫。
+- **設定檔**：說明各種伺か相關內容所使用的個別設定檔，其記述方式。
 
-  撰寫各設定檔時可參閱此處。我們也盡可能提供範例。
+  編寫各設定檔時可參閱此處。也盡可能提供範例。
 
-- **Sakura Script**：說明用於指示 ghost 動作的「Sakura Script」各項指令。
+- **Sakura Script**：說明作為 ghost 動作指示的「Sakura Script」各項指令。
 
-  可參閱此處了解可使用哪些指令，以及如何使用。
+  可參閱此處，了解有哪些指令可用，以及如何使用。
 
-- **事件**：說明 baseware 通知 SHIORI、PLUGIN 等元件的各個事件 ID。
+- **事件**：說明 baseware 傳送給 SHIORI 或 PLUGIN 等的各個事件 ID。
 
-  製作 ghost、PLUGIN、SHIORI 等內容時，可參閱此處了解個別事件及其 Reference。
+  製作 ghost、PLUGIN 或 SHIORI 等內容時，若想了解個別事件或其 Reference，可參閱此處。
 
-- **規格**：彙整各種伺か相關內容所涉及的規格。
+- **規格**：彙整各種伺か相關內容涉及的各項規格。
 
-  主要介紹與 SHIORI、SAORI、baseware 等系統核心部分相關的資訊。
+  這裡主要是與 SHIORI、SAORI、baseware 等系統核心部分相關的資訊。
 
-- **HowTo**：介紹製作各種伺か相關內容的基本方法。
+- **HowTo**：介紹製作各種伺か相關內容所需的基礎方法。
 
-  不過，實際上很難涵蓋因應個別情況的 TIPS；如需更具體的資訊，請另行搜尋外部網站。
+  不過，實際上很難涵蓋適用於個別情況的 TIPS；若需要更具體的資訊，請另外搜尋外部網站。
 
 - **其他**：其他與 SSP 等 baseware 規格相關的備忘與補充文章。
 
@@ -88,7 +94,7 @@
   - [descript.txt](descript/plugin/index.md)
 - Headline
   - [descript.txt](descript/headline/index.md)
-- Install/Update
+- 安裝／更新
   - [install.txt](descript/install/index.md)
   - [delete.txt](descript/install/delete.txt/index.md)
   - [developer_options.txt](descript/install/developer_options.txt/index.md)
@@ -125,7 +131,7 @@
 
 - [建立散布用檔案](dev/nar.md)
 - [支援 network update](dev/update.md)
-- [製作 shell](dev/shell.md)
+- [建立 shell](dev/shell.md)
 - [設定 dressup](dev/bind.md)
 - [設定 owner draw 選單](dev/ownerdraw.md)
 - [排除錯誤訊息](dev/shell-error.md)

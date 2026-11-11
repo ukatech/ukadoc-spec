@@ -203,10 +203,8 @@ main table td { text-align: left; }
 	/* 枠の頁 */
 	section.baseframe { margin: 0; }
 	section.body { flex-direction: column; align-items: stretch; }
-	/* 上の帯のタイトル画像は、右半分の下（ロゴ）だけ */
-	#navigation_top { height: 56px; overflow: hidden; }
-	#navigation_top:before { display: none; }
-	#navigation_top:after { height: 56px; max-width: 100%; background-position: right bottom; }
+	/* 上の帯のタイトル画像は、幅に収まるよう縮める（ボタン群は次の行に回る） */
+	#navigation_top { max-width: calc(100% - 12px); background-size: contain; }
 	main { padding: 0 10px 1em; overflow-wrap: anywhere; }
 	main table { display: block; max-width: 100%; overflow-x: auto; }
 	main img { max-width: 100%; height: auto; }

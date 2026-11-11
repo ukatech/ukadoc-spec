@@ -1028,6 +1028,12 @@ def drawer(inner):
     return f'<div id="ukadoc-drawer" class="ukadoc-drawer ukadoc-drawer--wrap">\n{inner}\n</div>'
 
 
+# list / spec の頁の頭: 文書の題の代わりに、タイトル画像（枠の頁の上の帯と同じ title.png）を置き、トップページへのリンクにする。
+# 文書の題は、左のナビゲーションの見出しと <title> にある
+PAGE_TITLE_LOGO = ('<div id="page-title"><a href="index.html">'
+                   '<img src="image/title.png" width="281" height="55" alt="UKADOC Project"></a></div>')
+
+
 def page_anchor(h1):
     """頁の頭への内部リンク（まとめる前の頁の H1 の id）の受け皿"""
     return f'<a id="{htmllib.escape(h1.get("id"), quote=True)}"></a>' if h1.get('id') else ''
@@ -1049,7 +1055,7 @@ def render_page(md_rel, text, known):
             h1, nav_bar, cats = build_spec_page(md_rel, root)
         title = text_of(h1)
         out = head(title, 'list.css', page_script_tags(md_rel))
-        out += f'<body>\n\t{page_anchor(h1)}<h1 id="page-title">{inner_html(h1)}</h1>\n'
+        out += f'<body>\n\t{page_anchor(h1)}{PAGE_TITLE_LOGO}\n'
         out += drawer(menu + '\n' + serialize(nav_bar)) + '\n' + serialize(cats) + '\n'
         out += '</body>\n</html>\n'
     else:
@@ -1145,7 +1151,7 @@ def main():
         subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'prepare_site.py')] + ([f'--lang={LANG}'] if LANG else []), check=True)
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
-    shutil.copytree(STATIC, OUT)
+    shutil.copytree(STATIC, OUT, ignore=shutil.ignore_patterns('*.psp'))   # .psp は画像の作業ファイル（公開しない）
     # 原稿の画像（旧版の image/ に足す。同名は原稿を優先）
     img_src = os.path.join(ROOT, 'assets', 'image')
     if os.path.isdir(img_src):

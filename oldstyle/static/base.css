@@ -349,46 +349,6 @@ main.toppage > section section.caution table td{
 	vertical-align: middle;
 }
 
-footer {
-	clear: both;
-	padding: 5px;
-	background-color: #94de84;
-	font-size: small;
-}
-footer .author {
-	float: left;
-	color: #ffffff;
-	font-weight: bold;
-}
-footer .author a:link {
-	color: #ffffff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-footer .author a:visited {
-	color: #ffffff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-footer .author a:active {
-	color: #ffffff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-footer .author a:hover {
-	color: #ffffff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-footer .author a:active {
-	color: #ffffff;
-	font-weight: bold;
-	text-decoration: underline;
-}
-footer .banner {
-	margin-right: 1em;
-	text-align: right;
-}
 
 
 .passage {
@@ -413,31 +373,19 @@ footer .banner {
 
 
 /* 上の帯（旧 navigation.html。iframe をやめて頁に埋め込んだもの） */
+/* タイトル画像（title.png。文字だけの透過画像なので、緑の地は帯の側で塗る）とボタン群を、1 行に左から並べる */
 #navigation {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 	background-color: #94de84;
 }
-/* タイトル画像（750x130）を真ん中（375px）で割り、左半分を左端、右半分を右端に置く */
 #navigation_top {
-	position: relative;
-	height: 130px;
-}
-#navigation_top:before,
-#navigation_top:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	width: 375px;
-	height: 130px;
-	background-image: url(image/title2.gif);
-	background-repeat: no-repeat;
-}
-#navigation_top:before {
-	left: 0;
-	background-position: left top;
-}
-#navigation_top:after {
-	right: 0;
-	background-position: right top;
+	flex: none;
+	width: 281px;
+	height: 55px;
+	margin: 2px 12px 2px 6px;
+	background: url(image/title.png) no-repeat left center;
 }
 #navigation_body {
 	padding: 1px 3px;
