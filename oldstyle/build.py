@@ -55,6 +55,25 @@ LABELS = {
 }
 
 
+# 翻訳版で、その言語で書かれた原文そのもの（機械翻訳でない）の項目に付ける印（i18n/originals.json に登録したもの。prepare_site.py が見出しに orig-lang を付ける）
+ORIG_BADGE = {
+    'en': ('Original', 'Written in English by its author (not machine-translated)'),
+    'zh-Hant': ('原文', '由作者以繁體中文撰寫（非機器翻譯）'),
+    'zh': ('原文', '由作者以简体中文撰写（非机器翻译）'),
+}
+
+
+def orig_badge(head):
+    """項目の見出し head が原文の項目なら、その印の span（<span class="ukadoc-orig-badge">）。そうでなければ None"""
+    if 'orig-lang' not in classes(head) or LANG not in ORIG_BADGE:
+        return None
+    text, tip = ORIG_BADGE[LANG]
+    span = new('span', 'ukadoc-orig-badge')
+    span.set('title', tip)
+    span.text = text
+    return span
+
+
 def available_langs():
     """言語メニューに出す言語のコード。日本語 + i18n/<コード>/ があるもの（LANGS の順）"""
     return ['ja'] + [code for code, _ in LANGS if os.path.isdir(os.path.join(ROOT, 'i18n', code))]
@@ -582,6 +601,8 @@ def render_unit(unit, parent, nav_list, depth, first_in_cat):
             sec.set('id', unit.id)
             h = new('h1')
             set_inner(h, title_html(unit.head))
+            if (badge := orig_badge(unit.head)) is not None:
+                h.append(badge)
             sec.append(h)
             caption_content(unit, sec)
             parent.append(sec)
@@ -595,6 +616,8 @@ def render_unit(unit, parent, nav_list, depth, first_in_cat):
             dl.set('id', unit.id)
             dt = new('dt', 'entry')
             set_inner(dt, title_html(unit.head))
+            if (badge := orig_badge(unit.head)) is not None:
+                dt.append(badge)
             dd = new('dd', 'entry')
             deprecated = entry_content(unit, dd)
             if deprecated:
@@ -614,6 +637,8 @@ def render_unit(unit, parent, nav_list, depth, first_in_cat):
     cat.set('id', unit.id)
     h = new('h1')
     set_inner(h, title_html(unit.head))
+    if (badge := orig_badge(unit.head)) is not None:
+        h.append(badge)
     cat.append(h)
     for el in unit.body:
         if el.tag == 'hr':

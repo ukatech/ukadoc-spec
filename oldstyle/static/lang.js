@@ -12,10 +12,14 @@
     { code: 'zh-Hant', label: '繁體中文' },
     { code: 'zh', label: '简体中文' }
   ];
+  // text: 機械翻訳の注記。orig: 頁に「原文」の印（.ukadoc-orig-badge。その言語で書かれた原文そのもの）の項目があるときに続ける一文
   var NOTICE = {
-    en: { text: 'This page is a machine translation. For specification decisions, refer to the Japanese original.', link: 'View the Japanese original' },
-    'zh-Hant': { text: '本頁為機器翻譯。涉及規格的判斷，請以日文原文為準。', link: '查看日文原文' },
-    zh: { text: '本页为机器翻译。涉及规范的判断，请以日文原文为准。', link: '查看日文原文' }
+    en: { text: 'This page is a machine translation. For specification decisions, refer to the Japanese original.', link: 'View the Japanese original',
+          orig: 'Items marked “Original” were written in English by their authors and are not machine-translated.' },
+    'zh-Hant': { text: '本頁為機器翻譯。涉及規格的判斷，請以日文原文為準。', link: '查看日文原文',
+                 orig: '標示「原文」的項目由作者以繁體中文撰寫，並非機器翻譯。' },
+    zh: { text: '本页为机器翻译。涉及规范的判断，请以日文原文为准。', link: '查看日文原文',
+          orig: '标有“原文”的项目由作者以简体中文撰写，并非机器翻译。' }
   };
 
   var meta = document.querySelector('meta[name="ukadoc-langs"]');
@@ -40,6 +44,10 @@
     a.textContent = n.link;
     bar.appendChild(document.createTextNode(n.text + ' '));
     bar.appendChild(a);
+    if (n.orig && document.querySelector('.ukadoc-orig-badge')) {
+      bar.appendChild(document.createElement('br'));
+      bar.appendChild(document.createTextNode(n.orig));
+    }
     document.body.insertBefore(bar, document.body.firstChild);
   }
 

@@ -40,7 +40,7 @@ python scripts/check_source.py # 原稿の内部リンク（ファイル・見�
   - 引き出しになるのは `#ukadoc-drawer`。枠の頁は `nav.sidebar`（`templates/frame-open.html`）。list / spec の頁は、頁の上の目次の表（`menu-header.html`）と左のナビゲーション（`.navigation-bar`）を、`build.py` の `drawer()` が `div.ukadoc-drawer--wrap` で包んだもの。この包みは、広い画面では `display: contents` で、無いのと同じ
   - `menu.js` は head で同期に読み込み、`<html>` に `js-drawer` を付ける。CSS（`oldstyle.css` の末尾）はこのときだけメニューを畳むので、JavaScript が動かなければ、メニューは本文の上に出る
   - 右上の検索欄・言語ボタンと左上のメニューのボタンは固定なので、`body` の上に 40px 空ける。枠の頁の上の帯のタイトル画像は、幅に収まるよう縮め、ボタン群は次の行に回す。幅の広い表は表の中だけを横にスクロールし、画像は幅に収める
-- 言語切替は `lang.js`。全頁で右上に固定（検索欄の右横）。翻訳版の頁では、頭に機械翻訳の注記の帯（日本語の原文へのリンクつき）を出す
+- 言語切替は `lang.js`。全頁で右上に固定（検索欄の右横）。翻訳版の頁では、頭に機械翻訳の注記の帯（日本語の原文へのリンクつき）を出す。その言語が原文の項目（`i18n/originals.json` に登録したもの）には、見出しに「原文」の印（`.ukadoc-orig-badge`。`prepare_site.py` が見出しに付ける `orig-lang` を `build.py` の `ORIG_BADGE` が印にする）が付き、帯にも「印の付いた項目は原文」の一文が足される
 - 旧版にあった `?event_name=` からのリダイレクト（`index.html`）と、起動中ゴーストの対応状況を色分けする `ghost_status.js` は、移していない
 
 ## 公開とビルドの詳細（GitHub Pages）

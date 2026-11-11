@@ -18,6 +18,7 @@
 ここでするのは、頁ごとの判断（どの頁のどの段落か）を attr_list の class にして原稿の写しに付けるところまで。
 class や木の形を見て旧版の HTML の構造を作る処理は oldstyle/build.py が、コードブロックの色付けは site_ext の Pygments レキサーがする。
 """
+import json
 import os
 import posixpath
 import re
@@ -58,6 +59,24 @@ NOTE_FILE = re.compile(r'note-\d+\.md')   # 補足の項目の原稿のファイ
 NOTE_AFTER = re.compile(r'(.+)\.note(?:-(\d+))?\.md')   # 補足の項目の原稿のファイル名（<対象>.note.md。一覧に書かず、<対象>.md の直後に自動で入る。同じ対象に複数あれば .note-2.md …）
 TOP_HEADING = {2: 'top-section', 3: 'top-category'}   # トップの見出しの段 → 目印
 MANUAL_ITEM = re.compile(r'^(- \*\*(?:\\.|[^\\*])+\*\*)(: |:$|$)')   # 一番外の箇条書きの頭の太字の名前（\* と \\ は名前の字）
+
+def _load_originals():
+    """日本語以外が原文のファイルの登録簿（i18n/originals.json。キー → {"lang": 原文の言語, ...}）。無ければ空"""
+    try:
+        with open(os.path.join(ROOT, 'i18n', 'originals.json'), encoding='utf-8') as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+ORIGINALS = _load_originals()
+
+
+def is_original_here(rel):
+    """翻訳版（LANG）で、rel の本文が原文（その言語で書かれた原文そのもの）か。原文の言語の版でだけ真。
+    見出しに class orig-lang を付け、build.py が「原文」の印にする"""
+    return bool(LANG) and ORIGINALS.get(rel, {}).get('lang') == LANG and os.path.isfile(os.path.join(I18N, rel))
+
 
 ERRORS = []
 UNIT = {}      # 元ページ（ROOT からの相対パス）→ (まとめたページ, ページ内の id, {元の見出しの id: まとめたページでの id})
@@ -280,6 +299,8 @@ def shift_headings(text, rel, depth, is_index):
         role = ' .bundle-category' if is_index else ' .bundle-item'
         if NOTE_FILE.fullmatch(posixpath.basename(rel)) or NOTE_AFTER.fullmatch(posixpath.basename(rel)):
             role += ' .bundle-supplement'
+        if is_original_here(rel):
+            role += ' .orig-lang'
     lines = text.split('\n')
     heads = list(fence_free_headings(text))
     ids = list(olds.values())

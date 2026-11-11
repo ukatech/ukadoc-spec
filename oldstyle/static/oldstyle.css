@@ -157,6 +157,9 @@ main table td { text-align: left; }
 .ukadoc-mt-notice { margin: 0; padding: 6px 250px 6px 12px; border-bottom: 1px solid #e0c870; background: #fff8dc; color: #5a4a00; font-size: 12px; line-height: 1.5; }
 .ukadoc-mt-notice a { color: #7a5c00; }
 
+/* 翻訳版で、その言語で書かれた原文そのもの（機械翻訳でない）の項目に付ける印（build.py の ORIG_BADGE）。見出しの字の大きさや太さを引き継がない */
+.ukadoc-orig-badge { display: inline-block; margin-left: 0.8em; padding: 0 6px; border: 1px solid #4c8f3c; border-radius: 3px; background: #eaf7e5; color: #2f6b22; font-size: 11px; font-weight: normal; font-style: normal; line-height: 1.6; vertical-align: middle; white-space: nowrap; cursor: help; }
+
 /* サイト内検索の入力欄とドロップダウン（search.js）。全頁で右上、翻訳ボタンの左横に固定 */
 .ukadoc-search { position: fixed; top: 6px; right: 42px; z-index: 20; font-size: 12px; }
 .ukadoc-search__icon { position: absolute; top: 0; right: 6px; line-height: 28px; opacity: 0.35; pointer-events: none; }

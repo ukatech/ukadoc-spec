@@ -18,10 +18,11 @@
 - 訳文は構造を検査し（見出し・リンク先・コードブロック・表・箇条書き・構造の判定に使う日本語の語）、通らなければ
   理由を添えて 1 ファイルずつ訳し直す。それでも通らないファイルは置かない（日本語のまま出る）
 - 費用が --max-cost に達したら、新しいリクエストを出さずに止める（済んだ分は残る。再実行で続きから）
-- 英語が原文のファイル（i18n/source-en.json に登録）は、i18n/en/ に置いた英語原文を人の手で保つ。
-  en は訳さず・上書きせず、zh / zh-Hant は日本語の原稿を訳す（構造の検査の基準）が、同じリクエストに英語原文を
-  参照として添え、意味・語調・用語は英語から取らせる。日本語の原稿と英語原文のどちらかが変わると、
-  どちらも直し終えたあと `--sync-originals` で記録し直すまで警告が出る
+- 日本語以外が原文のファイル（i18n/originals.json に、原文の言語つきで登録）は、i18n/<原文の言語>/ に置いた原文を
+  人の手で保つ。原文の言語の版は訳さず・上書きせず、ほかの言語は日本語の原稿を訳す（構造の検査の基準）が、
+  同じリクエストに原文を参照として添え、意味・語調・用語は原文から取らせる。日本語の原稿と原文のどちらかが
+  変わると、どちらも直し終えたあと `--sync-originals` で記録し直すまで警告が出る。
+  サイトでは、原文の言語の版でその項目に「原文」の印が付く（oldstyle/build.py）
 """
 import argparse
 import concurrent.futures
@@ -42,8 +43,7 @@ I18N = os.path.join(ROOT, 'i18n')
 TEMPLATES = os.path.join(ROOT, 'oldstyle', 'templates')
 DIRS = ['manual', 'descript', 'list', 'spec', 'dev', 'memo']     # prepare_site.py の DIRS と同じ
 GLOSSARY = os.path.join(I18N, 'glossary.tsv')
-ORIGINALS = os.path.join(I18N, 'source-en.json')     # 英語が原文のファイル: {キー: {"en": 英語原文のハッシュ, "ja": 日本語の原稿のハッシュ}}（最後に両者を突き合わせた時点）
-REF_LANGS = ('zh', 'zh-Hant')                          # 英語原文を参照として添えて訳す言語
+ORIGINALS = os.path.join(I18N, 'originals.json')     # 日本語以外が原文のファイル: {キー: {"lang": 原文の言語, "orig": 原文のハッシュ, "ja": 日本語の原稿のハッシュ}}（ハッシュは最後に両者を突き合わせた時点）
 
 LANGS = {
     'en': 'English',
@@ -120,7 +120,8 @@ def manifest_path(lang):
 
 
 def load_originals():
-    """英語が原文のファイルの登録簿（キー → {"en": ..., "ja": ...}）。無ければ空"""
+    """日本語以外が原文のファイルの登録簿（キー → {"lang": 原文の言語, "orig": 原文のハッシュ, "ja": 日本語の原稿のハッシュ}）。
+    ハッシュは最後に両者を突き合わせた時点のもの。無ければ空"""
     try:
         with open(ORIGINALS, encoding='utf-8') as f:
             return json.load(f)
@@ -128,56 +129,65 @@ def load_originals():
         return {}
 
 
-def english_original(key):
-    """登録されたファイルの英語原文（i18n/en/ に置いたもの）。無ければ None"""
-    path = out_path('en', key)
+def is_original(lang, key, originals=None):
+    """lang の版では、key のファイルが原文（人の手で保つ、訳さない）か"""
+    return (originals if originals is not None else load_originals()).get(key, {}).get('lang') == lang
+
+
+def original_text(key, rec):
+    """登録されたファイルの原文（i18n/<原文の言語>/ に置いたもの）。無ければ None"""
+    path = out_path(rec.get('lang', 'en'), key)
     return normalize(read_text(path)) if os.path.isfile(path) else None
 
 
 def reference_texts(lang):
-    """lang の訳に参照として添える英語原文（キー → 英文）。REF_LANGS 以外の言語は空"""
-    if lang not in REF_LANGS:
-        return {}
-    return {k: t for k in load_originals() if (t := english_original(k))}
+    """lang の訳に参照として添える原文（キー → (原文の言語, 原文)）。lang 自身が原文の言語のものは訳さないので含めない"""
+    out = {}
+    for key, rec in load_originals().items():
+        text = original_text(key, rec)
+        if text and rec.get('lang') != lang:
+            out[key] = (rec.get('lang', 'en'), text)
+    return out
 
 
 def stamp(key, src, refs):
-    """翻訳済みの印（マニフェストに書くハッシュ）。英語原文を添えるファイルは、英語原文を直したときも訳し直しの対象になる"""
+    """翻訳済みの印（マニフェストに書くハッシュ）。原文を添えるファイルは、原文を直したときも訳し直しの対象になる"""
     ref = refs.get(key)
-    return sha(src + '\n<<<EN>>>\n' + ref) if ref else sha(src)
+    return sha(src + f'\n<<<ORIGINAL {ref[0]}>>>\n' + ref[1]) if ref else sha(src)
 
 
 def check_originals(all_targets):
-    """英語が原文のファイルについて、日本語の原稿と英語原文がずれていないかを警告する。ずれていた数を返す"""
+    """日本語以外が原文のファイルについて、日本語の原稿と原文がずれていないかを警告する。ずれていた数を返す"""
     stale = 0
     for key, rec in sorted(load_originals().items()):
         ja = all_targets.get(key)
-        en = english_original(key)
-        if ja is None or en is None:
-            print(f'警告: 英語原文の登録 {key} に、日本語の原稿か i18n/en/ の英語原文が無い')
+        orig = original_text(key, rec)
+        lang = rec.get('lang', 'en')
+        if ja is None or orig is None:
+            print(f'警告: 原文の登録 {key} に、日本語の原稿か i18n/{lang}/ の原文が無い')
             stale += 1
             continue
         ja_changed = rec.get('ja') != sha(normalize(read_text(ja)))
-        en_changed = rec.get('en') != sha(en)
-        if ja_changed or en_changed:
+        orig_changed = rec.get('orig') != sha(orig)
+        if ja_changed or orig_changed:
             stale += 1
-            what = '日本語の原稿と英語原文の両方が' if ja_changed and en_changed else ('日本語の原稿が' if ja_changed else '英語原文が')
-            todo = '英語原文（i18n/en/）' if not en_changed else ('日本語の原稿' if not ja_changed else '両方')
+            what = '日本語の原稿と原文の両方が' if ja_changed and orig_changed else ('日本語の原稿が' if ja_changed else '原文が')
+            todo = f'原文（i18n/{lang}/）' if not orig_changed else ('日本語の原稿' if not ja_changed else '両方')
             print(f'警告: {key}: {what}、最後に突き合わせたときから変わっている。{todo}を、もう一方に合わせて直してから --sync-originals で記録すること')
     return stale
 
 
 def sync_originals(all_targets):
-    """いまの日本語の原稿と英語原文を「突き合わせ済み」として記録する"""
+    """いまの日本語の原稿と原文を「突き合わせ済み」として記録する"""
     rec = {}
-    for key in sorted(load_originals()):
-        en = english_original(key)
-        if key in all_targets and en is not None:
-            rec[key] = {'en': sha(en), 'ja': sha(normalize(read_text(all_targets[key])))}
+    for key, old in sorted(load_originals().items()):
+        orig = original_text(key, old)
+        if key in all_targets and orig is not None:
+            rec[key] = {'lang': old.get('lang', 'en'), 'orig': sha(orig), 'ja': sha(normalize(read_text(all_targets[key])))}
     with open(ORIGINALS, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(rec, f, ensure_ascii=False, indent=1, sort_keys=True)
         f.write('\n')
-    print(f'英語が原文のファイル {len(rec)} 件を、突き合わせ済みとして記録した')
+    print(f'日本語以外が原文のファイル {len(rec)} 件を、突き合わせ済みとして記録した')
 
 
 def load_manifest(lang):
@@ -407,28 +417,29 @@ STRUCTURE MUST BE PRESERVED EXACTLY (an automatic checker compares it; a failed 
 
 STYLE: Translate Japanese 「だ/である」 prose into plain declarative sentences. Keep terminology consistent across files. "Sakura Script" (さくらスクリプト) is a proper name.
 """
-    if lang in REF_LANGS:
+    if REFS:      # 日本語以外で書かれた原文のあるファイルがある
         text += """
-ENGLISH ORIGINALS: a few files are followed by a block
-<<<REFERENCE path>>>
-...English text...
+ORIGINAL-LANGUAGE TEXTS: a few files are followed by a block
+<<<REFERENCE path (original language: English)>>>
+...the original text...
 <<<END>>>
-The Japanese file was translated from that English text, which the original author wrote. The Japanese file is the structural authority (the checker compares your output with it, line by line), but the English text is the authority for meaning, tone and terminology. Translate the Japanese file into the target language so that it reads as a faithful translation of the English original: where the Japanese is vague or has lost a nuance, follow the English; keep the author's own wording for values and labels that the plugin or ghost really sends (for example moon phase names and weather condition names stay as in the file). Never output a REFERENCE block; return only the FILE blocks.
+The Japanese file was translated from that original text, which the original author wrote in the language named in the block header. The Japanese file is the structural authority (the checker compares your output with it, line by line), but the original text is the authority for meaning, tone and terminology. Translate the Japanese file into the target language so that it reads as a faithful translation of the original: where the Japanese is vague or has lost a nuance, follow the original; keep the author's own wording for values and labels that the plugin or ghost really sends (for example moon phase names and weather condition names stay as in the file). Never output a REFERENCE block; return only the FILE blocks.
 """
     if glossary:
         text += '\nGLOSSARY (use exactly these renderings):\n' + '\n'.join(glossary) + '\n'
     return text
 
 
-REFS = {}      # 訳している言語で、日本語の原稿に添える英語原文（run_lang が設定する）
+REFS = {}      # 訳している言語で、日本語の原稿に添える原文（キー → (原文の言語, 原文)。run_lang が設定する）
 
 
 def user_message(files, problems=None):
     def block(key, src):
         text = f'<<<FILE {key}>>>\n{src.rstrip(chr(10))}\n<<<END>>>'
-        ref = REFS.get(key.split('#')[0])         # 分割した塊（key#1 など）にも、ファイル全体の英語原文を添える
+        base = key.split('#')[0]                  # 分割した塊（key#1 など）にも、ファイル全体の原文を添える
+        ref = REFS.get(base)
         if ref:
-            text += f'\n<<<REFERENCE {key.split("#")[0]}>>>\n{ref.rstrip(chr(10))}\n<<<END>>>'
+            text += f'\n<<<REFERENCE {base} (original language: {LANGS.get(ref[0], ref[0])})>>>\n{ref[1].rstrip(chr(10))}\n<<<END>>>'
         return text
     body = '\n'.join(block(key, src) for key, src in files)
     if problems:
@@ -654,8 +665,8 @@ def recheck(lang, all_targets, manifest):
         problems = check(normalize(read_text(path)), read_text(out_file), key, True, lang)
         if problems:
             bad += 1
-            if lang == 'en' and key in load_originals():     # 英語原文は訳し直さない（手で直す）
-                print(f'  [{lang}] {key}（英語原文。手で直すこと）: {"; ".join(problems)}')
+            if is_original(lang, key):     # 原文は訳し直さない（手で直す）
+                print(f'  [{lang}] {key}（原文。手で直すこと）: {"; ".join(problems)}')
                 continue
             manifest.pop(key, None)
             print(f'  [{lang}] {key}: {"; ".join(problems)}')
@@ -667,14 +678,14 @@ def run_lang(cfg, budget, lang, args, all_targets):
     global REFS
     manifest = load_manifest(lang)
     REFS = reference_texts(lang)
-    originals = load_originals() if lang == 'en' else {}      # 英語が原文のファイルは、en では訳さず・上書きしない
+    originals = load_originals()      # この言語が原文のファイルは、訳さず・上書きしない
     if args.recheck:
         recheck(lang, all_targets, manifest)
     todo = []
     for key, path in all_targets.items():
         if args.only and not any(o in key for o in args.only):
             continue
-        if key in originals:
+        if is_original(lang, key, originals):
             continue
         src = normalize(read_text(path))
         if args.force or manifest.get(key) != stamp(key, src, REFS) or not os.path.isfile(out_path(lang, key)):
@@ -734,7 +745,7 @@ def main():
     ap.add_argument('--limit', type=int, help='先頭からこの数のファイルだけ')
     ap.add_argument('--force', action='store_true', help='ハッシュが同じでも訳し直す')
     ap.add_argument('--recheck', action='store_true', help='書き出し済みの訳文に今の検査を当て直し、通らないものを訳し直しの対象に戻す')
-    ap.add_argument('--sync-originals', action='store_true', help='英語が原文のファイルについて、いまの日本語の原稿と英語原文を「突き合わせ済み」として記録する（翻訳はしない）')
+    ap.add_argument('--sync-originals', action='store_true', help='日本語以外が原文のファイルについて、いまの日本語の原稿と原文を「突き合わせ済み」として記録する（翻訳はしない）')
     ap.add_argument('--dry-run', action='store_true', help='API を呼ばず、対象と費用の目安だけ出す')
     ap.add_argument('--jobs', type=int, default=8, help='並列のリクエスト数（既定 8）')
     ap.add_argument('--max-cost', type=float, default=10.0, help='費用の上限（米ドル。既定 10）')
