@@ -2,9 +2,10 @@
 
 **カテゴリ:** 事件指令
 
-傳送指定的事件給 plugin。<br />
-將 plugin 名稱設為 random，即可隨機選擇。<br />
-設為 lastinstalled，則會啟動最後安裝的 plugin。
+向 plugin 傳送指定的事件。<br />
+將 plugin 名稱設為 random 時，隨機選擇。<br />
+\[SSP 2.9.35\] 也可指定 plugin 的 [UUID](../../propertysystem/property-system/general-property/uuid.md)。當 ID 或名稱不符合時會進行比對。<br />
+設為 lastinstalled 時，啟動最後安裝的 plugin。
 
 **対応:** SSP
 

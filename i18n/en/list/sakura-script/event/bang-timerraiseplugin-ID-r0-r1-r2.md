@@ -2,10 +2,11 @@
 
 **カテゴリ:** Event command
 
-Sends the specified event to a plugin after the specified wait time (in milliseconds).<br />
-For "whether to repeat," specify 0 to trigger the event repeatedly at the specified interval, or 1 or greater to trigger it only once.<br />
-Events with different names can each be run independently, but repeated runs of an event with the same name overwrite the previous one.<br />
-To cancel, run Sakura Script with the same event name and a time of 0.
+Sends the specified event to a plugin after a specified delay in milliseconds.<br />
+For "whether to repeat", 0 causes the event to recur at the specified interval, while 1 or greater causes it to occur only once.<br />
+Events with different names can be scheduled independently, but repeatedly scheduling an event with the same name overwrites the previous schedule.<br />
+Running Sakura Script with the same event name and a time of 0 cancels the schedule.<br />
+\[SSP 2.9.35\] The plugin's [UUID](../../propertysystem/property-system/general-property/uuid.md) can also be specified (as with [raiseplugin](bang-raiseplugin-ID-r0-r1-r2.md)). The destination is resolved each time the event is sent, not when the timer is set.
 
 **対応:** SSP
 

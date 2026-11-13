@@ -4,6 +4,7 @@
 
 プラグインに指定したイベントを送信する。<br />
 プラグイン名をrandomにするとランダムに選択。<br />
+\[SSP 2.9.35\] プラグインの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる。IDまたは名前に一致しなかったときに照合する。<br />
 lastinstalledにすると最後にインストールされたプラグインを開始。
 
 **対応:** SSP

@@ -1,8 +1,8 @@
 # `\![notifyother,ゴースト名,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
-Like raiseother, the only difference is that values returned by this notification event are not applied by SSP.
+This is the same as raiseother, except that any value returned by the notification event is not reflected in SSP. A UUID can also be specified instead of a ghost name, as with raiseother.
 
 **対応:** SSP
 

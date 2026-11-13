@@ -2,7 +2,7 @@
 
 **カテゴリ:** 事件命令
 
-与 timerraiseother 相同，区别仅在于，即使此通知事件返回了某个值，该值也不会应用到 SSP。
+与timerraiseother相同，唯一区别是此通知事件返回的任何值都不会反映到SSP中。同样可以指定UUID代替ghost名称。
 
 **対応:** SSP
 

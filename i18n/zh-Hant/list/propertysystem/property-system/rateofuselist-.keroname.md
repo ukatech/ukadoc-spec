@@ -1,7 +1,8 @@
-# rateofuselist(名前).keroname
+# rateofuselist(名稱).keroname
 
 **カテゴリ:** 屬性系統
 
-該 ghost 的搭檔一側的名稱。
+該 ghost 的搭檔側名稱。<br />
+\[SSP 2.9.35\] 括號內也可以用 ghost 的 [UUID](general-property/uuid.md) 代替名稱。若有多個 ghost 的 UUID 相同，則採用有紀錄的項目。
 
 **対応:** SSP

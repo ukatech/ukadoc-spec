@@ -2,13 +2,14 @@
 
 **カテゴリ:** Event command
 
-Notifies another running ghost of an event after the specified wait time (in milliseconds).<br />
-For "whether to repeat," specify 0 to trigger the event repeatedly at the specified interval, or 1 or greater to trigger it only once.<br />
+Notifies other running ghosts of an event after a specified delay in milliseconds.<br />
+For "whether to repeat", 0 causes the event to recur at the specified interval, while 1 or greater causes it to occur only once.<br />
 The sixth and subsequent arguments are references.<br />
-Events with different names can each be run independently, but repeated runs of an event with the same name overwrite the previous one.<br />
-To cancel, run Sakura Script with the same event name and a time of 0.<br />
-Set the ghost name to \_\_SYSTEM_ALL_GHOST\_\_ to notify all running ghosts.<br />
-Multiple ghost names can be specified, separated by byte value 1.
+Events with different names can be scheduled independently, but repeatedly scheduling an event with the same name overwrites the previous schedule.<br />
+Running Sakura Script with the same event name and a time of 0 cancels the schedule.<br />
+If the ghost name is \_\_SYSTEM_ALL_GHOST\_\_, all running ghosts are notified.<br />
+Multiple ghost names can be specified, separated by byte value 1.<br />
+\[SSP 2.9.35\] The [UUID](../../propertysystem/property-system/general-property/uuid.md) of a running ghost can also be specified instead of its name (as with [raiseother](bang-raiseother-r0-r1-r2.md)). The destination is resolved each time the event is sent, not when the timer is set.
 
 **対応:** SSP
 

@@ -1,7 +1,8 @@
-# rateofuselist(Name).boottime
+# rateofuselist(name).boottime
 
-**カテゴリ:** Property System
+**カテゴリ:** Property system
 
-Number of times that ghost has been started.
+The number of times the ghost has been started.<br />
+\[SSP 2.9.35\] The ghost's [UUID](general-property/uuid.md) can also be specified in parentheses instead of its name. If multiple ghosts have the same UUID, the one with records is used.
 
 **対応:** SSP

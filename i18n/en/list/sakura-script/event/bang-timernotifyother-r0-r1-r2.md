@@ -1,8 +1,8 @@
 # `\![timernotifyother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
-Like timerraiseother, except that any values returned by this notification event are not applied to SSP.
+This is the same as timerraiseother, except that any value returned by the notification event is not reflected in SSP. A UUID can also be specified instead of the ghost name, as with timerraiseother.
 
 **対応:** SSP
 

@@ -1,7 +1,8 @@
-# rateofuselist(名前).percentweekly
+# rateofuselist(名称).percentweekly
 
 **カテゴリ:** 属性系统
 
-该 ghost 的启动时间占比。（百分比，小数，周报版，统计今日至7天前的数据）
+该ghost的运行时间占比。（百分比，小数，周报版，汇总从今天到7天前的数据）<br />
+\[SSP 2.9.35\] 括号中也可以填写ghost的[UUID](general-property/uuid.md)代替名称。如果有多个相同UUID的ghost，则采用有记录的那个。
 
 **対応:** SSP 2.8.54

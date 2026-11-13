@@ -9,6 +9,8 @@
 バルーン名をlastinstalledにすると最後にインストールしたバルーンに切り替え。ただしSSPを一度終了した場合は無効。<br />
 バルーン名をrandomにするとランダムに切り替え。
 
+\[SSP 2.9.35\] バルーン名の代わりに、バルーンの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる。
+
 **対応:** SSP / Ninix
 
 ## 記述例

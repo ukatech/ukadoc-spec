@@ -2,7 +2,7 @@
 
 **カテゴリ:** 事件命令
 
-与timerraiseplugin相同，区别仅在于此通知事件即使返回了某个值，也不会反映到SSP中。
+与timerraiseplugin相同，唯一区别是即使此通知事件返回了值，也不会反映到SSP中。同样可以指定UUID。
 
 **対応:** SSP
 

@@ -1,10 +1,11 @@
 # `\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
-Send the specified event to a plugin.<br />
+Sends the specified event to a plugin.<br />
 Set the plugin name to random to select one at random.<br />
-Set it to lastinstalled to start the last-installed plugin.
+\[SSP 2.9.35\] The plugin's [UUID](../../propertysystem/property-system/general-property/uuid.md) can also be specified. It is matched if there is no match against an ID or name.<br />
+Set it to lastinstalled to start the last installed plugin.
 
 **対応:** SSP
 

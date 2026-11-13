@@ -2,7 +2,7 @@
 
 **カテゴリ:** Event command
 
-Same as timerraiseplugin, except that any values returned by this notification event are not applied by SSP.
+Same as timerraiseplugin, except that any value returned by this notification event is not reflected in SSP. A UUID can also be specified.
 
 **対応:** SSP
 

@@ -1,7 +1,8 @@
-# rateofuselist(Name).bootminute
+# rateofuselist(name).bootminute
 
-**カテゴリ:** Property System
+**カテゴリ:** Property system
 
-The amount of time that ghost has been running (in minutes).
+The ghost's running time, in minutes.<br />
+\[SSP 2.9.35\] The ghost's [UUID](general-property/uuid.md) can also be specified in parentheses instead of its name. If multiple ghosts have the same UUID, the one with records is used.
 
 **対応:** SSP

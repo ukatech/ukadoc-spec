@@ -18,4 +18,12 @@ metainfo フォルダは読みに行かないので、`jump_to.txt` による移
 
 [ghostlist](../ghostlist.md)・[balloonlist](../balloonlist.md)・[activeghostlist](../activeghostlist.md)の括弧の中には、名前の代わりにこのUUIDを書ける。SSTPの宛先指定にも使える([ReceiverGhostUUID](../../../../spec/sstp/req_res.md)、[IfGhost](../../../../spec/sstp/method_send.md))。
 
+ゴースト・バルーン・シェル・プラグインの名前を受け取るさくらスクリプト(`\![change,ghost,...]`、`\![call,ghost,...]`、`\![change,shell,...]`、`\![change,balloon,...]`、`\![raiseother,...]`、`\![notifyother,...]`、`\![raiseplugin,...]`、`\![notifyplugin,...]`、`\![timerraiseother,...]`、`\![timernotifyother,...]`、`\![timerraiseplugin,...]`、`\![timernotifyplugin,...]`)と、起動オプションの`--ghost`でも、名前の代わりにUUIDを書ける。名前などと一致しないときに、UUIDの形(base64の22文字と`==`)のものだけを照合する。
+
+プロパティシステムでは、`ghostlist`・`balloonlist`・`activeghostlist`・`pluginlist`のほか、`history.ghost`・`history.balloon`・`history.plugin`と`rateofuselist`の括弧の中にも書ける。履歴と利用統計は、内部では名前やパスで記録していて、UUIDで記録しているわけではない(保存の形式は変わらない)。UUIDで引くと、導入されているゴーストなどに引き当ててから、その記録を引く。
+
+ゴーストのdescript.txtの`balloon`・`recommended.balloon`と、バルーンのdescript.txtの`recommended.ghost`にも、名前の代わりにUUIDを書ける。
+
+プラグインには、descript.txtの`id`(プラグイン自身が決めるGUID。これまでどおり、IDとして一致を見る)と、この`uuid`の両方がある。別のものであり、`id`は`uuid`に置き換わらない。
+
 **対応:** SSP 2.9.35

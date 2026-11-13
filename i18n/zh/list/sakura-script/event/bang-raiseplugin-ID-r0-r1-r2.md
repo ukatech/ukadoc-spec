@@ -2,9 +2,10 @@
 
 **カテゴリ:** 事件命令
 
-向插件发送指定的事件。<br />
-将插件名称设为random时，会随机选择插件。<br />
-设为lastinstalled时，会启动最后安装的插件。
+向 plugin 发送指定的事件。<br />
+将 plugin 名称设为 random 时，随机选择。<br />
+\[SSP 2.9.35\] 也可以指定 plugin 的 [UUID](../../propertysystem/property-system/general-property/uuid.md)。当 ID 或名称不匹配时进行匹配。<br />
+设为 lastinstalled 时，启动最后安装的 plugin。
 
 **対応:** SSP
 

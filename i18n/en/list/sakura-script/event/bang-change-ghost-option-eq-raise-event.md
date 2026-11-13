@@ -1,18 +1,20 @@
 # `\![change,ghost,ゴースト名(,--option=raise-event)]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
 Switches to the specified ghost.<br />
-If the ghost name is random, switches randomly (same as `\+`).<br />
-If the ghost name is sequential, switches sequentially (same as `\_+`).<br />
-After execution, if the specified ghost is not present, the command is ignored.
+Set the ghost name to random for a random change (equivalent to `\+`).<br />
+Set it to sequential for a sequential change (equivalent to `\_+`).<br />
+If the specified ghost does not exist, the command is ignored.
 
-If the ghost name is lastinstalled, switches to the last ghost installed. However, this is invalid if SSP has been exited once.<br />
-If the ghost name is random, switches randomly.
+Set the ghost name to lastinstalled to switch to the last installed ghost. This is invalid if SSP has been shut down since installation.<br />
+Set the ghost name to random to switch to a random ghost.
 
-In SSP 2.4.74 and later, specifying --option=raise-event after the ghost name causes [OnGhostChanging](../../shiori-event/boot-close-change/OnGhostChanging.md) to be notified, just as when switching ghosts from the menu.<br />
-Note that in this case, switching can also be canceled by breaking the balloon (normally by double-clicking).<br />
-If this option is not specified, no notification is sent.
+\[SSP 2.9.35\] The ghost's [UUID](../../propertysystem/property-system/general-property/uuid.md) can also be specified instead of its name, avoiding confusion between ghosts with the same name.
+
+In SSP 2.4.74 and later, adding --option=raise-event after the ghost name notifies [OnGhostChanging](../../shiori-event/boot-close-change/OnGhostChanging.md), as when switching from the menu.<br />
+In this case, the operation can also be canceled with a balloon break (normally a double-click).<br />
+If omitted, the event is not notified.
 
 **対応:** Materia / SSP / CROW / Ninix
 

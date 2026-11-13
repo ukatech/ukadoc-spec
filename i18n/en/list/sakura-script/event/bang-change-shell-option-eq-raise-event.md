@@ -1,17 +1,19 @@
 # `\![change,shell,シェル名(,--option=raise-event)]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
-Switches to that shell.<br />
-If the specified shell does not exist, the command is ignored.<br />
+Switches to the specified shell.<br />
+If the shell does not exist, the command is ignored.<br />
 After the change, the SHIORI event [OnShellChanged](../../shiori-event/boot-close-change/OnShellChanged.md) is notified.
 
-If the shell name is lastinstalled, switches to the ghost most recently installed. However, this does not work if SSP has been exited in the meantime.<br />
-If the shell name is random, switches to a random shell.
+Set the shell name to lastinstalled to switch to the last installed ghost. This is invalid if SSP has been shut down since installation.<br />
+Set the shell name to random to switch to a random shell.
 
-In SSP 2.4.74 and later, appending --option=raise-event after the shell name causes [OnShellChanging](../../shiori-event/boot-close-change/OnShellChanging.md) to be notified, just as when switching shells from the menu.<br />
-Note that in this case, the switch can also be canceled using a balloon break (usually a double-click).<br />
-If this option is not specified, no event is sent.
+\[SSP 2.9.35\] The shell's [UUID](../../propertysystem/property-system/general-property/uuid.md) can also be specified instead of its name.
+
+In SSP 2.4.74 and later, adding --option=raise-event after the shell name notifies [OnShellChanging](../../shiori-event/boot-close-change/OnShellChanging.md), as when switching from the menu.<br />
+In this case, the operation can also be canceled with a balloon break (normally a double-click).<br />
+If omitted, the event is not notified.
 
 **対応:** SSP / CROW / Ninix
 

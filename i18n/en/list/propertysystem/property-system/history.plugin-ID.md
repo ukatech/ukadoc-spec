@@ -1,7 +1,8 @@
-# history.plugin(Plugin name/path/ID).Generic property name
+# history.plugin(plugin name/path/ID).general property name
 
-**カテゴリ:** Property System
+**カテゴリ:** Property system
 
-Retrieve information about a recently used plugin by its name, path, or ID.
+Retrieves information using the name, path, or ID of a recently used plugin.<br />
+\[SSP 2.9.35\] The plugin's [UUID](general-property/uuid.md) can also be specified.
 
 **対応:** SSP

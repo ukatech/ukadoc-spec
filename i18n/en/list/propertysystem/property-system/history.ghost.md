@@ -1,7 +1,8 @@
-# history.ghost(Ghost name/path).Generic property name
+# history.ghost(ghost name/path).general property name
 
-**カテゴリ:** Property System
+**カテゴリ:** Property system
 
-Retrieve information about a recently used ghost by its name or path.
+Retrieves information using the name or path of a recently used ghost.<br />
+\[SSP 2.9.35\] The ghost's [UUID](general-property/uuid.md) can also be specified.
 
 **対応:** SSP

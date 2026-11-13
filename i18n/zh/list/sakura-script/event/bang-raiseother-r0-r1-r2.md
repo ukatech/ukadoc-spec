@@ -2,10 +2,11 @@
 
 **カテゴリ:** 事件命令
 
-向其他正在运行的ghost发送事件通知。<br />
-第4个及之后的参数是reference。<br />
-将ghost名称设为「\_\_SYSTEM_ALL_GHOST\_\_」时，会向所有正在运行的ghost发送通知。<br />
-仅可直接指定ghost名称；可以使用字节值1作为分隔符指定多个名称。
+向运行中的其他 ghost 通知事件。<br />
+第 4 个及之后的参数为 reference。<br />
+将 ghost 名称设为“\_\_SYSTEM_ALL_GHOST\_\_”时，向所有运行中的 ghost 通知。<br />
+ghost 名称只能直接指定，可以用字节值 1 分隔来指定多个名称。<br />
+\[SSP 2.9.35\] 也可以指定运行中的 ghost 的 [UUID](../../propertysystem/property-system/general-property/uuid.md) 来代替 ghost 名称。如果多个相同 UUID 的 ghost 正在运行，则通知正在显示的 ghost；如果没有，则通知运行中的 ghost 列表中的第一个。
 
 **対応:** SSP / Ninix
 

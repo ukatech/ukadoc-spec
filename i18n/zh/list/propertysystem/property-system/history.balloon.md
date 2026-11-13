@@ -1,7 +1,8 @@
-# history.balloon(气球名/路径).通用属性名
+# history.balloon(balloon名称/路径).通用属性名
 
 **カテゴリ:** 属性系统
 
-根据最近使用过的气球名称或路径获取信息。
+根据最近使用的balloon的名称或路径获取信息。<br />
+\[SSP 2.9.35\] 也可以通过balloon的[UUID](general-property/uuid.md)指定。
 
 **対応:** SSP

@@ -1,8 +1,8 @@
 # `\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]`
 
-**カテゴリ:** Event command
+**カテゴリ:** Event commands
 
-As with raiseplugin, the only difference is that any values returned by this notification event are not reflected in SSP.
+This is the same as raiseplugin, except that any value returned by the notification event is not reflected in SSP. A UUID can also be specified, as with raiseplugin.
 
 **対応:** SSP
 
