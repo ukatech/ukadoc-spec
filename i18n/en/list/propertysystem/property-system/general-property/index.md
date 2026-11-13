@@ -1,4 +1,4 @@
-# General Property Names
+# General property names
 
 ## 一覧
 
@@ -12,6 +12,10 @@
 - [update_result](update_result.md)
 - [update_time](update_time.md)
 - [homeurl](homeurl.md)
+- [metainfo](metainfo.md)
+- [githubrepo](githubrepo.md)
+- [uuid_base](uuid_base.md)
+- [uuid](uuid.md)
 - [username](username.md)
 - [shiori.variable name](shiori.md)
 - [index](index-item.md)

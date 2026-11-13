@@ -2,15 +2,18 @@
 
 ## 一覧
 
-- [descript.txt（Balloon 的）](introduction_descript.txt.md)
+- [descript.txt（balloon 的）](introduction_descript.txt.md)
 - [charset,字元編碼](charset.md)
 - [name,balloon 名稱](name.md)
-- [type,種類](type.md)
+- [type,類型](type.md)
 - [craftman,作者名稱](craftman.md)
 - [craftmanw,作者名稱](craftmanw.md)
 - [id,ID 名稱](id.md)
 - [craftmanurl,URL](craftmanurl.md)
 - [homeurl,URL](homeurl.md)
+- [metainfo,URL](metainfo.md)
+- [githubrepo,URL](githubrepo.md)
+- [uuid_base,字串](uuid_base.md)
 - [dpi,建議 DPI](dpi.md)
 - [readme,檔案名稱](readme.md)
 - [readme.charset,字元編碼](readme.charset.md)

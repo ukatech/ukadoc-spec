@@ -1,4 +1,4 @@
-# 一般屬性名稱
+# 通用屬性名稱
 
 ## 一覧
 
@@ -12,6 +12,10 @@
 - [update_result](update_result.md)
 - [update_time](update_time.md)
 - [homeurl](homeurl.md)
+- [metainfo](metainfo.md)
+- [githubrepo](githubrepo.md)
+- [uuid_base](uuid_base.md)
+- [uuid](uuid.md)
 - [username](username.md)
 - [shiori.變數名稱](shiori.md)
 - [index](index-item.md)
