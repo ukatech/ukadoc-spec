@@ -57,6 +57,11 @@ Option: notranslate
 - **ReceiverGhostName \[SSP 2.5.57\]**: (Socket)SSTP限定で、requestを送るべきゴーストの`\0`名を示す。<br />
   これを指定すると、処理すべきゴーストが固定され、Socket経由でもDirectSSTPと同じ処理が可能になる。HWndの名前版。<br />
   見つからなかった場合は、404 Not Foundで即時エラー終了する。
+- **ReceiverGhostUUID \[SSP 2.9.35\]**: (Socket)SSTP限定で、requestを送るべき、起動中のゴーストの[UUID](../../list/propertysystem/property-system/general-property/uuid.md)を示す。<br />
+  これを指定すると、処理すべきゴーストが固定され、Socket経由でもDirectSSTPと同じ処理が可能になる。HWndのUUID版で、名前が同じゴーストの取り違えを避けられる。<br />
+  同じUUIDのゴーストが複数起動している場合は、表示中のゴースト、なければ起動中のゴーストの並びの先頭のものが選ばれる。<br />
+  起動中のゴーストにUUIDが一致するものがなければ、404 Not Foundで即時エラー終了する(UUIDの形をしていない値も同じ)。<br />
+  ReceiverGhostHWnd・ReceiverGhostUUID・ReceiverGhostNameを複数指定した場合は、この順に評価し、最初に見つかったゴーストを使う。
 
 ## response
 

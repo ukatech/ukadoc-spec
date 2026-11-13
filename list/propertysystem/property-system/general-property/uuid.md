@@ -16,4 +16,6 @@
 metainfo フォルダは読みに行かないので、`jump_to.txt` による移転や、過去の UUID は反映されない。<br />
 `uuidvalue` が空になる(名前もない)ときは、取得に失敗する。
 
+[ghostlist](../ghostlist.md)・[balloonlist](../balloonlist.md)・[activeghostlist](../activeghostlist.md)の括弧の中には、名前の代わりにこのUUIDを書ける。SSTPの宛先指定にも使える([ReceiverGhostUUID](../../../../spec/sstp/req_res.md)、[IfGhost](../../../../spec/sstp/method_send.md))。
+
 **対応:** SSP 2.9.35

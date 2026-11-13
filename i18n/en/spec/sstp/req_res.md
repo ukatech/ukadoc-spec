@@ -1,13 +1,13 @@
 # request/response
 
-Like SHIORI and other protocols, SSTP is a proprietary protocol modeled after HTTP.<br />
-Specifying the request charset is required. If it is not specified, an error may occur, or the request may be interpreted using the OS default charset.
+Like SHIORI and other protocols, this is a custom protocol modeled on HTTP.<br />
+The request must specify a Charset. If it is omitted, the request either results in an error or is interpreted using the OS default encoding.
 
 - The line ending is CR+LF.
-- A request ends with a blank line (a total of (CR+LF)x2, including the end of the preceding line).
-- A response may contain additional data at the end, for example in the case of EXECUTE. After the headers end, there is a blank line, then the additional data, then another blank line before the end. If there is no additional data, the response may end with only the blank line immediately after the headers.
-- For compatibility, a response with additional data may contain no headers at all, including Charset, and return only the additional data. In that case, you can assume it uses the same charset as the request.
-- The SSTP version in the request and response may differ. Do not make interpretations that depend on the version number.
+- The request ends with a blank line ((CR+LF)x2 including the end of the preceding line).
+- In cases such as EXECUTE, additional data may be included at the end of the response. After the headers, one blank line precedes the additional data, and another blank line marks the end. If there is no additional data, the response may end with just the blank line immediately after the headers.
+- For compatibility, a response with additional data may contain only the additional data, with no headers, including Charset. In that case, it may be assumed to use the same encoding as the request.
+- The SSTP versions of the request and response may differ. Do not interpret them based on the version number.
 
 ## request
 
@@ -23,40 +23,45 @@ Option: notranslate
 
 ### Headers common to all request methods
 
-For method-specific headers, see the descriptions of each method below.
+For method-specific headers, see the descriptions of the individual methods below.
 
-- **Charset**: The request charset. It is recommended that this appear on the first line.<br />
-  UTF-8 is recommended unless there is a particular reason to use another charset.
-- **Sender**: A string identifying the sender, such as "SSTP送信ツール". For the COMMUNICATE method, this is the name of the source ghost's `\0`.
-- **SecurityLevel**: Specifies the security level for processing by SHIORI or Sakura Script. Either local or external.<br />
-  Valid only for DirectSSTP, or for requests that clearly come from the local machine, such as those from 127.0.0.1.<br />
-  SSTP over HTTP is always treated as external, except when sent from HTML and similar content served from localhost.
-- **SecurityOrigin \[SSP 2.6.59\]**: A URL-like string identifying the source server. It has the following formats. The concept is the same as that of the [Origin HTTP header](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin).<br />
+- **Charset**: The character encoding of the request. It should appear on the first line.<br />
+  UTF-8 is recommended unless there is a reason to use another encoding.
+- **Sender**: A string identifying the sender, such as "SSTP sending tool". For the COMMUNICATE method, this is the sending ghost's `\0` name.
+- **SecurityLevel**: Specifies the security level used when processing with SHIORI or Sakura Script. Either local or external.<br />
+  Valid only for DirectSSTP or requests that clearly originate locally, such as from 127.0.0.1.<br />
+  SSTP over HTTP is always considered external, except when sent from HTML or similar content served from localhost.
+- **SecurityOrigin \[SSP 2.6.59\]**: A URL-like string identifying the originating server. It uses the following formats. The concept is the same as the [HTTP Origin header](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin).<br />
   SecurityOrigin: null<br />
   SecurityOrigin: &lt;scheme\>://&lt;hostname\><br />
   SecurityOrigin: &lt;scheme\>://&lt;hostname\>:&lt;port\><br />
-  The scheme is usually one of http, https, or sstp. The hostname is the source server name or IP address. The port is the port that can receive replies.<br />
-  If not specified, null is assumed.<br />
-  For SSTP over HTTP, the contents of the HTTP Origin header are always set, and SecurityOrigin in SSTP is ignored.
-- **Option**: Specifies options for how Sakura Script executed by SSTP is handled.<br />
-  Multiple values can be specified as a comma-separated list. The available values are as follows.<br />
-  nodescript : Disable SSTP display in the balloon (SSTP from remote sources is disabled)<br />
-  notranslate : Do not perform translation using OnTranslate or MAKOTO<br />
-  nobreak : Wait for the currently executing script to finish without interrupting it<br />
-  strict : Log locations where Sakura Script parsing fails. This applies to references to nonexistent surfaces (`\s`), animations (`\i`), or balloons (`\b`); unknown tags, `\![コマンド]`, and `\&[実体参照]`; missing required \[\] or numbers; and invalid values for `\p`, `\b`, `\n`, `\c`, or `\q`. Applies to scripts in SEND and scripts returned by ghosts in NOTIFY/GIVE \[SSP 2.8.94\]
-- **ID**: Identifies what is called "Owned SSTP". Specifying an ID received via [SHIORI uniqueid](../../list/shiori-event/notify/uniqueid.md) or an [FMO identifier (SSP only)](../fmo-mutex/index.md) causes this SSTP to be handled with the same priority as processing inside the ghost, ignoring various security checks, locks, and so on.<br />
-  This sets SecurityLevel to local and also allows forced interruption and playback, even when interruption is disabled by `\t` and similar tags.
-- **X-SSTP-PassThru-(arbitrary string)**: A header passed directly to SHIORI when communicating with the ghost, such as with NOTIFY.<br />
-  Only minimal processing, such as charset conversion, is performed; the (arbitrary string) portion and its contents are relayed as-is.
-- **HWnd**: For DirectSSTP only, specifies the window handle to which the response should be sent.<br />
-  The window handle (pointer equivalent) is treated as an unsigned decimal integer and converted to a string.<br />
+  scheme is usually one of http, https, or sstp. hostname is the originating server name or IP address. port is the port available for receiving replies.<br />
+  If omitted, it is treated as null.<br />
+  For SSTP over HTTP, the value of the HTTP Origin header is always used, and SecurityOrigin in SSTP is ignored.
+- **Option**: Specifies options for how Sakura Script executed via SSTP is handled.<br />
+  Multiple options can be specified, separated by commas. The supported strings are as follows.<br />
+  nodescript : Disables SSTP display in the balloon (remote SSTP is disabled)<br />
+  notranslate : Skips translation processing by OnTranslate or MAKOTO<br />
+  nobreak : Waits until the currently running script finishes without interrupting it<br />
+  strict : Records Sakura Script interpretation failures in the error log. These include references to nonexistent surfaces (`\s`), animations (`\i`), or balloons (`\b`); unknown tags, `\![コマンド]`, or `\&[実体参照]`; missing required \[\] or numbers; and invalid values for `\p`, `\b`, `\n`, `\c`, or `\q`. Applies to SEND scripts and scripts returned by ghosts for NOTIFY/GIVE \[SSP 2.8.94\]
+- **ID**: Used for what is called "Owned SSTP". Specifying the ID sent by [SHIORI uniqueid](../../list/shiori-event/notify/uniqueid.md) or the [FMO identification ID (SSP only)](../fmo-mutex/index.md) bypasses security checks, locks, and similar restrictions, and treats this SSTP with the same priority as processing within the ghost.<br />
+  SecurityLevel is set to local, and interrupting playback is forced even when interruptions are prohibited, such as by `\t`.
+- **X-SSTP-PassThru-(arbitrary string)**: A header passed directly to SHIORI when communicating with the ghost, such as through NOTIFY.<br />
+  Only minimal processing, such as character encoding conversion, is performed; the (arbitrary string) portion and the content are relayed unchanged.
+- **HWnd**: DirectSSTP only. Specifies the window handle to which the response should be sent.<br />
+  The window handle data (equivalent to a pointer) is treated as an unsigned decimal integer and converted to a string.<br />
   If omitted, WM_COMMUNICATE's wParam is used.
-- **ReceiverGhostHWnd \[SSP 2.5.57\]**: For (Socket)SSTP only, specifies the window handle of the ghost's `\0` to which the request should be sent.<br />
-  Specifying this fixes which ghost handles the request, allowing the same processing as DirectSSTP even over a socket.<br />
-  If no match is found, processing immediately fails with 404 Not Found.
-- **ReceiverGhostName \[SSP 2.5.57\]**: For (Socket)SSTP only, specifies the name of the ghost's `\0` to which the request should be sent.<br />
-  Specifying this fixes which ghost handles the request, allowing the same processing as DirectSSTP even over a socket. This is the name-based equivalent of HWnd.<br />
-  If no match is found, processing immediately fails with 404 Not Found.
+- **ReceiverGhostHWnd \[SSP 2.5.57\]**: (Socket)SSTP only. Specifies the window handle of the `\0` of the ghost to which the request should be sent.<br />
+  Specifying this fixes the ghost that handles the request, allowing the same processing as DirectSSTP even over a socket.<br />
+  If it is not found, processing ends immediately with a 404 Not Found error.
+- **ReceiverGhostName \[SSP 2.5.57\]**: (Socket)SSTP only. Specifies the `\0` name of the ghost to which the request should be sent.<br />
+  Specifying this fixes the ghost that handles the request, allowing the same processing as DirectSSTP even over a socket. This is the name-based equivalent of HWnd.<br />
+  If it is not found, processing ends immediately with a 404 Not Found error.
+- **ReceiverGhostUUID \[SSP 2.9.35\]**: (Socket)SSTP only. Specifies the [UUID](../../list/propertysystem/property-system/general-property/uuid.md) of the running ghost to which the request should be sent.<br />
+  Specifying this fixes the ghost that handles the request, allowing the same processing as DirectSSTP even over a socket. This is the UUID-based equivalent of HWnd and avoids confusing ghosts with the same name.<br />
+  If multiple ghosts with the same UUID are running, the displayed ghost is selected; if none is displayed, the first one in the list of running ghosts is selected.<br />
+  If no running ghost has a matching UUID, processing ends immediately with a 404 Not Found error (the same applies to values that are not in UUID format).<br />
+  If multiple ReceiverGhostHWnd, ReceiverGhostUUID, or ReceiverGhostName headers are specified, they are evaluated in that order, and the first ghost found is used.
 
 ## response
 
@@ -80,28 +85,28 @@ Script: \h\s0テストー。\u\s[10]テストやな。
 
 ### Headers common to all response methods
 
-- **Charset**: The request charset. It is recommended that this appear on the first line.<br />
-  UTF-8 is recommended unless there is a particular reason to use another charset.<br />
-  It may be deliberately omitted for compatibility. In that case, assume the same charset as the request.
-- **X-SSTP-PassThru-(arbitrary string)**: A header returned directly from SHIORI when communicating with the ghost, such as with NOTIFY.<br />
-  Only minimal processing, such as charset conversion, is performed; the (arbitrary string) portion and its contents are relayed as-is.
+- **Charset**: The character encoding of the request. It should appear on the first line.<br />
+  UTF-8 is recommended unless there is a reason to use another encoding.<br />
+  It may be deliberately omitted to resolve compatibility issues. In that case, assume the same encoding as the request.
+- **X-SSTP-PassThru-(arbitrary string)**: A header returned directly from SHIORI when communicating with the ghost, such as through NOTIFY.<br />
+  Only minimal processing, such as character encoding conversion, is performed; the (arbitrary string) portion and the content are relayed unchanged.
 
-### Response status codes
+### response status codes
 
-As with HTTP, codes in the 200 range indicate successful acceptance; all others indicate errors.
+As with HTTP, 200-series codes indicate successful acceptance; all others indicate errors.
 
 - **200 OK**: Completed successfully (with a return value)
 - **204 No Content**: Completed successfully (without a return value)
-- **210 Break**: Executed, but interrupted while the script was running<br />
-  ※Only occurs in very limited situations, such as SEND/1.x with Entry; normally returns 200 or 204 immediately.
-- **400 Bad Request**: The request contains an issue that cannot be handled
-- **404 Not Found ※SSP only**: For SSTP specifying a ghost, the specified ghost is not installed or running
-- **408 Request Timeout**: Timeout: unable to communicate with the ghost/SHIORI, for example (this rarely occurs in normal operation)
-- **409 Conflict**: Interruption is disabled by a tag such as `\t`, or another request is being processed
-- **413 Payload Too Large ※SSP only**: The SSTP request was too long and was rejected
+- **210 Break**: Execution started but was interrupted during script execution<br />
+  Note: This occurs only in extremely limited circumstances, such as SEND/1.x with Entry; normally 200 or 204 is returned immediately.
+- **400 Bad Request**: The request has a problem that cannot be handled
+- **404 Not Found (SSP only)**: The ghost specified in the SSTP request is not installed or running
+- **408 Request Timeout**: Timeout: communication with the ghost/SHIORI failed, for example (rarely occurs under normal conditions)
+- **409 Conflict**: Interruptions are prohibited, such as by the `\t` tag, or another request is being processed
+- **413 Payload Too Large (SSP only)**: The SSTP request was too long and processing was refused
 - **420 Refuse**: Reception was refused due to the ghost's settings
-- **500 Internal Server Error ※SSP only**: Unable to complete processing due to an issue detected internally by the processing system
-- **501 Not Implemented**: Unable to process because the request contains an unimplemented command or similar
-- **503 Service Unavailable**: SSTP cannot be accepted due to internal conditions in the processing system
-- **505 Version Not Supported ※SSP only**: The SSTP version is invalid (for example, below 1.0 or 3.0 and above)
-- **512 Invisible**: The ghost is not displayed, for example because it is minimized, and cannot process anything
+- **500 Internal Server Error (SSP only)**: Processing could not be completed due to a problem detected internally by the implementation
+- **501 Not Implemented**: Processing failed because the request contained an unimplemented command or similar
+- **503 Service Unavailable**: SSTP cannot be accepted due to internal conditions in the implementation
+- **505 Version Not Supported (SSP only)**: The SSTP version is invalid (below 1.0, 3.0 or later, etc.)
+- **512 Invisible**: The ghost is not displayed, such as when minimized, and cannot process anything

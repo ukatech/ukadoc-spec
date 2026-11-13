@@ -40,7 +40,7 @@ SAORIの要求はSSTPログに記録されません。
 
 ゴーストの窓へ送った場合は、そのゴーストが呼び出し元になります。<br />
 ベースウェアの主窓へ送ったときなど、呼び出し元のゴーストが分からない場合は「ゴーストなし」として扱います（Direct SSTPのSSTPのように表示中のゴーストを代わりに当てることはしません）。ゴーストを使わない処理は普通に動き、ゴーストに依存する処理（結果をイベントで届ける[非同期の呼び出し](async.md)、ゴーストのフォルダを基準にした相対パスなど）は400（`ErrorDescription: ghost required`）になります。<br />
-`ReceiverGhostName` / `ReceiverGhostHWnd`ヘッダは見ません。
+`ReceiverGhostName` / `ReceiverGhostHWnd` / `ReceiverGhostUUID`ヘッダは見ません。
 
 ## 返事の取り違えを防ぐ
 
