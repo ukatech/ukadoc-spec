@@ -38,6 +38,14 @@ Commandヘッダに指定できる文字列と、responseの「追加データ�
 - **GetBalloonNameList \[SSP 2.6.53\]**: SSPで認識している全バルーンの名前(descript.txtのname)の改行区切りリスト
 - **GetHeadlineNameList \[SSP 2.6.53\]**: SSPで認識している全ヘッドラインの名前(descript.txtのname)の改行区切りリスト
 - **GetPluginNameList \[SSP 2.6.53\]**: SSPで認識している全プラグインの名前(descript.txtのname)の改行区切りリスト
+- **GetGhostUUIDList \[SSP 2.9.35\]**: SSPで認識している全ゴーストの[UUID](../../list/propertysystem/property-system/general-property/uuid.md)の改行区切りリスト。並びはGetGhostNameListと同じ。<br />
+  **GetBalloonUUIDList \[SSP 2.9.35\]**: 全バルーンのUUID。並びはGetBalloonNameListと同じ。<br />
+  **GetShellUUIDList \[SSP 2.9.35\]**: 起動中のゴーストで認識している全シェルのUUID。並びはGetShellNameListと同じ。<br />
+  UUIDは[metainfo-standard](https://github.com/ukatech/metainfo-standard)の手順で、descript.txtの値から計算する(プロパティシステムの`uuid`と同じ)。
+- **GetGhostMetaInfoList \[SSP 2.9.35\]**: SSPで認識している全ゴーストの、metainfoフォルダのURLの改行区切りリスト。並びはGetGhostNameListと同じ。<br />
+  **GetBalloonMetaInfoList \[SSP 2.9.35\]**: 全バルーンのmetainfoフォルダのURL。並びはGetBalloonNameListと同じ。<br />
+  **GetShellMetaInfoList \[SSP 2.9.35\]**: 起動中のゴーストで認識している全シェルのmetainfoフォルダのURL。並びはGetShellNameListと同じ。<br />
+  descript.txtの[metainfo](../../descript/ghost/descript-txt/metainfo.md)の値。なければ[githubrepo](../../descript/ghost/descript-txt/githubrepo.md)から導いたURL(既定ブランチは`master`とみなす)。どちらもないものは空行になる。
 - **GetShortVersion \[SSP 2.6.53\]**: ベースウェア(実行中のソフト)のバージョン(ピリオド区切りのバージョン番号のみ)<br />
   [version.json](https://ssp.shillest.net/archive/version.json)のssp.full.versionなどと単純比較すると最新版かどうかチェックできる
 - **GetStatus \[SSP 2.8.94\]**: 起動中のゴーストの現在の実行状態。SHIORI/3.0 requestのStatusヘッダや、プロパティシステムの[currentghost.status](../../list/propertysystem/property-system/currentghost.status.md)と同じ内容。<br />
