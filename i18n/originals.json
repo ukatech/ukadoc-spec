@@ -10,9 +10,14 @@
   "orig": "0cb04daab8e94d0bebd8b3d902b9346b7a41b6b2b4e2ab9f7eba074750ed5084"
  },
  "list/shiori-event-ex/ghost-needle/OnNeedlePoke.md": {
-  "ja": "94137117288e69a1b80e3cde6bea62d743e183e6aa97fe539d1d116e410d99a3",
+  "ja": "138718177e63a98a394fe244470265b82723fab9b3bbe7f30218f9041ed64240",
   "lang": "en",
-  "orig": "0ada838c98e87d53cca2b876a603bb790050d23ba1187791ffef82f18f3cacc9"
+  "orig": "33854f5774dbcc201e72ee440f914b767ca79a4bb5dbe9d81d814a4a25d9a369"
+ },
+ "list/shiori-event-ex/ghost-needle/OnNeedlePokeEx.md": {
+  "ja": "243b8dd448a4cf292b883c5fa9ddb6305027d0e19a7c120e6e16308f93a0ce09",
+  "lang": "en",
+  "orig": "b757050a7e3e51b2fb6be16a9706adc95640ea0f966cfeb65b73743d1e8d158f"
  },
  "list/shiori-event-ex/plugin-spectre/OnSpectrePlugin.ConfirmCalibration.md": {
   "ja": "d97090099f24f2b507d46eecff150f8e8862dbb7994de18f13cb3fe419242f1f",
