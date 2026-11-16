@@ -97,3 +97,78 @@ extern "C" __declspec(dllexport) BOOL __cdecl unload();
 - その他、モジュールが確保した全てのシステムリソースを解放する
 
 戻り値は現在は使用されていないが、将来の拡張性を考慮して TRUE を返却することが望ましい。
+
+## マルチインスタンス用関数（任意）
+
+`load` / `request` / `unload` は、1 つの DLL につき 1 つのインスタンスしか持てない。1 つのプロセスで同じ DLL から複数のインスタンスを作りたいベースウェアのために、インスタンスを id で区別する次の関数を、**任意で**実装できる。実装しなくてもモジュールとして成立し、これらを呼ばないベースウェアでも従来どおり動く。
+
+```
+extern "C" __declspec(dllexport) long __cdecl multi_loadu(HGLOBAL h, long len);
+extern "C" __declspec(dllexport) long __cdecl multi_load(HGLOBAL h, long len);
+extern "C" __declspec(dllexport) BOOL __cdecl multi_unload(long id);
+extern "C" __declspec(dllexport) HGLOBAL __cdecl multi_request(long id, HGLOBAL h, long *len);
+```
+
+- **multi_loadu / multi_load**: `loadu` / `load` と同じ引数で、新しいインスタンスを作る。モジュールのディレクトリパスの文字コードも `loadu`（UTF-8）と `load`（デフォルトの OEM codepage）のとおり。戻り値はそのインスタンスを指す id（1 以上の整数）。メモリの解放も `loadu` / `load` と同じく、モジュールが行う
+- **multi_unload**: id で指したインスタンスを終了する。戻り値は成功で TRUE、存在しない id では FALSE
+- **multi_request**: id で指したインスタンスへ `request` と同じ形式のリクエストを渡す。存在しない id では NULL を返す
+
+注意点：
+
+- id の 0 は、従来の `load` / `request` / `unload` が扱うインスタンスに割り当てられている。`multi_load*` が 0 を返してはならない
+- 従来の関数とマルチインスタンス用の関数は、同じ DLL に両方実装できる。両者のインスタンスは別のものとして扱う
+- `multi_load*` の失敗時の戻り値は規定されていない（YAYA は常に id を返す）
+- SSP はこれらの関数を使用しない（SSP 以外のベースウェア向けの仕様である）
+
+## YAYA 固有の関数
+
+次の関数は YAYA（`yaya.dll`）が独自に実装している。デバッグ用のチェックツールとの連携に使うもので、SHIORI の仕様には含まれない。他のモジュールが実装する必要はなく、ベースウェアも呼ばなくてよい。
+
+!!! note "注"
+    仕様は YAYA の都合で変わることがある。`multi_` 付きの関数は、前節のマルチインスタンス用関数と同様に、id で指したインスタンスに対して動く。
+
+### CI_check_failed関数
+
+```
+extern "C" __declspec(dllexport) BOOL __cdecl CI_check_failed(void);
+extern "C" __declspec(dllexport) BOOL __cdecl multi_CI_check_failed(long id);
+```
+
+辞書の読み込みに失敗して、動作を抑止している状態、または緊急モードになっているときに TRUE を返す。存在しない id（`multi_` 版）や、`load` 前は FALSE を返す。
+
+### Set_loghandler関数
+
+```
+extern "C" __declspec(dllexport) void __cdecl Set_loghandler(void (*loghandler)(const wchar_t *str, int mode, int id));
+extern "C" __declspec(dllexport) void __cdecl multi_Set_loghandler(long id, void (*loghandler)(const wchar_t *str, int mode, int id));
+```
+
+YAYA のログを受け取るコールバック関数を登録する。登録するとログの出力が有効になる。`multi_` 版は `multi_load*` で作ったあとのインスタンスにだけ登録でき、存在しない id では何もしない。
+
+コールバックの引数は次のとおり。
+
+- **str**: ログの文字列（UTF-16）。`mode` が制御用の値のときは空文字列
+- **mode**: ログの種別または制御の値
+- **id**: ログのメッセージ番号（インスタンスの id ではない）
+
+`mode` の値は次のとおり。
+
+- **0**: 情報
+- **1**: 致命的なエラー
+- **2**: エラー
+- **3**: 警告
+- **4**: 注記
+- **6**: ログの終了
+- **16 / 17 / 32**: 以降のログのマルチバイト文字の文字コードの通知。16 が Shift_JIS、17 が UTF-8、32 が OS のデフォルト。ログの最初に 1 回呼ばれる
+
+コールバックは、`load` / `request` / `unload` を呼んだスレッドで呼ばれる。
+
+### logsend関数
+
+```
+extern "C" __declspec(dllexport) BOOL __cdecl logsend(long hwnd);
+```
+
+Windows の DLL 版だけが持つ。ログを `WM_COPYDATA` で受け取るウィンドウのハンドル（HWND）を渡す。常に TRUE を返す。`Set_loghandler` でコールバックを登録しているときは、そちらが優先される。
+
+`WM_COPYDATA` の `dwData` には `Set_loghandler` の `mode` と同じ値、`lpData` にはログの文字列（UTF-16、NUL 終端）が入る。
