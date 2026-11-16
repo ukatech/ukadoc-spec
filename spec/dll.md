@@ -109,7 +109,7 @@ extern "C" __declspec(dllexport) BOOL __cdecl multi_unload(long id);
 extern "C" __declspec(dllexport) HGLOBAL __cdecl multi_request(long id, HGLOBAL h, long *len);
 ```
 
-- **multi_loadu / multi_load**: `loadu` / `load` と同じ引数で、新しいインスタンスを作る。モジュールのディレクトリパスの文字コードも `loadu`（UTF-8）と `load`（デフォルトの OEM codepage）のとおり。戻り値はそのインスタンスを指す id（1 以上の整数）。メモリの解放も `loadu` / `load` と同じく、モジュールが行う
+- **multi_loadu / multi_load**: `loadu` / `load` と同じ引数で、新しいインスタンスを作る。モジュールのディレクトリパスの文字コードも `loadu`（UTF-8）と `load`（デフォルトの OEM codepage）のとおり。戻り値はそのインスタンスを指す id（1 以上の整数）で、失敗したときは `-1` を返すことが望ましい。ベースウェアは 0 以下の戻り値を失敗として扱う。メモリの解放も `loadu` / `load` と同じく、モジュールが行う
 - **multi_unload**: id で指したインスタンスを終了する。戻り値は成功で TRUE、存在しない id では FALSE
 - **multi_request**: id で指したインスタンスへ `request` と同じ形式のリクエストを渡す。存在しない id では NULL を返す
 
@@ -117,7 +117,7 @@ extern "C" __declspec(dllexport) HGLOBAL __cdecl multi_request(long id, HGLOBAL 
 
 - id の 0 は、従来の `load` / `request` / `unload` が扱うインスタンスに割り当てられている。`multi_load*` が 0 を返してはならない
 - 従来の関数とマルチインスタンス用の関数は、同じ DLL に両方実装できる。両者のインスタンスは別のものとして扱う
-- `multi_load*` の失敗時の戻り値は規定されていない（YAYA は常に id を返す）
+- YAYA の `multi_load*` は、辞書の読み込みに失敗しても id を返す（`load` が常に TRUE を返すのと同じで、失敗の確認には `CI_check_failed` を使う）
 - SSP はこれらの関数を使用しない（SSP 以外のベースウェア向けの仕様である）
 
 ## YAYA 固有の関数
