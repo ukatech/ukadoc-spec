@@ -59,6 +59,8 @@
 - [mousecursor.hand,文件名](mousecursor.hand.md)
 - [mousecursor.grip,文件名](mousecursor.grip.md)
 - [mousecursor.arrow,文件名](mousecursor.arrow.md)
+- [balloon,balloon 名称](balloon.md)
+- [default.balloon.path,路径](default.balloon.path.md)
 - [sakura.balloon.offsetx,坐标](sakura.balloon.offsetx.md)
 - [sakura.balloon.offsety,坐标](sakura.balloon.offsety.md)
 - [kero.balloon.offsetx,坐标](kero.balloon.offsetx.md)

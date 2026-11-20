@@ -59,6 +59,8 @@
 - [mousecursor.hand,ファイル名](mousecursor.hand.md)
 - [mousecursor.grip,ファイル名](mousecursor.grip.md)
 - [mousecursor.arrow,ファイル名](mousecursor.arrow.md)
+- [balloon,バルーン名](balloon.md)
+- [default.balloon.path,パス](default.balloon.path.md)
 - [sakura.balloon.offsetx,座標](sakura.balloon.offsetx.md)
 - [sakura.balloon.offsety,座標](sakura.balloon.offsety.md)
 - [kero.balloon.offsetx,座標](kero.balloon.offsetx.md)
