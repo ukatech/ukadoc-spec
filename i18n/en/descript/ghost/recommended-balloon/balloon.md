@@ -1,11 +1,11 @@
-# balloon,balloon name
+# balloon,Balloon name
 
 **カテゴリ:** descript.txt - Recommended balloon
 
-The name of the default balloon.<br />
-This can also be specified in the shell's descript.txt as [balloon](../../shell/descript-txt/balloon.md). When switching to that shell, the shell's setting takes precedence if the user has not explicitly switched balloons.<br />
-\[SSP 2.9.35\] The balloon's [UUID](../../../list/propertysystem/property-system/general-property/uuid.md) can be specified instead of its name. This ensures that the same balloon is referenced even if it is renamed or another balloon has the same name.
+The name of the balloon used by default.<br />
+It can also be specified in the shell's descript.txt as [balloon](../../shell/descript-txt/balloon.md), and the shell's setting takes precedence. See the shell's [balloon](../../shell/descript-txt/balloon.md) for the order in which the balloon to switch to is determined.<br />
+\[SSP 2.9.35\] The balloon's [UUID](../../../list/propertysystem/property-system/general-property/uuid.md) can also be specified instead of its name. This refers to the same balloon even if it is renamed or other balloons have the same name.
 
-**既定値:** Unknown | The SSP balloon or the default balloon configured by the user (on SSP)
+**既定値:** Unknown | SSP balloon or the default balloon configured by the user (on SSP)
 
 **対応:** Materia / SSP

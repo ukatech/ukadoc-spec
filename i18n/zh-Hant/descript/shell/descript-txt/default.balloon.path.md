@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-此 shell 的預設 balloon 的相對路徑。與 [balloon](balloon.md) 相同，在使用者未明確切換 balloon 時使用。優先順序等資訊請參閱 [balloon](balloon.md)。<br />
-也可寫在 ghost 端的 descript.txt 的 [default.balloon.path](../../ghost/recommended-balloon/default.balloon.path.md) 中。若 shell 端有設定，則以 shell 端為優先；若沒有，則使用 ghost 端的值。
+此 shell 的預設 balloon 相對路徑。其處理方式與 [balloon](balloon.md) 相同，切換目標 balloon 的決定順序等資訊也請參閱 [balloon](balloon.md)。<br />
+ghost 側 descript.txt 的 [default.balloon.path](../../ghost/recommended-balloon/default.balloon.path.md) 會作為 ghost 側的預設 balloon 使用，優先順序低於 shell 側。
 
 **既定値:** ghost 的 descript 設定
 
