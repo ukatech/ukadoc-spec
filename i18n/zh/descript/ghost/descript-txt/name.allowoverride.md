@@ -2,7 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-设为0时不使用shell侧的sakura.name/kero.name。默认值为1。
+设为 0 时不使用 shell 侧指定的名称。适用于 shell 侧的`sakura.name` / `kero.name` / `char*.name` / `sakura.name2` / `sakura.friend.name`。默认值为 1。<br />
+shell 侧的`name`（shell 名称）不受此设置影响，始终使用。
 
 **既定値:** 1
 

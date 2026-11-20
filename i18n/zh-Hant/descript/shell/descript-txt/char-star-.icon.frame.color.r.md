@@ -2,7 +2,9 @@
 
 **カテゴリ:** descript.txt
 
-第 2 人及之後的搭檔圖示（臉部縮圖）顯示在[回溯（發言紀錄）視窗](../../../list/sakura-script/open/bang-open-backlogviewer.md)時，外框的紅色成分（0～255）。[※注意](note-1.md#メニュー画像の位置指定)
+第 2 位起的搭檔圖示（臉部縮圖）顯示於[對話紀錄（發言歷史）視窗](../../../list/sakura-script/open/bang-open-backlogviewer.md)時，外框的紅色分量（0～255）。[※注意](note-1.md#アイコン枠色の明度調整について)
+
+也可以寫在 ghost 側的 descript.txt 中。若 shell 側有設定，則優先使用 shell 側的值；否則使用 ghost 側的值。
 
 **既定値:** 無值
 

@@ -2,25 +2,27 @@
 
 **カテゴリ:** descript.txt
 
-本体侧气泡位置的X坐标。<br />
-在 offsetx / offsety 后附加一个表示方向的字符，可以根据气泡的显示位置使用不同的值（仅限SSP）。
+本体侧 balloon 位置的 X 坐标。<br />
+在 offsetx / offsety 后附加一个表示方向的字符，可以根据 balloon 的显示位置使用不同的值（仅 SSP）。
 
-- **offsetx / offsety**: 不指定方向。未指定下列设置时使用的默认值。
-- **offsetxl / offsetyl**: 气泡显示在shell左侧时。
-- **offsetxr / offsetyr**: 气泡显示在shell右侧时。
-- **offsetxc / offsetyc**: 气泡显示在shell头顶或脚下时。用于两种居中对齐的情况。
-- **offsetxb / offsetyb**: 气泡显示在shell脚下时。用于需要为头顶和脚下指定不同值的情况。
+- **offsetx / offsety**: 不指定方向。未设置以下项目时使用的默认值。
+- **offsetxl / offsetyl**: 在 shell 左侧显示 balloon 时使用。
+- **offsetxr / offsetyr**: 在 shell 右侧显示 balloon 时使用。
+- **offsetxc / offsetyc**: 在 shell 头顶或脚下显示 balloon 时使用。这两种居中情况共用。
+- **offsetxb / offsetyb**: 在 shell 脚下显示 balloon 时使用。当头顶和脚下需要使用不同的值时使用。
 
-未指定时的取值方式如下。X坐标和Y坐标分别独立确定。
+未设置时使用的值如下。X 坐标和 Y 坐标分别独立确定。
 
-- **offsetxb 未设置时**: 按 offsetxc → offsetx 的顺序查找。
-- **offsetxc / offsetxl / offsetxr 未设置时**: 使用 offsetx。
+- **没有 offsetxb 时**: 按 offsetxc → offsetx 的顺序查找。
+- **没有 offsetxc / offsetxl / offsetxr 时**: 使用 offsetx。
 
-气泡显示在哪一侧，由气泡的descript.txt中的[windowposition.x](../../balloon/descript-txt/windowposition.x.md)、shell中的[sakura.balloon.alignment](sakura.balloon.alignment.md)以及Sakura Script的[`\![set,balloonalign,ID]`](../../../list/sakura-script/balloon-text/bang-set-balloonalign-ID.md)决定。
+显示在哪个位置由 balloon 的 descript.txt 中的 [windowposition.x](../../balloon/descript-txt/windowposition.x.md)、shell 的 [sakura.balloon.alignment](sakura.balloon.alignment.md) 和 Sakura Script 的 [`\![set,balloonalign,ID]`](../../../list/sakura-script/balloon-text/bang-set-balloonalign-ID.md) 决定。
 
-**注意符号。**X坐标的＋在所有情况下都表示朝shell靠近的方向，显示在左侧时为向右，显示在右侧时为**向左** (头顶和脚下时，向右为＋)。Y坐标的＋始终表示向下。<br />
-但各方向的0位置（基准）不同。左右两侧时，气泡上端与shell图像上端对齐；头顶时，气泡下端与shell图像上端相接；脚下时，气泡上端与shell图像下端相接。
+**注意正负号。**X 坐标的正方向在所有情况下都是靠近 shell 的方向，显示在左侧时向右为正，显示在右侧时**向左**为正（头顶和脚下时向右为正）。Y 坐标始终向下为正。<br />
+但零点（基准）因方向而异。左右两侧的零点是 balloon 上边缘与 shell 图像上边缘对齐的位置；头顶的零点是 balloon 下边缘与 shell 图像上边缘相接的位置；脚下的零点是 balloon 上边缘与 shell 图像下边缘相接的位置。
 
-**既定値:** ghost的descript设置
+也可以写在 ghost 的 descript.txt 中。如果 shell 侧有设置，则优先使用 shell 侧的值；否则使用 ghost 侧的值。
+
+**既定値:** 无值
 
 **対応:** Materia / SSP / CROW

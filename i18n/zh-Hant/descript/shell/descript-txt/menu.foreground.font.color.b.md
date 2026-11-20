@@ -2,8 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-前景文字色藍色（0～255）
+前景文字顏色的藍色分量（0～255）
 
-**既定値:** OS 設定的醒目提示文字色
+也可以寫在 ghost 的 descript.txt 中。若 shell 中有設定，則優先使用 shell 的值；否則使用 ghost 的值。
+
+**既定値:** OS 設定的反白文字顏色
 
 **対応:** Materia / SSP / CROW

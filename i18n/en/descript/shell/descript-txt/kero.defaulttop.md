@@ -1,9 +1,11 @@
-# kero.defaulttop,Y-coordinate
+# kero.defaulttop,Y coordinate
 
 **カテゴリ:** descript.txt
 
-The default Y-coordinate for the partner side (`\1`). Same as [sakura.defaulttop](sakura.defaulttop.md).
+The Y coordinate of the default position of kero (`\1`). See also [sakura.defaulttop](sakura.defaulttop.md).
 
-**既定値:** ghost's descript settings
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** No value (placed at the same height as sakura)
 
 **対応:** SSP

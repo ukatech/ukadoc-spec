@@ -2,9 +2,11 @@
 
 **カテゴリ:** descript.txt
 
-Default [※display position information](note-1.md#補足) for the baseware side.<br />
-Takes precedence over the shell-wide setting ([seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)). In other words, this has the highest priority of all alignmenttodesktop settings.<br />
-※Ghost-wide setting < ghost per-scope setting < shell-wide setting < this setting
+The default [display position information](note-1.md#サーフェスの位置情報) for the main character.<br />
+This takes precedence over the shell-wide setting ([seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)). In other words, it has the highest priority of all alignmenttodesktop settings.<br />
+Note: ghost-wide setting < ghost-specific scope setting < shell-wide setting < this setting
+
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
 
 **既定値:** No value
 

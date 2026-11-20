@@ -2,8 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-禁止使用者移動夥伴側的 balloon。設為 1（或 true）時禁止移動。
+禁止使用者移動搭檔側的 balloon。設為 1（或 true）即可禁止。
 
-**既定値:** ghost 的 descript 設定(balloon.dontmove)
+也可寫在 ghost 側的 descript.txt 中。若 shell 側有設定，則優先使用 shell 側的值；否則使用 ghost 側的值。
+
+**既定値:** [balloon.dontmove](balloon.dontmove.md) 的設定
 
 **対応:** SSP 2.4.96

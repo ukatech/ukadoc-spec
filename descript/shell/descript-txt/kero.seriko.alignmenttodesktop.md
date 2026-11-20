@@ -2,9 +2,11 @@
 
 **カテゴリ:** descript.txt
 
-相方側のデフォルト[※表示位置情報](note-1.md#補足)。<br />
+相方側のデフォルト[※表示位置情報](note-1.md#サーフェスの位置情報)。<br />
 シェル側全体指定（[seriko.alignmenttodesktop](seriko.alignmenttodesktop.md)）より優先度が高い。すなわち全てのalignmenttodesktop系指定で一番優先度が高い。<br />
 ※ゴースト側全体指定＜ゴースト側スコープ個別指定＜シェル側全体指定＜これ
+
+ゴースト側のdescript.txtにも書ける。シェル側に書かれていればシェル側が優先され、書かれていなければゴースト側の値が使われる。
 
 **既定値:** 値なし
 

@@ -2,8 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-前景文字红色(0～255)
+前景文字颜色的红色分量（0～255）
 
-**既定値:** OS设定的高亮文字颜色
+也可以写在 ghost 的 descript.txt 中。如果 shell 中有此设置，则优先使用 shell 的值；否则使用 ghost 的值。
+
+**既定値:** OS 设置的高亮文字颜色
 
 **対応:** Materia / SSP / CROW

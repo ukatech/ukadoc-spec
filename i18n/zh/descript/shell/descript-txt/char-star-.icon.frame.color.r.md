@@ -1,8 +1,10 @@
-# char\*.icon.frame.color.r、数值
+# char\*.icon.frame.color.r,数值
 
 **カテゴリ:** descript.txt
 
-第二个及之后的搭档一侧的图标（脸部缩略图）显示在[历史记录（发言历史）窗口](../../../list/sakura-script/open/bang-open-backlogviewer.md)时，边框的红色分量（0～255）。[※注意](note-1.md#メニュー画像の位置指定)
+第2个及之后的搭档侧图标（面部缩略图）显示在[积压日志（发言历史）窗口](../../../list/sakura-script/open/bang-open-backlogviewer.md)时，边框的红色分量（0～255）。[※注意](note-1.md#アイコン枠色の明度調整について)
+
+也可写在 ghost 侧的 descript.txt 中。如果 shell 侧有设置，则优先使用 shell 侧的值；否则使用 ghost 侧的值。
 
 **既定値:** 无值
 

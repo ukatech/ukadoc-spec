@@ -2,124 +2,124 @@
 
 `\![set,alignmenttodesktop,osuwari,オプション,…]` \[SSP 2.9.33\]
 
-This makes a ghost window “sit” on, “attach” to, or “hang” from the corner or edge of another window. SSP has built in the same behavior as ukiya's SAORI, “Osuwari.dll,” and its options are compatible with it. There is no need to add `seriko.alignmenttodesktop,free` to the shell's `descript.txt` (`osuwari` itself specifies the alignment).
+Makes the ghost's window "sit on", "stick to", or "hang from" the corners or edges of other windows. SSP incorporates the same behavior as ukiya's SAORI, "Osuwari.dll", and the options correspond to it. There is no need to write `seriko.alignmenttodesktop,free` in the shell's `descript.txt` (specifying `osuwari` is itself an alignment setting).
 
-## How it works
+## Concept
 
-At regular intervals, osuwari repeats the following:
+At regular intervals, osuwari repeatedly answers the following question.
 
-> Where on the screen should the top-left corner of the ghost window be placed?
+> Where on the screen should the upper-left corner of the ghost's window be placed?
 
-The answer depends on “which window,” “which point on it,” “which point on the ghost window,” and “how many pixels to offset it.” The elements are as follows.
+The answer depends on which point of the ghost's window is aligned with which point of which window, and how many pixels it is offset. The elements involved are as follows.
 
-- **Ghost window**: The window for each character (`\0`, `\1`, …). Its size matches the image of the currently displayed surface, including transparent areas. Its position is represented by the coordinates of its top-left corner. When the surface changes and its size changes, the positions of its right edge, bottom edge, and center also change.
-- **Target**: The window that the ghost sits on. Its visible frame is used for measurements; invisible frames, such as shadows, are not included.
-- **Reference rectangle**: The rectangle to sit on instead of the target when the target cannot be sat on or sitting on it would extend beyond the screen. This is either the entire monitor containing the target or its work area, determined by `--area=` and `--side=`.
-- **Origin**: A pair of points specifying which point on the target rectangle to align with which point on the ghost window. Set the point on the ghost window with `--origin=` and the point on the target rectangle with `--target-origin=`.
-- **Offset**: The displacement from the aligned position. Set it with `--x=` and `--y=` (positive values are right and down).
+- **Ghost's window**: A window for each character (`\0`, `\1`, etc.). Its size is the same as the currently displayed surface image, including transparent areas. Its position is expressed by the coordinates of its upper-left corner. When the surface changes and its size changes, the positions of its right edge, bottom edge, and center also change.
+- **Target**: The window on which the ghost sits. It is measured by its visible frame, excluding invisible borders such as shadows.
+- **Reference rectangle**: The rectangle on which the ghost sits instead of the target when it cannot sit on the target or would extend off-screen. It is either the whole monitor containing the target or its work area, as determined by `--area=` and `--side=`.
+- **Origin**: The pair of points specifying which point of the ghost's window is aligned with which point of the target rectangle. `--origin=` selects the point on the ghost's window, and `--target-origin=` selects the point on the target rectangle.
+- **Offset**: The displacement from the aligned position, specified by `--x=` and `--y=` (positive values move right and down).
 
-The position is calculated separately for the X and Y axes using the following formula.
+The position is calculated for each of the X and Y axes using the following formula.
 
 ```
 ゴーストのウインドウの左上 = 対象の矩形の点 − ゴーストのウインドウの点 + ずれ
 ```
 
-`--origin=` specifies the point on the ghost window, and `--target-origin=` specifies the point on the target rectangle. When sitting on a target, the target rectangle is used; when the target cannot be sat on, the reference rectangle is used.
+`--origin=` determines the point on the ghost's window, and `--target-origin=` determines the point on the target rectangle. The rectangle used is the target's rectangle when sitting on the target, or the reference rectangle when the ghost cannot sit on it.
 
-The options for each setting are as follows.
+The options correspond to these decisions as follows.
 
-| Setting | Option |
+| Decision | Option |
 |---|---|
 | Which window to sit on | `--target=` |
-| Which point on the ghost window to align | `--origin=` |
-| Which point on the target rectangle to align | `--target-origin=` |
-| How far to offset from that point | `--x=` `--y=` |
-| Where to sit when the target cannot be sat on or the ghost extends beyond the screen | `--area=` `--side=` `--margin=` `--noclip` |
-| The range in which dragging can move the ghost | `--xmove` `--ymove` |
+| Which point of the ghost's window to align | `--origin=` |
+| Which point of the target rectangle to align with | `--target-origin=` |
+| How far to offset from that position | `--x=` `--y=` |
+| Where to sit when the ghost cannot sit on the target or would extend off-screen | `--area=` `--side=` `--margin=` `--noclip` |
+| Range of movement by dragging | `--xmove` `--ymove` |
 | Whether to appear in front of or behind the target | `--zorder=` |
 | How often to follow the target | `--interval=` |
 
 ## How the position is determined
 
-The position is determined in the following order at each `--interval=` interval. However, it is not recalculated if the target, target rectangle, ghost window rectangle, surface reference position, and sitting position have all remained unchanged since the previous check.
+At each `--interval=`, the position is determined in the following order. However, it is not recalculated if the target, target rectangle, ghost window rectangle, surface base position, and sitting position have all remained unchanged since the previous check.
 
 1. Find the target (`--target=`).
-   - `active`: The foreground window. If a window that cannot be sat on (see below) is in the foreground, use the most recent window that could be sat on. If there is no such window yet, there is no target.
-   - `@string`: A window whose title contains the string and that can be sat on. If there are multiple matches, use the one highest in the Z-order.
-   - `#number`: The window whose handle is the specified number (in decimal). If it cannot be sat on, there is no target.
-   - `fix`: There is never a target.
-2. Determine the rectangle to sit on. If there is a target and it can be sat on, use its rectangle. If there is no target, use the reference rectangle (`--area=` and `--side=`).
-3. Overlay the two points selected by `--origin=` (the point on the ghost window) and `--target-origin=` (the point on the other rectangle) to calculate the top-left corner of the ghost window. Add `--x=` and `--y=` to that position.
-4. In the directions specified by `--xmove` and `--ymove`, if the ghost window has been moved from its previous position (for example, by dragging), constrain it to the inside of the other rectangle and remember its position as a ratio of the movable range. If a ratio has been remembered, use the position at that ratio within the other rectangle instead of the position calculated in step 3 ([range in which dragging can move the ghost](bang-set-alignmenttodesktop.note.md#ドラッグで動かせる範囲)).
-5. Check whether the ghost window extends beyond the screen (the clipping check). If it does, replace the rectangle from step 2 with the reference rectangle and repeat steps 3–4 once. Do not check again after repeating them. Skip the check when `--target=fix`, `--noclip`, or there is no target.
-6. Move the ghost window to the calculated position and adjust its Z-order (`--zorder=`).
+   - `active`: The foreground window. If the foreground window is one that the ghost cannot sit on (see below), use the last window it could sit on. If there has been no such window, there is no target.
+   - `@文字列`: A window whose title contains the string and on which the ghost can sit. If there are multiple such windows, use the one nearest the front in Z-order.
+   - `#数値`: The window whose window handle is the number specified in decimal. If the ghost cannot sit on it, there is no target.
+   - `fix`: There is always no target.
+2. Determine the rectangle to sit on. If there is a target and the ghost can sit on it, use the target rectangle. If there is no target, use the reference rectangle (`--area=` and `--side=`).
+3. Align the two points selected by `--origin=` (the point on the ghost's window) and `--target-origin=` (the point on the other rectangle) to find the upper-left corner of the ghost's window. Add `--x=` and `--y=` to that position.
+4. For each direction specified by `--xmove` or `--ymove`, if the ghost's window has been moved from its previous placement, such as by dragging, constrain that position inside the other rectangle and remember it as a proportion of the movable range. If a proportion has been remembered, use the position at that proportion within the other rectangle instead of the position calculated in step 3 ([Range of movement by dragging](bang-set-alignmenttodesktop.note.md#ドラッグで動かせる範囲)).
+5. Check whether the ghost's window extends off-screen (the clipping check). If it does, replace the rectangle used in step 2 with the reference rectangle and repeat steps 3–4 once. Do not check again after the retry. No check is performed for `--target=fix`, `--noclip`, or when there is no target.
+6. Move the ghost's window to the calculated position and adjust its Z-order (`--zorder=`).
 
-The same two points and offset from step 3 are used when repeating the calculation in step 5. Only the rectangle to sit on changes.
+The same selections for the two points in step 3 and the same offsets are used when retrying in step 5. Only the rectangle being sat on changes.
 
 ## Options
 
-Options use the form `--name=value`, and all can be omitted. Omitted options use their default values, not the values specified in the previous call. Options that cannot be interpreted are ignored.
+Options have the form `--名前=値`, and all are optional. Omitted options use their defaults, not the values specified in the previous call. Unrecognized options are ignored.
 
 | Option | Default | Description |
 |---|---|---|
-| `--target=` | `active` | Target to follow. `active`: foreground window / `fix`: fixed to the screen (work area) / `@string`: window whose title contains the string (case-insensitive) / `#number`: window whose handle is the specified number |
-| `--origin=` | `osuwari` | Which point on the ghost window to align with the target (the origin). Write it as `horizontal.vertical` (see “How to write origins” below). You can also specify a corner using two letters, such as `tl`, `tr`, `bl`, or `br` |
-| `--target-origin=` | omitted (automatic) | \[SSP 2.9.34\] Which point on the target rectangle to align with the point on the ghost window. The syntax is the same as for `--origin=`, but `base` and `osuwari` cannot be used (see “Points on the target rectangle” below). If omitted, it uses the same side as the point specified by `--origin=` (`left` is the left edge, `right` is the right edge, and `center`, `base`, and `osuwari` are the center) |
-| `--x=` `--y=` | `0` | Offset from the origin, in pixels. In directions where `--xmove` or `--ymove` is specified, this is the default position until the ghost is moved |
-| `--interval=` | `100` | Interval between position checks, in milliseconds. Values below 10 are treated as 10 |
-| `--xmove` `--ymove` | none | Allow dragging in the specified direction (up to the inside of the target rectangle). The moved position is remembered as a ratio of the movable range (see “Range in which dragging can move the ghost” below). In directions not specified, dragging returns the ghost to its sitting position. Can also be written as `--xmove=false` |
-| `--noclip` | none | Do not perform the clipping check |
-| `--area=` | `workarea` | Reference used when the target cannot be sat on or the ghost extends beyond the screen. `desktop`: entire screen / `workarea`: work area (the area excluding the taskbar, etc.) |
-| `--side=` | `center` | Where to place the “virtual window” relative to the reference when the target cannot be sat on or the ghost extends beyond the screen. `center`: the reference itself / `top`, `left`, `right`, `bottom`: place a 100-pixel-thick virtual window above, to the left, to the right, or below the reference |
-| `--margin=` | `0_0_0_0` | Tolerance for the clipping check, in pixels. Specify in the order `left_top_right_bottom`, separated by spaces or `_`. With `0_50_0_100`, the ghost is not considered clipped until it extends 50 pixels above or 100 pixels below |
-| `--zorder=` | `front` | Z-order relative to the target window. `front`: display immediately above (in front of) the target / `back`: display immediately behind (directly below) the target. Does nothing when not sitting on a target (when it cannot be sat on or with `--target=fix`) |
+| `--target=` | `active` | The target to follow. `active`: foreground window / `fix`: fixed to the screen (work area) / `@文字列`: a window whose title contains the string (case-insensitive) / `#数値`: the window whose handle is the number |
+| `--origin=` | `osuwari` | Which point of the ghost's window to align with the target (the origin). Write it in the form `左右.上下` (see "Writing the origin" below). Corners can also be written as two letters, such as `tl`, `tr`, `bl`, or `br` |
+| `--target-origin=` | Omitted (automatic) | \[SSP 2.9.34\] Which point of the target rectangle to align with the point of the ghost's window. The format is the same as `--origin=`, but `base` and `osuwari` cannot be used (see "Point on the target rectangle" below). If omitted, the point is on the same side as the `--origin=` point (`left` is the left edge, `right` is the right edge, and `center`, `base`, and `osuwari` are the center) |
+| `--x=` `--y=` | `0` | Offset from the origin in pixels. In directions specified by `--xmove` or `--ymove`, this is the default until the window is moved |
+| `--interval=` | `100` | Interval for checking the position in milliseconds. Values less than 10 are treated as 10 |
+| `--xmove` `--ymove` | None | Allow dragging in that direction, within the target rectangle. The moved position is remembered as a proportion of the movable range (see "Range of movement by dragging" below). In directions not specified, the window returns to its sitting position even if dragged. These can also be written as, for example, `--xmove=false` |
+| `--noclip` | None | Disable the clipping check |
+| `--area=` | `workarea` | Reference area used when the ghost cannot sit on the target or would be clipped. `desktop`: entire screen / `workarea`: work area (the area excluding the taskbar, etc.) |
+| `--side=` | `center` | Where to place the "virtual window" relative to the reference area when the ghost cannot sit on the target or would be clipped. `center`: the reference area itself / `top` `left` `right` `bottom`: place a virtual window 100 pixels thick on the top, left, right, or bottom side of the reference area |
+| `--margin=` | `0_0_0_0` | Allowance for the clipping check in pixels. Specify in `左_上_右_下` order, separated by spaces or `_`. With `0_50_0_100`, for example, the window is not considered clipped until it extends more than 50 pixels above or 100 pixels below the screen |
+| `--zorder=` | `front` | Z-order relative to the target window. `front`: display immediately above (in front of) the target / `back`: display immediately behind (directly below) the target. Does nothing while not sitting on a target (when the ghost cannot sit on it or with `--target=fix`) |
 
-- The defaults for `--origin=` and `--area=` are `osuwari` and `workarea` for the tag and `descript.txt`. The built-in SAORI `osuwari` (compatible with Osuwari.dll) retains the original defaults, `tl` and `desktop`. \[SSP 2.9.34\] In 2.9.33, the defaults for the tag and `descript.txt` were also `tl` and `desktop`.
-- When the target cannot be sat on (with `--target=fix`, when the target window does not exist, or when the foreground window cannot be sat on and there is no previously usable window) and when the ghost extends beyond the screen (sitting on the target as-is would extend beyond the screen), the ghost sits on the reference rectangle determined by `--area` and `--side`, treated as a “virtual target.” The clipping check is not performed with `--target=fix`.
-- Window rectangles are measured using their visible frames (excluding invisible frames on Windows 10 and later). The reference monitor is the one containing the target window (or the monitor containing the ghost when there is no target; while dragging, the monitor containing the cursor). Clipping is checked against the combined area of all monitors.
-- The ghost cannot sit on minimized or hidden windows, windows on another virtual desktop, owned windows such as dialogs, or SSP's own windows (when `--target=active`). With `--target=active`, it also cannot sit on shell windows that it is clearly not appropriate to sit on, such as the desktop, Alt+Tab and Task View, UWP windows displayed by the shell such as Start, Search, and IME panels, and full-screen Metro windows in Windows 8. If one of these windows is in the foreground, the ghost stays on the most recent window it could sit on. Windows explicitly specified with `@string` or `#number` are not excluded.
-- While sitting on a target, the ghost is displayed above its window. osuwari makes the ghost topmost (always in front of other windows) only when the target is a topmost window (such as the taskbar); otherwise, the ghost is not topmost. However, ghosts configured to “always stay on top” remain topmost due to that setting, regardless of the target. Even when the target is a topmost window, the ghost is displayed above it (whenever the target comes to the foreground, the ghost is also brought to the top).
-- With `--zorder=back`, the ghost is displayed immediately behind the target window (directly below it in the Z-order). This can be used to make the ghost peek out from behind the target. If another application's window gets between them, the ghost returns to immediately behind the target at the next position check (at the `--interval=` interval). When the target is a topmost window (such as the taskbar), the ghost also becomes topmost and is placed directly below the target among the topmost windows. If a ghost configured to “always stay on top” sits behind a window that is not topmost, that setting takes precedence, so the ghost remains topmost and the request to sit behind the target has no effect.
-- To sit just above the taskbar without following a window, fix the ghost to the screen with `--target=fix` and use the bottom edge of the work area (for example, `--target=fix,--origin=bl,--area=workarea,--side=center`. Use `--origin=br` for the right edge). The work area excludes the taskbar and similar items, so the ghost sits just above the taskbar only when it is at the bottom of the screen. When the taskbar is at the top or sides of the screen, the ghost sits at the bottom edge of the screen (the bottom edge of the work area). If the taskbar is set to hide automatically, the work area is the entire screen, so the ghost sits at the bottom edge of the screen.
-- osuwari stops if another alignment (`top`, `bottom`, `left`, `right`, `free`) is specified, the shell is changed, and so on. `default` restores the ghost's default setting (`descript.txt`; see below). It stops in window mode and resumes when returning to normal mode.
+- The defaults for `--origin=` and `--area=` in the tag and `descript.txt` are `osuwari` and `workarea`. The built-in SAORI `osuwari` (compatible with Osuwari.dll) retains `tl` and `desktop` to match the original. \[SSP 2.9.34\] In 2.9.33, the defaults for the tag and `descript.txt` were also `tl` and `desktop`.
+- When the ghost cannot sit on the target (`--target=fix`, no target window, or a foreground window that cannot be sat on with no previously usable window), or when it would be clipped (extend off-screen if placed there), it sits on the reference rectangle determined by `--area` and `--side` as a "virtual target". No clipping check is performed with `--target=fix`.
+- Window rectangles are measured by their visible frames, excluding the invisible borders in Windows 10 and later. The reference screen is the monitor containing the target window, or the monitor containing the ghost if there is no target; while dragging, it is the monitor containing the cursor. Clipping is checked against the combined area of all monitors.
+- The ghost cannot sit on minimized or hidden windows, windows on another virtual desktop, owned windows such as dialogs, or SSP's own windows (with `--target=active`). With `--target=active`, it also cannot sit on shell windows that are clearly unsuitable, such as the desktop, Alt+Tab and Task View, UWP windows displayed by the shell for Start, Search, IME panels, and similar functions, or full-screen Windows 8 Metro windows. When such a window is in the foreground, the ghost continues to sit on the last usable window. Windows explicitly specified with `@文字列` or `#数値` are not subject to these exclusions.
+- While sitting, the ghost is displayed above the target window. osuwari makes the ghost topmost (always in front of other windows) only when the target is a topmost window, such as the taskbar; otherwise, the ghost is not topmost. However, a ghost configured to "always show in front" remains topmost regardless of the target. Even when the target is topmost, the ghost is displayed above it (whenever the target comes to the front, the ghost is also restored above it).
+- With `--zorder=back`, the ghost is displayed immediately behind the target window (directly below it in Z-order). This can be used, for example, to make the ghost peek out from behind the target. Even if another application's window comes between them, the ghost returns immediately behind the target at the next position check (at the `--interval=` interval). If the target is a topmost window, such as the taskbar, the ghost also becomes topmost and is placed directly below the target among the topmost windows. If a ghost configured to "always show in front" sits behind a window that is not topmost, that setting takes priority and the ghost remains topmost (the back setting has no effect).
+- To sit directly above the taskbar without following a window, use `--target=fix` to fix the ghost to the screen and use the bottom edge of the work area (for example, `--target=fix,--origin=bl,--area=workarea,--side=center`; use `--origin=br` for the right edge). Because the work area excludes the taskbar and similar elements, the ghost sits directly above the taskbar only when it is at the bottom of the screen. When the taskbar is at the top, left, or right of the screen, the ghost sits at the bottom of the screen (the bottom edge of the work area). When the taskbar is set to auto-hide, the work area covers the entire screen, so the ghost sits at the bottom of the screen.
+- osuwari stops when another alignment (`top` `bottom` `left` `right` `free`) is specified, the shell is changed, and so on. `default` restores the ghost's default setting (`descript.txt`; see below). osuwari stops in window mode and resumes when normal mode is restored.
 - The position while sitting is not saved as the standing position.
-- Of the windows linked by sticky window, the side that is not the parent (the linked child) follows the parent, so specifying osuwari has no effect on it. When the parent sits, the child moves with it.
-- `\0` and `\1` can be specified separately. However, since the Z-order of the ghost window is shared by the entire ghost, when multiple characters sit on targets, the target for the character with the smallest number determines it.
+- Among windows linked by sticky window, specifying osuwari has no effect on the non-parent side (the linked child), because it follows the parent. When the parent sits, the child moves with it.
+- `\0` and `\1` can each be specified separately. However, the Z-order of ghost windows is shared by the ghost as a whole, so when multiple characters sit, it is determined by the target of the character with the lower number.
 
-## How to specify the origin \[SSP 2.9.34\]
+## Specifying the origin \[SSP 2.9.34\]
 
-`--origin=` aligns a point on the ghost window with a point on the target rectangle. Use the form `horizontal.vertical`; the part before `.` specifies the X axis, and the part after it specifies the Y axis. The following terms can be used (case-insensitive).
+`--origin=` aligns a point on the ghost's window with a point on the target rectangle. The format is `左右.上下`, where the part before `.` is the X axis and the part after it is the Y axis. Each part can use the following words (case-insensitive).
 
-| Term | Point on the ghost window | Point on the target rectangle (when `--target-origin=` is omitted) |
+| Word | Point on the ghost's window | Point on the target rectangle (when `--target-origin=` is omitted) |
 |---|---|---|
 | `left` (for X) / `top` (for Y) | Left edge / top edge | Left edge / top edge |
 | `right` (for X) / `bottom` (for Y) | Right edge / bottom edge | Right edge / bottom edge |
 | `center` | Center | Center |
-| `base` | Surface base position (`point.basepos.x` and `point.basepos.y`; defaults to the bottom center) | Center |
-| `osuwari` | Surface sitting position (`point.osuwaripos.x` and `point.osuwaripos.y`; defaults to the same as `base`) | Center |
+| `base` | Base position of the surface (`point.basepos.x` and `point.basepos.y`; defaults to the center at the feet) | Center |
+| `osuwari` | Sitting position of the surface (`point.osuwaripos.x` and `point.osuwaripos.y`; defaults to the same as `base`) | Center |
 
-- If `base` or `osuwari` is specified as a single term without `.`, it applies to both the X and Y axes (`--origin=osuwari` is equivalent to `osuwari.osuwari`). Any other single term specifies only the X axis, with `top` used for the Y axis.
+- When `base` or `osuwari` is written alone without `.`, it applies to both the X and Y axes (`--origin=osuwari` means `osuwari.osuwari`). Any other word written alone specifies only the X axis, and the Y axis becomes `top`.
 - `tl` is equivalent to `left.top`, `tr` to `right.top`, `bl` to `left.bottom`, and `br` to `right.bottom`.
-- Unrecognized specifications are ignored (the origin does not change).
-- The target rectangle has no `base` or `osuwari` point, so its center is used when `--target-origin=` is omitted. For example, the default `--origin=osuwari` places the ghost’s sitting position at the center of the target rectangle. To move the sitting position, use `--x=` and `--y=`, or change the point on the target side with `--target-origin=`.
-- Example: `--origin=center.bottom` aligns the ghost’s center (X) and bottom edge (Y) with the target’s center (X) and bottom edge (Y). `--origin=right.osuwari` aligns the ghost’s right edge (X) and `point.osuwaripos.y` (Y) with the target’s right edge (X) and center (Y).
+- Unrecognized formats are ignored (the origin remains unchanged).
+- The target rectangle has no `base` or `osuwari`, so its center is used when `--target-origin=` is omitted. For example, with the default `--origin=osuwari`, the ghost's sitting position is aligned with the center of the target rectangle. Adjust the sitting position with `--x=` and `--y=`, or change the target point with `--target-origin=`.
+- Example: `--origin=center.bottom` aligns the ghost's center (X) and bottom edge (Y) with the target's center (X) and bottom edge (Y). `--origin=right.osuwari` aligns the ghost's right edge (X) and `point.osuwaripos.y` (Y) with the target's right edge (X) and center (Y).
 
 ## Point on the target rectangle \[SSP 2.9.34\]
 
-`--target-origin=` specifies the point on the target rectangle to which a point on the ghost window is aligned. Its format is the same as `--origin=` (`horizontal.vertical`, `tl` `tr` `bl` `br`, or a single term), and the available terms are only `left` `right` `top` `bottom` and `center`. The target rectangle has no `base` or `osuwari` point, so those terms are ignored as unrecognized specifications.
+`--target-origin=` determines the point on the target rectangle with which the point on the ghost's window is aligned. The format is the same as `--origin=` (`左右.上下`, `tl` `tr` `bl` `br`, or one word), but only `left` `right` `top` `bottom` `center` can be used. The target rectangle has no `base` or `osuwari`, so specifying either is treated as an unrecognized format and ignored.
 
-- If omitted, the point is on the same side as the point specified by `--origin=`. `left` and `top` mean the left and top edges, `right` and `bottom` mean the right and bottom edges, and `center` `base` and `osuwari` mean the center (the right-hand column in the table above).
-- A single term specifies only the X axis, with `top` used for the Y axis. `--target-origin=center` is equivalent to `center.top` (the center of the target’s top edge).
-- Unrecognized specifications are ignored (the point on the target rectangle does not change).
-- When the object to sit on is the reference rectangle (when sitting is not possible), the point is on the reference rectangle (including the virtual window).
-- Example: `--origin=osuwari --target-origin=center.top` aligns the surface sitting position with the center of the target’s top edge. `--origin=center.bottom --target-origin=center.top` aligns the ghost’s center (X) and bottom edge (Y) with the target’s center (X) and top edge (Y). The ghost’s feet rest on the target’s top edge, regardless of the ghost’s height.
-- The built-in SAORI `osuwari` (compatible with Osuwari.dll) has no corresponding argument. As before, it aligns the same corners of the ghost and the target.
+- If omitted, the point is on the same side as the `--origin=` point. `left` and `top` mean the left and top edges, `right` and `bottom` mean the right and bottom edges, and `center`, `base`, and `osuwari` mean the center (the right column of the table above).
+- If only one word is specified, it specifies the X axis, and the Y axis becomes `top`. `--target-origin=center` means `center.top` (the center of the target's top edge).
+- Unrecognized formats are ignored (the point on the target rectangle remains unchanged).
+- When the sitting target is the reference rectangle (when sitting is not possible), the point is on the reference rectangle (including a virtual window).
+- Example: `--origin=osuwari --target-origin=center.top` aligns the surface's sitting position with the center of the target's top edge. `--origin=center.bottom --target-origin=center.top` aligns the ghost's center (X) and bottom edge (Y) with the target's center (X) and top edge (Y). The ghost's feet rest on the target's top edge regardless of the ghost's height.
+- The built-in SAORI `osuwari` (compatible with Osuwari.dll) has no equivalent argument. As before, it aligns a corner of the ghost with the same corner of the target.
 
 ## Surface sitting position \[SSP 2.9.34\]
 
-You can specify the sitting position with `point.osuwaripos.x` and `point.osuwaripos.y` in a surface brace in the shell’s `surfaces.txt` ([point.osuwaripos.x](../../../descript/shell-surfaces/surface-brace/point.osuwaripos.x.md)・[point.osuwaripos.y](../../../descript/shell-surfaces/surface-brace/point.osuwaripos.y.md)). These are the points used by `osuwari` in `--origin=`; if omitted, they are the same as `point.basepos.x` and `point.basepos.y` (or their defaults, if those are also omitted).
+The sitting position can be specified with `point.osuwaripos.x` and `point.osuwaripos.y` in a surface brace in the shell's `surfaces.txt` ([point.osuwaripos.x](../../../descript/shell-surfaces/surface-brace/point.osuwaripos.x.md) and [point.osuwaripos.y](../../../descript/shell-surfaces/surface-brace/point.osuwaripos.y.md)). This is the point used by `osuwari` in `--origin=`; if omitted, it is the same as `point.basepos.x` and `point.basepos.y` (or their defaults if they are not specified).
 
-For example, to place the sitting position at the waist on a surface 200 pixels wide and 300 pixels high, write:
+For example, to place the sitting position at the waist of a surface with a width of 200 and a height of 300, write the following.
 
 ```
 surface0
@@ -129,123 +129,123 @@ point.osuwaripos.y,250
 }
 ```
 
-This position is measured in pixels from the top-left of the surface, and scales with the surface. It is a separate point from the base position at the feet (`point.basepos`; defaults to the bottom center (100,300) if omitted). `--origin=base` uses the base position, and `--origin=osuwari` uses the sitting position.
+This position is measured in pixels from the top-left corner of the surface and scales with the surface. It is a separate point from the base position at the feet (`point.basepos`, or the center of the bottom edge (100,300) if omitted): `--origin=base` uses the base position, while `--origin=osuwari` uses the sitting position.
 
-## Positioning examples
+## Alignment example
 
-The following example shows the surface above sitting on a window whose top-left is (400,400) and bottom-right is (1000,900). `--origin=osuwari --target-origin=center.top` places the ghost’s sitting position at the center of the target’s top edge.
+The following example shows the surface above sitting on a window with its top-left corner at (400,400) and bottom-right corner at (1000,900). `--origin=osuwari --target-origin=center.top` aligns the ghost's sitting position with the center of the target's top edge.
 
-![Position of the ghost window relative to the target when sitting with --origin=osuwari --target-origin=center.top](../../../assets/image/osuwari-origin.svg)
+![Relative positions of the ghost's window and the target when sitting with --origin=osuwari --target-origin=center.top](../../../assets/image/osuwari-origin.svg)
 
-The sitting position (100,250) is aligned with the center of the target’s top edge (700,400), so the ghost’s top-left is (700−100,400−250)=(600,150). The base position at the feet (the bottom center by default) is 50 pixels below the sitting position, at (700,450), inside the top edge of the window. Since the ghost is displayed in front of the target, it appears to be sitting on the window’s edge.
+The sitting position (100,250) is aligned with the center of the target's top edge (700,400), so the ghost's top-left corner is at (700−100,400−250)=(600,150). The base position at the feet (by default, the center of the bottom edge) is at (700,450), 50 pixels below the sitting position and inside the window's top edge. The ghost is displayed in front of the target, so it appears to be sitting on the window's edge.
 
-- If you specify `point.osuwaripos` for each surface, the ghost will reposition itself so the sitting position rests on the edge when the surface changes.
-- If `--target-origin=` is omitted, the sitting position is aligned with the center of the target. To make the ghost sit on an edge, specify a point on the target side, such as `--target-origin=center.top`.
-- You can also align using a corner or edge of the ghost without using the sitting position. `--origin=center.bottom --target-origin=center.top` aligns the center of the ghost’s bottom edge with the center of the target’s top edge (so the feet rest on it).
-- If `--target-origin=` is omitted, the point on the target side is always on the same side as the ghost’s point, so you cannot specify a combination that aligns the bottom edge with the top edge. In that case, align the top edges and offset the ghost, as in `--origin=tr --y=-300`. This offset is based on the ghost’s height, so the feet will shift if its height changes.
+- If `point.osuwaripos` is specified for each surface, the ghost adjusts its sitting position when the surface changes so that the sitting position remains on the edge.
+- If `--target-origin=` is omitted, the sitting position is aligned with the center of the target. To make the ghost sit on the edge, specify the target point, for example with `--target-origin=center.top`.
+- Instead of using the sitting position, you can align the ghost by a corner or edge. `--origin=center.bottom --target-origin=center.top` aligns the center of the ghost's bottom edge with the center of the target's top edge (so its feet rest on it).
+- If `--target-origin=` is omitted, the target point is always on the same side as the ghost's point, so the bottom edge cannot be aligned with the top edge. In that case, align the top edges and apply an offset, as in `--origin=tr --y=-300`. This offset is based on the ghost's height, so the feet will shift if the height changes.
 
-## When it cannot sit or overflows
+## When sitting on the target is not possible or would go off-screen
 
-When it cannot sit on the target, or sitting on it would cause it to overflow, it sits on the reference rectangle instead of the target. The reference rectangle is created in the following order.
+When the ghost cannot sit on the target or would go off-screen by sitting on it, it sits on a reference rectangle instead. The reference rectangle is constructed in the following order.
 
-1. Use `--area=` to choose either the entire monitor containing the target (`desktop`) or its work area (`workarea`). If there is no target, use the monitor containing the ghost window (or, while dragging, the monitor containing the cursor).
-2. Use `--side=` to choose whether to use 1 as is (`center`) or use a virtual window placed outside it (`top` `left` `right` `bottom`). The virtual window has the same length as the corresponding edge of the reference rectangle and is 100 pixels thick.
+1. Use `--area=` to select either the entire monitor containing the target (`desktop`) or its work area (`workarea`). If there is no target, use the monitor containing the ghost's window (or the monitor containing the cursor while dragging).
+2. Use `--side=` to select either the rectangle from step 1 as is (`center`) or a virtual window placed outside it (`top` `left` `right` `bottom`). The virtual window is as long as the reference edge and 100 pixels thick.
 
-![Relationship between the virtual window created by --side= and the reference rectangle](../../../assets/image/osuwari-side.svg)
+![Virtual windows created by --side= and their positions relative to the reference rectangle](../../../assets/image/osuwari-side.svg)
 
-When `bottom` is selected, the top edge of the virtual window overlaps the bottom edge of the reference rectangle. Combined with `--origin=osuwari --target-origin=center.top`, the sitting position rests at the center of the reference rectangle’s bottom edge (or, for the work area, sits on the top edge of the taskbar). With `--origin=center.bottom --target-origin=center.top`, the bottom edge of the ghost rests there, with its feet standing on the bottom edge of the reference rectangle.
+When `bottom` is selected, the top edge of the virtual window overlaps the bottom edge of the reference rectangle. Combined with `--origin=osuwari --target-origin=center.top`, this places the sitting position at the center of the reference rectangle's bottom edge (on the top edge of the taskbar for the work area). With `--origin=center.bottom --target-origin=center.top`, the ghost's bottom edge rests there, placing its feet at the reference rectangle's bottom edge.
 
-When sitting on the reference rectangle, `--origin=`, `--target-origin=`, `--x=` and `--y=` work just as they do when sitting on a target.
+When sitting on the reference rectangle, `--origin=`, `--target-origin=`, `--x=`, and `--y=` are used in the same way as when sitting on a target.
 
 !!! note "Note"
-    If you leave `--side=center` (the default) with `--origin=osuwari --target-origin=center.top`, when it falls onto the reference rectangle it sits at the center of the top edge of the reference rectangle (the entire work area). The sitting position (100,250) overlaps (960,0), so the ghost’s top-left corner is at (860,-250), leaving most of it off screen. After it falls onto the reference rectangle, clipping is not checked, so it is not pulled back. To make it sit at the bottom edge of the screen, combine this with `--side=bottom`.
+    If `--origin=osuwari --target-origin=center.top` is used with `--side=center` (the default), falling back to the reference rectangle places the ghost at the center of its top edge (the top edge of the entire work area). The sitting position (100,250) overlaps (960,0), so the ghost's top-left corner is at (860,-250), leaving most of it off-screen. No clipping check is performed after falling back to the reference rectangle, so the ghost is not pulled back. To make it sit at the bottom edge of the screen, combine this with `--side=bottom`.
 
-**Clipping check** determines whether the entire ghost window, including transparent areas, fits inside the rectangle enclosing all monitors.
+The **clipping check** determines whether the entire ghost window, including transparent areas, fits within the rectangle enclosing all monitors.
 
-- `--margin=` is the amount by which to expand that rectangle outward. With `--margin=0_0_100_0`, it is not considered clipped until it overflows 100 pixels to the right. Use this when the transparent margins of a surface extending off screen would otherwise trigger clipping.
-- `--noclip` disables the clipping check entirely. Depending on the target’s position, the ghost may remain off screen.
-- No clipping check is performed when `--target=fix` is specified or when there is no target (it is already sitting on the reference rectangle).
+- `--margin=` specifies how much to expand that rectangle outward. With `--margin=0_0_100_0`, the ghost is not considered clipped until it extends more than 100 pixels to the right. Use this when transparent surface padding alone would otherwise be considered clipped outside the screen.
+- `--noclip` disables the clipping check entirely. Depending on the target's position, the ghost may remain off-screen.
+- No clipping check is performed with `--target=fix` or when there is no target (the ghost is already sitting on the reference rectangle).
 
-## Range of movement by dragging
+## Drag movement range
 
-By default, dragging the ghost window cannot move it from its sitting position. `--xmove` allows dragging horizontally, and `--ymove` allows dragging vertically. In a direction that is not specified, it returns to its sitting position when moved.
+By default, dragging the ghost's window does not move it from its sitting position. `--xmove` permits horizontal dragging, and `--ymove` permits vertical dragging. Movement in an unspecified direction returns to the sitting position.
 
-It can only move within the rectangle of the object it is sitting on.
+Movement is limited to the inside of the rectangle the ghost sits on.
 
-- `--xmove`: the left edge of the ghost window must be at or to the right of the object’s left edge, and its right edge must be at or to the left of the object’s right edge.
-- `--ymove`: the top edge of the ghost window must be at or below the object’s top edge, and its bottom edge must be at or above the object’s bottom edge.
+- `--xmove`: The ghost window's left edge must be at or to the right of the rectangle's left edge, and its right edge must be at or to the left of the rectangle's right edge.
+- `--ymove`: The ghost window's top edge must be at or below the rectangle's top edge, and its bottom edge must be at or above the rectangle's bottom edge.
 
-The object it sits on is the target when it is sitting on a target, and the reference rectangle (including the virtual window) when it is not sitting on a target (`--target=fix` or after falling onto the reference rectangle). For example, `--target=fix --origin=bl --xmove` stands at the bottom edge of the work area and can move only horizontally.
+The rectangle the ghost sits on is the target when sitting on the target, or the reference rectangle, including any virtual window, otherwise (with `--target=fix` or after falling back to the reference rectangle). For example, `--target=fix --origin=bl --xmove` makes the ghost stand on the bottom edge of the work area and allows only horizontal movement.
 
-The moved position is remembered separately for each direction as a ratio within the range of movement. A ratio of 0 means the position where the left edge (top edge) of the ghost window overlaps the object’s left edge (top edge); a ratio of 1 means the position where its right edge (bottom edge) overlaps the object’s right edge (bottom edge).
+The moved position is remembered separately for each direction as a ratio within the movement range. A ratio of 0 places the ghost window's left edge (top edge) at the rectangle's left edge (top edge); a ratio of 1 places its right edge (bottom edge) at the rectangle's right edge (bottom edge).
 
-- Until it is moved, it sits at the position determined by `--origin=`, `--target-origin=`, `--x=` and `--y=`. These are the defaults for sitting.
-- Once it is moved, the ratio takes precedence in that direction, and `--origin=` and the other options are not used. It sits at the same relative position even if the object’s size or the ghost window’s size changes. The same applies when changing the target or switching surfaces.
-- The ratio is updated only when the ghost window is moved from its previous placement (by dragging or `\![move]`). It is not updated just because the target moves or changes size.
-- In directions where it cannot move, its position is still determined by the origin, the point on the target, and the offset.
-- Specifying `osuwari` again clears the remembered ratio and restores the default.
-- Since the range of movement is only within the object, once it has been moved it cannot return to a position shifted outside the object (such as sitting on the target’s top edge). To return to that position, specify `osuwari` again.
-- If the ghost window is larger than the object (the range of movement is 0 or less), no ratio can be determined. Moving it does not store a ratio; if a ratio is already remembered, it sits aligned with the object’s left edge (top edge). If it has not yet been moved, it stays at the default position.
+- Until moved, the ghost sits at the position determined by `--origin=`, `--target-origin=`, `--x=`, and `--y=`. These define the default sitting position.
+- Once moved, the ratio takes precedence in that direction, and `--origin=` and similar options are not used. The ghost sits at the same relative position even if the rectangle or the ghost window changes size. The same applies when the target or surface changes.
+- The ratio is updated only when the ghost window is moved from its last placed position, such as by dragging or `\![move]`. It is not updated merely because the target moves or changes size.
+- Directions in which movement is not permitted are still determined by the origin, target point, and offsets.
+- Specifying `osuwari` again clears the remembered ratios and restores the defaults.
+- Because movement is limited to the inside of the rectangle, once moved, the ghost cannot return to a position offset outside it, such as sitting on the target's top edge. To restore that position, specify `osuwari` again.
+- When the ghost window is larger than the rectangle (the movement range is zero or less), no ratio can be determined. Moving it does not store a ratio; if a ratio is already stored, the ghost sits aligned with the rectangle's left edge (top edge). If it has not yet been moved, it remains at the default position.
 
-For example, when the target has top-left (300,400) and bottom-right (1100,1000), the ghost window is 200 pixels wide and 300 pixels high, and `--origin=tl --xmove` is specified, the initial top-left position is (300,400).
+For example, suppose the target's top-left corner is (300,400) and its bottom-right corner is (1100,1000), the ghost window is 200 wide and 300 high, and `--origin=tl --xmove` is specified. The initial top-left corner is (300,400).
 
-- Dragging the left edge to 600 (the range is 300 to 900, so this is the midpoint) sets the ratio to 0.5.
-- When the target’s width becomes 600 (top-left (300,400), bottom-right (900,1000)), the range is 300 to 700, and the left edge is at 500.
-- When another window (top-left (1000,100), bottom-right (1400,800)) comes to the front, the range is 1000 to 1200, and the left edge is at 1100.
+- Dragging the left edge to 600 gives a ratio of 0.5 (the range is 300 to 900, and 600 is its midpoint).
+- If the target's width becomes 600 (top-left (300,400), bottom-right (900,1000)), the range becomes 300 to 700 and the left edge moves to 500.
+- If another window (top-left (1000,100), bottom-right (1400,800)) comes to the foreground, the range becomes 1000 to 1200 and the left edge moves to 1100.
 
-## Stacking order
+## Z-order
 
-While sitting, the ghost window maintains its stacking order relative to the target. Use `--zorder=` to choose whether it appears in front of the target or directly behind it. This does not affect position calculations.
+While sitting, the ghost window maintains its Z-order relative to the target. Use `--zorder=` to select whether it appears in front of or immediately behind the target. This does not affect position calculations.
 
-![Stacking order of the ghost window and target with --zorder=front and --zorder=back](../../../assets/image/osuwari-zorder.svg)
+![Z-order of the ghost window and target with --zorder=front and --zorder=back](../../../assets/image/osuwari-zorder.svg)
 
-- `front`: Move the ghost directly above the target only if it is behind the target. If it is already in front of the target, do not move it (the same applies if another window is between them; this prevents ghosts sitting on the same window from competing over their stacking order).
-- `back`: Keep it directly behind the target. If a visible window from another application gets between them, move it back directly behind the target at the next position check (at the `--interval=` interval).
+- `front`: Moves the ghost immediately above the target only if it is below the target. If it is already above the target, it is not moved, even if another window is between them. This prevents ghosts sitting on the same window from competing for Z-order.
+- `back`: Keeps the ghost immediately behind (directly below) the target. If a visible window from another application comes between them, the ghost is returned directly below the target at the next position check (at the interval specified by `--interval=`).
 
-For cases where the target is the frontmost window (such as the taskbar), and for ghosts with the “Always on top” setting, see the notes in “Options”.
+For topmost targets such as the taskbar and ghosts set to "Always on top", see the notes under "Options".
 
 ## Numerical examples
 
-The following shows where the top-left corner of the ghost window will be under these conditions.
+The following examples show where the upper-left corner of the ghost's window is placed under these conditions.
 
-- Ghost window: width 200, height 300. The surface reference position is the default bottom center (100,300). The sitting position is specified in `surfaces.txt` as `point.osuwaripos.x,100` and `point.osuwaripos.y,250` (100,250).
-- Screen: 1920×1080. Work area: 1920×1040 (the taskbar is at the bottom and is 40 pixels high).
-- Target: top-left (400,400), bottom-right (1000,900), unless otherwise noted.
+- Ghost window: 200 wide and 300 high. The surface reference position is the default center of the feet, (100,300). The sitting position is (100,250), specified in `surfaces.txt` as `point.osuwaripos.x,100` and `point.osuwaripos.y,250`.
+- Screen: 1920×1080. The work area is 1920×1040 (the taskbar is at the bottom and is 40 pixels high).
+- Target: Upper left (400,400), lower right (1000,900), unless otherwise noted.
 
-The values for specifications that omit `--origin=` and `--area=` use the defaults (`osuwari` and `workarea`) from SSP 2.9.34 onward. In 2.9.33, the defaults are `tl` and `desktop`, so the results differ.
+Results for specifications that omit `--origin=` and `--area=` use the defaults in SSP 2.9.34 and later (`osuwari` and `workarea`). The defaults in 2.9.33 are `tl` and `desktop`, so the results differ.
 
-| Specification | Top-left | Description |
+| Specification | Upper left | Description |
 |---|---|---|
-| `--origin=osuwari` (default) | (600,400) | The sitting position (100,250) overlaps the center of the target (700,650). |
-| `--origin=osuwari --target-origin=center.top` | (600,150) | The sitting position overlaps the center of the target's top edge (700,400). The ghost sits on the window's edge (diagram above). |
-| `--origin=tr --x=-20 --y=-300` | (780,100) | Align the top-right corner with the target's top-right corner, then move 20 pixels left and 300 pixels up. The bottom edge (400) overlaps the target's top edge, so the ghost stands on the window's top edge. |
-| `--origin=bl` | (400,600) | Align the bottom-left corner with the target's bottom-left corner. The bottom edge (900) overlaps the target's bottom edge. |
-| `--origin=center.bottom --target-origin=center.top` | (600,100) | Align the center of the ghost's bottom edge with the center of the target's top edge (700,400). The ghost stands on the top edge of the window, regardless of its height. |
-| `--target=fix --origin=osuwari --target-origin=center.top --side=bottom` | (860,790) | Align the sitting position with the center of the top edge (960,1040) of the virtual window below the work area. The ghost sits on the edge at the bottom of the work area. |
-| `--target=fix --origin=center.bottom --target-origin=center.top --side=bottom` | (860,740) | Align the center of the ghost's bottom edge with the same point. The ghost stands at the bottom of the work area. |
-| With the specification from row 3, the target is maximized (top-left (0,0), bottom-right (1920,1040)). Add `--side=bottom` | (1700,740) | The top edge would be outside the screen (-300), so the ghost would be clipped. It moves to the virtual window below the work area and sits there using the same `--origin=`, `--x=`, and `--y=` values. Its bottom edge is at 1040 (the bottom of the work area). |
-| Omit `--side=bottom` from the row above | (1700,-300) | The ghost moves to the work area itself. Clipping is not checked, so it sits outside the screen. |
-| `--target=fix --origin=bl` | (0,740) | The ghost stands at the bottom-left of the work area. With `--origin=br`, it would be at (1720,740). |
-| `--target=fix` | (860,270) | The sitting position overlaps the center of the work area (960,520). |
-| Target is (1500,400)-(2000,900). `--origin=tr --y=-300 --side=bottom` | (1720,740) | The right edge, 2000, exceeds the screen's right edge at 1920, so the ghost would be clipped. It moves to the virtual window below the work area. |
-| Add `--margin=0_0_100_0` or `--noclip` to the row above | (1800,100) | The ghost stays seated on the target because 100 pixels of overflow to the right are allowed (or clipping is not checked). |
+| `--origin=osuwari` (default) | (600,400) | The sitting position (100,250) coincides with the center of the target (700,650). |
+| `--origin=osuwari --target-origin=center.top` | (600,150) | The sitting position coincides with the center of the target's top edge (700,400). The ghost sits on the window edge (illustrated above). |
+| `--origin=tr --x=-20 --y=-300` | (780,100) | Aligns the upper right with the target's upper right, then moves 20 left and 300 up. The bottom edge (400) coincides with the target's top edge, so the ghost stands on the top edge of the window. |
+| `--origin=bl` | (400,600) | Aligns the lower left with the target's lower left. The bottom edge (900) coincides with the target's bottom edge. |
+| `--origin=center.bottom --target-origin=center.top` | (600,100) | Aligns the center of the ghost's bottom edge with the center of the target's top edge (700,400). The ghost stands on the window's top edge regardless of its height. |
+| `--target=fix --origin=osuwari --target-origin=center.top --side=bottom` | (860,790) | Aligns the sitting position with the center of the top edge (960,1040) of the virtual window below the work area. The ghost sits on the work area's bottom edge. |
+| `--target=fix --origin=center.bottom --target-origin=center.top --side=bottom` | (860,740) | Aligns the center of the ghost's bottom edge with the same point. The ghost stands on the work area's bottom edge. |
+| The specification in the third row, with a maximized target (upper left (0,0), lower right (1920,1040)). Add `--side=bottom`. | (1700,740) | The top edge would be off-screen (-300), so it is clipped. The ghost falls back to the virtual window below the work area and sits using the same `--origin=`, `--x=`, and `--y=`. Its bottom edge is at 1040 (the bottom edge of the work area). |
+| Remove `--side=bottom` from the row above | (1700,-300) | The ghost falls back to the work area itself. Clipping is not checked, so the ghost sits off-screen. |
+| `--target=fix --origin=bl` | (0,740) | The ghost stands at the lower left of the work area. With `--origin=br`, the result is (1720,740). |
+| `--target=fix` | (860,270) | The sitting position coincides with the center of the work area (960,520). |
+| Target is (1500,400)-(2000,900). `--origin=tr --y=-300 --side=bottom` | (1720,740) | The right edge at 2000 exceeds the screen's right edge at 1920, so it is clipped. The ghost falls back to the virtual window below the work area. |
+| Add `--margin=0_0_100_0` or `--noclip` to the row above | (1800,100) | The ghost remains seated on the target because an overhang of 100 pixels to the right is allowed (or clipping is not checked). |
 
-## Write in descript.txt
+## Writing to descript.txt
 
-You can also specify `osuwari` as the value of `seriko.alignmenttodesktop` in the ghost's or shell's `descript.txt` (including entries prefixed with `sakura.`, `kero.`, or `char*.`). After the value, list the same `--` options as for the tag, separated by commas ([※display position information](../../../descript/ghost/descript-txt/note-1.md#補足)).
+You can also specify `osuwari` as the value of `seriko.alignmenttodesktop` in the ghost's or shell's `descript.txt` (including the versions prefixed with `sakura.`, `kero.`, or `char*.`). After the value, list the same `--` options as the tag, separated by commas ([※ Display position information](../../../descript/shell/descript-txt/note-1.md#補足)).
 
 ```
 sakura.seriko.alignmenttodesktop,osuwari,--target=active,--target-origin=center.top,--xmove,--area=workarea,--side=bottom
 ```
 
-- The priority is the same as for other values (ghost-wide < ghost scope-specific < shell-wide < shell scope-specific).
-- On ghost startup or when switching shells, tracking starts with those settings.
-- `\![set,alignmenttodesktop,default]` and `STOP` for the built-in SAORI `osuwari` restore the settings from `descript.txt`. If `descript.txt` specifies osuwari, the ghost sits down in the osuwari position again.
+- The precedence is the same as for other values (ghost-wide < per-scope ghost setting < shell-wide < per-scope shell setting).
+- Tracking starts with these settings when the ghost starts or the shell is switched.
+- `\![set,alignmenttodesktop,default]` and `STOP` in the built-in SAORI `osuwari` restore the `descript.txt` settings. If `descript.txt` specifies osuwari, the ghost sits down again using osuwari.
 - Unrecognized options are ignored and a warning is written to the error log.
 
-## Relationship with the built-in SAORI
+## Relationship to the built-in SAORI
 
-The built-in SAORI `osuwari` (compatible with Osuwari.dll) performs the same operation. However, in accordance with the original, if the seventh and subsequent arguments to SAORI's `START` are omitted, their previous values are retained ([compatibility module](../../../spec/saori-ex/compat.md)).
+The built-in SAORI `osuwari` (compatible with Osuwari.dll) performs the same operation. However, to match the original, the SAORI's `START` retains the previous values when the seventh and subsequent arguments are omitted ([compatibility module](../../../spec/saori-ex/compat.md)).
 
 ## 記述例
 

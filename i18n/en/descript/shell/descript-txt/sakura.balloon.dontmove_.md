@@ -1,10 +1,12 @@
-# sakura.balloon.dontmove,Number
+# sakura.balloon.dontmove,number
 
 **カテゴリ:** descript.txt
 
-Disables user movement of the baseware-side balloon. Set to 1 (or true) to disable movement.<br />
-Do not overuse this, as it interferes with user interaction.
+Prevents the user from moving the main character's balloon. Set to 1 (or true) to prevent movement.<br />
+Do not overuse this setting, as it restricts user operations.
 
-**既定値:** ghost's descript settings (balloon.dontmove)
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** The [balloon.dontmove](balloon.dontmove.md) setting
 
 **対応:** SSP 2.4.96

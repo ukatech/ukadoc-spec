@@ -1,9 +1,12 @@
-# descript.txt (for shells)
+# descript.txt (shell)
 
 ## Overview
 
-The shell's basic settings file.<br />
-In addition to the shell name and author information, this file is also used to configure balloon display positions, images for the owner-draw menu (right-click menu), and how dressup items appear in the owner-draw menu.
+The shell's basic configuration file.<br />
+In addition to the shell name and author information, it configures balloon display positions, images for the owner draw menu (right-click menu), and how dressup items are displayed in the owner draw menu.
+
+!!! note "Items that can also be written in the ghost's descript.txt"
+    Items on this page marked as "can also be written in the ghost's descript.txt" can be written in the same format in the [ghost's `descript.txt`](../../ghost/descript-txt/index.md). Values written on the ghost side become defaults shared by all shells. If the same item is present in the shell's `descript.txt`, the shell's value takes precedence (overrides it).
 
 ## 記述例 and basic usage
 
@@ -54,9 +57,9 @@ kero.menuitem3,2
 
 type and name are required.
 
-In SSP, setting homeurl for a shell also enables network updates from Explorer and similar applications.
+In SSP, setting homeurl for a shell also enables network updates from Explorer and similar tools.
 
-For details about each dressup setting, see the corresponding sections below.<br />
-The basic mechanism is to assign a dressup name and dressup category name (sakura(kero).bindgroup\*.name,～) to the timing bind's animationID defined in [surfaces.txt](../../shell-surfaces/index.md), and also specify its placement in the owner-draw menu (sakura(kero).menuitem\*,～).
+See the respective sections below for each dressup setting.<br />
+The basic mechanism requires assigning a dressup name and category name to an animationID with bind timing defined in [surfaces.txt](../../shell-surfaces/index.md) (sakura(kero).bindgroup\*.name,...) and specifying its placement in the owner draw menu (sakura(kero).menuitem\*,...).
 
-Strings beginning with \\ or % are treated as Sakura Script or environment-variable tags and discarded as a security measure. To include them as literal characters, escape them as \\\\ or \\%.
+Strings beginning with \\ or % are treated as Sakura Script or environment variable tags and discarded due to security risks. To include them as literal characters, escape them as \\\\ or \\%, respectively.

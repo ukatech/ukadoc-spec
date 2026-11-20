@@ -2,8 +2,8 @@
 
 **カテゴリ:** descript.txt
 
-The recommended screen DPI value for this shell. If no value is specified, the Windows default of 96 is used.<br />
-Check the Windows settings on the system where the shell was created under System - Display - Scale, then choose a value according to the following table.
+The recommended display DPI for this shell. If unspecified, it is fixed at the Windows standard of 96.<br />
+Check System - Display - Scale in the Windows settings of the environment where the shell was created, and select a value from the following table.
 
 - 100% - 96
 - 125% - 120
@@ -11,7 +11,9 @@ Check the Windows settings on the system where the shell was created under Syste
 - 175% - 168
 - 200% - 192
 
-Guideline: 144 (150%) for a 4K monitor, 120–144 (125–150%) for a recent laptop
+As a guide: 144 (150%) for a 4K monitor, or 120-144 (125-150%) for a recent laptop.
+
+This can also be specified in the ghost's descript.txt. The shell's setting takes precedence if present; otherwise, the ghost's value is used.
 
 **既定値:** 96
 

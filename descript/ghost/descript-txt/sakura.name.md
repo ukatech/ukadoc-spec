@@ -1,9 +1,0 @@
-# sakura.name,名前
-
-**カテゴリ:** descript.txt
-
-本題側のゴーストの名前。
-
-**既定値:** 省略不可
-
-**対応:** Materia / SSP / CROW

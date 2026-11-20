@@ -693,15 +693,15 @@
  },
  "descript_ghost#balloon.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/balloon.defaultsurface.md"
+  "path": "descript/shell/descript-txt/balloon.defaultsurface.md"
  },
  "descript_ghost#balloon.dontmove,true": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/balloon.dontmove.md"
+  "path": "descript/shell/descript-txt/balloon.dontmove.md"
  },
  "descript_ghost#balloon.syncscale,true": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/balloon.syncscale.md"
+  "path": "descript/shell/descript-txt/balloon.syncscale.md"
  },
  "descript_ghost#caption_recommended": {
   "anchor": null,
@@ -709,39 +709,39 @@
  },
  "descript_ghost#caption_surfaceposition": {
   "anchor": "補足",
-  "path": "descript/ghost/descript-txt/note-1.md"
+  "path": "descript/shell/descript-txt/note-1.md"
  },
  "descript_ghost#char*.balloon.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.balloon.defaultsurface.md"
+  "path": "descript/shell/descript-txt/char-star-.balloon.defaultsurface.md"
  },
  "descript_ghost#char*.defaultleft,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.defaultleft.md"
+  "path": "descript/shell/descript-txt/char-star-.defaultleft.md"
  },
  "descript_ghost#char*.defaulttop,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.defaulttop.md"
+  "path": "descript/shell/descript-txt/char-star-.defaulttop.md"
  },
  "descript_ghost#char*.defaultx,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.defaultx.md"
+  "path": "descript/shell/descript-txt/char-star-.defaultx.md"
  },
  "descript_ghost#char*.defaulty,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.defaulty.md"
+  "path": "descript/shell/descript-txt/char-star-.defaulty.md"
  },
  "descript_ghost#char*.name,名前": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.name.md"
+  "path": "descript/shell/descript-txt/char-star-.name.md"
  },
  "descript_ghost#char*.seriko.alignmenttodesktop,位置情報": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.seriko.alignmenttodesktop.md"
+  "path": "descript/shell/descript-txt/char-star-.seriko.alignmenttodesktop.md"
  },
  "descript_ghost#char*.seriko.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/char-star-.seriko.defaultsurface.md"
+  "path": "descript/shell/descript-txt/char-star-.seriko.defaultsurface.md"
  },
  "descript_ghost#charset,文字コード": {
   "anchor": null,
@@ -761,7 +761,7 @@
  },
  "descript_ghost#cursor,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/cursor.md"
+  "path": "descript/shell/descript-txt/cursor.md"
  },
  "descript_ghost#default.balloon.path,パス": {
   "anchor": null,
@@ -769,15 +769,15 @@
  },
  "descript_ghost#don't_need_bind,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/don-t-2.md"
+  "path": "descript/shell/descript-txt/don-t-2.md"
  },
  "descript_ghost#don't_need_onmousemove,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/don-t.md"
+  "path": "descript/shell/descript-txt/don-t.md"
  },
  "descript_ghost#don't_need_seriko_talk,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/don-t-3.md"
+  "path": "descript/shell/descript-txt/don-t-3.md"
  },
  "descript_ghost#homeurl,URL": {
   "anchor": null,
@@ -805,35 +805,35 @@
  },
  "descript_ghost#kero.balloon.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.balloon.defaultsurface.md"
+  "path": "descript/shell/descript-txt/kero.balloon.defaultsurface.md"
  },
  "descript_ghost#kero.defaultleft,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.defaultleft.md"
+  "path": "descript/shell/descript-txt/kero.defaultleft.md"
  },
  "descript_ghost#kero.defaulttop,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.defaulttop.md"
+  "path": "descript/shell/descript-txt/kero.defaulttop.md"
  },
  "descript_ghost#kero.defaultx,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.defaultx.md"
+  "path": "descript/shell/descript-txt/kero.defaultx.md"
  },
  "descript_ghost#kero.defaulty,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.defaulty.md"
+  "path": "descript/shell/descript-txt/kero.defaulty.md"
  },
  "descript_ghost#kero.name,名前": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.name.md"
+  "path": "descript/shell/descript-txt/kero.name.md"
  },
  "descript_ghost#kero.seriko.alignmenttodesktop,位置情報": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.seriko.alignmenttodesktop.md"
+  "path": "descript/shell/descript-txt/kero.seriko.alignmenttodesktop.md"
  },
  "descript_ghost#kero.seriko.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/kero.seriko.defaultsurface.md"
+  "path": "descript/shell/descript-txt/kero.seriko.defaultsurface.md"
  },
  "descript_ghost#makoto,ファイル名": {
   "anchor": null,
@@ -841,31 +841,31 @@
  },
  "descript_ghost#menu.font.height,フォントサイズ": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/menu.font.height.md"
+  "path": "descript/shell/descript-txt/menu.font.height.md"
  },
  "descript_ghost#menu.font.name,フォント名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/menu.font.name.md"
+  "path": "descript/shell/descript-txt/menu.font.name.md"
  },
  "descript_ghost#mousecursor.arrow,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/mousecursor.arrow.md"
+  "path": "descript/shell/descript-txt/mousecursor.arrow.md"
  },
  "descript_ghost#mousecursor.grip,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/mousecursor.grip.md"
+  "path": "descript/shell/descript-txt/mousecursor.grip.md"
  },
  "descript_ghost#mousecursor.hand,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/mousecursor.hand.md"
+  "path": "descript/shell/descript-txt/mousecursor.hand.md"
  },
  "descript_ghost#mousecursor.text,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/mousecursor.text.md"
+  "path": "descript/shell/descript-txt/mousecursor.text.md"
  },
  "descript_ghost#mousecursor.wait,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/mousecursor.wait.md"
+  "path": "descript/shell/descript-txt/mousecursor.wait.md"
  },
  "descript_ghost#name,ゴースト名": {
   "anchor": null,
@@ -893,43 +893,43 @@
  },
  "descript_ghost#sakura.balloon.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.balloon.defaultsurface.md"
+  "path": "descript/shell/descript-txt/sakura.balloon.defaultsurface.md"
  },
  "descript_ghost#sakura.defaultleft,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.defaultleft.md"
+  "path": "descript/shell/descript-txt/sakura.defaultleft.md"
  },
  "descript_ghost#sakura.defaulttop,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.defaulttop.md"
+  "path": "descript/shell/descript-txt/sakura.defaulttop.md"
  },
  "descript_ghost#sakura.defaultx,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.defaultx.md"
+  "path": "descript/shell/descript-txt/sakura.defaultx.md"
  },
  "descript_ghost#sakura.defaulty,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.defaulty.md"
+  "path": "descript/shell/descript-txt/sakura.defaulty.md"
  },
  "descript_ghost#sakura.name,名前": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.name.md"
+  "path": "descript/shell/descript-txt/sakura.name.md"
  },
  "descript_ghost#sakura.name2,名前": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.name2.md"
+  "path": "descript/shell/descript-txt/sakura.name2.md"
  },
  "descript_ghost#sakura.seriko.alignmenttodesktop,位置情報": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.seriko.alignmenttodesktop.md"
+  "path": "descript/shell/descript-txt/sakura.seriko.alignmenttodesktop.md"
  },
  "descript_ghost#sakura.seriko.defaultsurface,数値": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/sakura.seriko.defaultsurface.md"
+  "path": "descript/shell/descript-txt/sakura.seriko.defaultsurface.md"
  },
  "descript_ghost#seriko.alignmenttodesktop,位置情報": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/seriko.alignmenttodesktop.md"
+  "path": "descript/shell/descript-txt/seriko.alignmenttodesktop.md"
  },
  "descript_ghost#seriko.defaultsurfacedirectoryname,ディレクトリ名": {
   "anchor": null,
@@ -957,19 +957,19 @@
  },
  "descript_ghost#shiori.logo.align,位置情報": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/shiori.logo.align.md"
+  "path": "descript/shell/descript-txt/shiori.logo.align.md"
  },
  "descript_ghost#shiori.logo.file,ファイル名": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/shiori.logo.file.md"
+  "path": "descript/shell/descript-txt/shiori.logo.file.md"
  },
  "descript_ghost#shiori.logo.x,X座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/shiori.logo.x.md"
+  "path": "descript/shell/descript-txt/shiori.logo.x.md"
  },
  "descript_ghost#shiori.logo.y,Y座標": {
   "anchor": null,
-  "path": "descript/ghost/descript-txt/shiori.logo.y.md"
+  "path": "descript/shell/descript-txt/shiori.logo.y.md"
  },
  "descript_ghost#shiori.version,バージョン": {
   "anchor": null,

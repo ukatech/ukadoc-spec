@@ -1,11 +1,14 @@
-# descript.txt（Shell）
+# descript.txt（shell 的）
 
 ## 概要
 
-Shell的基本设置文件。<br />
-除了Shell名称和作者信息外，气球的显示位置、owner draw菜单（右键菜单）的图像，以及dressup在owner draw菜单中的显示设置等也在此处进行。
+shell 的基本配置文件。<br />
+除了 shell 名称和作者信息外，还在此设置 balloon 的显示位置、owner draw 菜单（右键菜单）的图像，以及 dressup 在 owner draw 菜单中的显示方式等。
 
-## 記述例与基本写法
+!!! note "也可写入 ghost 的 descript.txt 的项目"
+    本页中标注为“也可写入 ghost 侧的 descript.txt”的项目，也可以用相同格式写入 [ghost 的 `descript.txt`](../../ghost/descript-txt/index.md)。写在 ghost 侧的项目将成为所有 shell 共用的默认值；如果 shell 的 `descript.txt` 中有相同项目，则优先使用 shell 侧的值（覆盖默认值）。
+
+## 記述例 与基本写法
 
 ```
 charset,Shift_JIS
@@ -52,11 +55,11 @@ kero.menuitem2,-
 kero.menuitem3,2
 ```
 
-type和name为必需项。
+type、name 为必填项。
 
-在SSP中，为Shell设置homeurl后，也可以从资源管理器等位置进行网络更新。
+在 SSP 中，为 shell 设置 homeurl 后，也可以从资源管理器等进行 network update。
 
-关于dressup设置的各个项目，请参阅下文对应的章节。<br />
-其基本机制是：对于在[surfaces.txt](../../shell-surfaces/index.md)中定义的计时bind的animationID，设置dressup名称和dressup类别名称（sakura(kero).bindgroup\*.name,～），并指定其在owner draw菜单中的位置（sakura(kero).menuitem\*,～）。
+关于 dressup 设置的各个项目，请参阅后文各节。<br />
+其基本机制是：需要为 [surfaces.txt](../../shell-surfaces/index.md) 中定义的、时机为 bind 的 animationID 指定 dressup 名称和 dressup 类别名（sakura(kero).bindgroup\*.name,～），并指定其在 owner draw 菜单中的排列位置（sakura(kero).menuitem\*,～）。
 
-另外，以\\或%开头的字符串会被视为Sakura Script或环境变量标签，并因安全风险而被丢弃。如果要将它们作为普通字符使用，需要写成\\\\或\\%等形式进行转义。
+另外，以 \\ 或 % 开头的字符串会被视为 Sakura Script 或环境变量的标签，因安全风险而被丢弃。若要将它们作为普通字符使用，需要分别转义为 \\\\ 或 \\% 等。

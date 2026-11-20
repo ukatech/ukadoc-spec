@@ -1,8 +1,9 @@
-# name.allowoverride,Number
+# name.allowoverride,number
 
 **カテゴリ:** descript.txt
 
-When set to 0, the shell's sakura.name/kero.name are not used. The default is 1.
+Set to 0 to ignore names specified in the shell. This applies to the shell's `sakura.name` / `kero.name` / `char*.name` / `sakura.name2` / `sakura.friend.name`. The default is 1.<br />
+The shell's `name` (shell name) is used regardless of this setting.
 
 **既定値:** 1
 

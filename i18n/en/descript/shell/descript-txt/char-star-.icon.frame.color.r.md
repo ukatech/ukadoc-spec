@@ -2,7 +2,9 @@
 
 **カテゴリ:** descript.txt
 
-The red component (0–255) of the frame displayed around the icon (face thumbnail) of the partner side of the second character and beyond in the [backlog (conversation history) window](../../../list/sakura-script/open/bang-open-backlogviewer.md). [※Note](note-1.md#メニュー画像の位置指定)
+The red component (0–255) of the frame around the companion icon (face thumbnail) for the second character onward when displayed in the [backlog (speech history) window](../../../list/sakura-script/open/bang-open-backlogviewer.md). [Note](note-1.md#アイコン枠色の明度調整について)
+
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell value takes precedence; otherwise, the ghost value is used.
 
 **既定値:** No value
 

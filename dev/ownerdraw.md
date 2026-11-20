@@ -21,6 +21,8 @@ SSPのみ、文字サイズおよびフォントの指定も可能です。
 
 なお、同じ項目についてSHIORI Eventを利用する方法でも同時に設定されている場合、SHIORI Eventによる設定が優先されますので注意してください。
 
+SSPでは、ゴーストの`descript.txt`（`ghost/master/descript.txt`）にも同じ項目を書けます。シェルの`descript.txt`にも同じ項目がある場合は、シェル側が優先されます。
+
 以下が`descript.txt`による記述の例です。
 
 ```
@@ -41,9 +43,9 @@ menu.foreground.font.color.b,255
 menu.separator.color.r,0
 menu.separator.color.g,0
 menu.separator.color.b,0
-menu.disable.font.color.120
-menu.disable.font.color.120
-menu.disable.font.color.120
+menu.disable.font.color.r,120
+menu.disable.font.color.g,120
+menu.disable.font.color.b,120
 ```
 
 各行の詳細は、「[Shell設定](../descript/shell/descript-txt/menu.font.name.md)」にありますが、以下大まかに説明します。
@@ -88,9 +90,9 @@ menu.foreground.font.color.b,255
 menu.separator.color.r,0
 menu.separator.color.g,0
 menu.separator.color.b,0
-menu.disable.font.color.120
-menu.disable.font.color.120
-menu.disable.font.color.120
+menu.disable.font.color.r,120
+menu.disable.font.color.g,120
+menu.disable.font.color.b,120
 ```
 
 上記は文字色の設定です。

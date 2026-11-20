@@ -1,9 +1,11 @@
-# menu.foreground.font.color.r,Number
+# menu.foreground.font.color.r,value
 
 **カテゴリ:** descript.txt
 
-Foreground text color, red (0–255)
+The red component of the foreground text color (0–255).
 
-**既定値:** Highlight text color set by the OS
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** The highlight text color configured in the OS
 
 **対応:** Materia / SSP / CROW

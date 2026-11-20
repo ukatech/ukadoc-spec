@@ -8,7 +8,7 @@
 負の値は、プライマリモニタの作業領域の右端からの距離になる。-0は右端そのもの。\[2.9.13\]<br />
 プライマリモニタより左にあるモニタを指すなど、負の座標そのものを指定したいときは、--100のように-を2つ重ねる(この例はX座標-100)。\[2.9.13\]<br />
 同じ軸に[sakura.defaultleft](sakura.defaultleft.md)も指定されている場合は、こちら(defaultx)が優先される。<br />
-[ゴースト](../../../descript/ghost/descript-txt/sakura.defaultx.md)・[シェル](../../../descript/shell/descript-txt/sakura.defaultx.md)のdescript.txtにも同じ項目を書ける\[2.9.13\]。SHIORIリソースのほうが優先される。<br />
+[ゴースト](../../../descript/shell/descript-txt/sakura.defaultx.md)・[シェル](../../../descript/shell/descript-txt/sakura.defaultx.md)のdescript.txtにも同じ項目を書ける\[2.9.13\]。SHIORIリソースのほうが優先される。<br />
 デスクトップの左端/右端に沿って表示する設定のときは、X座標はその設定で決まるため無効。
 
 **対応:** SSP

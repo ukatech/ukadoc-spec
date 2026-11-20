@@ -232,7 +232,7 @@ point.osuwaripos.y,250
 
 ## descript.txtに書く
 
-ゴースト・シェルの`descript.txt`の`seriko.alignmenttodesktop`（`sakura.`・`kero.`・`char*.`の付いたものも）にも、値として`osuwari`を書ける。値の後ろに、タグと同じ`--`オプションをカンマで区切って並べる（[※表示位置情報](../../../descript/ghost/descript-txt/note-1.md#補足)）。
+ゴースト・シェルの`descript.txt`の`seriko.alignmenttodesktop`（`sakura.`・`kero.`・`char*.`の付いたものも）にも、値として`osuwari`を書ける。値の後ろに、タグと同じ`--`オプションをカンマで区切って並べる（[※表示位置情報](../../../descript/shell/descript-txt/note-1.md#補足)）。
 
 ```
 sakura.seriko.alignmenttodesktop,osuwari,--target=active,--target-origin=center.top,--xmove,--area=workarea,--side=bottom

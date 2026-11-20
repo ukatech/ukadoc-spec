@@ -79,7 +79,7 @@ masterゴーストフォルダのファイルは以下の通り。
 
   このファイルは省略可能。
 
-- **ai0.png / ai0_dark.png**: [AIグラフの説明](../descript/ghost/descript-txt/shiori.logo.file.md)参照。
+- **ai0.png / ai0_dark.png**: [AIグラフの説明](../descript/shell/descript-txt/shiori.logo.file.md)参照。
 
   このファイルは省略可能。
 

@@ -2,8 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-The position information for the partner's balloon [※](note-1.md#サーフェスの位置情報).
+The [※position information](note-1.md#バルーンの位置情報) for the kero balloon.
 
-**既定値:** ghost's descript settings
+This can also be written in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** No value
 
 **対応:** Materia / SSP / CROW

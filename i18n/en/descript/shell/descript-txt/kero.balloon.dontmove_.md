@@ -1,9 +1,11 @@
-# kero.balloon.dontmove,numeric value
+# kero.balloon.dontmove,value
 
 **カテゴリ:** descript.txt
 
-Disables the user's ability to move the partner's balloon. Set to 1 (or true) to disable movement.
+Prevents the user from moving the kero balloon. Set to 1 (or true) to prevent movement.
 
-**既定値:** ghost's descript settings (balloon.dontmove)
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** The [balloon.dontmove](balloon.dontmove.md) setting
 
 **対応:** SSP 2.4.96

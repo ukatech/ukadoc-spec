@@ -2,8 +2,10 @@
 
 **カテゴリ:** descript.txt
 
-Disabled text color, blue (0–255)
+The blue component of the disabled text color (0–255).
 
-**既定値:** (background image color at 0,0 + menu.background.font.color \* 2 ) / 3
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
+
+**既定値:** (Color at 0,0 in the background image + menu.background.font.color \* 2 ) / 3
 
 **対応:** Materia / SSP / CROW

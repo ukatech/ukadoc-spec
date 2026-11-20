@@ -27,11 +27,11 @@
 伺かの仕様では、0番と10番サーフェスは特殊な扱いで、存在しない番号を`\s`タグで指定した時などに代わりに表示する「デフォルトサーフェス」となります。<br />
 0番はともかくとしても、10番を作りたくない場合はそれなりにあると思うので、以下の定義を追加してみてください。
 
-[sakura.seriko.defaultsurface](../descript/ghost/descript-txt/sakura.seriko.defaultsurface.md)
+[sakura.seriko.defaultsurface](../descript/shell/descript-txt/sakura.seriko.defaultsurface.md)
 
-[kero.seriko.defaultsurface](../descript/ghost/descript-txt/kero.seriko.defaultsurface.md)
+[kero.seriko.defaultsurface](../descript/shell/descript-txt/kero.seriko.defaultsurface.md)
 
-[char\*.seriko.defaultsurface](../descript/ghost/descript-txt/char-star-.seriko.defaultsurface.md)
+[char\*.seriko.defaultsurface](../descript/shell/descript-txt/char-star-.seriko.defaultsurface.md)
 
 ## 旧定義/新定義がどうこう言われた
 

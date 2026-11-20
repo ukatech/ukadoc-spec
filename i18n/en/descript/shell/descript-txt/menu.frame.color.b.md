@@ -1,8 +1,10 @@
-# menu.frame.color.b,Number
+# menu.frame.color.b,value
 
 **カテゴリ:** descript.txt
 
-Frame color, blue (0–255)
+The blue component of the frame color (0–255).
+
+This can also be specified in the ghost's descript.txt. If specified in the shell, the shell's value takes precedence; otherwise, the ghost's value is used.
 
 **既定値:** 0
 
