@@ -9,3 +9,4 @@
 - [surface.alias brace](surface-alias-brace/index.md)
 - [cursor brace](cursor-brace/index.md)
 - [tooltip brace](tooltip-brace/index.md)
+- [collisionoption brace](collisionoption-brace/index.md)
