@@ -1,4 +1,4 @@
-# collisionoption块示例
+# collisionoption 块记述例
 
 ```
 sakura.collisionoption
@@ -9,12 +9,12 @@ nocontextmenu0,Bust
 }
 ```
 
-搭档侧的设置为kero.collisionoption、char\*.collisionoption
+搭档侧的设置为 kero.collisionoption、char\*.collisionoption
 
-此块按碰撞区域名称指定是否阻止本体对用户鼠标操作的默认行为。<br />
-由于按名称匹配，因此对使用collision、collisionex、animation\*.collision设置的名称均有效。指定的单位是名称而非surface。需要因surface而异时，应使用不同的名称。
+此块针对碰撞判定名称指定是否禁止主程序对用户鼠标操作的默认行为。<br />
+由于按名称查找，因此无论名称由 collision、collisionex 还是 animation\*.collision 设置，都会应用。设置按名称而非 surface 区分。如需针对不同 surface 设置不同的行为，请使用不同的名称。
 
-由于会妨碍用户操作，请勿滥用。<br />
-对于指定的碰撞区域，必须使用cursor块的mouseup\*、mousedown\*、mouserightdown\*等指定能向用户表明无法操作的光标。
+此功能会妨碍用户操作，请勿滥用。<br />
+必须在 cursor 块中通过 mouseup\*、mousedown\*、mouserightdown\* 等为指定的碰撞判定设置光标，使用户了解无法进行该操作。
 
 **対応:** SSP 2.9.38

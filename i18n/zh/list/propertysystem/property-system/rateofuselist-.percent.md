@@ -1,8 +1,8 @@
-# rateofuselist(名称).percent
+# rateofuselist(名前).percent
 
 **カテゴリ:** 属性系统
 
-该ghost的运行时间占比。（百分比，小数）<br />
-\[SSP 2.9.35\] 括号中也可以填写ghost的[UUID](general-property/uuid.md)代替名称。如果有多个相同UUID的ghost，则采用有记录的那个。
+该 ghost 的启动时间占比。（百分比，小数）<br />
+\[SSP 2.9.35\] 括号内也可以填写 ghost 的 [UUID](general-property/uuid.md) 代替名称。如果有多个 ghost 的 UUID 相同，则采用有记录的那个。
 
 **対応:** SSP

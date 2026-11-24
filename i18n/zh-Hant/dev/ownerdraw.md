@@ -2,9 +2,9 @@
 
 本頁說明如何設定 owner draw 選單（右鍵選單）的顯示方式。
 
-也請一併參考檔案結構中的「[owner draw 選單](../manual/owner-draw-menu.md)」。
+另請參考檔案結構中的「[owner draw 選單](../manual/owner-draw-menu.md)」。
 
-設定可記載於 shell 的 `descript.txt`，或作為取得資源時發出的數個 SHIORI Event 的回應來設定。
+可在 shell 的`descript.txt`中設定，或在為取得資源而發出的數個 SHIORI Event 的回應中設定。
 
 ## 目次
 
@@ -13,17 +13,17 @@
 
 ## 在 shell 的 descript.txt 中設定
 
-shell 的 `descript.txt` 可以設定用作一般狀態背景、選取狀態背景及側邊欄的３張圖片，以及文字顏色。
+可在 shell 的`descript.txt`中設定的項目包括用作一般狀態背景、選取狀態背景及側邊欄的３張圖片，以及文字顏色。
 
-僅 SSP 也可以指定文字大小及字型。
+只有 SSP 也能指定文字大小及字型。
 
-此外，dressup 選單的項目配置等也在 shell 的 `descript.txt` 中設定，相關內容請參閱「[dressup 的設定](bind.md)」頁面。
+dressup 選單項目的配置等設定也在 shell 的`descript.txt`中進行，詳情請參考「[dressup 設定](bind.md)」頁面。
 
-請注意，如果同一項目也透過 SHIORI Event 設定，則以 SHIORI Event 的設定為優先。
+請注意，若同一項目同時透過 SHIORI Event 設定，則以 SHIORI Event 的設定為優先。
 
-在 SSP 中，ghost 的 `descript.txt`（`ghost/master/descript.txt`）也可以記載相同項目。如果 shell 的 `descript.txt` 也有相同項目，則以 shell 的設定為優先。
+在 SSP 中，也可以在 ghost 的`descript.txt`（`ghost/master/descript.txt`）中寫入相同項目。若 shell 的`descript.txt`中也有相同項目，則以 shell 的設定為優先。
 
-以下是以 `descript.txt` 設定的範例。
+以下是透過`descript.txt`設定的範例。
 
 ```
 menu.background.bitmap.filename,background.png
@@ -48,7 +48,7 @@ menu.disable.font.color.g,120
 menu.disable.font.color.b,120
 ```
 
-各行的詳細說明請參閱「[Shell 設定](../descript/shell/descript-txt/menu.font.name.md)」，以下僅概略說明。
+各行的詳細資訊請參閱「[Shell 設定](../descript/shell/descript-txt/menu.font.name.md)」，以下則簡要說明。
 
 ```
 menu.background.bitmap.filename,background.png
@@ -56,11 +56,11 @@ menu.foreground.bitmap.filename,foreground.png
 menu.sidebar.bitmap.filename,sidebar.png
 ```
 
-以上三行分別設定 owner draw 選單使用的3種圖片。
+上述三行分別設定 owner draw 選單使用的3種圖片。
 
 background 是一般狀態下的選單背景。
 
-foreground 是選取項目的背景圖片。這可能有些難以理解：只有 owner draw 選單中游標目前所在的部分，會將 background 圖片替換為 foreground 圖片對應位置的部分。
+foreground 是選取項目的背景圖片。這可能有些難以理解：只有 owner draw 選單中目前游標所在的部分，會以 foreground 圖片對應位置的部分取代 background 圖片。
 
 sidebar 是附在 owner draw 選單左側的圖片。
 
@@ -68,7 +68,7 @@ sidebar 是附在 owner draw 選單左側的圖片。
 
 [![owner draw 選單的顯示](../assets/image/ownerdraw_view.png)](../assets/image/ownerdraw_view.png)
 
-*上方是使用的3張圖片，下方是實際顯示效果（例:Emily/Phase4.5）*
+*上方為使用的3張圖片，下方為實際顯示結果（例：Emily/Phase4.5）*
 
 ```
 menu.background.alignment,lefttop
@@ -76,9 +76,9 @@ menu.foreground.alignment,lefttop
 menu.sidebar.alignment,bottom
 ```
 
-以上三行分別設定3種圖片的配置方式。
+上述三行分別設定3種圖片的配置方式。
 
-在上述範例中，background、foreground 圖片以左上角為起點配置。如果因選單的文字數量或項目數量而使選單大於背景圖片，超出區域的右側及下側會分別延伸圖片右端及左端的顏色來顯示。
+在上述範例中，background、foreground 圖片以左上角為起點配置。若因選單文字數量或項目數量而使選單大於背景圖片，超出範圍的右側及下側會分別延伸圖片右端及左端的顏色顯示。
 
 ```
 menu.background.font.color.r,0
@@ -95,22 +95,22 @@ menu.disable.font.color.g,120
 menu.disable.font.color.b,120
 ```
 
-以上是文字顏色的設定。
+上述內容是文字顏色的設定。
 
-background 是一般狀態下的選單文字顏色，foreground 是游標位於項目上時的文字顏色，separator 是選單分隔字元的顏色，disable 是非作用中項目的文字顏色，例如沒有 dressup 的 shell 中的 dressup 選單，或不支援 network update 的 ghost 中的 network update 項目。
+background 是一般狀態下的選單文字顏色，foreground 是游標位於項目上時的文字顏色，separator 是選單分隔字元的顏色，disable 則是非作用中項目的文字顏色，例如沒有 dressup 的 shell 中的 dressup 選單，或不支援 network update 的 ghost 中的 network update 項目。
 
-RGB 色彩的各個色彩分量以 0～255 的數值指定。rgb 全部為255時是白色，全部為0時是黑色。
+RGB 色彩的各個色彩分量以0～255的數值指定。rgb 全部為255時是白色，全部為0時是黑色。
 
 ## 透過 SHIORI Event 設定
 
-除了與 shell 端 `descript.txt` 相同的設定之外，也可以設定選單各項目的顯示名稱，以及我的最愛與入口網站連結集的內容。
+除了與 shell 的`descript.txt`相同的設定外，還可以設定各選單項目的顯示名稱，以及我的最愛和入口網站連結集的內容。
 
-即使同一項目在 shell 端 `descript.txt` 中已有設定，仍以 SHIORI Event 的設定為優先。
+即使同一項目已在 shell 的`descript.txt`中設定，仍以 SHIORI Event 的設定為優先。
 
-如何針對取得選單相關資源的 SHIORI Event 設定及回傳值，必須參閱各 SHIORI 的說明。
+對於用來取得選單資源的 SHIORI Event，如何設定及回傳值，須參閱各 SHIORI 的說明。
 
-例如使用 Satori 時，可以參考以下頁面。
+例如，使用 Satori 時可以參考以下頁面。
 
 [Satori wiki - 右鍵選單](http://soliton.sub.jp/satori/index.php?%B1%A6%A5%AF%A5%EA%A5%C3%A5%AF%A5%E1%A5%CB%A5%E5%A1%BC)
 
-其他 SHIORI Event 請參閱「[SHIORI Resource](../list/shiori-resource/ownerdraw-image/menu.sidebar.bitmap.filename.md)」頁面。
+其他可用的 SHIORI Event 請參閱「[SHIORI Resource](../list/shiori-resource/ownerdraw-image/menu.sidebar.bitmap.filename.md)」頁面。

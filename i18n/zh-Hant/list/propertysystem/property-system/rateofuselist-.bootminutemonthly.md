@@ -2,7 +2,7 @@
 
 **カテゴリ:** 屬性系統
 
-該 ghost 的啟動時間。（以分鐘為單位，月報版，統計從今天到 30 天前的資料）<br />
-\[SSP 2.9.35\] 括號內也可以用 ghost 的 [UUID](general-property/uuid.md) 代替名稱。若有多個 ghost 的 UUID 相同，則採用有紀錄的項目。
+該 ghost 的啟動時間。（以分鐘為單位，月報版，統計從今天到30天前的資料）<br />
+\[SSP 2.9.35\] 括號中也可以用 ghost 的[UUID](general-property/uuid.md)代替名稱。若有多個 ghost 具有相同的 UUID，則採用有紀錄的 ghost。
 
 **対応:** SSP 2.8.54

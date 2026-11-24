@@ -9,12 +9,12 @@ nocontextmenu0,Bust
 }
 ```
 
-For the partner character, use kero.collisionoption or char\*.collisionoption.
+The settings for the other characters are kero.collisionoption and char\*.collisionoption.
 
-This brace specifies collision names for which the baseware's default response to mouse operations is disabled.<br />
-Because it looks up collisions by name, it applies to names assigned by collision, collisionex, or animation\*.collision. Settings apply per name, not per surface. To vary them by surface, use different names.
+This brace specifies options that suppress the baseware's default response to mouse operations on named collision regions.<br />
+Because regions are matched by name, the options apply to names assigned by collision, collisionex, or animation\*.collision. Options apply per name, not per surface. Use different names to vary the behavior by surface.
 
-Do not overuse this feature, as it restricts user operations.<br />
-For each specified collision, use mouseup\*, mousedown\*, mouserightdown\*, or similar settings in the cursor brace to specify a cursor that tells users the operation is unavailable.
+Do not overuse these options, as they restrict user operations.<br />
+For each specified collision region, use mouseup\*, mousedown\*, mouserightdown\*, or similar entries in the cursor brace to specify a cursor that tells the user the operation is unavailable.
 
 **対応:** SSP 2.9.38

@@ -1,9 +1,9 @@
-# recommended.balloon,balloon名称
+# recommended.balloon,balloon 名称
 
-**カテゴリ:** descript.txt - 推荐balloon
+**カテゴリ:** descript.txt - 推荐 balloon
 
-推荐使用的balloon名称。如果尝试切换到其他balloon，会显示措辞强烈的警告。<br />
-\[SSP 2.9.35\] 也可以填写balloon的[UUID](../../../list/propertysystem/property-system/general-property/uuid.md)，代替balloon名称。切换balloon时的警告判定也遵循指定的UUID。
+推荐使用的 balloon 名称。尝试切换到其他 balloon 时会显示强烈警告。<br />
+\[SSP 2.9.35\] 也可以填写 balloon 的 [UUID](../../../list/propertysystem/property-system/general-property/uuid.md) 代替 balloon 名称。切换 balloon 时的警告也根据指定的 UUID 判断。
 
 **既定値:** 未指定
 

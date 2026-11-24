@@ -2,7 +2,7 @@
 
 **カテゴリ:** descript.txt
 
-The URL of the metainfo folder containing the shell's information. The format and meaning are the same as for [metainfo in the ghost's descript.txt](../../ghost/descript-txt/metainfo.md).<br />
+The URL of the metainfo folder containing information about the shell. The format and meaning are the same as [metainfo in the ghost's descript.txt](../../ghost/descript-txt/metainfo.md).<br />
 The value can be retrieved through [metainfo](../../../list/propertysystem/property-system/general-property/metainfo.md) in the property system.
 
 **既定値:** No value
