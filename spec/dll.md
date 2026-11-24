@@ -115,9 +115,9 @@ extern "C" __declspec(dllexport) HGLOBAL __cdecl multi_request(long id, HGLOBAL 
 
 注意点：
 
-- id の 0 は、従来の `load` / `request` / `unload` が扱うインスタンスに割り当てられている。`multi_load*` が 0 を返してはならない
+- id の 0 は従来の `load` / `request` / `unload` が扱うインスタンスに割り当てられている。`multi_load*` が 0 を返してはならない
 - 従来の関数とマルチインスタンス用の関数は、同じ DLL に両方実装できる。両者のインスタンスは別のものとして扱う
-- YAYA の `multi_load*` は、辞書の読み込みに失敗しても id を返す（`load` が常に TRUE を返すのと同じで、失敗の確認には `CI_check_failed` を使う）
+- YAYA の `multi_load*` は辞書の読み込みに失敗しても id を返す（`load` が常に TRUE を返すのと同じで、失敗の確認には `CI_check_failed` を使う）
 - SSP はこれらの関数を使用しない（SSP 以外のベースウェア向けの仕様である）
 
 ## YAYA 固有の関数
@@ -125,7 +125,7 @@ extern "C" __declspec(dllexport) HGLOBAL __cdecl multi_request(long id, HGLOBAL 
 次の関数は YAYA（`yaya.dll`）が独自に実装している。デバッグ用のチェックツールとの連携に使うもので、SHIORI の仕様には含まれない。他のモジュールが実装する必要はなく、ベースウェアも呼ばなくてよい。
 
 !!! note "注"
-    仕様は YAYA の都合で変わることがある。`multi_` 付きの関数は、前節のマルチインスタンス用関数と同様に、id で指したインスタンスに対して動く。
+    仕様は YAYA の都合で変わることがある。`multi_` 付きの関数は前節のマルチインスタンス用関数と同様に、id で指したインスタンスに対して動く。
 
 ### CI_check_failed関数
 
@@ -161,7 +161,7 @@ YAYA のログを受け取るコールバック関数を登録する。登録す
 - **6**: ログの終了
 - **16 / 17 / 32**: 以降のログのマルチバイト文字の文字コードの通知。16 が Shift_JIS、17 が UTF-8、32 が OS のデフォルト。ログの最初に 1 回呼ばれる
 
-コールバックは、`load` / `request` / `unload` を呼んだスレッドで呼ばれる。
+コールバックは `load` / `request` / `unload` を呼んだスレッドで呼ばれる。
 
 ### logsend関数
 

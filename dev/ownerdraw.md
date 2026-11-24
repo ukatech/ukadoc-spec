@@ -21,7 +21,7 @@ SSPのみ、文字サイズおよびフォントの指定も可能です。
 
 なお、同じ項目についてSHIORI Eventを利用する方法でも同時に設定されている場合、SHIORI Eventによる設定が優先されますので注意してください。
 
-SSPでは、ゴーストの`descript.txt`（`ghost/master/descript.txt`）にも同じ項目を書けます。シェルの`descript.txt`にも同じ項目がある場合は、シェル側が優先されます。
+SSPではゴーストの`descript.txt`（`ghost/master/descript.txt`）にも同じ項目を書けます。シェルの`descript.txt`にも同じ項目がある場合は、シェル側が優先されます。
 
 以下が`descript.txt`による記述の例です。
 

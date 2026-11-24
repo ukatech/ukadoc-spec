@@ -6,7 +6,7 @@
 「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br />
 別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br />
 同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br />
-\[SSP 2.9.35\] プラグインの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる([raiseplugin](bang-raiseplugin-ID-r0-r1-r2.md)と同じ)。宛先は、タイマーを設定したときではなく、イベントを送信するたびに引かれる。
+\[SSP 2.9.35\] プラグインの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる([raiseplugin](bang-raiseplugin-ID-r0-r1-r2.md)と同じ)。宛先は、タイマーを設定したときではなく、イベントを送信するたびに決められる。
 
 **対応:** SSP
 

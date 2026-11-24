@@ -8,7 +8,7 @@
 !!! note "シェルのdescript.txtで上書きできる項目"
     シェルの`descript.txt`と共通の項目（`sakura.name` / `kero.name`、オーナードローメニューの画像・色、バルーンやキャラクターの位置、サーフェスの位置情報、マウスカーソル、`don't need ...`、`shiori.logo.*` など）は、ゴーストの`descript.txt`にも書ける。<br />
     ゴースト側に書いたものはゴースト全体の既定値になり、シェルの`descript.txt`に同じ項目があれば、シェル側が優先される（上書きされる）。<br />
-    これらの項目は、このページではなく[Shell設定](../../shell/descript-txt/index.md)に載せてある。該当する項目には「ゴースト側のdescript.txtにも書ける」と記してある。
+    これらの項目は[Shell設定](../../shell/descript-txt/index.md)に載せてある。該当する項目には「ゴースト側のdescript.txtにも書ける」と記してある。
 
 ## 記述例と基本の書き方
 

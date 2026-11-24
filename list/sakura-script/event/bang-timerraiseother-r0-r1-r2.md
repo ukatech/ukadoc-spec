@@ -9,7 +9,7 @@
 同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br />
 ゴースト名を\_\_SYSTEM_ALL_GHOST\_\_とすると起動している全てのゴーストに通知。<br />
 ゴースト名はバイト値1区切りで複数指定可。<br />
-\[SSP 2.9.35\] ゴースト名の代わりに、起動しているゴーストの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる([raiseother](bang-raiseother-r0-r1-r2.md)と同じ)。宛先は、タイマーを設定したときではなく、イベントを通知するたびに引かれる。
+\[SSP 2.9.35\] ゴースト名の代わりに、起動しているゴーストの[UUID](../../propertysystem/property-system/general-property/uuid.md)も指定できる([raiseother](bang-raiseother-r0-r1-r2.md)と同じ)。宛先は、タイマーを設定したときではなく、イベントを通知するたびに決められる。
 
 **対応:** SSP
 
