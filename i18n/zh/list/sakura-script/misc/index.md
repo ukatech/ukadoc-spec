@@ -63,6 +63,8 @@
 - [`\![load,makoto]`](bang-load-makoto.md)
 - [`\![set,shioridebugmode,(true/false)]`](bang-set-shioridebugmode-true-false.md)
 - [`\![create,shortcut]`](bang-create-shortcut.md)
+- [`\![timemachine,set,値]`](bang-timemachine-set-value.md)
+- [`\![timemachine,reset]`](bang-timemachine-reset.md)
 - [`\_u[0x0000]`](_u-0x0000.md)
 - [`\_m[0x00]`](_m-0x00.md)
 - [`\&[ID]`](amp-ID.md)

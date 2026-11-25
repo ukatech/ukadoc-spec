@@ -16,7 +16,8 @@ SSPを `--allow-timemachine-control` 付きで起動したときだけ有効。�
 自動更新などの間隔の計測、ログ、通信など、実際の時刻で動くものは影響を受けない。
 
 !!! note "注"
-    起動オプション `--time-shift` でも、起動時の差分を指定できる。現在の差分は、プロパティ `system.os.timeshift` で読める。
+    起動オプション `--time-shift` でも、起動時の差分を指定できる。現在の差分は、プロパティ `system.os.timeshift` で読める。<br />
+    ゴーストのスクリプトを介さず同期で設定したいときは、SSTPのEXECUTEの[SetTimeShift](../../../spec/sstp/method_execute.md)を使う(同じ書式の値、同じ起動オプションが要る)。
 
 **対応:** SSP 2.9.39
 

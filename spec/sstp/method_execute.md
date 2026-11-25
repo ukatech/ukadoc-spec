@@ -50,7 +50,12 @@ Commandヘッダに指定できる文字列と、responseの「追加データ�
   [version.json](https://ssp.shillest.net/archive/version.json)のssp.full.versionなどと単純比較すると最新版かどうかチェックできる
 - **GetStatus \[SSP 2.8.94\]**: 起動中のゴーストの現在の実行状態。SHIORI/3.0 requestのStatusヘッダや、プロパティシステムの[currentghost.status](../../list/propertysystem/property-system/currentghost.status.md)と同じ内容。<br />
   複数の状態に当てはまる場合はカンマ区切り。各値の意味は[※SHIORI Statusヘッダ](../../list/propertysystem/property-system/currentghost.status.md)を参照。<br />
-  どの状態にも当てはまらない場合は追加データなし(ステータスコード200)
+  どの状態にも当てはまらない場合は追加データなし(ステータスコード200)<br />
+  \[SSP 2.9.39\] EXECUTEのGetStatusには、`scriptbusy`(再生待ちのスクリプトがある、または再生中)も加わる。`talking`は、キューにあるスクリプトの合間や、スクリプトを受け付けてから再生が始まるまでの間は消えるが、`scriptbusy`は残る。SENDの応答は、スクリプトをキューへ積んだあとに返るので、その直後に読めば必ず見える。SHIORI/3.0 requestのStatusヘッダと`currentghost.status`には加わらない(ゴースト側の判定を変えないため)。
+- **SetTimeShift \[SSP 2.9.39\] \[リモート不可\]**: 「現在時刻の仮想的変更」(タイムマシン)の差分を、ゴーストのスクリプトを介さず同期で設定する。日付や時刻に依存するゴーストの試験用。<br />
+  パラメータ0：差分の指定。[`\![timemachine,set,値]`](../../list/sakura-script/misc/bang-timemachine-set-value.md)の値と同じ書式(`+秒` / `-秒` / `0` / ISO8601形式の日時)。いまの差分に足すのではなく、差分をこの値にする。<br />
+  SSPを `--allow-timemachine-control` 付きで起動したときだけ受け付ける。付けていないときは何もせず、420で失敗し、エラーログに警告を記録する。リモートからは実行できない(420)。値が省略されたとき、解釈できないときは400で失敗する(差分は変わらない)。<br />
+  成功時は、設定後の差分(秒。符号つき整数)を追加データで返す(ステータスコード200)。応答を受けた時点で差分は反映済みで、プロパティ`system.os.timeshift`もその値を返す。差分はその起動中だけのもので、設定には保存されない。
 - **Quiet \[リモート不可\]**: Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)
 - **Restore**: Quietを解除。追加データなし(ステータスコード200番台で成功)
 - **CompressArchive \[SSP 2.7.23\] \[リモート不可\]**: 指定したフォルダ内のファイル群をZIPファイルに圧縮する。圧縮先の拡張子が`.7z`なら7z形式で、それ以外はZIP形式になる（`.lzh`や`.cab`を指定しても中身はZIPである）。隠しファイル・隠しフォルダは含まれない。<br />
