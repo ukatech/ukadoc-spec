@@ -29,6 +29,8 @@
 - [shiori.escape_unknown,0/1](shiori.escape_unknown.md)
 - [icon,文件名](icon.md)
 - [icon.minimize,文件名](icon.minimize.md)
+- [icon.interval,播放间隔](icon.interval.md)
+- [icon.minimize.interval,播放间隔](icon.minimize.interval.md)
 - [shiori,文件名](shiori.md)
 - [makoto,文件名](makoto.md)
 - [install.accept,名称1,名称2,名称3...](install.accept.md)

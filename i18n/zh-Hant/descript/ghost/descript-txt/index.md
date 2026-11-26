@@ -29,6 +29,8 @@
 - [shiori.escape_unknown,0/1](shiori.escape_unknown.md)
 - [icon,檔案名稱](icon.md)
 - [icon.minimize,檔案名稱](icon.minimize.md)
+- [icon.interval,播放間隔](icon.interval.md)
+- [icon.minimize.interval,播放間隔](icon.minimize.interval.md)
 - [shiori,檔案名稱](shiori.md)
 - [makoto,檔案名稱](makoto.md)
 - [install.accept,名稱1,名稱2,名稱3...](install.accept.md)
