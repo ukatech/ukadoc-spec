@@ -14,7 +14,7 @@
 
 - アニメーション画像はファイルに入っている各コマの待ち時間とループ回数のとおりに動く。--duration は不要。
 - --duration=待機時間(ms)を指定すると、全コマの待ち時間をその値に上書きする（下限は50ミリ秒）。
-- コマ画像は通知領域のアイコンの大きさ（16px角）に縮小して使う。正方形でない画像は比率を保ったまま中央に収める。
+- コマ画像は通知領域のアイコンの大きさに縮小して使う（表示倍率100%で16px角、150%で24px角、200%で32px角。表示倍率が変わると、新しい大きさで作り直す）。正方形でない画像は比率を保ったまま中央に収める。
 - .ico（連番を含む）は従来どおり、--duration を指定したときだけアニメーションする。
 - この指定はSSPのみで使える。他のベースウェアは .ico しか読めない。
 
@@ -37,7 +37,16 @@
 - --interval を指定しないときは、--runcount があればそれに従い、なければファイルが持つループ回数に従う（ANI は無限。GIF は NETSCAPE 拡張が無ければ1回で止まる）。連番の.icoは無限。
 - --interval と --runcount の両方を指定したら --interval が優先される。ただし random・periodic・rarely・sometimes では、1回の再生あたりの繰り返し回数として --runcount が使われる（指定がなければ1回）。
 - `--interval=random,5` のようにカンマで区切って書ける（`--interval=random:5` とも書ける）。
-- 指定した --duration・--runcount・--interval はゴーストの最小化・復帰のあとも保たれる。アイコンを既定に戻すときは、ファイル名を空にして `\![set,tasktrayicon,]` と実行する。
+- 指定した --duration・--runcount・--interval はゴーストの最小化・復帰のあとも保たれる。アイコンを既定に戻すときは、ファイル名を空にして `\![set,tasktrayicon,]` と実行する（テキストは戻らない）。テキストも含めて戻すときは、下の `--reset` を使う。
+
+## 指定をすべて取り消す（--reset）
+
+`\![set,tasktrayicon,--reset]` のように、ファイル名の代わりに --reset を書くと、このタグで指定したものをすべて取り消して、descript.txt の指定に戻す。 \[SSP 2.9.40～\]
+
+- ファイル名・テキスト・--duration・--runcount・--interval が取り消される。
+- アイコンは descript.txt の[icon](../../../descript/ghost/descript-txt/icon.md)（最小化中は[icon.minimize](../../../descript/ghost/descript-txt/icon.minimize.md)）に、テキストは既定の「SSP/\[起動中のゴースト名\]」（最小化中は「SSP\[Minimize\]/\[起動中のゴースト名\]」）に戻る。
+- --reset のあとに書いた引数は無視される。
+- ファイル名を空にした `\![set,tasktrayicon,]` はアイコンだけを戻し、このタグで指定したテキストはそのまま残る。
 
 descript.txtの[icon](../../../descript/ghost/descript-txt/icon.md)・[icon.minimize](../../../descript/ghost/descript-txt/icon.minimize.md)で指定したアイコンも同じようにアニメーションさせられる（再生のしかたは[icon.interval](../../../descript/ghost/descript-txt/icon.interval.md)・[icon.minimize.interval](../../../descript/ghost/descript-txt/icon.minimize.interval.md)で指定する）。
 
@@ -51,4 +60,8 @@ descript.txtの[icon](../../../descript/ghost/descript-txt/icon.md)・[icon.mini
 
 ```sakurascript
 \![set,tasktrayicon,alert.gif,通知あり,--interval=periodic,10]アイコンを alert.gif のアニメーションにし、再生が終わるたびに10秒待ってからもう一度再生する。
+```
+
+```sakurascript
+\![set,tasktrayicon,--reset]このタグで指定したアイコンとテキストをすべて取り消して、descript.txtの指定に戻す。
 ```
